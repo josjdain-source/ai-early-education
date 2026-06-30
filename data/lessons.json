@@ -81,7 +81,15 @@
       "blog_url": "",
       "materials": [],
       "template_files": [],
-      "status": "planned"
+      "status": "planned",
+      "video_file": "assets/video/ep02_creation_final.mp4",
+      "video_status": "local_ready",
+      "video_review_status": "final_made",
+      "video_build_script": "content/video/build_ep02_final.py",
+      "video_tts_voice": "craft_narrator",
+      "video_tts_regenerated": true,
+      "video_source_images": "assets/images/ep02/master (GPT 7장, 원본 보존)",
+      "video_notes": "2편 최종본 56초(1080x1920). 추천 내레이션(craft_narrator TTS) + 화면 자막 최종본 8컷 구조(미래의 문→영화/무대/의료 꿈→AI 첫 대화→결과 보고 다시 요청→무료 크레딧 하루 한 편→창작의 문 엔딩). 제공 이미지 7장 원본 그대로 사용(사용자 지시: 크롭/삭제 금지). 공개 홈 노출 아님 — 영상 산출물만 기록."
     },
     {
       "id": "emotion-stickers-02",

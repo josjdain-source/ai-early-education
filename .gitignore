@@ -13,3 +13,11 @@ __pycache__/
 *.pyc
 .DS_Store
 Thumbs.db
+
+# wrangler 배포 캐시
+.wrangler/
+
+# 2편 영상 작업물 — 웹 미참조(게시처=유튜브). 디스크엔 보존, 배포/공개 URL엔 제외.
+assets/images/ep02/
+assets/video/ep02/
+assets/video/ep02_creation_final.mp4
