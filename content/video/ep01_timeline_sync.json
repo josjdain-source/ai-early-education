@@ -1,0 +1,92 @@
+{
+  "project": "ep01_door_sign",
+  "version": "sync_fix",
+  "audio_policy": {
+    "tail_silence_seconds": 2.0,
+    "no_cut_at_audio_end": true,
+    "per_cut_tts": true,
+    "preset": "craft_narrator",
+    "pause_between_cuts": 0.25
+  },
+  "total_seconds": 41.494,
+  "cut_count": 7,
+  "cuts": [
+    {
+      "cut": 1,
+      "start": 0.0,
+      "end": 4.395,
+      "duration": 4.395,
+      "narration": "사진 한 장이 감정 캐릭터 20종으로 바뀝니다.",
+      "visual": "example_photo.png + example_emotion_sheet.png",
+      "caption": "사진 한 장 → 감정 캐릭터 20종",
+      "intent": "before_after_hook",
+      "check_question": "실사 사진과 감정 캐릭터 20종이 같이 보이는가?"
+    },
+    {
+      "cut": 2,
+      "start": 4.395,
+      "end": 10.914,
+      "duration": 6.519,
+      "narration": "GPT 프롬프트를 넣고, 원하는 결과가 나올 때까지 다시 말해봅니다.",
+      "visual": "prompt_card",
+      "caption": "AI에게 다시 말해보기",
+      "intent": "prompt_retry",
+      "check_question": "프롬프트 카드가 보이는가?"
+    },
+    {
+      "cut": 3,
+      "start": 10.914,
+      "end": 17.956,
+      "duration": 7.042,
+      "narration": "더 귀엽게, 번호는 빼줘, 5열 4행으로 정리해줘처럼 말할 수 있어요.",
+      "visual": "say_bubbles(더 귀엽게/번호는 빼줘/5열 4행)",
+      "caption": "말이 바뀌면 결과도 바뀌어요",
+      "intent": "retry_examples",
+      "check_question": "다시 말하기 말풍선 3개가 보이는가?"
+    },
+    {
+      "cut": 4,
+      "start": 17.956,
+      "end": 21.515,
+      "duration": 3.559,
+      "narration": "마음에 드는 감정 캐릭터를 고릅니다.",
+      "visual": "example_emotion_sheet.png + 선택표시",
+      "caption": "마음에 드는 표정 고르기",
+      "intent": "select_character",
+      "check_question": "시트에서 한 표정을 고르는 표시가 보이는가?"
+    },
+    {
+      "cut": 5,
+      "start": 21.515,
+      "end": 25.457,
+      "duration": 3.942,
+      "narration": "오늘은 그 결과를 문패로 활용해볼게요.",
+      "visual": "door-sign-sample.png",
+      "caption": "첫 활용: 오늘 마음 문패",
+      "intent": "use_case_doorsign",
+      "check_question": "완성된 문패가 보이는가?"
+    },
+    {
+      "cut": 6,
+      "start": 25.457,
+      "end": 33.718,
+      "duration": 8.261,
+      "narration": "중요한 건 출력물이 아니라, 아이가 AI에게 어떻게 말해야 결과가 나오는지 배우는 과정입니다.",
+      "visual": "talk_card(아이 ↔ AI)",
+      "caption": "첫 AI 조기교육은 대화부터",
+      "intent": "education_core",
+      "check_question": "아이와 AI가 대화하는 느낌이 보이는가?"
+    },
+    {
+      "cut": 7,
+      "start": 33.718,
+      "end": 41.494,
+      "duration": 7.776,
+      "narration": "한 번 해보면, 같은 방식으로 스티커와 키링도 만들어볼 수 있어요.",
+      "visual": "apply_cards(스티커/키링/이름표)",
+      "caption": "같은 방법으로 더 만들어보세요",
+      "intent": "series_application",
+      "check_question": "스티커·키링·이름표 응용 카드가 보이는가?"
+    }
+  ]
+}

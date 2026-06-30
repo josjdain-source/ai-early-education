@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>감정 캐릭터 20종 프롬프트 · 아이와 함께 배우는 생성형 AI</title>
+<meta name="description" content="사진 한 장으로 감정 캐릭터 20종을 만드는 GPT 프롬프트. 복사해서 바로 사용하세요.">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+.promptbox{background:#fffdf8;border:1px solid var(--line);border-radius:14px;padding:16px;white-space:pre-wrap;
+  font:14px/1.7 -apple-system,"Segoe UI",Roboto,"Malgun Gothic",sans-serif;color:var(--ink);max-height:none}
+.copybar{display:flex;gap:10px;align-items:center;margin:10px 0}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="/"><span class="logo">🎨</span> 아이와 함께 배우는 생성형 AI</a>
+  <a class="item" href="/">홈</a>
+  <a class="item" href="/make/door-sign/">만들기</a>
+  <a class="item" href="/materials/">준비물</a>
+  <a class="item" href="/templates/">무료 도안</a>
+  <a class="item" href="/safety/">안전</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <h1>사진 한 장으로 감정 캐릭터 20종 만들기</h1>
+  <p class="sub">아이 사진이나 캐릭터 이미지 한 장을 GPT에 올리고, 아래 프롬프트를 붙여넣으면 20가지 감정 캐릭터 시트가 만들어져요.<br><b>중요한 건 프롬프트를 한 번 복사하는 게 아니라, 원하는 결과가 나올 때까지 다시 말해보는 경험입니다.</b></p>
+  <img class="realshot" src="/assets/process-a-ask.png" alt="아이가 AI에게 직접 질문하는 모습" style="max-width:420px;margin:6px auto 0">
+</div></header>
+
+<main class="wrap">
+  <section class="why">
+    <h2 class="sec">왜 이게 AI 조기교육인가요?</h2>
+    <p class="lead">아이와 함께 생성형 AI를 사용하는 과정은 단순한 만들기가 아닙니다. 아이는 원하는 결과를 떠올리고, AI에게 말하고, 나온 결과를 보고, 다시 조건을 바꿔 요청합니다. 이 반복 속에서 아이는 ‘어떻게 말해야 원하는 결과가 나오는지’를 배웁니다. 이것이 유치원 시기부터 시작할 수 있는 가장 쉬운 AI 조기교육입니다.</p>
+    <div class="grid">
+      <div class="card"><div class="body"><div class="ic">🧩</div><h3>논리력</h3><div class="desc">원하는 조건을 정리해 말해요.</div></div></div>
+      <div class="card"><div class="body"><div class="ic">💬</div><h3>표현력</h3><div class="desc">머릿속 이미지를 문장으로 바꿔요.</div></div></div>
+      <div class="card"><div class="body"><div class="ic">🔁</div><h3>문제해결력</h3><div class="desc">마음에 안 들면 다시 요청해요.</div></div></div>
+      <div class="card"><div class="body"><div class="ic">💡</div><h3>통찰력</h3><div class="desc">말이 바뀌면 결과도 바뀐다는 걸 배워요.</div></div></div>
+    </div>
+    <div class="note" style="margin-top:14px"><b>이 활동의 핵심은 만들기 결과물이 아니라, 아이가 AI에게 어떻게 말해야 원하는 결과가 나오는지 배우는 과정입니다.</b><br>아이는 사진 한 장을 넣고 끝내는 것이 아니라, 결과를 보고 다시 말하고, 조건을 바꾸고, 원하는 모습에 가까워질 때까지 AI와 대화합니다. 이 과정에서 논리력, 표현력, 문제해결력, 통찰력이 자연스럽게 자랍니다.</div>
+    <p class="muted" style="margin-top:10px">AI 조기교육은 코딩부터가 아닙니다. AI에게 어떻게 말해야 원하는 결과가 나오는지 경험하는 것부터 시작됩니다.</p>
+  </section>
+
+  <section>
+    <h2 class="sec">이렇게 만들어져요</h2>
+    <div class="ba">
+      <div class="src">
+        <div class="imgwrap">
+          <img src="/assets/example_photo.png" alt="예시 사진 (AI 생성)">
+        </div>
+        <figcaption class="muted">사진 한 장</figcaption>
+      </div>
+      <div class="arrow">→</div>
+      <div class="res">
+        <img src="/assets/example_emotion_sheet.png" alt="감정 캐릭터 20종 예시">
+        <figcaption class="muted">감정 캐릭터 20종</figcaption>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:8px">위 예시 사진은 실제 아이가 아니라 <b>AI로 만든 이미지</b>예요. 직접 만들 때 <b>아이 사진</b>을 쓰는 경우 부모와 함께 확인하고, 이름·학교·주소·전화번호 등 개인정보가 보이는 이미지는 사용하지 마세요.</p>
+  </section>
+
+  <section>
+    <h2 class="sec">AI에게 다시 말해보기 — 아이가 따라 하는 재요청 문장</h2>
+    <p class="lead">프롬프트로 한 번에 끝내지 말고, 나온 결과를 아이와 함께 보며 원하는 모습이 될 때까지 다시 말해 보세요. 아래 문장을 <b>아이가 직접 소리 내어</b> 말해보게 하면 돼요. 이 재요청이 1편의 진짜 핵심입니다.</p>
+    <div class="imgrow">
+      <div class="ph-img"><img class="realshot" src="/assets/process-b-together.png" alt="엄마와 아이가 함께 결과를 보며 다시 요청하는 모습"></div>
+      <div class="tx talkbox">
+        <div class="qgroup"><b>표정·기분 바꾸기</b><br>
+          <span class="q">“웃는 표정으로 바꿔줘”</span><span class="q">“화난 표정도 보여줘”</span><span class="q">“졸린 표정도 만들어줘”</span>
+        </div>
+        <div class="qgroup"><b>더 예쁘게·스타일</b><br>
+          <span class="q">“더 귀엽게 만들어줘”</span><span class="q">“색을 더 밝게 해줘”</span><span class="q">“좀 더 동그랗게”</span>
+        </div>
+        <div class="qgroup"><b>정리·형식</b><br>
+          <span class="q">“번호는 빼줘”</span><span class="q">“5열 4행으로 정리해줘”</span><span class="q">“배경은 깔끔하게”</span>
+        </div>
+        <div class="qgroup" style="margin-bottom:0"><b>다시 시도</b><br>
+          <span class="q">“마음에 안 들어, 다시 해줘”</span><span class="q">“방금 게 더 좋았어”</span>
+        </div>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:10px">정답은 없어요. 아이가 “이건 마음에 안 들어, 이렇게 바꿔줘”라고 말할 수 있게 되는 것 자체가 목표예요.</p>
+  </section>
+
+  <section>
+    <h2 class="sec">감정 스티커 20개</h2>
+    <p class="lead">사진 한 장으로 이런 20가지 감정 스티커가 만들어져요. 마음에 드는 표정을 골라 <a href="/make/door-sign/">문패</a>·키링·감정 카드에 써 보세요.</p>
+    <div class="stickers">
+      <figure><img src="/assets/stickers/s01.png" alt="감정 스티커 좋아" loading="lazy"><figcaption>좋아</figcaption></figure>
+      <figure><img src="/assets/stickers/s02.png" alt="감정 스티커 신났어" loading="lazy"><figcaption>신났어</figcaption></figure>
+      <figure><img src="/assets/stickers/s03.png" alt="감정 스티커 그냥 그래" loading="lazy"><figcaption>그냥 그래</figcaption></figure>
+      <figure><img src="/assets/stickers/s04.png" alt="감정 스티커 슬퍼" loading="lazy"><figcaption>슬퍼</figcaption></figure>
+      <figure><img src="/assets/stickers/s05.png" alt="감정 스티커 속상해" loading="lazy"><figcaption>속상해</figcaption></figure>
+      <figure><img src="/assets/stickers/s06.png" alt="감정 스티커 짜증나" loading="lazy"><figcaption>짜증나</figcaption></figure>
+      <figure><img src="/assets/stickers/s07.png" alt="감정 스티커 화났어" loading="lazy"><figcaption>화났어</figcaption></figure>
+      <figure><img src="/assets/stickers/s08.png" alt="감정 스티커 삐졌어" loading="lazy"><figcaption>삐졌어</figcaption></figure>
+      <figure><img src="/assets/stickers/s09.png" alt="감정 스티커 걱정돼" loading="lazy"><figcaption>걱정돼</figcaption></figure>
+      <figure><img src="/assets/stickers/s10.png" alt="감정 스티커 피곤해" loading="lazy"><figcaption>피곤해</figcaption></figure>
+      <figure><img src="/assets/stickers/s11.png" alt="감정 스티커 혼자 있고 싶어" loading="lazy"><figcaption>혼자 있고 싶어</figcaption></figure>
+      <figure><img src="/assets/stickers/s12.png" alt="감정 스티커 자랑하고 싶어" loading="lazy"><figcaption>자랑하고 싶어</figcaption></figure>
+      <figure><img src="/assets/stickers/s13.png" alt="감정 스티커 울고 싶어" loading="lazy"><figcaption>울고 싶어</figcaption></figure>
+      <figure><img src="/assets/stickers/s14.png" alt="감정 스티커 실망했어" loading="lazy"><figcaption>실망했어</figcaption></figure>
+      <figure><img src="/assets/stickers/s15.png" alt="감정 스티커 답답해" loading="lazy"><figcaption>답답해</figcaption></figure>
+      <figure><img src="/assets/stickers/s16.png" alt="감정 스티커 말하기 싫어" loading="lazy"><figcaption>말하기 싫어</figcaption></figure>
+      <figure><img src="/assets/stickers/s17.png" alt="감정 스티커 머리가 복잡해" loading="lazy"><figcaption>머리가 복잡해</figcaption></figure>
+      <figure><img src="/assets/stickers/s18.png" alt="감정 스티커 무서워" loading="lazy"><figcaption>무서워</figcaption></figure>
+      <figure><img src="/assets/stickers/s19.png" alt="감정 스티커 뿌듯해" loading="lazy"><figcaption>뿌듯해</figcaption></figure>
+      <figure><img src="/assets/stickers/s20.png" alt="감정 스티커 웃겨" loading="lazy"><figcaption>웃겨</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec">사용 방법</h2>
+    <ol class="steps">
+      <li>사진 또는 캐릭터 이미지를 준비해요.</li>
+      <li>GPT(이미지 생성)에 사진을 올려요.</li>
+      <li>아래 프롬프트를 <b>복사해서 붙여넣어요.</b></li>
+      <li>감정 캐릭터 20종 시트가 나오면, 원하는 표정을 골라 <a href="/make/door-sign/">문패로 출력</a>해요.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2 class="sec">GPT 프롬프트</h2>
+    <div class="copybar">
+      <button class="btn primary" id="copyBtn" onclick="copyPrompt()">📋 프롬프트 복사</button>
+      <span class="muted" id="copyMsg"></span>
+    </div>
+    <div class="promptbox" id="prompt">당신은 아이와 부모가 함께 사용할 수 있는 따뜻한 감정 캐릭터 시트를 만드는 일러스트레이터입니다.
+
+첨부한 사진 또는 캐릭터 이미지를 참고해서, 같은 인물/캐릭터 느낌을 유지한 채 20가지 감정 표현을 가진 2D 캐릭터 시트를 만들어 주세요.
+
+목표:
+아이와 함께 만드는 문패, 스티커, 열쇠고리, 감정 카드에 사용할 수 있는 귀엽고 안전한 감정 캐릭터 이미지입니다.
+
+스타일:
+- 따뜻하고 부드러운 2D 일러스트
+- 너무 사실적이지 않게
+- 아이와 부모가 함께 보기에 편안한 분위기
+- 둥근 선, 밝은 색감
+- 과한 공포/분노 표현 금지
+- 실존 캐릭터나 유명 캐릭터 스타일 모방 금지
+- 특정 브랜드/작품 스타일 언급 금지
+
+출력 형식:
+- 5열 × 4행 고정 그리드
+- 총 20개 감정 캐릭터
+- 각 칸은 같은 크기
+- 번호 1, 2, 3 같은 순번은 절대 넣지 마세요
+- 각 칸 안에는 숫자 배지를 넣지 마세요
+- 자르기 쉽게 캐릭터가 칸 중앙에 오게 해주세요
+- 배경은 단순하고 깔끔하게
+- 각 캐릭터는 나중에 개별 이미지로 잘라 쓸 수 있어야 합니다
+
+20가지 감정:
+좋아 / 신났어 / 그냥 그래 / 슬퍼 / 속상해 / 짜증나 / 화났어 / 삐졌어 / 걱정돼 / 피곤해 / 혼자 있고 싶어 / 자랑하고 싶어 / 울고 싶어 / 실망했어 / 답답해 / 말하기 싫어 / 머리가 복잡해 / 무서워 / 뿌듯해 / 웃겨
+
+중요:
+- 아이 얼굴을 과하게 사실적으로 복제하지 말고, 캐릭터화해 주세요.
+- 개인정보가 보이는 요소는 넣지 마세요.
+- 학교명, 이름표, 전화번호, 주소 같은 정보는 표현하지 마세요.
+- 아이가 불쾌해 보이거나 무섭게 보이는 표현은 피해주세요.
+- 감정은 부드럽고 이해하기 쉽게 표현해 주세요.
+- 결과물은 부모와 아이가 함께 확인하는 만들기 활동용입니다.</div>
+  </section>
+
+  <section>
+    <div class="safe">
+      <b>🔒 안전 안내</b>
+      <ul>
+        <li>아이 사진을 사용할 때는 <b>부모와 함께</b> 확인해 주세요.</li>
+        <li>이름·학교·전화번호·주소처럼 개인정보가 보이는 이미지는 사용하지 않는 것이 좋습니다.</li>
+        <li>생성된 이미지는 아이와 부모가 함께 확인한 뒤 출력해 주세요.</li>
+        <li>실존 캐릭터나 유명 캐릭터 스타일을 따라 해달라고 요청하지 마세요.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><a href="/make/door-sign/">← 오늘 마음 문패 만들기로</a></div></footer>
+
+<script>
+function copyPrompt(){
+  const t=document.getElementById('prompt').innerText;
+  const done=()=>{document.getElementById('copyMsg').textContent='복사됐어요! GPT에 붙여넣으세요.';};
+  if(navigator.clipboard){ navigator.clipboard.writeText(t).then(done).catch(()=>fallback(t,done)); }
+  else fallback(t,done);
+}
+function fallback(t,done){
+  const ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select();
+  try{document.execCommand('copy');}catch(e){} ta.remove(); done();
+}
+</script>
+</body>
+</html>

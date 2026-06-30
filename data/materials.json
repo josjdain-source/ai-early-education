@@ -1,0 +1,18 @@
+{
+  "_note": "준비물(쿠팡 파트너스 연결 자리). affiliate_url 비면 '링크 입력 필요'. 실제 링크는 발행 시 입력 — 지금 임의 링크 금지. category로 페이지 그룹.",
+  "materials": [
+    { "id": "printer-paper", "name": "프린터 용지", "use": "감정 캐릭터를 출력할 때 사용", "category": "출력 준비물", "affiliate_url": "", "status": "link_needed" },
+    { "id": "label-paper", "name": "라벨지", "use": "스티커·이름표 인쇄에 사용", "category": "출력 준비물", "affiliate_url": "", "status": "link_needed" },
+    { "id": "laminating-film", "name": "손코팅지", "use": "출력한 이미지를 코팅할 때 사용", "category": "코팅 준비물", "affiliate_url": "", "status": "link_needed" },
+    { "id": "coating-film", "name": "코팅 필름", "use": "작은 캐릭터를 튼튼하게 코팅", "category": "코팅 준비물", "affiliate_url": "", "status": "link_needed" },
+    { "id": "foam-board", "name": "폼보드", "use": "문패를 단단하게 만들 때 사용", "category": "문패 준비물", "affiliate_url": "", "status": "link_needed" },
+    { "id": "double-tape", "name": "양면테이프", "use": "그림을 폼보드에 붙일 때 사용", "category": "문패 준비물", "affiliate_url": "", "status": "link_needed" },
+    { "id": "magnet-sheet", "name": "자석 시트", "use": "문이나 냉장고에 붙일 때 사용", "category": "문패 준비물", "affiliate_url": "", "status": "link_needed" },
+    { "id": "scissors", "name": "가위", "use": "도안을 모양대로 자를 때 사용", "category": "문패 준비물", "affiliate_url": "", "status": "link_needed" },
+    { "id": "craft-knife", "name": "칼", "use": "깔끔한 직선 컷에 사용(부모 사용)", "category": "문패 준비물", "affiliate_url": "", "status": "link_needed" },
+    { "id": "punch", "name": "펀치", "use": "끈·고리를 달 구멍을 낼 때 사용", "category": "키링 준비물", "affiliate_url": "", "status": "link_needed" },
+    { "id": "keyring", "name": "키링 고리", "use": "열쇠고리를 연결할 때 사용", "category": "키링 준비물", "affiliate_url": "", "status": "link_needed" },
+    { "id": "acrylic-keyring-kit", "name": "아크릴 키링 키트", "use": "투명 아크릴 키링 제작에 사용", "category": "키링 준비물", "affiliate_url": "", "status": "link_needed" },
+    { "id": "sticker-paper", "name": "스티커지", "use": "아이 그림을 스티커로 인쇄", "category": "스티커 준비물", "affiliate_url": "", "status": "link_needed" }
+  ]
+}

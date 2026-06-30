@@ -1,0 +1,15 @@
+# 배포 제외 — 파일은 디스크에 보존되지만 git/배포에는 안 올라감
+
+# 영상 렌더 임시(프레임 시퀀스·중간물, 재생성 가능)
+assets/video/_frames_*/
+assets/video/_vonly_*.mp4
+assets/video/_opening_only.mp4
+
+# 사이트가 참조하지 않는 TTS 원본/중간 음성(용량만 큼; 최종 영상엔 오디오가 embed됨)
+assets/audio/
+
+# 파이썬 캐시/OS 잡파일
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

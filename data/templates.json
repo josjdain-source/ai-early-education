@@ -1,0 +1,35 @@
+{
+  "_note": "무료 도안/템플릿. file 있고 status=available 이면 다운로드 활성. 없으면 '곧 추가'. 실제 도안은 점차 추가.",
+  "templates": [
+    {
+      "id": "door-sign-template",
+      "name": "감정 문패 도안 (샘플)",
+      "summary": "오늘 마음 문패용 기본 프레임. 가운데에 AI 감정 캐릭터를 넣어 출력하세요.",
+      "format": "PNG · A4 인쇄용",
+      "preview": "/templates/sample_door_sign_template.png",
+      "file": "/templates/sample_door_sign_template.png",
+      "status": "available"
+    },
+    {
+      "id": "door-hanger-template",
+      "name": "문고리 도어행거 도안",
+      "summary": "문고리에 거는 도어행거 형태 도안.",
+      "format": "PDF (예정)",
+      "preview": "", "file": "", "status": "coming"
+    },
+    {
+      "id": "keyring-sheet",
+      "name": "키링 인쇄용 시트",
+      "summary": "작은 캐릭터를 여러 개 배치한 키링용 인쇄 시트.",
+      "format": "PNG (예정)",
+      "preview": "", "file": "", "status": "coming"
+    },
+    {
+      "id": "sticker-sheet",
+      "name": "감정 스티커 시트 예시",
+      "summary": "감정 캐릭터 20종을 한 장에 배치한 스티커 시트.",
+      "format": "PNG (예정)",
+      "preview": "", "file": "", "status": "coming"
+    }
+  ]
+}
