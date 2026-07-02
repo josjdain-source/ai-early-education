@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ai-early-education.pages.dev/sitemap.xml
