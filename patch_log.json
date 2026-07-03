@@ -3,6 +3,17 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "정체성 고정: 링크 창고 아니라 편집국. EDITORIAL_STANDARD.md(필수 4칸)",
+      "changes": [
+        "EDITORIAL_STANDARD.md 진실원본 생성: 3층(원자료→우리 해석→행동)+필수 4칸(핵심1줄·우리해석·증거+원본링크·오늘할일)+한줄필터",
+        "ARCHITECTURE.md 0장에 편집국 표준 연결. screenshot-plan에 4칸 명시",
+        "메모리 feedback_editorial_not_link_warehouse 기록(재사용 원칙)"
+      ],
+      "verification": {"docs_only": "표준 문서·아키텍처·메모리만. HTML/렌더/캡처/배포 없음, sitemap 41"},
+      "todo_next": ["각 나라 카드/영상에 4칸 명시 배치", "소스 확정→증거 캡처", "페이지 리뉴얼 시 표준 적용"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "제작 구조 전환: 해외 증거 스샷 3단 방식(A안 16장 직접생성 중단)",
       "changes": [
         "방향변경: 해외 사례를 직접 그린 이미지로만 X → 해외 유튜브/뉴스/공식 화면 스샷을 '증거 컷'으로 인용(신뢰도)",

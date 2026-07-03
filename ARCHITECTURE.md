@@ -5,6 +5,7 @@
 
 ## 0. 한 줄 정체성
 정적 자료실이 아니라 **매일 깨어나는 AI 조기교육 편집국**: 고정 자료실 + 7축 자동 관측소 + 근거 기반 영상 라인. 사람은 "찾기"가 아니라 **"승인·방향 판단"**.
+- ★**편집국 표준(진실원본): EDITORIAL_STANDARD.md** — 우리는 링크 창고 아님. 모든 콘텐츠 3층(원자료→우리 해석→행동) + 필수 4칸(핵심1줄·우리해석·증거+원본링크·오늘할일). 해석 없으면 죽은 콘텐츠.
 
 ## 1. 좌표
 - 라이브: https://ai-early-education.pages.dev/ · repo: github.com/josjdain-source/ai-early-education (main)
