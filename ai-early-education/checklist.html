@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 대화 실험 전 부모 체크리스트 · AI 조기교육</title>
+<meta name="description" content="아이와 AI를 시작하기 전 5분만 확인하면 실험이 훨씬 안전하고 교육적으로 바뀝니다. 실험 전·중·후와 연령별 체크 항목을 담은, 인쇄해서 쓰는 부모 체크리스트.">
+<link rel="canonical" href="https://ai-early-education.pages.dev/ai-early-education/checklist.html">
+<meta property="og:title" content="AI 대화 실험 전 부모 체크리스트">
+<meta property="og:description" content="아이와 AI를 시작하기 전, 5분만 확인하면 실험이 훨씬 안전하고 교육적으로 바뀐다.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .art{max-width:780px;margin:0 auto}
+  .art h1{font-size:26px;line-height:1.38;margin:8px 0 6px}
+  .art .subtitle{color:#5a49d6;font-weight:700;font-size:16px;line-height:1.6;margin-bottom:10px}
+  .art .meta{color:#8a8aa0;font-size:12.5px;border-bottom:1px solid #eee;padding-bottom:14px;margin-bottom:18px}
+  .art h2{font-size:20px;margin:28px 0 10px;padding-top:6px;border-top:2px solid #f0f0f6}
+  .art p{font-size:16px;line-height:1.85;margin:12px 0;color:#2a2a33}
+  .art a{color:#5a49d6}
+  .keyline{background:#f3f0ff;border-radius:12px;padding:16px 18px;font-size:16.5px;line-height:1.7;font-weight:600;margin:18px 0}
+  .cl{border:1px solid #e7e7ef;border-radius:14px;padding:6px 18px 14px;margin:14px 0;background:#fff}
+  .cl .tag{display:inline-block;border-radius:20px;padding:3px 13px;font-size:13px;font-weight:800;margin:14px 0 4px;color:#fff}
+  .cl.before .tag{background:#2f6bd8}
+  .cl.during .tag{background:#7c6cff}
+  .cl.after .tag{background:#0a8a4a}
+  .cl.age .tag{background:#c0512b}
+  .cl ul{margin:8px 0;padding:0;list-style:none}
+  .cl li{font-size:15.5px;line-height:1.6;margin:9px 0;padding-left:30px;position:relative;color:#2a2a33}
+  .cl li::before{content:"☐";position:absolute;left:0;top:-1px;font-size:19px;color:#7c6cff}
+  .cl.before li::before{color:#2f6bd8}
+  .cl.after li::before{color:#0a8a4a}
+  .cl.age li::before{color:#c0512b}
+  .cl li b{color:#3a2fb0}
+  .say{background:#f6fbf7;border:1px solid #d9eede;border-radius:12px;padding:6px 18px 12px;margin:12px 0}
+  .say li{font-size:15px;line-height:1.8;margin:8px 0;color:#2a2a33}
+  .printhint{font-size:13px;color:#8a8aa0;background:#fbfbff;border:1px dashed #d8d8e6;border-radius:10px;padding:10px 14px;margin:10px 0}
+  .endnote{color:#8a8aa0;font-size:13px;font-style:italic;border-top:1px solid #eee;margin-top:24px;padding-top:14px}
+  .next{background:#eef6ff;border-radius:12px;padding:16px 18px;margin:20px 0}
+  .next a{color:#2f6bd8;font-weight:700;text-decoration:none}
+  .navback{display:inline-block;margin:18px 0 0;color:#7c6cff;text-decoration:none;font-weight:700;font-size:14px}
+  @media print{
+    .nav,footer,.navback,.printhint,.next{display:none!important}
+    .art{max-width:none}
+    .cl{break-inside:avoid;border-color:#bbb}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="/"><span class="logo">🎨</span> 아이와 함께 배우는 생성형 AI</a>
+  <a class="item" href="/">홈</a>
+  <a class="item on" href="/ai-early-education/">AI 조기교육</a>
+  <a class="item" href="/make/door-sign/">만들기</a>
+  <a class="item" href="/materials/">준비물</a>
+  <a class="item" href="/safety/">안전</a>
+</div></nav>
+
+<main class="wrap">
+<article class="art">
+  <div class="kicker" style="margin-top:16px"><a href="/ai-early-education/" style="color:#8a8aa0;text-decoration:none">AI 조기교육</a> · 부모 가이드 · 실행 직전</div>
+  <h1>AI 대화 실험 전 부모 체크리스트</h1>
+  <div class="subtitle">아이와 AI를 시작하기 전, 5분만 확인하면 실험이 훨씬 안전하고 교육적으로 바뀐다.</div>
+  <div class="meta">작성 기준일 2026-07-03 · <a href="/ai-early-education/home-experiments.html">집에서 하는 실험</a>을 켜기 직전에 보는 확인표입니다 · 안전 원칙은 <a href="/ai-early-education/parent-rules.html">부모 7가지 약속</a>과 이어집니다.</div>
+
+  <h2>1. 왜 체크리스트가 필요한가</h2>
+  <p><a href="/ai-early-education/home-experiments.html">실험</a>이 “무엇을 해볼까”이고 <a href="/ai-early-education/parent-rules.html">약속</a>이 “무엇을 지킬까”라면, 이 페이지는 <b>“지금 켜기 전에 뭘 확인할까”</b>입니다. AI 실험은 도구를 켜는 순간 시작되는 게 아니라, <b>부모가 목적·시간·개인정보·역할·기록 방식을 정하는 순간</b> 시작됩니다.</p>
+  <div class="keyline">이 체크리스트는 아이를 <b>통제하기 위한 문서가 아니라</b>, 아이와 함께 안전하게 실험하기 위한 <b>약속표</b>입니다. 다 지켜야 하는 규정이 아니라, 시작 전에 한 번 짚어보는 5분짜리 확인입니다.</div>
+  <div class="printhint">🖨️ 이 페이지는 인쇄해서 냉장고에 붙여두거나, 실험할 때 옆에 두고 써도 좋습니다(브라우저의 인쇄 기능을 쓰면 안내·버튼 없이 체크 항목만 깔끔하게 나옵니다).</div>
+
+  <h2>2. 실험 전 5분 체크</h2>
+  <div class="cl before"><span class="tag">실험 전</span>
+    <ul>
+      <li>오늘 실험 <b>목적</b>을 한 문장으로 정했다.</li>
+      <li><b>시간</b>은 10~30분으로 정했다.</li>
+      <li>아이가 혼자 쓰지 않도록 <b>보호자가 옆에</b> 있다.</li>
+      <li>이름·학교·얼굴·주소·전화번호 같은 <b>개인정보를 넣지 않기로</b> 했다.</li>
+      <li>결과물이 <b>틀릴 수 있다</b>고 아이에게 미리 말했다.</li>
+      <li>오늘은 예쁜 결과보다 <b>“다시 말해보기”가 목표</b>라고 정했다.</li>
+    </ul>
+  </div>
+
+  <h2>3. 실험 중 체크</h2>
+  <div class="cl during"><span class="tag">실험 중</span>
+    <ul>
+      <li>부모가 <b>대신 프롬프트를 다 써주고 있지</b> 않다(생각은 아이 몫).</li>
+      <li>아이가 <b>마음에 드는 점과 아쉬운 점</b>을 말하고 있다.</li>
+      <li>AI 결과를 <b>그대로 믿지 않고</b> 같이 살펴보고 있다.</li>
+      <li>이상하거나 불편한 결과가 나오면 <b>멈출 준비</b>가 되어 있다.</li>
+      <li>아이가 <b>“다시 요청하기”를 한 번 이상</b> 해봤다.</li>
+    </ul>
+  </div>
+
+  <h2>4. 실험 후 체크</h2>
+  <div class="cl after"><span class="tag">실험 후</span>
+    <ul>
+      <li>아이가 오늘 <b>무엇을 요청했는지</b> 말할 수 있다.</li>
+      <li><b>무엇이 예상과 달랐는지</b> 말할 수 있다.</li>
+      <li>다음엔 <b>어떻게 다르게 말할지</b> 한 줄로 남겼다.</li>
+      <li>AI가 도와준 부분과 <b>아이가 직접 생각한 부분</b>을 구분했다.</li>
+      <li>실험 시간이 <b>너무 길어지지 않았다.</b></li>
+    </ul>
+  </div>
+
+  <h2>5. 연령별 추가 체크</h2>
+  <div class="cl age"><span class="tag">연령별</span>
+    <ul>
+      <li><b>유아:</b> 부모가 조작하고 아이는 말하기·고르기 중심이었다.</li>
+      <li><b>초등 저학년:</b> 보호자와 함께 결과를 보고 수정 요청을 해봤다.</li>
+      <li><b>초등 고학년:</b> 결과 비교와 틀린 정보 찾기를 해봤다.</li>
+      <li><b>중학생 이상:</b> 출처·과제 윤리·AI 사용 표시를 이야기했다.</li>
+    </ul>
+  </div>
+  <p style="font-size:14.5px;color:#5a49d6">나이별 방향이 헷갈리면 <a href="/ai-early-education/age-guide.html">연령별 가이드</a>를, 어떤 실험부터 할지 모르겠으면 <a href="/ai-early-education/compare.html">시작점 찾기</a>를 참고하세요.</p>
+
+  <h2>6. 체크리스트를 아이에게 설명하는 말</h2>
+  <div class="say"><ul>
+    <li>“우리 <b>10분만</b> 같이 해보고, 재밌으면 조금 더 하자.”</li>
+    <li>“네 이름이나 학교 같은 건 <b>비밀이니까</b> AI에게 말 안 하기다.”</li>
+    <li>“AI가 <b>틀릴 수도 있으니까</b> 우리 같이 확인하자.”</li>
+    <li>“다 하고 나면 <b>오늘 뭐가 재밌었는지</b> 한 줄만 적어보자.”</li>
+  </ul></div>
+
+  <h2>7. 관련 페이지</h2>
+  <div class="next">
+    <b>이 체크리스트와 함께 보면 좋은 글</b><br>
+    · <a href="/ai-early-education/home-experiments.html">집에서 해볼 수 있는 AI 대화 실험 10가지</a><br>
+    · <a href="/ai-early-education/parent-rules.html">아이와 AI를 쓸 때 부모가 정해야 할 7가지 약속</a><br>
+    · <a href="/ai-early-education/age-guide.html">연령별 AI 조기교육 가이드</a> · <a href="/ai-early-education/for-parents.html">부모 시작 가이드</a> · <a href="/ai-early-education/compare.html">시작점 찾기</a><br>
+    · <a href="/ai-early-education/ai-conversation-before-coding.html">아이에게 AI를 가르친다는 건 코딩을 시키는 게 아니다 (3편)</a><br>
+    <a href="/ai-early-education/">← AI 조기교육 코너로 돌아가기</a>
+  </div>
+
+  <div class="endnote">이 체크리스트는 가정에서 참고할 안전·교육용 확인표이며 법률 자문이 아닙니다. 특정 AI 서비스나 유료 상품을 권하지 않고, 개인정보 입력을 유도하지 않으며, 아이가 혼자 AI를 쓰도록 권하지 않습니다. 항목은 규정이 아니라 ‘보호자와 함께 안전하게’를 돕는 약속입니다.</div>
+  <a class="navback" href="/ai-early-education/">← AI 조기교육 코너로</a>
+</article>
+</main>
+
+<footer><div class="wrap">
+  <a href="/ai-early-education/">AI 조기교육</a> · <a href="/ai-early-education/home-experiments.html">AI 대화 실험</a> · <a href="/ai-early-education/parent-rules.html">부모 7가지 약속</a> · <a href="/ai-early-education/sources.html">전체 출처</a> · <a href="/safety/">안전</a>
+</div></footer>
+</body>
+</html>
