@@ -96,9 +96,12 @@ def main():
         elif fr["status"] == "failed": fetch_failed += 1
         if fr["status"] != "ok":
             continue
-        # 스코어링 대상 텍스트
+        # 스코어링 대상: RSS/피드의 '기사 단위' 항목만. 랜딩 페이지 제목 스크랩은 큐에 넣지 않음(노이즈 방지).
         cat = cat_of(s)
-        for it in (fr["items"] or [{"title": fr["title"], "link": fr["source_url"], "date": fr["detected_date"]}]):
+        if not fr["items"]:
+            fr["no_article_item"] = True   # daily_watch에 '확인함, 신규 기사 항목 없음'으로 표기
+            continue
+        for it in fr["items"]:
             text = f"{it['title']} {fr.get('snippet','')} {' '.join(fr.get('detected_keywords',[]))}"
             score, areas, why = scorer.score_item(cat, text, it["title"])
             candidates.append({
@@ -171,9 +174,11 @@ def write_daily_watch(path, date, fetches, candidates, qres, cfg):
             lines.append(f"- [{c['source_id']}] score {c['score']} {reg} · {c['title'][:80]}")
             lines.append(f"    부모 질문: {c['parent_question']}  | {c['reason']}")
         lines.append("")
+    checked_no_item = [f["source_id"] for f in fetches if f.get("no_article_item")]
     lines += ["## 종합", f"- queue 추가: {qres['added']}",
               f"- 중복 skip: {len(qres['duplicate'])} · 저점수 skip: {len(qres['low_score'])}",
-              f"- fetch 실패: {sum(1 for f in fetches if f['status']=='failed')} · 검색페이지 skip: {sum(1 for f in fetches if f['status'].startswith('skipped'))}",
+              f"- 확인만(랜딩 페이지·신규 기사 항목 없음): {len(checked_no_item)}개 {checked_no_item[:12]}",
+              f"- fetch 실패: {sum(1 for f in fetches if f['status']=='failed')} · 검색페이지 skip(동적): {sum(1 for f in fetches if f['status'].startswith('skipped'))}",
               "- ⚠️ 뉴스/유튜브/기업발표=사실 근거 아님. 미성년자 자료 캡처 금지. 사이트 반영은 사람 승인 후.", "",
               "---", "확인자: automated_pipeline · 관측 로그(비공개)."]
     with open(path, "w", encoding="utf-8") as f:

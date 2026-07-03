@@ -1,0 +1,23 @@
+{
+  "run_date": "2026-07-03",
+  "started_at": "2026-07-03T23:43:00",
+  "ended_at": "2026-07-03T23:43:19",
+  "mode": "write",
+  "sources_checked": 34,
+  "fetch_success": 20,
+  "fetch_failed": 3,
+  "fetch_skipped": 11,
+  "items_scored": 0,
+  "queue_added": [],
+  "queue_skipped_duplicate": 0,
+  "queue_skipped_low_score": 0,
+  "capture_attempted": 0,
+  "capture_success": 0,
+  "warnings": [],
+  "errors": [
+    "HTTPError: HTTP Error 403: Forbidden",
+    "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>",
+    "HTTPError: HTTP Error 404: Not Found"
+  ],
+  "note": "자동 관측 로그. 사이트/영상/발행 반영 없음. 사람 승인 게이트 유지."
+}

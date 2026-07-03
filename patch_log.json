@@ -3,6 +3,26 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "작업 스케줄러 등록(매일 07:30)+즉시 테스트=심장박동 ON. 노이즈 오염 발견→파이프라인 수정",
+      "changes": [
+        "'AI Early Education Daily Watch' 작업 등록(daily 07:30, State=Ready, NextRun 2026-07-04 07:30). Start-ScheduledTask 즉시테스트=LastTaskResult 0(성공)",
+        "★첫 실행 오염 발견: 소스 랜딩페이지 <title>을 15건 큐 등록(예: 'Ministry of Education(MOE)'·'연합뉴스'·'OpenAI News'). 실제 사건 아님=노이즈",
+        "정리(지시대로 보고 후): update_queue 되돌림(6항목 청결), 노이즈 daily_watch/pipeline_run 삭제",
+        "파이프라인 수정: RSS/피드 '기사 단위' 항목만 큐 등록. 랜딩페이지만 있는 소스는 '확인만(신규 기사 없음)'으로 daily_watch 표기(큐 미등록)",
+        "수정본 재실행: scored=0·queue_added=0(노이즈 제거). daily_watch=확인만20·검색skip11·실패3 정직 기록",
+        "한계(정직): 현 소스=랜딩/검색 페이지라 기사 항목 0 → 실제 매일 항목 확보엔 RSS 피드 URL/검색 API 필요(다음 단계)"
+      ],
+      "verification": {
+        "task_registered": "State=Ready, daily 07:30, LastTaskResult=0",
+        "no_pollution": "update_queue 6항목·자동등록 0(오염 정리됨)",
+        "honest_run": "daily_watch/pipeline_run=확인만20·기사0·검색skip11, queue 0",
+        "status_new_safe": "자동 등록분 없음(0), 있었을 때도 status=new·approved null 확인했었음",
+        "no_publish": "새 HTML 0, sitemap 39, 배포/영상/업로드 0, auto_publish=false"
+      },
+      "todo_next": ["소스에 RSS 피드 URL 추가 또는 검색 API(YouTube Data/뉴스 API) 연동→기사 항목 확보", "매일 07:30 자동 실행 결과 검수", "싱가포르 편 1차 편집"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "관측소 매일 자동실행 스케줄 파일(작업 스케줄러) — 심장박동. 자동등록 X(승인 후)",
       "changes": [
         "scripts/run_ai_education_daily_pipeline.bat(순수 ASCII, %~dp0, --write, 로그 저장, if errorlevel 처리)",
