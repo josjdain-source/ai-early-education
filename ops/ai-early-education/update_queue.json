@@ -177,15 +177,15 @@
       "source_category": "academic_research",
       "update_type": "research_context",
       "title": "LLMs as Teaching Assistants for Mathematics Exam Grading: Reliability, and Practical Usability",
-      "summary": "[자동관측] arXiv cs.CY Computers & Society (RSS) — Measure Once, Model Everywhere: Model-Based Per-Request Resource Consumption for HTTP | LLMs as Teaching Assistants for Mathematics Exam Grading: Reliability, and Practical Usability | A Practice Audi",
+      "summary": "arXiv:2607.01247 — LLM 6종을 '학부 이산수학 시험 채점 보조자'로 평가(부분점수·인간 채점 비교·신뢰도). 초등 조기교육 직접 연구 아님. AI가 '답변 생성'을 넘어 '학습 과정 평가(채점·피드백)'로 확장되는 흐름의 연구 신호. 연구노트=ops/ai-early-education/research_notes/uq_20260704_90_llm_exam_grading.md.",
       "education_relevance_score": 3,
-      "parent_question": "AI 답 확인법·AI 생성물 구분법을 어떻게 가르칠까?",
+      "parent_question": "AI가 아이 숙제를 '도와주는 것'과 아이 풀이를 '평가하는 것'은 어떻게 다른가? AI 피드백을 그대로 믿어도 되나?",
       "affected_pages": [
         "/ai-early-education/school-vs-home.html",
         "/ai-early-education/parent-rules.html"
       ],
       "impact_level": "low",
-      "status": "new",
+      "status": "reviewing",
       "source_url": "https://arxiv.org/abs/2607.01247",
       "trust_level": "B_academic_or_institutional",
       "can_update_site_fact": false,
@@ -195,7 +195,7 @@
       "hype_risk": "low",
       "requires_anonymization": false,
       "do_not_use_as_policy_fact": true,
-      "reason": "auto score 3: research: A=['teaching assistant', 'exam grading', 'grading'] child=False",
+      "reason": "정상 수확(자동 score3). 사람 검토(2026-07-04): 학부 수학 채점 연구=초등 직접적용 금지, 사이트 fact_update 하지 않음. 연구 신호+영상 주제 후보로만 보관. status new→reviewing, research note 작성.",
       "checked_by": "automated_pipeline",
       "approved_by": null,
       "applied_commit": null

@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "UQ-90 연구노트 정리(reviewing)+ARCHITECTURE.md 생성+통합조종판 반영",
+      "changes": [
+        "UQ-90(LLM 시험채점 논문 arXiv:2607.01247) 초록 확인=학부 이산수학 대상(초등 아님). status new→reviewing, summary/parent_question 정리, impact low 유지",
+        "research_notes/uq_20260704_90_llm_exam_grading.md(8단: 초등 직접적용 금지·부모 질문·영상후보·과장금지). reports/..._UQ90_RESEARCH_NOTE_REPORT.md",
+        "★ARCHITECTURE.md 생성(진실원본): 3축[A사이트 B관측소 C영상라인], 7축·자동파이프라인·Safety Guard·큐 승인게이트·영상 캡처 원칙",
+        "통합조종판 projects.json: ai-craft-kids status/next_action 관측소 반영 + 액션 5개 추가(obs-dryrun/obs-run/obs-queue/obs-architecture/obs-task-register)"
+      ],
+      "verification": {
+        "uq90": "status reviewing, approved/applied/published null, can_update_site_fact false",
+        "no_overclaim": "학부 대상 명시, 초등 직접적용 금지",
+        "architecture": "ARCHITECTURE.md 진실원본 생성",
+        "control_panel": "조종판 status/next_action/액션 반영, JSON 유효",
+        "no_publish": "사이트 HTML 0, sitemap 39, 배포/영상 0"
+      },
+      "todo_next": ["홈페이지 부모용 관제판 진단 보고서", "내일 07:30 무인운전 확인", "UQ-90 영상 주제 승인 여부"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "관측소 수동 실행(엔진 시험)=성공. 미탐/파일덮어쓰기 2건 발견→정리. 첫 정상 수확 1건",
       "changes": [
         "python ai_education_daily_pipeline.py --write 수동 1회 실행: 42소스·fetch28·실패3·검색skip11·25채점",
