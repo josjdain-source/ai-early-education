@@ -3,6 +3,23 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "5국 증거 스샷 10개 URL 사전 검증(WebFetch). KR-02 404 발견→교체 제안",
+      "changes": [
+        "10개 URL WebFetch 열람(캡처 아님). 후보 설명과 실제 화면 일치 검증",
+        "✅추천5(US-01/02·UK-01/02·KR-01) ⚠️조건부4(CN-01 헤드밴드회피·CN-02 금지조항 PDF·SG-01 가드레일문장·SG-02 배너) ❌교체1(KR-02=404)",
+        "KR-02 moe.go.kr 404→korea.kr #2(148912094) 교체 제안([정부공식] 동일)",
+        "reports/WORLD_AI_EDUCATION_SCREENSHOT_URL_REVIEW_REPORT.md + 승인표에 검증결과 주석(승인칸은 사람)"
+      ],
+      "verification": {
+        "verified": "10/10 열람. 5 완전일치, 4 부분(조건부), 1 404",
+        "labels_ok": "출처 성격 라벨 10개 전부 정확. CN-01 관영→CN-02 연구 교차 필수",
+        "risk": "CN-01 뇌파헤드밴드=감시 연상 회피, CN-02 랜딩은 근거 약함(PDF 필요)",
+        "no_capture": "캡처/다운로드/저장/렌더/업로드/HTML 없음, 승인칸 미표기, sitemap 41"
+      },
+      "todo_next": ["KR-02 교체 확정(korea.kr #2)", "사람 최종 승인(조건부 4 지침 포함)", "승인분만 캡처+출처바"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "5국 증거 스샷 10개 후보 확정(승인표+manifest 초안). 캡처 직전",
       "changes": [
         "5국×2장=10개 증거 스샷 후보 확정. evidence/world-ai-education-final-screenshot-approval.md(승인표, 승인칸 비움+캡처전 체크)",

@@ -18,6 +18,12 @@
 | ⬜ | 🇰🇷 한국 | KR-01 | [대한민국 정부 공식·정책브리핑] korea.kr | 2025 수학·영어·정보·국어(특수) AI 디지털교과서 우선 도입 | https://www.korea.kr/news/policyNewsView.do?newsId=148916075 | 도입 과목·학년 표기 상단 | §5 "학교 안으로" 증거 | KR-01-ai-digital-textbook-policy.png |
 | ⬜ | 🇰🇷 한국 | KR-02 | [대한민국 교육부 공식] moe.go.kr | 2025년, 교실에서 마주할 AI 디지털교과서 | https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=101774 | 교육부 안내 제목 + 도입 개요 | §5 "교실 도입" 보강 | KR-02-moe-digital-textbook-briefing.png |
 
+## URL 사전 검증 결과 (2026-07-04, WebFetch 열람 — 승인 아님)
+> 상세: reports/WORLD_AI_EDUCATION_SCREENSHOT_URL_REVIEW_REPORT.md
+- ✅ 바로 승인 가능(5): US-01·US-02·UK-01·UK-02·KR-01 (화면에 핵심 문구 실제 노출).
+- ⚠️ 조건부(4): **CN-01**=뇌파 헤드밴드 프레임 회피(AI 도구 프레임만) · **CN-02**=금지조항 문단/PDF 필요(랜딩은 원칙만) · **SG-01**=가드레일 문장 사용(세부는 하위 페이지) · **SG-02**=배너/도구 소개(상세 교실 화면 없음).
+- ❌ 교체 권장(1): **KR-02 = 404(페이지 없음)** → korea.kr #2 "2025년부터 수학·영어·정보교과 AI디지털교과서 도입"(https://www.korea.kr/news/policyNewsView.do?newsId=148912094)로 교체 제안([정부 공식] 동일).
+
 ## 사람 확인 체크(캡처 전)
 - [ ] 각 URL 생존·화면 내용 일치 확인
 - [ ] 라이선스: CGTN(관영, 짧은 인용)·CSET(연구, 인용)·미국 연방(public domain)·GOV.UK(OGL)·gov.sg(약관)·korea.kr/moe.go.kr(공공누리 KOGL) 표기 유형 확인
