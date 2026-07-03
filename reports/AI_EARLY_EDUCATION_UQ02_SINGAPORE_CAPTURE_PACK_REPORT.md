@@ -59,6 +59,16 @@
 | 영상 제작 / 업로드 / HTML / sitemap / 배포 | 0 ✓ |
 | 가짜 PNG 생성 | 안 함 ✓ (pending_manual) |
 
+## 7-B. 실제 Chrome 캡처 시도 결과 (2026-07-04)
+- **한 것**: claude-in-chrome으로 C02·C03/C04 공식 페이지를 실제로 열어 **눈으로 확인**(WebFetch보다 강한 검증).
+  - C02: 영어 원문 "Artificial intelligence in education" + "Singapore Government Agency Website" 배너 + "responsible and age- and developmental- appropriate use" 실견 ✅
+  - C03/C04: 영어 원문 제목 "Developing Age-progressive Framework for Responsible Use of GenAI for **Students and Parents** across Educational Levels" + "Published on: 04 Nov 2025" 실견 ✅ (영상 허리 확보)
+- **막힌 것 (2가지 환경 한계)**:
+  1. 스크린샷 도구가 **repo 경로로 파일 저장을 못 함**(경로 미반환, temp/assets에 파일 없음) → 진짜 PNG를 assets 폴더에 자동 안착 불가.
+  2. **Chrome 자동번역**이 본문을 한국어로 바꿔 원문 영어 캡처를 방해.
+- **결정**: 3가지 장애(타임아웃·자동번역·저장경로 부재)에서 브라우저 강행 중단. **가짜 PNG는 만들지 않음.** capture_status=pending_manual 유지, 실제 저장은 사람 몫으로 남김.
+- **manifest 반영**: C02/C03/C04에 `browser_view`(실견 내용) 기록.
+
 ## 8. 다음 단계
 1. `CAPTURE_INSTRUCTIONS.md`대로 브라우저에서 C02~C07 실제 캡처(주소창 포함) → 이 폴더에 저장 → manifest `capture_status=captured`·`capture_date` 기록.
    - (원하시면 제가 사용자 Chrome을 구동해 캡처를 시도할 수 있음 — 별도 승인 시.)

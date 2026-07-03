@@ -3,6 +3,29 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "UQ-02 싱가포르 실제 Chrome 캡처 시도 — 핵심 증거 실견 확인, 저장은 도구 한계로 미완(가짜 PNG 없음)",
+      "changes": [
+        "claude-in-chrome으로 C02·C03/C04 공식 MOE 페이지 실제 열람·눈 확인",
+        "C02: 영어 원문 'Artificial intelligence in education'+정부기관 배너+'responsible and age-/developmental-appropriate use' 실견",
+        "C03/C04: 영어 원문 제목 'Developing Age-progressive Framework for Responsible Use of GenAI for Students and Parents across Educational Levels'+'Published on 04 Nov 2025' 실견(영상 허리 확보)",
+        "환경 한계 2건: (1)스크린샷 도구가 repo 경로로 파일 저장 불가(경로 미반환) (2)Chrome 자동번역이 본문 한국어화",
+        "장애 3종(타임아웃·자동번역·저장경로 부재)에서 브라우저 강행 중단. 가짜 PNG 생성 안 함(assets .png 0)",
+        "evidence_manifest.json에 browser_view(실견 내용)·browser_attempt·manual_capture_tip 기록, capture_status=pending_manual 유지",
+        "capture pack report에 7-B(브라우저 시도 결과) 추가"
+      ],
+      "verification": {
+        "browser_confirmed": "C02·C03·C04 영어 원문 증거 실견(WebFetch보다 강한 확인)",
+        "no_fake_png": "assets .png 0개, 가짜 이미지 생성 안 함",
+        "limitation_recorded": "저장경로 부재+자동번역 정직 기록",
+        "no_code_change": "새 HTML 0, sitemap 39, 영상 업로드 0, UQ-02 applied 0"
+      },
+      "todo_next": [
+        "사람이 브라우저에서 자동번역 끄고 C02~C07 저장(주소창 포함)→manifest captured 기록",
+        "또는 편집 단계에서 화면 캡처. 그 후 대본 타임코드 병합(별도 승인)"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "UQ-02 싱가포르 캡처팩 — 공식 문구 실검증(6 confirmed/1 404), 가짜 PNG 안 만듦",
       "changes": [
         "assets/ai-early-education/singapore-evidence/ 신설: evidence_manifest.json + CAPTURE_INSTRUCTIONS.md",
