@@ -22,9 +22,13 @@
       "intended_timecode": "0:20~0:32",
       "use_type": "official_capture",
       "verification_status": "confirmed",
-      "capture_status": "pending_manual",
+      "capture_status": "captured",
       "browser_view": "2026-07-04 Chrome 실견: 영어 원문 제목 'Artificial intelligence in education' + 'Singapore Government Agency Website' 배너 + 'MOE is harnessing AI...' + 'responsible and age- and developmental- appropriate use' 확인. 단 저장 캡처는 실패(도구 저장경로 없음)+자동번역 개입.",
-      "caution": "URL 바 보이게 캡처. 'Primary 4 and above'는 학습보조도구(Learning Assistant) 한정 문구이니 '초등 전체 규칙'처럼 일반화 금지. 캡처 시 자동번역 끄기."
+      "caution": "URL 바 보이게 캡처. 'Primary 4 and above'는 학습보조도구(Learning Assistant) 한정 문구이니 '초등 전체 규칙'처럼 일반화 금지. 캡처 시 자동번역 끄기. | [auto 2026-07-04] text found on page (full)",
+      "actual_capture_file": "c02_moe_ai_education_20260704.png",
+      "captured_at": "2026-07-04",
+      "visible_text_confirmed": "Artificial intelligence in education",
+      "capture_method": "automated_browser_playwright"
     },
     {
       "cut_id": "C03",
@@ -38,9 +42,13 @@
       "intended_timecode": "0:35~0:48",
       "use_type": "highlight_zoom",
       "verification_status": "confirmed",
-      "capture_status": "pending_manual",
+      "capture_status": "captured",
       "browser_view": "2026-07-04 Chrome 실견: 제목이 영어 원문으로 렌더됨 — 'Developing Age-progressive Framework for Responsible Use of GenAI for Students and Parents across Educational Levels' + 'Published on: 04 Nov 2025' + 'Singapore Government Agency Website' 배너. 저장은 도구 한계로 미완(사람 저장 필요).",
-      "caution": "제목 라인만 짧게. 본문 장문 노출 금지. C04와 같은 페이지(제목 한 컷으로 C03/C04 겸용 가능). 캡처 시 자동번역 끄기."
+      "caution": "제목 라인만 짧게. 본문 장문 노출 금지. C04와 같은 페이지(제목 한 컷으로 C03/C04 겸용 가능). 캡처 시 자동번역 끄기. | [auto 2026-07-04] text found on page (full)",
+      "actual_capture_file": "c03_students_parents_20260704.png",
+      "captured_at": "2026-07-04",
+      "visible_text_confirmed": "Developing Age-progressive Framework for Responsible Use of GenAI for Students and Parents across Educational Levels",
+      "capture_method": "automated_browser_playwright"
     },
     {
       "cut_id": "C04",
@@ -54,9 +62,13 @@
       "intended_timecode": "0:48~0:58",
       "use_type": "highlight_zoom",
       "verification_status": "confirmed",
-      "capture_status": "pending_manual",
+      "capture_status": "captured",
       "browser_view": "2026-07-04 Chrome 실견: 제목 내 'Age-progressive' 영어 원문 확인(C03과 동일 페이지·동일 캡처). 저장은 도구 한계로 미완.",
-      "caution": "C03과 동일 제목 페이지. 같은 캡처의 다른 단어 강조로 처리, 중복 화면 길게 금지."
+      "caution": "C03과 동일 제목 페이지. 같은 캡처의 다른 단어 강조로 처리, 중복 화면 길게 금지. | [auto 2026-07-04] text found on page (full)",
+      "actual_capture_file": "c04_age_progressive_framework_20260704.png",
+      "captured_at": "2026-07-04",
+      "visible_text_confirmed": "Age-progressive Framework",
+      "capture_method": "automated_browser_playwright"
     },
     {
       "cut_id": "C05",
@@ -65,13 +77,17 @@
       "source_url": "https://www.moe.gov.sg/news/parliamentary-replies/20251104-developing-age-progressive-framework-for-responsible-use-of-genai-for-students-and-parents-across-educational-levels",
       "capture_date": null,
       "verification_date": "2026-07-04",
-      "visible_highlight_text": "A Parent's Guide to Generative AI tools for Learning ... which can be found on Parents Gateway",
+      "visible_highlight_text": "Guide to Generative AI tools for Learning | Parents Gateway | Parent",
       "korean_overlay_candidate": "부모용 안내서가 실제로 있다",
       "intended_timecode": "0:58~1:10",
       "use_type": "highlight_zoom",
       "verification_status": "confirmed",
-      "capture_status": "pending_manual",
-      "caution": "문장은 답변 본문에서 실제 확인됨(2026-07-04). Parents Gateway 원문 페이지 별도 URL은 캡처 전 확보(로그인 필요 시 답변 본문 인용 컷으로 대체)."
+      "capture_status": "captured",
+      "caution": "문장은 답변 본문에서 실제 확인됨(2026-07-04). Parents Gateway 원문 페이지 별도 URL은 캡처 전 확보(로그인 필요 시 답변 본문 인용 컷으로 대체). | [auto 2026-07-04] highlight text NOT found on page | [auto 2026-07-04] text found on page (full)",
+      "actual_capture_file": "c05_parent_guide_genai_20260704.png",
+      "captured_at": "2026-07-04",
+      "visible_text_confirmed": "Guide to Generative AI tools for Learning",
+      "capture_method": "automated_browser_playwright"
     },
     {
       "cut_id": "C06",
@@ -85,8 +101,12 @@
       "intended_timecode": "1:10~1:22",
       "use_type": "official_capture",
       "verification_status": "confirmed",
-      "capture_status": "pending_manual",
-      "caution": "'responsible'/'safe'는 본문 미노출(URL 경로만) → 그 단어를 화면 하이라이트로 쓰지 말 것. 제목/기관명만 사용."
+      "capture_status": "captured",
+      "caution": "'responsible'/'safe'는 본문 미노출(URL 경로만) → 그 단어를 화면 하이라이트로 쓰지 말 것. 제목/기관명만 사용. | [auto 2026-07-04] text found on page (full)",
+      "actual_capture_file": "c06_sls_guidance_genai_20260704.png",
+      "captured_at": "2026-07-04",
+      "visible_text_confirmed": "Guidance on Generative AI",
+      "capture_method": "automated_browser_playwright"
     },
     {
       "cut_id": "C07",
@@ -100,8 +120,12 @@
       "intended_timecode": "2:55~3:08",
       "use_type": "highlight_zoom",
       "verification_status": "confirmed",
-      "capture_status": "pending_manual",
-      "caution": "★AIEd 윤리 4원칙(Agency·Inclusivity·Fairness·Safety) 전용 페이지는 404(not_found, 2026-07-04) → 원칙명 화면 표기 금지. 대신 이 확인된 문장 사용. 'responsible use' 단어 자체는 본문 미노출이므로 하이라이트 금지."
+      "capture_status": "captured",
+      "caution": "★AIEd 윤리 4원칙(Agency·Inclusivity·Fairness·Safety) 전용 페이지는 404(not_found, 2026-07-04) → 원칙명 화면 표기 금지. 대신 이 확인된 문장 사용. 'responsible use' 단어 자체는 본문 미노출이므로 하이라이트 금지. | [auto 2026-07-04] text found on page (full)",
+      "actual_capture_file": "c07_responsible_use_genai_20260704.png",
+      "captured_at": "2026-07-04",
+      "visible_text_confirmed": "When used appropriately, these tools can support students in their learning when students have mastered basic concepts and thinking skills",
+      "capture_method": "automated_browser_playwright"
     },
     {
       "cut_id": "C07-alt-ethics",

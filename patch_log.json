@@ -3,6 +3,31 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "공식 자료 자동 캡처기 구축 + C02~C07 실캡처 6/6(실제 페이지, 가짜 0)",
+      "changes": [
+        "scripts/capture_evidence.py 신설 — Playwright(Python)+Pillow. 실제 Chromium으로 공식 URL 열고 문구 위치 캡처, 상단 출처 라벨 바 합성, manifest 갱신. 내장 Chromium은 자동번역 없어 원문 영어 유지",
+        "scripts/capture_evidence_README.md — 설치/실행/실패 보정/새 출처 추가/가짜 금지 원칙",
+        "C02~C07 캡처 결과 6/6 captured(assets/ai-early-education/singapore-evidence/*.png). C05는 곱슬아포스트로피·'...' 때문 최초 failed→부분문자열 교체 후 captured",
+        "육안 검증: C03(제목 Students and Parents 원문 영어)·C06(SLS Guidance 다른 도메인) 실제 페이지 확인",
+        "이미지=상단 출처 라벨 바(우리 부착, 명시)+하단 실제 페이지 캡처. 가짜 이미지 0",
+        "C07-alt 윤리4원칙 페이지=404→skip(인용 금지) 유지",
+        "manifest에 capture_status=captured/actual_capture_file/captured_at/visible_text_confirmed/capture_method 기록",
+        "reports/AI_EARLY_EDUCATION_EVIDENCE_CAPTURE_AUTOMATION_REPORT.md 생성"
+      ],
+      "verification": {
+        "captured": "6/6(C02~C07), partial 0, skip 1(404)",
+        "real_page": "C03·C06 육안 확인, 원문 영어, 출처 바 라벨 명시",
+        "png_valid": "6개 112~127KB, 1280x984",
+        "no_fake": "AI 생성 이미지 0, 미발견 문구 failed/skip 정직 기록",
+        "no_code_change": "새 HTML 0, sitemap 39, 영상 제작/업로드 0"
+      },
+      "todo_next": [
+        "캡처 검수→대본 타임코드 병합(별도 승인)",
+        "재사용: UNESCO/영국JCQ/한국교육부도 같은 스크립트로 evidence manifest만 만들어 캡처"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "UQ-02 싱가포르 실제 Chrome 캡처 시도 — 핵심 증거 실견 확인, 저장은 도구 한계로 미완(가짜 PNG 없음)",
       "changes": [
         "claude-in-chrome으로 C02·C03/C04 공식 MOE 페이지 실제 열람·눈 확인",
