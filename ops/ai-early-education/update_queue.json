@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "system": "AI 조기교육 데일리 관측소 — Update Queue",
+    "created": "2026-07-03",
+    "principle": "발견→요약→영향분석→초안→사람승인→반영. 승인 전 사이트/ sitemap 수정·배포 금지. 출처 URL·확인일 필수.",
+    "status_flow": ["new", "reviewing", "approved", "applied", "rejected"],
+    "update_types": ["note", "page_update", "video_topic", "fact_check", "hold"],
+    "impact_levels": ["low", "medium", "high"]
+  },
+  "items": [
+    {
+      "id": "UQ-EXAMPLE-0000",
+      "discovered_date": "2026-07-03",
+      "source_id": "kr-moe",
+      "title": "[예시 항목] 실제 발견 시 이 형식으로 추가 — 이 예시는 status=rejected로 스킵",
+      "summary": "이 항목은 큐 구조를 보여주기 위한 예시입니다. 실제 데이터 아님.",
+      "affected_pages": ["/ai-early-education/korea-ai-digital-textbook-controversy.html"],
+      "impact_level": "low",
+      "update_type": "hold",
+      "status": "rejected",
+      "reason": "예시 항목(실데이터 아님). 첫 실제 발견 시 UQ-YYYYMMDD-NN 형식으로 추가.",
+      "source_url": "",
+      "checked_by": "claude",
+      "approved_by": null,
+      "applied_commit": null
+    }
+  ]
+}

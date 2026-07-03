@@ -3,6 +3,31 @@
   "entries": [
     {
       "date": "2026-07-03",
+      "title": "AI 조기교육 데일리 관측소 운영 구조 구축(양식만, 자동발행/사이트수정 X)",
+      "changes": [
+        "전환: 정적 자료실 → 고정축+감시축+발행축의 작은 편집국",
+        "ops/ai-early-education/watch_sources.json — 출처 18개(국제기구·한국·싱가포르·중국·영국·에스토니아·핀란드·일본·인도·미국). 필드 id/country/source_type/name/url/check_frequency/volatility/related_pages/last_checked(전부 null=미확인)/note",
+        "ops/ai-early-education/update_queue.json — 발견→승인→반영 큐(예시1 rejected). status(new/reviewing/approved/applied/rejected)·update_type(note/page_update/video_topic/fact_check/hold)·impact",
+        "daily_watch_template.md / weekly_brief_template.md — 관측·브리핑 양식",
+        "content/longform/ai-early-education/production_calendar.md — 주간 리듬(매일 관측·공개 주2~3회), 5분 영상(4:30~5:30, source-library 연결, 쇼츠는 30초 파생)",
+        "reports/AI_EARLY_EDUCATION_DAILY_OBSERVATORY_PLAN.md — 전체 설계·사람승인 규칙·판단 기준",
+        "사람승인 게이트: Claude=발견/요약/영향분석/초안/큐등록까지. HTML·sitemap·배포·patch_log(반영)는 승인 후",
+        "새 부모용 HTML 0, 사이트 구조 변경 0, sitemap 39 유지, 자동발행 0, 영상 업로드 0"
+      ],
+      "verification": {
+        "json_valid": "watch_sources 18 sources·update_queue 1 item, JSON 유효",
+        "related_pages": "watch_sources related_pages 전부 실제 사이트 파일(깨짐 0)",
+        "no_code_change": "새 HTML 0, sitemap 39 유지, 기존 페이지 무손상",
+        "guardrails": "단정 금지(last_checked null·출처URL·확인일 필드), 자동발행 없음, SC 메타태그 대기 유지"
+      },
+      "todo_next": [
+        "첫 Daily Watch 1회 실행(daily_watch/2026-07-04.md) → last_checked 갱신",
+        "발견 시 update_queue 등록(UQ-YYYYMMDD-NN)",
+        "금요일 첫 주간 브리핑 초안 → 사람 승인 후 공개"
+      ]
+    },
+    {
+      "date": "2026-07-03",
       "title": "숏폼 1편 제작 패키지 + 영상 스타일 가이드 작성(장면형 포맷 고정, 업로드 X)",
       "changes": [
         "AI_EARLY_EDUCATION_VIDEO_STYLE_GUIDE.md 생성 — 시리즈 공통 포맷 고정(강의형 금지, 장면형). 9:16/50초/자막중심/캐릭터(부모·걱정괴물·약속표 방패·10분 실험)/색·자막 시스템/기억문장/사운드/금지규칙/이미지프롬프트 원칙",
