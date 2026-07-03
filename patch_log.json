@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "세계 AI교육 본편 업로드 패키지(제목/설명/댓글/썸네일/사이트카드). 업로드 안 함",
+      "changes": [
+        "production/world-ai-education-upload-package.md: 제목7(추천#1)·설명란·고정댓글·해시태그·썸네일문구·사이트카드·체크리스트",
+        "썸네일 1280x720(어두운 배경+세계지도+아이 질문말풍선, gen_world_ai_thumbnail.py)",
+        "출처=나라별 5개(WSJ/InvestigateTV/DfE/CNA/교육부)+근거보관소 유도. 면책 포함",
+        "reports/WORLD_AI_EDUCATION_UPLOAD_PACKAGE_REPORT.md"
+      ],
+      "verification": {
+        "package": "제목/설명/댓글/썸네일/카드 완비",
+        "no_upload": "YouTube 업로드/HTML/링크교체/배포 없음, sitemap 41"
+      },
+      "todo_next": [
+        "사람이 YouTube 업로드(미성년정책 확인)",
+        "링크 확보→video-countries 카드 링크교체(배포 승인)"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "final candidate 렌더(b-roll, 3:44). draft표기 없음, 6구간 통과, 업로드 승인대기",
       "changes": [
         "draft-v2 통과→final-candidate 렌더(CRF21/192k 화질↑, -shortest 미사용). 1280x720/30fps/h264, 225s",
