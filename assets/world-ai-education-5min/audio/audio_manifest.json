@@ -1,0 +1,17 @@
+{
+  "file": "world-ai-education-5min-narration.wav",
+  "mp3": "world-ai-education-5min-narration.mp3",
+  "duration_sec": 208.7,
+  "duration_mmss": "3:28",
+  "sample_rate": 44100,
+  "channels": 1,
+  "tts_engine": "edge-tts (Microsoft neural, online)",
+  "voice": "ko-KR-SunHiNeural",
+  "rate": "-10%",
+  "pitch": "+0Hz",
+  "tail_silence_sec": 2,
+  "created_at": "2026-07-04",
+  "status": "generated",
+  "license_note": "라이선스 합성 보이스(실존 인물 복제 아님)",
+  "notes": "내레이션 207s+무음2s. ★timeline 5:00보다 짧음(텍스트 1148자). timeline 조정 또는 내레이션 확장 필요."
+}

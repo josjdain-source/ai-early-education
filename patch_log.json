@@ -3,6 +3,23 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "본편 TTS 음성 생성(edge-tts SunHi). 길이 3:28<5:00 정직 보고",
+      "changes": [
+        "edge-tts ko-KR-SunHiNeural(-10% 차분) 내레이션 생성. tts_lab/edge_tts venv 사용",
+        "full ffmpeg(8.1.1)로 2초 무음 tail+wav/mp3(playwright ffmpeg는 mp3 디코딩 불가라 교체)",
+        "audio_manifest.json. wav(17MB) gitignore·mp3(1.8MB) 커밋",
+        "★길이 3:28(내레이션 3:26+무음2s) < timeline 5:00: 텍스트 1148자로 짧음. 가짜로 안 늘림→timeline 압축(A)/내레이션 확장(B)/무음채움(C) 방안 제시"
+      ],
+      "verification": {
+        "engine":"edge-tts SunHiNeural(라이선스 합성, 실존인물 아님)",
+        "tail":"끝 2초 무음 RMS 0.0 확인",
+        "length":"3:28(목표 4:40~5:30 미달, 정직 보고). 발음 자동청취 불가→사람 확인 권장",
+        "no_render":"영상 렌더/업로드/HTML/링크교체 없음, sitemap 41"
+      },
+      "todo_next":["길이방안 A/B/C 결정(권장 A timeline 압축)","본편 초벌 조립·렌더→검수"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "본편 pending 시각자산 13개 제작(인포8+해석카드5). timeline pending 0",
       "changes": [
         "production/gen_world_ai_images_batch2.py: IMG-05~16(12) + 해석카드5. IMG-01~04 톤 통일(무료 Pillow)",
