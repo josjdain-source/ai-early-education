@@ -3,6 +3,25 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "관측소 수동 실행(엔진 시험)=성공. 미탐/파일덮어쓰기 2건 발견→정리. 첫 정상 수확 1건",
+      "changes": [
+        "python ai_education_daily_pipeline.py --write 수동 1회 실행: 42소스·fetch28·실패3·검색skip11·25채점",
+        "발견①미탐: 'LLMs as Teaching Assistants for Exam Grading'(교육 관련)이 score1→A_STRONG에 teaching assistant/exam grading/grading/exam/pedagogy/curriculum/채점 추가",
+        "발견②파일덮어쓰기: 파이프라인이 수동 daily_watch/{date}.md(UQ-06 중국로봇 기록)를 클로버→ 자동출력을 '{date}_auto.md'로 분리(수동 파일 보존). 수동 2026-07-04.md 복원",
+        "재실행: scorer 55/55 유지, queue_added=1(UQ-20260704-90=Teaching Assistants 논문 score3, academic_research, status=new, approved null, do_not_use_as_policy_fact=true)=첫 정상 수확",
+        "자동 출력: daily_watch/2026-07-04_auto.md + pipeline_runs/2026-07-04.json"
+      ],
+      "verification": {
+        "engine_ok": "파이프라인 정상 동작, 노이즈 0(landing/search 큐 미등록)",
+        "miss_fixed": "Teaching Assistants 논문 score1→3, 미탐 해결. 테스트 55/55",
+        "file_separated": "수동 daily_watch 보존(UQ-06 grep 1), 자동은 _auto.md",
+        "harvest": "UQ-90 1건=실제 교육 arXiv, status=new(사람 검수 대상), 오염 아님",
+        "no_publish": "새 HTML 0, sitemap 39, 배포/영상/업로드 0, 스케줄러 무변경"
+      },
+      "todo_next": ["내일 07:30 무인 실행 확인(스케줄러)", "UQ-90 사람 검수(승인/반려)", "scorer 한국어 커버리지 추가 관찰"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "UQ-02 싱가포르 preview 리듬 개선(긴 정적 카드3→순차 등장 하위컷), 재렌더",
       "changes": [
         "make_ep02_subcards.py로 하위 카드 10개 생성: c08_step1~4·c10_school/home/both·c11_1/2/3(누적 reveal)",

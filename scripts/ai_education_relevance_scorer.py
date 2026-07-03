@@ -17,8 +17,9 @@ A_STRONG = [
     "teacher", "parent", "homework", "assessment", "ai tutor", "tutoring", "ai companion",
     "educational ai", "k-12", "k12", "elementary", "preschool", "kindergarten",
     "literacy", "child safety", "minors", "emotional dependency",
+    "teaching assistant", "exam grading", "grading", "exam ", "learners", "pedagogy", "curriculum",
     "아이", "어린이", "초등", "학생", "학교", "교실", "교사", "부모", "학부모", "숙제",
-    "유아", "미성년", "리터러시", "튜터",
+    "유아", "미성년", "리터러시", "튜터", "채점", "학습평가",
 ]
 # ── B. 중간 교육 연결 신호 (2~3)
 B_MID = [

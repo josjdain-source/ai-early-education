@@ -149,7 +149,8 @@ def main():
     if not dry:
         rp = guard_write_path(os.path.join(OPS, "pipeline_runs", f"{args.date}.json"), cfg)
         json.dump(runlog, open(rp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
-        dw = guard_write_path(os.path.join(OPS, "daily_watch", f"{args.date}.md"), cfg)
+        # 자동 출력은 '_auto.md'로 분리 → 사람이 쓴 daily_watch/{date}.md를 덮어쓰지 않음
+        dw = guard_write_path(os.path.join(OPS, "daily_watch", f"{args.date}_auto.md"), cfg)
         os.makedirs(os.path.dirname(dw), exist_ok=True)
         write_daily_watch(dw, args.date, fetches, candidates, qres, cfg)
 
