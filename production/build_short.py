@@ -85,9 +85,10 @@ def country_frame(key):
     p=f"{FR}/co_{key}.png"; im.convert("RGB").save(p); return p
 
 def kb(img,out,d,zin=True):
-    z=("min(zoom+0.0011,1.16)" if zin else "if(lte(zoom,1.0),1.16,max(1.001,zoom-0.0011))")
+    # ★full에서 시작하는 약한 줌인(1.0→1.05): 세로 프레임 글/자막 안 잘림
+    z="min(zoom+0.0006,1.05)"
     run([FF,"-hide_banner","-loglevel","error","-y","-loop","1","-i",img,"-t",f"{d}",
-      "-vf",f"scale=1300:2311,zoompan=z='{z}':d={int(d*30)}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1080x1920:fps=30,format=yuv420p",
+      "-vf",f"scale=1134:2016,zoompan=z='{z}':d={int(d*30)}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1080x1920:fps=30,format=yuv420p",
       "-c:v","libx264","-preset","veryfast","-crf","20","-r","30",out])
 
 async def tts_one(text,out):

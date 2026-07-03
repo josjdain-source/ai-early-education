@@ -19,15 +19,15 @@ BOLD="C\\:/Windows/Fonts/malgunbd.ttf"
 def run(cmd): subprocess.run(cmd,check=True)
 def dur(p): return float(subprocess.run([FP,"-v","error","-show_entries","format=duration","-of","default=nk=1:nw=1",p],capture_output=True,text=True).stdout.strip())
 
-def kb_in(img,out,d,zmax=1.18):  # 켄번즈 줌인
-    run([FF,"-hide_banner","-loglevel","error","-y","-loop","1","-i",img,"-t",f"{d}",
-      "-vf",f"scale=1600:900,zoompan=z='min(zoom+0.0010,{zmax})':d={int(d*30)}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1280x720:fps=30,format=yuv420p",
-      "-c:v","libx264","-preset","veryfast","-crf","20","-r","30",out])
-def kb_out(img,out,d,sub=None):  # 켄번즈 줌아웃(+자막)
-    vf=f"scale=1600:900,zoompan=z='if(lte(zoom,1.0),1.18,max(1.001,zoom-0.0010))':d={int(d*30)}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1280x720:fps=30"
+ZMAX=1.05   # ★약한 줌인(1.0→1.05): full 프레임에서 시작해 글 안 잘림
+ZRATE=0.0006
+def kb_in(img,out,d,zmax=ZMAX,sub=None):  # full에서 시작하는 약한 켄번즈 줌인(+선택 자막)
+    vf=f"scale=1400:788,zoompan=z='min(zoom+{ZRATE},{zmax})':d={int(d*30)}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1280x720:fps=30"
     if sub: vf+=f",drawtext=fontfile='{BOLD}':text='{sub}':fontcolor=white:fontsize=48:box=1:boxcolor=black@0.55:boxborderw=16:x=(w-tw)/2:y=84"
     vf+=",format=yuv420p"
     run([FF,"-hide_banner","-loglevel","error","-y","-loop","1","-i",img,"-t",f"{d}","-vf",vf,"-c:v","libx264","-preset","veryfast","-crf","20","-r","30",out])
+def kb_out(img,out,d,sub=None):  # (호환용) 이제 줌인으로 위임 — 글 안 잘리게
+    kb_in(img,out,d,sub=sub)
 def mapzoom(key,out):
     fr=f"{TMP}/mz_{key}"; MZ.gen(key,fr)
     run([FF,"-hide_banner","-loglevel","error","-y","-framerate","30","-i",f"{fr}/z%03d.png","-vf","format=yuv420p","-c:v","libx264","-preset","veryfast","-crf","20","-r","30",out])

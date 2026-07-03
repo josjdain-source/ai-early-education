@@ -37,12 +37,16 @@ def kicker(d,t,accent):
 
 def card(name,kick,lines,accent,gold_idx=1):
     im,d=bg(accent); kicker(d,kick,accent)
-    # 2줄 큰 카피(첫줄 흰, 둘째줄 골드 강조)
-    y=300
+    # ★안전 여백: 줌인(최대 1.05) 해도 안 잘리게 텍스트를 중앙 안전영역(x 100~1000, y 300~560)에 자동맞춤
+    SAFE_W=900  # 좌우 여백 크게(줌 크롭 대비)
+    y=310
     for i,ln in enumerate(lines):
         fs=88 if len(ln)<=13 else 74
-        f=F(KB,fs); col=GOLD if i==gold_idx else WHITE
-        d.text((72,y),ln,font=f,fill=col); y+=fs+18
+        f=F(KB,fs)
+        while d.textlength(ln,font=f)>SAFE_W and fs>40:  # 폭 초과 시 폰트 축소
+            fs-=2; f=F(KB,fs)
+        col=GOLD if i==gold_idx else WHITE
+        d.text((100,y),ln,font=f,fill=col); y+=fs+18
     im.convert("RGB").save(os.path.join(OUT,name)); print("saved",name)
 
 if __name__=="__main__":
