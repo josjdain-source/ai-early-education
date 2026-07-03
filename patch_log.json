@@ -3,6 +3,30 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "관측소 3축 확장(공식/기관·홈페이지/유튜브) + source taxonomy",
+      "changes": [
+        "source_taxonomy.json 신설 — 분류 단일 진실원본(source_category/source_type/use_policy/trust_level, 3축, default_policy_by_category, youtube 필드·키워드)",
+        "watch_sources.json: meta에 3축·taxonomy 참조 + 축2(기관: aiforeducation·commonsense·unicef·edu_company) 4개, 축3(유튜브 검색 en/schools/ko) 3개를 신규 필드로 추가. 기존 공식 18개는 기본정책 상속(재기입 없음). 총 25 출처",
+        "신규 필드: source_category/use_policy/trust_level/monetization_risk/language/region/topic_tags/can_update_site_fact/can_generate_video_topic/notes_for_use",
+        "update_queue update_types 확장(fact_update/explanation_pattern/parent_question/teaching_activity/source_lead 등)+type_rules(축1만 fact 수정)",
+        "daily_watch_template A/B/C 3섹션화, weekly_brief 확장, youtube_watch_template·web_resource_watch_template 신설",
+        "원칙: 유튜브=사실근거 금지(do_not_use_as_policy_fact, trend/explanation/topic만), 상업자료=상품추천 근거 금지, 사실수정은 축1(공식) 근거만",
+        "observatory PLAN에 3축 섹션 추가. reports/..._3AXIS_EXPANSION_REPORT.md 생성"
+      ],
+      "verification": {
+        "json_valid": "taxonomy/watch_sources/update_queue JSON 유효",
+        "axes_separated": "축2·축3이 use_policy·trust_level·can_update_site_fact=false로 공식과 분리",
+        "youtube_not_fact": "유튜브 do_not_use_as_policy_fact, fact_update 금지",
+        "sources": "25(축1 18+축2 4+축3 3), 기존 공식 구조 보존",
+        "no_code_change": "새 HTML 0, sitemap 39, 배포/영상제작 0"
+      },
+      "todo_next": [
+        "다음 Daily Watch에서 3축 병행 관측(A 공식/B 기관/C 유튜브)",
+        "축3 유튜브는 개별 영상 youtube_watch_template로 기록"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "공식 자료 자동 캡처기 구축 + C02~C07 실캡처 6/6(실제 페이지, 가짜 0)",
       "changes": [
         "scripts/capture_evidence.py 신설 — Playwright(Python)+Pillow. 실제 Chromium으로 공식 URL 열고 문구 위치 캡처, 상단 출처 라벨 바 합성, manifest 갱신. 내장 Chromium은 자동번역 없어 원문 영어 유지",

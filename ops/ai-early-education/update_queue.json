@@ -4,8 +4,9 @@
     "created": "2026-07-03",
     "principle": "발견→요약→영향분석→초안→사람승인→반영. 승인 전 사이트/ sitemap 수정·배포 금지. 출처 URL·확인일 필수.",
     "status_flow": ["new", "reviewing", "approved", "applied", "rejected"],
-    "update_types": ["note", "page_update", "video_topic", "fact_check", "hold"],
-    "impact_levels": ["low", "medium", "high"]
+    "update_types": ["fact_update", "page_update", "video_topic", "explanation_pattern", "parent_question", "teaching_activity", "source_lead", "fact_check", "hold", "note"],
+    "impact_levels": ["low", "medium", "high"],
+    "type_rules": "fact_update/page_update/fact_check는 축1(공식) 근거 있을 때만. 축2·축3(홈페이지·유튜브)는 explanation_pattern/parent_question/teaching_activity/video_topic/source_lead로만 등록(사실 근거 아님). 분류 정의=source_taxonomy.json."
   },
   "items": [
     {

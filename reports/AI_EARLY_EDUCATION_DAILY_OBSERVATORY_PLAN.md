@@ -10,6 +10,14 @@
 - **자주 바뀌는 축**: 각국 AI 교육 정책 · 한국 AIDT 이슈 · 학교 AI 가이드 · 연령 제한/보호자 동의 · 과제 윤리 · 국제기구 발표
 - **발행 축**: 매일 관측 / 주간 브리핑 / 5분 정밀 영상 / 필요 시 긴급 업데이트
 
+### 관측 3축 (2026-07-04 확장 · 분류 정의=source_taxonomy.json)
+1. **공식 정책/문서(축1)** = official_policy·international_org → **사실 근거.** 사이트 사실 수정의 유일 근거(can_update_site_fact=true).
+2. **홈페이지/기관 자료(축2)** = school_or_institution·nonprofit_or_research·education_company → **트렌드·실천 예시.** 사실 수정 불가. 공식성/상업성 구분(상업=상품 추천 근거 금지).
+3. **해외 유튜브(축3)** = youtube_channel·youtube_video → **부모에게 어떻게 설명하는지(말투·화면·질문·반응).** 사실 근거 아님. explanation_pattern/parent_question/video_topic로만.
+- 신뢰도: A_official > B_institutional > C_media_or_expert > D_community_or_creator > E_commercial_or_unverified
+- 사실은 축1에서 세우고, 실천은 축2, 설명 방식은 축3. **유튜브·상업 자료를 사실 근거로 쓰지 않는다.**
+- 신규 양식: `web_resource_watch_template.md`(축2), `youtube_watch_template.md`(축3), `source_taxonomy.json`(분류 단일 진실원본)
+
 ## 2. 생성한 파일
 | 파일 | 역할 |
 |---|---|
