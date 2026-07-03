@@ -3,6 +3,23 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "증거 스샷 10개 최종화: 크롭3+출처바 합성. ready_for_editing 10/10",
+      "changes": [
+        "production/finalize_evidence_images.py: 무관영역 화이트 마스킹+하단 불투명 출처바(94px, 출처성격+용도). final/ 10장 1280x720",
+        "크롭 3: CN-01(정치 사이드바+쿠키 제거, 헤드밴드 없음 재확인)·KR-01·KR-02(인기뉴스 사이드바 제거)",
+        "출처바 10개에 출처 성격 라벨 명시([중국 관영매체]/[미국 정부]/[영국 교육부 블로그] 등)",
+        "manifest: final_file·crop_status·attribution_status·ready_for_editing 반영. reports/..._EVIDENCE_IMAGE_FINALIZE_REPORT.md"
+      ],
+      "verification": {
+        "cn01_clean": "정치/헤드밴드/쿠키 전부 제거, 교실 AI 장면+CGTN 유지",
+        "kr_sidebar": "KR-01·KR-02 인기뉴스 사이드바 제거",
+        "ready": "10/10 ready_for_editing, rejected 0",
+        "no_render": "영상 렌더/업로드/HTML 없음, sitemap 41"
+      },
+      "todo_next": ["shotlist ②컷에 final evidence 연결", "본편 초벌 편집(증거3~5초+해석카드)"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "조건부 4개도 자동 캡처+검수: pass 3·partial 1. 10개 전부 사용가능",
       "changes": [
         "CN-01/CN-02/SG-01/SG-02 자동 캡처(manual-needed/). CN-01 1차 404(/p)→/p.html 재캡처 성공",
