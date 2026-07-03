@@ -3,6 +3,25 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "UQ-02 싱가포르 preview 리듬 개선(긴 정적 카드3→순차 등장 하위컷), 재렌더",
+      "changes": [
+        "make_ep02_subcards.py로 하위 카드 10개 생성: c08_step1~4·c10_school/home/both·c11_1/2/3(누적 reveal)",
+        "edit_timeline: C08(45s)→C08a~d 4컷·C10(60s)→C10a/b/c 3컷·C11(40s)→C11a/b/c 3컷. 총 12→19컷, 5:10 유지",
+        "40초 이상 정적 컷 0(최장 C01 30s). 공식 캡처 C02~C07 원문 변경 없음·6개 유지",
+        "preview GIF 재렌더(19컷). mp4는 최소 ffmpeg 한계로 GIF 대체(정직)",
+        "preview_notes v2 + reports/AI_EARLY_EDUCATION_UQ02_PREVIEW_REFINEMENT_REPORT.md"
+      ],
+      "verification": {
+        "rhythm": "정적 40s+ 컷 0, 순차 등장",
+        "length": "5:10(목표 내), 19컷 JSON 유효",
+        "evidence_intact": "C02~C07 6개 유지, 원문 변경 없음, 윤리4원칙 미사용",
+        "uq02_state": "evidence_merged(approved/applied/published 아님)",
+        "no_publish": "업로드/HTML/sitemap/배포 0, 스케줄러 무변경"
+      },
+      "todo_next": ["1차 편집(전환·자막번인·BGM·TTS)→검수→업로드(별도 승인)", "내일 07:30 자동 관측 첫 실운영 검수"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "scorer 교육 키워드 정밀화(3층 신호+카테고리 룰+ML용어 억제), 테스트 55/55",
       "changes": [
         "ai_education_relevance_scorer.py 재작성: A강한교육/B중간/C일반기술 3층, research/bigtech/news/official 카테고리 전용 룰, 감정·companion 전용, 감점(실적/칩/데이터센터)",
