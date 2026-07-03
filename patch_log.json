@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "본편 shotlist 증거 컷 배선(각 나라 3단). 26컷 타임라인",
+      "changes": [
+        "production/world-ai-education-5min-edit-shotlist.md(26컷)+edit-timeline.json: 각 나라 ①인포그래픽→②증거2→③부모해석",
+        "evidence 10개(final/) 전부 배선. 증거 컷 뒤 부모 해석 카드 연결(편집국 표준)",
+        "production/world-ai-education-evidence-cut-review.md(10개 검수표, 출처성격·구간·해석연결)",
+        "정직 표기: 인포그래픽 IMG-05~16·해석카드=pending(미생성). ready 13·pending 13",
+        "reports/WORLD_AI_EDUCATION_SHOTLIST_WIRING_REPORT.md"
+      ],
+      "verification": {
+        "wiring": "10/10 증거 배선, 각 나라 2장, 3단 구조",
+        "final_only": "출처바 내장 final만 사용, raw 미사용, CN-01 정치/헤드밴드 재유입 없음",
+        "pending_flagged": "인포그래픽8+해석카드5 pending 명시(편집 전 제작 필요)",
+        "no_render": "렌더/업로드/HTML/링크교체 없음, sitemap 41"
+      },
+      "todo_next": ["pending 인포그래픽/해석카드 제작", "TTS 음성", "timeline 조립→초벌 렌더→검수"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "증거 스샷 10개 최종화: 크롭3+출처바 합성. ready_for_editing 10/10",
       "changes": [
         "production/finalize_evidence_images.py: 무관영역 화이트 마스킹+하단 불투명 출처바(94px, 출처성격+용도). final/ 10장 1280x720",
