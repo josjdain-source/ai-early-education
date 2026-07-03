@@ -3,6 +3,22 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "5국 증거 스샷 10개 후보 확정(승인표+manifest 초안). 캡처 직전",
+      "changes": [
+        "5국×2장=10개 증거 스샷 후보 확정. evidence/world-ai-education-final-screenshot-approval.md(승인표, 승인칸 비움+캡처전 체크)",
+        "evidence/world-ai-education-screenshot-manifest-draft.json(10항목, pending/not_captured, 출처바 국영문)",
+        "출처 성격 라벨 검수: 10개 전부 명확. 중국만 관영매체(CGTN)→해외연구(CSET) 교차 필수",
+        "제외=상업블로그/위키(사실근거 아님). 보조=언론(자막 교차). reports/WORLD_AI_EDUCATION_SCREENSHOT_APPROVAL_REPORT.md"
+      ],
+      "verification": {
+        "candidates": "10개(CN/US/UK/SG/KR 각 2), 출처 성격 전부 라벨링",
+        "no_capture": "capture_status=not_captured, evidence-screenshots 폴더 미생성, 렌더/업로드/HTML 없음, sitemap 41",
+        "human_gate": "사람이 URL·라이선스 확인 후 승인→승인분만 캡처"
+      },
+      "todo_next": ["사람 10개 URL 확인·승인", "승인분 캡처+출처바 합성", "shotlist 삽입→본편 초벌"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "★한국 편 4칸 견본=5국 편집국 시리즈 완성(결론부)",
       "changes": [
         "한국 검색 소스 6개(실제): korea.kr 정책브리핑×2·moe.go.kr 교육부·서울경제·BBS·우리 자체해설(균형)",
