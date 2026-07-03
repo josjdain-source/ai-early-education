@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "★한국 편 4칸 견본=5국 편집국 시리즈 완성(결론부)",
+      "changes": [
+        "한국 검색 소스 6개(실제): korea.kr 정책브리핑×2·moe.go.kr 교육부·서울경제·BBS·우리 자체해설(균형)",
+        "근거: 2025 수학·영어·정보·국어(특수) 우선도입, 초3·4/중1/고, 수학 AI튜터링·영어 음성인식, 2026~28 확대",
+        "editorial/kr-ai-education-editorial-sample.md=결론부(4국 종합→한국 부모 행동). '학교 도입≠아이 습관 자동, 집에서 다시 묻기'",
+        "kr short-script+evidence/kr-...-plan. 정책 홍보/만능 배제, 쟁점은 korea-controversy 자체해설로 균형",
+        "reports/KR_AI_EDUCATION_EDITORIAL_SAMPLE_REPORT.md"
+      ],
+      "verification": {
+        "series_complete": "★5국(중/미/영/싱/한) 편집국 4칸 견본 전부 완성",
+        "conclusion": "한국=결론부, 4국을 한국 부모 오늘할일로 착지",
+        "real_sources": "korea.kr/moe.go.kr 검색 확인, 공공누리 캡처 전 사람 확인",
+        "no_capture": "candidate_found만, 캡처/렌더/업로드/HTML 없음, sitemap 41"
+      },
+      "todo_next": ["한국 견본 검수", "5국 캡처 후보 확정(각 2장)→증거 스샷 캡처+출처바", "5분 본편 증거 삽입→쇼츠6"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "싱가포르 편 4칸 견본(5국 중 4국 완성). 안전한 틀 안에서 AI",
       "changes": [
         "싱가포르 검색 소스 6개(실제): MOE AI in education·MOE About AI in SLS·GovTech·MOE 국회답변·OpenGov Asia·(상업블로그 지양)",
