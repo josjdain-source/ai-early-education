@@ -3,6 +3,27 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "문서스샷→영상장면 전환 조사+KR 1장 캡처. 공식영상=스튜디오 실증",
+      "changes": [
+        "문서 스샷 10장 본편 제외(README-role.md, 근거 보관용). 본편 evidence=실제 영상 장면으로 전환",
+        "yt-dlp로 2건 다운로드 검증: 싱가포르 SLS Spotlight=스튜디오패널(부적합), 한국 AI디지털교과서=부스+제품UI(캡처)",
+        "KR-video-scene-01(AI 디지털교과서 영어 발음AI평가 UI, MOE Bett2025)+출처바 → video-scenes/final",
+        "candidates/selection 문서: 중국 대표작=헤드밴드(제외), 영국=teacherless(주의), 미국=footage부족",
+        "reports/WORLD_AI_EDUCATION_VIDEO_SCENE_CAPTURE_REPORT.md"
+      ],
+      "verification": {
+        "honest": "공식영상=스튜디오/부스/화면 실증(교실 아님), 뉴스=프레임위험(헤드밴드 등)",
+        "captured": "KR 1장(제품UI). 나머지4국 보류=사람 프레임 선별 필요",
+        "no_render": "렌더/업로드/HTML 없음, sitemap 41",
+        "cleanup": "임시 대용량 다운로드 정리"
+      },
+      "todo_next": [
+        "전략 결정(뉴스broll선별/제품UI/인포그래픽)",
+        "보류 4국 장면 확보→타임라인 evidence 교체"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "본편 검수용 draft mp4 렌더(3:45). A/V 섹션 싱크 정렬",
       "changes": [
         "full ffmpeg 8.1.1로 이미지26+TTS+자막 조립 → world-ai-education-compact-draft-v1.mp4(1280x720/30fps/h264, 3:45)",
