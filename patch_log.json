@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "미국 편 4칸 견본(중국 틀 복제) + 출처 성격 표기 원칙 고정",
+      "changes": [
+        "EDITORIAL_STANDARD 3-1 추가: 출처 성격 라벨 필수([정부발표]/[관영·친정부 매체]/[해외언론]/[해외연구기관]/[국제기구]/[교육매체]/[개인]). 관영 성격 숨기지 않음",
+        "중국 편 출처 라벨 소급 수정: CGTN/Global Times=중국 관영·친정부, CSET=해외 연구, SCMP=해외 언론, gov.cn=중국 정부",
+        "미국 편 검색 소스 6개(실제): White House 행정명령(2025-04-23)·ai.gov·교육부 AI툴킷(ERIC)·Forbes·eSchoolNews·CDT",
+        "editorial/us-ai-education-editorial-sample.md(4칸: AI리터러시=이해·의심·고쳐쓰기)+short-script+evidence/us-...-screenshot-plan",
+        "reports/US_AI_EDUCATION_EDITORIAL_SAMPLE_REPORT.md"
+      ],
+      "verification": {
+        "source_character": "미국=정부공식 중심 / 중국=관영매체 대비. 부모가 '주장 vs 외부해석' 구분",
+        "real_sources": "whitehouse.gov/ai.gov/ED.gov(ERIC) 등 검색 확인, 캡처 전 사람 확인",
+        "balanced": "미국 찬양/정치선전 없음, 성과 단정 없음",
+        "no_capture": "candidate_found만, 캡처/렌더/업로드/HTML 없음, sitemap 41"
+      },
+      "todo_next": ["미국 견본 검수", "영국 편 복제", "그후 싱가포르·한국"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "중국 편 4칸 편집 견본(EDITORIAL_STANDARD 첫 실증). 실제 소스 검색",
       "changes": [
         "웹 검색으로 실제 원자료 6개 확보(임의 URL 아님): gov.cn·CGTN×3·CSET Georgetown·Global Times/SCMP",

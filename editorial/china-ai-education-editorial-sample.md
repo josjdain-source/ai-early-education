@@ -18,14 +18,15 @@
 
 ## 3. 증거 스샷 / 원본 링크 (검색 확인 후보 — 최종 확정·캡처는 사람)
 > 우선순위: 정부/공식 > 공영방송·주요 언론 > 연구기관. 스샷 1~2장·짧게·출처 바 필수. 자세한 캡처 계획=evidence/china-ai-education-screenshot-plan.md
-1. **[정부·공식] gov.cn** — "New guideline stresses on AI-based education" (2025-04) · https://english.www.gov.cn/policies/policywatch/202504/18/content_WS6801bda9c6d0868f4e8f1da9.html — "학교 안으로" 근거(정부 발표, 최우선).
-2. **[공영방송] CGTN** — "China advances AI curriculum to cover full basic education" (2025-05-13) · https://news.cgtn.com/news/2025-05-13/China-advances-AI-curriculum-to-cover-full-basic-education-1DkKRrHzd9C/p.html — 커리큘럼 전면 확대 화면.
-3. **[공영방송·영상] CGTN** — "From robots to reality: China's classrooms get an AI makeover" (2025-09-08) · https://news.cgtn.com/news/2025-09-08/From-robots-to-reality-China-s-classrooms-get-an-AI-makeover-1GvoPiiXn7G/p.html — 실제 교실 AI 수업 영상(스샷 최적).
-4. **[연구기관·원문 번역] CSET Georgetown** — "Guide to Using Generative AI in Primary and Secondary Schools (2025 Edition)" · https://cset.georgetown.edu/publication/china-school-gen-ai-use-guide-2025/ — 생성형 AI 사용 제한 원문 번역(과의존 경계 근거).
-5. **[주요 언론] Global Times** — "China issues guidelines to promote AI education..." (2025-05) · https://www.globaltimes.cn/page/202505/1333878.shtml — 가이드라인 발표 보도.
-6. **[주요 언론] SCMP** — "Hangzhou makes AI classes compulsory in schools..." · https://www.scmp.com/economy/china-economy/article/3323082/ — '필수' 각도 보조.
+1. **[중국 정부 발표] gov.cn** — "New guideline stresses on AI-based education" (2025-04) · https://english.www.gov.cn/policies/policywatch/202504/18/content_WS6801bda9c6d0868f4e8f1da9.html — "학교 안으로" 근거(정부 공식, 최우선).
+2. **[중국 관영·친정부 매체] CGTN** — "China advances AI curriculum to cover full basic education" (2025-05-13) · https://news.cgtn.com/news/2025-05-13/China-advances-AI-curriculum-to-cover-full-basic-education-1DkKRrHzd9C/p.html — 커리큘럼 전면 확대(관영 보도로 표기).
+3. **[중국 관영·친정부 매체·영상] CGTN** — "From robots to reality: China's classrooms get an AI makeover" (2025-09-08) · https://news.cgtn.com/news/2025-09-08/From-robots-to-reality-China-s-classrooms-get-an-AI-makeover-1GvoPiiXn7G/p.html — 실제 교실 화면(스샷 최적, **관영 매체 화면임을 표기**).
+4. **[해외 연구기관·원문 번역] CSET Georgetown** — "Guide to Using Generative AI in Primary and Secondary Schools (2025 Edition)" · https://cset.georgetown.edu/publication/china-school-gen-ai-use-guide-2025/ — 생성형 AI 사용 제한 원문 번역(과의존 경계 근거, 외부 기관 해석).
+5. **[중국 관영·친정부 매체] Global Times** — "China issues guidelines to promote AI education..." (2025-05) · https://www.globaltimes.cn/page/202505/1333878.shtml — 가이드라인 발표(관영 보도로 표기).
+6. **[해외 언론] SCMP(홍콩)** — "Hangzhou makes AI classes compulsory in schools..." · https://www.scmp.com/economy/china-economy/article/3323082/ — '필수' 각도(독립 언론 보조).
 
-**추천 최종 2장:** ③ CGTN 교실 영상(=학교 안으로, 실제 화면) + ④ CSET 생성형 AI 사용 가이드(=과의존 경계 근거). 정부 근거는 ①로 자막 보강.
+**★출처 성격 균형:** ②③⑤는 **중국 관영·친정부 매체**(중국이 이렇게 '주장'한다) / ④는 **해외 연구기관 해석** / ⑥은 **해외 언론** / ①은 **중국 정부 발표**. 관영 화면만으로 단정하지 말고, 반드시 해외 연구·언론(④⑥)과 교차해 "중국이 주장 vs 외부가 확인"을 부모가 나눠 보게.
+**추천 최종 2장:** ③ CGTN 교실 화면(=학교 안으로, 실제 화면, **관영 매체 표기**) + ④ CSET 가이드(=과의존 경계, **해외 연구기관**). 정부 근거는 ①로 자막 보강.
 
 ## 4. 부모가 오늘 할 일
 오늘 아이에게 이렇게 시켜 보세요(3단계, 5분):
