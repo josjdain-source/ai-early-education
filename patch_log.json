@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "제작 구조 전환: 해외 증거 스샷 3단 방식(A안 16장 직접생성 중단)",
+      "changes": [
+        "방향변경: 해외 사례를 직접 그린 이미지로만 X → 해외 유튜브/뉴스/공식 화면 스샷을 '증거 컷'으로 인용(신뢰도)",
+        "3단 구조: ①인포그래픽(제작)→②증거 스샷(출처 바)→③부모 해석 카드. 비율 40/40/20",
+        "evidence/ 신규 3파일: sources(국가별 소스 후보·탐색가이드)·screenshot-plan(3단 배치)·screenshot-manifest(6슬롯 pending)",
+        "production shotlist/image-prompts v2 수정(인포+증거 혼합). IMG-01~04는 각 나라 ①컷으로 유지",
+        "★임의 URL 생성 금지=소스 전부 pending_source(사람 확정). 실제 캡처/다운로드 없음"
+      ],
+      "verification": {
+        "plan_only": "설계·계획 문서만. 스샷 다운로드/캡처/렌더/업로드/HTML 없음",
+        "citation_rule": "출처 바 필수·짧게·클립/음성 금지·재구성 금지·공포조장/국가우열 금지",
+        "no_fabrication": "URL/제목/게시일 pending(지어내지 않음)",
+        "sitemap": "41 유지"
+      },
+      "todo_next": ["국가별 실제 소스 영상/페이지 확정(URL)", "manifest 입력→캡처+출처바", "부족분 인포/공식페이지 보완→TTS→편집"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "본편 이미지 1차 톤 고정(IMG-01~04). gpt-image 결제한도→무료 인포그래픽",
       "changes": [
         "정직보고: gpt-image-1 billing_hard_limit_reached(장부 확인)→실패확정 유료호출 안던짐. 무료 Pillow 플랫 인포그래픽으로",

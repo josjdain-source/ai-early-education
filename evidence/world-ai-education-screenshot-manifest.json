@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "video": "세계 AI교육 5분 본편",
+    "created": "2026-07-04",
+    "status": "계획 단계. URL/게시일/캡처 전부 pending(사람 확정). 실제 다운로드/캡처 없음.",
+    "rule": "공식>정부·교육부>공영·주요언론>교육매체>개인유튜버(보조). 스샷 1~2장·출처바 필수·짧게. 클립/음성/재구성 금지. 임의 URL 생성 금지(사람 확정).",
+    "citation_bar_ko": "출처: YouTube · {channel} · {title} · {date} / 용도: 해외 AI교육 사례 설명을 위한 짧은 화면 인용",
+    "citation_bar_en": "Source: YouTube / {channel} / {title} / {date} — Used as brief visual evidence for educational commentary."
+  },
+  "screenshots": [
+    {"id": "CN-evidence-01", "country": "중국", "topic": "AI 정규수업 도입", "filename": "CN-evidence-01-youtube-title.png",
+     "source_title": null, "channel_or_org": null, "url": null, "published_date": null, "capture_timecode": null,
+     "used_in_cut": "중국 ② 증거", "purpose": "학교 안 AI 확대 사례 설명", "citation_text": null,
+     "license_note": "공식/언론 우선. 인용·교육 목적 짧은 화면.", "source_priority": null, "status": "pending_source"},
+    {"id": "US-evidence-01", "country": "미국", "topic": "AI 리터러시/교사 연수", "filename": "US-evidence-01-ai-literacy.png",
+     "source_title": null, "channel_or_org": null, "url": null, "published_date": null, "capture_timecode": null,
+     "used_in_cut": "미국 ② 증거", "purpose": "AI 리터러시 강조 사례 설명", "citation_text": null,
+     "license_note": "교육부/교육기관 우선.", "source_priority": null, "status": "pending_source"},
+    {"id": "UK-evidence-01", "country": "영국", "topic": "학교 AI 가이드/교사 책임", "filename": "UK-evidence-01-teacher-responsibility.png",
+     "source_title": null, "channel_or_org": null, "url": null, "published_date": null, "capture_timecode": null,
+     "used_in_cut": "영국 ② 증거", "purpose": "교사·학교 책임 강조 사례 설명", "citation_text": null,
+     "license_note": "DfE/JCQ/BBC 우선.", "source_priority": null, "status": "pending_source"},
+    {"id": "SG-evidence-01", "country": "싱가포르", "topic": "학습 플랫폼 AI 가드레일", "filename": "SG-evidence-01-ai-platform.png",
+     "source_title": null, "channel_or_org": null, "url": null, "published_date": null, "capture_timecode": null,
+     "used_in_cut": "싱가포르 ② 증거", "purpose": "안전장치 있는 AI 활용 사례 설명", "citation_text": null,
+     "license_note": "MOE/IMDA/CNA 우선.", "source_priority": null, "status": "pending_source"},
+    {"id": "KR-evidence-01", "country": "한국", "topic": "AI 디지털교과서 도입", "filename": "KR-evidence-01-digital-textbook.png",
+     "source_title": null, "channel_or_org": null, "url": null, "published_date": null, "capture_timecode": null,
+     "used_in_cut": "한국 ② 증거", "purpose": "AI 디지털교과서 도입 사례 설명", "citation_text": null,
+     "license_note": "교육부/KERIS/주요언론 우선. 논쟁 단정 금지.", "source_priority": null, "status": "pending_source"},
+    {"id": "GLOBAL-evidence-01", "country": "공통", "topic": "국제 뉴스 기회·위험", "filename": "GLOBAL-evidence-01-news-concern.png",
+     "source_title": null, "channel_or_org": null, "url": null, "published_date": null, "capture_timecode": null,
+     "used_in_cut": "공통 ② 증거", "purpose": "세계 논의 균형 설명(공포 조장 배제)", "citation_text": null,
+     "license_note": "UNESCO/OECD/국제언론 우선.", "source_priority": null, "status": "pending_source"}
+  ]
+}
