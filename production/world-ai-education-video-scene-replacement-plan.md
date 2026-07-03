@@ -19,3 +19,8 @@
 
 ## 상태
 - **계획만.** timeline JSON 미수정, 렌더 미실행. 사람이 UK 방안 확정 후 timeline 재조립.
+
+## 확정 반영 (2026-07-04, UK=A안)
+- 실행됨: production/world-ai-education-broll-edit-timeline.json / -shotlist.md 생성.
+- 4국(CN·US·SG·KR)=영상장면 1컷 / 영국=UK-01 DfE 문서 유지(teacherless 금지). 둘째 evidence 5컷 제거→해석카드 흡수. 총 3:44 유지.
+- timeline JSON 실제 반영 완료. 렌더는 draft-v2에서.
