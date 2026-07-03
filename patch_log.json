@@ -1,0 +1,30 @@
+{
+  "project": "아이와 함께 배우는 생성형 AI / AI 조기교육 (ai-craft-kids)",
+  "entries": [
+    {
+      "date": "2026-07-03",
+      "title": "부모용 출력 자료 허브 downloads.html 신설",
+      "changes": [
+        "신규 페이지 ai-early-education/downloads.html 생성 — '부모용 AI 조기교육 출력 자료 모음' 허브",
+        "구성 6단: 왜 필요한가 / 지금 쓸 수 있는 자료(printable-checklist·checklist) / 곧 추가할 자료(예정 4종) / 사용 순서 / 주의점 / 관련 읽기",
+        "핵심 개념: 실제 파일 다운로드가 아니라 '인쇄용 HTML 보기' 허브(브라우저 인쇄로 한 장). PDF 생성 없음",
+        "'예정' 자료(약속표/기록지/연령카드/요약지)는 링크하지 않고 예정 표시만 — 깨진 링크 0",
+        "내부 연결 추가: index.html 히어로에 '🖨️ 출력 자료 모음' 링크, printable-checklist/checklist/parent-rules/home-experiments/start-here 하단 추천글에 downloads 링크",
+        "sitemap.xml에 downloads.html 추가 (35 → 36)",
+        "조종판 projects.json: live-downloads·downloads-report 액션 추가, status/next_action 갱신"
+      ],
+      "verification": {
+        "local_http": "downloads.html / printable-checklist.html / 코너 대문 모두 200 (python http.server 8123)",
+        "internal_links": "downloads.html 내부 링크 10종 전부 실존 파일로 확인(OK)",
+        "no_broken_preview_links": "예정 자료 4종은 예정 표시만, 미존재 파일 링크 없음",
+        "guardrails": "PDF 0건, printable-rules/experiment-log/age-cards 파일 미생성(정책 준수), 광고성 CTA·특정 AI 서비스 추천 없음",
+        "sitemap": "loc 36개, downloads 1건 반영",
+        "projects_json": "JSON 유효성 통과"
+      },
+      "todo_next": [
+        "예정 3종 실제 출력본 제작: printable-rules(약속표) / experiment-log(기록지) / age-cards(연령카드)",
+        "완성 시 downloads.html의 '곧 추가할 자료'를 실제 링크로 승격"
+      ]
+    }
+  ]
+}
