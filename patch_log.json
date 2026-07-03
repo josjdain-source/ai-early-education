@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "final candidate 렌더(b-roll, 3:44). draft표기 없음, 6구간 통과, 업로드 승인대기",
+      "changes": [
+        "draft-v2 통과→final-candidate 렌더(CRF21/192k 화질↑, -shortest 미사용). 1280x720/30fps/h264, 225s",
+        "화면 draft/검수 표기 없음 확인(파일명만). 6구간 재검수 통과(CN 헤드밴드없음·US교실·UK DfE·SG태블릿·KR UI·CTA)",
+        "draft-v1/v2 보존. 조종판 today-video+액션 final-candidate로 갱신(로컬)",
+        "render-log+reports/WORLD_AI_EDUCATION_FINAL_CANDIDATE_RENDER_REPORT.md. mp4 gitignore"
+      ],
+      "verification": {
+        "final": "3:44, 4국 실영상+영국문서, 문제컷 0",
+        "no_upload": "업로드/HTML/링크교체 없음, sitemap 41"
+      },
+      "todo_next": [
+        "업로드 승인 대기",
+        "승인시 플랫폼 업로드→video-countries 링크 교체(별도 승인)"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "draft-v2 렌더(b-roll 21컷·3:44). 실제 교실영상 4국+영국문서, 6구간 검수 통과",
       "changes": [
         "b-roll timeline로 draft-v2 렌더(ffmpeg 8.1.1, -shortest 미사용→CTA 안잘림). 1280x720/30fps/h264, 225s",

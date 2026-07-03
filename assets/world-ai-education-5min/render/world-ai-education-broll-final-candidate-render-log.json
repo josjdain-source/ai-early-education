@@ -1,0 +1,20 @@
+{
+  "render_status": "success",
+  "output_file": "assets/world-ai-education-5min/render/world-ai-education-broll-final-candidate.mp4",
+  "duration": 225.0,
+  "duration_mmss": "3:44",
+  "resolution": "1280x720",
+  "fps": 30,
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "crf": 21,
+  "audio_bitrate": "192k",
+  "timeline_file": "production/world-ai-education-broll-edit-timeline.json",
+  "image_count": 21,
+  "broll_scene_count": 4,
+  "document_evidence_count": 1,
+  "draft_marking": "none(화면 표기 없음, 파일명만 final-candidate)",
+  "created_at": "2026-07-04",
+  "is_final_candidate": true,
+  "uploaded": false
+}
