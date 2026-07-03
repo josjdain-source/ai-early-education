@@ -39,6 +39,17 @@
 - 반복되는 부모 질문 / 잘 통하는 설명 구조 / 5분 영상·쇼츠 소재:
 - 등록: **video_topic / explanation_pattern / parent_question** (do_not_use_as_policy_fact)
 
+## G. AI 산업/빅테크 변화 (교육 연결성만 번역, 메인 뉴스 아님)
+- 오늘의 AI 산업 뉴스(g-bigtech-labs·g-ai-robotics-companion·g-industry-media):
+- 관련 기업/기술:
+- **조기교육 연결성 점수(0~5)**: (0~2=대개 hold_no_education_link, 3+=등록 가능)
+- 연결 영역(해당 체크): ☐학습 도구 ☐검색/정보 확인 ☐숙제/평가 ☐감정/친밀감/의존 ☐AI 로봇/장난감/기기 ☐영상/이미지 생성 ☐개인정보/안전 ☐미래 직업/진로
+- 부모에게 중요한 질문:
+- 사이트 반영 필요? (기업발표=기술 변화 근거로만, 정책 fact 아님 → can_update_site_fact=false)
+- 5분 영상 후보? / 보류 이유(교육 연결 없음·과장(hype)):
+- 등록: **industry_signal / technology_shift / parent_awareness_topic / future_risk_signal / child_safety_signal / ai_companion_issue / ai_device_environment** (연결성<3이면 hold_no_education_link)
+- ⚠️ 미성년자·감정·친밀감·의존 뉴스는 caution 상향
+
 ## 종합
 - 오늘 새 변화: 있음/없음(정직)
 - update_queue 등록(A~F 구분):

@@ -5,7 +5,7 @@
     "principle": "정책은 바뀐다. 단정 금지. 각 확인은 출처 URL + 확인일 기록. last_checked=null은 아직 미확인(정직 표기).",
     "url_disclaimer": "url은 각 기관의 안정적 공식 랜딩/섹션. 첫 Daily Watch 때 실제 정책 페이지 딥링크를 확인해 note에 갱신할 것.",
     "taxonomy_ref": "분류 정의·기본정책·키워드·학생사례 규칙은 source_taxonomy.json 참조(단일 진실원본).",
-    "six_axes": "A 공식정책/국제기구(사실근거·사이트수정 가능) · B 뉴스(논란·변화 감지, 공식확인 전 사실수정 금지) · C 학회/논문(연구 흐름) · D 학교현장/교사(수업 방식, 단일사례 일반화 금지) · E 학생 프로젝트/대회(실제 사용 사례, 미성년자 보호 필수) · F 유튜브/기관/부모커뮤니티(설명방식·질문, 사실근거 아님).",
+    "seven_axes": "A 공식정책/국제기구(사실근거·사이트수정 가능) · B 뉴스(논란·변화 감지, 공식확인 전 사실수정 금지) · C 학회/논문(연구 흐름) · D 학교현장/교사(수업 방식, 단일사례 일반화 금지) · E 학생 프로젝트/대회(실제 사용 사례, 미성년자 보호 필수) · F 유튜브/기관/부모커뮤니티(설명방식·질문, 사실근거 아님) · G AI산업/빅테크(교육 연결성만 번역, 메인뉴스 아님, 기업발표는 official보다 낮은 신뢰·정책fact 아님, 연결성<3 hold).",
     "existing_sources_classification": "kr-media-yna=news_media(D). inst-*=nonprofit/education_company(F). yt-*=youtube_video(F). 나머지 초기 official/international 18개는 축A로 source_taxonomy.default_policy_by_category 상속(use_policy=fact_source·A·can_update_site_fact=true). 신규 축 출처는 아래 개별 필드로 명시.",
     "student_data_rule": "미성년자 이름/얼굴/학교 특정 자료 영상 직접 노출 금지. 흐림/일반화·'한 학교/한 수업 사례'·재구성 카드 우선. requires_anonymization=true인 출처는 직접 캡처 금지."
   },
@@ -526,6 +526,56 @@
       "can_use_as_student_example": true, "can_update_site_fact": false, "can_generate_video_topic": true,
       "language": "mixed", "region": "global", "topic_tags": ["student_project", "student_example"],
       "notes_for_use": "축E. ★미성년자 보호 최우선: 이름/얼굴/학교 특정 금지, 흐림/일반화, '한 학교 사례', 작품 이미지 권리확인 전 금지, 재구성 카드 우선, 성과 과장 금지, 단일사례 일반화 금지. 사실 근거 아님."
+    },
+
+    {
+      "id": "g-bigtech-labs",
+      "country": "global", "source_type": "news",
+      "name": "빅테크/AI 랩 공식 블로그·뉴스 (OpenAI·Google/DeepMind·Meta AI·Microsoft·Apple·NVIDIA·Anthropic·xAI)",
+      "url": "https://openai.com/news/ ; https://deepmind.google/discover/blog/ ; https://ai.meta.com/blog/ ; https://blogs.microsoft.com/ai/ ; https://machinelearning.apple.com/ ; https://blogs.nvidia.com/ ; https://www.anthropic.com/news ; https://x.ai/news",
+      "check_frequency": "weekly", "volatility": "high",
+      "related_pages": ["/ai-early-education/parent-faq.html", "/ai-early-education/for-parents.html"],
+      "last_checked": null,
+      "source_category": "ai_lab_release", "use_policy": "technology_shift", "trust_level": "B_company_official",
+      "topic_tags": ["ai_model", "ai_agent", "on_device_ai", "ai_search"],
+      "education_relevance_required": true, "can_trigger_parent_alert": false, "hype_risk": "medium",
+      "monetization_risk": "medium", "privacy_risk": "low", "minor_data_risk": "low",
+      "can_update_site_fact": false, "can_generate_video_topic": true,
+      "language": "en", "region": "global",
+      "notes_for_use": "축G. 메인 뉴스·신제품 소개 아님. '아이 교육과 어떻게 연결되나'만. 교육 연결성<3이면 hold_no_education_link. 기업 발표는 기술 변화 근거로만(정책 fact 아님)."
+    },
+    {
+      "id": "g-ai-robotics-companion",
+      "country": "global", "source_type": "news",
+      "name": "AI 로봇/휴머노이드/감정 동반자 로봇 뉴스 (기업 공식+보도)",
+      "url": "https://www.youtube.com/results?search_query=AI+companion+robot+children ; https://spectrum.ieee.org/topic/robotics/",
+      "check_frequency": "weekly", "volatility": "high",
+      "related_pages": ["/ai-early-education/parent-rules.html", "/ai-early-education/school-vs-home.html"],
+      "last_checked": null,
+      "source_category": "ai_companion", "use_policy": "future_risk_signal", "trust_level": "C_industry_media",
+      "topic_tags": ["ai_robot", "ai_companion", "emotional_ai"],
+      "education_relevance_required": true, "can_trigger_parent_alert": true, "hype_risk": "high",
+      "monetization_risk": "medium", "privacy_risk": "medium", "minor_data_risk": "high",
+      "requires_anonymization": true,
+      "can_update_site_fact": false, "can_generate_video_topic": true,
+      "language": "mixed", "region": "global",
+      "notes_for_use": "축G★. 감정·친밀감·의존→미성년자 보호 caution 상향. 공포마케팅·'중국=위험' 일반화 금지. 사실은 공식 규제/연구로 교차확인. UQ-06 관련."
+    },
+    {
+      "id": "g-industry-media",
+      "country": "global", "source_type": "news",
+      "name": "AI 산업 매체 (The Verge·MIT Tech Review·TechCrunch·Reuters·Bloomberg·IEEE Spectrum — AI)",
+      "url": "https://www.technologyreview.com/topic/artificial-intelligence/ ; https://www.theverge.com/ai-artificial-intelligence ; https://techcrunch.com/category/artificial-intelligence/",
+      "check_frequency": "weekly", "volatility": "high",
+      "related_pages": ["/ai-early-education/parent-faq.html", "/ai-early-education/source-library.html"],
+      "last_checked": null,
+      "source_category": "ai_company_news", "use_policy": "industry_signal", "trust_level": "C_industry_media",
+      "topic_tags": ["ai_industry", "ai_search", "ai_video_generation", "ai_glasses"],
+      "education_relevance_required": true, "can_trigger_parent_alert": false, "hype_risk": "high",
+      "monetization_risk": "low", "privacy_risk": "low", "minor_data_risk": "low",
+      "can_update_site_fact": false, "can_generate_video_topic": true,
+      "language": "en", "region": "global",
+      "notes_for_use": "축G. 투자/주가/기업홍보 관점 배제. 교육 연결성 점수 0~5로 판정, 3미만 hint면 hold. 과장(hype) 필터링."
     }
   ]
 }

@@ -3,6 +3,27 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "관측소 G축 추가(AI 산업/빅테크)=7축 + 교육 연결성 점수, UQ-06 G구조 승격",
+      "changes": [
+        "source_taxonomy: G 카테고리10(ai_company_news·ai_lab_release·ai_model_release·ai_robotics·ai_hardware·ai_agent·ai_search·ai_companion·ai_safety_company·ai_education_product)·use_policy7·trust4(B_company_official 등) 추가, G축 정의, education_relevance_score 0~5, 고연결 태그, G 기본정책, update_types 8추가(총22)",
+        "watch_sources: 7축 메타 + G 출처3(g-bigtech-labs·g-ai-robotics-companion·g-industry-media)에 education_relevance_required·can_trigger_parent_alert·hype_risk 필드. 총34",
+        "update_queue types 확장 + UQ-06을 G구조로 승격(ai_companion_issue, education_relevance_score=4, hype_risk=medium, trust=C_industry_media)",
+        "daily_watch G섹션(연결성 점수·연결영역 체크), weekly 7-G. 신규 industry_watch_template.md·ai_news_relevance_rules.md",
+        "원칙: 빅테크 뉴스=메인 아님, 교육 연결성만 번역, 기업발표=기술변화 근거만(정책 fact 아님·B_company_official·hype), 연결성<3 hold_no_education_link, 감정/미성년자 caution 상향",
+        "observatory PLAN 7축, reports/..._7AXIS_GAXIS_REPORT.md"
+      ],
+      "verification": {
+        "json_valid": "taxonomy/watch_sources/update_queue 유효",
+        "company_not_fact": "G 출처 can_update_site_fact 전부 false, trust=B_company_official(official 미만)",
+        "relevance_rule": "education_relevance_score 0~5 + ai_news_relevance_rules.md, 3+만 등록",
+        "uq06_g": "UQ-06 ai_companion_issue·relevance 4·can_update_site_fact false",
+        "sources": "34(A~F 31 + G 3), 기존 구조 보존",
+        "no_code_change": "새 HTML 0, sitemap 39, 배포/영상제작 0"
+      },
+      "todo_next": ["다음 Daily Watch 7축 시험 운전", "G축 개별 뉴스 industry_watch_template로 연결성 점수 기록"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "UQ-06 중국 감성형 AI 로봇 이슈 관측 큐 등록(감정·관계 쟁점, 싱가포르 편 무변경)",
       "changes": [
         "사용자 제공 영상 WebFetch 확인: SBS 보도 '중국 감성 로봇 실물..1만 대 주문'(youtube BtBCiby3eDI), 2억↑·1만대 주문",

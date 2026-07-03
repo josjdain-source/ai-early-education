@@ -10,6 +10,10 @@
 - **자주 바뀌는 축**: 각국 AI 교육 정책 · 한국 AIDT 이슈 · 학교 AI 가이드 · 연령 제한/보호자 동의 · 과제 윤리 · 국제기구 발표
 - **발행 축**: 매일 관측 / 주간 브리핑 / 5분 정밀 영상 / 필요 시 긴급 업데이트
 
+### 관측 7축 (2026-07-04 · G축 추가 · 분류 정의=source_taxonomy.json)
+- **G AI 산업/빅테크 변화** = ai_company_news·ai_lab_release·ai_model_release·ai_robotics·ai_hardware·ai_agent·ai_search·ai_companion·ai_safety_company·ai_education_product → **최신 AI 뉴스를 '아이 교육과 어떻게 연결되나'로만 번역.** 메인 뉴스·투자·신제품 소개 아님. 기업 발표=기술 변화 근거로만(official보다 낮은 신뢰 B_company_official·과장 가능), **정책 fact 수정 근거 아님.** 교육 연결성 점수(0~5, `ai_news_relevance_rules.md`) 3+만 등록, <3 hold_no_education_link. 감정·친밀감·의존·미성년자 관련 caution 상향. 신규 양식 `industry_watch_template.md`.
+- 운영: 최신성=입구, 교육 해석=본문, 홈페이지=근거 창고, 영상=해설 리포트.
+
 ### 관측 6축 (2026-07-04 확장 · 분류 정의=source_taxonomy.json)
 정책은 뼈, 학생 사례는 피와 근육. 세계가 AI 교육을 실제로 준비하는 방식을 6축으로 분리 관측.
 1. **A 공식 정책/문서** = official_policy·international_org·government_dataset → **사실 근거.** 사이트 사실 수정의 유일 근거(can_update_site_fact=true).
