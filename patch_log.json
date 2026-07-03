@@ -3,6 +3,23 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "하이브리드 캡처: 정부 페이지 6개 자동 캡처(raw) 성공, 조건부 4 사람 대기",
+      "changes": [
+        "자동 캡처 6/6 성공(Playwright): US-01/02·UK-01/02·KR-01/02. 쿠키 dismiss+핵심문구 앵커 스크롤",
+        "UK-01=핵심 인용문 완벽(professional judgement/cannot replace). KR=사이드바 크롭 권장",
+        "raw/ 6장 저장(출처바 합성 전 원본). manifest: captured_raw 6·manual_required 4",
+        "evidence/world-ai-education-manual-capture-guide.md(CN-01 헤드밴드금지 등 4개 사람 캡처 지침)",
+        "reports/WORLD_AI_EDUCATION_HYBRID_CAPTURE_REPORT.md"
+      ],
+      "verification": {
+        "auto": "6/6 HTTP200 캡처, 앵커 스크롤 4·고정 2. 재시도 불필요",
+        "manual": "조건부 4 manual-needed/ 대기(가이드 별도)",
+        "no_composite": "출처바 합성 안함(raw만), 렌더/업로드/HTML 없음, sitemap 41"
+      },
+      "todo_next": ["사람 조건부 4 캡처→manual-needed/", "raw 10장 출처바 합성+KR 크롭", "shotlist ②삽입→본편 초벌"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "5국 증거 스샷 승인 반영(승인6/조건부4, KR-02 교체) + 캡처 명령서. 캡처 전",
       "changes": [
         "승인표·manifest 업데이트: approved 6(US×2·UK×2·KR-01·KR-02교체)·conditional 4(CN×2·SG×2)",
