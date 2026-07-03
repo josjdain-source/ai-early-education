@@ -2,7 +2,7 @@
   "meta": {
     "video": "세계 AI교육 5분 본편",
     "created": "2026-07-04",
-    "status": "하이브리드 캡처: 자동 6 captured_raw(raw/), 조건부 4 manual_required(manual-needed/). 출처바 합성 전. 렌더/업로드 없음.",
+    "status": "캡처 완료(자동 6 + 조건부 4 자동캡처). pass 9·partial 1(CN-01 크롭). 출처바 합성 전. 렌더/업로드 없음.",
     "rule": "국가별 1~2장. 음성/클립/연속캡처 금지. 출처 바 필수. 스샷 뒤 반드시 우리 해석 카드. 승인된 것만 캡처.",
     "capture_folder": "assets/world-ai-education-5min/evidence-screenshots/",
     "excluded": "상업 블로그·위키=제외(사실 근거 아님). 언론(Forbes/서울경제/OpenGov)=보조(자막 교차)."
@@ -22,11 +22,14 @@
       "attribution_bar_ko": "출처: 중국 관영매체 CGTN · China's classrooms get an AI makeover · 2025-09-08 · 용도: 해외 AI교육 사례 설명을 위한 짧은 화면 인용",
       "attribution_bar_en": "Source: CGTN (Chinese state media) / China's classrooms get an AI makeover / 2025-09-08 — Brief visual evidence for educational commentary.",
       "approval_status": "conditional",
-      "capture_status": "manual_required",
+      "capture_status": "captured_partial",
       "capture_rule": "AI 수업 도구·교실 학습·학생 활동 장면. 뇌파 헤드밴드/감시 프레임 절대 금지.",
       "notes": "관영 매체 성격 표기 필수. 관영 화면만으로 단정 금지, CN-02와 교차.",
       "raw_file": "assets/world-ai-education-5min/evidence-screenshots/manual-needed/CN-01-classroom-ai-policy-raw.png",
-      "review_notes": "자동 캡처 안 함(조건부). 사람이 capture_rule대로 직접 캡처."
+      "review_notes": "HTTP200(재캡처, /p→/p.html). ★뇌파 헤드밴드 없음(교실+로봇+학생+교사 장면)✅. 단 우측 TOP NEWS에 시진핑/군 인사 정치뉴스+하단 쿠키배너 → 본문 좌측 컬럼만 크롭 필수(정치선전 오독 방지).",
+      "usable_for_video": true,
+      "needs_crop": true,
+      "rejection_reason": null
     },
     {
       "id": "CN-02",
@@ -42,12 +45,15 @@
       "attribution_bar_ko": "출처: 해외 연구기관 CSET Georgetown · China Gen-AI Use Guide (2025) · 용도: 정책 내용 인용",
       "attribution_bar_en": "Source: CSET Georgetown (research institute) / China Gen-AI Use Guide (2025).",
       "approval_status": "conditional",
-      "capture_status": "manual_required",
+      "capture_status": "captured_pass",
       "capture_rule": "랜딩 금지. 표절·부정행위·과의존 경계 문구가 보이는 부분 또는 PDF 원문 쪽.",
       "pdf_alt": "https://cset.georgetown.edu (원문 PDF 링크 내 다운로드)",
       "notes": "원문 번역=외부 기관 해석. 중국 정부 주장과 구분.",
       "raw_file": "assets/world-ai-education-5min/evidence-screenshots/manual-needed/CN-02-genai-guide-guardrail-raw.png",
-      "review_notes": "자동 캡처 안 함(조건부). 사람이 capture_rule대로 직접 캡처."
+      "review_notes": "핵심 문구 완벽: 'avoiding potential harms such as plagiarism and cheating' + CSET 번역 출처 + 중국 교육부 가이드 명시. 과의존 경계 증거로 최적.",
+      "usable_for_video": true,
+      "needs_crop": false,
+      "rejection_reason": null
     },
     {
       "id": "US-01",
@@ -66,7 +72,9 @@
       "capture_status": "captured_raw",
       "notes": "연방정부 저작물=대체로 public domain. 정치색·성과 단정 금지. EO 14277.",
       "raw_file": "assets/world-ai-education-5min/evidence-screenshots/raw/US-01-ai-education-order-raw.png",
-      "review_notes": "HTTP200. 'AI literacy'로 스크롤, 정책 목표 문단 프레임. 상단 쿠키/헤더 정리됨"
+      "review_notes": "HTTP200. 'AI literacy'로 스크롤, 정책 목표 문단 프레임. 상단 쿠키/헤더 정리됨",
+      "needs_crop": false,
+      "usable_for_video": true
     },
     {
       "id": "US-02",
@@ -85,7 +93,9 @@
       "capture_status": "captured_raw",
       "notes": "PDF 원문 files.eric.ed.gov/fulltext/ED661924.pdf 대체 가능.",
       "raw_file": "assets/world-ai-education-5min/evidence-screenshots/raw/US-02-ai-toolkit-safe-ethical-raw.png",
-      "review_notes": "HTTP200. ERIC 초록 'Safe, Ethical, and Equitable' 노출. 제목+설명 프레임"
+      "review_notes": "HTTP200. ERIC 초록 'Safe, Ethical, and Equitable' 노출. 제목+설명 프레임",
+      "needs_crop": false,
+      "usable_for_video": true
     },
     {
       "id": "UK-01",
@@ -104,7 +114,9 @@
       "capture_status": "captured_raw",
       "notes": "GOV.UK=OGL 라이선스. 출처 표기 조건 확인.",
       "raw_file": "assets/world-ai-education-5min/evidence-screenshots/raw/UK-01-dfe-genai-guidance-raw.png",
-      "review_notes": "HTTP200. ★핵심 인용문 완벽 노출(professional judgement/responsibility/cannot replace). GOV.UK contents 사이드 포함"
+      "review_notes": "HTTP200. ★핵심 인용문 완벽 노출(professional judgement/responsibility/cannot replace). GOV.UK contents 사이드 포함",
+      "needs_crop": false,
+      "usable_for_video": true
     },
     {
       "id": "UK-02",
@@ -123,7 +135,9 @@
       "capture_status": "captured_raw",
       "notes": "OGL 확인.",
       "raw_file": "assets/world-ai-education-5min/evidence-screenshots/raw/UK-02-education-hub-ai-schools-raw.png",
-      "review_notes": "HTTP200. professional judgement 문단으로 스크롤. 교육부 블로그"
+      "review_notes": "HTTP200. professional judgement 문단으로 스크롤. 교육부 블로그",
+      "needs_crop": false,
+      "usable_for_video": true
     },
     {
       "id": "SG-01",
@@ -139,11 +153,14 @@
       "attribution_bar_ko": "출처: 싱가포르 교육부(MOE/SLS) · About AI in SLS · 용도: 해외 AI교육 사례 설명을 위한 짧은 화면 인용",
       "attribution_bar_en": "Source: Singapore MOE (SLS) / About AI in SLS.",
       "approval_status": "conditional",
-      "capture_status": "manual_required",
+      "capture_status": "captured_pass",
       "notes": "가드레일=의존방지(감시 아님) 해석 유지.",
       "capture_rule": "가드레일/safe learning/교육적 안전장치 문구가 보이는 화면.",
       "raw_file": "assets/world-ai-education-5min/evidence-screenshots/manual-needed/SG-01-moe-ai-sls-raw.png",
-      "review_notes": "자동 캡처 안 함(조건부). 사람이 capture_rule대로 직접 캡처."
+      "review_notes": "SLS 맥락+가드레일 완벽: 'additional guardrails are deployed for students to have a safe learning experience' + About AI in SLS 출처.",
+      "usable_for_video": true,
+      "needs_crop": false,
+      "rejection_reason": null
     },
     {
       "id": "SG-02",
@@ -159,11 +176,14 @@
       "attribution_bar_ko": "출처: 싱가포르 정부 기술기관(GovTech) · Inside Singapore's digital classroom · 용도: 정책 사례 인용",
       "attribution_bar_en": "Source: GovTech Singapore (government tech agency) / Inside Singapore's digital classroom.",
       "approval_status": "conditional",
-      "capture_status": "manual_required",
+      "capture_status": "captured_pass",
       "notes": "gov.sg 약관 확인. 얼굴 클로즈업 회피.",
       "capture_rule": "AI 도구 소개/교실 적용/교사·학생 지원 설명 화면. 단순 배너·썸네일만이면 보조 컷 격하.",
       "raw_file": "assets/world-ai-education-5min/evidence-screenshots/manual-needed/SG-02-govtech-ai-classroom-raw.png",
-      "review_notes": "자동 캡처 안 함(조건부). 사람이 capture_rule대로 직접 캡처."
+      "review_notes": "배너 아님. 실제 AI 도구 상세(SET/LEA/Authoring Copilot/Data Assistant, 학생·교사용) + GovTech 로고. 보조 격하 불필요. 우측 chat 위젯만 경미 크롭.",
+      "usable_for_video": true,
+      "needs_crop": false,
+      "rejection_reason": null
     },
     {
       "id": "KR-01",
@@ -182,7 +202,9 @@
       "capture_status": "captured_raw",
       "notes": "공공누리(KOGL) 유형 확인. 정책 홍보 톤 금지.",
       "raw_file": "assets/world-ai-education-5min/evidence-screenshots/raw/KR-01-ai-digital-textbook-policy-raw.png",
-      "review_notes": "HTTP200. 정책브리핑 헤더+제목(우선 도입)+본문(제외 과목·장관 발표). ⚠️우측 인기뉴스 사이드바 크롭 권장"
+      "review_notes": "HTTP200. 정책브리핑 헤더+제목(우선 도입)+본문(제외 과목·장관 발표). ⚠️우측 인기뉴스 사이드바 크롭 권장",
+      "needs_crop": true,
+      "usable_for_video": true
     },
     {
       "id": "KR-02",
@@ -201,7 +223,9 @@
       "capture_status": "captured_raw",
       "notes": "기존 moe.go.kr 404 폐기→korea.kr #2 교체. 공공누리(KOGL) 확인.",
       "raw_file": "assets/world-ai-education-5min/evidence-screenshots/raw/KR-02-ai-digital-textbook-intro-raw.png",
-      "review_notes": "HTTP200. korea.kr #2 도입 개요. 캡처됨. ⚠️사이드바 크롭 권장"
+      "review_notes": "HTTP200. korea.kr #2 도입 개요. 캡처됨. ⚠️사이드바 크롭 권장",
+      "needs_crop": true,
+      "usable_for_video": true
     }
   ]
 }

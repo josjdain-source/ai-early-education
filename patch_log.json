@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "조건부 4개도 자동 캡처+검수: pass 3·partial 1. 10개 전부 사용가능",
+      "changes": [
+        "CN-01/CN-02/SG-01/SG-02 자동 캡처(manual-needed/). CN-01 1차 404(/p)→/p.html 재캡처 성공",
+        "검수: CN-02/SG-01/SG-02=captured_pass(핵심문구 완벽), CN-01=captured_partial(★헤드밴드 없음✅, 우측 정치사이드바+쿠키 크롭 필요)",
+        "CN-02 'plagiarism and cheating', SG-01 'guardrails...safe learning', SG-02 도구4종(SET/LEA/ACP/DAT) 노출 확인",
+        "manifest: captured_pass 3·captured_partial 1·captured_raw 6. usable 10/10. 크롭 대상=CN-01·KR-01·KR-02",
+        "reports/WORLD_AI_EDUCATION_CONDITIONAL_AUTO_CAPTURE_REPORT.md"
+      ],
+      "verification": {
+        "cn01_headband": "없음(교실+로봇+학생+교사). 단 정치 사이드바 크롭 필수",
+        "sg02": "보조 격하 안함(도구 상세 명확)=pass",
+        "usable": "10/10 사용가능(CN-01은 크롭 후), rejected 0, failed 0",
+        "no_composite": "출처바 합성/렌더/업로드/HTML 없음, sitemap 41"
+      },
+      "todo_next": ["크롭 3개(CN-01·KR-01·KR-02)", "출처바 합성→captured/", "shotlist ②삽입→본편 초벌"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "하이브리드 캡처: 정부 페이지 6개 자동 캡처(raw) 성공, 조건부 4 사람 대기",
       "changes": [
         "자동 캡처 6/6 성공(Playwright): US-01/02·UK-01/02·KR-01/02. 쿠키 dismiss+핵심문구 앵커 스크롤",
