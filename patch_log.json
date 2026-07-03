@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "세계 AI교육 뉴스 카테고리 추가(ai-education-news.html). 배포 안 함",
+      "changes": [
+        "신규 ai-education-news.html: 마룬 히어로+주제카드6(숙제논쟁/교사와AI/평가채점/리터러시/안전/현장)+뉴스영상카드5+출처구분칩+관측소신호(연구동향/검토중)+하단연결",
+        "메인 index 카테고리 그리드에 '세계 AI교육 뉴스' 카드 추가(6→7, 나라별 대표 아래 첫 카드)",
+        "역할분리: 나라별=정책/교육방식, 뉴스=언론/사회반응/논쟁. 뉴스=사실근거 아님 명시",
+        "sitemap 40→41. reports/AI_EARLY_EDUCATION_NEWS_CATEGORY_REPORT.md"
+      ],
+      "verification": {
+        "structure": "나라별(정책)↔뉴스(사회반응) 구분, 톤 차별화(마룬)",
+        "obs_link": "관측소 연구동향/검토중 라벨, approved없어 확정이슈 미표시(과장 없음)",
+        "links": "링크 실존, 빈/#링크 0, 앵커 정상, 로컬 200",
+        "sitemap": "41 XML 유효(신규 1건)",
+        "no_deploy": "★배포 안 함(라이브는 뉴스칸 없는 버전 유지)"
+      },
+      "todo_next": ["뉴스칸 포함해 배포(승인 시)", "세계 5분 본편 대본→쇼츠5", "뉴스 영상 준비중→실제 링크"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "★영상 카테고리판 라이브 배포(wrangler) + 10항목 검증 통과",
       "changes": [
         "wrangler 클린 배포(git archive 추적분만, 커밋 81a9d71). 프로덕션 https://ai-early-education.pages.dev/ai-early-education/",
