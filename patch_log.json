@@ -3,6 +3,23 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "첫 방송 대본: 세계 AI교육 5분 본편 + 쇼츠6 대본(영상 제작·업로드 없음)",
+      "changes": [
+        "홈페이지 구조 작업 종료 → 영상 대본 단계 전환",
+        "scripts/world-ai-education-5min.md: 8섹션(오프닝/중국/미국/영국/싱가포르/한국/공통점/부모핵심) 내레이션+화면지시+자막+근거+쇼츠컷",
+        "scripts/shorts-from-world-ai-education.md: 쇼츠6(5개국+공통점) 30~40초 후크/내레이션/자막/CTA",
+        "톤: 정답연출·겁주기·과장 금지, 수치단정 대신 방향, 마지막=우리집 행동. 근거=countries/*·global-matrix(가짜이미지 금지)"
+      ],
+      "verification": {
+        "scripts_only": "대본 문서만 생성, 영상 제작/음성/편집/업로드 없음",
+        "tone": "어느 나라도 정답 연출 안함, 참고 사례",
+        "wire_plan": "완성 후 video-countries/ai-education-news 카드 준비중→링크(사람 승인)",
+        "no_site_change": "HTML/sitemap/배포 없음"
+      },
+      "todo_next": ["본편 대본 사람 검수", "쇼츠 이미지/음성/편집 파이프라인", "완성 후 카드 준비중→영상링크 교체(승인)"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "★뉴스 칸 포함 라이브 배포=방송국 편성표 완성. 12항목 검증 통과",
       "changes": [
         "wrangler 클린 배포(커밋 ac8d8d7, 신규 6파일). 프로덕션에 세계 AI교육 뉴스 칸 반영",
