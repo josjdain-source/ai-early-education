@@ -3,6 +3,32 @@
   "entries": [
     {
       "date": "2026-07-03",
+      "title": "downloads.html 정리 — 출력자료 4종 세트 완성형 자료실로 잠금(예정 블록 제거)",
+      "changes": [
+        "결정: start-here-print(10분 안내 요약지) 예정 블록 제거 — 역할이 start-here.html/printable-checklist와 겹치고, 예정 블록이 남으면 미완성처럼 보임. 새 출력자료 확장 중단",
+        "downloads.html '3. 곧 추가할 자료' 섹션 통째 삭제(soon 블록 0)",
+        "제목 '출력 자료 모음' → '출력 자료 4종 세트', 부제도 4종(연령카드·약속표·체크리스트·기록지) 명시",
+        "섹션 2 카드 재배열=사용 흐름 순서: 1단계 age-cards → 2단계 printable-rules → 3단계 printable-checklist → 4단계 experiment-log. 각 카드에 단계 칩+역할 한 줄 추가",
+        "설명형 체크리스트(checklist.html)는 카드에서 빼고 '먼저 읽기' 안내문 한 줄로 이동",
+        "섹션 3 '어떤 순서로 쓰면 좋은가' 재작성: age-cards→printable-rules→printable-checklist→home-experiments→experiment-log 5단계",
+        "섹션 번호 재정렬(1왜→2 4종세트→3 순서→4 주의→5 관련읽기)",
+        "새 HTML/PDF 생성 없음, sitemap URL 변경 없음(예정 항목은 애초에 sitemap 미등록), 조종판 next_action 갱신"
+      ],
+      "verification": {
+        "local_http": "downloads / age-cards / printable-checklist 200",
+        "cleanup": "요약지/곧 추가할 자료/soon/start-here-print 잔존 0, 예정 태그 0",
+        "sections": "h2 번호 1~5 순차",
+        "ready_cards": "badge ready 4개, step 칩 4개",
+        "internal_links": "downloads 내부 링크 전부 실존(깨진 링크 0)",
+        "guardrails": "PDF 0, 새 페이지 0, 광고성 CTA·특정 AI 추천 없음",
+        "sitemap": "loc 39 유지(변경 없음)"
+      },
+      "todo_next": [
+        "검색 유입 강화: parent-cluster SEO 점검 또는 school-vs-home/parent-faq 내부 링크 강화"
+      ]
+    },
+    {
+      "date": "2026-07-03",
       "title": "인쇄용 연령별 시작 카드 age-cards.html 신설 (출력 자료 4종 세트 완성)",
       "changes": [
         "신규 페이지 ai-early-education/age-cards.html — '연령별 AI 시작 카드: 인쇄용 한 장'(A4)",
