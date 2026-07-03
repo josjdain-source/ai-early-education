@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "system": "AI 조기교육 데일리 관측소 — 자동 파이프라인 설정",
+    "created": "2026-07-04",
+    "principle": "자동 관측(찾기·분류·점수·큐등록·증거후보)까지만. 자동 발행/사이트수정/영상/업로드 금지. 사람=승인·방향 판단."
+  },
+  "min_score_to_queue": 3,
+  "queue_id_prefix": "UQ",
+  "checked_by": "automated_pipeline",
+  "capture": {
+    "auto_capture_categories": ["official_policy", "international_org", "government_dataset"],
+    "never_auto_capture_categories": ["news_media", "youtube_video", "youtube_channel", "student_project", "student_competition", "school_practice", "parent_community", "ai_companion", "ai_robotics"],
+    "reason": "공식 문서만 자동 캡처 후보. 뉴스/유튜브/학생/미성년자 가능 자료는 캡처 금지, text summary만."
+  },
+  "safety_guard": {
+    "allowed_write_prefixes": ["ops/ai-early-education/", "reports/", "assets/ai-early-education/singapore-evidence/", "assets/ai-early-education/"],
+    "forbidden_write_globs": ["ai-early-education/*.html", "**/ai-early-education/**/*.html", "sitemap.xml", "robots.txt", "assets/ai-early-education/video-episode-*/exports/*"],
+    "forbidden_actions": ["site_edit", "sitemap_edit", "deploy", "wrangler", "video_render", "upload", "publish"]
+  },
+  "relevance_rules_ref": "ops/ai-early-education/ai_news_relevance_rules.md",
+  "update_type_by_category": {
+    "official_policy": "policy_signal",
+    "international_org": "policy_signal",
+    "government_dataset": "policy_signal",
+    "news_media": "controversy_signal",
+    "academic_research": "research_context",
+    "conference_or_workshop": "research_context",
+    "school_practice": "school_practice",
+    "teacher_training": "teaching_activity",
+    "student_project": "student_activity_example",
+    "student_competition": "student_activity_example",
+    "nonprofit_or_research": "research_context",
+    "education_company": "video_topic",
+    "youtube_channel": "explanation_pattern",
+    "youtube_video": "video_topic",
+    "parent_community": "parent_question",
+    "ai_company_news": "industry_signal",
+    "ai_lab_release": "technology_shift",
+    "ai_model_release": "technology_shift",
+    "ai_robotics": "future_risk_signal",
+    "ai_hardware": "ai_device_environment",
+    "ai_agent": "technology_shift",
+    "ai_search": "parent_awareness_topic",
+    "ai_companion": "ai_companion_issue",
+    "ai_safety_company": "parent_awareness_topic",
+    "ai_education_product": "parent_awareness_topic"
+  },
+  "fact_capable_categories": ["official_policy", "international_org", "government_dataset"],
+  "high_minor_risk_categories": ["student_project", "student_competition", "school_practice", "ai_companion", "ai_robotics"]
+}
