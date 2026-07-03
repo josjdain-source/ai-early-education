@@ -3,6 +3,34 @@
   "entries": [
     {
       "date": "2026-07-03",
+      "title": "인쇄용 실험 기록지 experiment-log.html 신설 (출력 자료 허브 3번째 도구, 시작전+실험후 세트 완성)",
+      "changes": [
+        "신규 페이지 ai-early-education/experiment-log.html — '오늘의 AI 대화 실험 기록지: 인쇄용 한 장'(A4)",
+        "역할 분리: home-experiments=실험 아이디어, experiment-log=실험 후 기록지. checklist/printable-rules(시작 전) + experiment-log(실험 후)로 3종 세트",
+        "구성: 제목 / 실험 정보(날짜·아이 이름 또는 별명·시간·오늘 고른 실험) / 처음 요청 / 마음에 든 점 / 예상과 달랐던 점 / 다시 요청 / 두번째 결과 변화 / 오늘 배운 것 / 다음에 말해볼 것 / 보호자 메모+다음 실험 날짜",
+        "기입란(밑줄) 중심 + 아이용 쉬운 문장 병기. 개인정보: 별명 허용·업로드 금지·요청문에 개인정보 넣지 않기 안내",
+        "print CSS: @page A4 12mm, 인쇄 시 nav/footer/toolbar/morelinks/lead 숨김, break-inside:avoid, 배경 제거. JS 없음",
+        "downloads.html: 실험 기록지 '예정' → '지금 사용'으로 승격 + 사용순서 5단계 링크 + 하단 관련읽기 링크",
+        "내부 상호링크: home-experiments(#10 카드 하단)·printable-checklist·printable-rules·index 히어로에 experiment-log 링크",
+        "sitemap.xml 37 → 38, 조종판 live-experiment-log 액션 + status/next_action 갱신",
+        "선행 확인: 이전 보고의 잘못된 URL(ai-early-education.printable-rules.html)은 실제 파일(report/projects/patch_log/html)에 없음 — 채팅 문구 오타로 확정"
+      ],
+      "verification": {
+        "local_http": "experiment-log / downloads / home-experiments 모두 200",
+        "internal_links": "experiment-log 내부 링크 7종 전부 실존 확인",
+        "promotion": "downloads에서 실험 기록지 badge='지금 사용'(ready)으로 승격 확인",
+        "print_css": "@page size:A4 + @media print 존재, A4 한 장 구조, 기입란 중심",
+        "bad_url_check": "malformed printable-rules URL 문자열 파일 내 0건",
+        "guardrails": "PDF 0건, age-cards 미생성(정책 준수), 광고성 CTA·특정 AI 추천·개인정보 유도 없음",
+        "sitemap": "loc 38개, experiment-log 1건",
+        "no_conflict": "home-experiments.html와 역할 충돌 없음(아이디어 페이지 유지, 기록지 분리)"
+      },
+      "todo_next": [
+        "age-cards(연령별 시작 카드) 제작 → downloads 승격 (출력 자료 마지막 예정 1종)"
+      ]
+    },
+    {
+      "date": "2026-07-03",
       "title": "인쇄용 7가지 약속표 printable-rules.html 신설 (출력 자료 허브 2번째 도구)",
       "changes": [
         "신규 페이지 ai-early-education/printable-rules.html — '아이와 AI를 쓸 때 7가지 약속표: 인쇄용 한 장'(A4)",
