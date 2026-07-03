@@ -3,6 +3,23 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "5국 증거 스샷 승인 반영(승인6/조건부4, KR-02 교체) + 캡처 명령서. 캡처 전",
+      "changes": [
+        "승인표·manifest 업데이트: approved 6(US×2·UK×2·KR-01·KR-02교체)·conditional 4(CN×2·SG×2)",
+        "KR-02 moe.go.kr 404 폐기→korea.kr #2(148912094) 교체(approved_replaced)",
+        "조건부 4개 capture_rule 명문화: CN-01 뇌파헤드밴드 금지·CN-02 금지조항/PDF·SG-01 가드레일문구·SG-02 도구설명(없으면 보조)",
+        "evidence/world-ai-education-capture-instructions.md 생성(권장/피해야할 화면·출처바·파일명·not_captured)",
+        "reports/WORLD_AI_EDUCATION_SCREENSHOT_APPROVAL_FINAL_REPORT.md"
+      ],
+      "verification": {
+        "approved": "6 승인·4 조건부, KR-02 교체 반영",
+        "conditions": "CN-01 헤드밴드 절대금지가 핵심(감시교육 오독 방지)",
+        "no_capture": "capture_status=not_captured 전부, 폴더 미생성, 렌더/업로드/HTML 없음, sitemap 41"
+      },
+      "todo_next": ["사람 최종 확인(권장화면·라이선스)", "승인분 캡처+출처바 합성", "shotlist ②삽입→본편 초벌"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "5국 증거 스샷 10개 URL 사전 검증(WebFetch). KR-02 404 발견→교체 제안",
       "changes": [
         "10개 URL WebFetch 열람(캡처 아님). 후보 설명과 실제 화면 일치 검증",
