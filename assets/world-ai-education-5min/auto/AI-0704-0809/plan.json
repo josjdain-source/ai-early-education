@@ -1,0 +1,113 @@
+{
+  "topic": "AI가 숙제를 대신 해줄 때, 부모가 해야 할 일",
+  "sections": [
+    {
+      "title": "AI, 숙제 대신 해줄까? ",
+      "narration": "요즘 아이들 숙제 하루 종일 고민하고 있죠?  어떻게 도와주지? AI가 답변을 알려주는 시대에 부모로서 어떤 역할을 해야 할까요?",
+      "beats": [
+        {
+          "prompt": "A child sits at a desk, furrowed brow, looking over a pile of books. Beside them, a glowing orb floats gently, pulsing with light.",
+          "caption": "숙제 걱정보다 아이를 위한 도움이 필요"
+        },
+        {
+          "prompt": "A parent kneels beside their child, offering a gentle smile and a helping hand. Books are scattered around them.",
+          "caption": "가족과 함께 하는 성장의 시간을 선물하세요"
+        },
+        {
+          "prompt": "A child holds up a drawing, beaming with pride as a parent watches with admiration.",
+          "caption": "아이의 노력에 대한 칭찬과 응원이 필요해요"
+        }
+      ]
+    },
+    {
+      "title": "AI는 도구일 뿐입니다.",
+      "narration": " AI가 아이들의 학습을 가속화할 수 있지만,  기본적인 사고 능력과 문제 해결 능력은 여전히 중요합니다.",
+      "beats": [
+        {
+          "prompt": "A child uses a tablet to access information, their eyes sparkling with curiosity as they learn about a new topic.",
+          "caption": "인공지능을 활용한 새로운 학습 경험"
+        },
+        {
+          "prompt": " A group of children discuss and brainstorm ideas together, sharing different perspectives.",
+          "caption": "다양한 아이디어를 나누고 공유하는 자율성"
+        },
+        {
+          "prompt": "A child works through a challenging puzzle, their brow furrowed in concentration as they piece together the solution.",
+          "caption": "문제 해결 능력을 키우는 과정에서 성장"
+        }
+      ]
+    },
+    {
+      "title": "부모님의 역할은 무엇일까요?",
+      "narration": " AI를 활용하면서 아이의 학습 과정을 지켜보고, 필요한 조언과 도움을 주는 것이 중요합니다.",
+      "beats": [
+        {
+          "prompt": "A parent sits beside their child at the desk, offering encouragement and guidance as they work on a project. ",
+          "caption": "아이의 노력에 대한 끊임없는 관심과 지지"
+        },
+        {
+          "prompt": " A parent helps their child break down a complex task into smaller, manageable steps.",
+          "caption": "문제 해결 능력을 키우기 위한 구체적인 방법 제시"
+        },
+        {
+          "prompt": "A parent and child discuss the results of a project together, celebrating successes and identifying areas for improvement.",
+          "caption": "아이의 성장 과정에서 함께 배우고 성장하는 시간"
+        }
+      ]
+    },
+    {
+      "title": "AI와 함께 하는 학습",
+      "narration": " AI 도구를 효과적으로 활용하는 방법을 아이들에게 알려주세요.  학습 자료를 찾는 데 도움을 주거나, 흥미로운 콘텐츠를 제시하는 등 다양한 활용법이 있죠.",
+      "beats": [
+        {
+          "prompt": "A child uses a tablet to research information about a topic they're interested in, their eyes widening with excitement as they discover new facts.",
+          "caption": "AI를 통한 학습의 즐거움과 효율성"
+        },
+        {
+          "prompt": " A parent shows their child how to use an AI tool to create a presentation or write a story, fostering creativity and collaboration.",
+          "caption": "인공지능을 활용한 창의적인 표현 활동"
+        },
+        {
+          "prompt": "A group of children work together on a project using AI tools, sharing ideas and collaborating effectively.",
+          "caption": "AI가 가능하게 하는 새로운 학습 방식"
+        }
+      ]
+    },
+    {
+      "title": "학습 습관은 여전히 중요합니다.",
+      "narration": "  아이들이 스스로 계획하고, 목표를 세우고, 노력하는 습관을 길러주는 것이 중요해요.",
+      "beats": [
+        {
+          "prompt": "A child sets up a study schedule, using colorful markers and sticky notes to plan their week.",
+          "caption": "학습 목표 설정과 시간 관리의 중요성"
+        },
+        {
+          "prompt": " A child works diligently on a project, focused on achieving their goals despite challenges.",
+          "caption": "목표 달성을 위해 노력하는 자율적인 학습 태도"
+        },
+        {
+          "prompt": "A parent encourages their child to reflect on their progress, celebrating achievements and identifying areas for improvement.",
+          "caption": "자신의 성장을 돌아보고 반성하는 긍정적 태도"
+        }
+      ]
+    },
+    {
+      "title": "오늘 부모가 할 일",
+      "narration": " AI 도구를 활용하여 아이들이 학습에 더욱 효과적으로 참여할 수 있도록 도와주세요.  아이들의 노력과 성장을 진심으로 응원하고 지지해 주세요.",
+      "beats": [
+        {
+          "prompt": "A parent and child sit together, looking at a laptop screen filled with educational games and interactive learning activities.",
+          "caption": "AI를 활용한 재미있는 학습 경험"
+        },
+        {
+          "prompt": " A parent gives their child a warm hug and a thumbs-up, expressing pride in their efforts.",
+          "caption": "아이의 노력을 응원하고 격려하는 따뜻한 마음"
+        },
+        {
+          "prompt": "A family laughs and plays together, creating lasting memories filled with love and support.",
+          "caption": "가족과 함께하는 행복한 시간이 가장 소중해요"
+        }
+      ]
+    }
+  ]
+}
