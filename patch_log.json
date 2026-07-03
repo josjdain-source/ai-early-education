@@ -3,6 +3,26 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "draft-v2 렌더(b-roll 21컷·3:44). 실제 교실영상 4국+영국문서, 6구간 검수 통과",
+      "changes": [
+        "b-roll timeline로 draft-v2 렌더(ffmpeg 8.1.1, -shortest 미사용→CTA 안잘림). 1280x720/30fps/h264, 225s",
+        "이미지 검증: 누락0·raw0·UK-01외 문서스샷0. broll 4국+영국문서1",
+        "프레임 검수(frame-review-v2): CN 헤드밴드없음·US교실·UK DfE문서·SG태블릿·KR UI·CTA 전부 통과",
+        "draft-v1 보존. 조종판 우측 today-video+액션버튼 draft-v2로 교체(로컬 재생)",
+        "render-log+SRT16+reports/WORLD_AI_EDUCATION_BROLL_DRAFT_RENDER_REPORT.md. draft mp4 gitignore"
+      ],
+      "verification": {
+        "length": "3:44(225s)",
+        "scenes": "CN/US/SG/KR 실영상+UK 문서, teacherless/헤드밴드 없음",
+        "no_upload": "업로드/HTML/링크교체/최종본명명 없음, draft-v1 보존, sitemap 41"
+      },
+      "todo_next": [
+        "사람 draft-v2 재생·검수(현장감/발음/자막)",
+        "수정 or final candidate 승인→링크교체"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "b-roll timeline: 4국 영상장면+영국 문서(UK=A안). 26→21컷, 3:44 유지",
       "changes": [
         "UK=A안(UK-01 DfE 문서 유지, teacherless 금지). 4국(CN/US/SG/KR)=영상장면 1컷 교체",

@@ -1,0 +1,31 @@
+{
+  "render_status": "success",
+  "output_file": "assets/world-ai-education-5min/render/world-ai-education-broll-draft-v2.mp4",
+  "duration": 225.0,
+  "duration_mmss": "3:44",
+  "resolution": "1280x720",
+  "fps": 30,
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "audio_file": "assets/world-ai-education-5min/audio/world-ai-education-5min-narration.mp3",
+  "timeline_file": "production/world-ai-education-broll-edit-timeline.json",
+  "image_count": 21,
+  "broll_scene_count": 4,
+  "document_evidence_count": 1,
+  "subtitle_file": "assets/world-ai-education-5min/render/world-ai-education-broll-draft-v2.srt",
+  "created_at": "2026-07-04",
+  "engine": "ffmpeg 8.1.1 (full), -shortest 미사용",
+  "warnings": [
+    "evidence-scene 컷 자막 없음(출처바 내장)",
+    "CTA 무음 홀드 ~3:28~3:44"
+  ],
+  "errors": [],
+  "draft": true,
+  "scenes": {
+    "CN": "WSJ 유치원 AI로봇(헤드밴드 없음)",
+    "US": "InvestigateTV 교실+노트북",
+    "UK": "DfE 문서(판단은 사람)",
+    "SG": "CNA 학생 태블릿",
+    "KR": "MOE AI교과서 UI"
+  }
+}
