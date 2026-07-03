@@ -3,6 +3,27 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "UQ-02 1차 편집 에셋 패키지 — 내레이션/자막/카드6/타임라인2/렌더계획(업로드 X)",
+      "changes": [
+        "assets/ai-early-education/video-episode-02-singapore/ 폴더 구조(narration/captions/cards/timeline/thumbnails/render_plan/exports)",
+        "final_narration_ko.md(호흡 표시), episode_02_captions.srt(25컷)+key_captions.md",
+        "scripts/make_ep02_cards.py로 텍스트 카드 6개 실제 생성(c08 연령4단계·c09 부모질문4·c10 학교vs가정·c11 결론3·c12 홈연결·source_label). c01 거실장면=명세만",
+        "timeline/edit_timeline.json(12컷)+official_evidence_timeline.json(공식 캡처 6컷). JSON 유효, 11/12 에셋 실재",
+        "thumbnail_candidates.md(기존5+증거형5), render_plan(규격·톤·검수), scripts/render_episode_02_preview.py(⚠️미실행)",
+        "reports/AI_EARLY_EDUCATION_UQ02_EDITING_ASSET_PACK_REPORT.md",
+        "영상 완성본 렌더·업로드 없음. UQ-02 approved/applied/published 아님. 원문 변경/윤리4원칙/정답 연출 금지 유지"
+      ],
+      "verification": {
+        "assets": "공식캡처6+텍스트카드6+자막srt+내레이션, 12컷 중 11 실재(C01 명세)",
+        "json": "edit_timeline·official_evidence_timeline JSON 유효",
+        "preview": "render_episode_02_preview.py 준비만(py_compile OK), 미실행",
+        "no_upload": "업로드/완성 렌더 없음, UQ-02 approved 아님",
+        "no_code_change": "새 HTML 0, sitemap 39, 배포 0"
+      },
+      "todo_next": ["c01 거실 장면+TTS(승인 후)", "preview 렌더로 타이밍 확인", "1차 편집→검수→업로드(별도 승인)"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "UQ-02 대본×캡처 병합 — 싱가포르 편 첫 완성 파이프라인(영상제작 X)",
       "changes": [
         "episode_02...5min.md에 §10 타임코드 병합표(C02~C07 PNG 배치)+§11 에셋 체크리스트 추가",

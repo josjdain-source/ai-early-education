@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "episode": "EP02 싱가포르 — 공식 근거 화면 타임라인",
+    "created": "2026-07-04",
+    "evidence_dir": "assets/ai-early-education/singapore-evidence",
+    "principle": "공식 캡처는 짧게(2~4s). 원문 문구 변경/의역 삽입/미확인 강조 금지. 하단 출처 라벨 유지. 윤리 4원칙 금지(404)."
+  },
+  "cuts": [
+    {"timecode": "0:30~0:42", "png_file": "c02_moe_ai_education_20260704.png", "display_seconds": 6,
+     "zoom_area": "page heading + gov banner", "highlight_text": "Artificial intelligence in education",
+     "korean_overlay": "이건 의견이 아니라 정부(MOE) 자료", "source_label": "Singapore MOE · 2026-07-04",
+     "caution": "'Primary 4 and above'는 학습보조도구 한정 → 일반화 금지"},
+    {"timecode": "0:42~1:00", "png_file": "c03_students_parents_20260704.png", "display_seconds": 8,
+     "zoom_area": "title line", "highlight_text": "for Students and Parents across Educational Levels",
+     "korean_overlay": "학생 + 부모 = 함께", "source_label": "Singapore MOE Parliamentary Reply 2025-11-04 · 2026-07-04",
+     "caution": "제목 라인만. 본문 장문 금지. 영상의 허리"},
+    {"timecode": "1:00~1:15", "png_file": "c04_age_progressive_framework_20260704.png", "display_seconds": 5,
+     "zoom_area": "title word", "highlight_text": "Age-progressive Framework",
+     "korean_overlay": "나이에 맞게 단계적으로", "source_label": "Singapore MOE · 2026-07-04",
+     "caution": "C03과 동일 페이지, 중복 길게 금지"},
+    {"timecode": "1:15~1:25", "png_file": "c05_parent_guide_genai_20260704.png", "display_seconds": 5,
+     "zoom_area": "body sentence", "highlight_text": "Guide to Generative AI tools for Learning (Parents Gateway)",
+     "korean_overlay": "부모용 안내서가 실제로 있다", "source_label": "Singapore MOE · 2026-07-04",
+     "caution": "부모 포함 결정적 증거. 원문 그대로"},
+    {"timecode": "1:25~1:35", "png_file": "c06_sls_guidance_genai_20260704.png", "display_seconds": 6,
+     "zoom_area": "heading + SLS name", "highlight_text": "Guidance on Generative AI / Singapore Student Learning Space (SLS)",
+     "korean_overlay": "학교 안 공식 학습 환경 + 생성형 AI 가이드", "source_label": "Singapore MOE/SLS · 2026-07-04",
+     "caution": "'responsible/safe' 단어 본문 미노출 → 하이라이트 금지"},
+    {"timecode": "2:20~2:45", "png_file": "c07_responsible_use_genai_20260704.png", "display_seconds": 9,
+     "zoom_area": "confirmed sentence", "highlight_text": "When used appropriately, these tools can support students ... when students have mastered basic concepts and thinking skills",
+     "korean_overlay": "핵심은 '적절하게, 기본을 익힌 뒤'", "source_label": "Singapore MOE/SLS · 2026-07-04",
+     "caution": "★윤리 4원칙(Agency 등) 재삽입 금지(404)"}
+  ]
+}
