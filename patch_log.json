@@ -3,6 +3,32 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "UQ-02 싱가포르 근거 화면 설계(컷 필드 스키마화) + 블로그 요약 3가지 정정",
+      "changes": [
+        "episode_02_singapore_visual_evidence_plan.md 재작성 — 컷별 전체 필드(cut_id/timecode/narration_reference/visual_type/source_priority/source_url/what_to_show/highlight_text/korean_overlay/why_needed/caution)",
+        "11컷: 필수6(C02~C07)+지원3(C08~C10)+연결2(C01·C11)+보조전환3(T1~T3). 비율 부모20/근거30(≈28%)/해설35/연결15",
+        "공식 캡처 표준 패턴(전체 2초→핵심 문구 확대 3초→한국어 요약 카드→출처 카드 상시)",
+        "실증: C03 'Students and Parents'·C04 'Age-progressive'·C05 'A Parent's Guide to GenAI(Parents Gateway)' 확인. C06/C07은 캡처 시 확인 조건, C07 AIEd 4원칙 미확인→표기 금지",
+        "관광 이미지 기준: 국기 가능·교실 보조·마리나베이 ≤1s 도입배경만",
+        "에셋 목록·저작권/출처 표기·검증 체크리스트 포함",
+        "대본 v2 블로그 요약문 '두 가지→세 가지'로 결론 3개와 일치",
+        "reports/AI_EARLY_EDUCATION_UQ02_SINGAPORE_VISUAL_EVIDENCE_REPORT.md 생성",
+        "UQ-02 reviewing 유지. 새 HTML 0, sitemap 39, 배포/영상제작/업로드 0"
+      ],
+      "verification": {
+        "cuts": "11컷(필수6+지원3+연결2)+보조3, 필드 스키마 완비",
+        "ratio": "근거≈28%(목표30), 부모20/해설35/연결15",
+        "fact_integrity": "C03/C04/C05 실증, C06/C07 조건부, 4원칙 미확인 표기금지",
+        "blog_fixed": "요약 3가지로 정정(대본 잔존 '두 가지' 0)",
+        "no_code_change": "새 HTML 0, sitemap 39, 영상 업로드 0, UQ-02 applied 0"
+      },
+      "todo_next": [
+        "승인 시 C02~C07 캡처(문구 재확인)→출처카드→대본 타임코드 병합",
+        "별도 승인 후 편집·렌더·업로드"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "UQ-02 대본 v2(말맛 강화) + 싱가포르 시각 근거 세트 계획(영상제작/업로드 X)",
       "changes": [
         "대본 v2: 도입부 생활 장면화('엄마, AI 써도 돼?')·SLS 즉시 풀이·연령 비단정('어릴수록 안내·보호 먼저')·책임사용=부모 질문4개·결론 3개(나이별/함께/다시 확인)",
