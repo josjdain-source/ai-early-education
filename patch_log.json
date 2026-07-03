@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "증명 성공: 로컬 SDXL 개념일러스트+Pillow 한글오버레이=참고영상 톤 재현",
+      "changes": [
+        "로컬 ComfyUI(RealVisXL_V5.0 SDXL)로 개념 일러스트 생성 30초(GPU). txt2img 워크플로 gen_illust_proof.py",
+        "Pillow로 액자 비네트+상단 리본 타이틀배너+하단 흰자막 오버레이 gen_illust_overlay.py",
+        "결과 aiedu-concept-final.png: 참고영상(AI일러스트 explainer) 포맷 그대로 재현 확인",
+        "SD 한글약점 회피구조 실증: 일러스트는 텍스트없이 생성→한글은 Pillow. 전부 무료 로컬"
+      ],
+      "verification": {
+        "proof": "1장으로 톤 재현 성공(30초+오버레이)",
+        "cost": "무료 로컬(GPU)",
+        "caveat": "다장 스타일일관=고정프롬프트/시드, 캐릭터일관은 별도 난제"
+      },
+      "todo_next": [
+        "개념별 일러스트 파이프라인화(은유설계→SDXL→오버레이→켄번즈)로 일러스트형 본편 제작"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "참고영상(ASML explainer) 실제 시청분석: 100% AI일러스트 방식 판명 → 재현전략",
       "changes": [
         "/watch 스킬(yt-dlp+ffmpeg)로 25.8분 영상 45프레임 직접 시청",
