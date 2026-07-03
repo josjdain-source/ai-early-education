@@ -3,6 +3,25 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "UQ-06 중국 감성형 AI 로봇 이슈 관측 큐 등록(감정·관계 쟁점, 싱가포르 편 무변경)",
+      "changes": [
+        "사용자 제공 영상 WebFetch 확인: SBS 보도 '중국 감성 로봇 실물..1만 대 주문'(youtube BtBCiby3eDI), 2억↑·1만대 주문",
+        "update_queue UQ-20260704-06 등록: video_topic·youtube_video·D_media·can_update_site_fact=false·do_not_use_as_policy_fact=true·minor_data_risk=medium·requires_anonymization=true·status=new",
+        "이슈노트 issue_notes/china_emotional_ai_robot_20260704.md(확인/미확인 분리, 공포마케팅 금지, 미성년자 보호, 5분영상 후보5, 연구 키워드)",
+        "daily_watch/2026-07-04.md에 추가 관측 블록(B/F/C)",
+        "미확인(사실화 금지): U1·실리콘피부·88관절·UNICEF China 규제 → 공식/연구 교차확인 필요",
+        "싱가포르 편 무변경. reports/AI_EARLY_EDUCATION_UQ06_EMOTIONAL_AI_QUEUE_REPORT.md"
+      ],
+      "verification": {
+        "not_fact_source": "youtube video_topic, do_not_use_as_policy_fact=true, can_update_site_fact=false",
+        "minor_protection": "minor_data_risk/privacy_risk=medium, requires_anonymization=true",
+        "no_fear": "'중국=위험' 명시적 배격, 공포 표현 없음",
+        "no_change": "싱가포르 편/HTML/sitemap/배포/영상제작 0"
+      },
+      "todo_next": ["축A(공식 규제)·축C(연구) 교차확인→확인분만 승격", "승인 시 감정 AI 편 대본"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "UQ-02 싱가포르 c01 거실 장면 생성 + preview GIF 렌더(검수용, 업로드 X)",
       "changes": [
         "scripts/make_ep02_c01.py로 c01_parent_livingroom_scene.png(1920x1080) 생성 — 부모 망설임+아이 질문 말풍선, 로고/앱UI/실존아동 없음",
