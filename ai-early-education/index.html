@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI 조기교육 가이드 | 세계 9개국 비교와 부모 실전 시작법</title>
-<meta name="description" content="AI 조기교육을 어디서 시작해야 할지 고민하는 부모를 위해 세계 9개국 AI 교육 사례, 연령별 가이드, 집에서 해볼 실험, 안전 체크리스트를 정리했습니다.">
+<title>AI 조기교육 | 오늘 아이와 AI 대화를 시작하는 부모용 관제판</title>
+<meta name="description" content="AI 시대 아이에게 먼저 필요한 건 코딩이 아니라 AI와 대화하고 결과를 고쳐 말하는 힘입니다. 오늘의 AI 교육 이슈, 5분 영상, 집에서 바로 쓰는 출력자료, 세계 근거까지 부모가 오늘 무엇을 할지 알려주는 관제판.">
 <link rel="canonical" href="https://ai-early-education.pages.dev/ai-early-education/">
-<meta property="og:title" content="AI 조기교육 가이드 | 세계 9개국 비교와 부모 실전 시작법">
-<meta property="og:description" content="AI 조기교육은 빨리 쓰게 하는 경쟁이 아닙니다. 세계 9개국을 비교하고, 한국 부모가 집에서 안전하게 시작하는 길을 정리했습니다.">
+<meta property="og:title" content="AI 조기교육 | 오늘 아이와 AI 대화를 시작하는 부모용 관제판">
+<meta property="og:description" content="아이에게 AI를 가르친다는 건 프로그램을 배우게 하는 게 아니라, 원하는 결과를 말하고 고쳐가는 연습을 시키는 것입니다.">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="/assets/style.css">
 <style>
   .aee-hero{background:linear-gradient(160deg,#f3f0ff,#eef6ff);border-radius:18px;padding:32px 22px;margin:14px 0 10px}
   .aee-hero h1{margin:6px 0 10px;font-size:27px;line-height:1.35}
-  .aee-hero .sub{max-width:720px;font-size:16px;line-height:1.7;color:#2a2a33}
+  .aee-hero .sub{max-width:740px;font-size:16px;line-height:1.7;color:#2a2a33}
+  .aee-hero .sub2{max-width:720px;font-size:13.5px;line-height:1.65;color:#6a6a80;margin-top:8px}
   .herocta{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
   .herocta a{display:inline-block;text-decoration:none;font-weight:800;font-size:14.5px;border-radius:11px;padding:11px 16px}
   .herocta .p1{background:#7c6cff;color:#fff}
@@ -38,17 +39,50 @@
   .serieslist li{background:#fafaff;border:1px solid #ececf4;border-radius:10px;padding:12px 14px;margin-bottom:8px;display:flex;gap:11px;align-items:baseline}
   .serieslist .num{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:#7c6cff;color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
   .serieslist .live{color:#0a8a4a;font-weight:700;font-size:12px;white-space:nowrap}
-  .routes{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin-top:10px}
-  .routebox{background:#f6f4ff;border:1px solid #e6e0ff;border-radius:12px;padding:13px 15px}
-  .routebox .who{font-weight:800;color:#3a2fb0;font-size:14.5px;margin-bottom:6px}
-  .routebox .path{font-size:13.5px;line-height:1.7}
-  .routebox .path a{color:#5a49d6;font-weight:700;text-decoration:none}
-  .routebox .path .arw{color:#b3a9e0;font-weight:700}
-  .preview{background:#fbfbff;border:1px dashed #d8d8e6;border-radius:12px;padding:13px 16px;margin-top:10px;font-size:14px;line-height:1.9;color:#555}
-  .preview b{color:#5a49d6}
   .posline{border-left:5px solid #7c6cff;background:#fff;border-radius:12px;padding:15px 18px;margin:16px 0;font-size:15.5px;line-height:1.7}
   .posline b{color:#5a49d6}
-  @media(max-width:720px){.cards{grid-template-columns:repeat(2,1fr)}.cards.c3{grid-template-columns:1fr}.routes{grid-template-columns:1fr}.flagrow{grid-template-columns:repeat(2,1fr)}}
+  /* 오늘의 이슈 */
+  .issuewrap{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:10px}
+  .issue{background:#fff;border:1px solid #e7e7ef;border-radius:13px;padding:15px;text-decoration:none;color:inherit;display:block;transition:.15s}
+  .issue:hover{border-color:#7c6cff}
+  .issue .lb{display:inline-block;font-size:11px;font-weight:800;border-radius:20px;padding:2px 10px;color:#fff;margin-bottom:8px}
+  .issue .lb.review{background:#8a8aa0}.issue .lb.research{background:#2f6bd8}.issue .lb.check{background:#0a8a4a}
+  .issue .it{font-weight:700;font-size:13.5px;line-height:1.6;color:#2a2a33}
+  .issue .more{font-size:12px;color:#5a49d6;font-weight:700;margin-top:8px;display:inline-block}
+  .gate{font-size:12px;color:#8a8aa0;background:#fbfbff;border:1px dashed #d8d8e6;border-radius:10px;padding:8px 12px;margin-top:10px}
+  /* 행동 버튼 */
+  .actionbig{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:10px}
+  .actionbig a{background:#f6f4ff;border:1px solid #e6e0ff;border-radius:14px;padding:18px;text-decoration:none;color:inherit;transition:.15s}
+  .actionbig a:hover{border-color:#7c6cff;transform:translateY(-2px)}
+  .actionbig .t{font-weight:800;font-size:16px;color:#3a2fb0}
+  .actionbig .d{font-size:12.5px;color:#666;margin-top:6px;line-height:1.5}
+  /* 5분 영상 */
+  .videobox{background:linear-gradient(160deg,#eef6ff,#f3f0ff);border:1px solid #e6e0ff;border-radius:16px;padding:20px;display:grid;grid-template-columns:1.05fr 1fr;gap:18px;align-items:center;margin-top:10px}
+  .videothumb{background:#2a2a3a;border-radius:12px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;text-align:center;padding:14px;line-height:1.5}
+  .videobox .badge{display:inline-block;background:#c0512b;color:#fff;font-size:12px;font-weight:800;border-radius:20px;padding:3px 12px;margin-bottom:8px}
+  .videobox .sum{font-size:13.5px;line-height:1.85;color:#2a2a33}
+  .videobox .vcta{display:inline-block;margin-top:10px;background:#7c6cff;color:#fff;font-weight:800;text-decoration:none;border-radius:10px;padding:9px 16px;font-size:13.5px}
+  /* 출력자료 4종 */
+  .prints{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:10px}
+  .print{background:#fff;border:1px solid #e7e7ef;border-radius:13px;padding:15px;display:flex;flex-direction:column}
+  .print .ic{font-size:20px}
+  .print .t{font-weight:800;font-size:14.5px;margin:6px 0 4px}
+  .print .when{font-size:11.5px;color:#5a49d6;font-weight:700}
+  .print .d{font-size:12px;color:#666;line-height:1.5;margin:5px 0 10px;flex:1}
+  .print a{margin-top:auto;text-align:center;background:#7c6cff;color:#fff;font-weight:800;text-decoration:none;border-radius:9px;padding:8px;font-size:13px}
+  .print a:hover{background:#6a5bf0}
+  /* 과정 6단계 */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:10px}
+  .step{background:#fff;border:1px solid #ececf4;border-radius:11px;padding:12px 14px}
+  .step .n{font-weight:800;color:#7c6cff;font-size:13px}
+  .step .s{font-weight:700;font-size:14px;margin-top:3px;color:#2a2a33}
+  /* footer CTA */
+  .ctafoot{background:linear-gradient(160deg,#f3f0ff,#eef6ff);border-radius:16px;padding:26px 20px;text-align:center;margin:26px 0 10px}
+  .ctafoot .big{font-size:19px;font-weight:800;color:#3a2fb0}
+  .ctafoot a{display:inline-block;margin-top:12px;background:#7c6cff;color:#fff;font-weight:800;text-decoration:none;border-radius:12px;padding:12px 22px;font-size:15px}
+  .evidence{background:#fbfbff;border:1px solid #ececf4;border-radius:12px;padding:14px 16px;font-size:13px;line-height:1.7;color:#555;margin-top:10px}
+  .evidence a{color:#5a49d6;font-weight:700;text-decoration:none}
+  @media(max-width:720px){.cards{grid-template-columns:repeat(2,1fr)}.cards.c3{grid-template-columns:1fr}.flagrow{grid-template-columns:repeat(2,1fr)}.issuewrap{grid-template-columns:1fr}.actionbig{grid-template-columns:1fr}.videobox{grid-template-columns:1fr}.prints{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -61,52 +95,113 @@
   <a class="item" href="/safety/">안전</a>
 </div></nav>
 
+<!-- 1. HERO — 부모용 핵심 메시지 -->
 <header class="aee-hero"><div class="wrap">
-  <div class="kicker">세계 9개국 AI 교육 비교 · 부모 실전 가이드 · 2026-07-03 기준</div>
-  <div style="margin:4px 0 2px"><a href="/ai-early-education/start-here.html" style="display:inline-block;background:#fff;color:#5a49d6;border:1.5px solid #d8d0ff;border-radius:20px;padding:5px 14px;font-size:13px;font-weight:800;text-decoration:none">👋 처음 오셨다면 — 10분 안내부터 →</a></div>
-  <h1>AI 조기교육, 어디서부터 시작해야 할까?</h1>
-  <p class="sub">세계 9개국 AI 교육을 비교하고, 한국 부모가 집에서 안전하게 시작할 수 있는 방법을 정리합니다. <b>AI 조기교육은 빨리 쓰게 하는 경쟁이 아닙니다 — 세계의 공통점은 ‘아이를 AI 앞에 혼자 두지 않는다’는 것.</b></p>
+  <div class="kicker">부모용 AI 조기교육 관제판 · 오늘 아이와 무엇을 할까</div>
+  <h1>AI 시대, 아이에게 먼저 필요한 건 코딩이 아닙니다.<br>AI와 대화하고, 결과를 보고, 다시 고쳐 말하는 힘입니다.</h1>
+  <p class="sub"><b>아이에게 AI를 가르친다는 건 프로그램을 배우게 하는 게 아니라, 원하는 결과를 말하고 고쳐가는 연습을 시키는 것입니다.</b></p>
+  <p class="sub2">이 사이트는 아이가 생성형 AI와 대화하면서 원하는 결과에 가까워지는 과정을 연습하도록 돕는 부모용 관제판입니다. 처음이시면 <a href="/ai-early-education/start-here.html" style="color:#5a49d6;font-weight:700">10분 안내</a>부터.</p>
   <div class="herocta">
-    <a class="p1" href="/ai-early-education/compare.html">🧭 우리 아이 시작점 찾기</a>
-    <a class="p2" href="/ai-early-education/home-experiments.html">🧪 집에서 해볼 실험 10가지</a>
-    <a class="p2" href="/ai-early-education/checklist.html">🧷 시작 전 체크리스트</a>
+    <a class="p1" href="/ai-early-education/home-experiments.html">🧪 아이와 AI 대화 시작하기</a>
+    <a class="p2" href="#video">🎬 5분 영상으로 먼저 보기</a>
+    <a class="p2" href="/ai-early-education/downloads.html">🖨️ 출력자료 받기</a>
   </div>
-  <div style="margin-top:8px;font-size:13px;color:#6a6a80">그 외 · <a href="/ai-early-education/downloads.html" style="color:#5a49d6;font-weight:700">🖨️ 부모용 출력 자료 4종 세트</a> · <a href="/ai-early-education/parent-faq.html" style="color:#5a49d6;font-weight:700">❓ 자주 묻는 질문</a> · <a href="/ai-early-education/glossary.html" style="color:#5a49d6;font-weight:700">📖 용어사전</a></div>
 </div></header>
 
 <main class="wrap">
 
+  <!-- 2. 오늘의 AI 교육 이슈 (관측소 → 부모 언어, approved만 / 없으면 검토중) -->
   <section>
-    <h2 class="sec">부모가 바로 쓰는 가이드</h2>
-    <p class="secsub">읽고 → 고르고 → 해보고 → 지키는 순서. 우리 집에 필요한 것부터 고르세요.</p>
-    <div class="cards">
-      <a href="/ai-early-education/for-parents.html"><div class="ic">👪</div><div class="t">부모 시작 가이드</div><div class="d">어디서부터 시작할까 — 9개국 분석을 오늘의 첫 행동으로.</div></a>
-      <a href="/ai-early-education/age-guide.html"><div class="ic">📶</div><div class="t">연령별 가이드</div><div class="d">유아·초등·중학생, 나이에 맞게 무엇이 달라야 할까.</div></a>
-      <a href="/ai-early-education/home-experiments.html"><div class="ic">🧪</div><div class="t">집에서 실험 10가지</div><div class="d">10~30분이면 되는 작은 AI 대화 실험 카드.</div></a>
-      <a href="/ai-early-education/parent-rules.html"><div class="ic">🛡️</div><div class="t">7가지 약속</div><div class="d">아이와 AI를 쓸 때 먼저 정해야 할 안전 규칙.</div></a>
+    <h2 class="sec">오늘의 AI 교육 이슈</h2>
+    <p class="secsub">세계의 AI 교육 변화 중 부모가 알아야 할 내용을 골라 보여줍니다.</p>
+    <div class="issuewrap">
+      <a class="issue" href="/ai-early-education/school-vs-home.html">
+        <span class="lb research">연구 동향</span>
+        <div class="it">AI가 시험 채점에 활용될 수 있다는 연구가 나오고 있습니다. 단, 초등 조기교육에 바로 적용할 내용은 아니며, AI 평가 기술의 흐름을 이해하기 위한 참고입니다.</div>
+        <span class="more">학교와 가정의 역할 →</span>
+      </a>
+      <a class="issue" href="/ai-early-education/global-matrix.html">
+        <span class="lb review">검토 중</span>
+        <div class="it">여러 나라가 학교에서 AI를 어떻게 사용할지 기준을 만들고 있습니다. 아직 부모용 자료로 확정하기 전, 흐름을 관찰하는 단계입니다.</div>
+        <span class="more">9개국 흐름 보기 →</span>
+      </a>
+      <a class="issue" href="/ai-early-education/home-experiments.html">
+        <span class="lb check">부모 체크</span>
+        <div class="it">아이에게 AI 답을 그대로 믿게 하기보다, 결과를 보고 다시 질문하는 연습이 중요합니다. 오늘 집에서 한 번 해보세요.</div>
+        <span class="more">집에서 실험 고르기 →</span>
+      </a>
+    </div>
+    <div class="gate">🔎 이 이슈들은 AI 교육 관측소가 매일 확인한 신호 중 일부입니다. <b>‘검토 중’</b>은 아직 부모용 자료로 승인되기 전이며, 정책·연구는 계속 바뀌므로 확인일 기준으로 읽어 주세요.</div>
+  </section>
+
+  <!-- 3. 오늘 바로 할 수 있는 3가지 -->
+  <section>
+    <h2 class="sec">오늘 바로 할 수 있는 3가지</h2>
+    <p class="secsub">읽으러 온 게 아니라 ‘무엇부터 하면 되는지’ 찾으러 오셨다면.</p>
+    <div class="actionbig">
+      <a href="/ai-early-education/home-experiments.html"><div class="t">1. 아이와 AI 대화 1번 해보기</div><div class="d">10~30분이면 되는 작은 대화 실험 10가지 중 하나 고르기.</div></a>
+      <a href="#video"><div class="t">2. 5분 영상 보기</div><div class="d">아이가 말하고·관찰하고·다시 요청하는 과정을 예시로.</div></a>
+      <a href="/ai-early-education/downloads.html"><div class="t">3. 활동지 출력하기</div><div class="d">집에서 바로 쓰는 인쇄용 출력자료 4종.</div></a>
     </div>
   </section>
 
-  <section>
-    <div class="posline">
-      <b>AI 조기교육은 아이에게 프로그램을 가르치는 것이 아닙니다.</b> 아이가 원하는 결과를 말하고, 나온 결과를 관찰하고, 다시 요청하는 경험을 배우는 것입니다.
-      <div class="muted" style="font-size:12.5px;margin-top:8px">— 국제 근거: UNESCO 학생용 AI 역량 프레임워크(2024)의 첫 번째 역량이 코딩이 아니라 ‘인간 중심 사고방식’입니다.</div>
+  <!-- 4. 5분 정밀 영상 -->
+  <section id="video">
+    <h2 class="sec">5분으로 이해하는 AI 조기교육</h2>
+    <p class="secsub">아이가 AI에게 말하고, 결과를 관찰하고, 다시 요청하는 과정을 실제 예시로 보여줍니다.</p>
+    <div class="videobox">
+      <div class="videothumb">🎬 부모용 5분 해설<br>(제작 중 · 공개 예정)</div>
+      <div>
+        <span class="badge">곧 공개</span>
+        <div class="sum">
+          · AI는 정답 기계가 아니라 ‘같이 확인할 도구’입니다.<br>
+          · 앱부터 고르지 말고, 나이에 맞는 시작 방식과 약속부터 정합니다.<br>
+          · 결과를 그대로 믿지 않고 ‘다시 확인하는 습관’을 함께 만듭니다.
+        </div>
+        <a class="vcta" href="/ai-early-education/home-experiments.html">영상 공개 전, 먼저 집에서 실험 해보기 →</a>
+      </div>
     </div>
   </section>
 
+  <!-- 5. 출력자료 4종 -->
   <section>
-    <h2 class="sec">세계는 AI 시대 교육을 어떻게 준비하고 있나</h2>
-    <p class="secsub">정부 문서와 언론으로 직접 확인한 9개국 × 8기준. 이 사이트의 근거입니다.</p>
+    <h2 class="sec">집에서 바로 쓰는 출력자료 4종</h2>
+    <p class="secsub">출력자료는 부가자료가 아니라 부모가 오늘 행동하게 만드는 도구입니다. 파일 다운로드 없이 브라우저 인쇄(Ctrl/⌘+P)로 바로 씁니다.</p>
+    <div class="prints">
+      <div class="print"><div class="ic">📶</div><div class="t">연령별 시작 카드</div><div class="when">언제: 시작 방식을 정할 때</div><div class="d">유아·초등·중학생, 나이에 맞는 첫 대화 방식을 고릅니다.</div><a href="/ai-early-education/age-cards.html">출력하기</a></div>
+      <div class="print"><div class="ic">🛡️</div><div class="t">7가지 약속표</div><div class="when">언제: AI 켜기 전</div><div class="d">혼자 쓰지 않기·개인정보 넣지 않기 등 함께 읽는 안전 약속.</div><a href="/ai-early-education/printable-rules.html">출력하기</a></div>
+      <div class="print"><div class="ic">🧾</div><div class="t">실험 전 체크리스트</div><div class="when">언제: 실험 직전</div><div class="d">오늘 목적·시간·개인정보·역할을 5분에 확인합니다.</div><a href="/ai-early-education/printable-checklist.html">출력하기</a></div>
+      <div class="print"><div class="ic">✍️</div><div class="t">실험 기록지</div><div class="when">언제: 실험 후</div><div class="d">처음 요청·마음에 든 점·다시 요청한 말을 적으며 ‘다시 말하기’를 연습.</div><a href="/ai-early-education/experiment-log.html">출력하기</a></div>
+    </div>
+    <p class="secsub" style="margin-top:10px">4종을 한 곳에서 보려면 → <a href="/ai-early-education/downloads.html" style="color:#5a49d6;font-weight:700">🖨️ 출력자료 4종 세트</a></p>
+  </section>
+
+  <!-- 6. 부모 가이드 — 결과물이 아니라 과정 -->
+  <section>
+    <h2 class="sec">아이와 AI를 쓸 때 핵심은 결과물이 아니라 과정입니다</h2>
+    <div class="posline"><b>출력물은 결과입니다. 교육은 과정입니다.</b> 아이가 원하는 결과를 말하고, 나온 결과를 관찰하고, 다시 요청하는 그 과정을 배우는 것이 AI 조기교육입니다.
+      <div class="muted" style="font-size:12.5px;margin-top:8px">— 국제 근거: UNESCO 학생용 AI 역량 프레임워크의 첫 역량은 코딩이 아니라 ‘인간 중심 사고방식’입니다.</div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div class="s">원하는 결과를 떠올리기</div></div>
+      <div class="step"><div class="n">2</div><div class="s">AI에게 말로 요청하기</div></div>
+      <div class="step"><div class="n">3</div><div class="s">나온 결과 관찰하기</div></div>
+      <div class="step"><div class="n">4</div><div class="s">마음에 안 드는 부분 찾기</div></div>
+      <div class="step"><div class="n">5</div><div class="s">다시 말하기</div></div>
+      <div class="step"><div class="n">6</div><div class="s">조건을 바꿔보기</div></div>
+    </div>
+    <p class="secsub" style="margin-top:10px">더 자세히 · <a href="/ai-early-education/for-parents.html" style="color:#5a49d6;font-weight:700">부모 시작 가이드</a> · <a href="/ai-early-education/age-guide.html" style="color:#5a49d6;font-weight:700">연령별 가이드</a> · <a href="/ai-early-education/parent-rules.html" style="color:#5a49d6;font-weight:700">7가지 약속</a> · <a href="/ai-early-education/parent-faq.html" style="color:#5a49d6;font-weight:700">부모 FAQ</a> · <a href="/ai-early-education/glossary.html" style="color:#5a49d6;font-weight:700">용어사전</a></p>
+  </section>
+
+  <!-- 7. 세계 9개국 — 하단 신뢰 근거 -->
+  <section>
+    <h2 class="sec">세계는 이미 AI 교육을 어떻게 준비하고 있을까?</h2>
+    <p class="secsub">이 사이트는 9개국의 AI 교육 정책·교사 가이드·학교 현장 논의를 바탕으로 부모용 방향을 정리합니다. <b>세계의 공통점은 ‘아이를 AI 앞에 혼자 두지 않는다’는 것.</b></p>
     <div class="cards c3">
-      <a href="/ai-early-education/global-matrix.html"><div class="ic">📊</div><div class="t">9개국 매트릭스</div><div class="d">시작 연령·수업 방식·생성형 AI 허용·교사 연수·윤리·부모 가이드 8기준 비교.</div></a>
-      <a href="/ai-early-education/models.html"><div class="ic">🗂️</div><div class="t">교육 모델 비교</div><div class="d">국가 플랫폼형·의무 교육형·고학년 집중형·역량 우선형·규모형·가정 보완형 6가지.</div></a>
-      <a href="/ai-early-education/countries/"><div class="ic">🌍</div><div class="t">국가별 상세 분석</div><div class="d">9개국을 같은 9개 질문으로 하나씩 깊이 본다.</div></a>
+      <a href="/ai-early-education/global-matrix.html"><div class="ic">📊</div><div class="t">세계 AI 교육 흐름 (9개국 매트릭스)</div><div class="d">시작 연령·생성형 AI 허용·교사 연수·윤리·부모 가이드 8기준 비교.</div></a>
+      <a href="/ai-early-education/models.html"><div class="ic">🗂️</div><div class="t">교육 모델 6가지</div><div class="d">국가 플랫폼형·의무 교육형·역량 우선형·가정 보완형 등.</div></a>
+      <a href="/ai-early-education/countries/"><div class="ic">🌍</div><div class="t">다른 나라 부모들은 어떻게 준비할까</div><div class="d">9개국을 같은 질문으로 하나씩 깊이 본다.</div></a>
     </div>
-    <p class="secsub" style="margin-top:10px">📚 이 분석은 어떤 자료를 근거로 했을까요? <a href="/ai-early-education/source-library.html" style="color:#5a49d6;font-weight:700">출처 라이브러리</a>에서 UNESCO·각국 교육부·언론 보도를 유형별로 정리했습니다. · 🏫🏠 <a href="/ai-early-education/school-vs-home.html" style="color:#5a49d6;font-weight:700">학교와 가정의 역할은 무엇이 다를까?</a> · 📖 <a href="/ai-early-education/glossary.html" style="color:#5a49d6;font-weight:700">낯선 용어는 용어사전에서</a></p>
-  </section>
-
-  <section>
-    <h2 class="sec">국가별 빠른 이동</h2>
     <div class="flagrow">
       <a href="/ai-early-education/countries/singapore.html"><span class="fl">🇸🇬</span><span><span class="nm">싱가포르</span><br><span class="cap">국가 플랫폼 통제형</span></span></a>
       <a href="/ai-early-education/countries/china.html"><span class="fl">🇨🇳</span><span><span class="nm">중국</span><br><span class="cap">의무·통제 병행형</span></span></a>
@@ -118,41 +213,30 @@
       <a href="/ai-early-education/countries/india.html"><span class="fl">🇮🇳</span><span><span class="nm">인도</span><br><span class="cap">규모 확장형</span></span></a>
       <a href="/ai-early-education/countries/us.html"><span class="fl">🇺🇸</span><span><span class="nm">미국</span><br><span class="cap">분권·가정 보완형</span></span></a>
     </div>
+    <p class="secsub" style="margin-top:10px">📚 시리즈로 읽기 · <a href="/ai-early-education/world-ai-education-map.html" style="color:#5a49d6;font-weight:700">세계 9개국 (1편)</a> · <a href="/ai-early-education/korea-ai-digital-textbook-controversy.html" style="color:#5a49d6;font-weight:700">한국 AI 디지털교과서 (2편)</a> · <a href="/ai-early-education/ai-conversation-before-coding.html" style="color:#5a49d6;font-weight:700">코딩보다 대화가 먼저 (3편)</a></p>
   </section>
 
+  <!-- 8. 근거 보관소 -->
   <section>
-    <h2 class="sec">핵심 시리즈 글</h2>
-    <ul class="serieslist">
-      <li><span class="num">1</span><div><b>AI 교육, 다른 나라는 아이들에게 어떻게 가르치고 있을까?</b> <a class="live" href="/ai-early-education/world-ai-education-map.html">지금 읽기 →</a><br><span class="muted" style="font-size:12.5px">세계 9개국 조사. 결론=도구 사용보다 AI와 상호작용하는 힘.</span></div></li>
-      <li><span class="num">2</span><div><b>한국 AI 디지털교과서, 1년 만에 무슨 일이 있었나</b> <a class="live" href="/ai-early-education/korea-ai-digital-textbook-controversy.html">지금 읽기 →</a><br><span class="muted" style="font-size:12.5px">도입→교육자료 격하→채택률 하락. 비난이 아니라 ‘가정의 역할’로.</span></div></li>
-      <li><span class="num">3</span><div><b>아이에게 AI를 가르친다는 건 코딩을 시키는 게 아니다</b> <a class="live" href="/ai-early-education/ai-conversation-before-coding.html">지금 읽기 →</a><br><span class="muted" style="font-size:12.5px">첫 AI 교육은 코딩 문법이 아니라 상상→요청→관찰→수정→다시 말하기.</span></div></li>
-    </ul>
-  </section>
-
-  <section>
-    <h2 class="sec">이 사이트, 어떻게 쓰면 좋을까</h2>
-    <p class="secsub">방문자별 추천 경로입니다. 헷갈리면 <a href="/ai-early-education/compare.html" style="color:#5a49d6;font-weight:700">시작점 찾기</a>부터.</p>
-    <div class="routes">
-      <div class="routebox"><div class="who">🌱 처음 온 부모</div><div class="path"><a href="/ai-early-education/compare.html">시작점 찾기</a> <span class="arw">→</span> <a href="/ai-early-education/for-parents.html">시작 가이드</a> <span class="arw">→</span> <a href="/ai-early-education/checklist.html">체크리스트</a></div></div>
-      <div class="routebox"><div class="who">📶 아이 나이가 궁금한 부모</div><div class="path"><a href="/ai-early-education/age-guide.html">연령별 가이드</a> <span class="arw">→</span> <a href="/ai-early-education/home-experiments.html">집에서 실험</a></div></div>
-      <div class="routebox"><div class="who">🛡️ 안전이 걱정되는 부모</div><div class="path"><a href="/ai-early-education/parent-rules.html">7가지 약속</a> <span class="arw">→</span> <a href="/ai-early-education/checklist.html">체크리스트</a></div></div>
-      <div class="routebox"><div class="who">🌍 세계 흐름이 궁금한 독자</div><div class="path"><a href="/ai-early-education/global-matrix.html">매트릭스</a> <span class="arw">→</span> <a href="/ai-early-education/models.html">모델 비교</a> <span class="arw">→</span> <a href="/ai-early-education/countries/">국가별</a></div></div>
+    <h2 class="sec">근거 보관소</h2>
+    <div class="evidence">
+      모든 자료는 UNESCO·각국 교육부·정책 문서·교사 가이드·언론 보도 등을 구분해 정리했습니다. 이 사이트는 아무 말이나 하는 게 아니라 세계 정책 흐름과 근거를 보고 있습니다.<br>
+      → <a href="/ai-early-education/source-library.html">출처 라이브러리 보기</a> · <a href="/ai-early-education/sources.html">전체 출처</a> · <a href="/ai-early-education/school-vs-home.html">학교와 가정의 역할</a>
     </div>
   </section>
 
+  <!-- 9. Footer CTA -->
   <section>
-    <h2 class="sec">다음 확장 예고</h2>
-    <div class="preview">
-      · <b>부모 체크리스트 인쇄본</b> — 냉장고에 붙여 쓰는 한 장 정리<br>
-      · <b>출처 라이브러리</b> — 9개국 근거를 주제별로 다시 정리<br>
-      · <b>학교·가정 비교</b> — 학교가 하는 것과 가정이 할 것을 나란히
+    <div class="ctafoot">
+      <div class="big">오늘 아이와 AI에게 한 번만 다시 말해보게 하세요.</div>
+      <a href="/ai-early-education/home-experiments.html">AI 대화 연습 시작하기 →</a>
     </div>
   </section>
 
 </main>
 
 <footer><div class="wrap">
-  모든 정책 서술은 2026-07-03 기준 공개 자료(정부·UNESCO·주요 언론)에 근거합니다 · <a href="/ai-early-education/sources.html">전체 출처</a> · <a href="/safety/">아이와 AI를 쓸 때 주의할 점</a><br>
+  모든 정책 서술은 공개 자료(정부·UNESCO·주요 언론)에 근거합니다 · <a href="/ai-early-education/sources.html">전체 출처</a> · <a href="/ai-early-education/source-library.html">근거 보관소</a> · <a href="/safety/">아이와 AI를 쓸 때 주의할 점</a><br>
   정책은 계속 바뀝니다 — 글마다 ‘확인일’을 표기합니다.
 </div></footer>
 </body>
