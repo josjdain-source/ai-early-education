@@ -3,6 +3,25 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "timeline 3:45 압축(A안). 26컷·증거10·해석5 유지, 5분판 보존",
+      "changes": [
+        "world-ai-education-compact-edit-timeline.json(3:45/225s)+compact-edit-shotlist.md: TTS 3:28에 맞춰 컷 길이 단축",
+        "제거된 컷 0. 각 나라 3단 유지. 증거 4초(출처바 가독)·해석카드 16초·한국 21초 결론",
+        "나라별 배분 요청과 일치(오프닝15/각국33~38/공통23/CTA17). 기존 5분판 보존",
+        "reports/WORLD_AI_EDUCATION_TIMELINE_COMPRESSION_REPORT.md"
+      ],
+      "verification": {
+        "length": "3:45(목표 3:40~3:55)",
+        "assets": "증거10·해석5 전부 유지, 제거 0",
+        "preserved": "5분 timeline/shotlist 보존",
+        "no_render": "업로드/HTML/링크 없음, sitemap 41"
+      },
+      "todo_next": [
+        "compact 기준 본편 초벌 조립(이미지+TTS+자막)→draft mp4→검수"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "본편 TTS 음성 생성(edge-tts SunHi). 길이 3:28<5:00 정직 보고",
       "changes": [
         "edge-tts ko-KR-SunHiNeural(-10% 차분) 내레이션 생성. tts_lab/edge_tts venv 사용",
@@ -11,12 +30,15 @@
         "★길이 3:28(내레이션 3:26+무음2s) < timeline 5:00: 텍스트 1148자로 짧음. 가짜로 안 늘림→timeline 압축(A)/내레이션 확장(B)/무음채움(C) 방안 제시"
       ],
       "verification": {
-        "engine":"edge-tts SunHiNeural(라이선스 합성, 실존인물 아님)",
-        "tail":"끝 2초 무음 RMS 0.0 확인",
-        "length":"3:28(목표 4:40~5:30 미달, 정직 보고). 발음 자동청취 불가→사람 확인 권장",
-        "no_render":"영상 렌더/업로드/HTML/링크교체 없음, sitemap 41"
+        "engine": "edge-tts SunHiNeural(라이선스 합성, 실존인물 아님)",
+        "tail": "끝 2초 무음 RMS 0.0 확인",
+        "length": "3:28(목표 4:40~5:30 미달, 정직 보고). 발음 자동청취 불가→사람 확인 권장",
+        "no_render": "영상 렌더/업로드/HTML/링크교체 없음, sitemap 41"
       },
-      "todo_next":["길이방안 A/B/C 결정(권장 A timeline 압축)","본편 초벌 조립·렌더→검수"]
+      "todo_next": [
+        "길이방안 A/B/C 결정(권장 A timeline 압축)",
+        "본편 초벌 조립·렌더→검수"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -34,7 +56,10 @@
         "pending_cleared": "timeline 26/26 ready, 시각자산 31 missing 0",
         "no_render": "렌더/업로드/HTML/링크교체 없음, sitemap 41"
       },
-      "todo_next": ["TTS 음성 생성", "본편 초벌 조립·렌더→검수"]
+      "todo_next": [
+        "TTS 음성 생성",
+        "본편 초벌 조립·렌더→검수"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -52,7 +77,11 @@
         "pending_flagged": "인포그래픽8+해석카드5 pending 명시(편집 전 제작 필요)",
         "no_render": "렌더/업로드/HTML/링크교체 없음, sitemap 41"
       },
-      "todo_next": ["pending 인포그래픽/해석카드 제작", "TTS 음성", "timeline 조립→초벌 렌더→검수"]
+      "todo_next": [
+        "pending 인포그래픽/해석카드 제작",
+        "TTS 음성",
+        "timeline 조립→초벌 렌더→검수"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -69,7 +98,10 @@
         "ready": "10/10 ready_for_editing, rejected 0",
         "no_render": "영상 렌더/업로드/HTML 없음, sitemap 41"
       },
-      "todo_next": ["shotlist ②컷에 final evidence 연결", "본편 초벌 편집(증거3~5초+해석카드)"]
+      "todo_next": [
+        "shotlist ②컷에 final evidence 연결",
+        "본편 초벌 편집(증거3~5초+해석카드)"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -87,7 +119,11 @@
         "usable": "10/10 사용가능(CN-01은 크롭 후), rejected 0, failed 0",
         "no_composite": "출처바 합성/렌더/업로드/HTML 없음, sitemap 41"
       },
-      "todo_next": ["크롭 3개(CN-01·KR-01·KR-02)", "출처바 합성→captured/", "shotlist ②삽입→본편 초벌"]
+      "todo_next": [
+        "크롭 3개(CN-01·KR-01·KR-02)",
+        "출처바 합성→captured/",
+        "shotlist ②삽입→본편 초벌"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -104,7 +140,11 @@
         "manual": "조건부 4 manual-needed/ 대기(가이드 별도)",
         "no_composite": "출처바 합성 안함(raw만), 렌더/업로드/HTML 없음, sitemap 41"
       },
-      "todo_next": ["사람 조건부 4 캡처→manual-needed/", "raw 10장 출처바 합성+KR 크롭", "shotlist ②삽입→본편 초벌"]
+      "todo_next": [
+        "사람 조건부 4 캡처→manual-needed/",
+        "raw 10장 출처바 합성+KR 크롭",
+        "shotlist ②삽입→본편 초벌"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -121,7 +161,11 @@
         "conditions": "CN-01 헤드밴드 절대금지가 핵심(감시교육 오독 방지)",
         "no_capture": "capture_status=not_captured 전부, 폴더 미생성, 렌더/업로드/HTML 없음, sitemap 41"
       },
-      "todo_next": ["사람 최종 확인(권장화면·라이선스)", "승인분 캡처+출처바 합성", "shotlist ②삽입→본편 초벌"]
+      "todo_next": [
+        "사람 최종 확인(권장화면·라이선스)",
+        "승인분 캡처+출처바 합성",
+        "shotlist ②삽입→본편 초벌"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -138,7 +182,11 @@
         "risk": "CN-01 뇌파헤드밴드=감시 연상 회피, CN-02 랜딩은 근거 약함(PDF 필요)",
         "no_capture": "캡처/다운로드/저장/렌더/업로드/HTML 없음, 승인칸 미표기, sitemap 41"
       },
-      "todo_next": ["KR-02 교체 확정(korea.kr #2)", "사람 최종 승인(조건부 4 지침 포함)", "승인분만 캡처+출처바"]
+      "todo_next": [
+        "KR-02 교체 확정(korea.kr #2)",
+        "사람 최종 승인(조건부 4 지침 포함)",
+        "승인분만 캡처+출처바"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -154,7 +202,11 @@
         "no_capture": "capture_status=not_captured, evidence-screenshots 폴더 미생성, 렌더/업로드/HTML 없음, sitemap 41",
         "human_gate": "사람이 URL·라이선스 확인 후 승인→승인분만 캡처"
       },
-      "todo_next": ["사람 10개 URL 확인·승인", "승인분 캡처+출처바 합성", "shotlist 삽입→본편 초벌"]
+      "todo_next": [
+        "사람 10개 URL 확인·승인",
+        "승인분 캡처+출처바 합성",
+        "shotlist 삽입→본편 초벌"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -172,7 +224,11 @@
         "real_sources": "korea.kr/moe.go.kr 검색 확인, 공공누리 캡처 전 사람 확인",
         "no_capture": "candidate_found만, 캡처/렌더/업로드/HTML 없음, sitemap 41"
       },
-      "todo_next": ["한국 견본 검수", "5국 캡처 후보 확정(각 2장)→증거 스샷 캡처+출처바", "5분 본편 증거 삽입→쇼츠6"]
+      "todo_next": [
+        "한국 견본 검수",
+        "5국 캡처 후보 확정(각 2장)→증거 스샷 캡처+출처바",
+        "5분 본편 증거 삽입→쇼츠6"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -190,7 +246,11 @@
         "no_capture": "candidate_found만, 캡처/렌더/업로드/HTML 없음, sitemap 41",
         "progress": "5국 중 4국(중/미/영/싱) 완성. 한국만 남음"
       },
-      "todo_next": ["싱가포르 견본 검수", "한국 편(마지막, 부모 직접 결론부)", "5국완성→본편/쇼츠 증거 삽입"]
+      "todo_next": [
+        "싱가포르 견본 검수",
+        "한국 편(마지막, 부모 직접 결론부)",
+        "5국완성→본편/쇼츠 증거 삽입"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -208,7 +268,12 @@
         "no_capture": "candidate_found만, 캡처/렌더/업로드/HTML 없음, sitemap 41",
         "progress": "5국 중 3국(중/미/영) 견본 완성"
       },
-      "todo_next": ["영국 견본 검수", "싱가포르 편 복제(MOE/SLS 가드레일)", "한국 편", "본편/쇼츠 증거 삽입"]
+      "todo_next": [
+        "영국 견본 검수",
+        "싱가포르 편 복제(MOE/SLS 가드레일)",
+        "한국 편",
+        "본편/쇼츠 증거 삽입"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -226,7 +291,11 @@
         "balanced": "미국 찬양/정치선전 없음, 성과 단정 없음",
         "no_capture": "candidate_found만, 캡처/렌더/업로드/HTML 없음, sitemap 41"
       },
-      "todo_next": ["미국 견본 검수", "영국 편 복제", "그후 싱가포르·한국"]
+      "todo_next": [
+        "미국 견본 검수",
+        "영국 편 복제",
+        "그후 싱가포르·한국"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -244,7 +313,11 @@
         "no_capture": "candidate_found만, 실제 캡처/렌더/업로드/HTML 없음, sitemap 41",
         "balanced": "중국 우열/공포 연출 없음, 방향으로 서술"
       },
-      "todo_next": ["중국 견본 사람 검수", "추천 스샷 2장 캡처(승인후)", "미국편 복제→영/싱/한"]
+      "todo_next": [
+        "중국 견본 사람 검수",
+        "추천 스샷 2장 캡처(승인후)",
+        "미국편 복제→영/싱/한"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -254,8 +327,14 @@
         "ARCHITECTURE.md 0장에 편집국 표준 연결. screenshot-plan에 4칸 명시",
         "메모리 feedback_editorial_not_link_warehouse 기록(재사용 원칙)"
       ],
-      "verification": {"docs_only": "표준 문서·아키텍처·메모리만. HTML/렌더/캡처/배포 없음, sitemap 41"},
-      "todo_next": ["각 나라 카드/영상에 4칸 명시 배치", "소스 확정→증거 캡처", "페이지 리뉴얼 시 표준 적용"]
+      "verification": {
+        "docs_only": "표준 문서·아키텍처·메모리만. HTML/렌더/캡처/배포 없음, sitemap 41"
+      },
+      "todo_next": [
+        "각 나라 카드/영상에 4칸 명시 배치",
+        "소스 확정→증거 캡처",
+        "페이지 리뉴얼 시 표준 적용"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -273,7 +352,11 @@
         "no_fabrication": "URL/제목/게시일 pending(지어내지 않음)",
         "sitemap": "41 유지"
       },
-      "todo_next": ["국가별 실제 소스 영상/페이지 확정(URL)", "manifest 입력→캡처+출처바", "부족분 인포/공식페이지 보완→TTS→편집"]
+      "todo_next": [
+        "국가별 실제 소스 영상/페이지 확정(URL)",
+        "manifest 입력→캡처+출처바",
+        "부족분 인포/공식페이지 보완→TTS→편집"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -290,7 +373,11 @@
         "no_render": "TTS/렌더/업로드/HTML 없음, sitemap 41",
         "decision_pending": "톤 확정(A무료톤/B gpt-image한도상향/C보강) 판단 대기"
       },
-      "todo_next": ["톤 확정 판단", "확정 시 IMG-05~16(4장씩)", "그후 TTS→본편 초벌"]
+      "todo_next": [
+        "톤 확정 판단",
+        "확정 시 IMG-05~16(4장씩)",
+        "그후 TTS→본편 초벌"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -306,7 +393,12 @@
         "no_site_change": "HTML/sitemap/배포/링크교체 없음(sitemap 41 유지)",
         "one_at_a_time": "본편→쇼츠 순차 원칙 checklist에 고정"
       },
-      "todo_next": ["본편 이미지 IMG-01~16 생성", "TTS 음성", "본편 초벌 편집→검수", "그후 쇼츠1(중국)부터"]
+      "todo_next": [
+        "본편 이미지 IMG-01~16 생성",
+        "TTS 음성",
+        "본편 초벌 편집→검수",
+        "그후 쇼츠1(중국)부터"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -323,7 +415,11 @@
         "wire_plan": "완성 후 video-countries/ai-education-news 카드 준비중→링크(사람 승인)",
         "no_site_change": "HTML/sitemap/배포 없음"
       },
-      "todo_next": ["본편 대본 사람 검수", "쇼츠 이미지/음성/편집 파이프라인", "완성 후 카드 준비중→영상링크 교체(승인)"]
+      "todo_next": [
+        "본편 대본 사람 검수",
+        "쇼츠 이미지/음성/편집 파이프라인",
+        "완성 후 카드 준비중→영상링크 교체(승인)"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -340,7 +436,12 @@
         "structure_complete": "방송국 편성표 완성(한쪽다리 해소)",
         "no_extra_edit": "배포·검증만"
       },
-      "todo_next": ["세계 5분 본편 대본", "쇼츠6(5개국+뉴스걱정)", "썸네일 문구", "카드 준비중→영상링크"]
+      "todo_next": [
+        "세계 5분 본편 대본",
+        "쇼츠6(5개국+뉴스걱정)",
+        "썸네일 문구",
+        "카드 준비중→영상링크"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -358,7 +459,11 @@
         "sitemap": "41 XML 유효(신규 1건)",
         "no_deploy": "★배포 안 함(라이브는 뉴스칸 없는 버전 유지)"
       },
-      "todo_next": ["뉴스칸 포함해 배포(승인 시)", "세계 5분 본편 대본→쇼츠5", "뉴스 영상 준비중→실제 링크"]
+      "todo_next": [
+        "뉴스칸 포함해 배포(승인 시)",
+        "세계 5분 본편 대본→쇼츠5",
+        "뉴스 영상 준비중→실제 링크"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -374,7 +479,12 @@
         "structure_frozen": "무대 라이브 고정, 빈껍데기 아님(카드→실존 근거)",
         "no_extra_edit": "배포·검증만, 임의 수정 없음"
       },
-      "todo_next": ["세계 5분 본편 대본", "5개국 쇼츠 대본", "썸네일 문구", "video-countries 카드 준비중→영상링크 교체"]
+      "todo_next": [
+        "세계 5분 본편 대본",
+        "5개국 쇼츠 대본",
+        "썸네일 문구",
+        "video-countries 카드 준비중→영상링크 교체"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -393,7 +503,11 @@
         "sitemap": "40 XML 유효(신규 1건 추가)",
         "no_deploy": "★배포 안 함(wrangler 미실행), 자료 삭제 0"
       },
-      "todo_next": ["승인 시 wrangler 배포", "나라별 1분 영상 실제 제작→카드 href 교체", "연령별/대화놀이도 영상 서브페이지화 검토"]
+      "todo_next": [
+        "승인 시 wrangler 배포",
+        "나라별 1분 영상 실제 제작→카드 href 교체",
+        "연령별/대화놀이도 영상 서브페이지화 검토"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -413,7 +527,11 @@
         "fallback": "approved 0→검토중/연구동향 라벨, 과장 없음",
         "no_deploy": "★배포 안 함(wrangler 미실행), sitemap 39 유지"
       },
-      "todo_next": ["승인 시 wrangler 클린 배포→라이브 확인", "5분 영상 완성→임베드", "관측소 approved 연결(approved.json)"]
+      "todo_next": [
+        "승인 시 wrangler 클린 배포→라이브 확인",
+        "5분 영상 완성→임베드",
+        "관측소 approved 연결(approved.json)"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -431,7 +549,11 @@
         "control_panel": "조종판 status/next_action/액션 반영, JSON 유효",
         "no_publish": "사이트 HTML 0, sitemap 39, 배포/영상 0"
       },
-      "todo_next": ["홈페이지 부모용 관제판 진단 보고서", "내일 07:30 무인운전 확인", "UQ-90 영상 주제 승인 여부"]
+      "todo_next": [
+        "홈페이지 부모용 관제판 진단 보고서",
+        "내일 07:30 무인운전 확인",
+        "UQ-90 영상 주제 승인 여부"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -450,7 +572,11 @@
         "harvest": "UQ-90 1건=실제 교육 arXiv, status=new(사람 검수 대상), 오염 아님",
         "no_publish": "새 HTML 0, sitemap 39, 배포/영상/업로드 0, 스케줄러 무변경"
       },
-      "todo_next": ["내일 07:30 무인 실행 확인(스케줄러)", "UQ-90 사람 검수(승인/반려)", "scorer 한국어 커버리지 추가 관찰"]
+      "todo_next": [
+        "내일 07:30 무인 실행 확인(스케줄러)",
+        "UQ-90 사람 검수(승인/반려)",
+        "scorer 한국어 커버리지 추가 관찰"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -469,7 +595,10 @@
         "uq02_state": "evidence_merged(approved/applied/published 아님)",
         "no_publish": "업로드/HTML/sitemap/배포 0, 스케줄러 무변경"
       },
-      "todo_next": ["1차 편집(전환·자막번인·BGM·TTS)→검수→업로드(별도 승인)", "내일 07:30 자동 관측 첫 실운영 검수"]
+      "todo_next": [
+        "1차 편집(전환·자막번인·BGM·TTS)→검수→업로드(별도 승인)",
+        "내일 07:30 자동 관측 첫 실운영 검수"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -488,7 +617,11 @@
         "queue_clean": "update_queue 6항목 보존(dry-run만)",
         "no_publish": "새 HTML 0, sitemap 39, 배포/영상 0"
       },
-      "todo_next": ["내일 07:30 실운영 오탐/미탐 관찰", "한국어 커버리지·본문 반영 미세조정", "그 후 검색 API 연동"]
+      "todo_next": [
+        "내일 07:30 실운영 오탐/미탐 관찰",
+        "한국어 커버리지·본문 반영 미세조정",
+        "그 후 검색 API 연동"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -508,7 +641,12 @@
         "queue_clean": "update_queue 6항목 보존, 자동 오염 0",
         "no_publish": "새 HTML 0, sitemap 39, 배포/영상/업로드 0"
       },
-      "todo_next": ["검색형(유튜브/뉴스/학술) API 연동", "scorer 교육 키워드 정밀화(ML 논문 오탐 감소)", "공식 소스 딥링크 RSS 확보 시 feed-* 승격", "매일 07:30 실운영 결과 검수"]
+      "todo_next": [
+        "검색형(유튜브/뉴스/학술) API 연동",
+        "scorer 교육 키워드 정밀화(ML 논문 오탐 감소)",
+        "공식 소스 딥링크 RSS 확보 시 feed-* 승격",
+        "매일 07:30 실운영 결과 검수"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -528,7 +666,11 @@
         "status_new_safe": "자동 등록분 없음(0), 있었을 때도 status=new·approved null 확인했었음",
         "no_publish": "새 HTML 0, sitemap 39, 배포/영상/업로드 0, auto_publish=false"
       },
-      "todo_next": ["소스에 RSS 피드 URL 추가 또는 검색 API(YouTube Data/뉴스 API) 연동→기사 항목 확보", "매일 07:30 자동 실행 결과 검수", "싱가포르 편 1차 편집"]
+      "todo_next": [
+        "소스에 RSS 피드 URL 추가 또는 검색 API(YouTube Data/뉴스 API) 연동→기사 항목 확보",
+        "매일 07:30 자동 실행 결과 검수",
+        "싱가포르 편 1차 편집"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -550,7 +692,11 @@
         "hygiene": "테스트 산출물 되돌려 queue 6항목 유지, 로그 gitignore",
         "no_publish": "새 HTML 0, sitemap 39, 배포/영상/업로드 0, auto_publish=false"
       },
-      "todo_next": ["사용자 승인 시 register.ps1로 07:30 등록", "다음날 자동 daily_watch 확인", "그다음 검색 API 연동/싱가포르 편 편집"]
+      "todo_next": [
+        "사용자 승인 시 register.ps1로 07:30 등록",
+        "다음날 자동 daily_watch 확인",
+        "그다음 검색 API 연동/싱가포르 편 편집"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -573,7 +719,11 @@
         "honesty": "검색페이지 skipped_search, 결과 미조작",
         "no_publish": "새 HTML 0, sitemap 39, 배포/영상/업로드 0"
       },
-      "todo_next": ["매일 --write 운영(사람 승인 게이트)", "검색형 소스는 전용 API 연동(YouTube Data API 등)", "공식 소스 evidence capture 자동 연동"]
+      "todo_next": [
+        "매일 --write 운영(사람 승인 게이트)",
+        "검색형 소스는 전용 API 연동(YouTube Data API 등)",
+        "공식 소스 evidence capture 자동 연동"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -594,7 +744,10 @@
         "sources": "34(A~F 31 + G 3), 기존 구조 보존",
         "no_code_change": "새 HTML 0, sitemap 39, 배포/영상제작 0"
       },
-      "todo_next": ["다음 Daily Watch 7축 시험 운전", "G축 개별 뉴스 industry_watch_template로 연결성 점수 기록"]
+      "todo_next": [
+        "다음 Daily Watch 7축 시험 운전",
+        "G축 개별 뉴스 industry_watch_template로 연결성 점수 기록"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -613,7 +766,10 @@
         "no_fear": "'중국=위험' 명시적 배격, 공포 표현 없음",
         "no_change": "싱가포르 편/HTML/sitemap/배포/영상제작 0"
       },
-      "todo_next": ["축A(공식 규제)·축C(연구) 교차확인→확인분만 승격", "승인 시 감정 AI 편 대본"]
+      "todo_next": [
+        "축A(공식 규제)·축C(연구) 교차확인→확인분만 승격",
+        "승인 시 감정 AI 편 대본"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -633,7 +789,11 @@
         "no_upload": "업로드/완성 렌더 없음, UQ-02 evidence_merged(approved 아님)",
         "no_code_change": "새 HTML 0, sitemap 39, 배포 0"
       },
-      "todo_next": ["긴 정적 카드 3개 순차 등장 모션", "TTS 녹음+1차 편집→검수→업로드(별도 승인)", "정식 ffmpeg로 mp4 재렌더(선택)"]
+      "todo_next": [
+        "긴 정적 카드 3개 순차 등장 모션",
+        "TTS 녹음+1차 편집→검수→업로드(별도 승인)",
+        "정식 ffmpeg로 mp4 재렌더(선택)"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -653,7 +813,10 @@
         "sources": "31(축A 18+뉴스2+학회2+학교1+학생1+기관4+유튜브3), 기존 공식 구조 보존",
         "no_code_change": "새 HTML 0, sitemap 39, 배포/영상제작 0"
       },
-      "todo_next": ["다음 Daily Watch를 6축으로 시험 운전", "학생사례는 student_project_watch_template로 익명 기록"]
+      "todo_next": [
+        "다음 Daily Watch를 6축으로 시험 운전",
+        "학생사례는 student_project_watch_template로 익명 기록"
+      ]
     },
     {
       "date": "2026-07-04",
@@ -674,7 +837,11 @@
         "no_upload": "업로드/완성 렌더 없음, UQ-02 approved 아님",
         "no_code_change": "새 HTML 0, sitemap 39, 배포 0"
       },
-      "todo_next": ["c01 거실 장면+TTS(승인 후)", "preview 렌더로 타이밍 확인", "1차 편집→검수→업로드(별도 승인)"]
+      "todo_next": [
+        "c01 거실 장면+TTS(승인 후)",
+        "preview 렌더로 타이밍 확인",
+        "1차 편집→검수→업로드(별도 승인)"
+      ]
     },
     {
       "date": "2026-07-04",
