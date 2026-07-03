@@ -3,6 +3,31 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "UQ-02 승인 → 싱가포르 5분 영상 대본 초안(사이트/영상제작/업로드 X)",
+      "changes": [
+        "content/longform/ai-early-education/episode_02_singapore_parent_framework_5min.md 생성 — '싱가포르는 왜 아이와 부모를 함께 AI 교육에 넣었나' 5분 대본 초안(4:50±20s)",
+        "구성: 문제제기→싱가포르 사례(SLS·교사감독·학생+학부모)→핵심1 나이별→핵심2 책임있는 사용→핵심3 부모도 일부→한국 부모 결론→홈피 연결. + 화면표·자막·근거·출처표기·썸네일5·제목5·블로그요약·금지체크",
+        "근거: MOE 국회답변(2025-11-04)·MOE/SLS GenAI 가이드(확인일 2026-07-04) + 사이트 singapore/age-guide/age-cards/parent-rules/school-vs-home 정합",
+        "톤: '싱가포르=정답' 프레이밍 배제(참고 사례·정책 변동 가능 명시), 과장 없음",
+        "update_queue UQ-20260704-02: new→reviewing(draft_created). approved_by/applied_commit 여전히 null(published/applied 아님)",
+        "reports/AI_EARLY_EDUCATION_UQ02_SINGAPORE_VIDEO_DRAFT_REPORT.md 생성",
+        "새 HTML 0, sitemap 39 유지, 배포 0, 영상 제작·업로드 0"
+      ],
+      "verification": {
+        "length": "5분 내외(구간 타임코드)",
+        "source_consistency": "UQ-02 근거·기존 사이트 서술과 충돌 없음",
+        "no_overclaim": "싱가포르 정답 프레이밍 없음·변동 가능 명시",
+        "queue_state": "UQ-02 reviewing, applied 0",
+        "no_code_change": "새 HTML 0, sitemap 39, 영상 업로드 0"
+      },
+      "todo_next": [
+        "대본 사람 검수 → 영상 제작방식 결정",
+        "필요 시 singapore 페이지 근거 보강(별도 승인)",
+        "금요일 첫 주간 브리핑 초안"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "첫 Daily Watch 실행(관측 훈련) — 큐 초안 5건, 사이트 반영 0",
       "changes": [
         "ops/ai-early-education/daily_watch/2026-07-04.md 생성(8소스 확인 기록)",
