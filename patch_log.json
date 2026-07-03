@@ -3,6 +3,31 @@
   "entries": [
     {
       "date": "2026-07-03",
+      "title": "전략전환: 부모용 AI 조기교육 50초 숏폼 대본 1~5편 작성(영상 업로드 X, 대본만)",
+      "changes": [
+        "관점 전환: 검색등록은 보험, 실제 유입은 부모 불안을 건드리는 짧은 영상. 홈페이지=탄약고/근거·자료·출력물, 영상=발사대",
+        "전략문서 reports/AI_EARLY_EDUCATION_SHORTS_STRATEGY.md 생성(공통포맷 50초 5구간, 시리즈 10편 로드맵, 사실근거 일치표)",
+        "대본 5편 생성 content/shorts/ai-early-education/episode_01~05_script.md",
+        "포맷: 0~3 부모불안→3~10 오해깨기→10~30 핵심(세계사례 한줄)→30~43 집에서 할 행동→43~50 홈페이지 연결",
+        "1편 초등 ChatGPT(parent-rules/printable-rules) / 2편 코딩아님(ai-conversation-before-coding/start-here) / 3편 세계 브레이크(global-matrix/for-parents) / 4편 교과서논란(korea.../school-vs-home) / 5편 나이별(age-guide/age-cards)",
+        "기억문장 '앱부터 고르지 말고, 약속부터 정하세요' 삽입, 생활언어 톤",
+        "새 HTML 0, sitemap 변경 0(39 유지). 영상/유튜브/릴스 업로드 안 함"
+      ],
+      "verification": {
+        "length": "5편 모두 50초 구성(구간 타임코드 명시)",
+        "linked_urls": "대본 연결 URL 10개 전부 라이브 200",
+        "guardrails": "상품/쿠팡/유료강의·특정 AI 추천·공포마케팅·아이 혼자 사용 권장·개인정보 유도 없음(각 편 체크섹션)",
+        "fact_consistency": "UNESCO13세·싱가포르 저학년·영국 동의(3편), 교과서 격하·채택률↓(4편), 코딩보다 대화(2편) 모두 홈페이지 페이지와 일치",
+        "no_code_change": "새 HTML 0, sitemap 39 유지, 기존 페이지 무손상"
+      },
+      "todo_next": [
+        "SC 소유권 메타태그 오면 index head 삽입·배포(대기)",
+        "대본 승인 후 영상 제작방식 결정 → 6~10편 대본",
+        "업로드는 사람 승인 후"
+      ]
+    },
+    {
+      "date": "2026-07-03",
       "title": "Search Console 제출·색인 점검 가이드 작성(문서만, 코드 무변경)",
       "changes": [
         "reports/AI_EARLY_EDUCATION_SEARCH_CONSOLE_SUBMISSION_GUIDE.md 생성 — 사용자 수동 제출 절차 문서(Claude는 SC 로그인 불가)",
