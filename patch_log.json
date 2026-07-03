@@ -3,6 +3,33 @@
   "entries": [
     {
       "date": "2026-07-03",
+      "title": "인쇄용 7가지 약속표 printable-rules.html 신설 (출력 자료 허브 2번째 도구)",
+      "changes": [
+        "신규 페이지 ai-early-education/printable-rules.html — '아이와 AI를 쓸 때 7가지 약속표: 인쇄용 한 장'(A4)",
+        "역할 분리: parent-rules.html=설명형 안전 가이드, printable-rules.html=함께 읽고 체크·서명하는 출력용 약속표",
+        "구성: 제목 / 약속 정보(날짜·아이 이름 또는 별명·보호자·함께 읽은 시간) / 7가지 약속 체크 / 부모가 기억할 3가지 / 아이가 고르는 오늘의 약속 / 서명란 / 자세히 보기",
+        "개인정보 보호: 실명 대신 별명 허용, 서명·이름 담긴 채 인터넷 업로드 금지 안내, AI에 약속표 입력 불필요 명시",
+        "print CSS: @page A4 12mm, 인쇄 시 nav/footer/toolbar/morelinks/lead 숨김, break-inside:avoid, 배경 제거. JS 없음",
+        "downloads.html: '곧 추가할 자료'의 약속표를 '지금 사용 가능'으로 승격 + 하단 관련읽기 링크 추가",
+        "내부 상호링크: parent-rules(약속목록 하단 인쇄용 안내)·printable-checklist·index 히어로에 printable-rules 링크",
+        "sitemap.xml 36 → 37, 조종판 live-printable-rules 액션 + status/next_action 갱신"
+      ],
+      "verification": {
+        "local_http": "printable-rules.html / downloads.html / parent-rules.html 모두 200",
+        "internal_links": "printable-rules 내부 링크 전부 실존 확인",
+        "promotion": "downloads에서 약속표 badge='지금 사용'(ready)으로 승격 확인",
+        "print_css": "@page size:A4 + @media print 존재, A4 한 장 구조",
+        "guardrails": "PDF 0건, experiment-log/age-cards 미생성(정책 준수), 광고성 CTA·특정 AI 추천 없음, 개인정보 입력 유도 없음",
+        "sitemap": "loc 37개, printable-rules 1건",
+        "no_conflict": "parent-rules.html와 역할 충돌 없음(설명형 유지, 출력형 분리)"
+      },
+      "todo_next": [
+        "experiment-log(실험 기록지) 제작 → downloads 승격",
+        "age-cards(연령카드) 제작 → downloads 승격"
+      ]
+    },
+    {
+      "date": "2026-07-03",
       "title": "부모용 출력 자료 허브 downloads.html 신설",
       "changes": [
         "신규 페이지 ai-early-education/downloads.html 생성 — '부모용 AI 조기교육 출력 자료 모음' 허브",
