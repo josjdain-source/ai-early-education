@@ -3,7 +3,23 @@
   "entries": [
     {
       "date": "2026-07-04",
-      "title": "메인=분야별 영상 카테고리판 재설계 + video-countries.html 신규. 배포 안 함",
+      "title": "★영상 카테고리판 라이브 배포(wrangler) + 10항목 검증 통과",
+      "changes": [
+        "wrangler 클린 배포(git archive 추적분만, 커밋 81a9d71). 프로덕션 https://ai-early-education.pages.dev/ai-early-education/",
+        "라이브 검증: 메인 200·video-countries 308→200(CF 클린URL)·sitemap 40·카테고리판·나라별 연결·5개국+5분카드·근거 200·모바일 1열",
+        "관찰(수정 안함): video-countries.html→/video-countries 308 리다이렉트(CF 기본, 정상 착지). 링크 확장자 정리는 추후 결정",
+        "reports/AI_EARLY_EDUCATION_DEPLOY_REPORT.md"
+      ],
+      "verification": {
+        "live": "메인·video-countries·sitemap40·근거페이지 전부 200(리다이렉트 포함)",
+        "structure_frozen": "무대 라이브 고정, 빈껍데기 아님(카드→실존 근거)",
+        "no_extra_edit": "배포·검증만, 임의 수정 없음"
+      },
+      "todo_next": ["세계 5분 본편 대본", "5개국 쇼츠 대본", "썸네일 문구", "video-countries 카드 준비중→영상링크 교체"]
+    },
+    {
+      "date": "2026-07-04",
+      "title": "메인=분야별 영상 카테고리판 재설계 + video-countries.html 신규(배포 전)",
       "changes": [
         "메인 index를 유튜브/넷플릭스형 카테고리판으로: 대표=나라별 AI교육(와이드)+그리드6(연령별/대화놀이/부모가이드/출력자료/5분핵심영상/오늘이슈). 썸네일=CSS gradient+▶",
         "신규 video-countries.html: 나라별 영상 카드 5(중국/미국/영국/싱가포르/한국)+세계 5분 본편. 각 준비중+국가별 상세(근거) 연결",
