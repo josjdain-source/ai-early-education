@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "본편 pending 시각자산 13개 제작(인포8+해석카드5). timeline pending 0",
+      "changes": [
+        "production/gen_world_ai_images_batch2.py: IMG-05~16(12) + 해석카드5. IMG-01~04 톤 통일(무료 Pillow)",
+        "인포그래픽: 리터러시/교사훈련/판단/책임/플랫폼/가드레일/디지털교과서/가정/5국요약/질문판단수정/다시말하기/엔드카드",
+        "해석카드 5(CN/US/UK/SG/KR): 국가색 약하게+큰 문장 요약. 텍스트 안 깨짐(malgun 직접 렌더)",
+        "timeline pending 해소(ready 26/pending 0). visual-assets-manifest.json(31자산 전부 ready)",
+        "reports/WORLD_AI_EDUCATION_PENDING_VISUALS_REPORT.md"
+      ],
+      "verification": {
+        "tone": "IMG-01~04와 팔레트/아이콘 통일, evidence와 안 튐. 국기·선전·공포 없음",
+        "no_broken_text": "malgun 렌더, IMG-14·KR카드 검수 정상",
+        "pending_cleared": "timeline 26/26 ready, 시각자산 31 missing 0",
+        "no_render": "렌더/업로드/HTML/링크교체 없음, sitemap 41"
+      },
+      "todo_next": ["TTS 음성 생성", "본편 초벌 조립·렌더→검수"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "본편 shotlist 증거 컷 배선(각 나라 3단). 26컷 타임라인",
       "changes": [
         "production/world-ai-education-5min-edit-shotlist.md(26컷)+edit-timeline.json: 각 나라 ①인포그래픽→②증거2→③부모해석",

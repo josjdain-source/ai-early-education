@@ -1,0 +1,294 @@
+{
+  "meta": {
+    "video": "세계 AI교육 5분 본편",
+    "created": "2026-07-04",
+    "counts": {
+      "infographic": 16,
+      "interpretation": 5,
+      "evidence": 10,
+      "total": 31
+    },
+    "note": "pending 13 제작 완료. 전 시각자산 ready. 렌더/업로드 없음."
+  },
+  "assets": [
+    {
+      "id": "IMG-01-opening-map",
+      "cut_id": "C01",
+      "file": "assets/world-ai-education-5min/images/IMG-01-opening-map.png",
+      "type": "infographic",
+      "status": "ready",
+      "size": "1920x1080",
+      "notes": ""
+    },
+    {
+      "id": "IMG-02-parent-question",
+      "cut_id": "C02",
+      "file": "assets/world-ai-education-5min/images/IMG-02-parent-question.png",
+      "type": "infographic",
+      "status": "ready",
+      "size": "1920x1080",
+      "notes": ""
+    },
+    {
+      "id": "IMG-03-china-classroom",
+      "cut_id": "C03",
+      "file": "assets/world-ai-education-5min/images/IMG-03-china-classroom.png",
+      "type": "infographic",
+      "status": "ready",
+      "size": "1920x1080",
+      "notes": ""
+    },
+    {
+      "id": "IMG-04-china-guardrail",
+      "cut_id": "(china bg)",
+      "file": "assets/world-ai-education-5min/images/IMG-04-china-guardrail.png",
+      "type": "infographic",
+      "status": "ready",
+      "size": "1920x1080",
+      "notes": ""
+    },
+    {
+      "id": "IMG-05-usa-literacy",
+      "cut_id": "C07",
+      "file": "assets/world-ai-education-5min/images/IMG-05-usa-literacy.png",
+      "type": "infographic",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "IMG-06-usa-teacher-training",
+      "cut_id": "(extra)",
+      "file": "assets/world-ai-education-5min/images/IMG-06-usa-teacher-training.png",
+      "type": "infographic",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "IMG-07-uk-teacher-check",
+      "cut_id": "C11",
+      "file": "assets/world-ai-education-5min/images/IMG-07-uk-teacher-check.png",
+      "type": "infographic",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "IMG-08-uk-human-judgment",
+      "cut_id": "(extra)",
+      "file": "assets/world-ai-education-5min/images/IMG-08-uk-human-judgment.png",
+      "type": "infographic",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "IMG-09-singapore-platform",
+      "cut_id": "C15",
+      "file": "assets/world-ai-education-5min/images/IMG-09-singapore-platform.png",
+      "type": "infographic",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "IMG-10-singapore-guardrail",
+      "cut_id": "(extra)",
+      "file": "assets/world-ai-education-5min/images/IMG-10-singapore-guardrail.png",
+      "type": "infographic",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "IMG-11-korea-digital-textbook",
+      "cut_id": "C19",
+      "file": "assets/world-ai-education-5min/images/IMG-11-korea-digital-textbook.png",
+      "type": "infographic",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "IMG-12-korea-parent-home",
+      "cut_id": "(extra)",
+      "file": "assets/world-ai-education-5min/images/IMG-12-korea-parent-home.png",
+      "type": "infographic",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "IMG-13-five-country-summary",
+      "cut_id": "C23",
+      "file": "assets/world-ai-education-5min/images/IMG-13-five-country-summary.png",
+      "type": "infographic",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "IMG-14-question-judgment-revise",
+      "cut_id": "C24",
+      "file": "assets/world-ai-education-5min/images/IMG-14-question-judgment-revise.png",
+      "type": "infographic",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "IMG-15-parent-child-retry",
+      "cut_id": "C25",
+      "file": "assets/world-ai-education-5min/images/IMG-15-parent-child-retry.png",
+      "type": "infographic",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "IMG-16-final-cta",
+      "cut_id": "C26",
+      "file": "assets/world-ai-education-5min/images/IMG-16-final-cta.png",
+      "type": "infographic",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "CN-parent-interpretation",
+      "cut_id": "C06",
+      "file": "assets/world-ai-education-5min/interpretation-cards/CN-parent-interpretation.png",
+      "type": "interpretation",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "US-parent-interpretation",
+      "cut_id": "C10",
+      "file": "assets/world-ai-education-5min/interpretation-cards/US-parent-interpretation.png",
+      "type": "interpretation",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "UK-parent-interpretation",
+      "cut_id": "C14",
+      "file": "assets/world-ai-education-5min/interpretation-cards/UK-parent-interpretation.png",
+      "type": "interpretation",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "SG-parent-interpretation",
+      "cut_id": "C18",
+      "file": "assets/world-ai-education-5min/interpretation-cards/SG-parent-interpretation.png",
+      "type": "interpretation",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "KR-parent-interpretation",
+      "cut_id": "C22",
+      "file": "assets/world-ai-education-5min/interpretation-cards/KR-parent-interpretation.png",
+      "type": "interpretation",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "CN-01-classroom-ai-policy-evidence",
+      "cut_id": "C04",
+      "file": "assets/world-ai-education-5min/evidence-screenshots/final/CN-01-classroom-ai-policy-evidence.png",
+      "type": "evidence",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "CN-02-genai-guide-guardrail-evidence",
+      "cut_id": "C05",
+      "file": "assets/world-ai-education-5min/evidence-screenshots/final/CN-02-genai-guide-guardrail-evidence.png",
+      "type": "evidence",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "US-01-ai-education-order-evidence",
+      "cut_id": "C08",
+      "file": "assets/world-ai-education-5min/evidence-screenshots/final/US-01-ai-education-order-evidence.png",
+      "type": "evidence",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "US-02-ai-toolkit-safe-ethical-evidence",
+      "cut_id": "C09",
+      "file": "assets/world-ai-education-5min/evidence-screenshots/final/US-02-ai-toolkit-safe-ethical-evidence.png",
+      "type": "evidence",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "UK-01-dfe-genai-guidance-evidence",
+      "cut_id": "C12",
+      "file": "assets/world-ai-education-5min/evidence-screenshots/final/UK-01-dfe-genai-guidance-evidence.png",
+      "type": "evidence",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "UK-02-education-hub-ai-schools-evidence",
+      "cut_id": "C13",
+      "file": "assets/world-ai-education-5min/evidence-screenshots/final/UK-02-education-hub-ai-schools-evidence.png",
+      "type": "evidence",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "SG-01-moe-ai-sls-evidence",
+      "cut_id": "C16",
+      "file": "assets/world-ai-education-5min/evidence-screenshots/final/SG-01-moe-ai-sls-evidence.png",
+      "type": "evidence",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "SG-02-govtech-ai-classroom-evidence",
+      "cut_id": "C17",
+      "file": "assets/world-ai-education-5min/evidence-screenshots/final/SG-02-govtech-ai-classroom-evidence.png",
+      "type": "evidence",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "KR-01-ai-digital-textbook-policy-evidence",
+      "cut_id": "C20",
+      "file": "assets/world-ai-education-5min/evidence-screenshots/final/KR-01-ai-digital-textbook-policy-evidence.png",
+      "type": "evidence",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    },
+    {
+      "id": "KR-02-ai-digital-textbook-intro-evidence",
+      "cut_id": "C21",
+      "file": "assets/world-ai-education-5min/evidence-screenshots/final/KR-02-ai-digital-textbook-intro-evidence.png",
+      "type": "evidence",
+      "status": "ready",
+      "size": "1280x720",
+      "notes": ""
+    }
+  ]
+}
