@@ -1,0 +1,24 @@
+{
+  "render_status": "success",
+  "output_file": "assets/world-ai-education-5min/render/world-ai-education-compact-draft-v1.mp4",
+  "duration": 225.0,
+  "duration_mmss": "3:45",
+  "resolution": "1280x720",
+  "fps": 30,
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "audio_file": "assets/world-ai-education-5min/audio/world-ai-education-5min-narration.mp3",
+  "timeline_file": "production/world-ai-education-compact-edit-timeline.json",
+  "image_count": 26,
+  "evidence_count": 10,
+  "subtitle_file": "assets/world-ai-education-5min/render/world-ai-education-compact-draft-v1.srt",
+  "created_at": "2026-07-04",
+  "engine": "ffmpeg 8.1.1 (full)",
+  "warnings": [
+    "evidence 컷 자막 없음(출처바 내장, 겹침 방지)",
+    "C26 endcard 무음 홀드 3:28~3:45"
+  ],
+  "errors": [],
+  "sync": "섹션 오디오 실측 경계에 컷 정렬(섹션 단위 A/V 싱크)",
+  "draft": true
+}

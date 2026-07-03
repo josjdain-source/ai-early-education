@@ -3,6 +3,28 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "본편 검수용 draft mp4 렌더(3:45). A/V 섹션 싱크 정렬",
+      "changes": [
+        "full ffmpeg 8.1.1로 이미지26+TTS+자막 조립 → world-ai-education-compact-draft-v1.mp4(1280x720/30fps/h264, 3:45)",
+        "★초기 렌더 A/V 어긋남 발견→섹션별 오디오 실측 경계에 컷 재정렬(섹션 싱크). -shortest 제거로 3:45",
+        "SRT 16큐(evidence 컷은 자막 없음=출처바 겹침 방지). render-log.json",
+        "draft mp4 gitignore(로컬 재생), 로그/srt/timeline/report 커밋",
+        "reports/WORLD_AI_EDUCATION_DRAFT_RENDER_REPORT.md"
+      ],
+      "verification": {
+        "length": "3:45(225s)",
+        "codec": "h264 1280x720 30fps aac",
+        "sync": "섹션 오디오 실측 경계 정렬, 2:20=한국 카드 확인",
+        "clean": "CN-01 정치/헤드밴드 없음, KR 사이드바 없음, raw 미사용",
+        "draft_only": "업로드/HTML/링크/최종본 명명 없음, sitemap 41"
+      },
+      "todo_next": [
+        "사람 draft 재생·검수(발음/싱크/자막)",
+        "수정 or 최종 렌더 승인→링크 교체"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "timeline 3:45 압축(A안). 26컷·증거10·해석5 유지, 5분판 보존",
       "changes": [
         "world-ai-education-compact-edit-timeline.json(3:45/225s)+compact-edit-shotlist.md: TTS 3:28에 맞춰 컷 길이 단축",

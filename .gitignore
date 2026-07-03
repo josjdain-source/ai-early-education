@@ -25,3 +25,7 @@ assets/video/ep02_creation_final.mp4
 # world-ai-education 오디오(대용량 wav)·임시
 assets/world-ai-education-5min/audio/*.wav
 assets/world-ai-education-5min/audio/_*.txt
+
+# 렌더 draft(재생성 가능)
+assets/world-ai-education-5min/render/*.mp4
+assets/world-ai-education-5min/audio/sections/
