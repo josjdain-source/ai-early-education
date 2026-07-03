@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "일러스트형 본편 파이프라인화 완성: SDXL 8개념+한글오버레이 조립 (3:30)",
+      "changes": [
+        "build_illust_video.py: 8개념 은유 일러스트(SDXL 고정스타일)→Pillow 오버레이(액자+리본배너+자막, 줌 위 정적합성)→켄번즈+섹션내레이션",
+        "8장면: 지구본에 손뻗는아이들/AI로봇(헤드밴드X)/의심의 돋보기/판단 저울/가드레일 울타리/AI디지털교과서 스마트교실/전구 든 5국아이/집에서 부모+아이+AI",
+        "글 안 잘림: 일러스트만 줌, 배너·자막은 줌 위 정적 오버레이. 섹션오디오 정확싱크 3:30",
+        "world-ai-education-illust-v1.mp4. 조종판 등록. 전부 무료 로컬(SDXL 장당 30초)"
+      ],
+      "verification": {
+        "style": "8장 일관 스토리북톤+한글배너, 참고영상(AI일러스트 explainer) 재현",
+        "cost": "무료 로컬"
+      },
+      "todo_next": [
+        "3버전(뉴스b-roll/다이내믹/일러스트) 중 본편 픽",
+        "캐릭터 일관성(IP-Adapter) 개선 검토"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "증명 성공: 로컬 SDXL 개념일러스트+Pillow 한글오버레이=참고영상 톤 재현",
       "changes": [
         "로컬 ComfyUI(RealVisXL_V5.0 SDXL)로 개념 일러스트 생성 30초(GPU). txt2img 워크플로 gen_illust_proof.py",
