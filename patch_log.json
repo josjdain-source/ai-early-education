@@ -3,6 +3,28 @@
   "entries": [
     {
       "date": "2026-07-03",
+      "title": "Search Console 제출·색인 점검 가이드 작성(문서만, 코드 무변경)",
+      "changes": [
+        "reports/AI_EARLY_EDUCATION_SEARCH_CONSOLE_SUBMISSION_GUIDE.md 생성 — 사용자 수동 제출 절차 문서(Claude는 SC 로그인 불가)",
+        "라이브 기술상태 실측 기록: sitemap.xml 200·loc 39, robots.txt Allow:/·Sitemap 등록·차단 없음, 핵심 URL 10개 전부 200·canonical 자가참조 일치",
+        "문서 구성: 현재상태/제출 sitemap/SC 절차/핵심 URL 10/색인 우선순위/제출후 확인/문제대응표/다음 콘텐츠 기준",
+        "과장 방지 명시: 제출≠즉시 검색노출, 색인까지 며칠~몇주",
+        "새 HTML 0, sitemap 변경 0, 기존 페이지 수정 0",
+        "projects.json next_action → 'Search Console sitemap 재제출 및 핵심 URL 색인 확인'"
+      ],
+      "verification": {
+        "sitemap": "curl 200, loc 39",
+        "robots": "Allow:/ + Sitemap 선언, 차단 없음",
+        "core_urls": "핵심 10개 라이브 200, canonical 자가참조 일치",
+        "no_code_change": "새 HTML 0, sitemap 수정 0, 기존 페이지 무손상"
+      },
+      "todo_next": [
+        "사용자: Search Console에 속성 추가 → sitemap.xml 제출 → 핵심 URL 색인 요청",
+        "며칠 색인 관찰 후 parent-faq 노출 질문을 신규글로 선별(증식 금지)"
+      ]
+    },
+    {
+      "date": "2026-07-03",
       "title": "parent-cluster SEO/내부링크 점검 — 새 페이지 없이 문구·링크만 정리",
       "changes": [
         "점검 대상 15개(index/start-here/compare/parent-faq/for-parents/age-guide/home-experiments/parent-rules/checklist/printable-checklist/printable-rules/experiment-log/age-cards/downloads/school-vs-home)",
