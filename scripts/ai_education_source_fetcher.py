@@ -14,7 +14,7 @@ UA = {"User-Agent": "Mozilla/5.0 (compatible; AIEduObservatory/1.0)"}
 def _get(url, timeout=15):
     req = urllib.request.Request(url, headers=UA)
     with urllib.request.urlopen(req, timeout=timeout) as r:
-        raw = r.read(200000)
+        raw = r.read(600000)
         enc = r.headers.get_content_charset() or "utf-8"
         return raw.decode(enc, "ignore")
 

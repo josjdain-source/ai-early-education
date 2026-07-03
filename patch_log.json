@@ -3,6 +3,26 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "관측소 먹이 정비: RSS 피드 8개 전환+랜딩페이지 노이즈 차단(항목별 정밀 점수)",
+      "changes": [
+        "실제 RSS 피드 8개 검증·추가(watch_sources): arXiv cs.AI/cs.CY(C), OpenAI/NVIDIA/TechCrunch/Verge/MIT-TR(G), 연합뉴스(B). 각 fetch_mode·item_level_available·queue_allowed·noise_risk·preferred_feed_url 등 필드",
+        "watch_sources meta: fetch_mode 미표기=queue_allowed/item_level false 기본(랜딩/검색→큐 미등록). 홈페이지 title 큐 등록 금지",
+        "pipeline 강화: fetch_mode=rss/atom+queue_allowed+item_level+RSS항목 있을 때만 후보. 제목이 기관명만/12자 미만/link 없음이면 스킵",
+        "★점수 정밀화: 항목별 점수를 '그 항목 제목'만으로 산정(피드 공유 스니펫/키워드 부풀림 제거)→arxiv 전건 5점 오탐 해결",
+        "fetcher read 200KB→600KB",
+        "reports/AI_EARLY_EDUCATION_SOURCE_FEED_AUDIT_REPORT.md"
+      ],
+      "verification": {
+        "no_landing_noise": "전체 42소스 dry-run: 랜딩 34소스 큐 0, 피드 8에서만 25채점→4등록(score≥3)",
+        "precise_score": "항목별 점수 realistic(무관 논문 1, 시험채점 LLM 3), low_score 21 정상 필터",
+        "write_test_clean": "제한 write 4건=실제 arxiv 기사(URL 있음)·status=new·fact=false, 테스트분 되돌림",
+        "queue_clean": "update_queue 6항목 보존, 자동 오염 0",
+        "no_publish": "새 HTML 0, sitemap 39, 배포/영상/업로드 0"
+      },
+      "todo_next": ["검색형(유튜브/뉴스/학술) API 연동", "scorer 교육 키워드 정밀화(ML 논문 오탐 감소)", "공식 소스 딥링크 RSS 확보 시 feed-* 승격", "매일 07:30 실운영 결과 검수"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "작업 스케줄러 등록(매일 07:30)+즉시 테스트=심장박동 ON. 노이즈 오염 발견→파이프라인 수정",
       "changes": [
         "'AI Early Education Daily Watch' 작업 등록(daily 07:30, State=Ready, NextRun 2026-07-04 07:30). Start-ScheduledTask 즉시테스트=LastTaskResult 0(성공)",

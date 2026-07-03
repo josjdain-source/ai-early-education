@@ -37,6 +37,10 @@ AXIS = {  # source_category → 축
     "ai_safety_company": "G", "ai_education_product": "G",
 }
 
+import re as _re
+def _norm_min(s):
+    return _re.sub(r"\s+", " ", (s or "").strip()).lower()
+
 def cat_of(s):
     """source_category 없으면 추론(레거시 공식 18개 대응)."""
     c = s.get("source_category")
@@ -96,14 +100,21 @@ def main():
         elif fr["status"] == "failed": fetch_failed += 1
         if fr["status"] != "ok":
             continue
-        # 스코어링 대상: RSS/피드의 '기사 단위' 항목만. 랜딩 페이지 제목 스크랩은 큐에 넣지 않음(노이즈 방지).
+        # 큐 후보 자격: fetch_mode=rss/atom + queue_allowed + item_level_available + RSS 항목 존재.
         cat = cat_of(s)
-        if not fr["items"]:
-            fr["no_article_item"] = True   # daily_watch에 '확인함, 신규 기사 항목 없음'으로 표기
+        fmode = s.get("fetch_mode", "webpage_change")
+        queue_allowed = bool(s.get("queue_allowed", False)) and s.get("item_level_available", False)
+        if fmode not in ("rss", "atom") or not queue_allowed or not fr["items"]:
+            fr["no_article_item"] = True   # 랜딩/검색/비피드 → '확인만(기사 항목 없음)', 큐 미등록
             continue
+        orgname = _norm_min(s.get("name", ""))
         for it in fr["items"]:
-            text = f"{it['title']} {fr.get('snippet','')} {' '.join(fr.get('detected_keywords',[]))}"
-            score, areas, why = scorer.score_item(cat, text, it["title"])
+            ititle = _norm_min(it.get("title", ""))
+            # 제목이 기관명/사이트명만이거나 너무 짧으면 스킵(랜딩 제목 방지)
+            if not ititle or len(ititle) < 12 or ititle == orgname or not it.get("link"):
+                continue
+            # ★항목별 점수는 '그 항목 제목'만으로(피드 공유 키워드로 부풀리지 않음)
+            score, areas, why = scorer.score_item(cat, it["title"], it["title"])
             candidates.append({
                 "discovered_date": args.date, "source_id": s["id"], "source_category": cat,
                 "update_type": cfg["update_type_by_category"].get(cat, "source_lead"),

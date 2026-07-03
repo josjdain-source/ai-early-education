@@ -7,7 +7,8 @@
     "taxonomy_ref": "분류 정의·기본정책·키워드·학생사례 규칙은 source_taxonomy.json 참조(단일 진실원본).",
     "seven_axes": "A 공식정책/국제기구(사실근거·사이트수정 가능) · B 뉴스(논란·변화 감지, 공식확인 전 사실수정 금지) · C 학회/논문(연구 흐름) · D 학교현장/교사(수업 방식, 단일사례 일반화 금지) · E 학생 프로젝트/대회(실제 사용 사례, 미성년자 보호 필수) · F 유튜브/기관/부모커뮤니티(설명방식·질문, 사실근거 아님) · G AI산업/빅테크(교육 연결성만 번역, 메인뉴스 아님, 기업발표는 official보다 낮은 신뢰·정책fact 아님, 연결성<3 hold).",
     "existing_sources_classification": "kr-media-yna=news_media(D). inst-*=nonprofit/education_company(F). yt-*=youtube_video(F). 나머지 초기 official/international 18개는 축A로 source_taxonomy.default_policy_by_category 상속(use_policy=fact_source·A·can_update_site_fact=true). 신규 축 출처는 아래 개별 필드로 명시.",
-    "student_data_rule": "미성년자 이름/얼굴/학교 특정 자료 영상 직접 노출 금지. 흐림/일반화·'한 학교/한 수업 사례'·재구성 카드 우선. requires_anonymization=true인 출처는 직접 캡처 금지."
+    "student_data_rule": "미성년자 이름/얼굴/학교 특정 자료 영상 직접 노출 금지. 흐림/일반화·'한 학교/한 수업 사례'·재구성 카드 우선. requires_anonymization=true인 출처는 직접 캡처 금지.",
+    "fetch_mode_rule": "fetch_mode 미표기(랜딩/검색 페이지 소스)는 기본 queue_allowed=false·item_level_available=false로 간주 → 큐 미등록, daily_watch에 '확인만(기사 항목 없음)'. fetch_mode=rss/atom + queue_allowed=true인 feed-* 소스만 기사 단위 후보 등록. fetch_mode 값: rss/atom/webpage_change/search_query/manual_review/api_required/unsupported. 홈페이지 <title>은 절대 큐에 넣지 않음(노이즈 방지)."
   },
   "sources": [
     {
@@ -576,6 +577,117 @@
       "can_update_site_fact": false, "can_generate_video_topic": true,
       "language": "en", "region": "global",
       "notes_for_use": "축G. 투자/주가/기업홍보 관점 배제. 교육 연결성 점수 0~5로 판정, 3미만 hint면 hold. 과장(hype) 필터링."
+    },
+
+    {
+      "id": "feed-arxiv-csai", "country": "global", "source_type": "research",
+      "name": "arXiv cs.AI (RSS)", "source_category": "academic_research",
+      "url": "https://export.arxiv.org/rss/cs.AI",
+      "fetch_mode": "rss", "item_level_available": true, "queue_allowed": true, "landing_page_only": false,
+      "noise_risk": "medium", "preferred_feed_url": "https://export.arxiv.org/rss/cs.AI",
+      "fallback_mode": "manual_review", "last_feed_verified": "2026-07-03", "check_frequency": "weekly", "volatility": "high",
+      "use_policy": "research_context", "trust_level": "B_academic_or_institutional",
+      "related_pages": ["/ai-early-education/global-matrix.html", "/ai-early-education/source-library.html"],
+      "can_update_site_fact": false, "can_generate_video_topic": true,
+      "privacy_risk": "low", "minor_data_risk": "low", "topic_tags": ["research", "ai"], "last_checked": null,
+      "notes_for_fetch": "arXiv AI 프리프린트. 교육 연결(children/education/literacy) 있는 항목만 score>=3. 프리프린트=미동료심사, 단정 금지."
+    },
+    {
+      "id": "feed-arxiv-cscy", "country": "global", "source_type": "research",
+      "name": "arXiv cs.CY Computers & Society (RSS)", "source_category": "academic_research",
+      "url": "https://export.arxiv.org/rss/cs.CY",
+      "fetch_mode": "rss", "item_level_available": true, "queue_allowed": true, "landing_page_only": false,
+      "noise_risk": "medium", "preferred_feed_url": "https://export.arxiv.org/rss/cs.CY",
+      "fallback_mode": "manual_review", "last_feed_verified": "2026-07-03", "check_frequency": "weekly", "volatility": "medium",
+      "use_policy": "research_context", "trust_level": "B_academic_or_institutional",
+      "related_pages": ["/ai-early-education/school-vs-home.html", "/ai-early-education/parent-rules.html"],
+      "can_update_site_fact": false, "can_generate_video_topic": true,
+      "privacy_risk": "low", "minor_data_risk": "low", "topic_tags": ["research", "ai_ethics", "society"], "last_checked": null,
+      "notes_for_fetch": "AI 윤리·사회. 아동/교육 연결 항목만."
+    },
+    {
+      "id": "feed-openai-news", "country": "global", "source_type": "news",
+      "name": "OpenAI News (RSS)", "source_category": "ai_lab_release",
+      "url": "https://openai.com/news/rss.xml",
+      "fetch_mode": "rss", "item_level_available": true, "queue_allowed": true, "landing_page_only": false,
+      "noise_risk": "medium", "preferred_feed_url": "https://openai.com/news/rss.xml",
+      "fallback_mode": "webpage_change", "last_feed_verified": "2026-07-03", "check_frequency": "weekly", "volatility": "high",
+      "use_policy": "technology_shift", "trust_level": "B_company_official",
+      "related_pages": ["/ai-early-education/parent-faq.html"],
+      "education_relevance_required": true, "hype_risk": "medium",
+      "can_update_site_fact": false, "can_generate_video_topic": true,
+      "privacy_risk": "low", "minor_data_risk": "low", "topic_tags": ["ai_model", "ai_agent"], "last_checked": null,
+      "notes_for_fetch": "축G. 기업발표=기술변화 근거만(정책 fact 아님). 교육 연결성<3 hold."
+    },
+    {
+      "id": "feed-nvidia-blog", "country": "global", "source_type": "news",
+      "name": "NVIDIA Blog (RSS)", "source_category": "ai_hardware",
+      "url": "https://blogs.nvidia.com/feed/",
+      "fetch_mode": "rss", "item_level_available": true, "queue_allowed": true, "landing_page_only": false,
+      "noise_risk": "high", "preferred_feed_url": "https://blogs.nvidia.com/feed/",
+      "fallback_mode": "webpage_change", "last_feed_verified": "2026-07-03", "check_frequency": "weekly", "volatility": "high",
+      "use_policy": "device_environment_signal", "trust_level": "B_company_official",
+      "related_pages": ["/ai-early-education/parent-faq.html"],
+      "education_relevance_required": true, "hype_risk": "high",
+      "can_update_site_fact": false, "can_generate_video_topic": true,
+      "privacy_risk": "low", "minor_data_risk": "low", "topic_tags": ["ai_hardware", "on_device_ai", "robot"], "last_checked": null,
+      "notes_for_fetch": "축G. 대부분 비교육(score<3→미등록). 아이 환경(기기/로봇) 연결 항목만."
+    },
+    {
+      "id": "feed-techcrunch-ai", "country": "global", "source_type": "news",
+      "name": "TechCrunch AI (RSS)", "source_category": "ai_company_news",
+      "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "fetch_mode": "rss", "item_level_available": true, "queue_allowed": true, "landing_page_only": false,
+      "noise_risk": "high", "preferred_feed_url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "fallback_mode": "webpage_change", "last_feed_verified": "2026-07-03", "check_frequency": "weekly", "volatility": "high",
+      "use_policy": "industry_signal", "trust_level": "C_industry_media",
+      "related_pages": ["/ai-early-education/parent-faq.html", "/ai-early-education/source-library.html"],
+      "education_relevance_required": true, "hype_risk": "high",
+      "can_update_site_fact": false, "can_generate_video_topic": true,
+      "privacy_risk": "low", "minor_data_risk": "low", "topic_tags": ["ai_industry"], "last_checked": null,
+      "notes_for_fetch": "축G. 산업 뉴스. 교육 연결 항목만 score>=3."
+    },
+    {
+      "id": "feed-theverge-ai", "country": "global", "source_type": "news",
+      "name": "The Verge AI (RSS)", "source_category": "ai_company_news",
+      "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "fetch_mode": "rss", "item_level_available": true, "queue_allowed": true, "landing_page_only": false,
+      "noise_risk": "high", "preferred_feed_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "fallback_mode": "webpage_change", "last_feed_verified": "2026-07-03", "check_frequency": "weekly", "volatility": "high",
+      "use_policy": "industry_signal", "trust_level": "C_industry_media",
+      "related_pages": ["/ai-early-education/parent-faq.html"],
+      "education_relevance_required": true, "hype_risk": "high",
+      "can_update_site_fact": false, "can_generate_video_topic": true,
+      "privacy_risk": "low", "minor_data_risk": "low", "topic_tags": ["ai_industry", "ai_glasses", "ai_search"], "last_checked": null,
+      "notes_for_fetch": "축G. 교육 연결 항목만."
+    },
+    {
+      "id": "feed-mittr-ai", "country": "global", "source_type": "news",
+      "name": "MIT Technology Review (RSS)", "source_category": "ai_company_news",
+      "url": "https://www.technologyreview.com/feed/",
+      "fetch_mode": "rss", "item_level_available": true, "queue_allowed": true, "landing_page_only": false,
+      "noise_risk": "medium", "preferred_feed_url": "https://www.technologyreview.com/feed/",
+      "fallback_mode": "webpage_change", "last_feed_verified": "2026-07-03", "check_frequency": "weekly", "volatility": "medium",
+      "use_policy": "industry_signal", "trust_level": "C_industry_media",
+      "related_pages": ["/ai-early-education/source-library.html", "/ai-early-education/parent-faq.html"],
+      "education_relevance_required": true, "hype_risk": "medium",
+      "can_update_site_fact": false, "can_generate_video_topic": true,
+      "privacy_risk": "low", "minor_data_risk": "low", "topic_tags": ["ai_industry", "analysis"], "last_checked": null,
+      "notes_for_fetch": "축G. 분석 매체. 교육/아동 연결 항목만."
+    },
+    {
+      "id": "feed-yna-news", "country": "korea", "source_type": "news",
+      "name": "연합뉴스 (RSS, 전체→AI교육 필터)", "source_category": "news_media",
+      "url": "https://www.yna.co.kr/rss/news.xml",
+      "fetch_mode": "rss", "item_level_available": true, "queue_allowed": true, "landing_page_only": false,
+      "noise_risk": "high", "preferred_feed_url": "https://www.yna.co.kr/rss/news.xml",
+      "fallback_mode": "search_query", "last_feed_verified": "2026-07-03", "check_frequency": "daily", "volatility": "high",
+      "use_policy": "controversy_signal", "trust_level": "D_media_or_expert",
+      "related_pages": ["/ai-early-education/korea-ai-digital-textbook-controversy.html", "/ai-early-education/parent-faq.html"],
+      "can_update_site_fact": false, "can_generate_video_topic": true,
+      "privacy_risk": "medium", "minor_data_risk": "medium", "requires_anonymization": true,
+      "topic_tags": ["news", "kr"], "last_checked": null,
+      "notes_for_fetch": "축B. 전체 뉴스피드라 대부분 비교육(score<3→미등록). AI·교육·학생·교과서 연결 항목만. 공식 확인 전 사실수정 금지. 미성년자 익명화."
     }
   ]
 }
