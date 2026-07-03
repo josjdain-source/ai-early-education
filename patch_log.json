@@ -3,6 +3,31 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "UQ-02 대본 v2(말맛 강화) + 싱가포르 시각 근거 세트 계획(영상제작/업로드 X)",
+      "changes": [
+        "대본 v2: 도입부 생활 장면화('엄마, AI 써도 돼?')·SLS 즉시 풀이·연령 비단정('어릴수록 안내·보호 먼저')·책임사용=부모 질문4개·결론 3개(나이별/함께/다시 확인)",
+        "미확인 사실 안전화: AIEd 4원칙(주체성·포용·공정·안전) 단정을 대본 2곳에서 제거('안전하고 책임 있게'/'캡처 시 확인')",
+        "시각 근거 계획 신설: episode_02_singapore_visual_evidence_plan.md — 필수9(E1~E8,E2b)+보조3, 설명73/증거27, 관광 배제·교육 근거 중심",
+        "핵심 증거 실증: E2 제목 'Students and Parents' ✅확인, E2b '학부모용 GenAI 가이드(Parents Gateway)' ✅답변 본문 언급 확인",
+        "정직 처리: E4(초등 교사감독 세부)=E2 본문에 없음→다른 답변서 확인 조건, E5(윤리 4원칙)=직접 fetch 실패→캡처 시 원문 확인 전 화면 표기 금지",
+        "보고서 2건: V2_REVIEW·VISUAL_PLAN_REPORT",
+        "UQ-02 상태 reviewing 유지(applied 아님). 새 HTML 0, sitemap 39, 배포/영상제작/업로드 0"
+      ],
+      "verification": {
+        "hook": "첫 20초 생활 장면",
+        "length": "4:50~5:10",
+        "evidence_cuts": "12컷(필수9+보조3), 설명73/증거27",
+        "fact_integrity": "E2/E2b 실증, E4/E5는 캡처 시 확인 조건 명시, 대본 미확인 4원칙 단정 제거",
+        "no_code_change": "새 HTML 0, sitemap 39, 영상 업로드 0, UQ-02 applied 0"
+      },
+      "todo_next": [
+        "대본 v2 사람 검수",
+        "승인 시 E1~E8 캡처(문구 재확인)→출처카드→대본 타임코드 병합",
+        "별도 승인 후 편집·렌더·업로드"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "UQ-02 승인 → 싱가포르 5분 영상 대본 초안(사이트/영상제작/업로드 X)",
       "changes": [
         "content/longform/ai-early-education/episode_02_singapore_parent_framework_5min.md 생성 — '싱가포르는 왜 아이와 부모를 함께 AI 교육에 넣었나' 5분 대본 초안(4:50±20s)",
