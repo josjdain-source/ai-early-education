@@ -46,5 +46,16 @@
     "ai_education_product": "parent_awareness_topic"
   },
   "fact_capable_categories": ["official_policy", "international_org", "government_dataset"],
-  "high_minor_risk_categories": ["student_project", "student_competition", "school_practice", "ai_companion", "ai_robotics"]
+  "high_minor_risk_categories": ["student_project", "student_competition", "school_practice", "ai_companion", "ai_robotics"],
+  "schedule": {
+    "enabled": false,
+    "recommended_time": "07:30",
+    "task_name": "AI Early Education Daily Watch",
+    "command": "scripts/run_ai_education_daily_pipeline.bat",
+    "register_script": "scripts/register_ai_education_daily_task.ps1",
+    "unregister_script": "scripts/unregister_ai_education_daily_task.ps1",
+    "log_dir": "ops/ai-early-education/pipeline_runs/logs",
+    "auto_publish": false,
+    "note": "enabled=false: 스크립트 생성만, 실제 등록은 사용자 승인 후 register_script 실행. 등록 후 enabled=true로 표기 권장."
+  }
 }

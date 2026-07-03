@@ -3,6 +3,28 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "관측소 매일 자동실행 스케줄 파일(작업 스케줄러) — 심장박동. 자동등록 X(승인 후)",
+      "changes": [
+        "scripts/run_ai_education_daily_pipeline.bat(순수 ASCII, %~dp0, --write, 로그 저장, if errorlevel 처리)",
+        "scripts/register_ai_education_daily_task.ps1(매일 07:30 'AI Early Education Daily Watch' 등록) + unregister.ps1",
+        "scripts/AI_EDUCATION_DAILY_TASK_README.md(등록/해제/로그/실패대응/자동발행 금지)",
+        "pipeline_config.json schedule 섹션(enabled=false·07:30·auto_publish=false)",
+        "로그: ops/ai-early-education/pipeline_runs/logs/(run_/error_ 타임스탬프), .gitignore로 *.log 추적 제외",
+        "★자동 등록은 안 함(생성만). 실제 등록은 사용자 승인 후 register.ps1 실행",
+        "테스트: PS 문법 OK·작업 미등록 확인. BAT 수동 실행=파이프라인 전체 34소스 완주(fetch20·실패3·검색skip11·15건 등록 후 되돌림). RC버그(false failed) if errorlevel로 수정→재실행 'pipeline ok' 확인. 라이브 큐 청결 유지(6항목)"
+      ],
+      "verification": {
+        "bat_ascii": "non-ASCII 0",
+        "ps_syntax": "register/unregister Tokenize 오류 0, 작업 미등록",
+        "bat_run": "고친 BAT 'pipeline ok'(rc0), 파이프라인 34소스 실동작 확인",
+        "no_autoregister": "작업 스케줄러 자동 등록 안 함(사용자 승인 대기)",
+        "hygiene": "테스트 산출물 되돌려 queue 6항목 유지, 로그 gitignore",
+        "no_publish": "새 HTML 0, sitemap 39, 배포/영상/업로드 0, auto_publish=false"
+      },
+      "todo_next": ["사용자 승인 시 register.ps1로 07:30 등록", "다음날 자동 daily_watch 확인", "그다음 검색 API 연동/싱가포르 편 편집"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "AI 조기교육 자동 관측 파이프라인 구축(7축 수집→점수→큐 자동등록, 자동발행 X)",
       "changes": [
         "scripts/ai_education_daily_pipeline.py(오케스트레이터)+source_fetcher+relevance_scorer+queue_writer+README",
