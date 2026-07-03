@@ -1,63 +1,72 @@
 {
   "meta": {
     "system": "AI 조기교육 데일리 관측소 — Source Taxonomy(분류 체계 단일 진실원본)",
-    "created": "2026-07-04",
-    "principle": "3축 분리: 공식(사실 근거) / 홈페이지·기관(실천·트렌드) / 해외 유튜브(설명 방식·부모 반응). 유튜브·상업 자료는 사실 근거로 쓰지 않는다."
+    "created": "2026-07-03",
+    "expanded": "2026-07-04",
+    "principle": "정책만 보면 반쪽. 뉴스·학회·학교현장·학생프로젝트·교사자료·부모반응까지 분리 관측. 자료마다 신뢰도·사용정책·미성년자 위험을 다르게 둔다. 유튜브·상업·단일사례는 사실 근거 아님.",
+    "student_data_rule": "미성년자 이름/얼굴/학교 특정 자료는 영상 직접 노출 금지. 공개 보도라도 흐림/일반화. '한 학교/한 수업 사례'로 표현. 작품 이미지는 권리 확인 전 미사용. 직접 캡처보다 재구성 카드 우선. 성과 과장 금지."
   },
   "source_category": [
-    "official_policy", "international_org", "school_or_institution",
-    "nonprofit_or_research", "education_company", "media_report",
-    "youtube_channel", "youtube_video", "parent_community", "unknown"
+    "official_policy", "international_org", "news_media", "academic_research",
+    "conference_or_workshop", "school_practice", "teacher_training",
+    "student_project", "student_competition", "nonprofit_or_research",
+    "education_company", "youtube_channel", "youtube_video",
+    "parent_community", "government_dataset", "unknown"
   ],
   "source_type": [
     "official", "guide", "curriculum", "explainer", "news",
-    "research", "video", "community", "commercial"
+    "research", "video", "community", "commercial", "dataset"
   ],
   "use_policy": [
-    "fact_source", "context_source", "trend_source", "explanation_pattern",
-    "parent_question_source", "video_topic_source", "hold_until_verified"
+    "fact_source", "policy_signal", "controversy_signal", "research_context",
+    "evidence_of_practice", "teaching_activity", "student_activity_example",
+    "explanation_pattern", "parent_question_source", "video_topic_source",
+    "source_lead", "hold_until_verified"
   ],
   "trust_level": [
-    "A_official", "B_institutional", "C_media_or_expert",
-    "D_community_or_creator", "E_commercial_or_unverified"
+    "A_official", "B_academic_or_institutional", "C_school_or_recognized_org",
+    "D_media_or_expert", "E_creator_or_community", "F_commercial_or_unverified"
   ],
-  "three_axes": {
-    "1_official": {
-      "categories": ["official_policy", "international_org"],
-      "role": "사실 확인(fact). 사이트 사실 수정의 유일 근거.",
-      "can_update_site_fact": true
-    },
-    "2_institution_web": {
-      "categories": ["school_or_institution", "nonprofit_or_research", "education_company"],
-      "role": "교육 방식 트렌드·실천 예시·가이드 구조. 공식성/상업성 구분 필수.",
-      "can_update_site_fact": false,
-      "note": "education_company(상업) 자료는 상품 추천 근거로 쓰지 않음."
-    },
-    "3_youtube": {
-      "categories": ["youtube_channel", "youtube_video"],
-      "role": "부모에게 '어떻게 설명하는지'(말투·화면·질문·반응). 공식 근거 아님.",
-      "can_update_site_fact": false,
-      "hard_rules": [
-        "유튜브는 fact_source 금지 → trend/explanation/video_topic/parent_question로만",
-        "유튜브 주장은 fact_claims_need_verification=true, do_not_use_as_policy_fact=true",
-        "영상/댓글 보고 기존 사이트 사실 자동 수정 금지"
-      ]
-    }
+  "six_axes": {
+    "A_official_policy": {"categories": ["official_policy", "international_org", "government_dataset"], "role": "제도 변화 = 사실 근거", "can_update_site_fact": true},
+    "B_news": {"categories": ["news_media"], "role": "사회 반응·논란·변화 감지. 공식 확인 전 사실 수정 금지", "can_update_site_fact": false},
+    "C_research": {"categories": ["academic_research", "conference_or_workshop"], "role": "연구 흐름·교육 효과. 영상에선 '연구 흐름'으로", "can_update_site_fact": false},
+    "D_school_practice": {"categories": ["school_practice", "teacher_training"], "role": "실제 수업 방식 참고. 단일 사례 일반화 금지", "can_update_site_fact": false},
+    "E_student_examples": {"categories": ["student_project", "student_competition"], "role": "아이들이 AI로 무엇을 만드나. 미성년자 보호 필수", "can_update_site_fact": false},
+    "F_youtube_community": {"categories": ["youtube_channel", "youtube_video", "parent_community", "nonprofit_or_research", "education_company"], "role": "설명 방식·부모 질문·불안. 사실 근거 아님", "can_update_site_fact": false}
   },
   "default_policy_by_category": {
-    "official_policy":       {"use_policy": "fact_source",            "trust_level": "A_official",             "can_update_site_fact": true,  "can_generate_video_topic": true},
-    "international_org":      {"use_policy": "fact_source",            "trust_level": "A_official",             "can_update_site_fact": true,  "can_generate_video_topic": true},
-    "school_or_institution": {"use_policy": "context_source",         "trust_level": "B_institutional",        "can_update_site_fact": false, "can_generate_video_topic": true},
-    "nonprofit_or_research": {"use_policy": "context_source",         "trust_level": "B_institutional",        "can_update_site_fact": false, "can_generate_video_topic": true},
-    "education_company":     {"use_policy": "trend_source",           "trust_level": "E_commercial_or_unverified","can_update_site_fact": false,"can_generate_video_topic": true, "monetization_risk": "high"},
-    "media_report":          {"use_policy": "hold_until_verified",    "trust_level": "C_media_or_expert",      "can_update_site_fact": false, "can_generate_video_topic": true},
-    "youtube_channel":       {"use_policy": "explanation_pattern",    "trust_level": "D_community_or_creator", "can_update_site_fact": false, "can_generate_video_topic": true},
-    "youtube_video":         {"use_policy": "explanation_pattern",    "trust_level": "D_community_or_creator", "can_update_site_fact": false, "can_generate_video_topic": true},
-    "parent_community":      {"use_policy": "parent_question_source", "trust_level": "D_community_or_creator", "can_update_site_fact": false, "can_generate_video_topic": true}
+    "official_policy":       {"use_policy": "fact_source",             "trust_level": "A_official",              "can_update_site_fact": true,  "can_generate_video_topic": true,  "minor_data_risk": "none"},
+    "international_org":      {"use_policy": "fact_source",             "trust_level": "A_official",              "can_update_site_fact": true,  "can_generate_video_topic": true,  "minor_data_risk": "none"},
+    "government_dataset":    {"use_policy": "fact_source",             "trust_level": "A_official",              "can_update_site_fact": true,  "can_generate_video_topic": true,  "minor_data_risk": "low"},
+    "news_media":            {"use_policy": "controversy_signal",     "trust_level": "D_media_or_expert",       "can_update_site_fact": false, "can_generate_video_topic": true,  "minor_data_risk": "medium"},
+    "academic_research":     {"use_policy": "research_context",       "trust_level": "B_academic_or_institutional","can_update_site_fact": false,"can_generate_video_topic": true, "minor_data_risk": "low"},
+    "conference_or_workshop":{"use_policy": "research_context",       "trust_level": "B_academic_or_institutional","can_update_site_fact": false,"can_generate_video_topic": true, "minor_data_risk": "low"},
+    "school_practice":       {"use_policy": "evidence_of_practice",   "trust_level": "C_school_or_recognized_org","can_update_site_fact": false,"can_generate_video_topic": true, "minor_data_risk": "high"},
+    "teacher_training":      {"use_policy": "teaching_activity",      "trust_level": "C_school_or_recognized_org","can_update_site_fact": false,"can_generate_video_topic": true, "minor_data_risk": "medium"},
+    "student_project":       {"use_policy": "student_activity_example","trust_level": "E_creator_or_community", "can_update_site_fact": false, "can_generate_video_topic": true,  "minor_data_risk": "high"},
+    "student_competition":   {"use_policy": "student_activity_example","trust_level": "C_school_or_recognized_org","can_update_site_fact": false,"can_generate_video_topic": true,"minor_data_risk": "high"},
+    "nonprofit_or_research": {"use_policy": "research_context",       "trust_level": "B_academic_or_institutional","can_update_site_fact": false,"can_generate_video_topic": true, "minor_data_risk": "low"},
+    "education_company":     {"use_policy": "video_topic_source",     "trust_level": "F_commercial_or_unverified","can_update_site_fact": false,"can_generate_video_topic": true, "monetization_risk": "high", "minor_data_risk": "medium"},
+    "youtube_channel":       {"use_policy": "explanation_pattern",    "trust_level": "E_creator_or_community",  "can_update_site_fact": false, "can_generate_video_topic": true,  "minor_data_risk": "medium"},
+    "youtube_video":         {"use_policy": "explanation_pattern",    "trust_level": "E_creator_or_community",  "can_update_site_fact": false, "can_generate_video_topic": true,  "minor_data_risk": "medium"},
+    "parent_community":      {"use_policy": "parent_question_source", "trust_level": "E_creator_or_community",  "can_update_site_fact": false, "can_generate_video_topic": true,  "minor_data_risk": "medium"}
   },
   "watch_source_added_fields": [
-    "source_category", "use_policy", "trust_level", "monetization_risk(none/low/medium/high)",
-    "language", "region", "topic_tags", "can_update_site_fact", "can_generate_video_topic", "notes_for_use"
+    "source_category", "use_policy", "trust_level", "evidence_role",
+    "monetization_risk(none/low/medium/high)", "privacy_risk(none/low/medium/high)",
+    "minor_data_risk(none/low/medium/high)", "direct_quote_allowed(bool)",
+    "visual_use_allowed(bool)", "requires_anonymization(bool)",
+    "can_use_as_student_example(bool)", "can_update_site_fact(bool)",
+    "can_generate_video_topic(bool)", "language", "region", "topic_tags", "notes_for_use"
+  ],
+  "student_example_rules": [
+    "학생 이름/얼굴/학교 특정 자료는 영상 직접 노출 금지",
+    "공개 보도라도 미성년자 개인정보는 흐림 또는 일반화",
+    "사례는 '한 학교 사례'/'한 수업 사례'로 표현",
+    "학생 성과 과장 금지, 단일 사례를 전체 흐름처럼 쓰지 않기",
+    "학생 작품 이미지는 권리 확인 전 사용 금지",
+    "영상에는 직접 캡처보다 재구성 카드 우선(requires_anonymization=true)"
   ],
   "youtube_record_fields": [
     "channel_name", "video_title", "video_url", "publish_date", "country_or_region",
@@ -66,18 +75,19 @@
     "fact_claims_need_verification", "do_not_use_as_policy_fact"
   ],
   "update_queue_update_types": [
-    "fact_update", "page_update", "video_topic", "explanation_pattern",
-    "parent_question", "teaching_activity", "source_lead", "fact_check", "hold"
+    "fact_update", "page_update", "policy_signal", "controversy_signal",
+    "research_context", "teaching_activity", "student_activity_example",
+    "school_practice", "parent_question", "explanation_pattern",
+    "video_topic", "fact_check", "source_lead", "hold"
   ],
-  "youtube_search_keywords": {
-    "en": ["AI education for kids", "AI literacy for children", "generative AI for students",
-      "teaching AI to kids", "AI safety for kids", "ChatGPT for children",
-      "AI in elementary education", "parents guide to AI", "responsible AI use students",
-      "AI homework policy students"],
-    "by_country": ["Singapore AI education students parents", "UK AI assessment students guidance",
-      "Finland AI literacy children", "Japan AI education elementary school",
-      "Estonia AI education school", "India AI literacy students", "China AI education primary school"],
-    "ko": ["AI 조기교육", "초등학생 AI 교육", "아이 ChatGPT 사용", "AI 디지털교과서 부모",
-      "생성형 AI 학생 과제", "AI 리터러시 초등"]
+  "search_keywords": {
+    "news_en": ["AI education children news", "generative AI schools students policy news", "ChatGPT homework students schools news", "AI textbook Korea news", "AI literacy schools news"],
+    "news_ko": ["AI 조기교육 뉴스", "AI 디지털교과서 뉴스", "학생 생성형 AI 과제 뉴스", "학교 AI 사용 가이드 뉴스"],
+    "research_en": ["AI literacy children research", "K-12 AI education study", "generative AI education students research", "AI ethics education children", "AI education conference K12", "computational thinking and AI literacy"],
+    "research_ko": ["어린이 AI 리터러시 연구", "초등 AI 교육 연구", "생성형 AI 교육 연구", "AI 윤리 교육 연구"],
+    "student_en": ["student AI projects elementary school", "kids AI projects school", "AI literacy student project", "generative AI student work", "AI ethics classroom project", "AI club students", "AI competition students", "K12 AI education projects", "elementary students machine learning project", "AI for kids workshop"],
+    "student_ko": ["초등학생 AI 프로젝트", "학생 AI 교육 사례", "AI 리터러시 수업 사례", "생성형 AI 수업 사례", "학생 AI 동아리", "AI 교육 대회 학생", "초등 AI 윤리 수업", "교사 AI 수업 자료", "AI 융합교육 사례"],
+    "youtube_en": ["AI education for kids", "AI literacy for children", "parents guide to AI", "teaching AI to kids", "AI safety for kids"],
+    "youtube_ko": ["AI 조기교육", "초등학생 AI 교육", "아이 ChatGPT 사용", "AI 디지털교과서 부모"]
   }
 }

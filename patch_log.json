@@ -3,6 +3,26 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "관측소 6축 확장(공식/뉴스/학회/학교/학생/유튜브)+미성년자 보호 필드",
+      "changes": [
+        "source_taxonomy.json 확장: 카테고리 16(news_media·academic_research·conference·school_practice·teacher_training·student_project·student_competition·government_dataset 추가)·use_policy 12·trust A~F·6축·학생사례 규칙·뉴스/연구/학생 키워드",
+        "watch_sources.json: 6축 메타 + 신규 출처(뉴스2·학회2·학교현장1·학생프로젝트1)에 미성년자 보호 필드(privacy_risk·minor_data_risk·requires_anonymization·visual_use_allowed·direct_quote_allowed·can_use_as_student_example) 추가. 총 31",
+        "update_queue update_types 14종 확장(policy_signal·controversy_signal·research_context·student_activity_example·school_practice 등)+축별 type_rules",
+        "daily_watch A~F 6섹션, weekly_brief 6섹션. 신규 템플릿 4종(news/research/school_practice/student_project)",
+        "원칙: 학생사례=사실근거 아님·미성년자 이름/얼굴/학교 노출 금지·재구성 카드 우선·성과 과장 금지. 뉴스=공식확인 전 사실수정 금지. 학회=연구흐름·단일논문 일반화 금지",
+        "observatory PLAN 6축 갱신, reports/..._6AXIS_EXPANSION_REPORT.md"
+      ],
+      "verification": {
+        "json_valid": "taxonomy/watch_sources/update_queue 유효",
+        "minor_protection": "student_project minor_data_risk=high·requires_anonymization=true·visual_use_allowed=false·can_update_site_fact=false",
+        "axes_separated": "뉴스/학회/학교/학생/유튜브 use_policy·trust로 분리, 학생=student_activity_example(fact 아님)",
+        "sources": "31(축A 18+뉴스2+학회2+학교1+학생1+기관4+유튜브3), 기존 공식 구조 보존",
+        "no_code_change": "새 HTML 0, sitemap 39, 배포/영상제작 0"
+      },
+      "todo_next": ["다음 Daily Watch를 6축으로 시험 운전", "학생사례는 student_project_watch_template로 익명 기록"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "UQ-02 1차 편집 에셋 패키지 — 내레이션/자막/카드6/타임라인2/렌더계획(업로드 X)",
       "changes": [
         "assets/ai-early-education/video-episode-02-singapore/ 폴더 구조(narration/captions/cards/timeline/thumbnails/render_plan/exports)",

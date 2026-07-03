@@ -10,13 +10,19 @@
 - **자주 바뀌는 축**: 각국 AI 교육 정책 · 한국 AIDT 이슈 · 학교 AI 가이드 · 연령 제한/보호자 동의 · 과제 윤리 · 국제기구 발표
 - **발행 축**: 매일 관측 / 주간 브리핑 / 5분 정밀 영상 / 필요 시 긴급 업데이트
 
-### 관측 3축 (2026-07-04 확장 · 분류 정의=source_taxonomy.json)
-1. **공식 정책/문서(축1)** = official_policy·international_org → **사실 근거.** 사이트 사실 수정의 유일 근거(can_update_site_fact=true).
-2. **홈페이지/기관 자료(축2)** = school_or_institution·nonprofit_or_research·education_company → **트렌드·실천 예시.** 사실 수정 불가. 공식성/상업성 구분(상업=상품 추천 근거 금지).
-3. **해외 유튜브(축3)** = youtube_channel·youtube_video → **부모에게 어떻게 설명하는지(말투·화면·질문·반응).** 사실 근거 아님. explanation_pattern/parent_question/video_topic로만.
-- 신뢰도: A_official > B_institutional > C_media_or_expert > D_community_or_creator > E_commercial_or_unverified
-- 사실은 축1에서 세우고, 실천은 축2, 설명 방식은 축3. **유튜브·상업 자료를 사실 근거로 쓰지 않는다.**
-- 신규 양식: `web_resource_watch_template.md`(축2), `youtube_watch_template.md`(축3), `source_taxonomy.json`(분류 단일 진실원본)
+### 관측 6축 (2026-07-04 확장 · 분류 정의=source_taxonomy.json)
+정책은 뼈, 학생 사례는 피와 근육. 세계가 AI 교육을 실제로 준비하는 방식을 6축으로 분리 관측.
+1. **A 공식 정책/문서** = official_policy·international_org·government_dataset → **사실 근거.** 사이트 사실 수정의 유일 근거(can_update_site_fact=true).
+2. **B 뉴스/언론** = news_media → **사회 반응·논란·변화 감지.** 공식 확인 전 사실 수정 금지.
+3. **C 학회/논문/연구** = academic_research·conference_or_workshop → **연구 흐름·교육 효과.** '연구 흐름'으로 인용, 단일 논문 일반화 금지.
+4. **D 학교 현장/교사** = school_practice·teacher_training → **실제 수업 방식 참고.** 단일 사례 일반화 금지, 아동 노출 자료 재구성.
+5. **E 학생 프로젝트/대회/동아리** = student_project·student_competition → **아이들이 AI로 무엇을 만드나.** ★미성년자 보호 최우선(익명·일반화·재구성 카드).
+6. **F 유튜브/기관·홈/부모 커뮤니티** = youtube·nonprofit·education_company·parent_community → **설명 방식·부모 질문·불안·실천 예시.** 사실 근거 아님.
+- 신뢰도: A_official > B_academic_or_institutional > C_school_or_recognized_org > D_media_or_expert > E_creator_or_community > F_commercial_or_unverified
+- **자료별 사용**: 공식=사실수정 / 뉴스=변화감지(사실수정 금지) / 학회=연구흐름 / 학교=수업참고(일반화 금지) / 학생=사용사례(미성년자 보호) / 유튜브=설명·질문(정책 근거 금지).
+- watch_source 추가 필드: evidence_role·privacy_risk·minor_data_risk·direct_quote_allowed·visual_use_allowed·requires_anonymization·can_use_as_student_example 등.
+- 신규 양식: `news_watch_template.md`(B) · `research_watch_template.md`(C) · `school_practice_watch_template.md`(D) · `student_project_watch_template.md`(E) · `web_resource_watch_template.md`·`youtube_watch_template.md`(F) · `source_taxonomy.json`(분류 단일 진실원본)
+- **미성년자 규칙**: 이름/얼굴/학교 특정 자료 영상 직접 노출 금지. 흐림/일반화·'한 학교 사례'·재구성 카드 우선·작품 권리확인 전 금지·성과 과장 금지.
 
 ## 2. 생성한 파일
 | 파일 | 역할 |
