@@ -3,6 +3,34 @@
   "entries": [
     {
       "date": "2026-07-03",
+      "title": "인쇄용 연령별 시작 카드 age-cards.html 신설 (출력 자료 4종 세트 완성)",
+      "changes": [
+        "신규 페이지 ai-early-education/age-cards.html — '연령별 AI 시작 카드: 인쇄용 한 장'(A4)",
+        "역할 분리: age-guide=설명형 웹 가이드, age-cards=A4 출력용 카드(부모가 나이에 맞춰 바로 고르는 시작점)",
+        "카드 4개(유아/초등 저학년/초등 고학년/중학생 이상) 각 목표·부모 역할·추천 활동·하지 말 것·오늘의 질문. 2x2 그리드, 모바일 세로 배열",
+        "모든 연령 공통 약속 5개 + '오늘 고를 카드' 체크 + 개인정보 주의",
+        "print CSS: @page A4 11mm, 인쇄 시 nav/footer/toolbar/morelinks/lead 숨김, break-inside:avoid, 배경 제거. JS 없음",
+        "downloads.html: 연령 카드 '예정' → '지금 사용' 승격 + 하단 관련읽기 링크. 이로써 출력 4종 세트(checklist/rules/log/age-cards) 모두 '지금 사용'",
+        "내부 상호링크: age-guide(다음 읽을 글 최상단)·printable-checklist·printable-rules·experiment-log·index 히어로에 age-cards 링크",
+        "sitemap.xml 38 → 39, 조종판 live-age-cards 액션 + status/next_action 갱신",
+        "잔여: downloads '곧 추가할 자료'에 start-here-print(10분 안내 요약지) 예정 1건 남음 — 4종 세트와 별개, 제작/유지 결정 대기(이번엔 손대지 않음)"
+      ],
+      "verification": {
+        "local_http": "age-cards / downloads / age-guide 모두 200",
+        "internal_links": "age-cards 내부 링크 7종 전부 실존 확인",
+        "promotion": "downloads에서 연령 카드 badge='지금 사용'(ready) 승격 확인, ready 카드 4종",
+        "print_css": "@page size:A4 + @media print 존재, 카드 그리드 A4 배치",
+        "guardrails": "PDF 0건, 새 출력자료 age-cards까지만, 광고성 CTA·특정 AI 추천·개인정보 유도 없음",
+        "sitemap": "loc 39개, age-cards 1건",
+        "no_conflict": "age-guide.html와 역할 충돌 없음(설명형 유지, 출력형 분리)"
+      },
+      "todo_next": [
+        "새 출력자료 중단 → downloads 중심 4종 세트 안내 구조 정리(사용 순서/묶음 카피)",
+        "start-here-print 요약지: 제작할지 예정 블록 제거할지 사용자 결정"
+      ]
+    },
+    {
+      "date": "2026-07-03",
       "title": "인쇄용 실험 기록지 experiment-log.html 신설 (출력 자료 허브 3번째 도구, 시작전+실험후 세트 완성)",
       "changes": [
         "신규 페이지 ai-early-education/experiment-log.html — '오늘의 AI 대화 실험 기록지: 인쇄용 한 장'(A4)",
