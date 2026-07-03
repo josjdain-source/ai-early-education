@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "싱가포르 편 4칸 견본(5국 중 4국 완성). 안전한 틀 안에서 AI",
+      "changes": [
+        "싱가포르 검색 소스 6개(실제): MOE AI in education·MOE About AI in SLS·GovTech·MOE 국회답변·OpenGov Asia·(상업블로그 지양)",
+        "근거: SLS 내장 가드레일로 cognitive offloading·AI의존 최소화, LEA 교사활성화·초등4+ 감독, 장관 'AI cannot supplant learning; it must enable it'",
+        "editorial/sg-ai-education-editorial-sample.md(4칸: 가드레일=통제 아니라 의존방지)+short-script+evidence/sg-...-plan",
+        "출처 성격: 싱가포르=[교육부 공식]+[정부 기술기관]. 4국 대비 완성",
+        "reports/SG_AI_EDUCATION_EDITORIAL_SAMPLE_REPORT.md"
+      ],
+      "verification": {
+        "core": "안전한 틀 안에서 AI, 가드레일=의존방지(감시 아님)",
+        "real_sources": "moe.gov.sg/learning.moe.edu.sg/tech.gov.sg 검색 확인, 상업블로그 지양",
+        "no_capture": "candidate_found만, 캡처/렌더/업로드/HTML 없음, sitemap 41",
+        "progress": "5국 중 4국(중/미/영/싱) 완성. 한국만 남음"
+      },
+      "todo_next": ["싱가포르 견본 검수", "한국 편(마지막, 부모 직접 결론부)", "5국완성→본편/쇼츠 증거 삽입"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "영국 편 4칸 견본(5국 중 3국 완성). AI는 도구·판단은 사람",
       "changes": [
         "영국 검색 소스 6개(실제): GOV.UK/DfE 정책·Education Hub 공식블로그·Call for Evidence·Third Space·SSS·Freeths",
