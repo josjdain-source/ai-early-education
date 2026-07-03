@@ -98,17 +98,17 @@
 - why_needed: "각자 앱이 아니라 학교 플랫폼" 설명에 실물 근거
 - caution: 페이지가 JS 렌더/이동 가능 → 캡처 시 실제 표시 문구 확인
 
-### C07 · ★Responsible / Safe use 가이드 키워드
+### C07 · ★책임 있는 사용 문맥 (확인된 문장으로 교체됨)
 - timecode: 2:55~3:08
 - narration_reference: "화려한 기능이 아니라 책임 있는 사용"
-- visual_type: official_capture
+- visual_type: highlight_zoom
 - source_priority: essential
-- source_url: (C06과 동일 가이드 페이지)
-- what_to_show: responsible/safe use 관련 문구 클로즈업
-- highlight_text: "responsible use" / "safe" (원문 그대로)
-- korean_overlay: "핵심은 '책임 있게'"
+- source_url: https://www.learning.moe.edu.sg/ai-in-sls/responsible-ai/guidance-on-generative-ai/ (C06과 동일 페이지)
+- what_to_show: 가이드 본문의 확인된 문장 클로즈업
+- highlight_text: "When used appropriately, these tools can support students in their learning when students have mastered basic concepts and thinking skills" (✅ 2026-07-04 확인)
+- korean_overlay: "핵심은 '적절하게, 기본을 익힌 뒤'"
 - why_needed: 부모 질문 4개(C09) 직전 가치 근거 다리
-- caution: ⚠️ AIEd 윤리 '4원칙(Agency·Inclusivity·Fairness·Safety)'은 직접 확인 실패(2026-07-04) → **캡처 시 공식 페이지에서 원칙명 확인 전 화면 확정 표기 금지**. 확인 실패 시 "책임 있는 사용 원칙" 일반 표현 사용
+- caution: ⚠️ 확인 결과 반영(2026-07-04): ① AIEd 윤리 '4원칙' 전용 페이지는 **404**→원칙명 표기·인용 금지. ② 'responsible use'/'safe' 단어는 C06 본문 미노출→하이라이트 금지. 위 확인된 문장만 사용.
 
 ### C08 · 연령 4단계 (우리식 재구성)
 - timecode: 1:22~2:20
