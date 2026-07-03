@@ -2,6 +2,31 @@
   "project": "아이와 함께 배우는 생성형 AI / AI 조기교육 (ai-craft-kids)",
   "entries": [
     {
+      "date": "2026-07-04",
+      "title": "첫 Daily Watch 실행(관측 훈련) — 큐 초안 5건, 사이트 반영 0",
+      "changes": [
+        "ops/ai-early-education/daily_watch/2026-07-04.md 생성(8소스 확인 기록)",
+        "우선 5축 확인: 한국(교육부·언론)/UNESCO/영국 JCQ/싱가포르(MOE·SLS)/미국(연방·주별). 방식=웹검색+공식·보도 교차",
+        "update_queue.json에 UQ-20260704-01~05 등록(전부 status:new, approved_by/applied_commit null)",
+        "UQ-01 한국 AIDT 2026 수치(page_update,high) — 32.3%/8.1% 등은 보도·분석, 공식 통계 교차확인 전 보류",
+        "UQ-02 싱가포르 학생+학부모 연령별 GenAI 프레임(video_topic,medium) — 5분 영상 1순위, age-guide/age-cards 강화",
+        "UQ-03 영국 JCQ 평가 AI 가이드 개정(note,medium) / UQ-04 UNESCO 프레임 2026-01-16 갱신=기존주장 유효(fact_check,low) / UQ-05 미국 연방 DCL(hold,low, 규칙제정 진행중)",
+        "watch_sources.json last_checked=2026-07-04로 갱신(확인 8소스), 나머지 null 유지",
+        "reports/AI_EARLY_EDUCATION_DAILY_WATCH_20260704_REPORT.md 생성"
+      ],
+      "verification": {
+        "no_publish": "새 HTML 0, sitemap 39 유지, 배포 0, 영상 제작 0, 공개 발행 0",
+        "queue_draft_only": "update_queue 5건 전부 status:new, applied 0",
+        "sourced": "모든 변화에 출처 URL + 확인일(2026-07-04) 기록, 수치는 '보도/분석' 명시(단정 회피)",
+        "json_valid": "watch_sources·update_queue JSON 유효"
+      },
+      "todo_next": [
+        "승인 시 UQ-01 한국 공식 통계 확인→korea 페이지 초안",
+        "UQ-02 싱가포르 5분 영상 대본",
+        "금요일 첫 주간 브리핑 초안(승인 후 공개)"
+      ]
+    },
+    {
       "date": "2026-07-03",
       "title": "AI 조기교육 데일리 관측소 운영 구조 구축(양식만, 자동발행/사이트수정 X)",
       "changes": [
