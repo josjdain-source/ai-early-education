@@ -3,6 +3,25 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "scorer 교육 키워드 정밀화(3층 신호+카테고리 룰+ML용어 억제), 테스트 55/55",
+      "changes": [
+        "ai_education_relevance_scorer.py 재작성: A강한교육/B중간/C일반기술 3층, research/bigtech/news/official 카테고리 전용 룰, 감정·companion 전용, 감점(실적/칩/데이터센터)",
+        "일반 명사(learning/search/use) 교육신호 제거 → ML 논문 오탐 차단. ML 전문용어(student-teacher/knowledge distillation) 억제(교육 맥락 없으면 1점)",
+        "5점 승격=아동+(tutor/companion/homework/assessment/emotional). companion=hype_risk 상향",
+        "ops/ai-early-education/scorer_test_cases.json 55케이스(교육직접/일반기술/빅테크/감정/학생학교부모/오탐예상)",
+        "scorer --test 러너. reports/AI_EARLY_EDUCATION_SCORER_REFINEMENT_REPORT.md"
+      ],
+      "verification": {
+        "tests": "55/55 통과",
+        "no_false_positive": "실제 피드 dry-run: 이전 오탐 arxiv 4건→전부 1점, queue_added 0(교육 항목 없는 날)",
+        "rules": "일반 ML 5점 아님·빅테크 무연결 0~2·child/tutor/companion 3~5·companion caution",
+        "queue_clean": "update_queue 6항목 보존(dry-run만)",
+        "no_publish": "새 HTML 0, sitemap 39, 배포/영상 0"
+      },
+      "todo_next": ["내일 07:30 실운영 오탐/미탐 관찰", "한국어 커버리지·본문 반영 미세조정", "그 후 검색 API 연동"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "관측소 먹이 정비: RSS 피드 8개 전환+랜딩페이지 노이즈 차단(항목별 정밀 점수)",
       "changes": [
         "실제 RSS 피드 8개 검증·추가(watch_sources): arXiv cs.AI/cs.CY(C), OpenAI/NVIDIA/TechCrunch/Verge/MIT-TR(G), 연합뉴스(B). 각 fetch_mode·item_level_available·queue_allowed·noise_risk·preferred_feed_url 등 필드",
