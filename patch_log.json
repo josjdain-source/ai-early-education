@@ -3,6 +3,29 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "UQ-02 대본×캡처 병합 — 싱가포르 편 첫 완성 파이프라인(영상제작 X)",
+      "changes": [
+        "episode_02...5min.md에 §10 타임코드 병합표(C02~C07 PNG 배치)+§11 에셋 체크리스트 추가",
+        "배치: 0:30 C02→0:42 C03(허리)→1:00 C04→1:15 C05→1:25 C06→2:20 C07→4:50 홈연결",
+        "표시 방식: 공식 캡처 2~4s→핵심 문구 확대 2s→한국어 요약 3~5s+출처 라벨 유지. 원문 변경/의역/미확인 강조/윤리4원칙 금지",
+        "공식 근거 PNG 6/6 확보(assets/.../c02~c07). 제작 에셋(거실/카드/도식)은 편집 착수 시 생성",
+        "update_queue UQ-02 status reviewing→evidence_merged(approved/applied 아님)",
+        "reports/AI_EARLY_EDUCATION_UQ02_EVIDENCE_MERGE_REPORT.md 생성"
+      ],
+      "verification": {
+        "png": "6개 존재·크기≠0·captured",
+        "merge_table": "§10 6 PNG 배치, 확인 문구만",
+        "no_ethics4": "윤리 4원칙 미사용(Agency=재삽입 금지 경고로만)",
+        "queue": "UQ-02 evidence_merged, approved/applied null",
+        "no_code_change": "새 HTML 0, sitemap 39, 영상제작/렌더/업로드 0"
+      },
+      "todo_next": [
+        "편집 착수(별도 승인) 시 제작 에셋 생성→1차 편집→검수→업로드",
+        "그 후 Daily Watch 3축 시험 운전"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "관측소 3축 확장(공식/기관·홈페이지/유튜브) + source taxonomy",
       "changes": [
         "source_taxonomy.json 신설 — 분류 단일 진실원본(source_category/source_type/use_policy/trust_level, 3축, default_policy_by_category, youtube 필드·키워드)",

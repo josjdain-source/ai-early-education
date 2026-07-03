@@ -157,3 +157,43 @@
 - [x] 아이 혼자 AI 사용 권장 없음(보호·감독·함께 강조)
 - [x] 출처 표기(기관+확인일+URL)
 - [x] 사이트 수정·영상 업로드 없음(대본 초안만)
+
+---
+
+## 10. 영상 편집용 타임코드 병합표 (자동 캡처 PNG 병합, 2026-07-04)
+> 자동 캡처(capture_evidence.py)로 확보한 실제 공식 페이지 PNG를 대본 타임코드에 배치.
+> 파일: `assets/ai-early-education/singapore-evidence/*.png` · 6개 모두 captured 확인.
+> 원칙: 공식 캡처는 짧게(2~4초) → 핵심 문구 확대(2초) → 한국어 요약 카드(3~5초). 하단 출처 라벨 유지. 원문 문구 변경/의역 삽입/미확인 문구 강조/윤리 4원칙 금지.
+
+| timecode | narration_part | evidence_cut_id | png_file | 화면 표시 방식 | 강조할 원문 문구 | 한국어 오버레이 | 표시 시간 | 주의사항 |
+|---|---|---|---|---|---|---|---|---|
+| 0:30~0:42 | "나라 차원에서 흥미롭게 푼 곳, 싱가포르" | C02 | c02_moe_ai_education_20260704.png | 출처 카드 + 페이지 상단 | "Artificial intelligence in education" | 이건 의견이 아니라 정부(MOE) 자료 | 캡처 3s + 요약 3s | 정부기관 배너 보이게. 'Primary 4 and above'는 학습보조도구 한정→일반화 금지 |
+| 0:42~1:00 | "학생만이 아니라 부모까지" | C03 | c03_students_parents_20260704.png | 제목 확대·하이라이트 | "for **Students and Parents** across Educational Levels" | 학생 + 부모 = 함께 | 캡처 2s + 하이라이트 2s + 요약 4s | 제목 라인만. 본문 장문 금지 |
+| 1:00~1:15 | "나이에 맞게 단계적으로" | C04 | c04_age_progressive_framework_20260704.png | 같은 제목 다른 단어 강조 | "**Age-progressive** Framework" | 나이에 맞게 단계적으로 | 하이라이트 2s + 요약 3s | C03과 동일 페이지, 중복 길게 금지 |
+| 1:15~1:25 | "부모까지 아우르는 방향" | C05 | c05_parent_guide_genai_20260704.png | 본문 문장 확대 | "Guide to Generative AI tools for Learning" (Parents Gateway) | 부모용 안내서가 실제로 있다 | 캡처 2s + 요약 3s | 곱슬 아포스트로피 원문 그대로. 문구 변경 금지 |
+| 1:25~1:35 | "SLS = 학교 안 공식 학습 환경" | C06 | c06_sls_guidance_genai_20260704.png | 출처 카드 + 제목 | "Guidance on Generative AI" / "Singapore Student Learning Space (SLS)" | 학교 안 공식 학습 환경 + 생성형 AI 가이드 | 캡처 3s + 요약 3s | 'responsible/safe' 단어는 본문 미노출→하이라이트 금지 |
+| 2:20~2:45 | "화려한 기능이 아니라 책임 있는 사용" | C07 | c07_responsible_use_genai_20260704.png | 확인 문장 확대 | "When used appropriately, these tools can support students ... when students have mastered basic concepts and thinking skills" | 핵심은 '적절하게, 기본을 익힌 뒤' | 캡처 2s + 하이라이트 3s + 요약 4s | ★윤리 4원칙(Agency 등) 재삽입 금지(404) |
+| 4:50~5:10 | "프로필 링크에 정리해뒀어요" | (홈 연결) | (우리 카드) | age-guide·age-cards·parent-rules·printable-checklist 미리보기 + "프로필 링크" | (한국어) 결론 3개 | ① 나이별 방식 ② 함께 쓰는 구조 ③ 다시 확인하는 습관 | 6~8s | 상품·유료강의 링크 금지 |
+
+> 참고: 대본 §1의 원래 타임코드(0:00~5:10)와 위 병합표는 같은 흐름이며, 편집 시 공식 캡처는 해당 내레이션 위에 오버레이로 얹는다(내레이션 길이에 맞춰 ±미세 조정).
+
+## 11. 영상 제작용 에셋 체크리스트
+**공식 근거 PNG (확보됨 ✅)**
+- [x] c02_moe_ai_education_20260704.png (C02)
+- [x] c03_students_parents_20260704.png (C03) ★
+- [x] c04_age_progressive_framework_20260704.png (C04)
+- [x] c05_parent_guide_genai_20260704.png (C05) ★
+- [x] c06_sls_guidance_genai_20260704.png (C06)
+- [x] c07_responsible_use_genai_20260704.png (C07)
+
+**제작 필요 에셋 (미확보 ☐)**
+- [ ] 부모/아이 거실 장면(C01, "AI 써도 돼?")
+- [ ] 연령 4단계 카드(유아/초등 저·고/중학생, age-guide 색)
+- [ ] 부모 질문 4개 카드(맞을까?·개인정보?·비교?·다시?)
+- [ ] 학교 vs 가정 역할 도식(school-vs-home 구도)
+- [ ] 결론 3개 카드(나이별 방식/함께 쓰는 구조/다시 확인하는 습관)
+- [ ] 홈페이지 연결 카드(age-guide·age-cards·parent-rules·printable-checklist)
+- [ ] 출처 표기 카드 템플릿(기관+확인일 2026-07-04+URL, "정책 변동 가능")
+- [ ] 자막 스타일 프리셋 · BGM/효과음(스타일 가이드 참조)
+
+> 상태: 공식 근거 화면은 자동 캡처로 확보 완료. 나머지 제작 에셋은 편집 착수(별도 승인) 시 생성. **이 단계에서 영상 제작·렌더·업로드 없음.**
