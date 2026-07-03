@@ -3,6 +3,26 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "4국 실제 교실 영상장면 확보(CN로봇/US교실/SG태블릿/KR UI). UK 보류",
+      "changes": [
+        "yt-dlp+ffmpeg 몽타주로 프레임 직접 선별(독든프레임 회피). video-scenes/final 5장",
+        "중국=WSJ에서 헤드밴드 배제하고 유치원 AI로봇 장면. 미국=InvestigateTV 실교실+노트북. 싱가포르=CNA Edgefield 태블릿수업",
+        "★UK 보류: David Game(teacherless 메시지충돌)·Macmillan(웨비나) 뿐, 깨끗한 교실 footage 무료확보 실패",
+        "출처바 전부 합성([해외언론]/[정부교육부]). 문서스샷 본편 제외 확정. replacement-plan 작성",
+        "reports/WORLD_AI_EDUCATION_BROLL_SCENE_SELECTION_REPORT.md"
+      ],
+      "verification": {
+        "scenes": "4국 실제 장면 확보, UK 보류(정직)",
+        "poison_avoided": "중국 헤드밴드·영국 teacherless·SG패널·US앵커 배제",
+        "no_render": "렌더/업로드/HTML 없음, sitemap 41, 임시 다운로드 정리"
+      },
+      "todo_next": [
+        "UK 방안 결정(문서UK-01/인포/재탐색)",
+        "replacement-plan대로 timeline evidence 교체→재렌더"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "문서스샷→영상장면 전환 조사+KR 1장 캡처. 공식영상=스튜디오 실증",
       "changes": [
         "문서 스샷 10장 본편 제외(README-role.md, 근거 보관용). 본편 evidence=실제 영상 장면으로 전환",
