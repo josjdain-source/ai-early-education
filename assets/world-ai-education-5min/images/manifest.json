@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "video": "세계 AI교육 5분 본편",
+    "created": "2026-07-04",
+    "method": "무료 Pillow 플랫 인포그래픽(16:9 1920x1080). gpt-image-1은 결제 한도 초과로 미사용.",
+    "style": "사이트 팔레트(라벤더·블루·크림) + 드로잉 아이콘/카드/지도. 텍스트 최소, 국기 남발 금지, 정책 홍보물 금지. 톤 통일.",
+    "batches": "4장씩: 1차 01~04(오프닝+중국) / 2차 05~08(미국+영국) / 3차 09~12(싱가포르+한국) / 4차 13~16(공통점+결론)",
+    "status": "1차(01~04) 톤 고정 후보. 사람 판단 대기. 렌더/TTS/업로드/HTML 없음."
+  },
+  "images": [
+    {"id": "IMG-01", "filename": "IMG-01-opening-map.png", "section": "§0 오프닝", "time_range": "0:00~0:12", "prompt_summary": "지도+5개국 카드 아이콘", "status": "done", "notes": "지도 블롭 은은(의도). 국기 없음"},
+    {"id": "IMG-02", "filename": "IMG-02-parent-question.png", "section": "§0 오프닝", "time_range": "0:12~0:25", "prompt_summary": "부모·아이+물음표+5카드 줄", "status": "done", "notes": "제목 카드용"},
+    {"id": "IMG-03", "filename": "IMG-03-china-classroom.png", "section": "§1 중국", "time_range": "0:25~0:48", "prompt_summary": "칠판+AI 반짝+책상", "status": "done", "notes": "교실=학교 안으로"},
+    {"id": "IMG-04", "filename": "IMG-04-china-guardrail.png", "section": "§1 중국", "time_range": "0:48~1:05", "prompt_summary": "AI+경고+표절/과의존 태그", "status": "done", "notes": "경고=절제 톤(겁주기 아님)"},
+    {"id": "IMG-05", "filename": "IMG-05-usa-literacy.png", "section": "§2 미국", "time_range": "1:05~1:28", "prompt_summary": "아이 태블릿+교사 안내", "status": "pending", "notes": "2차"},
+    {"id": "IMG-06", "filename": "IMG-06-usa-teacher-training.png", "section": "§2 미국", "time_range": "1:28~1:45", "prompt_summary": "AI Literacy 3단계 도식", "status": "pending", "notes": "2차"},
+    {"id": "IMG-07", "filename": "IMG-07-uk-teacher-check.png", "section": "§3 영국", "time_range": "1:45~2:08", "prompt_summary": "교사 AI화면 확인 체크", "status": "pending", "notes": "2차"},
+    {"id": "IMG-08", "filename": "IMG-08-uk-human-judgment.png", "section": "§3 영국", "time_range": "2:08~2:25", "prompt_summary": "두 답 비교", "status": "pending", "notes": "2차"},
+    {"id": "IMG-09", "filename": "IMG-09-singapore-platform.png", "section": "§4 싱가포르", "time_range": "2:25~2:48", "prompt_summary": "학습 플랫폼+보호 울타리", "status": "pending", "notes": "3차"},
+    {"id": "IMG-10", "filename": "IMG-10-singapore-guardrail.png", "section": "§4 싱가포르", "time_range": "2:48~3:05", "prompt_summary": "단계별 학습", "status": "pending", "notes": "3차"},
+    {"id": "IMG-11", "filename": "IMG-11-korea-digital-textbook.png", "section": "§5 한국", "time_range": "3:05~3:28", "prompt_summary": "디지털교과서 태블릿", "status": "pending", "notes": "3차"},
+    {"id": "IMG-12", "filename": "IMG-12-korea-parent-home.png", "section": "§5 한국", "time_range": "3:28~3:45", "prompt_summary": "부모+아이 가정 화면", "status": "pending", "notes": "3차"},
+    {"id": "IMG-13", "filename": "IMG-13-five-country-summary.png", "section": "§6 공통점", "time_range": "3:45~4:10", "prompt_summary": "5국 키워드 카드 그리드", "status": "pending", "notes": "4차"},
+    {"id": "IMG-14", "filename": "IMG-14-question-judgment-revise.png", "section": "§6 공통점", "time_range": "4:10~4:30", "prompt_summary": "질문·판단·수정 통합", "status": "pending", "notes": "4차 핵심"},
+    {"id": "IMG-15", "filename": "IMG-15-parent-child-retry.png", "section": "§7 부모핵심", "time_range": "4:30~4:48", "prompt_summary": "부모+아이 말풍선 다시말하기", "status": "pending", "notes": "4차"},
+    {"id": "IMG-16", "filename": "IMG-16-final-cta.png", "section": "§7 부모핵심", "time_range": "4:48~5:00", "prompt_summary": "엔드카드(다음영상/출력자료)", "status": "pending", "notes": "4차"}
+  ]
+}

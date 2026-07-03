@@ -3,6 +3,23 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "본편 이미지 1차 톤 고정(IMG-01~04). gpt-image 결제한도→무료 인포그래픽",
+      "changes": [
+        "정직보고: gpt-image-1 billing_hard_limit_reached(장부 확인)→실패확정 유료호출 안던짐. 무료 Pillow 플랫 인포그래픽으로",
+        "production/gen_world_ai_images.py: 16:9 드로잉 아이콘(school/book/check/shield/tablet/spark/caution/bubble/person)+카드+지도, 사이트 팔레트",
+        "IMG-01~04 생성(오프닝 지도+5카드 / 부모질문 / 중국 교실 / 중국 가드레일). 국기 없음, 텍스트 최소, 톤 통일",
+        "manifest.json(16개 등록, 01~04 done·05~16 pending, 4장씩 배치). reports/WORLD_AI_EDUCATION_IMAGE_GENERATION_REPORT.md"
+      ],
+      "verification": {
+        "tone": "4장 배경/카드/팔레트 통일, 정책홍보물/국기 아님, 16:9",
+        "method_honest": "API 결제한도 명시상태라 무료방식, 실패호출 안함",
+        "no_render": "TTS/렌더/업로드/HTML 없음, sitemap 41",
+        "decision_pending": "톤 확정(A무료톤/B gpt-image한도상향/C보강) 판단 대기"
+      },
+      "todo_next": ["톤 확정 판단", "확정 시 IMG-05~16(4장씩)", "그후 TTS→본편 초벌"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "세계 AI교육 5분 본편 제작 패키지 6종(대본 최종검수 통과, 렌더/업로드 없음)",
       "changes": [
         "대본 최종 검수: 부모용언어·나라별 30~40초·과장없음(방향서술)·결론 질문/판단/수정·쇼츠컷 명확 → 통과",
