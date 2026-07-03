@@ -3,6 +3,26 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "UQ-02 싱가포르 c01 거실 장면 생성 + preview GIF 렌더(검수용, 업로드 X)",
+      "changes": [
+        "scripts/make_ep02_c01.py로 c01_parent_livingroom_scene.png(1920x1080) 생성 — 부모 망설임+아이 질문 말풍선, 로고/앱UI/실존아동 없음",
+        "scripts/render_episode_02_preview.py 보완: ffmpeg 자동탐색(FFMPEG_BIN/playwright), 해상도 정규화, 프레임시퀀스→Pillow GIF 폴백",
+        "preview 생성: exports/episode_02_preview_lowres.gif(960x540, 12컷, 컷별 실제 길이). edit_timeline C01 경로 실파일로 갱신",
+        "mp4 실패 정직 기록: 이 PC ffmpeg=playwright 녹화전용 최소빌드→image2/인코딩 미지원(concat/-safe/rawvideo 거부). 가짜 성공 안 함, GIF로 대체",
+        "preview_notes.md: 핵심 발견=C10(60s)·C08(45s)·C11(40s) 정적 카드 과길→순차 등장 필요. 공식캡처 C02~C07 10~25s 가독. 총 5:10",
+        "reports/AI_EARLY_EDUCATION_UQ02_PREVIEW_RENDER_REPORT.md"
+      ],
+      "verification": {
+        "c01": "PNG 1920x1080 생성, 규칙 준수(로고/앱UI/실존아동 없음)",
+        "preview": "GIF 12컷 960x540 생성, 첫 프레임=c01 육안 확인. mp4는 환경 ffmpeg 한계로 실패(기록)",
+        "readability": "공식 캡처 10~25s 가독, C03/04/05 43s 충분, 결론3 40s 명확",
+        "no_upload": "업로드/완성 렌더 없음, UQ-02 evidence_merged(approved 아님)",
+        "no_code_change": "새 HTML 0, sitemap 39, 배포 0"
+      },
+      "todo_next": ["긴 정적 카드 3개 순차 등장 모션", "TTS 녹음+1차 편집→검수→업로드(별도 승인)", "정식 ffmpeg로 mp4 재렌더(선택)"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "관측소 6축 확장(공식/뉴스/학회/학교/학생/유튜브)+미성년자 보호 필드",
       "changes": [
         "source_taxonomy.json 확장: 카테고리 16(news_media·academic_research·conference·school_practice·teacher_training·student_project·student_competition·government_dataset 추가)·use_policy 12·trust A~F·6축·학생사례 규칙·뉴스/연구/학생 키워드",

@@ -8,7 +8,7 @@
     "principle": "설명↔공식 증거 번갈아. 공식 캡처 원문 변경/윤리4원칙/정답 연출 금지."
   },
   "cuts": [
-    {"cut_id": "C01", "start": "0:00", "end": "0:30", "visual_asset": "cards/c01_parent_livingroom_scene(명세, 미생성)",
+    {"cut_id": "C01", "start": "0:00", "end": "0:30", "visual_asset": "cards/c01_parent_livingroom_scene.png",
      "narration_text": "아이가 'AI 써도 돼?' 묻는 장면 → 부모 망설임 → 싱가포르 도입",
      "caption_text": "\"엄마, AI 써도 돼?\" — 막을까, 허락할까", "transition": "fade-in",
      "bgm_note": "밝은 로파이 -18dB", "sfx_note": "말풍선 팝", "source_required": false,
