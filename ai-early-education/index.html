@@ -3,83 +3,61 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI 조기교육 포털 | 부모를 위한 AI 교육 뉴스·영상·활동자료</title>
-<meta name="description" content="부모를 위한 AI 조기교육 콘텐츠 포털. 오늘의 AI 교육 이슈, 5분 영상, AI 대화놀이, 연령별 추천, 집에서 쓰는 출력자료, 세계 동향과 근거를 한 화면에서 둘러보세요.">
+<title>AI 조기교육 영상 라이브러리 | 나라별·연령별·부모가이드 영상으로 보기</title>
+<meta name="description" content="AI 조기교육을 영상으로 먼저 보세요. 나라별 AI교육(중국·미국·영국·싱가포르·한국), 연령별 AI교육, AI 대화놀이, 부모가이드, 출력자료, 오늘의 AI 교육 이슈를 주제별로 골라 봅니다.">
 <link rel="canonical" href="https://ai-early-education.pages.dev/ai-early-education/">
-<meta property="og:title" content="AI 조기교육 포털 | 부모를 위한 AI 교육 뉴스·영상·활동자료">
-<meta property="og:description" content="부모가 매일 들어와 AI 교육 콘텐츠를 확인하는 포털형 첫 화면.">
+<meta property="og:title" content="AI 조기교육 영상 라이브러리 | 주제를 골라 영상으로 보기">
+<meta property="og:description" content="큰 영상 하나가 아니라, 부모가 관심 주제를 골라 영상으로 들어가는 카테고리형 라이브러리.">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="/assets/style.css">
 <style>
   :root{--pur:#7c6cff;--pur2:#5a49d6;--blue:#2f6bd8;--grn:#0a8a4a;--org:#c0512b;--ink:#242433;--gray:#8a8aa0}
-  .ptl-head{margin:12px 0 8px}
-  .ptl-title{font-size:22px;font-weight:900;color:var(--ink);letter-spacing:-.3px}
+  .ptl-head{margin:14px 0 6px}
+  .ptl-title{font-size:23px;font-weight:900;color:var(--ink);letter-spacing:-.3px}
   .ptl-title .accent{color:var(--pur2)}
-  .ptl-sub{font-size:12.5px;color:var(--gray);margin-top:2px}
-  /* 카테고리 탭 */
-  .cats{display:flex;gap:6px;overflow-x:auto;padding:10px 0;margin:6px 0 4px;border-top:1px solid #eee;border-bottom:2px solid #f0f0f6;-webkit-overflow-scrolling:touch}
-  .cats a{white-space:nowrap;text-decoration:none;font-weight:800;font-size:14px;color:#4a4a5a;padding:7px 14px;border-radius:20px;background:#f5f4fa;transition:.12s}
-  .cats a:hover{background:var(--pur);color:#fff}
-  .cats a.on{background:var(--pur);color:#fff}
-  /* 2컬럼 */
-  .grid2{display:grid;grid-template-columns:1fr 300px;gap:18px;margin-top:12px}
-  .colmain{min-width:0}
-  /* 썸네일 공통 */
-  .thumb{aspect-ratio:16/9;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:40px;color:#fff}
-  .g-play{background:linear-gradient(135deg,#7c6cff,#5a49d6)}
-  .g-age{background:linear-gradient(135deg,#2f6bd8,#61b0ff)}
-  .g-guide{background:linear-gradient(135deg,#0a8a4a,#57c98a)}
-  .g-issue{background:linear-gradient(135deg,#c0512b,#f0a35a)}
-  .g-video{background:linear-gradient(135deg,#22232e,#4a4a63)}
-  .g-print{background:linear-gradient(135deg,#f0a35a,#ffd27a);color:#3a2a12}
+  .ptl-sub{font-size:13px;color:var(--gray);margin-top:3px}
+  .thumb{display:flex;align-items:center;justify-content:center;color:#fff;position:relative;overflow:hidden}
+  .thumb .pl{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;font-size:22px;color:#3a2fb0}
   .g-world{background:linear-gradient(135deg,#3a2fb0,#7c6cff)}
-  .g-evi{background:linear-gradient(135deg,#5a6a8a,#9fb0cf)}
-  /* 대표 카드 */
-  .hero-card{display:grid;grid-template-columns:1.15fr 1fr;gap:0;border:1px solid #e7e7ef;border-radius:16px;overflow:hidden;background:#fff}
-  .hero-card .thumb{aspect-ratio:auto;height:100%;min-height:210px;border-radius:0;font-size:60px}
-  .hero-card .body{padding:20px}
-  .hero-card .lb{display:inline-block;font-size:11px;font-weight:800;color:#fff;background:var(--pur);border-radius:20px;padding:3px 11px;margin-bottom:9px}
-  .hero-card h2{font-size:21px;line-height:1.35;margin:0 0 8px;color:var(--ink)}
-  .hero-card p{font-size:13.5px;line-height:1.7;color:#555;margin:0 0 14px}
-  .hero-card .go{display:inline-block;background:var(--pur);color:#fff;font-weight:800;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:14px}
-  /* 추천 그리드 */
-  .feed{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
-  .fcard{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid #eee;border-radius:12px;overflow:hidden;transition:.14s}
-  .fcard:hover{border-color:var(--pur);transform:translateY(-2px);box-shadow:0 6px 16px rgba(124,108,255,.12)}
-  .fcard .thumb{aspect-ratio:16/10;border-radius:0;font-size:34px}
-  .fcard .fb{padding:11px 12px 13px}
-  .fcard .lb{font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:12px;color:#fff}
-  .lb-age{background:#2f6bd8}.lb-guide{background:#0a8a4a}.lb-issue{background:#c0512b}.lb-video{background:#4a4a63}.lb-print{background:#c98a2a}.lb-world{background:#5a49d6}.lb-play{background:#7c6cff}
-  .fcard .ft{font-weight:800;font-size:14px;line-height:1.4;margin:7px 0 3px;color:var(--ink)}
-  .fcard .fd{font-size:12px;color:#777;line-height:1.5}
-  /* 사이드 위젯 */
-  .side{display:flex;flex-direction:column;gap:14px}
-  .wg{background:#fff;border:1px solid #eee;border-radius:13px;padding:14px}
-  .wg h3{font-size:13.5px;font-weight:900;color:var(--ink);margin:0 0 9px;display:flex;align-items:center;gap:6px}
-  .wg .tag{font-size:10px;font-weight:800;color:#fff;background:var(--org);border-radius:10px;padding:2px 8px}
-  .wg .wtxt{font-size:12.5px;line-height:1.65;color:#555}
-  .wg a.wbtn{display:inline-block;margin-top:9px;font-size:12.5px;font-weight:800;color:var(--pur2);text-decoration:none}
-  .wg ul{list-style:none;margin:4px 0 0;padding:0}
-  .wg li a{display:block;text-decoration:none;color:#3a3a48;font-size:13px;font-weight:600;padding:6px 0;border-bottom:1px solid #f2f2f6}
-  .wg li a:hover{color:var(--pur2)}
-  .wg .vthumb{border-radius:9px;aspect-ratio:16/9;background:linear-gradient(135deg,#22232e,#4a4a63);display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;margin-bottom:8px}
-  .wg .check{background:#f6fbf7;border:1px solid #d9eede;border-radius:10px;padding:10px 12px;font-size:12.5px;line-height:1.6;color:#2a2a33}
-  .wg .check b{color:var(--grn)}
-  /* 섹션 */
-  .sec{font-size:18px;font-weight:900;color:var(--ink);margin:30px 0 2px;display:flex;align-items:center;gap:8px}
-  .sec .all{margin-left:auto;font-size:12.5px;font-weight:700;color:var(--pur2);text-decoration:none}
+  .g-age{background:linear-gradient(135deg,#2f6bd8,#61b0ff)}
+  .g-play{background:linear-gradient(135deg,#7c6cff,#c06cff)}
+  .g-guide{background:linear-gradient(135deg,#0a8a4a,#57c98a)}
+  .g-print{background:linear-gradient(135deg,#f0a35a,#ffd27a);color:#3a2a12}
+  .g-issue{background:linear-gradient(135deg,#c0512b,#f0a35a)}
+  .g-feat{background:linear-gradient(135deg,#22232e,#4a4a63)}
+  .g-cn{background:linear-gradient(135deg,#b0202e,#e0574a)}
+  .g-us{background:linear-gradient(135deg,#20409a,#5a7fd0)}
+  .g-uk{background:linear-gradient(135deg,#1f3a6e,#5b6fa8)}
+  .g-sg{background:linear-gradient(135deg,#c0392b,#f0836a)}
+  .g-kr{background:linear-gradient(135deg,#12467a,#3f8ac0)}
+  /* 대표 카테고리: 나라별 (wide) */
+  .feat{display:grid;grid-template-columns:1.1fr 1.4fr;gap:0;border-radius:18px;overflow:hidden;border:1px solid #e7e7ef;background:#fff;margin-top:12px}
+  .feat .thumb{aspect-ratio:16/9;font-size:52px}
+  .feat .body{padding:22px}
+  .feat .lb{display:inline-block;font-size:11px;font-weight:800;color:#fff;background:var(--pur);border-radius:20px;padding:3px 11px;margin-bottom:9px}
+  .feat h2{font-size:23px;line-height:1.35;margin:0 0 8px;color:var(--ink)}
+  .feat p{font-size:13.5px;line-height:1.7;color:#555;margin:0 0 14px}
+  .feat .go{display:inline-block;background:var(--pur);color:#fff;font-weight:800;text-decoration:none;border-radius:10px;padding:11px 19px;font-size:14px}
+  .feat .mini{display:flex;gap:6px;margin-top:14px;flex-wrap:wrap}
+  .feat .mini span{font-size:11px;font-weight:700;background:#f3f0ff;color:#5a49d6;border-radius:8px;padding:4px 9px}
+  /* 카테고리 그리드 */
+  .catgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+  .cat{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid #eee;border-radius:14px;overflow:hidden;transition:.14s}
+  .cat:hover{border-color:var(--pur);transform:translateY(-3px);box-shadow:0 8px 20px rgba(124,108,255,.13)}
+  .cat .thumb{aspect-ratio:16/9;font-size:38px}
+  .cat .cb{padding:13px 15px 15px}
+  .cat .lb{font-size:10.5px;font-weight:800;color:#fff;padding:2px 9px;border-radius:12px}
+  .lb-world{background:#5a49d6}.lb-age{background:#2f6bd8}.lb-play{background:#7c6cff}.lb-guide{background:#0a8a4a}.lb-print{background:#c98a2a}.lb-issue{background:#c0512b}.lb-feat{background:#4a4a63}
+  .cat .ct{font-weight:800;font-size:15.5px;margin:8px 0 4px;color:var(--ink)}
+  .cat .cd{font-size:12.5px;color:#777;line-height:1.5}
+  /* 하단 근거 */
+  .sec{font-size:17px;font-weight:900;color:var(--ink);margin:30px 0 2px}
   .secsub{font-size:12.5px;color:var(--gray);margin:0 0 12px}
-  .row4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-  .row3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
   .evi{background:#fbfbff;border:1px solid #ececf4;border-radius:13px;padding:15px 17px;font-size:13px;line-height:1.7;color:#555}
   .evi a{color:var(--pur2);font-weight:700;text-decoration:none}
-  @media(max-width:820px){
-    .grid2{grid-template-columns:1fr}
-    .hero-card{grid-template-columns:1fr}.hero-card .thumb{min-height:150px}
-    .feed{grid-template-columns:repeat(2,1fr)}
-    .row4{grid-template-columns:repeat(2,1fr)}.row3{grid-template-columns:1fr}
-  }
-  @media(max-width:520px){.feed{grid-template-columns:1fr}.row4{grid-template-columns:1fr}}
+  @media(max-width:820px){.feat{grid-template-columns:1fr}.catgrid{grid-template-columns:repeat(2,1fr)}.trust{grid-template-columns:1fr}}
+  @media(max-width:520px){.catgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -94,159 +72,58 @@
 
 <main class="wrap">
   <div class="ptl-head">
-    <div class="ptl-title">AI 조기교육 <span class="accent">포털</span></div>
-    <div class="ptl-sub">부모를 위한 AI 교육 뉴스 · 영상 · 활동자료 · 세계 동향</div>
+    <div class="ptl-title">AI 조기교육, <span class="accent">영상으로 먼저 보세요.</span></div>
+    <div class="ptl-sub">나라별 교육 방식 · 연령별 놀이 · 부모 가이드 · 출력자료까지 짧은 영상으로 정리했습니다. 오늘 무엇을 영상으로 볼까요?</div>
   </div>
 
-  <!-- 상단 카테고리 탭 -->
-  <nav class="cats">
-    <a href="#recommend" class="on">추천</a>
-    <a href="#age">연령별</a>
-    <a href="#play">AI대화놀이</a>
-    <a href="#prints">출력자료</a>
-    <a href="#video">5분영상</a>
-    <a href="#world">세계동향</a>
-    <a href="#guide">부모가이드</a>
-    <a href="#evidence">근거</a>
-  </nav>
-
-  <!-- 첫 화면 2컬럼 -->
-  <section id="recommend" class="grid2">
-    <div class="colmain">
-      <!-- 대표 콘텐츠 카드 -->
-      <a class="hero-card" href="/ai-early-education/home-experiments.html" style="text-decoration:none;color:inherit">
-        <div class="thumb g-play">🧒💬🤖</div>
-        <div class="body">
-          <span class="lb">추천 · AI대화놀이</span>
-          <h2>오늘 아이와 해볼 AI 대화 놀이</h2>
-          <p>AI에게 한 번 묻고, 마음에 안 드는 부분을 찾아 다시 말해보는 연습입니다. 10~30분이면 됩니다.</p>
-          <span class="go">바로 시작하기 →</span>
-        </div>
-      </a>
-
-      <!-- 추천 콘텐츠 그리드 -->
-      <div class="feed">
-        <a class="fcard" href="/ai-early-education/age-guide.html"><div class="thumb g-age">🧒📱</div><div class="fb"><span class="lb lb-age">연령별</span><div class="ft">5살 아이에게 AI를 어떻게 보여줄까?</div><div class="fd">나이에 맞는 첫 대화 방식</div></div></a>
-        <a class="fcard" href="/ai-early-education/parent-rules.html"><div class="thumb g-guide">✅🛡️</div><div class="fb"><span class="lb lb-guide">부모가이드</span><div class="ft">AI 답을 그대로 믿으면 안 되는 이유</div><div class="fd">다시 확인하는 습관 만들기</div></div></a>
-        <a class="fcard" href="/ai-early-education/school-vs-home.html"><div class="thumb g-issue">🌍📰</div><div class="fb"><span class="lb lb-issue">오늘 이슈</span><div class="ft">오늘의 AI 교육 이슈</div><div class="fd">부모가 알아야 할 변화 정리</div></div></a>
-        <a class="fcard" href="#video"><div class="thumb g-video">▶️</div><div class="fb"><span class="lb lb-video">영상</span><div class="ft">5분 영상: 다시 말하기 훈련</div><div class="fd">곧 공개</div></div></a>
-        <a class="fcard" href="/ai-early-education/age-cards.html"><div class="thumb g-print">🖨️🃏</div><div class="fb"><span class="lb lb-print">출력자료</span><div class="ft">AI 대화 시작 카드</div><div class="fd">아이가 처음 말해볼 때</div></div></a>
-        <a class="fcard" href="/ai-early-education/global-matrix.html"><div class="thumb g-world">🗺️</div><div class="fb"><span class="lb lb-world">세계동향</span><div class="ft">세계는 AI 교육을 어떻게 준비하나?</div><div class="fd">9개국 정책 흐름</div></div></a>
-        <a class="fcard" href="/ai-early-education/home-experiments.html"><div class="thumb g-print">📝✏️</div><div class="fb"><span class="lb lb-print">활동자료</span><div class="ft">질문 만들기 활동지</div><div class="fd">아이가 스스로 물어보기</div></div></a>
-        <a class="fcard" href="/ai-early-education/printable-rules.html"><div class="thumb g-guide">👨‍👩‍👧</div><div class="fb"><span class="lb lb-guide">부모가이드</span><div class="ft">부모가 먼저 알아야 할 AI 사용 규칙</div><div class="fd">7가지 약속</div></div></a>
-      </div>
+  <!-- 대표 카테고리: 나라별 AI교육 -->
+  <a class="feat" href="/ai-early-education/video-countries.html" style="text-decoration:none;color:inherit">
+    <div class="thumb g-world"><div class="pl">▶</div></div>
+    <div class="body">
+      <span class="lb">대표 카테고리 · 영상</span>
+      <h2>나라별 AI교육</h2>
+      <p>중국·미국·영국·싱가포르·한국은 아이에게 AI를 어떻게 가르칠까? 나라별 핵심만 1분 영상으로.</p>
+      <span class="go">나라별 영상 보기 →</span>
+      <div class="mini"><span>🇨🇳 중국</span><span>🇺🇸 미국</span><span>🇬🇧 영국</span><span>🇸🇬 싱가포르</span><span>🇰🇷 한국</span></div>
     </div>
+  </a>
 
-    <!-- 오른쪽 사이드 위젯 -->
-    <aside class="side">
-      <div class="wg">
-        <h3>오늘의 AI 교육 이슈 <span class="tag">검토 중</span></h3>
-        <div class="wtxt">AI 평가·채점 연구가 늘고 있지만, 초등 아이에게는 “AI 답을 고쳐 다시 묻는 연습”이 먼저입니다.</div>
-        <a class="wbtn" href="/ai-early-education/school-vs-home.html">이슈 더 보기 →</a>
-      </div>
-      <div class="wg">
-        <h3>5분 영상</h3>
-        <a href="#video" style="text-decoration:none"><div class="vthumb">▶️</div></a>
-        <div class="wtxt"><b>5분으로 이해하는 AI 조기교육</b><br><span style="color:#c0512b;font-weight:800">곧 공개</span></div>
-        <a class="wbtn" href="#video">영상 자리 보기 →</a>
-      </div>
-      <div class="wg">
-        <h3>출력자료 바로가기</h3>
-        <ul>
-          <li><a href="/ai-early-education/age-cards.html">🃏 AI 대화 시작 카드</a></li>
-          <li><a href="/ai-early-education/home-experiments.html">📝 질문 만들기 활동지</a></li>
-          <li><a href="/ai-early-education/printable-checklist.html">✅ 결과 관찰 체크리스트</a></li>
-          <li><a href="/ai-early-education/experiment-log.html">✍️ 다시 말하기 기록지</a></li>
-        </ul>
-        <a class="wbtn" href="/ai-early-education/downloads.html">자료실 가기 →</a>
-      </div>
-      <div class="wg">
-        <h3>부모 체크 · 오늘 한 가지</h3>
-        <div class="check">“마음에 안 드는 부분을 <b>말해보고 다시 요청하기</b>” — 오늘 아이에게 딱 한 번.</div>
-      </div>
-    </aside>
-  </section>
-
-  <!-- 섹션 1. AI 대화놀이 -->
-  <section id="play">
-    <h2 class="sec">🎲 AI 대화놀이 <a class="all" href="/ai-early-education/home-experiments.html">전체 보기 →</a></h2>
-    <p class="secsub">집에서 10~30분, 아이가 말하고·관찰하고·다시 요청하는 작은 놀이.</p>
-    <div class="row4">
-      <a class="fcard" href="/ai-early-education/home-experiments.html"><div class="thumb g-play">🎨</div><div class="fb"><span class="lb lb-play">놀이</span><div class="ft">그림 요청 놀이</div></div></a>
-      <a class="fcard" href="/ai-early-education/home-experiments.html"><div class="thumb g-play">📖</div><div class="fb"><span class="lb lb-play">놀이</span><div class="ft">이야기 이어쓰기</div></div></a>
-      <a class="fcard" href="/ai-early-education/home-experiments.html"><div class="thumb g-play">🔁</div><div class="fb"><span class="lb lb-play">놀이</span><div class="ft">질문 바꾸기</div></div></a>
-      <a class="fcard" href="/ai-early-education/home-experiments.html"><div class="thumb g-play">⚖️</div><div class="fb"><span class="lb lb-play">놀이</span><div class="ft">결과 비교하기</div></div></a>
-    </div>
-  </section>
-
-  <!-- 섹션 2. 연령별 추천 -->
-  <section id="age">
-    <h2 class="sec">📶 연령별 추천 <a class="all" href="/ai-early-education/age-guide.html">연령 가이드 →</a></h2>
-    <p class="secsub">나이에 맞게 시작 방식이 다릅니다. 우리 아이 나이부터.</p>
-    <div class="row4">
-      <a class="fcard" href="/ai-early-education/age-cards.html"><div class="thumb g-age">🧸</div><div class="fb"><span class="lb lb-age">5~6세</span><div class="ft">상상하고 말하기</div><div class="fd">부모가 조작, 아이는 말하기</div></div></a>
-      <a class="fcard" href="/ai-early-education/age-cards.html"><div class="thumb g-age">✏️</div><div class="fb"><span class="lb lb-age">초등 저학년</span><div class="ft">함께 보고 다시 말하기</div><div class="fd">수정 요청 연습</div></div></a>
-      <a class="fcard" href="/ai-early-education/age-cards.html"><div class="thumb g-age">🔍</div><div class="fb"><span class="lb lb-age">초등 고학년</span><div class="ft">비교·틀린 답 찾기</div><div class="fd">결과를 의심해보기</div></div></a>
-      <a class="fcard" href="/ai-early-education/for-parents.html"><div class="thumb g-guide">👪</div><div class="fb"><span class="lb lb-guide">부모 먼저</span><div class="ft">부모 시작 가이드</div><div class="fd">어디서부터 시작할까</div></div></a>
-    </div>
-  </section>
-
-  <!-- 섹션 3. 출력자료 -->
-  <section id="prints">
-    <h2 class="sec">🖨️ 출력자료 <a class="all" href="/ai-early-education/downloads.html">4종 세트 →</a></h2>
-    <p class="secsub">집에서 바로 쓰는 인쇄용 자료. 파일 다운로드 없이 브라우저 인쇄로.</p>
-    <div class="row4">
-      <a class="fcard" href="/ai-early-education/age-cards.html"><div class="thumb g-print">🃏</div><div class="fb"><span class="lb lb-print">출력자료</span><div class="ft">연령별 시작 카드</div><div class="fd">나이별 첫 대화</div></div></a>
-      <a class="fcard" href="/ai-early-education/printable-rules.html"><div class="thumb g-print">🛡️</div><div class="fb"><span class="lb lb-print">출력자료</span><div class="ft">7가지 약속표</div><div class="fd">시작 전 약속</div></div></a>
-      <a class="fcard" href="/ai-early-education/printable-checklist.html"><div class="thumb g-print">✅</div><div class="fb"><span class="lb lb-print">출력자료</span><div class="ft">실험 전 체크리스트</div><div class="fd">목적·시간·개인정보</div></div></a>
-      <a class="fcard" href="/ai-early-education/experiment-log.html"><div class="thumb g-print">✍️</div><div class="fb"><span class="lb lb-print">출력자료</span><div class="ft">실험 기록지</div><div class="fd">결과·다시 말하기</div></div></a>
-    </div>
-  </section>
-
-  <!-- 섹션 4. 5분 영상 -->
-  <section id="video">
-    <h2 class="sec">🎬 5분 영상</h2>
-    <p class="secsub">아이가 AI에게 말하고, 관찰하고, 다시 요청하는 과정을 실제 예시로.</p>
-    <a class="hero-card" href="/ai-early-education/home-experiments.html" style="text-decoration:none;color:inherit">
-      <div class="thumb g-video" style="font-size:56px">▶️</div>
-      <div class="body">
-        <span class="lb" style="background:#c0512b">영상 · 곧 공개</span>
-        <h2>5분으로 이해하는 AI 조기교육</h2>
-        <p>· AI는 정답 기계가 아니라 ‘같이 확인할 도구’입니다.<br>· 앱보다 나이별 시작 방식과 약속부터.<br>· 결과를 그대로 믿지 않고 다시 확인하는 습관.</p>
-        <span class="go">영상 공개 전, 먼저 집에서 실험 →</span>
-      </div>
+  <!-- 카테고리 그리드 -->
+  <div class="catgrid">
+    <a class="cat" href="/ai-early-education/age-guide.html">
+      <div class="thumb g-age"><div class="pl">▶</div></div>
+      <div class="cb"><span class="lb lb-age">연령별</span><div class="ct">연령별 AI교육</div><div class="cd">5세·초등 저학년·초등 고학년은 무엇이 다를까?</div></div>
     </a>
-  </section>
+    <a class="cat" href="/ai-early-education/home-experiments.html">
+      <div class="thumb g-play"><div class="pl">▶</div></div>
+      <div class="cb"><span class="lb lb-play">대화놀이</span><div class="ct">AI 대화놀이</div><div class="cd">아이와 오늘 바로 해볼 AI 질문 놀이.</div></div>
+    </a>
+    <a class="cat" href="/ai-early-education/for-parents.html">
+      <div class="thumb g-guide"><div class="pl">▶</div></div>
+      <div class="cb"><span class="lb lb-guide">부모가이드</span><div class="ct">부모가이드</div><div class="cd">AI 답을 믿지 않고 다시 묻는 법.</div></div>
+    </a>
+    <a class="cat" href="/ai-early-education/downloads.html">
+      <div class="thumb g-print"><div class="pl">▶</div></div>
+      <div class="cb"><span class="lb lb-print">출력자료</span><div class="ct">출력자료</div><div class="cd">영상 보고 바로 쓰는 활동지 4종.</div></div>
+    </a>
+    <a class="cat" href="/ai-early-education/video-countries.html#feature">
+      <div class="thumb g-feat"><div class="pl">▶</div></div>
+      <div class="cb"><span class="lb lb-feat">5분 본편</span><div class="ct">5분 핵심영상</div><div class="cd">세계 AI 조기교육을 5분으로 정리 (곧 공개).</div></div>
+    </a>
+    <a class="cat" href="/ai-early-education/school-vs-home.html">
+      <div class="thumb g-issue"><div class="pl">▶</div></div>
+      <div class="cb"><span class="lb lb-issue">오늘 이슈</span><div class="ct">오늘의 AI교육 이슈</div><div class="cd">이번 주 세계 AI 교육 변화 (검토 중).</div></div>
+    </a>
+  </div>
 
-  <!-- 섹션 5. 세계동향 (요약 3카드) -->
-  <section id="world">
-    <h2 class="sec">🌍 세계동향 <a class="all" href="/ai-early-education/countries/">국가별 상세 →</a></h2>
-    <p class="secsub">세계 9개국의 AI 교육 정책·교사 가이드를 근거로 정리합니다. 공통점은 ‘아이를 AI 앞에 혼자 두지 않는다’.</p>
-    <div class="row3">
-      <a class="fcard" href="/ai-early-education/global-matrix.html"><div class="thumb g-world">📊</div><div class="fb"><span class="lb lb-world">세계동향</span><div class="ft">세계 AI 교육 흐름 (9개국 매트릭스)</div><div class="fd">8기준 비교</div></div></a>
-      <a class="fcard" href="/ai-early-education/models.html"><div class="thumb g-world">🗂️</div><div class="fb"><span class="lb lb-world">세계동향</span><div class="ft">AI 교육 모델 6가지</div><div class="fd">국가 플랫폼형·가정 보완형 등</div></div></a>
-      <a class="fcard" href="/ai-early-education/countries/"><div class="thumb g-world">🧭</div><div class="fb"><span class="lb lb-world">세계동향</span><div class="ft">다른 나라 부모들은 어떻게 준비할까</div><div class="fd">싱가포르·한국·영국 등 9개국</div></div></a>
-    </div>
-  </section>
-
-  <!-- 섹션 5.5 부모가이드 -->
-  <section id="guide">
-    <h2 class="sec">👪 부모가이드 <a class="all" href="/ai-early-education/for-parents.html">시작 가이드 →</a></h2>
-    <p class="secsub">출력물은 결과, 교육은 과정. 아이가 말하고·관찰하고·다시 요청하는 과정을 돕는 법.</p>
-    <div class="row4">
-      <a class="fcard" href="/ai-early-education/for-parents.html"><div class="thumb g-guide">🧭</div><div class="fb"><span class="lb lb-guide">부모가이드</span><div class="ft">부모 시작 가이드</div><div class="fd">어디서부터 시작할까</div></div></a>
-      <a class="fcard" href="/ai-early-education/parent-rules.html"><div class="thumb g-guide">🛡️</div><div class="fb"><span class="lb lb-guide">부모가이드</span><div class="ft">7가지 약속</div><div class="fd">시작 전 안전 규칙</div></div></a>
-      <a class="fcard" href="/ai-early-education/school-vs-home.html"><div class="thumb g-guide">🏫🏠</div><div class="fb"><span class="lb lb-guide">부모가이드</span><div class="ft">학교와 가정의 역할</div><div class="fd">무엇이 다를까</div></div></a>
-      <a class="fcard" href="/ai-early-education/parent-faq.html"><div class="thumb g-guide">❓</div><div class="fb"><span class="lb lb-guide">부모가이드</span><div class="ft">부모 FAQ</div><div class="fd">자주 묻는 질문</div></div></a>
-    </div>
-  </section>
-
-  <!-- 섹션 6. 근거 보관소 -->
-  <section id="evidence">
-    <h2 class="sec">📚 근거 보관소</h2>
-    <div class="evi">
-      이 사이트의 자료는 UNESCO·각국 교육부·교사 가이드·정책 문서·언론 보도를 바탕으로 정리했습니다. 아무 말이나 하는 게 아니라 세계 정책 흐름과 근거를 보고 있습니다.<br>
-      → <a href="/ai-early-education/source-library.html">출처 라이브러리 보기</a> · <a href="/ai-early-education/sources.html">보조 출처</a> · <a href="/ai-early-education/parent-faq.html">부모 FAQ</a> · <a href="/ai-early-education/glossary.html">용어사전</a>
+  <!-- 하단 신뢰 근거 -->
+  <section>
+    <h2 class="sec">📚 이 영상들의 근거</h2>
+    <p class="secsub">영상은 논문·정책 문서를 부모용으로 압축한 것입니다. 원자료는 아래에서 확인할 수 있습니다.</p>
+    <div class="trust">
+      <div class="evi"><b>세계 9개국 분석</b><br>나라별 영상의 근거가 되는 정책·8기준 비교.<br>→ <a href="/ai-early-education/global-matrix.html">매트릭스</a> · <a href="/ai-early-education/models.html">교육 모델</a> · <a href="/ai-early-education/countries/">국가별 상세</a></div>
+      <div class="evi"><b>출처 보관소</b><br>UNESCO·각국 교육부·교사 가이드·언론 보도.<br>→ <a href="/ai-early-education/source-library.html">출처 라이브러리</a> · <a href="/ai-early-education/sources.html">전체 출처</a></div>
+      <div class="evi"><b>더 읽기</b><br>시리즈로 깊이 보기.<br>→ <a href="/ai-early-education/world-ai-education-map.html">세계 9개국 (1편)</a> · <a href="/ai-early-education/korea-ai-digital-textbook-controversy.html">한국 (2편)</a> · <a href="/ai-early-education/parent-faq.html">부모 FAQ</a></div>
     </div>
   </section>
 
@@ -254,7 +131,7 @@
 
 <footer><div class="wrap">
   모든 정책 서술은 공개 자료(정부·UNESCO·주요 언론)에 근거합니다 · <a href="/ai-early-education/source-library.html">근거 보관소</a> · <a href="/ai-early-education/sources.html">전체 출처</a> · <a href="/safety/">아이와 AI를 쓸 때 주의할 점</a><br>
-  정책은 계속 바뀝니다 — 글마다 ‘확인일’을 표기합니다.
+  정책은 계속 바뀝니다 — 글마다 ‘확인일’을 표기합니다. · 영상은 제작 중이며 공개 시 각 카테고리에서 바로 재생됩니다.
 </div></footer>
 </body>
 </html>

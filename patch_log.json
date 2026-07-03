@@ -3,7 +3,26 @@
   "entries": [
     {
       "date": "2026-07-04",
-      "title": "메인 index.html 부모용 관제판 개편(9단 재구성). 배포 안 함",
+      "title": "메인=분야별 영상 카테고리판 재설계 + video-countries.html 신규. 배포 안 함",
+      "changes": [
+        "메인 index를 유튜브/넷플릭스형 카테고리판으로: 대표=나라별 AI교육(와이드)+그리드6(연령별/대화놀이/부모가이드/출력자료/5분핵심영상/오늘이슈). 썸네일=CSS gradient+▶",
+        "신규 video-countries.html: 나라별 영상 카드 5(중국/미국/영국/싱가포르/한국)+세계 5분 본편. 각 준비중+국가별 상세(근거) 연결",
+        "iteration 정리: 같은 세션 관제판→포털→퍼널→카테고리판으로 방향 수정 수렴. 퍼널-히어로본(큰영상1개)은 지시상 폐기(미커밋)",
+        "sitemap 39→40(video-countries 추가). ARCHITECTURE 사이트축 갱신",
+        "reports/AI_EARLY_EDUCATION_VIDEO_CATEGORY_REPORT.md (+포털 체크포인트 리포트)"
+      ],
+      "verification": {
+        "category_board": "메인=주제 선택 화면(썸네일 카드), 큰영상1개 아님",
+        "new_page": "video-countries.html 로컬 200, 5개국+5분본편 카드",
+        "links": "index+video-countries 링크 전부 실존, 빈링크 0",
+        "sitemap": "40 XML 유효(신규 1건 추가)",
+        "no_deploy": "★배포 안 함(wrangler 미실행), 자료 삭제 0"
+      },
+      "todo_next": ["승인 시 wrangler 배포", "나라별 1분 영상 실제 제작→카드 href 교체", "연령별/대화놀이도 영상 서브페이지화 검토"]
+    },
+    {
+      "date": "2026-07-04",
+      "title": "메인 index.html 부모용 관제판 개편(9단 재구성)→포털→영상퍼널 반복(배포 안 함)",
       "changes": [
         "진단 보고서 기반 index.html 재구성: 논문 자료실→부모 관제판. Hero(부모 메시지+9개국 문구 제거)+CTA3",
         "9단: Hero→오늘의이슈→행동3→5분영상(곧공개)→출력자료4종→부모가이드(과정6단계)→세계9개국(하단 신뢰근거)→근거보관소→Footer CTA",

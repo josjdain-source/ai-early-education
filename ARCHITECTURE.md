@@ -19,8 +19,11 @@
         A는 B·C의 목적지(링크 허브), B는 C의 소재 공급, 사람이 승인으로 연결
 ```
 
-## 3. [A] 사이트 (ai-early-education/*.html, sitemap 39 URL)
+## 3. [A] 사이트 (ai-early-education/*.html, sitemap 40 URL)
+- **메인(index)=분야별 영상 카테고리판**(유튜브/넷플릭스형): 대표=나라별 AI교육(video-countries.html), 그리드=연령별/대화놀이/부모가이드/출력자료/5분핵심영상/오늘이슈. 썸네일=CSS gradient+▶(영상 미완성, 공개 시 href 교체). 큰 영상 1개 주인공 아님.
+- **video-countries.html**: 나라별 영상 카드 5(중국/미국/영국/싱가포르/한국)+세계 5분 본편. 각 카드 '준비 중'+countries/*.html(근거) 연결.
 - **불변 축**: 9개국 매트릭스(global-matrix)·부모 가이드(for-parents/age-guide/parent-rules)·출력자료 4종 세트(downloads → printable-checklist/printable-rules/experiment-log/age-cards)·FAQ/용어사전/출처(parent-faq/glossary/source-library)·해석다리(school-vs-home)·시리즈 1·2·3
+- **9개국·출처=삭제 아니라 하단 '근거'로 재배치**(영상의 원자료)
 - 배포: git push → wrangler 클린 배포(git archive). SEO: title/desc 중복0·내부링크 순환(대문↔허브↔FAQ)
 - **사이트 수정은 사람 승인 후에만.**
 
