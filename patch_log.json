@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "중국 편 4칸 편집 견본(EDITORIAL_STANDARD 첫 실증). 실제 소스 검색",
+      "changes": [
+        "웹 검색으로 실제 원자료 6개 확보(임의 URL 아님): gov.cn·CGTN×3·CSET Georgetown·Global Times/SCMP",
+        "근거: 中 교육부 2025 가이드라인 2종, AI생성물 숙제/시험 제출금지, 초등 자유생성 제한, 단계별 커리큘럼(초인지→중 오정보판별→고 설계)",
+        "editorial/china-ai-education-editorial-sample.md: 4칸(핵심1줄·해석·증거+링크·오늘할일). 중국=정답도 공포도 아닌 참고사례",
+        "editorial/china-ai-education-short-script.md(30초, 증거스샷 3~12/12~20초 삽입), evidence/china-ai-education-screenshot-plan.md(후보5·추천2 CGTN교실+CSET가이드)",
+        "reports/CHINA_AI_EDUCATION_EDITORIAL_SAMPLE_REPORT.md"
+      ],
+      "verification": {
+        "editorial_not_link": "4칸 다 채움(해석+행동 포함), 링크 저장 아님",
+        "real_sources": "검색 확인 URL(gov.cn/CGTN/CSET 등), 캡처 전 사람 확인",
+        "no_capture": "candidate_found만, 실제 캡처/렌더/업로드/HTML 없음, sitemap 41",
+        "balanced": "중국 우열/공포 연출 없음, 방향으로 서술"
+      },
+      "todo_next": ["중국 견본 사람 검수", "추천 스샷 2장 캡처(승인후)", "미국편 복제→영/싱/한"]
+    },
+    {
+      "date": "2026-07-04",
       "title": "정체성 고정: 링크 창고 아니라 편집국. EDITORIAL_STANDARD.md(필수 4칸)",
       "changes": [
         "EDITORIAL_STANDARD.md 진실원본 생성: 3층(원자료→우리 해석→행동)+필수 4칸(핵심1줄·우리해석·증거+원본링크·오늘할일)+한줄필터",
