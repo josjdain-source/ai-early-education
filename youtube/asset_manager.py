@@ -102,6 +102,19 @@ def index():
           "is_used_by_homepage":False,"youtube_id":"","youtube_url":"","studio_url":"","page_url":"",
           "upload_status":"","public_status":"","homepage_status":"none","local_exists":True,"ratio":"",
           "views":None,"comments":None,"notes":o.get("notes","")})
+    # 경과시간(파일 수정시각 기준) — 오늘의 제작실은 12시간 내만 노출
+    nowts=datetime.now().timestamp()
+    for it in out:
+        ts=None; a=_abs(it["path"])
+        if os.path.exists(a):
+            try: ts=os.path.getmtime(a)
+            except Exception: ts=None
+        if ts is None and it.get("created_at"):
+            for fmt in ("%Y-%m-%d %H:%M","%Y-%m-%d"):
+                try: ts=datetime.strptime(it["created_at"],fmt).timestamp(); break
+                except Exception: pass
+        it["age_h"]=round((nowts-ts)/3600,1) if ts else 9999
+        it["recent"]=it["age_h"]<=12
     return out
 def _vstatus(it):
     us=it.get("upload_status",it.get("status",""))
@@ -125,7 +138,8 @@ def summary(items):
       "review":sum(1 for i in items if i["status"] in("draft","final_cand")),
       "upload_wait":sum(1 for i in items if i["status"]=="upload_wait"),
       "trash_cand":sum(1 for i in items if i["status"]=="trash_cand"),
-      "final":sum(1 for i in items if i["is_final"]),"trash":len(trash()["items"])}
+      "final":sum(1 for i in items if i["is_final"]),"trash":len(trash()["items"]),
+      "recent":sum(1 for i in items if i.get("recent")),"old":sum(1 for i in items if not i.get("recent"))}
 
 # ---------- 안전 삭제 ----------
 def find(aid):
