@@ -12,40 +12,82 @@
     "title": "중국은 왜 초등학생에게 AI를 가르치기 시작했나",
     "subtitle": "2017년 국가 AI 전략에서 2035 교육강국까지",
     "description": "중국은 AI를 방과후 특별활동이 아니라 학교 시간표에 넣고 있습니다. 그런데 이건 갑자기 나온 유행이 아니라, 2017년 국가 AI 전략에서 2035 교육강국 계획으로 이어지는 8년의 흐름입니다.\n\n이 영상은 중국 AI교육을 세 층으로 봅니다.\n① 역사 — 2017 차세대 AI 발전 계획 → 2018 대학 AI 혁신 → 교육 현대화 2035 → 2024·25 초·중등 편입 → 생성형 AI 사용 가이드\n② 운영 — 국가 지침, 지방(베이징·광둥) 실행, 학년별 체험→이해→응용→혁신\n③ 미래세대 — AI 리터러시·문제해결·협업·윤리\n\n핵심은 이겁니다. 중국은 AI를 '미래 직업 과목'이 아니라, 국가가 관리하는 기본 문해력으로 만들고 있습니다. 그렇다면 한국 가정은? 중국이 학교 시간표에 AI를 넣는다면, 우리는 아이의 생활 시간표에 '다시 묻기'를 넣어야 합니다.\n\n출처(주요): 중국 국무원 차세대 AI 발전 계획(2017), 교육부 대학 AI 혁신 행동계획(2018), 교육부 초·중등 AI교육·생성형 AI 사용 가이드(2025), 베이징시 교육위, CSET·DigiChina 번역, People's Daily·Global Times·NPR. 전체 출처는 홈페이지 심층 페이지에 표기.\n\n▶ 중국 편 심층 페이지: https://ai-early-education.pages.dev/world-cases/china.html\n▶ 부모용 시작 가이드: https://ai-early-education.pages.dev/start-guide.html\n\n※ 이 영상은 중국을 감시국가로 자극화하지 않으며, 국가 주도형 AI 리터러시·교육과정 편입·윤리적 사용 규칙의 관점에서 설명합니다.",
-    "tags": ["중국AI교육", "AI조기교육", "생성형AI교육", "부모교육", "AI리터러시", "세계교육사례", "AI교육정책", "차세대인공지능", "교육강국2035", "아이와AI"],
+    "tags": [
+      "중국AI교육",
+      "AI조기교육",
+      "생성형AI교육",
+      "부모교육",
+      "AI리터러시",
+      "세계교육사례",
+      "AI교육정책",
+      "차세대인공지능",
+      "교육강국2035",
+      "아이와AI"
+    ],
     "category": "27",
-    "thumbnail_copy": {"top": "중국은 왜 초등학생에게", "main": "AI를 시간표에 넣었나", "badge": "2017 → 2035"}
+    "thumbnail_copy": {
+      "top": "중국은 왜 초등학생에게",
+      "main": "AI를 시간표에 넣었나",
+      "badge": "2017 → 2035"
+    }
   },
   "shorts": [
-    {"video_id": "china-short-s1", "key": "s1",
-     "title_candidates": ["중국은 AI를 시간표에 넣었다 #Shorts", "방과후가 아니라 정규 수업? 중국 AI교육 #Shorts", "중국 초등학교 시간표에 AI가 있다 #Shorts"],
-     "title": "중국은 AI를 시간표에 넣었다 #Shorts",
-     "description": "중국은 AI를 방과후 특별활동이 아니라 정규 시간표에 넣었습니다. 베이징은 전 학년 연간 최소 8시간을 의무화했죠.\n중요한 건 AI를 쓰는 게 아니라, 다시 묻고 검증하는 힘입니다.\n\n▶ 중국 편 전체: https://ai-early-education.pages.dev/world-cases/china.html\n\n#Shorts #중국AI교육 #AI조기교육 #부모교육",
-     "tags": ["Shorts", "중국AI교육", "AI조기교육", "부모교육", "AI리터러시"],
-     "thumbnail_copy": "시간표에 들어간 AI"},
-    {"video_id": "china-short-s2", "key": "s2",
-     "title_candidates": ["중국 AI교육은 2017년에 시작됐다 #Shorts", "갑툭튀 아니다: 중국 AI교육 8년의 흐름 #Shorts", "중국이 8년 전부터 준비한 것 #Shorts"],
-     "title": "중국 AI교육은 2017년에 시작됐다 #Shorts",
-     "description": "중국의 초등 AI교육은 갑자기 나온 유행이 아닙니다. 2017년 국가 AI 발전 계획, 2018년 대학 AI 인재 계획에서 시작해 이제 초등학교 시간표까지 내려왔습니다.\n\n▶ 중국 편 전체: https://ai-early-education.pages.dev/world-cases/china.html\n\n#Shorts #중국AI교육 #AI리터러시 #부모교육",
-     "tags": ["Shorts", "중국AI교육", "AI교육정책", "부모교육", "AI리터러시"],
-     "thumbnail_copy": "2017년에 시작됐다"},
-    {"video_id": "china-short-s3", "key": "s3",
-     "title_candidates": ["중국은 초등생에게 AI를 막 쓰게 안 한다 #Shorts", "AI 가르치면서 왜 못 쓰게 할까 #Shorts", "생성형 AI, 중국 초등학교의 규칙 #Shorts"],
-     "title": "중국은 초등생에게 AI를 막 쓰게 안 한다 #Shorts",
-     "description": "중국은 AI교육을 강하게 밀지만, 초등학생이 개방형 생성 AI를 독립적으로 쓰는 건 제한하고 교사 대체도 금지합니다. 쓰는 법보다 안전한 경계와 윤리가 먼저입니다.\n\n▶ 중국 편 전체: https://ai-early-education.pages.dev/world-cases/china.html\n\n#Shorts #중국AI교육 #생성형AI #부모교육",
-     "tags": ["Shorts", "중국AI교육", "생성형AI교육", "부모교육", "AI윤리"],
-     "thumbnail_copy": "막 쓰게 하지 않는다"},
-    {"video_id": "china-short-s4", "key": "s4",
-     "title_candidates": ["베이징은 AI 수업시간까지 정했다 #Shorts", "AI교육이 진짜인지 보는 법 #Shorts", "연 최소 8시간, 숫자로 못박다 #Shorts"],
-     "title": "베이징은 AI 수업시간까지 정했다 #Shorts",
-     "description": "AI교육이 구호인지 진짜인지 보려면 시간표를 보면 됩니다. 베이징은 전 학년 연간 최소 8시간을 못박았고 1,400개 넘는 학교가 시행합니다.\n그럼 우리 집 시간표엔 아이의 질문 습관이 몇 분 있나요?\n\n▶ 중국 편 전체: https://ai-early-education.pages.dev/world-cases/china.html\n\n#Shorts #중국AI교육 #AI조기교육 #부모교육",
-     "tags": ["Shorts", "중국AI교육", "AI조기교육", "부모교육", "베이징"],
-     "thumbnail_copy": "시간표가 증거다"},
-    {"video_id": "china-short-s5", "key": "s5",
-     "title_candidates": ["중국 AI교육에서 한국 부모가 배울 점 #Shorts", "학교엔 AI, 집엔 질문 습관 #Shorts", "한국 가정이 오늘 할 수 있는 것 #Shorts"],
-     "title": "중국 AI교육에서 한국 부모가 배울 점 #Shorts",
-     "description": "중국은 학교 시간표에 AI를 넣습니다. 한국 가정은 아이의 생활 시간표에 '다시 묻기'를 넣으면 됩니다. 답을 받으면 '이상한 부분 찾아볼까?' 하고 물어보세요.\n중요한 건 AI를 쓰는 게 아니라, 다시 묻고 검증하는 힘입니다.\n\n▶ 중국 편 전체: https://ai-early-education.pages.dev/world-cases/china.html\n\n#Shorts #중국AI교육 #부모교육 #AI리터러시",
-     "tags": ["Shorts", "중국AI교육", "부모교육", "AI리터러시", "아이와AI"],
-     "thumbnail_copy": "한국 부모가 배울 점"}
+    {
+      "video_id": "china-short-s1",
+      "key": "s1",
+      "title_candidates": [
+        "중국은 AI를 시간표에 넣었다 (2017→2035) #Shorts",
+        "방과후가 아니라 정규 수업? 중국 AI교육 8년 #Shorts",
+        "중국 초등 시간표에 AI가 들어간 진짜 이유 #Shorts"
+      ],
+      "title": "중국은 AI를 시간표에 넣었다 (2017→2035) #Shorts",
+      "description": "중국은 AI를 방과후가 아니라 정규 시간표에 넣었습니다. 베이징은 연 최소 8시간을 의무화했죠. 그런데 이건 갑툭튀가 아니라 2017년 국가 전략에서 시작된 8년의 흐름입니다.\n\n▶ 중국 편 전체: https://ai-early-education.pages.dev/world-cases/china.html\n\n#Shorts #중국AI교육 #AI조기교육 #부모교육",
+      "tags": [
+        "Shorts",
+        "중국AI교육",
+        "AI조기교육",
+        "부모교육",
+        "AI리터러시"
+      ],
+      "thumbnail_copy": "시간표에 들어간 AI"
+    },
+    {
+      "video_id": "china-short-s2",
+      "key": "s2",
+      "title_candidates": [
+        "중국은 초등생에게 AI를 막 쓰게 안 한다 #Shorts",
+        "AI 가르치면서 왜 못 쓰게 할까 #Shorts",
+        "시간표가 증거다: 베이징 AI교육 #Shorts"
+      ],
+      "title": "중국은 초등생에게 AI를 막 쓰게 안 한다 #Shorts",
+      "description": "중국은 AI교육을 강하게 밀지만 초등생의 개방형 생성 AI 독립 사용은 제한하고 교사 대체도 금지합니다. 쓰는 법보다 경계와 윤리가 먼저죠. 그리고 그 진심은 시간표에서 드러납니다.\n\n▶ 중국 편 전체: https://ai-early-education.pages.dev/world-cases/china.html\n\n#Shorts #중국AI교육 #생성형AI #부모교육",
+      "tags": [
+        "Shorts",
+        "중국AI교육",
+        "생성형AI교육",
+        "부모교육",
+        "AI윤리"
+      ],
+      "thumbnail_copy": "막 쓰게 하지 않는다"
+    },
+    {
+      "video_id": "china-short-s3",
+      "key": "s3",
+      "title_candidates": [
+        "중국 AI교육에서 한국 부모가 배울 점 #Shorts",
+        "학교엔 AI, 집엔 질문 습관 #Shorts",
+        "한국 가정이 오늘 할 수 있는 것 #Shorts"
+      ],
+      "title": "중국 AI교육에서 한국 부모가 배울 점 #Shorts",
+      "description": "중국은 학교 시간표에 AI를 넣습니다. 한국 가정은 아이의 생활 시간표에 '다시 묻기'를 넣으면 됩니다. 답을 받으면 '이상한 부분 찾아볼까?' 하고 물어보세요.\n\n▶ 중국 편 전체: https://ai-early-education.pages.dev/world-cases/china.html\n\n#Shorts #중국AI교육 #부모교육 #AI리터러시",
+      "tags": [
+        "Shorts",
+        "중국AI교육",
+        "부모교육",
+        "AI리터러시",
+        "아이와AI"
+      ],
+      "thumbnail_copy": "한국 부모가 배울 점"
+    }
   ]
 }

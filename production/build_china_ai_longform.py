@@ -17,7 +17,12 @@ KB=r"C:\Windows\Fonts\malgunbd.ttf"; KF=r"C:\Windows\Fonts\malgun.ttf"
 PLAN=json.load(open(f"{HERE}/china_ai_education_longform_plan.json",encoding="utf-8"))
 STYLE=PLAN["style"]
 NEG=("photo, photorealistic, 3d render, text, letters, words, korean text, chinese text, watermark, logo, "
+ "western people, caucasian, european, american, white people, blonde hair, blue eyes, "
  "surveillance camera, cctv, military, weapon, soldier, flag closeup, propaganda, scary, dark, ugly, deformed, extra fingers, blurry")
+def eth(key):
+    # 한국 가정 섹션은 한국인, 그 외 중국 편은 중국인 (동아시아 얼굴 강제)
+    return ("Korean East Asian people, Korean children and parents, black hair, " if key=="korea"
+            else "Chinese East Asian people, Chinese children and teacher, black hair, ")
 def F(p,s):
     try: return ImageFont.truetype(p,s)
     except Exception: return ImageFont.load_default()
@@ -66,7 +71,7 @@ if __name__=="__main__":
         per=dur(na)/len(s["beats"]); title=s["title"]
         for bi,bt in enumerate(s["beats"]):
             ip=f"{IMG}/{s['key']}_{bi}.png"
-            if not os.path.exists(ip): sdxl(bt["prompt"],9100+si*10+bi,ip)
+            if not os.path.exists(ip): sdxl(eth(s["key"])+bt["prompt"],9100+si*10+bi,ip)
             op=f"{OVL}/{s['key']}_{bi}.png"; overlay(title,bt["caption"],op)
             beats.append((ip,op,per))
         print(f" [{si+1}/{len(PLAN['sections'])}] {s['key']} {dur(na):.1f}s")

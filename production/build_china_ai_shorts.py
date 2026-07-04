@@ -15,7 +15,11 @@ for d in (RENDER,IMG,FR,AUD): os.makedirs(d,exist_ok=True)
 KB=r"C:\Windows\Fonts\malgunbd.ttf"; KF=r"C:\Windows\Fonts\malgun.ttf"
 PLAN=json.load(open(f"{HERE}/china_ai_education_shorts_plan.json",encoding="utf-8")); STYLE=PLAN["style"]
 NEG=("photo, photorealistic, 3d render, text, letters, words, korean text, chinese text, watermark, logo, "
+ "western people, caucasian, european, american, white people, blonde hair, blue eyes, "
  "surveillance camera, cctv, military, weapon, soldier, flag closeup, scary, dark, ugly, deformed, extra fingers, blurry")
+def eth(key):
+    return ("Korean East Asian people, Korean children and parents, black hair, " if key=="s5"
+            else "Chinese East Asian people, Chinese children and teacher, black hair, ")
 CREAM=(251,246,238); NAVY=(43,58,85); CORAL=(232,120,90); INK=(51,64,90); PAPER=(255,253,248)
 def F(p,s):
     try: return ImageFont.truetype(p,s)
@@ -91,11 +95,14 @@ if __name__=="__main__":
     only=sys.argv[1] if len(sys.argv)>1 else None
     for si,sh in enumerate(PLAN["shorts"]):
         if only and sh["key"]!=only: continue
-        segs=[]; auds=[]; beat_d=[]; XF=0.3; n=len(sh["beats"])
+        segs=[]; auds=[]; beat_d=[]; XF=0.25; n=len(sh["beats"]); SPD=PLAN.get("speed",1.0)
         for bi,bt in enumerate(sh["beats"]):
-            ap=f"{AUD}/{sh['key']}_{bi}.mp3"; tts(bt["text"],ap); auds.append(ap); bd=dur(ap); beat_d.append(bd)
+            raw=f"{AUD}/{sh['key']}_{bi}_raw.mp3"; tts(bt["text"],raw)
+            ap=f"{AUD}/{sh['key']}_{bi}.mp3"
+            run([FF,"-hide_banner","-loglevel","error","-y","-i",raw,"-filter:a",f"atempo={SPD}",ap])  # 120% 속도
+            auds.append(ap); bd=dur(ap); beat_d.append(bd)
             ip=f"{IMG}/{sh['key']}_{bi}.png"
-            if not os.path.exists(ip): sdxl(bt["prompt"],7000+si*20+bi,ip)
+            if not os.path.exists(ip): sdxl(eth(sh["key"])+bt["prompt"],7000+si*20+bi,ip)
             fp=f"{FR}/{sh['key']}_{bi}.png"; frame(sh["title"],bt["head"],bt["text"],ip,bt["role"],bi,n,fp)
             seg=f"{FR}/v_{sh['key']}_{bi}.mp4"
             run([FF,"-hide_banner","-loglevel","error","-y","-loop","1","-i",fp,"-t",f"{bd+XF}","-vf","format=yuv420p","-c:v","libx264","-preset","veryfast","-crf","20","-r","30","-s","1080x1920",seg])
