@@ -58,3 +58,7 @@ assets/korea-lost-decade/saud/
 assets/korea-lost-decade/v2tmp/
 assets/korea-lost-decade/comparison
 assets/korea-lost-decade/v3tmp
+data/production_assets.json
+data/trash_manifest.json
+logs/asset_delete.log
+logs/video_cleanup.log

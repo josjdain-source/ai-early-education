@@ -1,0 +1,164 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>콘텐츠 파일 관리자 · 오늘의 제작실</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f9f9f9;color:#0f0f0f;font-family:"Malgun Gothic","Segoe UI",system-ui,sans-serif;font-size:13px}
+a{color:#065fd4;text-decoration:none}
+header{background:#fff;border-bottom:1px solid #e5e5e5;padding:14px 24px;position:sticky;top:0;z-index:10}
+header h1{margin:0;font-size:19px}header .sub{color:#606060;font-size:12.5px;margin-top:2px}
+.wrap{padding:16px 24px 80px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:14px}
+.c{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:12px 14px}.c .v{font-size:24px;font-weight:800}.c .l{color:#606060;font-size:11.5px}
+.c.blue .v{color:#065fd4}.c.green .v{color:#188038}.c.amber .v{color:#e0a800}.c.gray .v{color:#606060}
+.tabs{display:flex;gap:2px;border-bottom:1px solid #e5e5e5;margin-bottom:10px;overflow:auto}
+.tabs button{background:none;border:0;border-bottom:2px solid transparent;padding:9px 13px;cursor:pointer;font-weight:600;color:#606060;white-space:nowrap}
+.tabs button.on{color:#0f0f0f;border-bottom-color:#0f0f0f}
+.tool{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.tool select,.tool input{border:1px solid #ccc;border-radius:8px;padding:7px 10px;font-size:12.5px;background:#fff}
+.tool input.s{min-width:200px}.tool .sp{flex:1}
+.vm{display:flex;border:1px solid #ccc;border-radius:8px;overflow:hidden}.vm button{border:0;background:#fff;padding:7px 11px;cursor:pointer}.vm button.on{background:#0f0f0f;color:#fff}
+.btn{border:1px solid #ccc;background:#fff;border-radius:8px;padding:7px 12px;cursor:pointer;font-weight:600}.btn:hover{background:#f2f2f2}
+.bulk{position:sticky;top:64px;z-index:9;background:#e8f0fe;border:1px solid #b9d0f7;border-radius:10px;padding:8px 12px;margin-bottom:10px;display:none;align-items:center;gap:8px;flex-wrap:wrap}
+.bulk.on{display:flex}.bulk b{color:#065fd4}.bulk .x{margin-left:auto;cursor:pointer;color:#606060}
+.tbl{background:#fff;border:1px solid #e5e5e5;border-radius:12px;overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;color:#606060;font-weight:600;padding:9px 9px;border-bottom:1px solid #e5e5e5;background:#fafafa;white-space:nowrap}
+td{padding:8px 9px;border-bottom:1px solid #f0f0f0;vertical-align:middle}
+tr:hover td{background:#fafafd}
+.th{width:96px;height:54px;object-fit:cover;border-radius:6px;background:#000;cursor:pointer;display:block}
+.th.v{width:34px;height:60px}.th.doc{width:44px;height:44px;object-fit:contain;background:#eef0f3;padding:8px}
+.tt{font-weight:700;max-width:340px;line-height:1.3}.tt .p{color:#909090;font-size:11px;font-weight:400}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:8px;white-space:nowrap}
+.b-draft{background:#eef0f3;color:#606060}.b-final{background:#e6f4ea;color:#188038}.b-upload_wait{background:#e8f0fe;color:#065fd4}
+.b-private{background:#eef0f3;color:#5f6368}.b-public{background:#e8eaed;color:#111}.b-failed,.b-quota{background:#fce8e6;color:#c5221f}
+.b-dup{background:#f3e8fd;color:#8430ce}.b-trash_cand{background:#fef0e0;color:#c25e00}.b-hold{background:#fff4d6;color:#8a6100}
+.hp-on{color:#188038;font-weight:700}.hp-no{color:#bbb}
+.acts{display:flex;gap:3px;flex-wrap:wrap}
+.a{border:1px solid #ddd;background:#fff;border-radius:6px;padding:3px 7px;cursor:pointer;font-size:11px;font-weight:600}.a:hover{background:#f2f2f2}
+.a.del{border-color:#f3c0bb;color:#c5221f}.a.del:hover{background:#fce8e6}.a.fin{border-color:#b7dfc2;color:#188038}
+.lock{opacity:.5}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.gcard{background:#fff;border:1px solid #e5e5e5;border-radius:10px;overflow:hidden}
+.gcard .gt{width:100%;height:96px;object-fit:cover;background:#000;cursor:pointer;display:block}.gcard.v .gt{height:200px}
+.gcard .gm{padding:8px 10px}.gcard .gm .tt{font-size:12px;max-width:none}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:60}.modal.on{display:flex}
+.mbox{background:#fff;border-radius:14px;max-width:min(92vw,780px);max-height:90vh;overflow:auto;padding:18px;position:relative}
+.mbox .cl{position:absolute;top:10px;right:12px;border:0;background:none;font-size:20px;cursor:pointer;color:#606060}
+.player video{width:100%;max-height:74vh;border-radius:10px;background:#000}
+pre{white-space:pre-wrap;background:#f5f5f5;border-radius:8px;padding:12px;font-size:12px;max-height:50vh;overflow:auto}
+.warnbox{background:#fef7e0;border:1px solid #f3e0a8;border-radius:8px;padding:10px 12px;margin:10px 0;font-size:12.5px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:12.5px;margin:8px 0}.kv .k{color:#606060}
+.empty{padding:40px;text-align:center;color:#909090}
+.chk{width:15px;height:15px;cursor:pointer}
+</style></head><body>
+<header><h1>🗂 콘텐츠 파일 관리자 <span style="font-size:13px;color:#909090;font-weight:400">· 오늘의 제작실</span></h1>
+<div class="sub">오늘 만든 영상·이미지·문서 산출물을 관리합니다 — 검수·최종본 지정·업로드 검수대 등록·삭제(휴지통). ★영구삭제 전 휴지통, 보호파일은 삭제 차단.</div></header>
+<div class="wrap">
+<div class="cards" id="cards"></div>
+<div class="tabs" id="tabs"></div>
+<div class="tool">
+<select id="fType"><option value="">유형: 전체</option><option value="video">영상</option><option value="image">이미지</option><option value="doc">문서</option></select>
+<select id="fProj"><option value="">프로젝트: 전체</option></select>
+<select id="fStat"><option value="">상태: 전체</option><option value="upload_wait">업로드 대기</option><option value="private">비공개</option><option value="public">공개</option><option value="final">최종본</option><option value="failed">실패</option><option value="dup">중복</option><option value="trash_cand">삭제 후보</option></select>
+<input class="s" id="fSearch" placeholder="제목 검색…">
+<div class="sp"></div>
+<div class="vm"><button data-v="table" class="on" onclick="setVM('table')">표</button><button data-v="card" onclick="setVM('card')">카드</button><button data-v="thumb" onclick="setVM('thumb')">썸네일</button></div>
+<button class="btn" onclick="load()">↻ 새로고침</button>
+</div>
+<div class="bulk" id="bulk"><b id="bcount">0</b> 선택 ·
+<button class="a fin" onclick="bulk('/api/final',{value:true})">최종본 지정</button>
+<button class="a" onclick="bulk('/api/hold')">보류</button>
+<button class="a" onclick="bulk('/api/queue-register')">검수대 등록</button>
+<button class="a" onclick="bulk('/api/mark-trash-cand')">삭제 후보</button>
+<button class="a del" onclick="bulkTrash()">🗑 선택 삭제(휴지통)</button>
+<span class="x" onclick="clearSel()">✕ 선택 해제</span></div>
+<div id="view"></div>
+</div>
+<div class="modal" id="modal"><div class="mbox"><button class="cl" onclick="closeM()">✕</button><div id="mbody"></div></div></div>
+<script>
+let A=[],SUM={},TAB="all",VM="table",SEL=new Set(),TRASHMODE=false;
+const TABS=[["all","전체"],["video","영상"],["short","Shorts"],["longform","롱폼"],["image","이미지"],["doc","문서/설명"],["upload_wait","업로드 대기"],["final","최종본"],["trash_cand","삭제 후보"],["trash","🗑 휴지통"]];
+const BADGE={draft:["b-draft","초안"],final:["b-final","✔ 최종본"],upload_wait:["b-upload_wait","업로드 대기"],private:["b-private","🔒 비공개"],public:["b-public","🌐 공개"],failed:["b-failed","실패"],quota:["b-quota","한도초과"],dup:["b-dup","중복의심"],trash_cand:["b-trash_cand","삭제후보"],hold:["b-hold","보류"]};
+const esc=s=>(s||"").replace(/[<>&]/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;"}[c]));
+function badge(s){const x=BADGE[s]||["b-draft",s||"-"];return `<span class="badge ${x[0]}">${x[1]}</span>`}
+function inTab(v){switch(TAB){case"all":return true;case"video":return v.type=="video";case"short":return v.subtype=="short";case"longform":return v.subtype=="longform";case"image":return v.type=="image";case"doc":return v.type=="doc";case"upload_wait":return v.status=="upload_wait";case"final":return v.is_final;case"trash_cand":return v.status=="trash_cand";}return true}
+function fmt(v){const parts=[];if(v.duration)parts.push(Math.floor(v.duration/60)+":"+String(Math.round(v.duration%60)).padStart(2,'0'));if(v.size)parts.push(szh(v.size));if(v.ratio)parts.push(v.ratio);return parts.join(" · ")||"—"}
+function szh(n){for(const u of["B","KB","MB","GB"]){if(n<1024)return u=="B"?n+"B":n.toFixed(1)+u;n/=1024}return n.toFixed(1)+"TB"}
+function rows(){
+  const ty=fType.value,pr=fProj.value,st=fStat.value,q=fSearch.value.trim();
+  return A.filter(v=>inTab(v)&&(!ty||v.type==ty)&&(!pr||v.project==pr)&&(!st||v.status==st)&&(!q||(v.title||"").includes(q)));
+}
+function thumb(v,cls){const c=cls||"th "+(v.subtype=="short"?"v":"")+(v.type=="doc"?" doc":"");
+  if(v.type=="doc")return `<img class="${c}" src="data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2244%22 height=%2244%22><text y=%2232%22 font-size=%2232%22>📄</text></svg>">`;
+  if(v.thumbnail_path)return `<img class="${c}" src="/thumb?p=${encodeURIComponent(v.thumbnail_path)}" onclick="preview('${v.id}')">`;
+  return `<div class="${c}" onclick="preview('${v.id}')"></div>`}
+function acts(v){const a=[];
+  if(v.type=="video"&&v.local_exists)a.push(`<button class="a" onclick="preview('${v.id}')">▶</button>`);
+  a.push(`<button class="a" onclick="openFolder('${v.id}')">📁</button>`);
+  if(v.type=="video"&&v.upload_queue_id)a.push(`<a class="a" href="http://127.0.0.1:8971/" target="_blank" title="업로드 검수대">검수대</a>`);
+  if(v.studio_url)a.push(`<a class="a" href="${v.studio_url}" target="_blank">스튜디오</a>`);
+  if(v.page_url)a.push(`<a class="a" href="https://ai-early-education.pages.dev${v.page_url}" target="_blank">홈</a>`);
+  a.push(`<button class="a ${v.is_final?'fin':''}" onclick="one('/api/final',{value:${!v.is_final}},'${v.id}')">${v.is_final?'★':'☆'}</button>`);
+  a.push(`<button class="a" onclick="meta('${v.id}')">메타</button>`);
+  if(v.is_protected)a.push(`<span class="a lock" title="보호">🔒</span>`);
+  else a.push(`<button class="a del" onclick="confirmTrash('${v.id}')">🗑</button>`);
+  return `<div class="acts">${a.join('')}</div>`}
+function renderTable(list){
+  document.getElementById('view').innerHTML=list.length?`<div class="tbl"><table><thead><tr>
+  <th><input type=checkbox class=chk onclick="selAll(this.checked)"></th><th>썸네일</th><th>제목</th><th>유형</th><th>크기/길이</th><th>생성</th><th>상태</th><th>프로젝트</th><th>업로드</th><th>홈</th><th>작업</th></tr></thead><tbody>`+
+  list.map(v=>`<tr><td><input type=checkbox class=chk ${SEL.has(v.id)?'checked':''} onclick="sel('${v.id}',this.checked)"></td>
+  <td>${thumb(v)}</td><td><div class="tt">${esc(v.title)}<div class="p">${esc(v.notes||v.path)}</div></div></td>
+  <td>${v.type=="video"?(v.subtype=="short"?"쇼츠":"롱폼"):v.type=="image"?"이미지":esc(v.subtype)}</td>
+  <td>${fmt(v)}</td><td>${v.created_at||'-'}</td><td>${badge(v.is_final?'final':v.status)}</td>
+  <td>${COUNTRYP(v.project)}</td><td>${v.type=="video"?badge(v.upload_status||'draft'):'—'}</td>
+  <td class="${v.is_used_by_homepage?'hp-on':'hp-no'}">${v.is_used_by_homepage?'●':'○'}</td><td>${acts(v)}</td></tr>`).join('')+
+  `</tbody></table></div>`:'<div class="empty">항목이 없습니다.</div>';
+}
+function COUNTRYP(p){return p?`<span style="font-size:11px;color:#606060">${esc(p)}</span>`:'-'}
+function renderGrid(list,thumbOnly){
+  document.getElementById('view').innerHTML=list.length?`<div class="grid">`+list.map(v=>`<div class="gcard ${v.subtype=='short'?'v':''}">
+  ${thumb(v,'gt'+(v.subtype=='short'?' v':''))}<div class="gm">${thumbOnly?'':`<div class="tt">${esc(v.title)}</div><div style="margin:5px 0">${badge(v.is_final?'final':v.status)}</div>`}
+  <div class="acts">${acts(v)}<input type=checkbox class=chk ${SEL.has(v.id)?'checked':''} onclick="sel('${v.id}',this.checked)"></div></div></div>`).join('')+`</div>`:'<div class="empty">없음</div>';
+}
+async function renderTrash(){
+  const d=await (await fetch('/api/trash')).json();const it=d.items;
+  document.getElementById('view').innerHTML=it.length?`<div class="tbl"><table><thead><tr><th>파일명</th><th>유형</th><th>원위치</th><th>삭제일</th><th>작업</th></tr></thead><tbody>`+
+  it.map(x=>`<tr><td class="tt">${esc(x.title)}</td><td>${esc(x.type)}</td><td style="color:#909090">${esc(x.path)}</td><td>${x.trashed_at}</td>
+  <td class="acts"><button class="a fin" onclick="one('/api/restore',{},'${x.id}')">복원</button><button class="a del" onclick="if(confirm('영구 삭제할까요? 되돌릴 수 없습니다.'))one('/api/purge',{},'${x.id}')">영구삭제</button></td></tr>`).join('')+
+  `</tbody></table></div>`:'<div class="empty">휴지통이 비었습니다.</div>';
+}
+function draw(){
+  document.getElementById('tabs').innerHTML=TABS.map(t=>`<button class="${TAB==t[0]?'on':''}" onclick="setTab('${t[0]}')">${t[1]}${t[0]=='trash'&&SUM.trash?` (${SUM.trash})`:''}</button>`).join('');
+  const s=SUM;document.getElementById('cards').innerHTML=[["blue","영상",s.video],["blue","이미지",s.image],["amber","검수 대기",s.review],["blue","업로드 대기",s.upload_wait],["amber","삭제 후보",s.trash_cand],["green","최종본",s.final]].map(c=>`<div class="c ${c[0]}"><div class="v">${c[2]||0}</div><div class="l">${c[1]}</div></div>`).join('');
+  document.getElementById('bulk').classList.toggle('on',SEL.size>0);document.getElementById('bcount').textContent=SEL.size;
+  if(TAB=="trash"){renderTrash();return}
+  const list=rows();if(VM=="table")renderTable(list);else renderGrid(list,VM=="thumb");
+}
+function setTab(t){TAB=t;draw()}function setVM(v){VM=v;document.querySelectorAll('.vm button').forEach(b=>b.classList.toggle('on',b.dataset.v==v));draw()}
+function sel(id,c){c?SEL.add(id):SEL.delete(id);draw()}function selAll(c){rows().forEach(v=>c?SEL.add(v.id):SEL.delete(v.id));draw()}
+function clearSel(){SEL.clear();draw()}
+async function load(){const d=await (await fetch('/api/assets')).json();A=d.assets;SUM=d.summary;
+  const projs=[...new Set(A.map(v=>v.project).filter(Boolean))];fProj.innerHTML='<option value="">프로젝트: 전체</option>'+projs.map(p=>`<option>${p}</option>`).join('');draw()}
+async function one(url,body,id){await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...body,id})});SEL.delete(id);load()}
+async function bulk(url,body){await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...(body||{}),ids:[...SEL]})});SEL.clear();load()}
+async function bulkTrash(){const r=await (await fetch('/api/trash-item',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ids:[...SEL]})})).json();
+  if(r.blocked&&r.blocked.length)alert('일부 삭제 차단:\n'+r.blocked.map(b=>`· ${b.title||b.id}: ${b.why}`).join('\n'));SEL.clear();load()}
+async function confirmTrash(id){const v=A.find(x=>x.id==id);
+  openM(`<h3>휴지통으로 이동할까요?</h3><div class="kv"><span class=k>파일</span><span>${esc(v.title)}</span><span class=k>유형</span><span>${v.type} / ${v.subtype||''}</span>
+  <span class=k>유튜브</span><span>${v.youtube_url?`<a href="${v.youtube_url}" target=_blank>업로드됨</a>`:'없음'}</span><span class=k>홈페이지 사용</span><span>${v.is_used_by_homepage?'⚠️ 사용 중':'아니오'}</span>
+  <span class=k>최종본</span><span>${v.is_final?'⚠️ 예':'아니오'}</span><span class=k>경로</span><span style="word-break:break-all">${esc(v.path)}</span></div>
+  ${(v.is_final||v.is_used_by_homepage||v.is_protected)?'<div class="warnbox">⚠️ 이 파일은 보호/최종본/사용중이라 삭제가 차단될 수 있습니다.</div>':'<div class="warnbox">휴지통으로 이동합니다. 7일 후 영구삭제 후보가 되며, 휴지통에서 복원할 수 있습니다.</div>'}
+  <div style="text-align:right;margin-top:12px"><button class="btn" onclick="closeM()">취소</button> <button class="btn" style="background:#c5221f;color:#fff;border-color:#c5221f;margin-left:6px" onclick="doTrash('${id}')">🗑 휴지통으로</button></div>`)}
+async function doTrash(id){const r=await (await fetch('/api/trash-item',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id})})).json();
+  closeM();if(r.blocked&&r.blocked.length)alert('삭제 차단: '+(r.blocked[0].why||''));load()}
+async function openFolder(id){await fetch('/api/open-folder',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id})})}
+function preview(id){const v=A.find(x=>x.id==id);let inner='';
+  if(v.type=="video"&&v.local_exists)inner=`<div class="player"><video controls autoplay src="/media?id=${id}"></video></div>`;
+  else if(v.type=="image")inner=`<img src="/thumb?p=${encodeURIComponent(v.path)}" style="max-width:100%;border-radius:10px">`;
+  else if(v.youtube_id)inner=`<iframe src="https://www.youtube.com/embed/${v.youtube_id}" style="width:100%;height:400px;border:0"></iframe>`;
+  else inner='<p>미리보기 없음</p>';openM(`<h3>${esc(v.title)}</h3>${inner}`)}
+async function meta(id){const v=await (await fetch('/api/meta?id='+encodeURIComponent(id))).json();openM(`<h3>${esc(v.title)}</h3><pre>${esc(JSON.stringify(v,null,2))}</pre>`)}
+function openM(h){document.getElementById('mbody').innerHTML=h;document.getElementById('modal').classList.add('on')}
+function closeM(){document.getElementById('modal').classList.remove('on');document.getElementById('mbody').innerHTML=''}
+document.getElementById('modal').onclick=e=>{if(e.target.id=='modal')closeM()};
+["fType","fProj","fStat","fSearch"].forEach(id=>document.getElementById(id).addEventListener('input',draw));
+load();
+</script></body></html>
