@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-05",
+      "title": "격정 보이스 자동생성 시스템(v3)+3안 비교",
+      "changes": [
+        "voice_engine 분리: edge-tts(InJoon/Hyunsu)+★Supertonic3 로컬(M1~M5 남성5종,속도0.7~2.0) 정찰·검증",
+        "voice_profiles.json: civic_rage_speaker(실존인물 복제금지 캐릭터)+emotion_dsp(calm/accusation/anger/climax/silence→피치/속도/게인/새츄레이션)",
+        "speech_pacing 강화: 문장별 emotion/intensity/pause/subtitle_style. build_klad_v3=엔진·보이스·rage 파라미터별 문장단위 합성+감정DSP",
+        "3안 비교 생성(comparison/): A edge InJoon 68.7s, B Supertonic M3 낮고느린 54.6s, C Supertonic M3 분노최대 54.5s + M1~M5 샘플 + 질문 3버전(낮게/분노/외침)"
+      ],
+      "verification": {
+        "engines": "Supertonic 작동확인",
+        "tests": "A/B/C mp4+샘플"
+      },
+      "todo_next": [
+        "사람이 보이스 픽",
+        "최종 v3 렌더·업로드"
+      ]
+    },
+    {
+      "date": "2026-07-05",
       "title": "잃어버린AI10년 v2 격정 압축판(67초): 연설 감정구조 이식",
       "changes": [
         "참고영상 스타일만(성대복제 금지). speech_pacing.json=문장별 pause/속도/음량/sfx/화면흔들림",
