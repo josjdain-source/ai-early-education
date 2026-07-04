@@ -58,6 +58,7 @@ def upload_cmd(vid=None):
     cmd=(f'python "{tool}" "{mp4}" '
          f'--title "{it["title"]}" --desc-file "{desc_file}" --tags "{tags}" '
          f'--privacy {it.get("visibility_target","private")} --category {it["category"]} --thumb "{thumb}"')
+    print(" ★전용 자동 업로드(권장): python youtube/upload_to_aiclassroom.py  (최초 1회 --auth-only)")
     print("="*60); print(" 🔒 비공개 업로드 명령 (사람이 실행)")
     print("="*60)
     print(" ⚠️ 전제: '아이와 AI교실' 채널 계정으로 youtube_upload.py 최초 OAuth 인증 완료.")

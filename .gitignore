@@ -32,3 +32,7 @@ assets/world-ai-education-5min/audio/sections/
 
 # 홈페이지 메인 영상은 배포 포함(예외)
 !assets/world-ai-education-5min/render/world-ai-education-illust-v2.mp4
+
+# 유튜브 채널 토큰·임시 설명(비밀/임시)
+youtube/token_*.json
+youtube/_desc_*.txt
