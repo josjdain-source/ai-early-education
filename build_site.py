@@ -8,7 +8,18 @@ SCENE="assets/world-ai-education-5min/illust/scenes"
 RENDER="assets/world-ai-education-5min/render"
 POSTER="assets/world-ai-education-5min/poster"
 VIDEO_MAIN=f"{RENDER}/world-ai-education-illust-v2.mp4"
-YT_MAIN="lY9B2t1k1Io"   # 유튜브 임베드(로컬 mp4는 1일 뒤 자동삭제 → 유튜브가 원본)
+def _yt_main():
+    """메인 영상 유튜브 ID를 upload_queue.json(wae-illust-v2)에서 읽음. 없으면 폴백."""
+    import json as _j
+    try:
+        q=_j.load(open(os.path.join(ROOT,"youtube","upload_queue.json"),encoding="utf-8"))
+        for it in q["queue"]:
+            if it["video_id"]=="wae-illust-v2":
+                ref=it.get("youtube_id") or (it.get("youtube_url") or "").rstrip("/").split("/")[-1]
+                if ref: return ref
+    except Exception: pass
+    return "lY9B2t1k1Io"   # 임시 폴백(데이터 없을 때만)
+YT_MAIN=_yt_main()
 NAV=[("홈","/","home"),("왜 필요한가","/why-ai-education.html","why"),("세계 사례","/world-cases.html","cases"),
      ("시작 가이드","/start-guide.html","start"),("영상","/videos.html","videos"),("부모용 자료","/parent-resources.html","res")]
 
@@ -218,6 +229,9 @@ def videos():
 <section class="block" style="padding-bottom:0"><div class="wrap">
 <div class="cta-band"><div><h3>📺 아이와 AI교실</h3><p>결과물이 아니라 과정이 교육이다 — 아이와 함께 말하고, 보고, 다시 묻는 생성형 AI 교육 채널.</p></div>
 <a class="btn btn-lg" href="/videos/world-ai-education.html">대표 영상 보기 ▶</a></div></div></section>
+<section class="block" style="padding-top:24px"><div class="wrap">
+<div class="player"><iframe src="https://www.youtube.com/embed/{YT_MAIN}" title="세계 5개국 AI교육" loading="lazy" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p class="center" style="margin-top:12px;color:var(--muted)">대표 영상 · 세계 5개국은 아이에게 AI를 어떻게 가르치나</p></div></section>
 <section class="block"><div class="wrap">
 <div class="filters" id="filters">{fil}</div>
 <div class="grid g3" id="vgrid">{cards}</div>

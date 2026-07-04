@@ -3,6 +3,22 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "영상 스토리지 5대 검증 강화(공개상태·삭제안전·로그·데이터기반ID·양쪽임베드)",
+      "changes": [
+        "#1 verify_public.py: 임베드영상 privacyStatus API검증(illust-v2=public✅). #2 cleanup=youtube_url/id 있을때만 삭제",
+        "#3 logs/video_cleanup.log에 dry-run+실삭제 타임스탬프 기록. #4 build_site YT_MAIN을 upload_queue에서 읽음(폴백유지)",
+        "#5 /videos.html·/videos/world-ai-education.html 둘 다 유튜브 임베드"
+      ],
+      "verification": {
+        "public": "illust-v2 public 확인",
+        "deploy": "양쪽 임베드"
+      },
+      "todo_next": [
+        "배포후 라이브 임베드 재생 확인"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "영상 스토리지 전략: 유튜브 임베드+로컬 1일후 자동삭제",
       "changes": [
         "홈페이지 영상상세=유튜브 임베드(lY9B2t1k1Io)로 전환. 로컬 mp4 배포/커밋 제외(git rm --cached, 재 gitignore)",
