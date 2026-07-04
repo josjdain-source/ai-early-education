@@ -1,0 +1,36 @@
+{
+  "_comment": "미국 AI교육 쇼츠 3편. ★각 편: 미국은 이렇게(us) → 그러니 한국은 이렇게(kr) → 그럼 아이는(효과). region us=미국인(다양한 인종), kr=한국인. 속도 120%. 1080x1920.",
+  "topic": "미국은 왜 국가가 시간표를 짜지 않고도 AI교육에 나섰나",
+  "facts_ref": "facts/us_ai_education_facts.json",
+  "speed": 1.2,
+  "style": "editorial storybook illustration, warm muted color palette, thick clean black outlines, semi-realistic cartoon, flat shading, soft warm lighting, cozy, no text, no real politician, no partisan symbol, no surveillance camera, no military, no fear",
+  "shorts": [
+    {"key": "s1", "title": "미국은 시간표를 안 짠다", "facts": ["f_us_decentralized", "f_us_challenge"], "beats": [
+      {"role": "hook", "region": "us", "head": "시간표가 없다", "text": "미국은 중국처럼 AI 시간표를 짜지 않습니다.", "prompt": "a warm American classroom with diverse children, open and flexible, no fixed timetable, kind teacher"},
+      {"role": "fact", "region": "us", "head": "방향만 연방이", "text": "연방은 방향만 주고, 주와 기업이 실제 실행을 채웁니다.", "prompt": "a friendly US map with different states glowing differently, decentralized, warm, no text"},
+      {"role": "fact", "region": "us", "head": "강제 대신 챌린지", "text": "강제 대신, 전국 대통령 AI 챌린지로 아이들을 끌어당기죠.", "prompt": "a warm friendly competition stage where diverse students proudly show AI projects, cheering, no text"},
+      {"role": "bridge", "region": "kr", "head": "그럼 한국은?", "text": "그럼, 한국 가정은 어떻게 할까요?", "prompt": "a warm Korean home evening, a parent and child sitting together, cozy, thoughtful"},
+      {"role": "parent", "region": "kr", "head": "집에서 시작", "text": "국가를 기다릴 필요 없이, 집에서 바로 시작할 수 있습니다.", "prompt": "a cozy Korean home with a parent and child starting to use a tablet together, warm"},
+      {"role": "parent", "region": "kr", "head": "파트너로", "text": "AI를 파트너로 쓰되, 판단은 아이가 하게 하세요.", "prompt": "a Korean child directing a friendly AI as a partner, confident, warm home"},
+      {"role": "parent", "region": "kr", "head": "네 생각은?", "text": "답을 받으면, '네 생각은 어때?' 한마디를 더하세요.", "prompt": "a Korean parent gently asking a child a question about an AI answer, warm"},
+      {"role": "effect", "region": "kr", "head": "그럼 아이는", "text": "그러면 아이는, AI에 끌려가지 않고 AI를 부리는 아이가 됩니다.", "prompt": "a confident Korean child confidently directing a friendly AI, empowered, warm bright"}]},
+    {"key": "s2", "title": "AI는 파트너, 판단은 사람", "facts": ["f_us_partner", "f_us_k12_literacy"], "beats": [
+      {"role": "hook", "region": "us", "head": "대체가 아니다", "text": "미국은 AI를 사람 대신이 아니라, 학습 파트너로 가르칩니다.", "prompt": "a diverse American child and a friendly AI helper working side by side as partners, warm"},
+      {"role": "fact", "region": "us", "head": "비판적 사고", "text": "그래서 비판적 사고와 창의, 협업을 강조하죠.", "prompt": "diverse American children collaborating creatively around a table with a small AI helper, warm"},
+      {"role": "fact", "region": "us", "head": "받지 말고 의심", "text": "답을 받기만 하지 않고, 의심하고 함께 다듬게 합니다.", "prompt": "an American child questioning an AI answer with a magnifying glass, teacher smiling, warm"},
+      {"role": "bridge", "region": "kr", "head": "한국 부모도", "text": "한국 부모도 똑같이 할 수 있습니다.", "prompt": "a warm Korean home, a parent and child with a tablet, caring"},
+      {"role": "parent", "region": "kr", "head": "함께 확인", "text": "AI에 맡기지 말고, 답이 맞는지 함께 확인하세요.", "prompt": "a Korean parent and child checking an AI answer on a screen together, warm"},
+      {"role": "parent", "region": "kr", "head": "왜 그렇게?", "text": "'이 답 이상한 데 없어?' '왜 그렇게 생각해?' 물어보세요.", "prompt": "a Korean child pointing at a screen with a question, parent listening, warm home"},
+      {"role": "parent", "region": "kr", "head": "판단은 아이가", "text": "마지막 판단은 늘 아이가 하게 두세요.", "prompt": "a Korean child making a confident decision, parent supportive, warm"},
+      {"role": "effect", "region": "kr", "head": "그럼 아이는", "text": "그러면 아이는, AI에 휘둘리지 않고 스스로 판단하는 아이가 됩니다.", "prompt": "a confident Korean child holding a magnifying glass over an AI answer, warm bright"}]},
+    {"key": "s3", "title": "쓰는 아이 아니라 만드는 아이", "facts": ["f_us_future_gen", "f_us_pledge"], "beats": [
+      {"role": "hook", "region": "us", "head": "만드는 아이", "text": "미국이 키우려는 건, AI를 쓰는 아이가 아니라 만드는 아이입니다.", "prompt": "a diverse American child proudly building a small AI invention, maker spirit, bright warm"},
+      {"role": "fact", "region": "us", "head": "조기 노출·챌린지", "text": "조기 노출과 대통령 챌린지로 만들기를 장려하고,", "prompt": "diverse American children building creative AI projects together with excitement, warm"},
+      {"role": "fact", "region": "us", "head": "60개 기업 지원", "text": "60개 넘는 기업이 4년간 지원을 약속했죠.", "prompt": "many friendly company shapes joining hands to support children learning, warm, no text"},
+      {"role": "bridge", "region": "kr", "head": "한국도 오늘", "text": "한국 가정도 오늘 바로 시작할 수 있습니다.", "prompt": "a warm Korean home in soft morning light, a parent and child ready to start, hopeful"},
+      {"role": "parent", "region": "kr", "head": "하나 만들어보기", "text": "거창할 것 없이, AI와 함께 뭔가 하나 만들어보세요.", "prompt": "a Korean parent and child making something creative with a tablet together, warm"},
+      {"role": "parent", "region": "kr", "head": "다시 묻고 고치기", "text": "그리고 결과를 다시 묻고, 더 낫게 고쳐보게 하세요.", "prompt": "a Korean child improving a result on a screen, iterating, parent smiling, warm"},
+      {"role": "parent", "region": "kr", "head": "만드는 경험", "text": "만들어본 경험 하나가, 아이를 소비자에서 창작자로 바꿉니다.", "prompt": "a Korean child proudly showing something they made with AI, confident, warm"},
+      {"role": "effect", "region": "kr", "head": "그럼 아이는", "text": "그러면 아이는, AI를 만들고 검증하는 아이가 됩니다.", "prompt": "a confident Korean child creating and checking an AI project, capable, warm sunrise"}]}
+  ]
+}

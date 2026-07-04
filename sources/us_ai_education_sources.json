@@ -1,0 +1,16 @@
+{
+  "_comment": "미국 AI교육 조사 출처. 롱폼·쇼츠·심층페이지 공유. 여기 없는 수치·정책은 콘텐츠에 쓰지 않는다.",
+  "topic": "미국은 왜 국가가 시간표를 짜지 않고도 AI교육에 나섰나",
+  "perspective": "분권형(연방 방향 + 주·민간 실행) AI 리터러시·비판적 사고·AI를 학습 파트너로. 정파적 자극화 금지, 미국/특정정치인 비하 금지.",
+  "collected_at": "2026-07-04",
+  "sources": [
+    {"id": "US1", "title": "Advancing Artificial Intelligence Education for American Youth (Executive Order)", "publisher": "The White House", "url": "https://www.whitehouse.gov/presidential-actions/2025/04/advancing-artificial-intelligence-education-for-american-youth/", "type": "정부 발표(행정명령)"},
+    {"id": "US2", "title": "Fact Sheet: President Advances AI Education for American Youth", "publisher": "The White House", "url": "https://www.whitehouse.gov/fact-sheets/2025/04/fact-sheet-president-donald-j-trump-advances-ai-education-for-american-youth/", "type": "정부 발표"},
+    {"id": "US3", "title": "60+ Organizations Sign White House Pledge to Support America's Youth and Invest in AI Education", "publisher": "The White House", "url": "https://www.whitehouse.gov/releases/2025/06/60-organizations-sign-white-house-pledge-to-support-americas-youth-and-invest-in-ai-education/", "type": "정부 발표"},
+    {"id": "US4", "title": "U.S. Department of Education Issues Guidance on Artificial Intelligence Use in Schools", "publisher": "U.S. Department of Education", "url": "https://www.ed.gov/about/news/press-release/us-department-of-education-issues-guidance-artificial-intelligence-use-schools-proposes-additional-supplemental-priority", "type": "정부 발표"},
+    {"id": "US5", "title": "Executive Order: Advancing AI Education for American Youth (analysis)", "publisher": "Holland & Knight", "url": "https://www.hklaw.com/en/insights/publications/2025/04/executive-order-advancing-ai-education-for-american-youth", "type": "법률 분석"},
+    {"id": "US6", "title": "State AI Guidance for Education (California AB 2876, Missouri 등)", "publisher": "AI for Education", "url": "https://www.aiforeducation.io/ai-resources/state-ai-guidance", "type": "교육 기관"},
+    {"id": "US7", "title": "More Districts Are Training Teachers on Artificial Intelligence", "publisher": "RAND Corporation", "url": "https://www.rand.org/pubs/research_reports/RRA956-31.html", "type": "연구기관"},
+    {"id": "US8", "title": "AI Education initiative", "publisher": "ai.gov (US Government)", "url": "https://www.ai.gov/initiatives/education", "type": "정부 발표"}
+  ]
+}

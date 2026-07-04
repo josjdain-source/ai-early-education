@@ -1,0 +1,19 @@
+{
+  "_comment": "미국 AI교육 근거 사실. 롱폼/쇼츠/페이지 참조. 각 fact는 sources 근거 필수. 출처 없는 단정 금지. 정파적 자극화 금지.",
+  "topic": "미국은 왜 국가가 시간표를 짜지 않고도 AI교육에 나섰나",
+  "core_message": "중국이 '국가가 관리하는 문해력'이라면, 미국은 '연방이 방향만 주고 주·기업이 채우는 분권형'이다. 아이를 AI 혁신가·비판적 사고자로 키운다.",
+  "korea_bridge": "미국이 아이에게 'AI를 파트너로 쓰되 판단은 스스로' 가르친다면, 한국 가정도 아이가 AI 답을 검증하고 자기 판단을 세우게 하면 된다.",
+  "facts": [
+    {"id": "f_us_eo_2025", "axis": "history", "claim": "2025년 4월 미국 대통령은 '미국 청소년을 위한 AI교육 진흥' 행정명령에 서명했다. AI 리터러시 확산, 교육자 AI 훈련, 조기 AI 노출을 통해 AI 준비된 노동력과 차세대 혁신가를 기르는 것이 목표다.", "sources": ["US1", "US2"]},
+    {"id": "f_us_taskforce", "axis": "operation", "claim": "백악관 AI교육 태스크포스가 설립됐다. 과학기술정책실(OSTP) 국장이 주재하고 국립과학재단(NSF)·노동부·교육부 등 여러 부처가 참여하는 범부처 조직이다.", "sources": ["US1", "US5"]},
+    {"id": "f_us_k12_literacy", "axis": "operation", "claim": "K-12 학생에게 기초 AI 리터러시와 비판적 사고를 가르치는 온라인 자료를 민관 협력으로 개발하도록 했다.", "sources": ["US1"]},
+    {"id": "f_us_challenge", "axis": "operation", "claim": "90일 안에 전국 규모의 '대통령 AI 챌린지'를 신설해 학생과 교사의 AI 성취를 장려하고 발굴하기로 했다.", "sources": ["US2"]},
+    {"id": "f_us_pledge", "axis": "operation", "claim": "60개가 넘는 조직이 '미국 청소년을 위한 서약'에 서명해, 향후 4년간 자금·교육 자료·커리큘럼·교사 전문성 개발·도구를 지원하기로 했다.", "sources": ["US3"]},
+    {"id": "f_us_decentralized", "axis": "history", "claim": "미국은 중앙집권적 시간표가 아니라 분권형이다. 연방은 방향을 제시하고, 주와 학교·기업이 실제 실행을 채운다.", "sources": ["US6", "US1"]},
+    {"id": "f_us_california", "axis": "operation", "claim": "캘리포니아는 AB 2876으로 K-12 커리큘럼에 AI 리터러시 통합을 추진했고, 미주리 등은 지역 교육청을 위한 AI 정책 가이드를 제공한다. 주마다 접근이 다르다.", "sources": ["US6"]},
+    {"id": "f_us_teacher_gap", "axis": "operation", "claim": "2025년 현재 대다수 교사는 아직 정식 AI 교육을 받지 못했다. 교육부는 재량 보조금 우선순위에 교사 AI 훈련을 넣었고, 초기 훈련은 도구보다 교사의 두려움 해소부터 시작한다.", "sources": ["US7", "US4"]},
+    {"id": "f_us_partner", "axis": "future", "claim": "미국의 관점은 AI를 인간의 판단을 대체하는 도구가 아니라 '학습 파트너'로 본다. 비판적 사고·창의·협업을 강조한다.", "sources": ["US4", "US1"]},
+    {"id": "f_us_ed_guidance", "axis": "operation", "claim": "미국 교육부는 학교의 AI 사용에 대한 가이드를 발표하고, 재량 보조금 우선순위에 AI를 반영했다.", "sources": ["US4"]},
+    {"id": "f_us_future_gen", "axis": "future", "claim": "미국이 기르려는 미래세대는 AI를 소비만 하는 세대가 아니라, AI를 만들고 활용하는 혁신가이자 비판적으로 검증하는 사용자다.", "sources": ["US1", "US2"]}
+  ]
+}

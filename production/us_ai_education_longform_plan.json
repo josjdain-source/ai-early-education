@@ -1,0 +1,70 @@
+{
+  "_comment": "미국 AI교육 심층 다큐 롱폼(6~8분). 10섹션x3컷. 미국=분권형(연방 방향+주·기업 실행). 인물=미국인(다양한 인종), korea 섹션=한국인. 정파적/실존 정치인 이미지 금지.",
+  "topic": "미국은 왜 국가가 시간표를 짜지 않고도 AI교육에 나섰나",
+  "subtitle": "2025 행정명령과 분권형 AI교육, 그리고 한국 가정의 답",
+  "facts_ref": "facts/us_ai_education_facts.json",
+  "core_message": "중국이 국가가 관리하는 문해력이라면, 미국은 연방이 방향만 주고 주·기업이 채우는 분권형이다.",
+  "style": "editorial storybook illustration, warm muted color palette, thick clean black outlines, semi-realistic cartoon, flat shading, soft warm lighting, detailed cozy background, no text, no real politician, no partisan symbol, no surveillance camera, no military, no fear",
+  "sections": [
+    {"key": "opening", "title": "미국 · 시간표를 짜지 않는다",
+     "narration": "중국은 AI를 학교 시간표에 넣었습니다. 그런데 미국은 정반대입니다. 국가가 전국 시간표를 짜지 않습니다. 대신 방향만 제시하고, 나머지는 주와 학교, 기업이 채웁니다. 그런데도 2025년, 미국은 국가 차원에서 AI교육에 나섰습니다. 왜일까요?",
+     "beats": [
+       {"prompt": "a warm American elementary classroom with diverse children, no fixed timetable on the wall, open and flexible feeling, kind teacher", "caption": "국가가 시간표를 짜지 않는다", "fact": "f_us_decentralized"},
+       {"prompt": "a large friendly map of many different states each glowing differently, decentralized, warm, no text", "caption": "방향은 연방, 실행은 주와 학교", "fact": "f_us_decentralized"},
+       {"prompt": "a curious diverse group of American children looking up at a soft glowing AI light with wonder, warm", "caption": "그런데도 국가가 나섰다, 왜?", "fact": "f_us_eo_2025"}]},
+    {"key": "eo2025", "title": "2025 · 대통령이 나섰다",
+     "narration": "2025년 4월, 미국 대통령은 미국 청소년을 위한 AI교육 진흥 행정명령에 서명했습니다. 세 가지가 핵심입니다. 첫째, AI 리터러시를 전국에 넓힌다. 둘째, 교육자를 제대로 훈련한다. 셋째, 아이들을 되도록 일찍 AI 개념과 기술에 노출시킨다. 목표는 분명합니다. AI 시대에 준비된 노동력과, 다음 세대의 미국 AI 혁신가를 길러내는 겁니다. 중요한 건 방식입니다. 중국처럼 전국에 똑같은 수업을 강제하는 게 아니라, 방향을 정하고 판을 깔아 주는 방식입니다.",
+     "beats": [
+       {"prompt": "a friendly official desk with a large document being signed by a generic leader silhouette, hopeful morning light, no real person, no text", "caption": "2025.4 · AI교육 진흥 행정명령", "fact": "f_us_eo_2025"},
+       {"prompt": "three warm glowing icons: a book for literacy, a teacher for training, a small child with a spark for early exposure, no text", "caption": "리터러시 · 교사 훈련 · 조기 노출", "fact": "f_us_eo_2025"},
+       {"prompt": "a diverse young American child confidently building something with a friendly AI helper, future innovator feeling, warm", "caption": "AI 준비된 차세대 혁신가", "fact": "f_us_future_gen"}]},
+    {"key": "taskforce", "title": "백악관 태스크포스",
+     "narration": "이 방향을 실제로 굴리기 위해, 행정명령은 백악관 AI교육 태스크포스를 만들었습니다. 과학기술정책실 국장이 이끌고, 국립과학재단과 노동부, 교육부 같은 여러 부처가 함께 들어옵니다. 왜 여러 부처일까요? AI교육이 학교만의 일이 아니라, 연구와 일자리, 산업까지 연결된 문제이기 때문입니다. 한 부처가 아니라 정부 전체가, 방향을 잡는 역할을 맡은 겁니다.",
+     "beats": [
+       {"prompt": "many friendly government department buildings connected by warm glowing lines to one round table, cross-agency teamwork, no text", "caption": "범부처 AI교육 태스크포스", "fact": "f_us_taskforce"},
+       {"prompt": "a warm round table with diverse officials representing science, labor, and education working together, hopeful", "caption": "과학·노동·교육이 함께", "fact": "f_us_taskforce"},
+       {"prompt": "a friendly compass pointing forward held over a map, setting direction not micromanaging, warm", "caption": "정부는 방향을 잡는다", "fact": "f_us_decentralized"}]},
+    {"key": "states", "title": "분권형 · 주가 실행한다",
+     "narration": "미국의 진짜 특징은 여기 있습니다. 연방이 방향을 주면, 실제 실행은 주와 학교가 합니다. 예를 들어 캘리포니아는 법으로 K-12 교육과정에 AI 리터러시를 넣기로 했고, 미주리 같은 주는 지역 교육청이 스스로 AI 정책을 만들도록 가이드를 줍니다. 그래서 미국의 AI교육은 하나의 모습이 아니라, 주마다 조금씩 다른 오십 개의 실험에 가깝습니다. 느리지만, 지역이 스스로 답을 찾아가는 방식입니다.",
+     "beats": [
+       {"prompt": "a warm map of the United States where different states light up with different friendly education scenes, diverse approaches, no text", "caption": "주마다 다른 AI교육", "fact": "f_us_california"},
+       {"prompt": "a friendly California classroom with diverse children learning AI literacy, sunny warm, no text", "caption": "캘리포니아 · 법으로 리터러시를", "fact": "f_us_california"},
+       {"prompt": "a local school district office giving a friendly guidebook to a teacher, warm supportive, no text", "caption": "지역이 스스로 채운다", "fact": "f_us_decentralized"}]},
+    {"key": "pledge", "title": "민관 협력 · 기업이 함께",
+     "narration": "국가와 주만으로는 부족합니다. AI 도구와 전문성은 대부분 기업에 있으니까요. 그래서 미국은 기업과 손을 잡았습니다. 60개가 넘는 조직이 미국 청소년을 위한 서약에 서명하고, 앞으로 4년간 자금과 교육 자료, 커리큘럼, 교사 전문성 개발, 그리고 도구를 지원하기로 했습니다. 정부가 다 만들어 내려보내는 게 아니라, 정부와 기업과 비영리가 각자 잘하는 걸 들고 와 함께 채우는 방식입니다.",
+     "beats": [
+       {"prompt": "many friendly company and nonprofit logos as warm rounded shapes joining hands around children learning, public private partnership, no text", "caption": "60개+ 조직의 서약", "fact": "f_us_pledge"},
+       {"prompt": "friendly hands passing funding, books, and tools toward a warm classroom of diverse children, generous, no text", "caption": "4년간 자금·자료·도구 지원", "fact": "f_us_pledge"},
+       {"prompt": "a warm bridge built between a government building and company buildings, children walking across happily, no text", "caption": "공공과 민간이 함께", "fact": "f_us_k12_literacy"}]},
+    {"key": "challenge", "title": "대통령 AI 챌린지",
+     "narration": "그리고 미국은 강제 대신 동기부여를 택했습니다. 행정명령은 90일 안에 전국 규모의 대통령 AI 챌린지를 만들도록 했습니다. 학생과 교사가 AI로 실제 무언가를 만들고, 그 성취를 전국이 응원하고 발굴하는 대회입니다. 시간표로 아이들을 밀어 넣는 대신, 도전과 경쟁, 자부심으로 끌어당기는 겁니다. 미국다운 방식이죠.",
+     "beats": [
+       {"prompt": "a warm friendly national competition stage where diverse students proudly present their AI projects, cheering, hopeful, no text", "caption": "전국 대통령 AI 챌린지", "fact": "f_us_challenge"},
+       {"prompt": "diverse children building creative AI projects together with excitement, hands-on making, warm", "caption": "만들고, 겨루고, 발굴한다", "fact": "f_us_challenge"},
+       {"prompt": "a friendly magnet gently pulling curious children toward a glowing AI project, motivation not force, warm", "caption": "강제가 아니라 동기부여로", "fact": "f_us_decentralized"}]},
+    {"key": "teacher", "title": "가장 큰 장벽 · 교사",
+     "narration": "하지만 솔직한 약점도 있습니다. 분권형은 빠른 확산이 어렵습니다. 2025년 현재, 대다수 교사는 아직 정식 AI 훈련을 받지 못했습니다. 그래서 교육부는 재량 보조금의 우선순위에 교사 훈련을 넣었습니다. 흥미로운 건, 많은 학교의 첫 훈련이 도구 사용법이 아니라, 교사가 AI에 대해 느끼는 두려움과 거부감을 푸는 것에서 시작한다는 점입니다. 기술보다 사람이 먼저라는 걸, 미국도 알고 있는 겁니다.",
+     "beats": [
+       {"prompt": "a caring teacher looking a little unsure in front of a friendly AI screen, honest and warm, supportive mood", "caption": "교사 대다수는 아직 훈련 전", "fact": "f_us_teacher_gap"},
+       {"prompt": "a warm teacher training room where educators gently learn to feel comfortable with AI, reassuring, no text", "caption": "먼저 두려움을 푸는 것부터", "fact": "f_us_teacher_gap"},
+       {"prompt": "a friendly grant document flowing toward teacher training, support arriving, warm, no text", "caption": "보조금으로 교사 훈련 우선", "fact": "f_us_ed_guidance"}]},
+    {"key": "partner", "title": "AI는 파트너, 판단은 사람",
+     "narration": "제도는 나라마다 다르지만, 미국이 가르치는 방식의 핵심은 분명합니다. AI를 사람을 대체하는 도구가 아니라, 학습 파트너로 봅니다. 그래서 아이에게 정답을 빨리 얻는 법이 아니라, 비판적 사고와 창의, 협업을 강조합니다. AI가 준 답을 그냥 받아 적는 게 아니라, 이게 맞나 의심하고, 왜 그런지 따져 보고, 함께 더 낫게 다듬는 힘을 기르는 겁니다.",
+     "beats": [
+       {"prompt": "a diverse child and a friendly AI helper working side by side as partners on a project, equal teamwork, warm", "caption": "AI는 대체가 아니라 파트너", "fact": "f_us_partner"},
+       {"prompt": "a child thoughtfully questioning an AI answer with a magnifying glass, critical thinking, teacher smiling, warm", "caption": "받지 말고, 의심하고 다듬기", "fact": "f_us_partner"},
+       {"prompt": "diverse children collaborating creatively around a table with a small AI helper, creativity and teamwork, warm", "caption": "비판적 사고 · 창의 · 협업", "fact": "f_us_k12_literacy"}]},
+    {"key": "future", "title": "미국이 원하는 미래세대",
+     "narration": "그래서 미국이 기르려는 건, AI를 소비만 하는 아이가 아닙니다. AI를 직접 만들고 활용하는 혁신가, 그리고 그 결과를 비판적으로 검증하는 사용자입니다. 쓰는 아이를 넘어, 만들고 의심하는 아이입니다.",
+     "beats": [
+       {"prompt": "a diverse young American child proudly creating a small AI invention, maker spirit, bright hopeful, warm", "caption": "쓰는 아이를 넘어 만드는 아이", "fact": "f_us_future_gen"},
+       {"prompt": "a child confidently checking and improving an AI result, critical and capable, warm classroom", "caption": "만들고, 검증하는 세대", "fact": "f_us_partner"},
+       {"prompt": "a diverse group of children looking forward with confidence toward a bright future of innovation, warm sunrise, no text", "caption": "AI 혁신가이자 비판적 사용자", "fact": "f_us_future_gen"}]},
+    {"key": "korea", "title": "한국 가정의 답 · 파트너로 쓰되 판단은 아이가",
+     "narration": "그럼 한국 가정은 무엇을 배울까요? 미국은 국가가 시간표를 짜는 대신, 아이가 AI를 파트너로 쓰되 판단은 스스로 하도록 가르칩니다. 우리도 집에서 똑같이 할 수 있습니다. AI에게 답을 받으면 그대로 넘기지 말고, 네 생각은 어때, 하고 물어보세요. 이 습관이 쌓이면 아이는 달라집니다. AI를 부리는 아이, 스스로 판단하는 아이, 그리고 결과를 검증하는 아이가 됩니다. 중요한 건 AI를 쓰는 게 아니라, 파트너로 삼되 판단은 내가 하는 힘입니다.",
+     "beats": [
+       {"prompt": "a warm Korean home evening, a Korean parent and child using an AI screen together as partners, cozy", "caption": "미국은 파트너십, 우리도 집에서", "fact": "f_us_partner"},
+       {"prompt": "a Korean parent gently asking a child what they think about an AI answer, thoughtful, warm home", "caption": "\"네 생각은 어때?\"", "fact": "f_us_partner"},
+       {"prompt": "a confident Korean child directing a friendly AI and improving the result, empowered, warm sunrise", "caption": "AI를 부리는, 스스로 판단하는 아이", "fact": "f_us_future_gen"}]}
+  ]
+}
