@@ -182,7 +182,7 @@ def country_page(c):
     anchor={"china":"china","usa":"usa","uk":"uk","singapore":"singapore","korea":"korea"}[key]
     body=f"""<main>
 <section class="page-hero"><div class="wrap"><div class="crumb"><a href="/world-cases.html">세계 사례</a> › {name}</div>
-<div class="pill">{flag} {name}</div><h1>{msg}</h1><p>{short}</p></div></section>
+<div class="pill">{flag} {name}</div><h1>{msg}</h1></div></section>
 <section class="block" style="padding-top:26px"><div class="wrap" style="max-width:900px">
 <div class="cta-band" style="margin-bottom:28px"><div><h3>이 내용을 영상으로 보기</h3><p>{name} 편을 영상에서 바로 확인하세요.</p></div><a class="btn btn-lg" href="/videos/world-ai-education.html#{anchor}">▶ 영상에서 보기</a></div>
 <div class="card pad0" style="margin-bottom:26px"><img src="/{img}" alt="{name} AI교육" style="width:100%"></div>
