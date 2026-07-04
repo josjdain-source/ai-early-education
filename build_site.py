@@ -39,7 +39,7 @@ def footer(base):
 <div class="foot-col"><h5>서비스</h5><a href="{b}start-guide.html">시작 가이드</a><a href="{b}videos.html">영상</a><a href="{b}parent-resources.html">부모용 자료</a><a href="{b}free-kit.html">무료 자료</a></div>
 <div class="foot-col"><h5>소개</h5><a href="{b}why-ai-education.html">왜 필요한가</a><a href="{b}world-cases.html">세계 사례</a><a href="{b}why-ai-education.html#philosophy">우리의 철학</a></div>
 <div class="foot-col"><h5>고객 지원</h5><a href="{b}parent-resources.html#faq">자주 묻는 질문</a><a href="{b}start-guide.html">이용 가이드</a><a href="{b}privacy/">개인정보처리방침</a></div>
-<div class="foot-col"><h5>문의</h5><a href="mailto:hello@aijo-gi.com">hello@aijo-gi.com</a><a href="{b}videos.html">영상관</a></div>
+<div class="foot-col"><h5>문의</h5><a href="mailto:josjdain@gmail.com">josjdain@gmail.com</a><a href="{b}videos.html">영상관</a></div>
 </div><div class="foot-bottom">© 2026 AI조기교육. 아이가 AI와 대화하며 '다시 묻는 힘'을 기르는 교육.</div></div></footer>
 <script src="{base}scripts/main.js" defer></script></body></html>"""
 
