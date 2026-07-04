@@ -1,0 +1,22 @@
+{
+  "_comment": "비평(고발) 쇼츠 '한국의 잃어버린 AI 10년'. 12컷 몽타주. 톤=어둡고 묵직한 시네마틱 + 남성 연설체 보이스(InJoon -12%). 사실(알파고2016 서울·중국 국가전략)은 정확, 나머지는 명백한 논평. 마무리=수사적 질문. 속도 1.0.",
+  "topic": "한국의 잃어버린 AI 10년",
+  "speed": 1.0,
+  "theme": "dark",
+  "style": "cinematic editorial illustration, dramatic moody lighting, deep shadows, muted serious color palette, thick clean outlines, semi-realistic, film-like, no text, no watermark, no real celebrity face",
+  "shorts": [
+    {"key": "main", "title": "한국의 잃어버린 AI 10년", "beats": [
+      {"role": "hook", "region": "kr", "head": "대한민국은 뭐 했습니까?", "text": "중국은 이렇게 준비했는데, 대한민국은 뭐 했습니까?", "prompt": "a black go board with a single white stone glowing under a spotlight, deep shadows, dramatic cinematic, lonely"},
+      {"role": "body", "region": "kr", "head": "경고는 서울에서", "text": "2016년, 알파고가 이세돌을 꺾은 곳은 중국이 아니라 서울이었습니다.", "prompt": "Seoul city night skyline with a faint glowing warning signal pulsing in the dark sky, moody cinematic"},
+      {"role": "body", "region": "kr", "head": "한복판에서 울렸다", "text": "AI 시대의 경고음은, 한국 한복판에서 울렸습니다.", "prompt": "a lone Korean go player silhouette facing a glowing artificial intelligence light across a go board, tense dramatic, dark"},
+      {"role": "body", "region": "cn", "head": "중국은 국가 전략으로", "text": "그런데 중국은 그 경고를, 국가 전략으로 바꿨습니다.", "prompt": "a map of China with glowing lines connecting a school, a university and a factory like a strategic blueprint, dramatic serious"},
+      {"role": "body", "region": "cn", "head": "학교로 내리고", "text": "학교로 내리고, 대학 전공으로 연결하고, 기업과 산업으로 흘려보냈습니다.", "prompt": "a Chinese elementary classroom with an AI symbol placed on the class timetable, serious purposeful tone, cinematic light"},
+      {"role": "body", "region": "cn", "head": "전공으로 붙이고", "text": "초등학생은 AI를 이해하고, 중고등학생은 프로젝트로 재능을 찾고, 대학은 AI와 전공을 붙입니다.", "prompt": "university major cards and industry icons merging with a glowing AI network, connection blueprint, dramatic"},
+      {"role": "body", "region": "cn", "head": "끝은 교실이 아니다", "text": "그 인재를 스마트공장, 로봇, 의료, 반도체로 데려갑니다. 끝은 교실이 아니라, 돈이고 산업이고 일자리입니다.", "prompt": "glowing lines connecting smart factory robots, medical, agriculture and semiconductor industry, powerful industrial, dramatic"},
+      {"role": "turn", "region": "kr", "head": "대한민국은 뭐 했나", "text": "그런데 대한민국은 뭐 했습니까? K팝, 드라마, 예능, 입시, 정치싸움. 조명은 화려했습니다.", "prompt": "a bright stage spotlight on one side and a dark empty classroom on the other, stark contrast, cinematic, dramatic"},
+      {"role": "turn", "region": "kr", "head": "너무 오래 밀렸다", "text": "아이들이 AI로 자기 꿈을 만들고, 자기 일을 설계하는 교육은, 너무 오래 뒤로 밀렸습니다.", "prompt": "a Korean child sitting alone in the dark, face lit only by a smartphone screen, passively consuming, moody"},
+      {"role": "effect", "region": "kr", "head": "배우지 못했다", "text": "문제는 연예인을 꿈꾸는 게 아닙니다. 모든 아이가 AI로 자기 꿈을 현실로 바꾸는 법을, 배우지 못한 겁니다.", "prompt": "a Korean child actively creating an app and a small business with AI, hopeful light breaking through the dark, empowered"},
+      {"role": "effect", "region": "kr", "head": "너무 뼈아프지 않습니까", "text": "이게 한국의 잃어버린 AI 10년이면, 너무 뼈아프지 않습니까?", "prompt": "a Korean parent and child reworking and improving an AI result together, determined, warm light returning to a dark room"},
+      {"role": "cta", "region": "kr", "head": "소비할 것인가, 만들 것인가", "text": "이제 물어야 합니다. 우리 아이는 AI를 소비할 겁니까, AI로 자기 일을 만들 겁니까?", "prompt": "a Korean child standing at a crossroads between a consuming path and a creating path, dramatic hopeful dawn, cinematic"}]}
+  ]
+}
