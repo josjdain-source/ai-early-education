@@ -17,8 +17,9 @@ PLAN=json.load(open(f"{HERE}/china_ai_education_shorts_plan.json",encoding="utf-
 NEG=("photo, photorealistic, 3d render, text, letters, words, korean text, chinese text, watermark, logo, "
  "western people, caucasian, european, american, white people, blonde hair, blue eyes, "
  "surveillance camera, cctv, military, weapon, soldier, flag closeup, scary, dark, ugly, deformed, extra fingers, blurry")
-def eth(key):
-    return ("Korean East Asian people, Korean children and parents, black hair, " if key=="s5"
+def eth(region):
+    # 비트별 인물 국적 (cn=중국인, kr=한국인). 둘 다 동아시아 얼굴.
+    return ("Korean East Asian people, Korean children and parents, black hair, " if region=="kr"
             else "Chinese East Asian people, Chinese children and teacher, black hair, ")
 CREAM=(251,246,238); NAVY=(43,58,85); CORAL=(232,120,90); INK=(51,64,90); PAPER=(255,253,248)
 def F(p,s):
@@ -37,15 +38,22 @@ def sdxl(scene,seed,out):
        "3":{"class_type":"KSampler","inputs":{"seed":seed,"steps":30,"cfg":6.5,"sampler_name":"dpmpp_2m","scheduler":"karras","denoise":1.0,"model":["4",0],"positive":["6",0],"negative":["7",0],"latent_image":["5",0]}},
        "8":{"class_type":"VAEDecode","inputs":{"samples":["3",0],"vae":["4",2]}},
        "9":{"class_type":"SaveImage","inputs":{"filename_prefix":"chinaSH","images":["8",0]}}}
-    pid=json.load(urllib.request.urlopen(urllib.request.Request(SRV+"/prompt",data=json.dumps({"prompt":g,"client_id":uuid.uuid4().hex}).encode(),headers={"Content-Type":"application/json"}),timeout=30))["prompt_id"]
-    t0=time.time()
-    while time.time()-t0<300:
-        h=json.load(urllib.request.urlopen(SRV+f"/history/{pid}",timeout=30))
-        if pid in h: break
-        time.sleep(3)
-    im=h[pid]["outputs"]["9"]["images"][0]
-    q=urllib.parse.urlencode({"filename":im["filename"],"subfolder":im.get("subfolder",""),"type":im["type"]})
-    open(out,"wb").write(urllib.request.urlopen(SRV+"/view?"+q,timeout=30).read())
+    for attempt in range(3):
+        try:
+            pid=json.load(urllib.request.urlopen(urllib.request.Request(SRV+"/prompt",data=json.dumps({"prompt":g,"client_id":uuid.uuid4().hex}).encode(),headers={"Content-Type":"application/json"}),timeout=30))["prompt_id"]
+            t0=time.time(); ok=False
+            while time.time()-t0<180:
+                h=json.load(urllib.request.urlopen(SRV+f"/history/{pid}",timeout=30))
+                if pid in h and h[pid].get("outputs"): ok=True; break
+                time.sleep(3)
+            if not ok: raise TimeoutError("comfy timeout")
+            im=h[pid]["outputs"]["9"]["images"][0]
+            q=urllib.parse.urlencode({"filename":im["filename"],"subfolder":im.get("subfolder",""),"type":im["type"]})
+            open(out,"wb").write(urllib.request.urlopen(SRV+"/view?"+q,timeout=30).read())
+            return
+        except Exception as e:
+            print(f"  [sdxl 재시도 {attempt+1}/3] {out}: {repr(e)[:60]}"); time.sleep(6)
+    raise RuntimeError(f"sdxl 3회 실패: {out}")
 def wrap(d,text,font,maxw):
     out=[]; line=""
     for w in text.split():
@@ -102,7 +110,7 @@ if __name__=="__main__":
             run([FF,"-hide_banner","-loglevel","error","-y","-i",raw,"-filter:a",f"atempo={SPD}",ap])  # 120% 속도
             auds.append(ap); bd=dur(ap); beat_d.append(bd)
             ip=f"{IMG}/{sh['key']}_{bi}.png"
-            if not os.path.exists(ip): sdxl(eth(sh["key"])+bt["prompt"],7000+si*20+bi,ip)
+            if not os.path.exists(ip): sdxl(eth(bt.get("region","cn"))+bt["prompt"],7000+si*20+bi,ip)
             fp=f"{FR}/{sh['key']}_{bi}.png"; frame(sh["title"],bt["head"],bt["text"],ip,bt["role"],bi,n,fp)
             seg=f"{FR}/v_{sh['key']}_{bi}.mp4"
             run([FF,"-hide_banner","-loglevel","error","-y","-loop","1","-i",fp,"-t",f"{bd+XF}","-vf","format=yuv420p","-c:v","libx264","-preset","veryfast","-crf","20","-r","30","-s","1080x1920",seg])

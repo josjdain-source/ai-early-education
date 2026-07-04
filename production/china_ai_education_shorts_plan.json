@@ -1,36 +1,36 @@
 {
-  "_comment": "중국 AI교육 쇼츠 3편(병합형). 각 8비트, 재생속도 120%(atempo 1.2)로 ~45~50초. 첫 2초 칼날 후킹, 마지막 한국 부모 관점. facts 참조. 1080x1920.",
+  "_comment": "중국 AI교육 쇼츠 3편. ★각 쇼츠 필수구조: 중국은 이렇게 했다(cn) → 그러니 한국은 이렇게(kr). region으로 비트별 인물 국적 분리. 속도 120%. 1080x1920.",
   "topic": "중국은 왜 초등학생에게 AI를 가르치기 시작했나",
   "facts_ref": "facts/china_ai_education_facts.json",
   "speed": 1.2,
   "style": "editorial storybook illustration, warm muted color palette, thick clean black outlines, semi-realistic cartoon, flat shading, soft warm lighting, cozy, no text, no surveillance camera, no military, no fear",
   "shorts": [
-    {"key": "s1", "title": "시간표에 들어간 AI", "facts": ["f_beijing_hours", "f_2017_plan", "f_2018_higher_ed"], "beats": [
-      {"role": "hook", "head": "방과후가 아니다", "text": "중국은 AI를 방과후 수업으로 보지 않습니다.", "prompt": "a school weekly timetable board with one slot glowing as a friendly AI symbol, warm Chinese classroom"},
-      {"role": "body", "head": "정규 시간표에", "text": "특별활동이 아니라, 정규 시간표 안에 넣었습니다.", "prompt": "close up of a school schedule board with one row highlighted by a small friendly robot icon, warm"},
-      {"role": "fact", "head": "연 최소 8시간", "text": "베이징은 전 학년에 연간 최소 8시간을 의무화했죠.", "prompt": "a bright Chinese elementary classroom with a big friendly wall clock and a number eight, kids learning with tablets"},
-      {"role": "bridge", "head": "유행이 아니다", "text": "그런데 이건 갑자기 나온 유행이 아닙니다.", "prompt": "a long warm winding road from a small seed to a big tree, a long national journey, hopeful sunrise"},
-      {"role": "fact", "head": "출발은 2017", "text": "출발은 2017년, 국가 AI 발전 계획이었습니다.", "prompt": "a grand friendly national blueprint on a wall planning AI for the future, rising sun, warm, no text"},
-      {"role": "fact", "head": "2018 대학", "text": "2018년엔 대학 AI 인재 계획으로 이어졌고,", "prompt": "a warm Chinese university campus with students and a friendly AI symbol, graduation caps, hopeful"},
-      {"role": "body", "head": "이제 초등까지", "text": "그 흐름이 이제 초등학교 시간표까지 내려온 겁니다.", "prompt": "a friendly AI light coming down warm steps from a university to an elementary school, Chinese children waiting"},
-      {"role": "cta", "head": "8년의 설계", "text": "한 나라가 8년을 들여 설계한 끝에, 아이들의 시간표가 있습니다.", "prompt": "a warm Chinese classroom timetable glowing at the end of a long hopeful road, children smiling"}]},
-    {"key": "s2", "title": "막 쓰게 하지 않는다", "facts": ["f_genai_rules", "f_beijing_hours", "f_beijing_4areas"], "beats": [
-      {"role": "hook", "head": "막 쓰게 안 한다", "text": "중국은 AI교육을 밀지만, 아이에게 막 쓰게 하지는 않습니다.", "prompt": "a Chinese child using an AI tablet inside a soft glowing safe frame, a kind teacher supervising, warm"},
-      {"role": "fact", "head": "초등 독립사용 제한", "text": "초등학생이 개방형 생성 AI를 스스로 쓰는 건 제한합니다.", "prompt": "a gentle guiding hand beside an open-ended AI machine and a young Chinese child, protective, warm"},
-      {"role": "fact", "head": "교사 대체 금지", "text": "교사가 AI로 핵심 수업을 대체하는 것도 금지죠.", "prompt": "a Chinese teacher warmly teaching while a small AI helper waits respectfully to the side, human first, warm"},
-      {"role": "parent", "head": "경계가 먼저", "text": "쓰는 법보다, 안전한 경계와 윤리가 먼저입니다.", "prompt": "a gentle balance scale with a small AI chip and a glowing heart, ethics valued, warm"},
-      {"role": "bridge", "head": "구호일까?", "text": "그럼 이게 말뿐인 구호일까요?", "prompt": "a speech bubble fading into thin air over an empty warm classroom, no text"},
-      {"role": "fact", "head": "시간표를 보라", "text": "AI교육이 진짜인지 보려면, 시간표를 보면 됩니다.", "prompt": "a close up of a Chinese school timetable board with a highlighted AI class row, warm"},
-      {"role": "fact", "head": "1,400개 학교", "text": "베이징은 연 최소 8시간을, 1,400개 넘는 학교에 못박았습니다.", "prompt": "a bright Chinese classroom with a big clock and number eight, many school buildings behind, warm"},
-      {"role": "cta", "head": "시간이 증거", "text": "구호가 아니라 시간으로 정한 것, 그게 진심의 증거입니다.", "prompt": "a firm friendly stamp pressing a schedule, committed and warm, no text"}]},
-    {"key": "s3", "title": "한국 부모가 배울 점", "facts": ["f_genai_rules", "f_core_competencies"], "beats": [
-      {"role": "hook", "head": "오늘 쓸 수 있다", "text": "중국 이야기지만, 한국 부모가 오늘 쓸 수 있는 게 있습니다.", "prompt": "a warm Korean home, a Korean parent and child sitting together with a tablet, cozy evening"},
-      {"role": "body", "head": "학교엔 AI", "text": "중국은 학교 시간표에 AI를 넣습니다.", "prompt": "a warm Chinese classroom timetable with an AI slot glowing, children, no text"},
-      {"role": "body", "head": "우리는 가정에서", "text": "우리는 국가가 아니라, 가정에서 설계할 수 있죠.", "prompt": "a cozy Korean home with a small family schedule on the wall, warm"},
-      {"role": "parent", "head": "생활 시간표에", "text": "아이의 생활 시간표에 '다시 묻기'를 넣는 겁니다.", "prompt": "a Korean home wall schedule with a gentle question mark sticker added, warm cozy"},
-      {"role": "parent", "head": "그대로 넘기지 말고", "text": "AI가 답을 주면, 그대로 넘어가지 마세요.", "prompt": "a Korean parent and child looking at an AI answer on a screen together, thoughtful, warm home"},
-      {"role": "parent", "head": "이상한 부분 찾기", "text": "'이상한 부분 하나만 찾아볼까?' 하고 물어보세요.", "prompt": "a Korean parent and child inspecting an AI answer together with a small magnifying glass, warm"},
-      {"role": "fact", "head": "검증하는 힘", "text": "중국도 핵심은 이해와 윤리, 검증하는 힘이었으니까요.", "prompt": "four friendly pillars: a head, a hand, a spark, and a heart, understanding use innovation ethics, warm, no text"},
-      {"role": "cta", "head": "다시 묻는 힘", "text": "중요한 건 AI를 쓰는 게 아니라, 다시 묻고 검증하는 힘입니다.", "prompt": "a confident Korean child re-asking a friendly AI a better question, speech bubble with question mark, warm"}]}
+    {"key": "s1", "title": "중국은 시간표에, 한국은 생활에", "facts": ["f_beijing_hours", "f_genai_rules"], "beats": [
+      {"role": "hook", "region": "cn", "head": "시간표에 넣었다", "text": "중국은 AI를 방과후가 아니라, 시간표에 넣었습니다.", "prompt": "a school weekly timetable board with one slot glowing as a friendly AI symbol, warm classroom"},
+      {"role": "fact", "region": "cn", "head": "연 최소 8시간", "text": "베이징은 전 학년에, 연간 최소 8시간을 의무화했죠.", "prompt": "a bright elementary classroom with a big friendly wall clock and a number eight, kids with tablets"},
+      {"role": "fact", "region": "cn", "head": "기본 문해력", "text": "AI를 직업 과목이 아니라, 기본 문해력으로 본 겁니다.", "prompt": "an AI icon next to a book and a pencil on a warm desk as equal basic tools"},
+      {"role": "bridge", "region": "kr", "head": "그럼 한국은?", "text": "그럼, 한국 가정은 어떻게 할까요?", "prompt": "a warm Korean home evening, a parent and child sitting together, cozy, thoughtful"},
+      {"role": "parent", "region": "kr", "head": "집에서 설계", "text": "우리는 국가가 아니라, 집에서 설계할 수 있습니다.", "prompt": "a cozy Korean home with a small family schedule on the wall, warm"},
+      {"role": "parent", "region": "kr", "head": "생활 시간표에", "text": "아이의 생활 시간표에 '다시 묻기'를 넣으세요.", "prompt": "a Korean home wall schedule with a gentle question mark sticker added, warm"},
+      {"role": "parent", "region": "kr", "head": "이상한 부분 찾기", "text": "AI가 답을 주면, '이상한 부분 찾아볼까?' 하고 물어보세요.", "prompt": "a Korean parent and child inspecting an AI answer together with a small magnifying glass, warm"},
+      {"role": "cta", "region": "kr", "head": "질문을 넣는다", "text": "중국은 학교 시간표에, 우리는 생활 시간표에 질문을 넣습니다.", "prompt": "a confident Korean child re-asking a friendly AI a better question, speech bubble with question mark, warm"}]},
+    {"key": "s2", "title": "중국도 막 안 쓴다, 한국 부모도", "facts": ["f_genai_rules", "f_core_competencies"], "beats": [
+      {"role": "hook", "region": "cn", "head": "막 쓰게 안 한다", "text": "중국은 AI를 가르치면서도, 막 쓰게 하지 않습니다.", "prompt": "a Chinese child using an AI tablet inside a soft glowing safe frame, a kind teacher supervising, warm"},
+      {"role": "fact", "region": "cn", "head": "초등 독립사용 제한", "text": "초등생이 개방형 생성 AI를 스스로 쓰는 건 제한하고,", "prompt": "a gentle guiding hand beside an open-ended AI machine and a young Chinese child, protective, warm"},
+      {"role": "fact", "region": "cn", "head": "경계가 먼저", "text": "쓰는 법보다, 안전한 경계와 윤리가 먼저인 거죠.", "prompt": "a gentle balance scale with a small AI chip and a glowing heart, ethics valued, warm"},
+      {"role": "bridge", "region": "kr", "head": "한국 부모도", "text": "한국 부모도 똑같이 할 수 있습니다.", "prompt": "a warm Korean home, a parent and child with a tablet, cozy, caring"},
+      {"role": "parent", "region": "kr", "head": "규칙부터", "text": "무조건 쓰게 하기보다, 먼저 사용 규칙을 함께 정하세요.", "prompt": "a Korean parent and child making a small friendly house rule together, warm home"},
+      {"role": "parent", "region": "kr", "head": "함께 확인", "text": "AI 답을 받으면, 진짜인지 함께 확인하고,", "prompt": "a Korean parent and child checking an AI answer on a screen together, warm"},
+      {"role": "parent", "region": "kr", "head": "되묻기", "text": "'이거 이상한 데 없어?' 하고 되물으세요.", "prompt": "a Korean child pointing at a screen with a question, parent smiling, warm home"},
+      {"role": "cta", "region": "kr", "head": "검증하는 힘", "text": "중국도 우리도, 핵심은 다시 묻고 검증하는 힘입니다.", "prompt": "a confident Korean child holding a magnifying glass over a glowing AI answer, warm bright"}]},
+    {"key": "s3", "title": "중국은 8년 준비, 한국은 오늘", "facts": ["f_2017_plan", "f_2018_higher_ed", "f_core_competencies"], "beats": [
+      {"role": "hook", "region": "cn", "head": "갑툭튀 아니다", "text": "중국의 AI교육은 갑자기 나온 게 아닙니다.", "prompt": "a long warm winding road from a small seed to a big tree, a long national journey, hopeful sunrise"},
+      {"role": "fact", "region": "cn", "head": "2017년 시작", "text": "2017년 국가 AI 전략에서 시작해,", "prompt": "a grand friendly national blueprint on a wall planning AI, rising sun, warm, no text"},
+      {"role": "fact", "region": "cn", "head": "대학→초등", "text": "대학을 거쳐, 이제 초등 시간표까지 내려왔죠.", "prompt": "a friendly AI light coming down warm steps from a university to an elementary school, Chinese children waiting"},
+      {"role": "fact", "region": "cn", "head": "8년의 설계", "text": "한 나라가 8년을 들여 설계한 흐름입니다.", "prompt": "a warm Chinese classroom timetable glowing at the end of a long hopeful road, children smiling"},
+      {"role": "bridge", "region": "kr", "head": "기다릴 필요 없다", "text": "그런데 한국 가정은, 8년을 기다릴 필요가 없습니다.", "prompt": "a warm Korean home in soft morning light, a parent and child ready to start, hopeful"},
+      {"role": "parent", "region": "kr", "head": "오늘 시작", "text": "국가 정책을 기다리지 말고, 오늘 집에서 시작하세요.", "prompt": "a Korean parent and child sitting down together with a tablet today, warm cozy start"},
+      {"role": "parent", "region": "kr", "head": "질문 하나면", "text": "거창할 것 없습니다. 좋은 질문 하나면 됩니다.", "prompt": "a single gentle glowing question mark between a Korean parent and child, warm home"},
+      {"role": "cta", "region": "kr", "head": "시작은 오늘", "text": "중국은 국가가, 한국은 가정이. 시작은 오늘입니다.", "prompt": "a warm Korean family smiling together at home with soft sunrise, hopeful new start"}]}
   ]
 }

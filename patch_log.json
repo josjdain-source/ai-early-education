@@ -3,6 +3,25 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "쇼츠 편성원칙: 각 편이 중국→한국으로 완결 + 비트별 국적분리",
+      "changes": [
+        "각 쇼츠 필수구조=중국은 이렇게(cn)→그러니 한국은 이렇게(kr). 8비트, 앞 중국인/뒤 한국인 인물 분리(region)",
+        "재업로드: s1 EjKf8QXA050(시간표→생활), s2 aBYBPWqYCpk(막안쓴다→규칙·검증), s3 hHpf8gSw_y4(8년준비→오늘시작)",
+        "ComfyUI hang 원인=Ollama gemma2:9b가 VRAM7.4GB 점유 → 언로드로 해결. sdxl 3회 재시도 추가",
+        "옛 병합본(AgLXpf2xVZI 등) 사람이 삭제"
+      ],
+      "verification": {
+        "flow": "s1 중국→한국 확인",
+        "faces": "동아시아",
+        "shorts": "3편 32~35s"
+      },
+      "todo_next": [
+        "옛 비공개본 삭제(사람)",
+        "공개 승인(사람)"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "중국편 개선: 인물 동아시아 강제 + 쇼츠 3개 병합·120%",
       "changes": [
         "SDXL 프롬프트에 민족 주입(중국섹션=Chinese, 한국섹션=Korean)+NEG에 서양얼굴 → 서양인 문제 해결. 롱폼 재생성·재업로드(IwWEoreVH3g)",
