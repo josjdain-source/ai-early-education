@@ -1,0 +1,462 @@
+{
+  "meta": {
+    "title": "GLOBAL_AI_EDUCATION_RESEARCH_PACK — 9개국 AI 교육 비교 매트릭스",
+    "research_question": "세계 각국은 아이들(유아~초중등)에게 AI를 어떻게 가르치고 있는가? 그리고 한국 가정(부모)은 지금 무엇을 해야 하는가?",
+    "date_checked": "2026-07-03",
+    "method": "실제 웹 조사(WebSearch/WebFetch) 기반. 확인 불가 항목은 '미확인'으로 표기. 정부/UNESCO/주요 언론 출처 우선.",
+    "items_legend": {
+      "start_age": "① AI 교육 시작 연령",
+      "mandatory": "② 필수/선택 여부",
+      "school_method": "③ 학교 수업 방식",
+      "genai_policy_elementary": "④ 생성형 AI 허용 범위(특히 초등)",
+      "teacher_training": "⑤ 교사 연수",
+      "ethics_safety": "⑥ 윤리/안전 교육",
+      "home_education_hint": "⑦ 가정 교육 힌트",
+      "implication_for_korean_parents": "⑧ 한국 부모에게 주는 시사점"
+    }
+  },
+  "unesco_framework": {
+    "ai_competency_framework_for_students_2024": {
+      "summary": "2024-08-08 공개. 4개 역량 차원 × 3개 숙달 수준(Understand/Apply/Create) = 12개 역량 블록. ISBN 978-92-3-100709-5.",
+      "four_aspects": [
+        "Human-centred mindset(인간 중심 사고방식)",
+        "Ethics of AI(AI 윤리)",
+        "AI techniques and applications(AI 기술과 응용)",
+        "AI system design(AI 시스템 설계)"
+      ],
+      "twelve_competency_blocks": {
+        "human_centred_mindset": ["Human agency(인간 주체성)", "Human accountability(인간의 책무성)", "Citizenship in the era of AI(AI 시대의 시민성)"],
+        "ethics_of_ai": ["Embodied ethics(체화된 윤리)", "Safe and responsible use(안전하고 책임 있는 사용)", "Ethics by design(설계 단계부터의 윤리)"],
+        "ai_techniques_and_applications": ["AI foundations(AI 기초)", "Application skills(응용 기능)", "Creating AI tools(AI 도구 만들기)"],
+        "ai_system_design": ["Problem scoping(문제 범위 정의)", "Architecture design(아키텍처 설계)", "Iteration and feedback loops(반복과 피드백 루프)"]
+      },
+      "key_point": "1번 차원이 코딩이 아니라 '인간 중심 사고방식'. 세계 표준이 기술 이전에 태도·주체성에서 출발.",
+      "source_urls": [
+        "https://unesdoc.unesco.org/ark:/48223/pf0000391105",
+        "https://www.unesco.org/en/articles/ai-competency-framework-students",
+        "https://www.unesco.org/en/articles/what-you-need-know-about-unescos-new-ai-competency-frameworks-students-and-teachers"
+      ]
+    },
+    "ai_competency_framework_for_teachers_2024": {
+      "summary": "교사용은 5개 차원(인간중심 사고/AI 윤리/AI 기초와 응용/AI 교수법/전문적 학습을 위한 AI) × 3수준(Acquire/Deepen/Create) = 15블록. 'AI는 교사를 대체가 아닌 보완' 원칙.",
+      "source_urls": [
+        "https://unesdoc.unesco.org/ark:/48223/pf0000391104_eng",
+        "https://www.unesco.org/en/articles/ai-competency-framework-teachers"
+      ]
+    },
+    "guidance_for_generative_ai_2023": {
+      "summary": "2023-09-07 발표된 세계 최초의 교육용 생성형 AI 글로벌 가이드라인. 교실 내 생성형 AI 사용 최소 연령 13세 권고, 정부 7대 조치(데이터 보호·규제 등), 인간 중심 접근. 발표 당시 학교·대학의 10% 미만만 공식 AI 정책 보유.",
+      "source_urls": [
+        "https://unesdoc.unesco.org/ark:/48223/pf0000386693_eng",
+        "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research",
+        "https://www.unesco.org/en/articles/unesco-governments-must-quickly-regulate-generative-ai-schools"
+      ]
+    },
+    "gem_report_2023_smartphone": {
+      "summary": "GEM 리포트 2023: 기술은 학습을 명확히 지원할 때만 사용 원칙, 학교 내 스마트폰 금지 권고. 2024년 말 기준 79개 교육 시스템(40%)이 금지 시행.",
+      "source_urls": [
+        "https://unesdoc.unesco.org/ark:/48223/pf0000386165",
+        "https://www.unesco.org/en/articles/smartphones-school-only-when-they-clearly-support-learning"
+      ]
+    }
+  },
+  "countries": {
+    "korea": {
+      "name": "한국",
+      "start_age": {
+        "value": "국가 필수 정보(SW·AI) 교육은 초5~6 '실과'부터(만 10~11세). AI 디지털교과서는 2025년 초3부터 접촉이었으나 정책 축소. 유아 단계 국가 필수 교육은 미확인.",
+        "evidence": "2022 개정 교육과정(초등 2024~ 순차 적용), AIDT 2025-03 초3·4/중1/고1 도입.",
+        "source_urls": ["https://www.korea.kr/news/policyNewsView.do?newsId=148905316", "https://www.metroseoul.co.kr/article/20250109500501"]
+      },
+      "mandatory": {
+        "value": "정보교육(초 34시간+, 중 68시간+)은 의무. AIDT 사용은 2025년 법 개정으로 '교육자료'가 되어 학교별 선택.",
+        "evidence": "시수 확대가 권고→의무 조항으로 확정. AIDT는 도입 한 학기 만에 교과서→교육자료 격하.",
+        "source_urls": ["https://www.korea.kr/news/policyNewsView.do?newsId=148905316", "https://www.khan.co.kr/article/202508041631001"]
+      },
+      "school_method": {
+        "value": "초등 실과 내 정보 단원 17→34시간+, 중학 정보 34→68시간+로 2배 확대. AIDT(수학·영어·정보)는 검정 76종 도입 후 채택률 급락(1학기 32%→2학기 19%).",
+        "evidence": "교과 신설 없는 시수 확대에 '사실상 그대로'라는 현장 비판 병존.",
+        "source_urls": ["https://www.korea.kr/news/policyNewsView.do?newsId=148905316", "https://www.kyobit.com/news/articleView.html?idxno=3879", "https://www.edpl.co.kr/news/articleView.html?idxno=3361"]
+      },
+      "genai_policy_elementary": {
+        "value": "13세 미만(초등)은 보호자 동의 + 교사 지도 필수. 사용 전 안전·윤리 교육 의무. 수행평가 AI 활용 금지행위 사전 안내.",
+        "evidence": "교육부·시도교육청(경기 등) 생성형 AI 가이드라인, KERIS 초등용/중등용 자료 구분.",
+        "source_urls": ["https://www.goe.go.kr/resource/old/BBSMSTR_000000000126/BBS_202502240135525801.pdf", "https://www.keris.or.kr/main/ad/pblcte/selectPblcteETCInfo.do?mi=1142&pblcteSeq=13792", "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=104984&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N"]
+      },
+      "teacher_training": {
+        "value": "AIEDAP(2025 마스터교원 약 1,200명), T.O.U.C.H 교사단(2023 400→2025 1,500명). 단 '준비 부족 연수 급조' 비판 병존.",
+        "evidence": "마스터교원이 일반교원 연수를 이끄는 계단식 구조.",
+        "source_urls": ["https://aiedap.or.kr/", "https://webst.edunet.net/AIDT/%EB%94%94%EC%A7%80%ED%84%B8%20%EA%B8%B0%EB%B0%98%20%EA%B5%90%EC%9C%A1%ED%98%81%EC%8B%A0%20%EB%B0%A9%EC%95%88.pdf", "https://www.edpl.co.kr/news/articleView.html?idxno=12950"]
+      },
+      "ethics_safety": {
+        "value": "생성형 AI 사용 전 안전·윤리 교육 의무(할루시네이션·개인정보 입력 금지·표절). 디지털 시민성 체계 운영.",
+        "evidence": "가이드라인 명문 규정 + 교육부 디지털 교육전환 정책.",
+        "source_urls": ["https://www.goe.go.kr/resource/old/BBSMSTR_000000000126/BBS_202502240135525801.pdf", "https://www.moe.go.kr/boardCnts/viewRenew.do?m=0315&s=moe&page=1&boardID=72771&boardSeq=100983&lev=0&opType=N"]
+      },
+      "home_education_hint": {
+        "value": "AIDT 체제에서 학부모에게 학습 데이터 제공 설계, 교육청 가이드라인은 가정에서도 참조 가능. 단 정부의 독립된 '부모용 AI 가이드' 단행 자료는 미확인.",
+        "evidence": "학교 경유 안내 중심 구조 — 부모가 스스로 교육청 자료를 찾아야 함.",
+        "source_urls": ["https://www.moe.go.kr/boardCnts/viewRenew.do?m=0315&s=moe&page=1&boardID=72771&boardSeq=100983&lev=0&opType=N", "https://www.goe.go.kr/resource/old/BBSMSTR_000000000126/BBS_202502240135525801.pdf"]
+      },
+      "implication_for_korean_parents": {
+        "value": "(a) AIDT는 학교별 선택(채택률 19%)이므로 자녀 학교의 채택 여부를 직접 확인해야 함. (b) 초등생 생성형 AI는 보호자 동의가 전제 — 동의 시 데이터 수집 범위 확인 권리 있음. (c) 필수 AI·SW 교육은 초5 실과 34시간+ 수준으로 제한적이라 그 이상은 학교 자율·가정 몫.",
+        "evidence": "AIDT 격하(2025-08)·법 조항 삭제(2025-11)·2026 선도학교 1,900교 중심 전환으로 '국가가 다 해주는' 그림이 무너진 상태.",
+        "source_urls": ["https://www.khan.co.kr/article/202508041631001", "https://news.nate.com/view/20251118n24338", "https://edumorning.com/articles/1558", "https://www.kyobit.com/news/articleView.html?idxno=3879"]
+      },
+      "hot_issue_aidt_timeline": {
+        "value": "2024-09 검정 76종 합격 → 2025-03 초3·4/중1/고1 도입 → 2025-07~08 '교과서→교육자료' 격하(오류·졸속·개인정보 논란) → 채택률 32%→19% → 2025-11 법 조항 삭제 → 발행사 손해배상 소송전(세금 약 1.4조 투입 주장) → 2026 교육부, 전국 일괄 도입 대신 선도학교 1,900교 단계 운영·기초학력 중심 회귀.",
+        "source_urls": ["https://www.metroseoul.co.kr/article/20250109500501", "https://www.khan.co.kr/article/202508041631001", "https://news.unn.net/news/articleView.html?idxno=582114", "https://news.nate.com/view/20251118n24338", "https://biz.heraldcorp.com/article/10789824", "https://edumorning.com/articles/1560"]
+      }
+    },
+    "singapore": {
+      "name": "싱가포르",
+      "start_age": {
+        "value": "초1~3(만 7~9세)은 AI에 '대해' 배우되 도구 직접 사용 없음. 초4(만 10세)부터 교사 감독 하 교육용 AI 도구 사용 시작.",
+        "evidence": "MOE 의회 답변(2026-05)에서 연령 단계 원칙 명문 확인.",
+        "source_urls": ["https://www.moe.gov.sg/news/parliamentary-replies/20260506-ai-usage-in-schools", "https://www.mddi.gov.sg/newsroom/new-ai-for-fun-modules-for-students/"]
+      },
+      "mandatory": {
+        "value": "초등 고학년(P4~P6) 10시간 'Code for Fun'(컴퓨팅 사고+AI 기초)은 사실상 필수. 심화 'AI for Fun'(5~10시간)은 학교 선택형.",
+        "evidence": "2020년부터 CFF 전면화, 2025년부터 AI for Fun 모듈 전 초·중학교 제공.",
+        "source_urls": ["https://www.imda.gov.sg/how-we-can-help/code-for-fun/code-for-fun-primary", "https://www.mddi.gov.sg/newsroom/new-ai-for-fun-modules-for-students/"]
+      },
+      "school_method": {
+        "value": "3층 구조: ①10시간 CFF ②5~10시간 AI for Fun 선택 모듈(생성형 AI·컴퓨터 비전) ③국가 학습플랫폼 SLS의 AI 도구로 'AI로 배우기'. 상위 정책은 EdTech Masterplan 2030.",
+        "evidence": "SLS 탑재 확인: Adaptive Learning System(개인화 경로), Learning Assistant(LEA — 정답 대신 반문·힌트, P4+ 교사 활성화·감독 필수), 피드백 어시스턴트(FA-Math 등, 교사 검토 후 전달), 교사용 Authoring Copilot.",
+        "source_urls": ["https://www.moe.gov.sg/education-in-sg/educational-technology-journey/edtech-masterplan/artificial-intelligence-in-education", "https://www.learning.moe.edu.sg/teachers/teaching-and-learning-on-sls/aied-features/", "https://www.imda.gov.sg/how-we-can-help/code-for-fun/ai-for-fun-primary", "https://www.moe.gov.sg/education-in-sg/educational-technology-journey/edtech-masterplan"]
+      },
+      "genai_policy_elementary": {
+        "value": "초등생은 범용 챗봇이 아닌 SLS 내 '교육 전용 설계' AI만 사용. LEA는 정답 요구·주제 이탈 시 되돌리는 가드레일 내장. AI 생성물 무단 제출은 학업 부정행위.",
+        "evidence": "MOE 공식 답변 2건에서 연령·발달 적합 도입 원칙 확인.",
+        "source_urls": ["https://www.moe.gov.sg/news/parliamentary-replies/20260506-ai-usage-in-schools", "https://www.moe.gov.sg/news/forum-letter-replies/20260413-schools-introduce-ai-in-approach-that-is-age-and-development-appropriate"]
+      },
+      "teacher_training": {
+        "value": "클러스터별 e-Pedagogy 컨설팅 + Master Teacher 주도 워크숍·학습공동체·온라인 플랫폼으로 AI 윤리·위험·한계 연수.",
+        "evidence": "EdTech Masterplan 2030 및 MOE 의회 답변.",
+        "source_urls": ["https://www.moe.gov.sg/news/press-releases/20230920-more-support-for-schools-and-students-to-shape-the-future-of-learning", "https://www.moe.gov.sg/news/parliamentary-replies/20260506-ai-usage-in-schools"]
+      },
+      "ethics_safety": {
+        "value": "사이버 웰니스 수업에서 AI 오류 분별·생성 콘텐츠 자기 책임 교육. AI 도구 사용 전 기초 AI 리터러시 모듈 이수.",
+        "evidence": "MOE 의회 답변 및 공식 AI in Education 페이지.",
+        "source_urls": ["https://www.moe.gov.sg/news/parliamentary-replies/20260506-ai-usage-in-schools", "https://www.moe.gov.sg/education-in-sg/educational-technology-journey/edtech-masterplan/artificial-intelligence-in-education"]
+      },
+      "home_education_hint": {
+        "value": "MOE가 부모용 공식 자료 2종 배포: 'AI and your child'(guide or guard), 'Using generative AI tools for learning: A parent's guide'. Parents Gateway로 학교가 전달.",
+        "evidence": "학교 배포 실물 PDF 확인. 가정-학교가 같은 원칙 공유(정답기계가 아닌 학습 파트너).",
+        "source_urls": ["https://www.yishuntownsec.moe.edu.sg/files/8__AI___Your_Child__Parents_Guide_.pdf", "https://www.schoolbag.edu.sg/story/raising-and-protecting-kids-in-the-age-of-ai/", "https://www.moe.gov.sg/education-in-sg/educational-technology-journey/edtech-masterplan/artificial-intelligence-in-education"]
+      },
+      "implication_for_korean_parents": {
+        "value": "핵심은 '이른 노출'이 아니라 연령 단계별 통제: 초1~3 직접 사용 금지 → 초4부터 가드레일 있는 교육 전용 도구만. 정부가 부모 가이드를 공식 제공해 가정과 학교가 같은 언어를 씀. 한국 부모도 '범용 챗봇 대신 통제된 환경 + 정답을 주지 않는 사용법'을 가정 규칙으로 이식 가능.",
+        "evidence": "LEA의 '반문·힌트' 설계는 가정에서 부모가 흉내낼 수 있는 대화 모델.",
+        "source_urls": ["https://www.moe.gov.sg/news/parliamentary-replies/20260506-ai-usage-in-schools", "https://www.ntu.edu.sg/nie/news-events/news/detail/moe-s-newest-ai-tools-and-how-schools-are-using-them"]
+      }
+    },
+    "china": {
+      "name": "중국",
+      "start_age": {
+        "value": "2025년 지침으로 초1부터 AI 일반교육 시작(베이징은 전 학년). 저학년=체험·인지 계몽, 고학년=기초 원리·스마트 하드웨어.",
+        "evidence": "교육부 2024-12 통지 + 2025-05 2대 지침.",
+        "source_urls": ["http://en.moe.gov.cn/news/press_releases/202412/t20241210_1166454.html", "https://global.chinadaily.com.cn/a/202510/21/WS68f6d9bea310f735438b601e.html"]
+      },
+      "mandatory": {
+        "value": "베이징: 2025년 가을학기부터 1,400여 초·중·고 전체 연 8차시 이상 AI 교육 의무화(성급 최초). 전국: 'AI+교육' 행동계획으로 2030년까지 전 학교급 AI 교육 체계 구축 목표.",
+        "evidence": "차이나데일리·CGTN·정부망 교차 확인.",
+        "source_urls": ["https://global.chinadaily.com.cn/a/202510/21/WS68f6d9bea310f735438b601e.html", "https://news.cgtn.com/news/2025-09-02/Beijing-rolls-out-AI-education-across-all-primary-secondary-schools-1GkYgy29lS0/p.html", "https://english.www.gov.cn/news/202604/10/content_WS69d8910dc6d00ca5f9a0a554.html"]
+      },
+      "school_method": {
+        "value": "2025-05 교육부 2대 지침(AI 일반교육 지침 + 생성형 AI 사용 지침): 단계적·점진적·나선형(spiral) 커리큘럼 — 초등=흥미·기초 인지, 중학=기술 원리·기초 응용, 고교=응용 혁신·윤리 심화. 독립 교과 또는 정보기술 등과 통합 운영. 2024년 전국 184개 AI 교육 기지교 지정.",
+        "evidence": "사실 확인됨(Global Times·SCIO·인민일보). 베이징 사례: 초3부터 정보기술에 AI 통합, 중2~3은 생성형 AI로 학습 도우미 설계.",
+        "source_urls": ["https://www.globaltimes.cn/page/202505/1333878.shtml", "http://english.scio.gov.cn/pressroom/2025-05/13/content_117871666.html", "https://english.www.gov.cn/news/202503/12/content_WS67d18e9ec6d0868f4e8f0c40.html", "https://wtlgovernance.com/insights/updates/china-moe-ai-plus-education-action-plan-2030/"]
+      },
+      "genai_policy_elementary": {
+        "value": "초등학생은 개방형 콘텐츠를 생성하는 생성형 AI 도구의 단독(독립) 사용 금지 — 명문 규정(사실 확인됨). 학교는 생성형 AI 화이트리스트 운영 의무. AI 생성물의 숙제·시험 답안 제출 금지. 교사의 핵심 교육 책무 AI 대체도 금지.",
+        "evidence": "2025-05 「중소학 생성형 AI 사용 지침」. 조지타운 CSET 전문 번역으로 재확인.",
+        "source_urls": ["https://www.globaltimes.cn/page/202505/1333878.shtml", "http://www.ecns.cn/m/news/society/2025-05-16/detail-ihernfey9438915.shtml", "https://cset.georgetown.edu/publication/china-school-gen-ai-use-guide-2025/"]
+      },
+      "teacher_training": {
+        "value": "'AI+교육' 행동계획: 교사자격시험·인증에 AI 역량 요건 포함(AI 리터러시의 교직 진입 요건화), 연수 체계에 AI 교수역량 통합.",
+        "evidence": "CGTN·글로벌타임스(2026-04).",
+        "source_urls": ["https://news.cgtn.com/news/2026-04-10/China-to-include-AI-in-teacher-exams-and-transform-education-system-1MdSqD0kN9e/p.html", "https://www.globaltimes.cn/page/202604/1358611.shtml"]
+      },
+      "ethics_safety": {
+        "value": "2025 지침이 연령 적합성·위험 예방·윤리 명시: AI 개념·원리와 함께 윤리·보안을 교육과정에 포함, 데이터 보안 기준 엄수, 고교에서 윤리 심화.",
+        "evidence": "인민일보·글로벌타임스 확인.",
+        "source_urls": ["https://en.people.cn/n3/2025/0513/c90000-20313921.html", "https://www.globaltimes.cn/page/202505/1333878.shtml"]
+      },
+      "home_education_hint": {
+        "value": "지침이 교사 책무로 '학부모와의 협력 촉진'을 규정(가정-학교 협동). 싱가포르식 정부 발행 부모용 상세 가이드는 미확인.",
+        "evidence": "CSET 전문 번역 및 ChinaTalk 분석.",
+        "source_urls": ["https://cset.georgetown.edu/publication/china-school-gen-ai-use-guide-2025/", "https://www.chinatalk.media/p/chinas-ai-education-experiment"]
+      },
+      "implication_for_korean_parents": {
+        "value": "세계에서 가장 공격적으로 AI 교육을 의무화하는 나라조차 초등생의 개방형 생성 AI 단독 사용은 금지 — '많이 가르치되, 어릴 때는 통제한다'는 이중 구조. AI 교육 조기화와 생성형 AI 연령 가드레일은 상충이 아니라 세트라는 것이 국제 표준.",
+        "evidence": "베이징 연 8차시 의무 + 단독 사용 금지의 병존.",
+        "source_urls": ["https://www.globaltimes.cn/page/202505/1333878.shtml", "https://global.chinadaily.com.cn/a/202510/21/WS68f6d9bea310f735438b601e.html"]
+      }
+    },
+    "estonia": {
+      "name": "에스토니아",
+      "start_age": {
+        "value": "코딩·기술 교육은 2012년 ProgeTiiger로 1학년(만 7세)부터, 이후 유치원까지 확장. 생성형 AI의 국가 지급(AI Leap)은 고교 10~11학년(만 16~17세)부터.",
+        "evidence": "ProgeTiiger(2012)와 AI Leap(2025)의 연령 이원화.",
+        "source_urls": ["https://www.forbes.com/sites/parmyolson/2012/09/06/why-estonia-has-started-teaching-its-first-graders-to-code/", "https://www.hm.ee/en/news/estonia-announces-groundbreaking-national-initiative-ai-leap-programme-bring-ai-tools-all", "https://www.educationestonia.org/progetiger-programming-school-kindergarten/"]
+      },
+      "mandatory": {
+        "value": "ProgeTiger는 국가 지원 참여형(전면 의무 교과 아님). 디지털 역량은 국가 커리큘럼의 일반 역량으로 명시·평가. AI Leap는 참여 학교 기반 국가 프로그램.",
+        "evidence": "1차년도 고교생 약 2만 명 + 교사 3천 명.",
+        "source_urls": ["https://www.educationestonia.org/progetiger/", "https://www.educationestonia.org/innovation/digital-competence/", "https://eurydice.eacea.ec.europa.eu/news/estonia-ai-leap-initiative-enhance-learning-and-teaching"]
+      },
+      "school_method": {
+        "value": "AI Leap 2025(TI-Hüpe): 2025-09-01부터 고교생 2만 명·교사 3천 명에게 AI 학습 도구 무료 제공, 2026년 직업학교·신규 10학년 확대(+3만8천 명). ChatGPT Edu의 국가 단위 도입 세계 최초, Anthropic과도 협력. 초중등은 ProgeTiger식 교과 통합(프로그래밍·로보틱스).",
+        "evidence": "교육연구부 공식 발표 + OpenAI 공식 페이지 + Eurydice.",
+        "source_urls": ["https://www.hm.ee/en/news/estonia-announces-groundbreaking-national-initiative-ai-leap-programme-bring-ai-tools-all", "https://openai.com/index/estonia-schools-and-chatgpt/", "https://eurydice.eacea.ec.europa.eu/news/estonia-ai-leap-initiative-enhance-learning-and-teaching", "https://www.educationestonia.org/progetiger/"]
+      },
+      "genai_policy_elementary": {
+        "value": "AI Leap 1단계는 초등학생 미포함(고교부터). 초등생 대상 국가 차원의 생성형 AI 지급·허용 규정: 미확인. 참여 기업은 학생 데이터로 모델 학습 금지·합의된 데이터센터 저장을 계약으로 명시.",
+        "evidence": "'일찍 시작하되 생성형 챗봇은 판단력이 생긴 뒤'라는 국가 설계.",
+        "source_urls": ["https://eurydice.eacea.ec.europa.eu/news/estonia-ai-leap-initiative-enhance-learning-and-teaching", "https://theinnovator.news/estonias-ai-leap/"]
+      },
+      "teacher_training": {
+        "value": "교사 연수가 학생 배포보다 선행: 2025 가을 교사 3,000명 연수 후 학생 도입, 2026년 2,000명 추가. ProgeTiger도 교사 디지털 역량이 핵심 목표.",
+        "evidence": "'교사 먼저' 순서가 프로그램 설계에 명시.",
+        "source_urls": ["https://www.hm.ee/en/news/estonia-announces-groundbreaking-national-initiative-ai-leap-programme-bring-ai-tools-all", "https://estonia.ee/stories/estonias-ambitious-initiative-the-ai-leap-programme-brings-ai-tools-to-all-schools"]
+      },
+      "ethics_safety": {
+        "value": "교육전략 2021-2035가 디지털·시민 역량을 핵심 역량으로 규정. Safer Internet Centre(Targalt Internetis)가 750종+ 교육 자료로 알고리즘·생성형 AI발 허위정보까지 교육.",
+        "evidence": "900회+ 교육행사, 6만 명+ 도달.",
+        "source_urls": ["https://digital-skills-jobs.europa.eu/en/actions/national-initiatives/national-strategies/estonia-education-strategy-2021-2035", "https://www.targaltinternetis.ee/en/about-the-project/"]
+      },
+      "home_education_hint": {
+        "value": "Targalt Internetis가 부모 대상 자녀 인터넷 안전 권고 공식 제공. 정부의 '부모용 AI 전용 가이드' 단일 문서는 미확인.",
+        "evidence": "AI Leap는 학교·교사 중심 설계.",
+        "source_urls": ["https://www.targaltinternetis.ee/en/news/2020/04/smart-internet-use-recommendations-for-parents-on-ensuring-their-childs-safe-internet-use-during-e-learning-at-home/", "https://better-internet-for-kids.europa.eu/en/sic/estonia"]
+      },
+      "implication_for_korean_parents": {
+        "value": "세계에서 가장 공격적인 AI 교육 국가의 순서: ①7세 코딩·디지털 기초(2012~) → ②교사 먼저 연수 → ③생성형 AI 지급은 고교부터. 초등 자녀에겐 '챗봇 조기 노출'보다 '컴퓨팅 사고 조기 + 생성형 AI 단계적'이 벤치마크. 학생 데이터 비학습 계약은 부모가 국내 서비스에 요구할 프라이버시 기준.",
+        "evidence": "AI Leap의 연령 설계와 데이터 계약 조건.",
+        "source_urls": ["https://www.hm.ee/en/news/estonia-announces-groundbreaking-national-initiative-ai-leap-programme-bring-ai-tools-all", "https://theinnovator.news/estonias-ai-leap/"]
+      }
+    },
+    "usa": {
+      "name": "미국",
+      "start_age": {
+        "value": "연방 통일 연령 없음(주 관할). 2025-04-23 행정명령 'Advancing AI Education for American Youth'가 K-12(약 5세~) 전체 AI 리터러시 확대 지시. AI4K12 가이드라인은 K-2(5~8세)부터 학년군별 내용 제시.",
+        "evidence": "백악관 행정명령 원문 + AI4K12 공식.",
+        "source_urls": ["https://www.whitehouse.gov/presidential-actions/2025/04/advancing-artificial-intelligence-education-for-american-youth/", "https://ai4k12.org/"]
+      },
+      "mandatory": {
+        "value": "연방 필수 아님, 주별 상이. 오하이오주가 최초로 법적 의무 전환(2026-07-01까지 전 공립 학구 AI 사용 '정책 수립' 의무 — 교육 의무는 아님).",
+        "evidence": "그 외 주는 가이드라인·태스크포스 수준.",
+        "source_urls": ["https://education.ohio.gov/Topics/AI-in-Ohio-s-Education/Model-Policy", "https://kjk.com/2026/06/12/ohios-july-1-2026-school-ai-policy-deadline-what-districts-educators-and-parents-need-to-know/", "https://www.ecs.org/artificial-intelligence-ai-education-task-forces/"]
+      },
+      "school_method": {
+        "value": "독립 교과보다 CS 교과 통합·도구 활용형. AI4K12 '5 Big Ideas'(인식/표상·추론/학습/자연스러운 상호작용/사회적 영향)가 사실상의 커리큘럼 프레임워크. 행정명령으로 백악관 태스크포스·민관 파트너십·Presidential AI Challenge. 주별 시수 규정은 미확인(전국 공통 없음).",
+        "evidence": "AAAI+CSTA 공동 개발 표준.",
+        "source_urls": ["https://ai4k12.org/artificial-intelligence-thinking-in-k-12/", "https://www.whitehouse.gov/fact-sheets/2025/04/fact-sheet-president-donald-j-trump-advances-ai-education-for-american-youth/"]
+      },
+      "genai_policy_elementary": {
+        "value": "전국 규정 미확인(주·학구별 상이). 2026년 기준 33~35개 주가 학교 AI 가이드라인 발표. 초등 직접 사용은 도구 약관 연령 제한(ChatGPT 13세+)과 주 가이드라인 감독 조건에 따름. 상징 사례: NYC ChatGPT 금지(2023-01)→철회(2023-05).",
+        "evidence": "금지→허용 전환이 미국 흐름의 전환점.",
+        "source_urls": ["https://www.aiforeducation.io/ai-resources/state-ai-guidance", "https://stateline.org/2025/07/15/more-than-half-the-states-have-issued-ai-guidance-for-schools/", "https://www.chalkbeat.org/newyork/2023/5/18/23727942/chatgpt-nyc-schools-david-banks/"]
+      },
+      "teacher_training": {
+        "value": "행정명령이 교사 AI 연수 자원 우선 배정 지시(교육부 재량 자금, 노동부 AI 도제 확대 포함).",
+        "evidence": "연방 차원 방향 제시, 실행은 주·학구.",
+        "source_urls": ["https://www.hklaw.com/en/insights/publications/2025/04/executive-order-advancing-ai-education-for-american-youth", "https://www.forbes.com/sites/sarahhernholm/2025/04/24/trump-signs-executive-order-for-ai-education-for-k-12-schools/"]
+      },
+      "ethics_safety": {
+        "value": "교육부 툴킷 'Empowering Education Leaders'(2024-10, 프라이버시·보안·차별 방지 10개 모듈). AI4K12의 5번째 Big Idea가 '사회적 영향'으로 윤리 내장.",
+        "evidence": "교육기술국 발간.",
+        "source_urls": ["https://eric.ed.gov/?id=ED661924", "https://www.k12dive.com/news/education-department-ai-guidance-school-leaders/731038/", "https://ai4k12.org/"]
+      },
+      "home_education_hint": {
+        "value": "정부보다 민간이 풍부: Common Sense Media 'Parents' Ultimate Guide to Generative AI', 가족용 AI 리터러시 툴킷, Day of AI 가족 툴킷. '가족이 AI에 대해 대화하면 아이가 더 안전하고 자신 있게 사용한다'는 자체 조사.",
+        "evidence": "교육부 툴킷도 학부모 참여를 명시 권고.",
+        "source_urls": ["https://www.commonsensemedia.org/articles/parents-ultimate-guide-to-generative-ai", "https://www.commonsense.org/education/families-ai-literacy-toolkit", "https://dayofai.org/news/day-of-ai-and-common-sense-media-launch-essential-toolkit-for-parents-and-families-talking-to-kids-about-ai-privacy-fairness-and-responsibility"]
+      },
+      "implication_for_korean_parents": {
+        "value": "'금지→2년 만에 국가적 장려'로 급선회한 나라(NYC 2023-01 금지→05 철회→2025-04 행정명령). 회피가 아닌 조기 리터러시가 국가 방향. 부모 자료는 민간(Common Sense Media)이 주도 — 한국 부모도 '5 Big Ideas'식 개념 대화(AI는 어떻게 배우고 어디서 틀리나)를 가정 대화 틀로 쓸 수 있음.",
+        "evidence": "가족 대화가 안전 사용을 높인다는 조사 결과.",
+        "source_urls": ["https://www.chalkbeat.org/newyork/2023/5/18/23727942/chatgpt-nyc-schools-david-banks/", "https://www.commonsensemedia.org/articles/parents-ultimate-guide-to-generative-ai"]
+      }
+    },
+    "india": {
+      "name": "인도",
+      "start_age": {
+        "value": "2019년 CBSE 9학년(만 14세) 선택 과목으로 시작 → 6~8학년 12시간 모듈 확대 → 2026-27학년도부터 3~8학년(만 8세~) CT+AI 프레임워크 적용으로 3학년까지 하향.",
+        "evidence": "위에서 시작해 아래로 내려가는 경로.",
+        "source_urls": ["https://byjus.com/cbse/cbse-introduces-syllabus-for-ai-of-class-8-and-9-for-academic-session-2019-20/", "https://targetpublications.org/blog/cbse-launches-framework-for-computational-thinking-and-artificial-intelligence", "https://cbseacademic.nic.in/ai.html"]
+      },
+      "mandatory": {
+        "value": "9~10학년 AI(스킬 과목 코드 417)는 선택(6번째 과목). 2026-27부터 3~8학년 CT·AI는 통합·내부평가로 전면 적용(CBSE 계열). 2029년경 보드시험 과목화 계획 보도.",
+        "evidence": "NEP 2020·국가교육과정 프레임워크 정렬.",
+        "source_urls": ["https://cbseacademic.nic.in/web_material/Curriculum21/417-AI_2020-21.pdf", "https://sunbeamworldschool.com/blog/cbse-new-curriculum-2026-27/", "https://news.careers360.com/cbse-board-plan-ai-computing-must-class-9-10-syllabus-skill-subject-25-pc-ews-quota-kv-jnv-emrs-pisa-ncert-semiconductor-rte"]
+      },
+      "school_method": {
+        "value": "9~10학년: 프로젝트 기반 스킬 과목(Python 기초·데이터 리터러시), 2024-25학년도 80만 명+ 선택(세계 최대급 규모). 6~8학년: 12시간 AI 모듈. 2026-27 프레임워크: 중학 연 100시간 CT + 20시간 AI 리터러시·융합 프로젝트 보도. 초등은 화면보다 펜·종이 기반 설계.",
+        "evidence": "CBSE 공식 커리큘럼·핸드북 + 등록 통계.",
+        "source_urls": ["https://cbseacademic.nic.in/ai.html", "https://www.karmickinstitute.com/resources/record-breaking-enrollment-8-lakh-cbse-students-opt-for-ai-education/", "https://cbseacademic.nic.in/web_material/Curriculum26/publication/middle/AI_Facilitators_Handbook_VI.pdf", "https://supertutor.in/resources/blog/cbse-ai-curriculum-2026/"]
+      },
+      "genai_policy_elementary": {
+        "value": "국가 차원의 초등생 생성형 AI 사용 규정: 미확인. ICRIER(2025-01) 보고서도 학교 AI 준비 프레임워크 부재를 지적 — UNESCO 2023 지침(13세 하한)이 사실상의 참조점.",
+        "evidence": "규정 공백 상태가 확인된 사실.",
+        "source_urls": ["https://icrier.org/pdf/AI_in_School_Education.pdf", "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research"]
+      },
+      "teacher_training": {
+        "value": "CBSE×Intel 무료 온라인 교사 역량강화(CBP) 상시 운영. NCERT CIET 'AI in Education' 연수(영어·힌디). 3~8학년 확대에 맞춰 국가 연수사업 NISHTHA 활용 계획.",
+        "evidence": "공식 기관 프로그램 확인.",
+        "source_urls": ["https://school.noticebard.com/teachers/cbse-capacity-building-programmes-ai/", "https://ciet.ncert.gov.in/activity/aie", "https://www.convergence-now.com/artificial-intelligence/india-ai-education-curriculum-2026/"]
+      },
+      "ethics_safety": {
+        "value": "CBSE AI 커리큘럼에 윤리 단원 포함: 편향·프라이버시·책임 있는 사용을 프로젝트 사이클 전반에 통합, SDGs 연계.",
+        "evidence": "공식 퍼실리테이터 핸드북 확인.",
+        "source_urls": ["https://cbseskilleducation.com/ai-reflection-project-cycle-and-ethics-class-9-notes/", "https://cbseacademic.nic.in/web_material/Curriculum21/publication/secondary/Class10_Facilitator_Handbook.pdf"]
+      },
+      "home_education_hint": {
+        "value": "정부(교육부/CBSE) 발행 공식 부모용 AI 가이드: 미확인. UNICEF India 등이 아동 프라이버시 중심 논의 진행 수준.",
+        "evidence": "가정 통제 기준을 국가가 아직 제공하지 않음.",
+        "source_urls": ["https://www.unicef.org/india/blog/ai-and-human-agency-indias-role-shaping-future-learning"]
+      },
+      "implication_for_korean_parents": {
+        "value": "'위(9학년 선택)에서 시작해 규모(80만 명)를 만든 뒤 아래(3학년)로 내려가는' 경로. 초등 단계는 스크린보다 펜·종이 기반 CT·AI 리터러시 — 어린 아이의 AI 교육이 반드시 기기 사용일 필요가 없다는 실증. 커리큘럼·윤리 단원이 도구 규제보다 먼저인 모델.",
+        "evidence": "3~8학년 프레임워크의 언플러그드 설계.",
+        "source_urls": ["https://targetpublications.org/blog/cbse-launches-framework-for-computational-thinking-and-artificial-intelligence", "https://www.karmickinstitute.com/resources/record-breaking-enrollment-8-lakh-cbse-students-opt-for-ai-education/"]
+      }
+    },
+    "finland": {
+      "name": "핀란드",
+      "start_age": {
+        "value": "미디어 리터러시는 유아교육(ECEC)부터 국가 커리큘럼에 통합, 만 3세부터 AI 생성 콘텐츠(딥페이크) 식별 교육 보도. 프로그래밍은 2016년부터 1학년(만 7세) 수학·공예에 통합.",
+        "evidence": "세계에서 가장 이른 'AI 식별' 교육.",
+        "source_urls": ["https://www.euronews.com/next/2026/01/05/after-decades-of-teaching-media-literacy-finland-equips-students-with-skills-to-spot-ai-de", "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2022.948783/full"]
+      },
+      "mandatory": {
+        "value": "독립 'AI 교과'는 없으나 미디어 리터러시·ICT 역량이 국가 핵심 커리큘럼의 횡단역량(transversal competence)으로 전 교과 필수 통합 — 사실상 전원 이수.",
+        "evidence": "2016 국가핵심커리큘럼 7대 횡단역량 중 멀티리터러시·ICT.",
+        "source_urls": ["https://www.oph.fi/en/education-and-qualifications/national-core-curriculum-primary-and-lower-secondary-basic-education", "https://www.oph.fi/sites/default/files/documents/new-national-core-curriculum-for-basic-education.pdf"]
+      },
+      "school_method": {
+        "value": "별도 과목·시수 없이 모든 교과 안에서 가르치고 평가(횡단역량 방식). 'New Literacies' 국가 프로그램(2020~2023, 1,300만 유로+)이 유아~기초교육의 미디어·디지털·프로그래밍 역량 기준 체계화.",
+        "evidence": "핀란드 역사상 최대 미디어 교육 투자.",
+        "source_urls": ["https://okm.fi/en/new-literacies-programme", "https://kavi.fi/en/media-education/new-literacies-development-programme/", "https://www.tandfonline.com/doi/full/10.1080/20020317.2019.1635845"]
+      },
+      "genai_policy_elementary": {
+        "value": "2025-03 교육문화부·국가교육청(OPH)이 유아~성인 전 단계 AI 권고: 교육 제공자가 GDPR·국내법 적합성 검증 후에만 AI 도입 가능, 학내 정책·직원 지침 의무. 초등생 직접 사용의 전국 일률 연령선은 미확인(제공자 재량 + 법적 프레임). 단 AI 생성물 '식별' 교육은 3세부터.",
+        "evidence": "허용/금지보다 법적 책임 프레임 중심.",
+        "source_urls": ["https://www.oph.fi/en/artificial-intelligence-education-legislation-and-recommendations", "https://okm.fi/en/project?tunnus=OKM021%3A00%2F2024"]
+      },
+      "teacher_training": {
+        "value": "대학 주도 CPD 통합형: 오울루대 워크숍(AI 편향 점검 훈련), 동핀란드대 'Generation AI' 프로젝트(유아~직업교육 AI 리터러시), 헬싱키대 무료 'Elements of AI'가 교사 표준 입문 코스.",
+        "evidence": "국가 일괄 연수보다 대학-학교 연계.",
+        "source_urls": ["https://computingeducationresearch.org/blog-developing-a-new-ai-generation-in-finland/", "https://www.elementsofai.com/", "https://www.nucamp.co/blog/coding-bootcamp-finland-fin-education-the-complete-guide-to-using-ai-in-the-education-industry-in-finland-in-2025"]
+      },
+      "ethics_safety": {
+        "value": "세계 최고 미디어 리터러시 전통이 AI 안전 교육의 토대: 2013 국가 미디어 리터러시 가이드라인, KAVI의 법정 임무, 유럽 미디어 리터러시 지수 매년 1위, 6세 허위정보 식별 수업. 2025 AI 권고도 AI 리터러시·법적 준수·윤리를 3대 축으로.",
+        "evidence": "AI 교육을 새 과목이 아닌 기존 리터러시의 확장으로 처리.",
+        "source_urls": ["https://kavi.fi/en/media-education/", "https://fortune.com/2025/01/29/finland-teaches-6-year-olds-to-spot-disinformationand-internet-hoaxes-media-literacy/", "https://eavi.eu/ml-in-finland/", "https://www.oph.fi/en/artificial-intelligence-education-legislation-and-recommendations"]
+      },
+      "home_education_hint": {
+        "value": "KAVI가 가정·교사·아동 대상 미디어 교육 자료 제공(부모 대상 촉진이 법정 임무). 부모가 먼저 배우는 국가적 통로 = 무료 'Elements of AI'(100만 명+ 수강, 26개 언어). 부모용 AI 전용 단일 가이드는 미확인.",
+        "evidence": "부모 자신의 학습 경로가 국가적으로 검증됨.",
+        "source_urls": ["https://kavi.fi/en/media-education/", "https://www.helsinki.fi/en/news/artificial-intelligence/elements-ai-has-introduced-one-million-people-basics-artificial-intelligence"]
+      },
+      "implication_for_korean_parents": {
+        "value": "핀란드는 'AI 도구 사용법'이 아니라 '비판적 읽기 근육'을 3세부터 기름. 가정 실천도 명확: 아이와 '이 이미지는 진짜일까?'를 놀이처럼 다루기 + 부모가 무료 강좌(Elements of AI)로 먼저 배우기. AI 교육 = 기기 교육이라는 등식을 깨는 반례.",
+        "evidence": "Fortune·Euronews 보도로 실제 수업 방식 확인.",
+        "source_urls": ["https://www.euronews.com/next/2026/01/05/after-decades-of-teaching-media-literacy-finland-equips-students-with-skills-to-spot-ai-de", "https://www.elementsofai.com/"]
+      }
+    },
+    "uk": {
+      "name": "영국",
+      "start_age": {
+        "value": "컴퓨팅이 2014-09부터 국가 교육과정 필수로 만 5세(KS1)~16세 전 단계. KS1에서 알고리즘 개념 학습. AI는 이 컴퓨팅·디지털 리터러시의 연장선.",
+        "evidence": "국가 교육과정 원문 확인.",
+        "source_urls": ["https://www.gov.uk/government/publications/national-curriculum-in-england-computing-programmes-of-study/national-curriculum-in-england-computing-programmes-of-study", "https://computinged.wordpress.com/2013/07/22/new-uk-curriculum-five-year-olds-to-learn-programming-and-algorithms/"]
+      },
+      "mandatory": {
+        "value": "컴퓨팅 교과는 공립학교 필수(5~16세). 'AI' 독립 필수 교과는 없음.",
+        "evidence": "국가 교육과정 프레임워크.",
+        "source_urls": ["https://www.gov.uk/government/publications/national-curriculum-in-england-framework-for-key-stages-1-to-4/the-national-curriculum-in-england-framework-for-key-stages-1-to-4"]
+      },
+      "school_method": {
+        "value": "컴퓨팅 교과 + 학교 재량의 생성형 AI 활용. DfE 'Generative AI in education' 정책(2025-08-12 갱신): 교사 대면 활용(수업 준비·행정)은 '이익 크고 위험 적음', 학생 사용은 조건부. 2025-06부터 무료 지원 자료 배포(4.4만+ 다운로드). AI 시수 규정 미확인(학교 재량).",
+        "evidence": "DfE 정책 원문 직접 확인.",
+        "source_urls": ["https://www.gov.uk/government/publications/generative-artificial-intelligence-in-education/generative-artificial-intelligence-ai-in-education", "https://roadmap-for-modern-digital-government.campaign.gov.uk/ai/ai-in-education/"]
+      },
+      "genai_policy_elementary": {
+        "value": "학생 사용은 '긴밀한 감독' 하에서만 + 도구 연령 제한 준수 의무. 13세 미만은 UK GDPR상 본인 동의 불가 → 학부모 동의 필요 — 초등생의 공개 생성형 AI 직접 사용은 사실상 크게 제한. 2026-01 학교용 '생성형 AI 제품 안전 표준' 발표.",
+        "evidence": "DfE 원문 + Jisc 연령 제한 해설.",
+        "source_urls": ["https://www.gov.uk/government/publications/generative-artificial-intelligence-in-education/generative-artificial-intelligence-ai-in-education", "https://nationalcentreforai.jiscinvolve.org/wp/2025/08/28/age-restrictions-and-consent-to-use-generative-ai/", "https://www.gov.uk/government/publications/generative-ai-product-safety-standards/generative-ai-product-safety-standards"]
+      },
+      "teacher_training": {
+        "value": "Oak National Academy에 최대 200만 파운드 투입해 AI 수업설계 도우미 'Aila' 개발(2024-09 출시, 주 3~4시간 절감 보고, NFER 독립 효과성 시험 중). Chartered College of Teaching이 DfE와 무료 AI 인증 과정 운영.",
+        "evidence": "정부 발표 + EEF/NFER 시험.",
+        "source_urls": ["https://www.gov.uk/government/news/new-support-for-teachers-powered-by-artificial-intelligence", "https://www.thenational.academy/ai", "https://educationendowmentfoundation.org.uk/news/new-trial-ai-powered-lesson-planning"]
+      },
+      "ethics_safety": {
+        "value": "JCQ·Ofqual 'AI Use in Assessments'(2025-04 개정): 코스워크 AI 사용 시 도구명·날짜·내용 명시 인용 필수, AI 생성만으로는 점수 불인정, 미신고는 부정행위. DfE는 숙제 정책 재검토·필터링 체계 요구.",
+        "evidence": "시험 규정 수준까지 명문화.",
+        "source_urls": ["https://www.jcq.org.uk/exams-office/malpractice/artificial-intelligence/", "https://www.gov.uk/government/publications/ofquals-approach-to-regulating-the-use-of-artificial-intelligence-in-the-qualifications-sector/ofquals-approach-to-regulating-the-use-of-artificial-intelligence-in-the-qualifications-sector"]
+      },
+      "home_education_hint": {
+        "value": "DfE가 학교에 학부모 소통·동의 확보 요구. 정부 지원 비영리 Internet Matters 부모용 AI 가이드(개인정보 입력 금지·가족 규칙 합의). NSPCC '아이와 AI 대화하기' 가이드. 조사: 아동 4/10 AI 사용, 부모 60%는 학교 AI 계획 안내 못 받음.",
+        "evidence": "부모-학교 정보 격차가 수치로 확인됨.",
+        "source_urls": ["https://www.internetmatters.org/resources/parent-guide-to-artificial-intelligence-ai-tools/", "https://www.nspcc.org.uk/keeping-children-safe/online-safety/talking-to-children-about-ai/", "https://www.internetmatters.org/hub/press-release/ai-research-warns-schools-unprepared-artificial-intelligence/"]
+      },
+      "implication_for_korean_parents": {
+        "value": "'교사 먼저, 학생은 감독 하에'라는 명확한 비대칭 원칙 + 13세 미만 연령 규제의 엄격한 준수. AI로 한 작업을 '출처 표기'하게 하는 JCQ 방식(무엇을 어떻게 썼는지 기록)은 가정 숙제 규칙으로 그대로 이식 가능.",
+        "evidence": "DfE·JCQ 규정.",
+        "source_urls": ["https://www.gov.uk/government/publications/generative-artificial-intelligence-in-education/generative-artificial-intelligence-ai-in-education", "https://www.jcq.org.uk/exams-office/malpractice/artificial-intelligence/"]
+      }
+    },
+    "japan": {
+      "name": "일본",
+      "start_age": {
+        "value": "프로그래밍 교육은 2020-04부터 초등 전 과정 필수(기존 교과 통합, 산수5·이과6 예시). 생성형 AI 직접 이용은 초등 단계 '발달단계 고려해 신중 검토'가 원칙 — 교사 시연 중심.",
+        "evidence": "MEXT 가이드라인 Ver.2.0.",
+        "source_urls": ["https://www.strata-gee.com/japan-makes-coding-mandatory-for-all-students-starting-in-elementary-school/", "https://www.mext.go.jp/content/20241226-mxt_shuukyo02-000030823_001.pdf", "https://www.skymenu.net/media/article/2552/"]
+      },
+      "mandatory": {
+        "value": "초등 프로그래밍(2020)·중학 기술가정 정보 강화·고교 '정보Ⅰ' 필수(2022)로 단계별 필수. 2025-01 대학입학공통테스트부터 '정보' 과목 추가. 생성형 AI 활용은 학교 판단(Ver.2.0에서 파일럿교 한정 규정 삭제 → 전 학교 활용 가능).",
+        "evidence": "필수는 프로그래밍·정보, 생성형 AI는 선택+가이드라인.",
+        "source_urls": ["https://www.ipsj.or.jp/dp/contents/publication/60/DP60B-U06.html", "https://project.nikkeibp.co.jp/pc/atcl/19/06/21/00003/112300402/", "https://code.or.jp/magazine/20250124/"]
+      },
+      "school_method": {
+        "value": "초등 프로그래밍은 독립 교과·고정 시수 없이 교과 통합. 인프라는 GIGA 스쿨(약 4,610억 엔, 초중생 1인 1단말 + 고속망, 약 35,000개교 1,300만 명). 생성형 AI는 2023년 파일럿 스쿨 지정 → 결과 공개 검증 → Ver.2.0으로 확대.",
+        "evidence": "'인프라+가이드라인+파일럿 검증+연수'의 점진 경로.",
+        "source_urls": ["https://www.japantimes.co.jp/2021/03/22/special-supplements/japans-giga-school-program-equips-students-digital-society/", "https://ippjapan.org/en_ichi/en/archives/774", "https://depp.oecd.org/policies/JPN1674"]
+      },
+      "genai_policy_elementary": {
+        "value": "MEXT 가이드라인 Ver.2.0(2024-12-26): 인간중심 원칙(AI는 능력 보조·확장 도구, 최종 판단은 인간), 각 서비스 이용약관(연령 제한·보호자 동의) 확인·준수 의무 + 교사 감독. 초등생은 직접 이용보다 교사 주도 사례 학습·비판적 태도 함양 권장. 학교·교육위·교원별 체크리스트 제공.",
+        "evidence": "Ver.1.0(2023-07 잠정)→Ver.2.0 진화.",
+        "source_urls": ["https://www.mext.go.jp/content/20241226-mxt_shuukyo02-000030823_001.pdf", "https://code.or.jp/magazine/20250124/", "https://current.ndl.go.jp/car/236829"]
+      },
+      "teacher_training": {
+        "value": "MEXT 생성AI 교원용 연수 동영상 시리즈(도쿄대 등 강사) + 온라인 연수회 아카이브. NITS 교내연수용 20분 강의 시리즈. 리딩DX스쿨의 공개수업·연수회.",
+        "evidence": "정부 직접 제작 무료 연수 콘텐츠.",
+        "source_urls": ["https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_02507.html", "https://www.nits.go.jp/materials/intramural/", "https://leadingdxschool.mext.go.jp/event/11901/"]
+      },
+      "ethics_safety": {
+        "value": "가이드라인이 할루시네이션·편향 위험 명시, 생성AI 전제의 '정보활용능력'(정보모럴 포함) 육성을 전 학교급에 요구. 단말 이용 시 아동 건강 리플릿(아동용/학생용/보호자용 별도 제작).",
+        "evidence": "Ver.2.0 요약자료.",
+        "source_urls": ["https://www.mext.go.jp/content/20241226-mxt_shuukyo02-000030823_003.pdf", "https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00001.html"]
+      },
+      "home_education_hint": {
+        "value": "문부과학성 보호자용 리플릿 '생각하자, 가족 모두가 스마트폰 룰'(필터링·페어렌털 컨트롤 설정법). 어린이가정청이 보호자 대상 인터넷 이용 계발 콘텐츠·리플릿 상시 제공. 가이드라인도 부적절한 AI 이용 시 보호자 통지·이해 확보를 학교에 요구.",
+        "evidence": "정부가 부모용 자료를 직접 배포하는 구조.",
+        "source_urls": ["https://www.cfa.go.jp/policies/youth-kankyou/internet_use_keihatu", "https://www.cfa.go.jp/policies/youth-kankyou/leaflet", "https://www.mext.go.jp/content/20241226-mxt_shuukyo02-000030823_001.pdf"]
+      },
+      "implication_for_korean_parents": {
+        "value": "'AI 교과서' 단일 제품 일괄 도입 대신 인프라(1인 1단말)+가이드라인+파일럿 공개 검증+교사 연수의 점진 경로 — 한국 AIDT의 '도입 후 격하'와 대비. 초등 생성형 AI는 한일 모두 '보호자 동의/교사 감독+신중 접근'이 공통 원칙이므로 가정에서도 어른 동반 사용이 양국 정부 기준에 부합.",
+        "evidence": "일본은 보호자용 계발 자료를 정부가 직접 배포, 한국은 학교 경유 안내 중심.",
+        "source_urls": ["https://ippjapan.org/en_ichi/en/archives/774", "https://code.or.jp/magazine/20250124/", "https://www.goe.go.kr/resource/old/BBSMSTR_000000000126/BBS_202502240135525801.pdf"]
+      }
+    }
+  },
+  "cross_country_findings": [
+    "공통 규칙 1 — 아이 혼자 생성형 AI를 쓰게 하는 나라는 없다: UNESCO 13세 권고, 중국 초등 단독 사용 금지, 싱가포르 P1~3 미사용·P4 교사 감독, 영국 13세 미만 학부모 동의, 한국 보호자 동의+교사 지도, 일본 교사 시연 중심, 에스토니아 생성형 AI 지급은 고교부터.",
+    "공통 규칙 2 — 순서는 '개념·태도 먼저, 도구는 나중': UNESCO 프레임워크 1번 차원이 Human-centred mindset, 핀란드 3세 식별 교육, 인도 초등 펜·종이 기반, AI4K12 5 Big Ideas.",
+    "공통 규칙 3 — 교사(어른) 먼저: 에스토니아 교사 연수 선행, 영국 '교사 활용은 이익 크고 위험 적음', 중국 교사자격시험에 AI 포함.",
+    "한국 특이점 — 세계에서 유일하게 'AI 교과서 전국 일괄 도입'을 시도했다가 1년 내 격하·축소한 나라. 그 결과 제도 공백이 생겨 가정의 역할이 상대적으로 커진 상태."
+  ]
+}

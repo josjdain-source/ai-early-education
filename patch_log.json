@@ -3,6 +3,25 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "홈페이지 전면 개편: 그림책형 교육 랜딩(시안 반영) 13페이지 + 영상관",
+      "changes": [
+        "시안(959f60b6) 반영 그림책형 랜딩: 크림/코랄/둥근카드. styles/main.css 디자인시스템+scripts/main.js",
+        "build_site.py로 13페이지 생성: index/why/world-cases(+5국)/videos/video상세/start-guide/parent-resources/free-kit",
+        "국가 일러스트(scenes/) 재사용, 메인영상=illust-v2 mp4 직접연결(poster+controls, 자동재생X)",
+        "영상관(필터)+영상상세(섹션 타임라인 anchor #china 등)+시작가이드 6단계(멘트/질문/좋은나쁜프롬프트)",
+        "구 index 백업. .gitignore 메인영상 배포예외. sitemap 41→53"
+      ],
+      "verification": {
+        "render": "브라우저 검수: 시안일치·콘솔에러0·영상플레이어 정상",
+        "pages": "13개 200"
+      },
+      "todo_next": [
+        "배포 라이브 검증",
+        "모바일 390 최종확인"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "전 일러스트 영상 디졸브 전환(v1·v2·auto) + 조종판 좌측 맨위 '영상 자동화' 카테고리",
       "changes": [
         "reassemble_dissolve 범용 assemble()로 리팩터. build_illust_video(v1)·_v2 조립을 디졸브로 교체",
