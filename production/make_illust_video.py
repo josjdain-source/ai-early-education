@@ -36,6 +36,7 @@ def plan(topic):
       "과장/공포/특정국 비하 금지. 정직하고 따뜻하게.\n"
       f"아래 JSON 스키마로만 출력:\n{schema}")
     body={"model":OLLAMA_MODEL,"prompt":p,"format":"json","stream":False,
+          "keep_alive":0,   # ★기획 끝나면 즉시 VRAM에서 언로드(SDXL 자리 확보)
           "options":{"temperature":0.7,"num_predict":4096}}
     r=urllib.request.urlopen(urllib.request.Request(OLLAMA+"/api/generate",
         data=json.dumps(body).encode(),headers={"Content-Type":"application/json"}),timeout=300)

@@ -1,0 +1,113 @@
+{
+  "topic": "아이가 챗봇과 대화할 때 부모가 알아야 할 것",
+  "sections": [
+    {
+      "title": "챗봇과 대화하는 아이",
+      "narration": "요즘 아이들은 스마트폰으로 재밌는 애플리케이션들을 사용하는데, 특히 챗봇이라는 AI 친구들과 대화하는 것을 좋아해요. 하지만 부모님께서는 아이가 챗봇과 이야기를 나누고 있을 때 어떤 점에 유의해야 할지 알고 계신가요?",
+      "beats": [
+        {
+          "prompt": "A child sits cross-legged on the floor, holding a tablet with a bright, colorful chat interface.",
+          "caption": "아이는 태블릿으로 챗봇 친구와 대화 중"
+        },
+        {
+          "prompt": "A child sits cross-legged on the floor, holding a tablet with a bright, colorful chat interface.",
+          "caption": "아이는 태블릿으로 챗봇 친구와 대화 중"
+        },
+        {
+          "prompt": "A child sits cross-legged on the floor, holding a tablet with a bright, colorful chat interface.",
+          "caption": "아이는 태블릿으로 챗봇 친구와 대화 중"
+        }
+      ]
+    },
+    {
+      "title": "대화의 주제 확인하기",
+      "narration": "먼저 아이가 챗봇과 어떤 주제로 대화하고 있는지 알아보는 게 중요해요. 흥미로운 이야기부터 지식을 배우는 내용까지 다양하게 대화할 수 있죠.",
+      "beats": [
+        {
+          "prompt": "A child and a cartoon chatbot avatar, each with speech bubbles, are engaged in a lively conversation about outer space.",
+          "caption": "아이와 챗봇은 우주에 대해 대화 중"
+        },
+        {
+          "prompt": "A child looks thoughtfully at their tablet, then smiles as they type a response to the chatbot.",
+          "caption": "아이는 생각하며 챗봇에게 대답"
+        },
+        {
+          "prompt": "A child looks thoughtfully at their tablet, then smiles as they type a response to the chatbot.",
+          "caption": "아이는 생각하며 챗봇에게 대답"
+        }
+      ]
+    },
+    {
+      "title": "정보의 신뢰성 살펴보기",
+      "narration": "하지만 챗봇이 제공하는 모든 정보가 항상 정확한 것은 아니에요. 아이와 함께 정보를 비교하고 검증해 보세요.",
+      "beats": [
+        {
+          "prompt": "A child holds a book open, comparing the information on the page with what's displayed on their tablet screen.",
+          "caption": "아이는 책과 태블릿의 내용을 비교"
+        },
+        {
+          "prompt": "A child holds a book open, comparing the information on the page with what's displayed on their tablet screen.",
+          "caption": "아이는 책과 태블릿의 내용을 비교"
+        },
+        {
+          "prompt": "A child holds a book open, comparing the information on the page with what's displayed on their tablet screen.",
+          "caption": "아이는 책과 태블릿의 내용을 비교"
+        }
+      ]
+    },
+    {
+      "title": "대화 능력 향상",
+      "narration": "챗봇과 대화하면서 아이가 자신의 생각을 정리하고 표현하는 능력을 키울 수 있어요. 그렇지만, 실제 사람들과의 소통도 중요하니까 적절한 시간 분배를 해주는 것이 좋아요.",
+      "beats": [
+        {
+          "prompt": "A child stands on a stage, presenting their ideas to an audience of smiling faces.",
+          "caption": "아이는 다른 친구들에게 자신의 생각을 말하는 중"
+        },
+        {
+          "prompt": "A child sits at a dinner table with their family, laughing and talking during a meal.",
+          "caption": "아이는 가족과 함께 식사하며 이야기를 나누고 있다"
+        },
+        {
+          "prompt": "A child sits at a dinner table with their family, laughing and talking during a meal.",
+          "caption": "아이는 가족과 함께 식사하며 이야기를 나누고 있다"
+        }
+      ]
+    },
+    {
+      "title": "온라인 안전 교육",
+      "narration": "챗봇과 대화할 때 개인정보를 공유하지 않도록 주의해야 해요. 아이에게 온라인 환경에서의 안전 수칙을 알려주는 것이 중요해요.",
+      "beats": [
+        {
+          "prompt": "A parent and child sit together, looking at a computer screen with safety tips displayed on it.",
+          "caption": "부모님은 아이와 함께 인터넷 사용 규칙을 배우고 있다"
+        },
+        {
+          "prompt": "A parent and child sit together, looking at a computer screen with safety tips displayed on it.",
+          "caption": "부모님은 아이와 함께 인터넷 사용 규칙을 배우고 있다"
+        },
+        {
+          "prompt": "A parent and child sit together, looking at a computer screen with safety tips displayed on it.",
+          "caption": "부모님은 아이와 함께 인터넷 사용 규칙을 배우고 있다"
+        }
+      ]
+    },
+    {
+      "title": "오늘 부모가 할 일",
+      "narration": "아이가 새로운 기술과 친구들을 통해 더욱 성장하고 즐거운 시간을 보낼 수 있도록 부모님의 사랑과 관심이 필요해요.",
+      "beats": [
+        {
+          "prompt": "A parent sits beside their child, listening attentively as the child talks about their experience using a chatbot.",
+          "caption": "부모님은 아이의 챗봇 경험에 관심을 가져주고 있다"
+        },
+        {
+          "prompt": "A parent smiles warmly at their child, offering encouragement and support.",
+          "caption": "부모님은 아이를 응원하며 따뜻한 미소를 지었다"
+        },
+        {
+          "prompt": "A parent smiles warmly at their child, offering encouragement and support.",
+          "caption": "부모님은 아이를 응원하며 따뜻한 미소를 지었다"
+        }
+      ]
+    }
+  ]
+}

@@ -3,6 +3,25 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "무인 양산기로 '챗봇 대화 부모 가이드' 영상 생성+조종판 자동등록. VRAM버그 수정",
+      "changes": [
+        "스킬 make-illust-video 발동→ '아이가 챗봇과 대화할 때 부모가 알아야 할 것' 45.8초 영상 자동생성(6섹션·18컷)",
+        "★버그수정: 기획 LLM(gemma2)이 VRAM 점유해 SDXL 멈춤→plan()에 keep_alive=0 추가(기획후 즉시 언로드). ComfyUI 큐정리+Ollama언로드로 VRAM 1.1→7.1GB 복구",
+        "조종판 _load_today_video: auto-*.mp4 최신순 자동감지(glob)로 변경→앞으로 만든 영상 코드수정 없이 자동 노출",
+        "산출 auto-topic-0704-0929.mp4(챗봇 시대·오류경고·함께관찰·애정표현 6컷)"
+      ],
+      "verification": {
+        "video": "45.8s 1280x720, 6컷 주제일치·톤일관",
+        "panel": "auto 자동감지 등록 확인",
+        "fix": "VRAM 언로드로 재현 방지"
+      },
+      "todo_next": [
+        "캐릭터 일관성",
+        "BGM"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "영상 자동생성기 조종판 왼쪽 맨위 등록 + Claude 스킬 저장",
       "changes": [
         "통합조종판 projects.json 맨위[0]에 🎬 영상 자동 생성기(주제→영상) 등록. 액션3(주제넣고생성/설명서/폴더)",
