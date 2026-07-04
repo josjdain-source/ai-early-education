@@ -311,6 +311,31 @@
       "created_at": "2026-07-05",
       "updated_at": "auto",
       "notes": "비평(고발) 쇼츠. 다크 시네마틱+남성 연설 보이스. 110초. 공개는 사람."
+    },
+    {
+      "video_id": "korea-lost-decade-v2",
+      "title": "한국의 잃어버린 AI 10년, 너무 뼈아프다 #Shorts",
+      "description": "2016년, 알파고가 이세돌을 이긴 곳은 중국이 아니라 서울이었습니다. AI 시대의 경고음은 한국 한복판에서 울렸죠.\n하지만 중국은 그 경고를 국가 전략과 학교 교육, 대학 전공, 기업 산업으로 연결했습니다. 그 사이 한국은?\n\n우리 아이는 AI를 소비할 겁니까, AI로 자기 일을 만들 겁니까?\n지금 아이에게 필요한 건 AI를 보는 힘이 아니라, AI로 자기 일을 만드는 힘입니다.\n\n▶ 부모용 자료: https://ai-early-education.pages.dev/\n\n#Shorts #AI교육 #잃어버린AI10년 #알파고 #부모교육",
+      "tags": [
+        "Shorts",
+        "AI교육",
+        "잃어버린AI10년",
+        "알파고",
+        "부모교육",
+        "AI리터러시",
+        "미래교육"
+      ],
+      "category": "27",
+      "mp4_path": "assets/korea-lost-decade/render/shorts/korea-lost-decade-v2.mp4",
+      "thumbnail_path": "assets/korea-lost-decade/poster/v2.jpg",
+      "status": "uploaded_private",
+      "visibility_target": "private",
+      "shorts": true,
+      "youtube_url": "https://youtu.be/sauGPrz_S6Q",
+      "on_video_hub": false,
+      "created_at": "2026-07-05",
+      "updated_at": "auto",
+      "notes": "격정 압축판 67초. 문장별 pause/속도/음량+단어슬램+화면흔들림+붐/타격 SFX+침묵. v1(110초)은 보존."
     }
   ]
 }
