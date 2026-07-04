@@ -1,0 +1,14 @@
+{
+  "_comment": "영상 스튜디오 카테고리 = 우리가 관리하는 채널/사이트. aiclassroom=upload_queue(리치 데이터), 나머지=폴더 스캔(*.mp4). globs는 절대경로, ** 재귀.",
+  "channels": [
+    {"id": "aiclassroom", "name": "아이와 AI교실", "icon": "🎓", "source": "queue"},
+    {"id": "monster", "name": "괴물채널 @kslm222", "icon": "👾", "source": "folder",
+     "globs": ["C:/Users/admin/Desktop/content-channel-os/pack_assets/*/final/*.mp4", "C:/Users/admin/Desktop/content-channel-os/*/output/*.mp4", "C:/Users/admin/Desktop/content-channel-os/**/render/*.mp4"]},
+    {"id": "igs", "name": "IGS 방송·쇼츠", "icon": "📈", "source": "folder",
+     "globs": ["C:/Users/admin/Desktop/유튜브쇼츠/**/output/*.mp4", "C:/Users/admin/Desktop/유튜브쇼츠/**/render/*.mp4"]},
+    {"id": "capcut", "name": "캡컷 편집본", "icon": "✂️", "source": "folder",
+     "globs": ["C:/Users/admin/Desktop/캡컷에이전트/**/*.mp4"]},
+    {"id": "altlife", "name": "대체인생", "icon": "🌱", "source": "folder",
+     "globs": ["C:/Users/admin/Desktop/대체인생/**/*.mp4"]}
+  ]
+}

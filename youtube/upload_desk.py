@@ -121,6 +121,38 @@ def do_rebuild():
         return {"ok":r.returncode==0,"out":(r.stdout or r.stderr)[-300:]}
     except Exception as e: return {"ok":False,"error":str(e)}
 
+FPB="C:/Users/admin/Desktop/ffmpeg-8.1.1-essentials_build/bin/ffprobe.exe"; DESKTOP=os.path.dirname(REPO)
+try: CHANNELS=json.load(open(os.path.join(HERE,"channels_config.json"),encoding="utf-8"))["channels"]
+except Exception: CHANNELS=[{"id":"aiclassroom","name":"아이와 AI교실","icon":"🎓","source":"queue"}]
+_dc={}
+def _dur(fp):
+    if fp in _dc: return _dc[fp]
+    try: d=round(float(subprocess.run([FPB,"-v","error","-show_entries","format=duration","-of","default=nk=1:nw=1",fp],capture_output=True,text=True).stdout.strip() or 0),1)
+    except Exception: d=None
+    _dc[fp]=d; return d
+def channel_videos(ch):
+    nowts=datetime.now().timestamp()
+    if ch.get("source")=="queue":
+        eids=embedded_ids(); items=[enrich(it,eids) for it in load_q()["queue"]]
+        for it in items:
+            fp=ap(it.get("mp4_path","")); ts=os.path.getmtime(fp) if os.path.exists(fp) else None
+            it["age_h"]=round((nowts-ts)/3600,1) if ts else 9999
+        return items
+    out=[]; seen=set()
+    for g in ch.get("globs",[]):
+        for fp in glob.glob(g,recursive=True):
+            fp=os.path.normpath(fp)
+            if fp in seen or not fp.lower().endswith(".mp4"): continue
+            seen.add(fp)
+            try: mt=os.path.getmtime(fp); sz=os.path.getsize(fp)
+            except Exception: continue
+            out.append({"video_id":fp,"title":os.path.basename(fp),"video_type":"short","subtype":"","status":"local",
+              "upload_status":"local","public_status":"","mp4_path":fp,"thumbnail_path":"","local_exists":True,
+              "duration":_dur(fp),"size":sz,"created_at":datetime.fromtimestamp(mt).strftime("%Y-%m-%d %H:%M"),
+              "age_h":round((nowts-mt)/3600,1),"youtube_id":"","youtube_url":"","studio_url":"","page_url":"",
+              "homepage_status":"none","country":"","folder":os.path.dirname(fp)})
+    out.sort(key=lambda x:x.get("created_at",""),reverse=True); return out
+
 HTML=open(os.path.join(HERE,"_studio.html"),encoding="utf-8").read() if os.path.exists(os.path.join(HERE,"_studio.html")) else "STUDIO_HTML_PLACEHOLDER"
 
 class H(BaseHTTPRequestHandler):
@@ -135,9 +167,12 @@ class H(BaseHTTPRequestHandler):
     def do_GET(self):
         u=urllib.parse.urlparse(self.path); qs=urllib.parse.parse_qs(u.query)
         if u.path=="/": self._send(200,"text/html; charset=utf-8",HTML.encode())
+        elif u.path=="/api/channels":
+            self._j({"channels":[{"id":c["id"],"name":c["name"],"icon":c.get("icon","📺"),"source":c.get("source")} for c in CHANNELS]})
         elif u.path=="/api/videos":
-            eids=embedded_ids(); items=[enrich(it,eids) for it in load_q()["queue"]]
-            self._j({"videos":items,"summary":summary(items)})
+            chid=qs.get("channel",["aiclassroom"])[0]; ch=next((c for c in CHANNELS if c["id"]==chid),CHANNELS[0])
+            items=channel_videos(ch)
+            self._j({"videos":items,"summary":summary(items),"channel":chid,"source":ch.get("source")})
         elif u.path=="/api/meta":
             vid=qs.get("id",[""])[0]; it=next((x for x in load_q()["queue"] if x["video_id"]==vid),{})
             self._j(it)
@@ -147,7 +182,10 @@ class H(BaseHTTPRequestHandler):
                 self._send(200,mimetypes.guess_type(fp)[0] or "image/jpeg",open(fp,"rb").read())
             else: self._send(404,"text/plain",b"no")
         elif u.path=="/video":
-            vid=qs.get("id",[""])[0]; it=next((x for x in load_q()["queue"] if x["video_id"]==vid),None)
+            vid=qs.get("id",[""])[0]
+            if os.path.isabs(vid) and os.path.exists(vid) and os.path.realpath(vid).startswith(os.path.realpath(DESKTOP)):
+                return self._serve_range(vid)
+            it=next((x for x in load_q()["queue"] if x["video_id"]==vid),None)
             fp=ap(it.get("mp4_path","")) if it else ""
             if not (it and os.path.exists(fp)): return self._send(404,"text/plain",b"no")
             self._serve_range(fp)
