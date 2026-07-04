@@ -101,7 +101,7 @@ def china_page():
 <div><h3>다음 편도 같은 구조로</h3><p>미국·영국·싱가포르·한국 편도 국가별 콘텐츠 패키지로 이어집니다.</p></div>
 <a class="btn" href="/world-cases.html">세계 사례 전체 보기</a></div></div></section>
 </main>"""
-    return BS.page("cases","","중국은 왜 초등학생에게 AI를 가르치기 시작했나 | AI 조기교육",
+    return BS.page("cases","../","중국은 왜 초등학생에게 AI를 가르치기 시작했나 | AI 조기교육",
         "2017 국가 AI 전략에서 2035 교육강국까지 — 중국 AI교육을 역사·운영·미래세대 3층으로 본 심층 다큐와 한국 가정의 답.",body)
 
 def china_video_detail():
@@ -121,7 +121,7 @@ def china_video_detail():
 <h2 class="sec-title">이 주제의 쇼츠 5편</h2>
 <div class="grid g5">{scards}</div></div></section>
 </main>"""
-    return BS.page("cases","","{} | 영상".format(lf['title']),lf['subtitle'],body)
+    return BS.page("cases","../","{} | 영상".format(lf['title']),lf['subtitle'],body)
 
 if __name__=="__main__":
     BS.write("world-cases/china.html",china_page())
