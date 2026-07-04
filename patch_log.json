@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "새 유튜브 채널 '아이와 AI교실' 조종판 연결(자동 public 금지)",
+      "changes": [
+        "youtube/channel_config.json(브랜드·정책·기본 private·auto_public false)+upload_queue.json(첫영상 illust-v2 ready_to_upload)",
+        "youtube/manage_channel.py: 상태·매일 체크리스트 + 비공개 업로드 명령 생성(youtube_upload.py 재사용, 실행X). 자동 public 금지",
+        "조종판 projects[1] '📺 아이와 AI교실' 카드+버튼6(상태/대기열/업로드명령/스튜디오/영상관/설정)",
+        "/videos.html 채널 영상관 배너 추가. 새채널 OAuth는 사람이 인증, 공개는 사람 승인"
+      ],
+      "verification": {
+        "queue": "첫영상 ready_to_upload, mp4·썸네일·상세·카드 체크 통과",
+        "safety": "auto_public false, 업로드 private 기본, 명령 생성만"
+      },
+      "todo_next": [
+        "새 채널 계정 OAuth 인증(사람)→비공개 업로드",
+        "채널 URL 확보시 config·videos 링크 연결"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "홈페이지 전면 개편: 그림책형 교육 랜딩(시안 반영) 13페이지 + 영상관",
       "changes": [
         "시안(959f60b6) 반영 그림책형 랜딩: 크림/코랄/둥근카드. styles/main.css 디자인시스템+scripts/main.js",

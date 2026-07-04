@@ -211,9 +211,12 @@ def videos():
 <div class="vmeta"><h4>{t}</h4><p><span class="tag">{cat}</span><span class="tag">난이도 {lv}</span><span class="tag">{who}</span></p></div></a>"""
     cards="".join(vc(*v) for v in vids)
     body=f"""<main>
-<section class="page-hero"><div class="wrap"><div class="pill">AI교육 영상관</div>
+<section class="page-hero"><div class="wrap"><div class="pill">📺 아이와 AI교실 영상관</div>
 <h1>설명형 AI 영상으로 쉽게 배워요</h1>
 <p>세계 사례, 부모 가이드, 아이와 함께하는 실습을 짧은 영상으로 정리했습니다.</p></div></section>
+<section class="block" style="padding-bottom:0"><div class="wrap">
+<div class="cta-band"><div><h3>📺 아이와 AI교실</h3><p>결과물이 아니라 과정이 교육이다 — 아이와 함께 말하고, 보고, 다시 묻는 생성형 AI 교육 채널.</p></div>
+<a class="btn btn-lg" href="/videos/world-ai-education.html">대표 영상 보기 ▶</a></div></div></section>
 <section class="block"><div class="wrap">
 <div class="filters" id="filters">{fil}</div>
 <div class="grid g3" id="vgrid">{cards}</div>

@@ -1,0 +1,23 @@
+{
+  "channel_name": "아이와 AI교실",
+  "brand_message": "결과물이 아니라 과정이 교육이다.",
+  "tagline": "아이와 함께 말하고, 보고, 다시 묻는 생성형 AI 교육.",
+  "description": "아이와 함께 생성형 AI에게 말하고, 보고, 다시 묻는 힘을 기르는 AI교육 채널입니다. AI에게 정답을 빨리 찾는 법보다, 과정에서 사고력을 기르는 데 집중합니다.",
+  "purpose": "부모와 아이가 함께 생성형 AI를 배우는 교육 채널",
+  "roles": ["AI 조기교육 영상 발행", "세계 AI교육 사례 영상 보관", "부모용 가이드 영상 제공", "홈페이지 /videos.html 연결"],
+  "default_visibility": "private",
+  "homepage_url": "https://ai-early-education.pages.dev/",
+  "video_hub_url": "/videos.html",
+  "channel_url": "",
+  "youtube_studio_url": "https://studio.youtube.com/",
+  "categories": ["세계 사례", "부모 가이드", "아이 실습", "프롬프트 훈련"],
+  "default_category_id": "27",
+  "auto_public_publish": false,
+  "policy": {
+    "allow": ["영상 파일 감지", "제목/설명/태그 초안 생성", "썸네일 생성", "upload_queue 등록", "비공개(private/unlisted) 업로드", "홈페이지 영상 카드 추가", "영상 상세 페이지 생성", "성과 기록 준비"],
+    "forbid": ["사람 승인 없는 공개(public) 발행", "댓글 자동 답변", "구독 유도 스팸", "무단 크롤링", "아동 대상 과장 표현", "'AI로 천재 만들기' 류 과장 문구"]
+  },
+  "upload_tool": "C:/Users/admin/Desktop/유튜브쇼츠/동영상제작/youtube_upload.py",
+  "auth_note": "새 채널 OAuth 필요(youtube_upload.py _creds). 채널 오인 방지 가드 있음 → 이 채널 계정으로 최초 1회 인증 후 사용. 인증은 사람이 수행.",
+  "updated_at": "2026-07-04"
+}
