@@ -43,6 +43,11 @@ KOREA5=[
  ("쓰는 법보다 경계를 먼저","중국도 초등 독립 사용을 제한했다. 집에서도 쓰는 법보다 안전한 경계·윤리를 먼저."),
  ("'AI 없이라면?'을 자주","AI가 아이 생각을 대신하지 않도록, 'AI 없이 너라면?'을 자주 묻는다."),
 ]
+EFFECTS=[
+ ("🔎","스스로 확인하는 아이","AI가 준 답을 그대로 믿지 않고, 이상한 부분을 스스로 찾아냅니다. 정답을 받는 아이에서, 정답을 검증하는 아이로."),
+ ("⚖️","스스로 판단하는 아이","AI에 휘둘리지 않고, 여러 답을 비교해 자기 생각으로 결정합니다. AI는 도구, 판단은 내가."),
+ ("🛡️","속지 않는 아이","정보를 의심하고 근거를 확인하는 습관이 몸에 뱁니다. AI 시대에 가짜와 오류에 속지 않는 힘."),
+]
 Q10=["AI가 준 답에서 이상한 부분 하나만 찾아볼까?","이 답이 진짜인지 어떻게 확인할 수 있을까?","AI 없이 너라면 어떻게 했을까?",
  "방금 그건 네가 한 거야, AI가 한 거야?","왜 그렇게 답했는지 AI에게 다시 물어볼까?","이 답을 더 좋게 하려면 뭘 더 물어봐야 할까?",
  "AI도 틀릴 수 있을까? 언제 틀릴까?","이 정보는 어디서 온 걸까?","친구한테 설명한다면 어떻게 말할래?","오늘 AI랑 뭐 했고, 뭘 다시 물어봤어?"]
@@ -51,6 +56,7 @@ def china_page():
     tl="".join(f"""<div class="tl-item"><div class="tl-year">{y}</div><div class="tl-body"><h4>{t}</h4><p>{d} <span class="src">[{s}]</span></p></div></div>""" for y,t,d,s in TIMELINE)
     layers="".join(f"""<div class="card"><div class="lyr-h">{h}<span>{who}</span></div><p>{d}</p></div>""" for h,who,d in LAYERS)
     k5="".join(f"""<div class="card phil"><div class="pic">🏠</div><div><h4>{t}</h4><p>{d}</p></div></div>""" for t,d in KOREA5)
+    eff="".join(f"""<div class="card phil"><div class="pic">{ic}</div><div><h4>{t}</h4><p>{d}</p></div></div>""" for ic,t,d in EFFECTS)
     qs="".join(f"<li>{q}</li>" for q in Q10)
     scards="".join(f"""<a class="card country" href="/videos/china-ai-education.html">
 <div class="thumb" style="aspect-ratio:9/16;max-height:280px">{embed(s['video_id'],s['title'])}</div>
@@ -85,6 +91,11 @@ def china_page():
 <div class="grid g3">{k5}</div></div></section>
 
 <section class="block" style="background:var(--cream2)"><div class="wrap">
+<h2 class="sec-title">그럼, 아이에게 무엇이 생기나</h2>
+<p class="sec-desc">'다시 묻기' 습관 하나가 아이를 바꿉니다. 중국이 국가로 기른 힘을, 우리는 집에서 이렇게 기릅니다.</p>
+<div class="grid g3">{eff}</div></div></section>
+
+<section class="block"><div class="wrap">
 <h2 class="sec-title">부모가 아이와 해볼 질문 10</h2>
 <ol class="qlist">{qs}</ol></div></section>
 

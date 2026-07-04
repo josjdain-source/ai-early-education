@@ -61,7 +61,7 @@
        {"prompt": "four warm pillars with friendly symbols: a head, a hand, a spark, and a heart, for understanding, use, innovation, ethics, no text", "caption": "이해 · 활용 · 혁신 · 윤리", "fact": "f_core_competencies"},
        {"prompt": "a child confidently checking an AI result with a magnifying glass, knowing the limits, warm classroom", "caption": "윤리와 사용 경계를 아는 세대", "fact": "f_ethics_norms"}]},
     {"key": "korea", "title": "한국 가정의 답 · 다시 묻기",
-     "narration": "그럼 한국 가정은 무엇을 할 수 있을까요? 여기서 우리 이야기가 시작됩니다. 중국은 국가 단위로 교과와 시간을 설계합니다. 우리는 그럴 수 없지만, 가정 단위로 아이의 습관을 설계할 수는 있습니다. 중국이 학교 시간표에 AI를 넣는다면, 한국 가정은 아이의 생활 시간표에 다시 묻기를 넣으면 됩니다. 아이가 AI에게 답을 받으면, 그대로 넘어가지 말고 이렇게 물어보세요. 이상한 부분 하나만 찾아볼까? 결국 중국 편이 우리에게 남기는 한 문장은 이겁니다. 중요한 건 AI를 쓰는 게 아니라, 다시 묻고 검증하는 힘입니다.",
+     "narration": "그럼 한국 가정은 무엇을 할 수 있을까요? 여기서 우리 이야기가 시작됩니다. 중국은 국가 단위로 교과와 시간을 설계합니다. 우리는 그럴 수 없지만, 가정 단위로 아이의 습관을 설계할 수는 있습니다. 중국이 학교 시간표에 AI를 넣는다면, 한국 가정은 아이의 생활 시간표에 다시 묻기를 넣으면 됩니다. 아이가 AI에게 답을 받으면, 그대로 넘어가지 말고 이렇게 물어보세요. 이상한 부분 하나만 찾아볼까? 이 작은 습관이 쌓이면, 아이는 달라집니다. AI를 믿기만 하는 아이가 아니라, 스스로 확인하고 다시 묻는 아이가 됩니다. AI에 휘둘리지 않고, 스스로 판단하는 힘을 갖게 되는 거죠. 결국 중국 편이 우리에게 남기는 한 문장은 이겁니다. 중요한 건 AI를 쓰는 게 아니라, 다시 묻고 검증하는 힘입니다.",
      "beats": [
        {"prompt": "a warm Korean home evening, a parent and child looking at an AI screen together, the parent gently asking a question, cozy", "caption": "학교는 국가가, 습관은 가정이", "fact": "f_core_competencies"},
        {"prompt": "a child and parent inspecting an AI answer together with a small magnifying glass, warm home, curious", "caption": "생활 시간표에 '다시 묻기'를", "fact": "f_genai_rules"},

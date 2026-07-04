@@ -13,7 +13,7 @@
       {"role": "parent", "region": "kr", "head": "집에서 설계", "text": "우리는 국가가 아니라, 집에서 설계할 수 있습니다.", "prompt": "a cozy Korean home with a small family schedule on the wall, warm"},
       {"role": "parent", "region": "kr", "head": "생활 시간표에", "text": "아이의 생활 시간표에 '다시 묻기'를 넣으세요.", "prompt": "a Korean home wall schedule with a gentle question mark sticker added, warm"},
       {"role": "parent", "region": "kr", "head": "이상한 부분 찾기", "text": "AI가 답을 주면, '이상한 부분 찾아볼까?' 하고 물어보세요.", "prompt": "a Korean parent and child inspecting an AI answer together with a small magnifying glass, warm"},
-      {"role": "cta", "region": "kr", "head": "질문을 넣는다", "text": "중국은 학교 시간표에, 우리는 생활 시간표에 질문을 넣습니다.", "prompt": "a confident Korean child re-asking a friendly AI a better question, speech bubble with question mark, warm"}]},
+      {"role": "effect", "region": "kr", "head": "그럼 아이는", "text": "그 습관 하나가, AI를 믿기만 하던 아이를 스스로 확인하는 아이로 키웁니다.", "prompt": "a confident Korean child re-asking a friendly AI a better question, speech bubble with question mark, warm"}]},
     {"key": "s2", "title": "중국도 막 안 쓴다, 한국 부모도", "facts": ["f_genai_rules", "f_core_competencies"], "beats": [
       {"role": "hook", "region": "cn", "head": "막 쓰게 안 한다", "text": "중국은 AI를 가르치면서도, 막 쓰게 하지 않습니다.", "prompt": "a Chinese child using an AI tablet inside a soft glowing safe frame, a kind teacher supervising, warm"},
       {"role": "fact", "region": "cn", "head": "초등 독립사용 제한", "text": "초등생이 개방형 생성 AI를 스스로 쓰는 건 제한하고,", "prompt": "a gentle guiding hand beside an open-ended AI machine and a young Chinese child, protective, warm"},
@@ -22,7 +22,7 @@
       {"role": "parent", "region": "kr", "head": "규칙부터", "text": "무조건 쓰게 하기보다, 먼저 사용 규칙을 함께 정하세요.", "prompt": "a Korean parent and child making a small friendly house rule together, warm home"},
       {"role": "parent", "region": "kr", "head": "함께 확인", "text": "AI 답을 받으면, 진짜인지 함께 확인하고,", "prompt": "a Korean parent and child checking an AI answer on a screen together, warm"},
       {"role": "parent", "region": "kr", "head": "되묻기", "text": "'이거 이상한 데 없어?' 하고 되물으세요.", "prompt": "a Korean child pointing at a screen with a question, parent smiling, warm home"},
-      {"role": "cta", "region": "kr", "head": "검증하는 힘", "text": "중국도 우리도, 핵심은 다시 묻고 검증하는 힘입니다.", "prompt": "a confident Korean child holding a magnifying glass over a glowing AI answer, warm bright"}]},
+      {"role": "effect", "region": "kr", "head": "그럼 아이는", "text": "그러면 아이는, AI에 휘둘리지 않고 스스로 판단하는 힘을 얻습니다.", "prompt": "a confident Korean child holding a magnifying glass over a glowing AI answer, warm bright"}]},
     {"key": "s3", "title": "중국은 8년 준비, 한국은 오늘", "facts": ["f_2017_plan", "f_2018_higher_ed", "f_core_competencies"], "beats": [
       {"role": "hook", "region": "cn", "head": "갑툭튀 아니다", "text": "중국의 AI교육은 갑자기 나온 게 아닙니다.", "prompt": "a long warm winding road from a small seed to a big tree, a long national journey, hopeful sunrise"},
       {"role": "fact", "region": "cn", "head": "2017년 시작", "text": "2017년 국가 AI 전략에서 시작해,", "prompt": "a grand friendly national blueprint on a wall planning AI, rising sun, warm, no text"},
@@ -31,6 +31,6 @@
       {"role": "bridge", "region": "kr", "head": "기다릴 필요 없다", "text": "그런데 한국 가정은, 8년을 기다릴 필요가 없습니다.", "prompt": "a warm Korean home in soft morning light, a parent and child ready to start, hopeful"},
       {"role": "parent", "region": "kr", "head": "오늘 시작", "text": "국가 정책을 기다리지 말고, 오늘 집에서 시작하세요.", "prompt": "a Korean parent and child sitting down together with a tablet today, warm cozy start"},
       {"role": "parent", "region": "kr", "head": "질문 하나면", "text": "거창할 것 없습니다. 좋은 질문 하나면 됩니다.", "prompt": "a single gentle glowing question mark between a Korean parent and child, warm home"},
-      {"role": "cta", "region": "kr", "head": "시작은 오늘", "text": "중국은 국가가, 한국은 가정이. 시작은 오늘입니다.", "prompt": "a warm Korean family smiling together at home with soft sunrise, hopeful new start"}]}
+      {"role": "effect", "region": "kr", "head": "그럼 아이는", "text": "그 질문 하나가, AI 시대에 속지 않고 다시 묻는 아이를 만듭니다.", "prompt": "a warm Korean family smiling together at home with soft sunrise, hopeful new start"}]}
   ]
 }
