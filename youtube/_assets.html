@@ -61,6 +61,7 @@ pre{white-space:pre-wrap;background:#f5f5f5;border-radius:8px;padding:12px;font-
 <input class="s" id="fSearch" placeholder="제목 검색…">
 <div class="sp"></div>
 <div class="vm"><button data-v="table" class="on" onclick="setVM('table')">표</button><button data-v="card" onclick="setVM('card')">카드</button><button data-v="thumb" onclick="setVM('thumb')">썸네일</button></div>
+<button class="btn" onclick="detectCands()">🔍 삭제 후보 자동 탐지</button>
 <button class="btn" onclick="load()">↻ 새로고침</button>
 </div>
 <div class="bulk" id="bulk"><b id="bcount">0</b> 선택 ·
@@ -135,6 +136,10 @@ function draw(){
 function setTab(t){TAB=t;draw()}function setVM(v){VM=v;document.querySelectorAll('.vm button').forEach(b=>b.classList.toggle('on',b.dataset.v==v));draw()}
 function sel(id,c){c?SEL.add(id):SEL.delete(id);draw()}function selAll(c){rows().forEach(v=>c?SEL.add(v.id):SEL.delete(v.id));draw()}
 function clearSel(){SEL.clear();draw()}
+async function detectCands(){const r=await (await fetch('/api/detect-candidates',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'})).json();
+  await load();TAB='trash_cand';draw();
+  if(r.count)alert(`삭제 후보 ${r.count}개 발견 (중복·실패·구버전) — '삭제 후보' 탭에 표시했습니다.\n각 항목의 사유는 제목 아래에 표시됩니다. 검토 후 선택 삭제하세요.\n※ 자동 삭제는 하지 않습니다.`);
+  else alert('삭제 후보 없음 — 정리할 중복·실패·구버전이 없습니다.');}
 async function load(){const d=await (await fetch('/api/assets')).json();A=d.assets;SUM=d.summary;
   const projs=[...new Set(A.map(v=>v.project).filter(Boolean))];fProj.innerHTML='<option value="">프로젝트: 전체</option>'+projs.map(p=>`<option>${p}</option>`).join('');draw()}
 async function one(url,body,id){await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...body,id})});SEL.delete(id);load()}

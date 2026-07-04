@@ -197,6 +197,52 @@ def open_folder(aid):
         return {"ok":True}
     except Exception as e: return {"ok":False,"error":str(e)}
 
+def detect_candidates():
+    """중복·실패·구버전 자동 탐지. 삭제 가능(안전)한 것만 후보로. 반환: {id:reason}"""
+    items=index(); cands={}
+    # 1) 같은 제목 영상 그룹 → 최신본(최종본/업로드된 최신) 1개만 남기고 구버전 후보
+    groups={}
+    for it in items:
+        if it["type"]=="video": groups.setdefault(it["title"].strip(),[]).append(it)
+    def verkey(x):
+        m=re.search(r'-v(\d+)', x["path"]); v=int(m.group(1)) if m else 0
+        return (1 if x["is_final"] else 0, 1 if x["youtube_id"] else 0, v, x.get("created_at",""), x["path"])
+    for title,g in groups.items():
+        if len(g)<2: continue
+        keeper=sorted(g,key=verkey)[-1]   # 최종본>업로드됨>높은버전>최신
+        for x in g:
+            if x["id"]==keeper["id"]: continue
+            ok,_=can_delete(x)
+            if ok: cands[x["id"]]=f"구버전 · 최신본 있음(유지: {keeper['path'].split('/')[-1]})"
+    # 2) superseded(대체됨) / failed(실패) 전역
+    for it in items:
+        if it["id"] in cands: continue
+        us=it.get("upload_status","")
+        ok,_=can_delete(it)
+        if not ok: continue
+        if us=="superseded": cands[it["id"]]="대체된 구버전(superseded)"
+        elif us=="failed": cands[it["id"]]="실패 렌더"
+    # 3) 이미지: 홈페이지 미사용 + 같은 폴더 중복 썸네일(옛 버전) — 안전한 것만
+    imgs=[it for it in items if it["type"]=="image" and not it["is_used_by_homepage"]]
+    bygroup={}
+    for it in imgs:
+        base=re.sub(r'-v?\d+(\.\w+)$', r'\1', it["path"]); bygroup.setdefault(base,[]).append(it)
+    for base,g in bygroup.items():
+        if len(g)<2: continue
+        keep=sorted(g,key=lambda x:x.get("created_at",""))[-1]
+        for x in g:
+            if x["id"]!=keep["id"] and x["id"] not in cands:
+                ok,_=can_delete(x)
+                if ok: cands[x["id"]]="중복 의심 썸네일(구버전)"
+    return cands
+def do_detect():
+    c=detect_candidates()
+    with _lock:
+        s=state()
+        for aid,why in c.items(): s["overrides"].setdefault(aid,{}).update({"status":"trash_cand","notes":"삭제후보: "+why})
+        save_state(s)
+    return {"ok":True,"count":len(c),"items":[{"id":k,"reason":v} for k,v in c.items()]}
+
 HTML=open(os.path.join(HERE,"_assets.html"),encoding="utf-8").read() if os.path.exists(os.path.join(HERE,"_assets.html")) else "NO_HTML"
 
 class H(BaseHTTPRequestHandler):
@@ -255,6 +301,7 @@ class H(BaseHTTPRequestHandler):
         elif p=="/api/hold": self._j(set_override(ids,{"status":"hold"}))
         elif p=="/api/mark-trash-cand": self._j(set_override(ids,{"status":"trash_cand"}))
         elif p=="/api/queue-register": self._j(do_queue_register(ids))
+        elif p=="/api/detect-candidates": self._j(do_detect())
         elif p=="/api/open-folder": self._j(open_folder(b.get("id","")))
         else: self._send(404,"text/plain","404")
 
