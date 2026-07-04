@@ -257,7 +257,14 @@ def do_detect():
         save_state(s)
     return {"ok":True,"count":len(c),"items":[{"id":k,"reason":v} for k,v in c.items()]}
 
-HTML=open(os.path.join(HERE,"_assets.html"),encoding="utf-8").read() if os.path.exists(os.path.join(HERE,"_assets.html")) else "NO_HTML"
+def _read(f): return open(os.path.join(HERE,f),encoding="utf-8").read() if os.path.exists(os.path.join(HERE,f)) else "NO_HTML"
+CATALOG_HTML=_read("_catalog.html"); ASSETS_HTML=_read("_assets.html")
+CATALOG=jload(os.path.join(HERE,"systems_catalog.json"),{"groups":[]})
+def run_bat(bat):
+    fp=os.path.join(REPO,bat)
+    if not os.path.exists(fp): return {"ok":False,"error":"파일 없음: "+bat}
+    try: subprocess.Popen(["cmd","/c","start","",fp],cwd=REPO); return {"ok":True}
+    except Exception as e: return {"ok":False,"error":str(e)}
 
 class H(BaseHTTPRequestHandler):
     def log_message(self,*a): pass
@@ -273,7 +280,9 @@ class H(BaseHTTPRequestHandler):
         except Exception: return {}
     def do_GET(self):
         u=urllib.parse.urlparse(self.path); qs=urllib.parse.parse_qs(u.query)
-        if u.path=="/": self._send(200,"text/html; charset=utf-8",HTML)
+        if u.path=="/": self._send(200,"text/html; charset=utf-8",CATALOG_HTML)
+        elif u.path=="/assets": self._send(200,"text/html; charset=utf-8",ASSETS_HTML)
+        elif u.path=="/api/catalog": self._j(CATALOG)
         elif u.path=="/api/assets":
             items=index(); self._j({"assets":items,"summary":summary(items)})
         elif u.path=="/api/trash": self._j({"items":trash()["items"]})
@@ -316,6 +325,7 @@ class H(BaseHTTPRequestHandler):
         elif p=="/api/mark-trash-cand": self._j(set_override(ids,{"status":"trash_cand"}))
         elif p=="/api/queue-register": self._j(do_queue_register(ids))
         elif p=="/api/detect-candidates": self._j(do_detect())
+        elif p=="/api/run": self._j(run_bat(b.get("bat","")))
         elif p=="/api/open-folder": self._j(open_folder(b.get("id","")))
         else: self._send(404,"text/plain","404")
 

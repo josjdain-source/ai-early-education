@@ -1,0 +1,39 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>내가 만든 프로그램 · 시스템 카탈로그</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f9f9f9;color:#0f0f0f;font-family:"Malgun Gothic","Segoe UI",system-ui,sans-serif;font-size:13px}
+header{background:#fff;border-bottom:1px solid #e5e5e5;padding:16px 26px;position:sticky;top:0;z-index:5}
+header h1{margin:0;font-size:20px}header .sub{color:#606060;font-size:12.5px;margin-top:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:20px 26px 70px}
+.group{margin-bottom:26px}.group h2{font-size:15px;margin:0 0 12px;color:#0f0f0f}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.card{background:#fff;border:1px solid #e5e5e5;border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.card .top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.card h3{margin:0;font-size:15px;flex:1;line-height:1.3}
+.st{font-size:11px;font-weight:700;padding:2px 9px;border-radius:8px;background:#e6f4ea;color:#188038;white-space:nowrap}
+.card .desc{color:#3c4043;font-size:12.5px;line-height:1.55;flex:1}
+.card .tech{color:#8b93a3;font-size:11.5px;margin-top:10px;padding-top:9px;border-top:1px solid #f0f0f0}
+.card .act{margin-top:11px;display:flex;gap:7px}
+.open{background:#065fd4;color:#fff;border:0;border-radius:8px;padding:8px 15px;font-weight:700;cursor:pointer;font-size:12.5px;text-decoration:none;display:inline-block}
+.open:hover{background:#0b57c9}.open.run{background:#188038}.open.run:hover{background:#137333}
+.msg{font-size:11px;color:#188038;margin-top:6px}
+</style></head><body>
+<header><h1>🗂 내가 만든 프로그램 · 시스템</h1>
+<div class="sub">우리가 함께 만든 최종 시스템/프로그램을 설명과 함께 모았습니다. [열기]로 바로 실행/이동. · 영상·파일 관리는 <a href="http://127.0.0.1:8971/" target="_blank">🎬 영상 스튜디오(8971)</a>에서.</div></header>
+<div class="wrap" id="wrap"></div>
+<script>
+async function load(){const d=await (await fetch('/api/catalog')).json();
+  document.getElementById('wrap').innerHTML=d.groups.map(g=>`<div class="group"><h2>${g.name}</h2><div class="grid">${g.items.map(card).join('')}</div></div>`).join('');}
+function card(it){
+  let btn='';
+  if(it.url)btn=`<a class="open" href="${it.url}" target="_blank">열기 ↗</a>`;
+  else if(it.bat)btn=`<button class="open run" onclick="run(this,'${encodeURIComponent(it.bat)}')">▶ 실행</button>`;
+  return `<div class="card"><div class="top"><h3>${esc(it.name)}</h3><span class="st">${esc(it.status||'')}</span></div>
+  <div class="desc">${esc(it.desc||'')}</div>${it.tech?`<div class="tech">🔧 ${esc(it.tech)}</div>`:''}
+  <div class="act">${btn}</div><div class="msg" id="m_${hash(it.name)}"></div></div>`;
+}
+function hash(s){let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))&0xffffff;return h}
+function esc(s){return (s||"").replace(/[<>&]/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;"}[c]))}
+async function run(btn,bat){btn.disabled=true;const r=await (await fetch('/api/run',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({bat:decodeURIComponent(bat)})})).json();
+  btn.disabled=false;alert(r.ok?'실행했습니다 — 새 창을 확인하세요.':'실행 실패: '+(r.error||''));}
+load();
+</script></body></html>
