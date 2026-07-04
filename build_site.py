@@ -8,6 +8,7 @@ SCENE="assets/world-ai-education-5min/illust/scenes"
 RENDER="assets/world-ai-education-5min/render"
 POSTER="assets/world-ai-education-5min/poster"
 VIDEO_MAIN=f"{RENDER}/world-ai-education-illust-v2.mp4"
+YT_MAIN="lY9B2t1k1Io"   # 유튜브 임베드(로컬 mp4는 1일 뒤 자동삭제 → 유튜브가 원본)
 NAV=[("홈","/","home"),("왜 필요한가","/why-ai-education.html","why"),("세계 사례","/world-cases.html","cases"),
      ("시작 가이드","/start-guide.html","start"),("영상","/videos.html","videos"),("부모용 자료","/parent-resources.html","res")]
 
@@ -233,8 +234,7 @@ def video_detail():
     body=f"""<main>
 <section class="block" style="padding-top:28px"><div class="wrap">
 <div class="crumb"><a href="/videos.html">영상관</a> › 세계 AI교육</div>
-<div class="player"><video controls preload="metadata" poster="/{POSTER}/world-ai-education-v2.jpg">
-<source src="/{VIDEO_MAIN}" type="video/mp4">브라우저가 영상을 지원하지 않습니다.</video></div>
+<div class="player"><iframe src="https://www.youtube.com/embed/{YT_MAIN}" title="세계 5개국 AI교육" loading="lazy" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 <h1 style="margin-top:22px">세계 5개국은 아이에게 AI를 어떻게 가르치나</h1>
 <p style="max-width:760px;color:var(--navy2)">중국·미국·영국·싱가포르·한국의 AI교육 흐름을 부모 눈높이로 2분 41초에 정리했습니다. 방식은 달라도 공통점은 하나 — 정답이 아니라 다시 묻는 힘.</p>
 <div class="grid g3" style="margin:22px 0">

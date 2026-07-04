@@ -3,6 +3,25 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "영상 스토리지 전략: 유튜브 임베드+로컬 1일후 자동삭제",
+      "changes": [
+        "홈페이지 영상상세=유튜브 임베드(lY9B2t1k1Io)로 전환. 로컬 mp4 배포/커밋 제외(git rm --cached, 재 gitignore)",
+        "youtube/cleanup_local_videos.py: 유튜브 백업+1일경과 렌더 mp4 자동삭제(안전:url없으면 삭제X, --dry)",
+        "매일 04:00 예약작업 AICraftKids_VideoCleanup 등록(run_cleanup.bat)",
+        "효과: 로컬 용량 안늘고 영상은 유튜브에 계속 축적"
+      ],
+      "verification": {
+        "embed": "videos/world-ai-education.html youtube/embed 확인",
+        "cleanup": "dry-run 0삭제(1일미만 보존) 안전",
+        "task": "예약 등록"
+      },
+      "todo_next": [
+        "영상 공개는 사람",
+        "새 영상마다 큐 등록+임베드 갱신"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "세로 쇼츠 신버전(short-v2, 일러스트+디졸브) 제작+비공개 업로드",
       "changes": [
         "옛 short-v1(뉴스클립+지진줌)→short-v2(일러스트 장면+디졸브) 재제작. build_short.py CLIP=illust scenes, 조립=xfade",
