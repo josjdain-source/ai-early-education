@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "전 일러스트 영상 디졸브 전환(v1·v2·auto) + 조종판 좌측 맨위 '영상 자동화' 카테고리",
+      "changes": [
+        "reassemble_dissolve 범용 assemble()로 리팩터. build_illust_video(v1)·_v2 조립을 디졸브로 교체",
+        "v1(8컷 3:28)·v2(24컷 2:41) 이미지 재사용해 재생성 없이 디졸브 재조립. 챗봇 auto도 디졸브",
+        "낡은 zoompan auto 데모(AI-0809) 삭제. 조종판 today_video는 챗봇 디졸브본만",
+        "조종판 projects[0]=⭐영상 자동화 시스템, category '🎬 영상 자동화'(맨위·배열순 렌더 확인)"
+      ],
+      "verification": {
+        "dissolve": "v1/v2/auto 전부 정적+크로스페이드, 지진 제거",
+        "panel": "[0]번 맨위 확인"
+      },
+      "todo_next": [
+        "뉴스형(draft-v3/short)은 별도 스타일-원하면 전환",
+        "BGM/캐릭터 일관성"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "영상 모션 zoompan(지진 지터)→정적+크로스페이드 디졸브로 교체(사용자 선택)",
       "changes": [
         "사용자 '흔드는 느낌=지진 같다' → 잔잔한 디졸브 선택. zoompan 제거",

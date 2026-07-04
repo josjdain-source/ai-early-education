@@ -96,23 +96,17 @@ def segment(illust,ovl,d,out):
       "-filter_complex",f"[0:v]scale=1400:800,zoompan=z='min(zoom+0.0008,1.06)':d={int(d*30)}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1280x720:fps=30[bg];[bg][1:v]overlay=0:0,format=yuv420p",
       "-c:v","libx264","-preset","veryfast","-crf","20","-r","30",out])
 if __name__=="__main__":
-    segs=[]; auds=[]
+    import reassemble_dissolve as RD
+    beats_all=[]; auds=[]
     for key,title,accent,beats in SEC:
-        # 1.3배속 섹션 오디오
         sa=f"{TMP}/aud/{key}.mp3"; run([FF,"-hide_banner","-loglevel","error","-y","-i",f"{AUD}/{key}.mp3","-filter:a",f"atempo={SPEED}",sa])
         sd=dur(sa); auds.append(sa); per=sd/len(beats)
         for subfile,seed,scene,cap in beats:
             ip=f"{ILL}/{subfile}.png"
             if scene and not os.path.exists(ip): print("  gen",subfile); sdxl(scene,seed,ip)
             op=f"{OVL}/v2_{subfile}.png"; overlay_png(title,cap,op)
-            sp=f"{TMP}/seg/{subfile}.mp4"; segment(ip,op,per,sp); segs.append(sp)
+            beats_all.append((ip,op,per))
         print(" sec",key,round(sd,2),"s ·",len(beats),"컷")
-    vl=f"{TMP}/vlist.txt"; open(vl,"w",encoding="utf-8").write("\n".join(f"file '{s}'" for s in segs))
-    run([FF,"-hide_banner","-loglevel","error","-y","-f","concat","-safe","0","-i",vl,"-c:v","libx264","-preset","veryfast","-crf","20","-r","30",f"{TMP}/video.mp4"])
-    al=f"{TMP}/alist.txt"; open(al,"w",encoding="utf-8").write("\n".join(f"file '{a}'" for a in auds))
-    run([FF,"-hide_banner","-loglevel","error","-y","-f","concat","-safe","0","-i",al,"-c","copy",f"{TMP}/audio.mp3"])
     out=f"{A}/render/world-ai-education-illust-v2.mp4"
-    run([FF,"-hide_banner","-loglevel","error","-y","-i",f"{TMP}/video.mp4","-i",f"{TMP}/audio.mp3",
-      "-filter_complex","[0:v]tpad=stop_mode=clone:stop_duration=1.5[v];[1:a]apad=pad_dur=1.5[a]",
-      "-map","[v]","-map","[a]","-c:v","libx264","-preset","medium","-crf","21","-c:a","aac","-b:a","192k","-shortest",out])
-    print("illust-v2:",dur(out),"s ->",out)
+    RD.assemble(beats_all, auds, out, f"{TMP}/dtmp")  # 정적+디졸브(지진 제거)
+    print("illust-v2 (dissolve):",dur(out),"s ->",out)

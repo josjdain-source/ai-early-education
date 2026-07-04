@@ -85,20 +85,14 @@ def segment(illust,ovl,d,out):
       "-c:v","libx264","-preset","veryfast","-crf","20","-r","30",out])
 
 if __name__=="__main__":
-    segs=[]
+    import reassemble_dissolve as RD
+    beats=[]; auds=[]
     for key,seed,scene,accent,title,cap in CONS:
         ip=f"{ILL}/{key}.png"
         if not os.path.exists(ip): print(" gen",key,"..."); sdxl(scene,seed,ip)
         op=f"{OVL}/{key}.png"; overlay_png(accent,title,cap,op)
-        d=dur(f"{AUD}/{key}.mp3"); sp=f"{TMP}/seg/{key}.mp4"; segment(ip,op,d,sp); segs.append(sp)
+        d=dur(f"{AUD}/{key}.mp3"); beats.append((ip,op,d)); auds.append(f"{AUD}/{key}.mp3")
         print(" seg",key,round(d,2),"s")
-    # concat video
-    vl=f"{TMP}/vlist.txt"; open(vl,"w",encoding="utf-8").write("\n".join(f"file '{s}'" for s in segs))
-    run([FF,"-hide_banner","-loglevel","error","-y","-f","concat","-safe","0","-i",vl,"-c:v","libx264","-preset","veryfast","-crf","20","-r","30",f"{TMP}/video.mp4"])
-    al=f"{TMP}/alist.txt"; open(al,"w",encoding="utf-8").write("\n".join(f"file '{AUD}/{k}.mp3'" for k,*_ in CONS))
-    run([FF,"-hide_banner","-loglevel","error","-y","-f","concat","-safe","0","-i",al,"-c","copy",f"{TMP}/audio.mp3"])
     out=f"{A}/render/world-ai-education-illust-v1.mp4"
-    run([FF,"-hide_banner","-loglevel","error","-y","-i",f"{TMP}/video.mp4","-i",f"{TMP}/audio.mp3",
-      "-filter_complex","[0:v]tpad=stop_mode=clone:stop_duration=2[v];[1:a]apad=pad_dur=2[a]",
-      "-map","[v]","-map","[a]","-c:v","libx264","-preset","medium","-crf","21","-c:a","aac","-b:a","192k","-shortest",out])
-    print("illust-v1:",dur(out),"s ->",out)
+    RD.assemble(beats, auds, out, f"{TMP}/dtmp")  # 정적+디졸브(지진 제거)
+    print("illust-v1 (dissolve):",dur(out),"s ->",out)
