@@ -17,7 +17,7 @@ PACE=json.load(open(f"{HERE}/speech_pacing.json",encoding="utf-8"))
 opt=VP["test_options"][PROF]; ENGINE=opt["engine"]; VOICE=opt["voice"]; RAGE=opt["rage"]; EMO=VP["emotion_dsp"]
 ST_PY=VP["engines"]["supertonic"]["py"]; ST_CLI=VP["engines"]["supertonic"]["cli"]
 T=f"{A}/v3tmp_{PROF}"; os.makedirs(T,exist_ok=True); os.makedirs(CMP,exist_ok=True)
-SPEEDFIX=1.12  # 전체 길이 보정(피치 유지)
+SPEEDFIX=1.12 if ENGINE=="edge" else 0.88  # Supertonic은 빨라서 느리게(70초)
 def F(s):
     try: return ImageFont.truetype(KB,s)
     except Exception: return ImageFont.load_default()

@@ -3,6 +3,24 @@
   "entries": [
     {
       "date": "2026-07-05",
+      "title": "잃어버린AI10년 최종 v3: Supertonic M4 분노보이스+대국장면",
+      "changes": [
+        "사용자 픽=C(분노최대)/M4. SPEEDFIX 엔진별(Supertonic 0.88)로 70.4초 맞춤",
+        "배경에 이세돌vs알파고 대국장면 추가(한국기사 뒷모습+AI스크린, 바둑판 클로즈업 — 실존얼굴 없음)",
+        "최종 v3 비공개 업로드. v1(110s)/v2(67s)는 구버전 보존"
+      ],
+      "verification": {
+        "length": "70.4s",
+        "voice": "Supertonic M4 climax DSP",
+        "image": "대국장면"
+      },
+      "todo_next": [
+        "공개 승인(사람)",
+        "구버전 정리"
+      ]
+    },
+    {
+      "date": "2026-07-05",
       "title": "격정 보이스 자동생성 시스템(v3)+3안 비교",
       "changes": [
         "voice_engine 분리: edge-tts(InJoon/Hyunsu)+★Supertonic3 로컬(M1~M5 남성5종,속도0.7~2.0) 정찰·검증",

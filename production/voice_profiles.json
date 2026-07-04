@@ -5,26 +5,87 @@
     "gender": "male",
     "age": "50s",
     "tone": "국민에게 따지는 격정 연설",
-    "style": ["분노", "침묵", "반복", "질문", "고조"],
+    "style": [
+      "분노",
+      "침묵",
+      "반복",
+      "질문",
+      "고조"
+    ],
     "forbidden": "특정 실존 인물 성대모사 금지(노무현 등). 일반 남성 나레이터 보이스에 DSP만 적용."
   },
   "engines": {
-    "edge":       {"type": "edge-tts",   "voices": ["ko-KR-InJoonNeural", "ko-KR-HyunsuMultilingualNeural"]},
-    "supertonic": {"type": "local-cli",  "voices": ["M1", "M2", "M3", "M4", "M5"],
+    "edge": {
+      "type": "edge-tts",
+      "voices": [
+        "ko-KR-InJoonNeural",
+        "ko-KR-HyunsuMultilingualNeural"
+      ]
+    },
+    "supertonic": {
+      "type": "local-cli",
+      "voices": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5"
+      ],
       "cli": "C:/Users/admin/Desktop/유튜브쇼츠/영상자동생성기/supertonic3-local-tts-20260520-r2/supertonic3-local-tts/src/supertonic3_cli.py",
-      "py":  "C:/Users/admin/Desktop/유튜브쇼츠/영상자동생성기/supertonic3-local-tts-20260520-r2/supertonic3-local-tts/.venv-win/Scripts/python.exe"}
+      "py": "C:/Users/admin/Desktop/유튜브쇼츠/영상자동생성기/supertonic3-local-tts-20260520-r2/supertonic3-local-tts/.venv-win/Scripts/python.exe"
+    }
   },
   "test_options": {
-    "A": {"label": "InJoon 강화판(현재)",     "engine": "edge",       "voice": "ko-KR-InJoonNeural", "rage": 0.6},
-    "B": {"label": "더 낮고 느린 연설판",       "engine": "supertonic", "voice": "M3",                 "rage": 0.85},
-    "C": {"label": "분노/고조 최대판",          "engine": "supertonic", "voice": "M3",                 "rage": 1.25}
+    "A": {
+      "label": "InJoon 강화판(현재)",
+      "engine": "edge",
+      "voice": "ko-KR-InJoonNeural",
+      "rage": 0.6
+    },
+    "B": {
+      "label": "더 낮고 느린 연설판",
+      "engine": "supertonic",
+      "voice": "M3",
+      "rage": 0.85
+    },
+    "C": {
+      "label": "분노/고조 최대판",
+      "engine": "supertonic",
+      "voice": "M4",
+      "rage": 1.25
+    }
   },
   "emotion_dsp": {
     "_comment": "문장 emotion+intens(1~5)+전체 rage로 DSP 결정. pitch(반음↓), speed(atempo 추가배속), gain, sat(그릿/새츄레이션 0~1).",
-    "calm":       {"pitch": -1, "speed": 1.00, "gain": 1.00, "sat": 0.00},
-    "accusation": {"pitch": -2, "speed": 1.04, "gain": 1.15, "sat": 0.10},
-    "anger":      {"pitch": -3, "speed": 1.08, "gain": 1.30, "sat": 0.30},
-    "climax":     {"pitch": -3, "speed": 0.98, "gain": 1.50, "sat": 0.45},
-    "silence":    {"pitch": -2, "speed": 1.00, "gain": 0.95, "sat": 0.00}
+    "calm": {
+      "pitch": -1,
+      "speed": 1.0,
+      "gain": 1.0,
+      "sat": 0.0
+    },
+    "accusation": {
+      "pitch": -2,
+      "speed": 1.04,
+      "gain": 1.15,
+      "sat": 0.1
+    },
+    "anger": {
+      "pitch": -3,
+      "speed": 1.08,
+      "gain": 1.3,
+      "sat": 0.3
+    },
+    "climax": {
+      "pitch": -3,
+      "speed": 0.98,
+      "gain": 1.5,
+      "sat": 0.45
+    },
+    "silence": {
+      "pitch": -2,
+      "speed": 1.0,
+      "gain": 0.95,
+      "sat": 0.0
+    }
   }
 }
