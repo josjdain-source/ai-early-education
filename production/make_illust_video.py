@@ -104,27 +104,21 @@ def main(topic):
     outdir=f"{A}/auto/{slug}-{stamp}"; os.makedirs(outdir,exist_ok=True)
     json.dump({"topic":topic,"sections":secs},open(f"{outdir}/plan.json","w",encoding="utf-8"),ensure_ascii=False,indent=2)
     print(f"  섹션 {len(secs)}개 · 컷 {len(secs)*N_BEAT}개")
-    vsegs=[]; auds=[]
     for si,s in enumerate(secs):
         title=s["title"][:16]
         raw=f"{work}/aud/s{si}_raw.mp3"; tts(s["narration"],raw)
         sa=f"{work}/aud/s{si}.mp3"; run([FF,"-hide_banner","-loglevel","error","-y","-i",raw,"-filter:a",f"atempo={SPEED}",sa])
-        sd=dur(sa); auds.append(sa); per=sd/len(s["beats"])
-        print(f"  [{si+1}/{len(secs)}] {title} · {sd:.1f}s")
+        sd=dur(sa); print(f"  [{si+1}/{len(secs)}] {title} · {sd:.1f}s")
         for bi,bt in enumerate(s["beats"]):
             ip=f"{work}/img/s{si}b{bi}.png"; sdxl(bt["prompt"],7000+si*10+bi,ip)
             op=f"{work}/ovl/s{si}b{bi}.png"; overlay_png(title,bt["caption"][:24],op)
-            sp=f"{work}/seg/s{si}b{bi}.mp4"; segment(ip,op,per,sp); vsegs.append(sp)
         # 대표 이미지 보관
-        run(["cp" if os.name!="nt" else "cmd","/c","copy","/y",f"{work}/img/s{si}b0.png".replace("/","\\"),f"{outdir}/s{si}.png".replace("/","\\")]) if os.name=="nt" else None
-    vl=f"{work}/vlist.txt"; open(vl,"w",encoding="utf-8").write("\n".join(f"file '{s}'" for s in vsegs))
-    run([FF,"-hide_banner","-loglevel","error","-y","-f","concat","-safe","0","-i",vl,"-c:v","libx264","-preset","veryfast","-crf","20","-r","30",f"{work}/video.mp4"])
-    al=f"{work}/alist.txt"; open(al,"w",encoding="utf-8").write("\n".join(f"file '{a}'" for a in auds))
-    run([FF,"-hide_banner","-loglevel","error","-y","-f","concat","-safe","0","-i",al,"-c","copy",f"{work}/audio.mp3"])
+        if os.name=="nt":
+            run(["cmd","/c","copy","/y",f"{work}/img/s{si}b0.png".replace("/","\\"),f"{outdir}/s{si}.png".replace("/","\\")])
+    # ★조립 = 정적 이미지 + 크로스페이드 디졸브(zoompan 지진 제거)
     out=f"{A}/render/auto-{slug}-{stamp}.mp4"
-    run([FF,"-hide_banner","-loglevel","error","-y","-i",f"{work}/video.mp4","-i",f"{work}/audio.mp3",
-      "-filter_complex","[0:v]tpad=stop_mode=clone:stop_duration=1.5[v];[1:a]apad=pad_dur=1.5[a]",
-      "-map","[v]","-map","[a]","-c:v","libx264","-preset","medium","-crf","21","-c:a","aac","-b:a","192k","-shortest",out])
+    import reassemble_dissolve as RD
+    RD.build(work, out)
     print(f"[4/4] 완성: {out} · {dur(out):.1f}s · plan={outdir}/plan.json")
     return out
 
