@@ -183,7 +183,8 @@ def country_page(c):
     body=f"""<main>
 <section class="page-hero"><div class="wrap"><div class="crumb"><a href="/world-cases.html">세계 사례</a> › {name}</div>
 <div class="pill">{flag} {name}</div><h1>{msg}</h1><p>{short}</p></div></section>
-<section class="block"><div class="wrap" style="max-width:900px">
+<section class="block" style="padding-top:26px"><div class="wrap" style="max-width:900px">
+<div class="cta-band" style="margin-bottom:28px"><div><h3>이 내용을 영상으로 보기</h3><p>{name} 편을 영상에서 바로 확인하세요.</p></div><a class="btn btn-lg" href="/videos/world-ai-education.html#{anchor}">▶ 영상에서 보기</a></div>
 <div class="card pad0" style="margin-bottom:26px"><img src="/{img}" alt="{name} AI교육" style="width:100%"></div>
 <h2>{name}의 AI교육 방향</h2><ul class="checklist" style="padding:0">{pts}</ul>
 <h2 style="margin-top:28px">아이에게 가르치는 핵심 능력</h2>
@@ -191,8 +192,7 @@ def country_page(c):
 <h2 style="margin-top:28px">한국 가정에서 배울 점</h2><p>{learn}</p>
 <h2 style="margin-top:28px">부모가 아이와 해볼 질문</h2>
 <div class="callout good">💬 "{q}"</div>
-<div class="cta-band" style="margin-top:30px"><div><h3>이 내용을 영상으로 보기</h3><p>{name} 편을 영상에서 확인하세요.</p></div><a class="btn btn-lg" href="/videos/world-ai-education.html#{anchor}">영상에서 보기 →</a></div>
-<div class="center" style="margin-top:20px"><a href="/world-cases.html" style="color:var(--coral);font-weight:700">← 다른 나라 사례 보기</a></div>
+<div class="center" style="margin-top:24px"><a href="/world-cases.html" style="color:var(--coral);font-weight:700">← 다른 나라 사례 보기</a></div>
 </div></section></main>"""
     return page("cases","../",f"{name} AI교육 사례 | AI 조기교육",f"{name}이 아이에게 AI를 가르치는 법과 한국 가정에서 배울 점. {short}",body)
 
