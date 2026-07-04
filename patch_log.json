@@ -3,6 +3,25 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "영상 자동생성기 조종판 왼쪽 맨위 등록 + Claude 스킬 저장",
+      "changes": [
+        "통합조종판 projects.json 맨위[0]에 🎬 영상 자동 생성기(주제→영상) 등록. 액션3(주제넣고생성/설명서/폴더)",
+        "런처 production/run_video_maker.bat(ASCII, chcp 65001, 주제 입력→make_illust_video.py)",
+        "★Claude 스킬 저장: .claude/skills/make-illust-video/SKILL.md (user-invocable). '영상 만들어줘/주제로 영상'에 발동",
+        "스킬=전제확인(Ollama11435/ComfyUI8188)+실행+완료후 조종판 등록까지 절차 명시"
+      ],
+      "verification": {
+        "panel": "projects.json 유효·맨위 배치 확인",
+        "skill": "SKILL.md 등록·스킬목록 노출 확인",
+        "bat": "순수 ASCII"
+      },
+      "todo_next": [
+        "캐릭터 일관성(IP-Adapter)",
+        "BGM/효과음 배선"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "★무인 양산기 완성(주제→영상) + 디스크 정리(40GB=모델임 규명)",
       "changes": [
         "make_illust_video.py: 주제 한 줄→로컬 LLM(Ollama gemma2:9b)이 6섹션 대본·영어프롬프트·한글자막 생성→SDXL 18장→edge-tts(1.3배속)→ffmpeg 조립. 사람손0",
