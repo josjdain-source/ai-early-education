@@ -1,0 +1,22 @@
+{
+  "_comment": "중국 AI교육 조사 출처. 롱폼·쇼츠·심층페이지가 공유. 여기 없는 수치·정책은 콘텐츠에 쓰지 않는다. 뇌파밴드·얼굴감시 등 확인 어려운 사례는 핵심으로 쓰지 않는다.",
+  "topic": "중국은 왜 초등학생에게 AI를 가르치기 시작했나 (2017 국가 AI 전략 → 2035 교육강국)",
+  "perspective": "국가 주도형 AI 리터러시·교육과정 편입·윤리적 사용 규칙 (감시국가/공포/군사 프레임 금지, 중국 비하 금지)",
+  "collected_at": "2026-07-04",
+  "sources": [
+    {"id": "S1", "title": "Beijing makes AI education compulsory in public schools", "publisher": "China Daily HK", "url": "https://www.chinadailyhk.com/hk/article/622085", "type": "해외 언론"},
+    {"id": "S2", "title": "Chinese cities roll out AI curriculum in schools, linking learning outcomes to student evaluation", "publisher": "Global Times", "url": "https://www.globaltimes.cn/page/202506/1337312.shtml", "type": "중국 관영매체"},
+    {"id": "S3", "title": "In China, AI is no longer optional for some kids. It's part of the curriculum", "publisher": "NPR", "url": "https://www.npr.org/2026/01/27/nx-s1-5683821/china-ai-schools-curriculum", "type": "해외 언론"},
+    {"id": "S4", "title": "China issues guidelines to promote AI education in primary and secondary schools", "publisher": "People's Daily", "url": "https://en.people.cn/n3/2025/0513/c90000-20313921.html", "type": "중국 관영매체"},
+    {"id": "S5", "title": "China issues guidelines to promote AI education in primary and secondary schools", "publisher": "Global Times", "url": "https://www.globaltimes.cn/page/202505/1333878.shtml", "type": "중국 관영매체"},
+    {"id": "S6", "title": "MOE issues guidance on how to teach AI in primary and middle schools", "publisher": "Ministry of Education of the PRC", "url": "http://en.moe.gov.cn/news/press_releases/202412/t20241210_1166454.html", "type": "정부 발표"},
+    {"id": "S7", "title": "Guide to Using Generative AI in Primary and Secondary Schools (2025 Edition)", "publisher": "CSET, Georgetown University", "url": "https://cset.georgetown.edu/publication/china-school-gen-ai-use-guide-2025/", "type": "해외 연구기관"},
+    {"id": "S8", "title": "The generative AI ethics landscape as seen by Chinese middle school students", "publisher": "Frontiers in Psychology", "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1777855/full", "type": "학술지"},
+    {"id": "S9", "title": "Full Translation: China's 'New Generation Artificial Intelligence Development Plan' (2017)", "publisher": "DigiChina, Stanford University", "url": "https://digichina.stanford.edu/work/full-translation-chinas-new-generation-artificial-intelligence-development-plan-2017/", "type": "해외 연구기관(1차 번역)"},
+    {"id": "S10", "title": "AI Innovation Action Plan for Institutions of Higher Education (2018)", "publisher": "CSET, Georgetown University", "url": "https://cset.georgetown.edu/publication/ai-innovation-action-plan-for-institutions-of-higher-education/", "type": "해외 연구기관(1차 번역)"},
+    {"id": "S11", "title": "China issues detailed action plan on AI development of Chinese universities", "publisher": "British Council", "url": "https://opportunities-insight.britishcouncil.org/short-articles/news/china-issues-detailed-action-plan-ai-development-of-chinese-universities", "type": "해외 기관"},
+    {"id": "S12", "title": "China aims to build an AI literacy system", "publisher": "gov.cn (The State Council)", "url": "https://english.www.gov.cn/news/202604/15/content_WS69df29e6c6d00ca5f9a0a6b1.html", "type": "정부 발표"},
+    {"id": "S13", "title": "Nurturing the Next-Generation AI Workforce: A Snapshot of AI Education in China's Public Education System", "publisher": "Asia Pacific Foundation of Canada", "url": "https://www.asiapacific.ca/publication/nurturing-next-generation-ai-workforce-snapshot-ai-education", "type": "해외 연구기관"},
+    {"id": "S14", "title": "China's Ministry of Education Launches \"AI Plus Education\" Action Plan Through 2030", "publisher": "WTL Governance", "url": "https://wtlgovernance.com/insights/updates/china-moe-ai-plus-education-action-plan-2030/", "type": "해외 기관"}
+  ]
+}

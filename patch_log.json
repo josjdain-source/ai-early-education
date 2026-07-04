@@ -3,6 +3,26 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "중국 AI교육 심층 콘텐츠 패키지(롱폼1+쇼츠5+심층페이지+큐) 첫 국가편",
+      "changes": [
+        "조사(sources 14·facts 15, 3층: 역사2017~2035/운영/미래세대)→롱폼6.6분(10섹션30컷 일러스트다큐)+쇼츠5(칼날후킹 독립구조)",
+        "6편 아이와AI교실 비공개 업로드(롱폼 R4wddQRtB1A, 쇼츠 s1~s5). 큐 등록",
+        "/world-cases/china.html 심층(타임라인·3층운영·한국배울점5·질문10·롱폼임베드·쇼츠5카드·출처14) + /videos/china-ai-education.html",
+        "임베드ID는 큐에서 읽어 자동반영. 감시프레임/뇌파밴드 배제, 국가주도 리터러시 관점"
+      ],
+      "verification": {
+        "longform": "395s(6.6분)",
+        "shorts": "5편 29~31s",
+        "upload": "6편 private",
+        "pages": "china 6임베드"
+      },
+      "todo_next": [
+        "공개는 사람 승인",
+        "미국·영국·싱가포르·한국 편 복제"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "영상 스토리지 5대 검증 강화(공개상태·삭제안전·로그·데이터기반ID·양쪽임베드)",
       "changes": [
         "#1 verify_public.py: 임베드영상 privacyStatus API검증(illust-v2=public✅). #2 cleanup=youtube_url/id 있을때만 삭제",
