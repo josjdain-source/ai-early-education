@@ -50,7 +50,7 @@
       "category": "27",
       "mp4_path": "assets/world-ai-education-5min/render/world-ai-education-short-v1.mp4",
       "thumbnail_path": "assets/world-ai-education-5min/poster/short-v1.jpg",
-      "status": "uploaded_private",
+      "status": "superseded",
       "visibility_target": "private",
       "shorts": true,
       "youtube_url": "https://youtu.be/r6ibLiVJ218",
@@ -58,7 +58,32 @@
       "on_video_hub": true,
       "created_at": "2026-07-04",
       "updated_at": "auto",
-      "notes": "세로 9:16 47초 쇼츠. #Shorts 태그. 유튜브가 세로+단편이라 자동 쇼츠 처리. 공개는 사람."
+      "notes": "옛날 뉴스클립 버전. short-v2(일러스트+디졸브)로 대체. 유튜브의 이 비공개 영상은 사람이 스튜디오에서 삭제."
+    },
+    {
+      "video_id": "wae-short-v2",
+      "title": "세계 5개국, 아이에게 AI를 어떻게 가르칠까? #Shorts",
+      "description": "중국·미국·영국·싱가포르·한국의 AI교육을 1분에.\n정답이 아니라 다시 묻는 힘.\n\n▶ 부모용 자료: https://ai-early-education.pages.dev/\n\n#Shorts #AI조기교육 #부모교육",
+      "tags": [
+        "Shorts",
+        "AI조기교육",
+        "생성형AI교육",
+        "부모교육",
+        "아이와AI",
+        "AI리터러시"
+      ],
+      "category": "27",
+      "mp4_path": "assets/world-ai-education-5min/render/world-ai-education-short-v2.mp4",
+      "thumbnail_path": "assets/world-ai-education-5min/poster/short-v2.jpg",
+      "status": "uploaded_private",
+      "visibility_target": "private",
+      "shorts": true,
+      "youtube_url": "https://youtu.be/T5iUgrto3LU",
+      "detail_page": "/videos.html",
+      "on_video_hub": true,
+      "created_at": "2026-07-04",
+      "updated_at": "auto",
+      "notes": "세로 9:16 47초, 일러스트+디졸브(현재 스타일). #Shorts. 공개는 사람."
     }
   ]
 }

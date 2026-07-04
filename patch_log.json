@@ -3,6 +3,23 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "세로 쇼츠 신버전(short-v2, 일러스트+디졸브) 제작+비공개 업로드",
+      "changes": [
+        "옛 short-v1(뉴스클립+지진줌)→short-v2(일러스트 장면+디졸브) 재제작. build_short.py CLIP=illust scenes, 조립=xfade",
+        "short-v2(1080x1920,46.8s,#Shorts) 비공개 업로드: youtu.be/T5iUgrto3LU",
+        "큐: short-v1 superseded(유튜브 옛 비공개 r6ibLiVJ218은 사람이 스튜디오서 삭제)"
+      ],
+      "verification": {
+        "style": "일러스트+디졸브 세로, 훅/5국/CTA",
+        "upload": "private 성공"
+      },
+      "todo_next": [
+        "옛 쇼츠 삭제(사람)",
+        "검수→공개(사람)"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "세로 숏폼을 유튜브 쇼츠로 비공개 자동 업로드",
       "changes": [
         "short-v1(1080x1920,47s)을 #Shorts로 큐 등록+비공개 업로드: youtu.be/r6ibLiVJ218",

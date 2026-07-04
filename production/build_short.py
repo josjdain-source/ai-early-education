@@ -28,11 +28,12 @@ SENT=[
  ("common","방식은 달라도 공통점은 하나. 정답을 맡기는 게 아니라, 다시 묻는 힘이죠."),
  ("cta","오늘 아이에게 물어보세요. AI 답에서 이상한 부분, 찾아볼까?"),
 ]
-CLIP={"china":(f"{VS}/CN-video-scene-final.png",(230,70,80),"중국",["학교 안으로 AI","그래도 다 맡기진 않는다"]),
-      "usa":(f"{VS}/US-video-scene-final.png",(70,120,210),"미국",["많이 쓰기보다","이해하고 의심하는 힘"]),
-      "uk":(f"{DOC}/UK-01-dfe-genai-guidance-evidence.png",(90,110,180),"영국",["AI는 도구,","판단은 사람"]),
-      "sg":(f"{VS}/SG-video-scene-final.png",(230,110,70),"싱가포르",["쓰게 하되","안전한 틀 안에서"]),
-      "kr":(f"{VS}/KR-video-scene-final.png",(70,140,210),"한국",["AI 디지털교과서를","학교 안으로"])}
+SCENE=f"{A}/illust/scenes"   # ★일러스트 장면 사용(현재 스타일)
+CLIP={"china":(f"{SCENE}/china.png",(230,70,80),"중국",["학교 안으로 AI","그래도 다 맡기진 않는다"]),
+      "usa":(f"{SCENE}/usa.png",(70,120,210),"미국",["많이 쓰기보다","이해하고 의심하는 힘"]),
+      "uk":(f"{SCENE}/uk.png",(90,110,180),"영국",["AI는 도구,","판단은 사람"]),
+      "sg":(f"{SCENE}/sg.png",(230,110,70),"싱가포르",["쓰게 하되","안전한 틀 안에서"]),
+      "kr":(f"{SCENE}/kr.png",(70,140,210),"한국",["AI 디지털교과서를","학교 안으로"])}
 CARD={"hook":(PUR,"세계 5개국·AI교육",["세계는 아이에게","AI를 어떻게","가르칠까?"]),
       "common":((20,150,110),"공통점은 하나",["AI를 막는 게 아니라","다루는 힘"]),
       "cta":(PUR,"오늘, 우리 집",["정답이 아니라,","다시 묻는 힘"])}
@@ -103,17 +104,28 @@ if __name__=="__main__":
         if not os.path.exists(ap): raise SystemExit(f"오디오 없음: {ap} (venv로 먼저 합성)")
         auds.append(ap)
         d=dur(ap)
-        if key in CARD: fp=card_frame(key); kb(fp,f"{TMP}/v_{key}.mp4",d,zin=(key!="common"))
-        else: fp=country_frame(key); kb(fp,f"{TMP}/v_{key}.mp4",d,zin=True)
-        segs.append(f"{TMP}/v_{key}.mp4"); print(" seg",key,round(d,2),"s")
-    # concat video
-    vl=f"{TMP}/vlist.txt"; open(vl,"w",encoding="utf-8").write("\n".join(f"file '{s}'" for s in segs))
-    run([FF,"-hide_banner","-loglevel","error","-y","-f","concat","-safe","0","-i",vl,"-c:v","libx264","-preset","veryfast","-crf","20","-r","30",f"{TMP}/video.mp4"])
-    # concat audio
+        fp=card_frame(key) if key in CARD else country_frame(key)
+        # ★정적 세그먼트(줌 없음, 디졸브 대비 +XF)
+        XF=0.5; seg=f"{TMP}/v_{key}.mp4"
+        run([FF,"-hide_banner","-loglevel","error","-y","-loop","1","-i",fp,"-t",f"{d+XF}",
+             "-vf","format=yuv420p","-c:v","libx264","-preset","veryfast","-crf","20","-r","30","-s","1080x1920",seg])
+        segs.append(seg)
+        print(" seg",key,round(d,2),"s")
+    # ★디졸브(xfade) 체인
+    XF=0.5
+    beat_d=[dur(f"{TMP}/a_{k}.mp3") for k,_ in SENT]
+    args=[FF,"-hide_banner","-loglevel","error","-y"]
+    for s in segs: args+=["-i",s]
+    chain=[]; prev="[0:v]"; cum=0.0
+    for k in range(1,len(segs)):
+        cum+=beat_d[k-1]; lbl=f"[vx{k}]"
+        chain.append(f"{prev}[{k}:v]xfade=transition=fade:duration={XF}:offset={cum:.3f}{lbl}"); prev=lbl
+    args+=["-filter_complex",";".join(chain),"-map",prev,"-c:v","libx264","-preset","veryfast","-crf","20","-r","30",f"{TMP}/video.mp4"]
+    run(args)
     al=f"{TMP}/alist.txt"; open(al,"w",encoding="utf-8").write("\n".join(f"file '{a}'" for a in auds))
     run([FF,"-hide_banner","-loglevel","error","-y","-f","concat","-safe","0","-i",al,"-c","copy",f"{TMP}/audio.mp3"])
-    out=f"{A}/render/world-ai-education-short-v1.mp4"
+    out=f"{A}/render/world-ai-education-short-v2.mp4"
     run([FF,"-hide_banner","-loglevel","error","-y","-i",f"{TMP}/video.mp4","-i",f"{TMP}/audio.mp3",
-      "-filter_complex","[0:v]tpad=stop_mode=clone:stop_duration=1.2[v];[1:a]apad=pad_dur=1.2[a]",
-      "-map","[v]","-map","[a]","-c:v","libx264","-preset","medium","-crf","21","-c:a","aac","-b:a","192k","-shortest",out])
-    print("short-v1:",dur(out),"s ->",out)
+      "-filter_complex","[1:a]apad=pad_dur=1.2[a]","-map","0:v","-map","[a]",
+      "-c:v","libx264","-preset","medium","-crf","21","-c:a","aac","-b:a","192k","-shortest",out])
+    print("short-v2 (illust+dissolve):",dur(out),"s ->",out)
