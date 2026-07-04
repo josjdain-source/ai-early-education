@@ -3,6 +3,23 @@
   "entries": [
     {
       "date": "2026-07-04",
+      "title": "세로 숏폼을 유튜브 쇼츠로 비공개 자동 업로드",
+      "changes": [
+        "short-v1(1080x1920,47s)을 #Shorts로 큐 등록+비공개 업로드: youtu.be/r6ibLiVJ218",
+        "upload_to_aiclassroom가 per-item shorts 플래그 반영(YU.upload shorts=True→#Shorts 자동)",
+        "세로+단편이라 유튜브가 자동 쇼츠 처리. 공개는 사람"
+      ],
+      "verification": {
+        "short": "private 업로드 성공, 9:16 47s #Shorts",
+        "thumb": "403(폰인증 필요)=쇼츠는 자동프레임이라 무관"
+      },
+      "todo_next": [
+        "스튜디오 검수→공개",
+        "채널 폰인증시 커스텀썸네일"
+      ]
+    },
+    {
+      "date": "2026-07-04",
       "title": "아이와 AI교실 API 자동 업로드 성공(첫 영상 private). 완전자동화 가동",
       "changes": [
         "데스크톱 OAuth 클라이언트로 인증 성공(채널 가드=아이와 AI교실 일치)",

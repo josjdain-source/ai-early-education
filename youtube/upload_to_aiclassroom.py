@@ -63,7 +63,7 @@ def do_upload(vid_id=None):
     print(f"[업로드] '{it['title']}' → private (채널 가드: 아이와 AI교실)")
     url = YU.upload(video, it["title"], it["description"],
                     it["tags"], "private", it.get("category", "27"),
-                    thumb, shorts=False, allow_any=False)   # ★항상 private
+                    thumb, shorts=it.get("shorts", False), allow_any=False)   # ★항상 private
     # 큐 갱신
     it["status"] = "uploaded_private"; it["youtube_url"] = url; it["updated_at"] = "auto"
     _save(q)
