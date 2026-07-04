@@ -1,0 +1,163 @@
+<!doctype html><html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>아이와 AI교실 영상 스튜디오</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f9f9f9;color:#0f0f0f;font-family:"Malgun Gothic","Segoe UI",system-ui,sans-serif;font-size:13px}
+a{color:#065fd4;text-decoration:none}
+.app{display:flex;min-height:100vh}
+/* 사이드바 */
+.side{width:210px;background:#fff;border-right:1px solid #e5e5e5;padding:14px 0;position:sticky;top:0;height:100vh;overflow:auto;flex:0 0 210px}
+.side .brand{font-weight:800;font-size:15px;padding:6px 20px 14px;display:flex;gap:8px;align-items:center}
+.side .brand .dot{width:26px;height:26px;background:#0f0f0f;color:#fff;border-radius:7px;display:grid;place-items:center}
+.nav a{display:flex;gap:12px;align-items:center;padding:9px 20px;color:#0f0f0f;font-weight:500;cursor:pointer;border-left:3px solid transparent}
+.nav a:hover{background:#f2f2f2}.nav a.on{background:#e8f0fe;border-left-color:#065fd4;color:#065fd4;font-weight:700}
+.nav .n{margin-left:auto;background:#e5e5e5;border-radius:9px;padding:0 7px;font-size:11px;color:#606060}
+.nav a.on .n{background:#065fd4;color:#fff}
+.nav .sec{font-size:11px;color:#909090;padding:14px 20px 4px;font-weight:700}
+/* 메인 */
+.main{flex:1;min-width:0;padding:18px 26px 60px}
+h1{font-size:22px;margin:0 0 2px}.sub{color:#606060;margin:0 0 16px;font-size:12.5px}
+.warn{background:#fce8e6;border:1px solid #f5c6c2;color:#c5221f;padding:10px 14px;border-radius:10px;margin:0 0 14px;font-weight:600}
+/* 요약 카드 */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px}
+.c{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:14px 16px}
+.c .v{font-size:26px;font-weight:800}.c .l{color:#606060;font-size:12px;margin-top:2px}
+.c.amber .v{color:#e0a800}.c.blue .v{color:#065fd4}.c.green .v{color:#188038}.c.red .v{color:#c5221f}.c.gray .v{color:#606060}
+/* 툴바 */
+.tabs{display:flex;gap:2px;border-bottom:1px solid #e5e5e5;margin-bottom:12px;overflow:auto}
+.tabs button{background:none;border:0;border-bottom:2px solid transparent;padding:10px 14px;cursor:pointer;font-weight:600;color:#606060;white-space:nowrap;font-size:13px}
+.tabs button.on{color:#0f0f0f;border-bottom-color:#0f0f0f}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.toolbar select,.toolbar input{border:1px solid #ccc;border-radius:8px;padding:7px 10px;font-size:12.5px;background:#fff}
+.toolbar input.search{min-width:220px}
+.toolbar .spacer{flex:1}
+.btn{border:1px solid #ccc;background:#fff;border-radius:8px;padding:7px 12px;cursor:pointer;font-weight:600;font-size:12.5px}
+.btn:hover{background:#f2f2f2}.btn.pri{background:#065fd4;color:#fff;border-color:#065fd4}.btn.pri:hover{background:#0b57c9}
+/* 테이블 */
+.tbl{background:#fff;border:1px solid #e5e5e5;border-radius:12px;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;color:#606060;font-weight:600;padding:10px 10px;border-bottom:1px solid #e5e5e5;background:#fafafa;position:sticky;top:0}
+td{padding:10px 10px;border-bottom:1px solid #f0f0f0;vertical-align:top}
+tr:hover td{background:#fafafd}
+.thumb{width:118px;height:66px;border-radius:8px;object-fit:cover;background:#000;display:block}
+.thumb.v{width:44px;height:78px}
+.tcell{display:flex;gap:10px}
+.tcell .t{font-weight:700;line-height:1.3;max-width:360px}
+.tcell .d{color:#606060;margin-top:3px;max-width:360px;font-size:11.5px}
+.tcell .len{display:inline-block;background:#0f0f0f;color:#fff;font-size:10.5px;padding:1px 5px;border-radius:5px;margin-top:4px}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:8px;white-space:nowrap}
+.b-ready{background:#fef7e0;color:#b06000}.b-priv{background:#e8f0fe;color:#065fd4}.b-pub{background:#e6f4ea;color:#188038}
+.b-quota{background:#fce8e6;color:#c5221f}.b-fail{background:#fce8e6;color:#c5221f}.b-super{background:#eee;color:#707070}
+.b-hp-on{background:#e6f4ea;color:#188038}.b-hp-wait{background:#fef7e0;color:#b06000}.b-hp-no{background:#f0f0f0;color:#909090}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%}.dot.on{background:#188038}.dot.off{background:#ccc}
+.acts{display:flex;flex-wrap:wrap;gap:4px}
+.a{border:1px solid #ddd;background:#fff;border-radius:7px;padding:4px 8px;cursor:pointer;font-size:11.5px;font-weight:600}
+.a:hover{background:#f2f2f2}.a.up{background:#188038;color:#fff;border-color:#188038}.a.up:hover{background:#137333}
+.a.dis{opacity:.4;cursor:not-allowed}
+.msg{font-size:11px;margin-top:5px}.msg.ok{color:#188038}.msg.err{color:#c5221f}
+.views{font-variant-numeric:tabular-nums}
+/* 모달 */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:50}
+.modal.show{display:flex}
+.mbox{background:#fff;border-radius:14px;max-width:min(92vw,900px);max-height:90vh;overflow:auto;padding:18px}
+.mbox h3{margin:0 0 10px}
+.mbox .close{float:right;cursor:pointer;font-size:20px;color:#606060;border:0;background:none}
+.player{background:#000;border-radius:10px;overflow:hidden}
+.player video,.player iframe{width:100%;display:block;max-height:70vh}
+.player.v{max-width:380px;margin:0 auto}
+pre{white-space:pre-wrap;background:#f5f5f5;border-radius:8px;padding:12px;font-size:12px;max-height:50vh;overflow:auto}
+.empty{padding:40px;text-align:center;color:#909090}
+</style></head><body>
+<div class="app">
+<aside class="side">
+  <div class="brand"><span class="dot">🎬</span> AI교실 스튜디오</div>
+  <div class="nav" id="nav"></div>
+</aside>
+<main class="main">
+  <h1>아이와 AI교실 영상 스튜디오</h1>
+  <p class="sub">검수 → 승인(비공개 업로드) → 공개 대기 → 홈페이지 연결 → 성과. ★자동 업로드·자동 공개 없음. 승인한 것만 올라갑니다.</p>
+  <div id="quota"></div>
+  <div class="cards" id="cards"></div>
+  <div class="tabs" id="tabs"></div>
+  <div class="toolbar">
+    <select id="fCountry"><option value="">국가: 전체</option><option value="china">중국</option><option value="usa">미국</option><option value="uk">영국</option><option value="singapore">싱가포르</option><option value="korea">한국</option></select>
+    <select id="fType"><option value="">형식: 전체</option><option value="longform">롱폼</option><option value="short">쇼츠</option></select>
+    <select id="fSort"><option value="date">날짜순</option><option value="views">조회수순</option></select>
+    <input class="search" id="fSearch" placeholder="제목 검색…">
+    <div class="spacer"></div>
+    <button class="btn" onclick="act('/api/verify',{},'공개상태 검증 중…')">🔒 공개상태 검증</button>
+    <button class="btn" onclick="act('/api/stats',{},'통계 불러오는 중…')">📊 조회수 새로고침</button>
+    <button class="btn" onclick="act('/api/rebuild',{},'홈페이지 재생성 중…')">🔧 홈페이지 재생성</button>
+    <button class="btn pri" onclick="load()">↻ 새로고침</button>
+  </div>
+  <div class="tbl"><table><thead><tr>
+    <th></th><th>썸네일</th><th>제목 / 설명</th><th>유형</th><th>국가</th><th>공개</th><th>업로드</th><th>홈페이지</th><th>날짜</th><th>조회</th><th>댓글</th><th>작업</th>
+  </tr></thead><tbody id="rows"></tbody></table><div class="empty" id="empty" style="display:none">항목이 없습니다.</div></div>
+</main></div>
+<div class="modal" id="modal"><div class="mbox"><button class="close" onclick="closeM()">✕</button><div id="mbody"></div></div></div>
+<script>
+let DATA=[], SUM={}, TAB="all";
+const TABS=[["all","전체"],["longform","롱폼"],["short","Shorts"],["ready","업로드 대기"],["private","비공개 업로드됨"],["published","공개됨"],["hp","홈페이지 연결됨"],["err","오류/한도초과"]];
+const NAV=[["대시보드",[["all","전체 콘텐츠"]]],["형식",[["longform","롱폼"],["short","Shorts"]]],["상태",[["ready","업로드 대기"],["private","공개 승인 대기"],["published","공개됨"],["hp","홈페이지 연결됨"],["err","오류/한도초과"]]];
+function badge(u){const M={ready_to_upload:["b-ready","업로드 대기"],uploaded_private:["b-priv","비공개 업로드됨"],published:["b-pub","공개됨"],quota_exceeded:["b-quota","한도초과"],failed:["b-fail","오류"],superseded:["b-super","대체됨"]};const x=M[u]||["b-super",u];return `<span class="badge ${x[0]}">${x[1]}</span>`}
+function pubBadge(p){const M={public:["b-pub","공개"],unlisted:["b-priv","일부공개"],private:["b-super","비공개"],none:["b-hp-no","-"]};const x=M[p]||["b-hp-no",p||"-"];return `<span class="badge ${x[0]}">${x[1]}</span>`}
+function hpBadge(h,yid){if(!yid)return '<span class="badge b-hp-no">-</span>';const M={connected:["b-hp-on","연결됨"],pending:["b-hp-wait","연결 필요"]};const x=M[h]||["b-hp-no","-"];return `<span class="badge ${x[0]}">${x[1]}</span>`}
+function esc(s){return (s||"").replace(/[<>&]/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;"}[c]))}
+function inTab(v){switch(TAB){case"all":return true;case"longform":return v.video_type=="longform";case"short":return v.video_type=="short";case"ready":return v.upload_status=="ready_to_upload";case"private":return v.upload_status=="uploaded_private";case"published":return v.upload_status=="published"||v.public_status=="public";case"hp":return v.homepage_status=="connected";case"err":return v.upload_status=="quota_exceeded"||v.upload_status=="failed";}return true}
+function render(){
+  const co=fCountry.value,ty=fType.value,q=fSearch.value.trim();
+  let rows=DATA.filter(v=>inTab(v)&&(!co||v.country==co)&&(!ty||v.video_type==ty)&&(!q||(v.title||"").includes(q)));
+  rows.sort((a,b)=> fSort.value=="views" ? (b.views||0)-(a.views||0) : (b.created||"").localeCompare(a.created||""));
+  document.getElementById("empty").style.display=rows.length?"none":"block";
+  document.getElementById("rows").innerHTML=rows.map(v=>{
+    const vert=v.video_type=="short";
+    const th=v.poster_path?`<img class="thumb ${vert?'v':''}" src="/poster?p=${encodeURIComponent(v.poster_path)}">`:`<div class="thumb ${vert?'v':''}"></div>`;
+    const len=v.duration?`<span class="len">${Math.floor(v.duration/60)}:${String(Math.round(v.duration%60)).padStart(2,'0')}</span>`:'';
+    const url=v.youtube_url?`<a href="${v.youtube_url}" target="_blank">${v.youtube_id}</a>`:'—';
+    const A=[];
+    A.push(`<button class="a" onclick="preview('${v.video_id}')">▶ 재생</button>`);
+    if(v.upload_status=="ready_to_upload") A.push(v.local_exists?`<button class="a up" onclick="upload(this,'${v.video_id}')">✅ 승인 업로드</button>`:`<span class="a dis">파일없음</span>`);
+    if(v.upload_status=="quota_exceeded") A.push(`<button class="a up" onclick="upload(this,'${v.video_id}')">↻ 다시 승인</button>`);
+    if(v.studio_url) A.push(`<a class="a" href="${v.studio_url}" target="_blank">스튜디오</a>`);
+    if(v.page_url) A.push(`<a class="a" href="https://ai-early-education.pages.dev${v.page_url}" target="_blank">홈페이지</a>`);
+    A.push(`<button class="a" onclick="meta('${v.video_id}')">메타</button>`);
+    A.push(`<button class="a" onclick="del('${v.video_id}')">제거</button>`);
+    const local=`<span class="dot ${v.local_exists?'on':'off'}" title="${v.local_exists?'로컬 있음':'로컬 삭제됨'}"></span>`;
+    return `<tr id="r_${v.video_id}"><td><input type=checkbox></td><td>${th}</td>
+      <td><div class="tcell"><div><div class="t">${esc(v.title)}</div><div class="d">${esc(v.desc2)}</div>${len} ${local}
+      <div class="msg" id="m_${v.video_id}"></div></div></div></td>
+      <td>${v.video_type=="short"?"쇼츠":"롱폼"}</td><td>${v.country_name||'-'}</td>
+      <td>${pubBadge(v.public_status)}</td><td>${badge(v.upload_status)}</td><td>${hpBadge(v.homepage_status,v.youtube_id)}</td>
+      <td>${v.created||'-'}</td><td class="views">${v.views??'—'}</td><td class="views">${v.comments??'—'}</td>
+      <td><div class="acts">${A.join('')}</div></td></tr>`;
+  }).join('');
+}
+function renderChrome(){
+  document.getElementById("tabs").innerHTML=TABS.map(t=>`<button class="${TAB==t[0]?'on':''}" onclick="setTab('${t[0]}')">${t[1]}</button>`).join('');
+  document.getElementById("nav").innerHTML=NAV.map(([sec,items])=>`<div class="sec">${sec}</div>`+items.map(([k,l])=>`<a class="${TAB==k?'on':''}" onclick="setTab('${k}')">${l}<span class="n" id="nav_${k}"></span></a>`).join('')).join('');
+  const s=SUM;
+  document.getElementById("cards").innerHTML=[["amber","업로드 대기",s.ready],["blue","비공개 업로드",s.private],["green","공개 승인 대기",s.pubwait],["amber","홈페이지 미연결",s.hpwait],["red","한도초과",s.quota]].map(c=>`<div class="c ${c[0]}"><div class="v">${c[2]||0}</div><div class="l">${c[1]}</div></div>`).join('');
+  document.getElementById("quota").innerHTML=s.quota?`<div class="warn">⚠️ 유튜브 일일 업로드 한도 초과 영상 ${s.quota}개 — 자동 재시도 안 함. 내일 리셋 후 '다시 승인'을 눌러주세요.</div>`:'';
+  const cnt={ready:s.ready,private:s.private};document.getElementById("nav_ready")&&(document.getElementById("nav_ready").textContent=s.ready||'');
+}
+function setTab(t){TAB=t;renderChrome();render()}
+async function load(){const r=await fetch('/api/videos');const d=await r.json();DATA=d.videos;SUM=d.summary;renderChrome();render()}
+async function upload(btn,id){btn.disabled=true;btn.textContent='업로드 중…';const m=document.getElementById('m_'+id);m.textContent='';
+  const r=await fetch('/api/upload',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({video_id:id})});const d=await r.json();
+  if(d.ok){m.innerHTML=`<span class=ok>✅ 비공개 업로드됨: <a href="${d.url}" target=_blank>${d.url}</a> — 스튜디오에서 공개하세요</span>`;setTimeout(load,900);}
+  else{m.innerHTML=`<span class=err>❌ ${d.error}</span>`;btn.disabled=false;btn.textContent='다시 승인';if(d.quota)setTimeout(load,600);}}
+async function del(id){if(!confirm('큐에서 제거할까요? (유튜브 영상은 삭제되지 않음)'))return;await fetch('/api/remove',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({video_id:id})});load()}
+async function act(url,body,msg){const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body||{})});const d=await r.json();alert(d.ok?(msg.replace('중…','완료')+(d.checked!=null?` (${d.checked}건)`:d.updated!=null?` (${d.updated}건)`:'')):('실패: '+(d.error||''))); if(d.ok)load()}
+function preview(id){const v=DATA.find(x=>x.video_id==id);const vert=v.video_type=="short";let inner="";
+  if(v.local_exists) inner=`<div class="player ${vert?'v':''}"><video src="/video?id=${id}" controls autoplay></video></div>`;
+  else if(v.youtube_id) inner=`<div class="player ${vert?'v':''}"><iframe src="https://www.youtube.com/embed/${v.youtube_id}" frameborder=0 allowfullscreen></iframe></div><p style="color:#606060">로컬 파일이 정리되어 유튜브로 재생합니다. 비공개면 재생이 안 될 수 있어요 → <a href="${v.studio_url}" target=_blank>스튜디오에서 보기</a></p>`;
+  else inner="<p>재생할 소스가 없습니다.</p>";
+  openM(`<h3>${esc(v.title)}</h3>${inner}`)}
+async function meta(id){const r=await fetch('/api/meta?id='+id);const v=await r.json();
+  openM(`<h3>${esc(v.title)}</h3><pre>${esc(JSON.stringify({video_id:v.video_id,type:v.video_type,country:v.country,duration:v.duration,tags:v.tags,youtube_url:v.youtube_url,studio_url:v.studio_url,page_url:v.page_url,upload_status:v.upload_status,public_status:v.public_status,homepage_status:v.homepage_status,error:v.error_message},null,2))}</pre><h3>설명</h3><pre>${esc(v.description)}</pre>`)}
+function openM(h){document.getElementById('mbody').innerHTML=h;document.getElementById('modal').classList.add('show')}
+function closeM(){document.getElementById('modal').classList.remove('show');document.getElementById('mbody').innerHTML=''}
+document.getElementById('modal').onclick=e=>{if(e.target.id=='modal')closeM()};
+["fCountry","fType","fSort","fSearch"].forEach(id=>document.getElementById(id).addEventListener('input',render));
+load();
+</script></body></html>
