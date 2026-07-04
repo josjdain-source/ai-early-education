@@ -130,19 +130,31 @@ def _dur(fp):
     try: d=round(float(subprocess.run([FPB,"-v","error","-show_entries","format=duration","-of","default=nk=1:nw=1",fp],capture_output=True,text=True).stdout.strip() or 0),1)
     except Exception: d=None
     _dc[fp]=d; return d
+DATA=os.path.join(REPO,"data"); LOGS=os.path.join(REPO,"logs")
+for _d in (DATA,LOGS): os.makedirs(_d,exist_ok=True)
+TRASHF=os.path.join(DATA,"trash_manifest.json"); OVR=os.path.join(DATA,"studio_overrides.json"); DLOG=os.path.join(LOGS,"asset_delete.log")
+def _l(p,d):
+    try: return json.load(open(p,encoding="utf-8"))
+    except Exception: return d
+def _s(p,o): json.dump(o,open(p,"w",encoding="utf-8"),ensure_ascii=False,indent=2)
+def trashed_ids(): return {x["id"] for x in _l(TRASHF,{"items":[]})["items"]}
 def channel_videos(ch):
-    nowts=datetime.now().timestamp()
+    nowts=datetime.now().timestamp(); tr=trashed_ids(); ovr=_l(OVR,{})
     if ch.get("source")=="queue":
-        eids=embedded_ids(); items=[enrich(it,eids) for it in load_q()["queue"]]
-        for it in items:
-            fp=ap(it.get("mp4_path","")); ts=os.path.getmtime(fp) if os.path.exists(fp) else None
-            it["age_h"]=round((nowts-ts)/3600,1) if ts else 9999
+        eids=embedded_ids(); items=[]
+        for it in load_q()["queue"]:
+            e=enrich(it,eids)
+            if e["video_id"] in tr: continue
+            fp=ap(e.get("mp4_path","")); ts=os.path.getmtime(fp) if os.path.exists(fp) else None
+            e["age_h"]=round((nowts-ts)/3600,1) if ts else 9999
+            e["is_final"]=ovr.get(e["video_id"],{}).get("is_final",False)
+            items.append(e)
         return items
     out=[]; seen=set()
     for g in ch.get("globs",[]):
         for fp in glob.glob(g,recursive=True):
-            fp=os.path.normpath(fp)
-            if fp in seen or not fp.lower().endswith(".mp4"): continue
+            fp=os.path.normpath(fp).replace("\\","/")
+            if fp in seen or fp in tr or not fp.lower().endswith(".mp4"): continue
             seen.add(fp)
             try: mt=os.path.getmtime(fp); sz=os.path.getsize(fp)
             except Exception: continue
@@ -150,8 +162,74 @@ def channel_videos(ch):
               "upload_status":"local","public_status":"","mp4_path":fp,"thumbnail_path":"","local_exists":True,
               "duration":_dur(fp),"size":sz,"created_at":datetime.fromtimestamp(mt).strftime("%Y-%m-%d %H:%M"),
               "age_h":round((nowts-mt)/3600,1),"youtube_id":"","youtube_url":"","studio_url":"","page_url":"",
-              "homepage_status":"none","country":"","folder":os.path.dirname(fp)})
+              "homepage_status":"none","country":"","folder":os.path.dirname(fp),"is_final":ovr.get(fp,{}).get("is_final",False)})
     out.sort(key=lambda x:x.get("created_at",""),reverse=True); return out
+def _findv(vid,chid):
+    ch=next((c for c in CHANNELS if c["id"]==chid),CHANNELS[0])
+    return next((v for v in channel_videos(ch) if v["video_id"]==vid),None)
+def studio_can_delete(v):
+    if _l(OVR,{}).get(v["video_id"],{}).get("is_final"): return False,"최종본 지정됨"
+    if v.get("homepage_status")=="connected": return False,"홈페이지 사용 중"
+    if v.get("upload_status")=="ready_to_upload" and not v.get("youtube_id"): return False,"업로드 대기(유튜브 없음)"
+    if v.get("upload_status")=="uploaded_private" and not v.get("youtube_id"): return False,"업로드 안 됨"
+    return True,""
+def studio_trash(ids,chid):
+    t=_l(TRASHF,{"items":[]}); res={"trashed":[],"blocked":[]}
+    for vid in ids:
+        v=_findv(vid,chid)
+        if not v: res["blocked"].append({"id":vid,"why":"없음"}); continue
+        ok,why=studio_can_delete(v)
+        if not ok: res["blocked"].append({"id":vid,"title":v["title"],"why":why}); continue
+        t["items"].append({"id":vid,"title":v["title"],"type":"video","path":v.get("mp4_path",vid),"trashed_at":datetime.now().strftime("%Y-%m-%d %H:%M"),"channel":chid})
+        open(DLOG,"a",encoding="utf-8").write(f"[{datetime.now().strftime('%Y-%m-%d %H:%M')}] TRASH {vid}\n")
+        res["trashed"].append(vid)
+    _s(TRASHF,t); return res
+def studio_restore(ids):
+    t=_l(TRASHF,{"items":[]}); t["items"]=[x for x in t["items"] if x["id"] not in ids]; _s(TRASHF,t); return {"ok":True}
+def studio_purge(ids):
+    t=_l(TRASHF,{"items":[]}); killed=[]
+    for x in list(t["items"]):
+        if x["id"] in ids:
+            fp=x.get("path","")
+            try:
+                if fp and os.path.isabs(fp) and os.path.exists(fp) and os.path.realpath(fp).startswith(os.path.realpath(DESKTOP)):
+                    os.remove(fp); killed.append(fp)
+                elif fp and os.path.exists(ap(fp)):
+                    os.remove(ap(fp)); killed.append(fp)
+            except Exception as e: killed.append(f"실패:{e}")
+            open(DLOG,"a",encoding="utf-8").write(f"[{datetime.now().strftime('%Y-%m-%d %H:%M')}] PURGE {x['id']}\n")
+            t["items"]=[y for y in t["items"] if y["id"]!=x["id"]]
+    _s(TRASHF,t); return {"ok":True,"deleted":killed}
+def studio_setfinal(ids,val):
+    o=_l(OVR,{})
+    for vid in ids: o.setdefault(vid,{})["is_final"]=bool(val)
+    _s(OVR,o); return {"ok":True}
+def studio_detect(chid):
+    ch=next((c for c in CHANNELS if c["id"]==chid),CHANNELS[0]); vids=channel_videos(ch); cand={}
+    grp={}
+    for v in vids:
+        base=re.sub(r'[-_]?v?\d+(\.mp4)?$','',v["title"].replace(".mp4","")).strip()
+        grp.setdefault(base,[]).append(v)
+    def key(v):
+        m=re.search(r'v(\d+)',v["title"]); ver=int(m.group(1)) if m else 0
+        fin=1 if v.get("is_final") else 0; up=1 if v.get("youtube_id") else 0
+        latest=1 if "final" in v["title"].lower() else 0
+        return (fin,up,latest,ver,v.get("created_at",""))
+    for base,g in grp.items():
+        if len(g)<2: continue
+        keep=sorted(g,key=key)[-1]
+        for v in g:
+            if v["video_id"]==keep["video_id"]: continue
+            ok,_=studio_can_delete(v)
+            if ok: cand[v["video_id"]]=f"구버전 · 최신본 있음({keep['title'][:24]})"
+    for v in vids:
+        if v["video_id"] in cand: continue
+        if v.get("upload_status")=="superseded":
+            ok,_=studio_can_delete(v);  cand[v["video_id"]]="대체된 구버전" if ok else None
+        if "draft" in v["title"].lower() or "실패" in v["title"] or "fail" in v["title"].lower():
+            ok,_=studio_can_delete(v)
+            if ok: cand[v["video_id"]]="초벌/실패 추정"
+    return {k:v for k,v in cand.items() if v}
 
 HTML=open(os.path.join(HERE,"_studio.html"),encoding="utf-8").read() if os.path.exists(os.path.join(HERE,"_studio.html")) else "STUDIO_HTML_PLACEHOLDER"
 
@@ -173,6 +251,8 @@ class H(BaseHTTPRequestHandler):
             chid=qs.get("channel",["aiclassroom"])[0]; ch=next((c for c in CHANNELS if c["id"]==chid),CHANNELS[0])
             items=channel_videos(ch)
             self._j({"videos":items,"summary":summary(items),"channel":chid,"source":ch.get("source")})
+        elif u.path=="/api/trash":
+            self._j({"items":_l(TRASHF,{"items":[]})["items"]})
         elif u.path=="/api/meta":
             vid=qs.get("id",[""])[0]; it=next((x for x in load_q()["queue"] if x["video_id"]==vid),{})
             self._j(it)
@@ -217,6 +297,11 @@ class H(BaseHTTPRequestHandler):
         elif p=="/api/stats": self._j(do_stats())
         elif p=="/api/remove": self._j(do_remove(b.get("video_id","")))
         elif p=="/api/rebuild": self._j(do_rebuild())
+        elif p=="/api/trash-item": self._j(studio_trash(b.get("ids") or [b.get("id")], b.get("channel","aiclassroom")))
+        elif p=="/api/restore": self._j(studio_restore(b.get("ids") or [b.get("id")]))
+        elif p=="/api/purge": self._j(studio_purge(b.get("ids") or [b.get("id")]))
+        elif p=="/api/final": self._j(studio_setfinal(b.get("ids") or [b.get("id")], b.get("value",True)))
+        elif p=="/api/detect": c=studio_detect(b.get("channel","aiclassroom")); self._j({"ok":True,"count":len(c),"cands":c})
         else: self._send(404,"text/plain",b"404")
 
 if __name__=="__main__":
