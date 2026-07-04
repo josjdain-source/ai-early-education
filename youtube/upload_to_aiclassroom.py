@@ -15,7 +15,7 @@ import os, sys, json, argparse
 from pathlib import Path
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent
-CHANNEL_ID = "UCzCA_HXDHMVGvWpQv4PSZgw"   # 아이와 AI교실
+CHANNEL_ID = "UCzCA_HXDHMVGvWpQv4PSZgw"   # 아이와 AI교실 (현재 브라우저 로그인 채널)
 UPLOAD_TOOL_DIR = r"C:/Users/admin/Desktop/유튜브쇼츠/동영상제작"
 QUEUE = HERE / "upload_queue.json"
 
@@ -25,9 +25,14 @@ try:
 except Exception as e:
     sys.exit(f"[준비 필요] youtube_upload.py 로드 실패: {e}\n  경로: {UPLOAD_TOOL_DIR}")
 
-# ★이 채널로 고정 + 별도 토큰(IGS_AI 토큰 안 건드림). 클라이언트(OAuth 앱)는 기존 것 재사용.
+# ★이 채널로 고정 + 별도 토큰(IGS_AI 토큰 안 건드림).
 YU.TARGET_CHANNEL_ID = CHANNEL_ID
 YU.TOKEN = HERE / "token_aiclassroom.json"
+# 데스크톱 OAuth 클라이언트 사용(매끄러운 loopback). 있으면 웹 클라이언트 대신 이걸로.
+_desktop = HERE / "client_secret_aiclassroom.json"
+if _desktop.exists():
+    YU.CLIENT_SECRET = _desktop
+    YU.CLIENT_SECRET_WEB = HERE / "__no_web__.json"   # 존재X → 데스크톱 플로우 강제(random localhost 포트)
 
 def _load(): return json.load(open(QUEUE, encoding="utf-8"))
 def _save(q): json.dump(q, open(QUEUE, "w", encoding="utf-8"), ensure_ascii=False, indent=2)

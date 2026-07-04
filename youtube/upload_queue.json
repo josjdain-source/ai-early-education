@@ -1,22 +1,38 @@
 {
   "_comment": "아이와 AI교실 업로드 대기열. Claude가 완성 mp4를 등록·메타 초안 생성. ★자동 public 금지: 사람이 approved_public으로 바꿔야 공개. 업로드는 private 기본.",
-  "status_flow": ["draft_ready", "metadata_ready", "thumbnail_ready", "ready_to_upload", "uploaded_private", "approved_public", "published"],
+  "status_flow": [
+    "draft_ready",
+    "metadata_ready",
+    "thumbnail_ready",
+    "ready_to_upload",
+    "uploaded_private",
+    "approved_public",
+    "published"
+  ],
   "queue": [
     {
       "video_id": "wae-illust-v2",
       "title": "세계 5개국은 아이에게 AI를 어떻게 가르치나",
       "description": "중국, 미국, 영국, 싱가포르, 한국의 AI교육 흐름을 부모 관점에서 쉽게 정리했습니다.\n이 채널은 아이에게 정답을 빨리 찾는 법보다, AI에게 말하고 결과를 관찰하고 다시 묻는 힘을 기르는 과정을 다룹니다.\n\n출력물은 결과입니다.\n교육은 과정입니다.\n\n▶ 부모용 자료·시작 가이드: https://ai-early-education.pages.dev/\n▶ 세계 사례 자세히: https://ai-early-education.pages.dev/world-cases.html",
-      "tags": ["AI조기교육", "생성형AI교육", "부모교육", "아이와AI", "프롬프트교육", "AI리터러시", "세계교육사례"],
+      "tags": [
+        "AI조기교육",
+        "생성형AI교육",
+        "부모교육",
+        "아이와AI",
+        "프롬프트교육",
+        "AI리터러시",
+        "세계교육사례"
+      ],
       "category": "27",
       "mp4_path": "assets/world-ai-education-5min/render/world-ai-education-illust-v2.mp4",
       "thumbnail_path": "assets/world-ai-education-5min/poster/world-ai-education-v2.jpg",
-      "status": "ready_to_upload",
+      "status": "uploaded_private",
       "visibility_target": "private",
-      "youtube_url": "",
+      "youtube_url": "https://youtu.be/lY9B2t1k1Io",
       "detail_page": "/videos/world-ai-education.html",
       "on_video_hub": true,
       "created_at": "2026-07-04",
-      "updated_at": "2026-07-04",
+      "updated_at": "auto",
       "notes": "주력 일러스트 본편 v2(2:41, 디졸브). 홈페이지 영상관·상세 연결됨. 업로드는 private→사람 검수→approved_public 승인 후에만 공개."
     }
   ]
