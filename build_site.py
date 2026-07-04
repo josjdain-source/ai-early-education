@@ -340,7 +340,12 @@ if __name__=="__main__":
     write("index.html",home())
     write("why-ai-education.html",why())
     write("world-cases.html",world_cases())
-    for c in COUNTRIES: write(f"world-cases/{c[0]}.html",country_page(c))
+    for c in COUNTRIES:
+        if c[0]=="china": continue   # 중국은 심층 페이지(build_china_page)로 대체
+        write(f"world-cases/{c[0]}.html",country_page(c))
+    import build_china_page as CN
+    write("world-cases/china.html",CN.china_page())
+    write("videos/china-ai-education.html",CN.china_video_detail())
     write("videos.html",videos())
     write("videos/world-ai-education.html",video_detail())
     write("start-guide.html",start_guide())
