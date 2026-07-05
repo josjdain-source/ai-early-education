@@ -413,7 +413,26 @@ def write_all_practice():
             BS.write(f"world-cases/{slug}-home.html",homeyear_page(slug))
         if slug in CR.ROADMAP:
             BS.write(f"world-cases/{slug}-roadmap.html",roadmap_page(slug))
-    print("2편·3편(+1년 커리큘럼·집 실전판·학년별 로드맵) 생성 완료")
+        if slug in CR.PROG12:
+            BS.write(f"world-cases/{slug}-8yo-12weeks.html",program_page(slug))
+    print("2편·3편(+1년 커리큘럼·집 실전판·학년별 로드맵·12주 프로그램) 생성 완료")
+def program_page(slug):
+    name,flag=NAMES[slug]
+    body=f"""<main>
+<section class="page-hero"><div class="wrap">
+<div class="pill">{flag} 세계 사례 · {name} 실전 프로그램</div>
+<h1 style="font-size:30px">만 8세 초등, <span class="coral">12주 홈 프로그램</span></h1>
+<p class="sub">{name} KS2 방식을 우리 집에서 — 주 1회 15분, 대부분 무료·준비물 없음</p>
+{episode_nav(slug,"3")}
+</div></section>
+{CR.program_html(slug)}
+<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band">
+<div><h3>바로 쓰는 무료 자료</h3><p>연습지에 매주 기록하고, 질문 카드로 대화를 이어가세요.</p></div>
+<a class="btn btn-lg" href="/free-kit.html">무료 자료 받기 ⬇</a></div>
+<div class="cta-band" style="margin-top:12px"><div><h3>다른 나이는?</h3><p>만 5~16세 학년별 로드맵에서 우리 아이 단계를 찾아요.</p></div>
+<a class="btn btn-lg" href="/world-cases/{slug}-roadmap.html">🗺 학년별 로드맵 →</a></div></div></section>
+</main>"""
+    return BS.page("cases","../",f"만 8세 초등 12주 홈 프로그램 | AI 조기교육",f"{name} KS2 방식 기반, 만 8세 아이와 집에서 하는 12주 실전 프로그램. 주 1회 15분, 무료. 순서→만들기→AI 생각.",body)
 def roadmap_page(slug):
     name,flag=NAMES[slug]
     body=f"""<main>
@@ -424,7 +443,10 @@ def roadmap_page(slug):
 {episode_nav(slug,"2")}
 </div></section>
 {CR.roadmap_html(slug)}
-<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#EAF3FF,#DCEBFC)">
+<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#E6F4EA,#D3EFDC)">
+<div><h3>▶ 만 8세라면 · 12주 홈 프로그램</h3><p>KS2(초등) 아이와 지금 바로 시작하는, 주 1회 15분 12주 실전 프로그램.</p></div>
+<a class="btn btn-lg" href="/world-cases/{slug}-8yo-12weeks.html">12주 프로그램 →</a></div>
+<div class="cta-band" style="margin-top:12px;background:linear-gradient(135deg,#EAF3FF,#DCEBFC)">
 <div><h3>🔬 만 13세(Year 8)는 1년을 이렇게</h3><p>한 학년을 주차별로, 그리고 집에서 따라하는 실전까지 깊게.</p></div>
 <a class="btn btn-lg" href="/world-cases/{slug}-year.html">1년 커리큘럼 →</a></div>
 <div class="cta-band" style="margin-top:12px"><div><h3>🏠 집에서 따라하기</h3><p>단원마다 집에서 하는 구체 활동.</p></div>
