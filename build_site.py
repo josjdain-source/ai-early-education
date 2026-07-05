@@ -174,18 +174,34 @@ def why():
     return page("why","","왜 AI 조기교육인가 | AI 조기교육","AI를 쓰느냐가 아니라 어떻게 쓰느냐. 아이에게 다시 묻는 힘을 길러주는 과정형 교육 철학.",body)
 
 def world_cases():
-    cc="".join(f"""<a class="card country" href="/world-cases/{c[0]}.html">
-<div class="thumb"><img src="/{c[3]}" alt="{c[1]}" loading="lazy"></div>
+    chip="display:inline-block;font-size:12px;font-weight:700;text-decoration:none;border-radius:8px;padding:4px 9px;border:1px solid"
+    def eps(slug):
+        e=[("1편·정책",f"/world-cases/{slug}.html","#f0d8cc","#E0684A","#fff"),
+           ("2편·실제운영",f"/world-cases/{slug}-2.html","#E4D8C4","#8a6f45","#fff"),
+           ("3편·우리집",f"/world-cases/{slug}-3.html","#cfe6d6","#188038","#f2fbf5")]
+        return "".join(f'<a href="{h}" style="{chip} {bd};color:{co};background:{bg}">{t}</a>' for t,h,bd,co,bg in e)
+    cc="".join(f"""<div class="card country">
+<a href="/world-cases/{c[0]}.html"><div class="thumb"><img src="/{c[3]}" alt="{c[1]}" loading="lazy"></div></a>
 <div class="body"><div class="flag"><span class="fl">{c[2]}</span>{c[1]}</div><p>{c[4]}</p>
-<div style="margin-top:10px;color:var(--coral);font-weight:700;font-size:13px">자세히 보기 →</div></div></a>""" for c in COUNTRIES)
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px">{eps(c[0])}</div></div></div>""" for c in COUNTRIES)
+    steps="".join(f"""<div class="step {cl}"><div class="num">{n}</div><h4>{t}</h4><p>{d}</p></div>"""
+        for n,cl,t,d in [(1,"","세계가 이렇게 (정책)","각 나라가 왜 그렇게 가르치는지 — 타임라인과 근거."),
+        (2,"b","실제로 이렇게 (교실)","학년별로 매주 실제로 무엇을, 어떤 도구로 가르치는지."),
+        (3,"g","우리 집은 이렇게 (적용)","그 방식을 우리 아이의 한 주 습관으로. 무료 자료까지.")])
     body=f"""<main>
-<section class="page-hero"><div class="wrap"><div class="pill">세계 사례</div>
-<h1>세계 5개국은 AI를 어떻게 가르치나</h1>
-<p>방식은 달라도 공통점은 하나입니다 — AI에게 정답을 맡기는 게 아니라, 아이에게 <b>다시 묻는 힘</b>을 길러주는 것.</p></div></section>
-<section class="block"><div class="wrap"><div class="grid g3">{cc}</div>
-<div class="cta-band" style="margin-top:30px"><div><h3>영상으로 5개국을 한 번에</h3><p>2분 41초 안에 5개국의 흐름을 정리했어요.</p></div><a class="btn btn-lg" href="/videos/world-ai-education.html">영상 보기 →</a></div>
+<section class="page-hero"><div class="wrap"><div class="pill">📚 무료 연재</div>
+<h1>세계 AI교육법</h1>
+<p>중국·미국·영국·싱가포르·한국은 아이에게 AI를 <b>실제로</b> 어떻게 가르칠까요? 정책부터 교실, 그리고 우리 집 적용까지 — <b>매주 한 편씩 무료로</b> 풀어갑니다.</p></div></section>
+<section class="block"><div class="wrap"><h2 class="sec-title">각 나라를 3편으로 읽으세요</h2>
+<div class="steps3">{steps}</div></div></section>
+<section class="block" style="background:var(--cream2)"><div class="wrap"><h2 class="sec-title">나라별 연재</h2>
+<p class="sec-desc">각 카드에서 1편(정책) · 2편(실제 교실) · 3편(우리 집)을 바로 열 수 있어요.</p>
+<div class="grid g3">{cc}</div></div></section>
+<section class="block"><div class="wrap"><div class="cta-band">
+<div><h3>지금 바로 시작</h3><p>어느 나라든 3편 '우리 집 적용'에는 바로 쓰는 무료 자료가 붙어 있어요.</p></div><a class="btn btn-lg" href="/free-kit.html">무료 자료 받기 ⬇</a></div>
+<div class="cta-band" style="margin-top:14px"><div><h3>영상으로 5개국을 한 번에</h3><p>대표 영상에서 5개국 흐름을 정리했어요.</p></div><a class="btn btn-lg" href="/videos/world-ai-education.html">영상 보기 →</a></div>
 </div></section></main>"""
-    return page("cases","","세계 5개국 AI교육 사례 | AI 조기교육","중국·미국·영국·싱가포르·한국이 아이에게 AI를 가르치는 법. 한국 가정에서 배울 점까지.",body)
+    return page("cases","","세계 AI교육법 · 무료 연재 | AI 조기교육","중국·미국·영국·싱가포르·한국이 아이에게 AI를 실제로 가르치는 법. 정책·실제 교실·우리 집 적용을 3편 무료 연재로.",body)
 
 def country_page(c):
     key,name,flag,img,short,msg,points,learn,q=c
