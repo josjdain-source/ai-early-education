@@ -99,6 +99,15 @@ def subs_list(slug):
             ("🖨","12주 워크북 (인쇄·PDF)",f"/free/{slug}-12weeks-workbook.html")]
     return x
 
+def breadcrumb(slug,label):
+    """현재 위치 표시: 홈 › 부모 자료실 › {국가} › {현재}."""
+    name,flag=NAMES[slug]
+    s="color:#9b8a6e;text-decoration:none;font-weight:600"
+    return (f'<nav style="font-size:12.5px;margin-bottom:10px;color:#c4b59a">'
+            f'<a href="/" style="{s}">홈</a> › <a href="/parent-resources.html" style="{s}">부모 자료실</a> › '
+            f'<a href="/parent-resources/{slug}.html" style="{s}">{flag} {name}</a> › '
+            f'<b style="color:#B44A31">{label}</b></nav>')
+
 def side_rail(slug,current):
     """국가 콘텐츠 페이지 좌측 고정 카테고리 레일. 넓은 화면=항상 고정, 좁은 화면=플로팅 버튼."""
     name,flag=NAMES[slug]

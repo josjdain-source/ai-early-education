@@ -111,6 +111,17 @@ def home():
         ("🌱","교육은 과정","생각을 말하고, 관찰하고, 다시 묻는 과정이 핵심이에요."),
         ("👨‍👦","부모는 감독이 아니라 동반자","함께 탐색하고 격려하며, 질문을 던지는 동반자가 돼요."),
         ("💬","중요한 것은 다시 묻는 힘","포기하지 않고 더 나은 답을 찾아가는 힘을 길러요.")])
+    QUICK=[("📅","만 8세 12주 프로그램","/world-cases/uk-8yo-12weeks.html"),
+        ("📘","12주 워크북 인쇄","/free/uk-12weeks-workbook.html"),
+        ("📝","AI 대화 연습지","/free/worksheet.html"),
+        ("🃏","질문 카드 10장","/free/question-cards.html"),
+        ("💡","첫 프롬프트 20개","/free/first-prompts.html"),
+        ("🗺","영국 학년별 로드맵","/world-cases/uk-roadmap.html"),
+        ("🔬","1년 커리큘럼","/world-cases/uk-year.html"),
+        ("🏠","집 실전판","/world-cases/uk-home.html"),
+        ("📚","세계 AI교육법 연재","/world-cases.html"),
+        ("👨‍👩‍👧","부모 자료실","/parent-resources.html")]
+    quick="".join(f'<a href="{h}" style="display:inline-flex;align-items:center;gap:6px;background:#fff;border:1.5px solid #EADFCE;border-radius:22px;padding:9px 16px;text-decoration:none;color:var(--ink);font-weight:700;font-size:13.5px;box-shadow:0 1px 3px rgba(0,0,0,.05)">{ic} {t}</a>' for ic,t,h in QUICK)
     small=[("AI 결과가 마음에 안 들 때 대처법","6:15",f"{SCENE}/usa_b3.png"),
            ("좋은 프롬프트의 3가지 비밀","7:02",f"{SCENE}/common_b2.png"),
            ("아이와 함께하는 AI 프로젝트 예시","9:10",f"{SCENE}/parent.png")]
@@ -131,6 +142,11 @@ def home():
 <a class="btn btn-ghost btn-lg" href="/world-cases.html">🌍 세계 AI교육법 연재</a></div></div>
 <div class="hero-art"><img src="/{SCENE}/parent.png" alt="아이와 부모가 함께 AI로 배우는 모습"></div>
 </div><div class="hero-banner">결과물이 아니라 <span style="color:#FFD98A">과정이</span> 교육이다.</div></div></section>
+
+<section class="block" style="padding:26px 0 6px"><div class="wrap">
+<h2 class="sec-title" style="font-size:20px;margin-bottom:14px">🔎 자주 찾는 자료</h2>
+<div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">{quick}</div>
+</div></section>
 
 <section class="block"><div class="wrap">{val}</div></section>
 

@@ -251,6 +251,7 @@ def render(cfg):
     body=f"""<main>
 {CR.side_rail(cfg['slug'],f"/world-cases/{cfg['slug']}.html")}
 <section class="page-hero"><div class="wrap">
+{CR.breadcrumb(cfg['slug'],"1편 · 정책과 방침")}
 <div class="pill">{cfg['flag']} 세계 사례 · {cfg['pill']}</div>
 <h1 style="font-size:34px">{cfg['h1']}</h1>
 <p class="sub">{cfg['subtitle']}</p>
@@ -341,6 +342,7 @@ def practice_page(slug):
     body=f"""<main>
 {CR.side_rail(slug,f"/world-cases/{slug}-2.html")}
 <section class="page-hero"><div class="wrap">
+{CR.breadcrumb(slug,"2편 · 실제 교실 운영")}
 <div class="pill">{flag} 세계 사례 · {name} 2편</div>
 <h1 style="font-size:32px">{name}은 <span class="coral">실제로</span> 어떻게 가르치나</h1>
 <p class="sub">정책을 넘어 — 학년별로, 매주, 교실에서 실제로 돌아가는 방식</p>
@@ -363,6 +365,7 @@ def apply_page(slug):
     body=f"""<main>
 {CR.side_rail(slug,f"/world-cases/{slug}-3.html")}
 <section class="page-hero"><div class="wrap">
+{CR.breadcrumb(slug,"3편 · 우리 집 주간 적용")}
 <div class="pill">{flag} 세계 사례 · {name} 3편</div>
 <h1 style="font-size:32px">{name} 방식, <span class="coral">우리 집</span>에 이렇게</h1>
 <p class="sub">세계의 방법을 우리 아이의 한 주 습관으로 — 저녁 대화 10분이면 충분합니다</p>
@@ -379,6 +382,7 @@ def year_page(slug):
     body=f"""<main>
 {CR.side_rail(slug,f"/world-cases/{slug}-year.html")}
 <section class="page-hero"><div class="wrap">
+{CR.breadcrumb(slug,"1년 커리큘럼")}
 <div class="pill">{flag} 세계 사례 · {name} 심화</div>
 <h1 style="font-size:31px">{name}은 <span class="coral">1년 동안 매주</span> 이렇게 가르친다</h1>
 <p class="sub">실제 공개된 커리큘럼으로 따라가는, 학년 한 해의 주차별 수업</p>
@@ -395,6 +399,7 @@ def homeyear_page(slug):
     body=f"""<main>
 {CR.side_rail(slug,f"/world-cases/{slug}-home.html")}
 <section class="page-hero"><div class="wrap">
+{CR.breadcrumb(slug,"집 실전판")}
 <div class="pill">{flag} 세계 사례 · {name} 집 실전판</div>
 <h1 style="font-size:31px">{name} 1년 과정, <span class="coral">우리 집</span>에서 이렇게 따라한다</h1>
 <p class="sub">책에 든 커리큘럼을, 우리 아이에게 실제로 가르치는 구체적 방법</p>
@@ -515,6 +520,7 @@ def program_page(slug):
     body=f"""<main>
 {CR.side_rail(slug,f"/world-cases/{slug}-8yo-12weeks.html")}
 <section class="page-hero"><div class="wrap">
+{CR.breadcrumb(slug,"만 8세 12주 프로그램")}
 <div class="pill">{flag} 세계 사례 · {name} 실전 프로그램</div>
 <h1 style="font-size:30px">만 8세 초등, <span class="coral">12주 홈 프로그램</span></h1>
 <p class="sub">{name} KS2 방식을 우리 집에서 — 주 1회 15분, 대부분 무료·준비물 없음</p>
@@ -534,6 +540,7 @@ def roadmap_page(slug):
     name,flag=NAMES[slug]
     body=f"""<main>
 <section class="page-hero"><div class="wrap">
+{CR.breadcrumb(slug,"학년별 로드맵")}
 <div class="pill">{flag} 세계 사례 · {name} 학년별 로드맵</div>
 <h1 style="font-size:31px">{name}: 우리 아이 <span class="coral">나이</span>엔 뭘 배우나</h1>
 <p class="sub">만 5~16세, 학교가 하는 것과 집에서 할 것을 나이별로</p>
