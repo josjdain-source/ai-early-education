@@ -56,6 +56,9 @@ def footer(base):
 <script src="{base}scripts/main.js" defer></script></body></html>"""
 
 def global_sidebar():
+    """(비활성) 좌측 고정 사이드바 제거 — 상단 GNB+브레드크럼으로 단순화."""
+    return ""
+def _global_sidebar_legacy():
     """모든 페이지 좌측 고정 카테고리(사이트 전체 트리). 넓은화면=고정, 좁은화면=☰ 버튼."""
     import country_reality as CRX
     tops=[("🏠","홈","/"),("💡","왜 필요한가","/why-ai-education.html"),("📚","세계 AI교육법 연재","/world-cases.html"),
