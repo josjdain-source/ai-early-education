@@ -71,12 +71,13 @@ MEGA=[
    ("만 8세 · 12주 홈 프로그램","/world-cases/uk-8yo-12weeks.html"),
   ],("추천 프로그램","만 8세 초등 12주 홈 프로그램 — 주 1회 15분","/world-cases/uk-8yo-12weeks.html","시작하기 →")),
  ("res","부모 자료실","/parent-resources.html",[
-   ("자료실 홈 (국가별 자료)","/parent-resources.html"),
    ("부모용 질문 카드 10장","/free/question-cards.html"),
    ("아이와 해볼 프롬프트 20개","/free/first-prompts.html"),
-   ("가정용 AI 대화 연습지","/free/worksheet.html"),
-   ("AI 안전 사용 · 자주 묻는 질문","/parent-resources.html#faq"),
-  ],("인쇄해서 바로","12주 홈 워크북 — 표지·삽화·수료장 포함","/free/uk-12weeks-workbook.html","워크북 열기 🖨")),
+   ("AI 대화 연습지","/free/worksheet.html"),
+   ("AI 결과 관찰 체크리스트","/start-guide.html"),
+   ("AI 안전 사용 원칙","/parent-resources.html#faq"),
+   ("자주 묻는 질문","/parent-resources.html#faq"),
+  ],("먼저 써보세요","아이와 첫 AI 대화를 시작하는 부모용 질문 카드","/free/question-cards.html","질문 카드 보기")),
  ("free","무료 자료","/free-kit.html",[
    ("무료 자료 한눈에","/free-kit.html"),
    ("12주 워크북 (PDF)","/free/uk-12weeks-workbook.html"),
@@ -108,6 +109,7 @@ def header(active,base):
 <a class="mg-brand" href="/"><span class="bot">🤖</span><span><b>AI 조기교육</b><small>결과물이 아니라 과정이 교육이다</small></span></a>
 <nav class="mg-nav">{tops}</nav>
 <div class="mg-right">
+<button class="mg-ic mg-allbtn" onclick="mgAll()" title="전체메뉴 보기">☰ <small style="font-size:10px;font-weight:800">전체</small></button>
 <button class="mg-ic" onclick="mgSearch()" title="검색">🔍</button>
 <a class="mg-ic" href="{YT_CH}" target="_blank" rel="noopener" title="유튜브 채널">▶</a>
 <a class="btn btn-primary mg-cta" href="/start-guide.html">무료로 시작하기</a>
@@ -135,11 +137,15 @@ def header(active,base):
 .mg-ic:hover{{background:#FBF3E4}}
 .mg-cta{{white-space:nowrap}}
 .mg-hamb{{display:none}}
+.mg-allbtn{{width:auto;padding:0 10px;gap:3px}}
+@media(max-width:960px){{.mg-allbtn{{display:none}}}}
 .mg-panel{{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid #EADFCE;box-shadow:0 14px 30px rgba(43,32,22,.12)}}
 .mgh.open .mg-panel{{display:block}}
-.mg-in{{max-width:1240px;margin:0 auto;padding:22px 20px 26px;display:flex;gap:26px}}
-.mg-col{{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;padding:4px 6px;border-radius:12px}}
-.mg-col.hl{{background:#FBF3E4}}
+.mg-in{{max-width:1240px;margin:0 auto;padding:20px 20px 24px;display:flex;gap:26px;justify-content:center}}
+.mg-col{{display:none;flex-direction:column;gap:2px;padding:4px 6px;border-radius:12px;width:270px;flex:none}}
+.mgh.open .mg-col.hl{{display:flex;background:#FBF3E4}}
+.mgh.all .mg-col{{display:flex;background:none;width:auto;flex:1;min-width:0}}
+.mgh.all .mg-col.hl{{background:#FBF3E4}}
 .mg-ch{{font-weight:800;color:var(--navy);text-decoration:none;font-size:14px;padding:5px 8px 8px;border-bottom:2px solid #F0E6D2;margin-bottom:5px}}
 .mg-col a:not(.mg-ch){{padding:5px 8px;border-radius:7px;text-decoration:none;color:#5a4a35;font-size:13px;font-weight:600}}
 .mg-col a:not(.mg-ch):hover{{background:#FDECE5;color:#B44A31}}
@@ -169,15 +175,20 @@ body.mg-open .mg-mob{{transform:none}}
 <script>
 (function(){{
 var H=document.getElementById('mgh'),P=document.getElementById('mgPanel'),tm;
-function openP(k){{clearTimeout(tm);H.classList.add('open');H.classList.remove('srch');
+function openP(k){{clearTimeout(tm);H.classList.add('open');H.classList.remove('srch');H.classList.remove('all');
  document.querySelectorAll('.mg-col').forEach(function(c){{c.classList.toggle('hl',c.dataset.k===k);}});
  document.querySelectorAll('.mg-card').forEach(function(c){{c.classList.toggle('sh',c.dataset.k===k);}});}}
-function closeP(){{tm=setTimeout(function(){{H.classList.remove('open');}},160);}}
+function closeP(){{tm=setTimeout(function(){{H.classList.remove('open');H.classList.remove('all');}},160);}}
 document.querySelectorAll('.mg-t').forEach(function(a){{
  a.addEventListener('mouseenter',function(){{openP(a.dataset.k);}});
 }});
 H.addEventListener('mouseleave',closeP);
 P.addEventListener('mouseenter',function(){{clearTimeout(tm);}});
+window.mgAll=function(){{clearTimeout(tm);H.classList.remove('srch');
+ if(H.classList.contains('all')){{H.classList.remove('all');H.classList.remove('open');return;}}
+ H.classList.add('open');H.classList.add('all');
+ document.querySelectorAll('.mg-col').forEach(function(c){{c.classList.remove('hl');}});
+ document.querySelectorAll('.mg-card').forEach(function(c){{c.classList.toggle('sh',c.dataset.k==='cases');}});}};
 window.mgSearch=function(){{H.classList.toggle('srch');H.classList.remove('open');
  if(H.classList.contains('srch')){{document.getElementById('mgQ').focus();mgF();}}}};
 var D={sjson};
