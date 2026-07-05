@@ -346,6 +346,9 @@ def practice_page(slug):
 </div></section>
 {CR.reality_html(slug)}
 {(f'''<section class="block"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#EAF3FF,#DCEBFC)">
+<div><h3>🗺 우리 아이 나이엔 뭘 배우나? · 학년별 로드맵</h3><p>만 5~16세, 나이별로 학교가 하는 것과 집에서 할 것을 한눈에.</p></div>
+<a class="btn btn-lg" href="/world-cases/{slug}-roadmap.html">학년별 로드맵 →</a></div></div></section>''') if slug in CR.ROADMAP else ''}
+{(f'''<section class="block"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#EAF3FF,#DCEBFC)">
 <div><h3>🔬 심화 · {name}은 1년 동안 매주 이렇게</h3><p>실제 공개 커리큘럼으로 보는 학년 한 해의 주차별 수업(단원·차시). AI 단원은 6차시로.</p></div>
 <a class="btn btn-lg" href="/world-cases/{slug}-year.html">1년 커리큘럼 보기 →</a></div></div></section>''') if slug in CR.YEAR else ''}
 <section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#FFF3E0,#FDE9CE)">
@@ -408,7 +411,26 @@ def write_all_practice():
             BS.write(f"world-cases/{slug}-year.html",year_page(slug))
         if slug in CR.HOMEYEAR:
             BS.write(f"world-cases/{slug}-home.html",homeyear_page(slug))
-    print("2편·3편(+심화 1년 커리큘럼·집 실전판) 생성 완료")
+        if slug in CR.ROADMAP:
+            BS.write(f"world-cases/{slug}-roadmap.html",roadmap_page(slug))
+    print("2편·3편(+1년 커리큘럼·집 실전판·학년별 로드맵) 생성 완료")
+def roadmap_page(slug):
+    name,flag=NAMES[slug]
+    body=f"""<main>
+<section class="page-hero"><div class="wrap">
+<div class="pill">{flag} 세계 사례 · {name} 학년별 로드맵</div>
+<h1 style="font-size:31px">{name}: 우리 아이 <span class="coral">나이</span>엔 뭘 배우나</h1>
+<p class="sub">만 5~16세, 학교가 하는 것과 집에서 할 것을 나이별로</p>
+{episode_nav(slug,"2")}
+</div></section>
+{CR.roadmap_html(slug)}
+<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#EAF3FF,#DCEBFC)">
+<div><h3>🔬 만 13세(Year 8)는 1년을 이렇게</h3><p>한 학년을 주차별로, 그리고 집에서 따라하는 실전까지 깊게.</p></div>
+<a class="btn btn-lg" href="/world-cases/{slug}-year.html">1년 커리큘럼 →</a></div>
+<div class="cta-band" style="margin-top:12px"><div><h3>🏠 집에서 따라하기</h3><p>단원마다 집에서 하는 구체 활동.</p></div>
+<a class="btn btn-lg" href="/world-cases/{slug}-home.html">집 실전판 →</a></div></div></section>
+</main>"""
+    return BS.page("cases","../",f"{name}: 우리 아이 나이엔 뭘 배우나 (학년별 로드맵) | AI 조기교육",f"{name}의 컴퓨팅·AI 교육을 만 5~16세 학년별로. 학교가 하는 것과 집에서 할 것. 세계 AI교육법 심화.",body)
 if __name__=="__main__":
     import sys
     which=sys.argv[1:] or ["uk","singapore","korea"]

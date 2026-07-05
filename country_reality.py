@@ -226,6 +226,40 @@ def homeyear_html(key):
 <div class="grid g4">{ai}</div>
 <div class="callout" style="margin-top:16px">💡 {h['tip']}</div>
 </div></section>"""
+ROADMAP={
+"uk": dict(
+ intro="영국 아이는 만 5세부터 16세까지 컴퓨팅을 나선형으로 배웁니다. 코딩과 데이터의 기초가 쌓여야 AI를 제대로 이해하기 때문이죠. 우리 아이 나이에 맞춰 — 학교는 뭘 하고, 집에선 뭘 하면 되는지 한눈에 봅니다.",
+ ai_note="★ 정직하게 — 영국의 현재 국가 커리큘럼은 AI를 별도 과목으로 명시하지 않습니다. 대신 코딩·알고리즘 기초로 AI의 토대를 쌓고, 커리큘럼 개정으로 <b>KS2(초등 중·고학년)부터 나이에 맞는 AI 개념</b>을 넣는 방향입니다.",
+ stages=[
+  ("KS1 · Year 1–2","만 5~7세",
+   "간단한 알고리즘을 따라 하고 직접 만들며, Bee-Bot 같은 로봇으로 시각적 프로그래밍을 시작합니다. 온라인 안전의 기초도. AI는 게임으로 '컴퓨터가 패턴을 배운다'를 맛봅니다.",
+   "순서 놀이 — 요리나 길 찾기를 '명령'으로 또박또박 말하게 해요. 화살표 카드로 부모(로봇)를 움직여요. '이 기기 안전하게 쓰는 법'을 이야기해요."),
+  ("KS2 · Year 3–6","만 7~11세",
+   "Scratch로 본격 프로그래밍(변수·반복·센싱)을 하고, 데이터(스프레드시트)·미디어(웹페이지·3D)·네트워크를 배웁니다. 일부는 Year 5–6에 Python을 맛봅니다. AI는 '추천 알고리즘·음성비서가 AI'임을 알고, 간단한 분류를 놀이로.",
+   "무료 Scratch로 간단한 게임·애니를 만들어요. 좋아하는 것을 데이터 표로. '유튜브 추천은 어떻게 골라줄까?'를 대화하고, 카드 분류 놀이로 '기계가 나누는 법'을 체험해요."),
+  ("KS3 · Year 7–9","만 11~14세",
+   "Python 텍스트 코딩과 컴퓨팅 시스템을 배우고, AI '생각하는 기계' 차시에서 AI의 정의·기계학습·훈련·윤리를 처음 집중해서 만납니다.",
+   "무료 Python 한 줄부터 시작하고, 집 안의 AI를 찾아 원리를 추측하고, '분류기' 놀이를 해요. → Year 8 1년 커리큘럼·집 실전판에서 자세히."),
+  ("KS4 · Year 10–11 (GCSE)","만 14~16세",
+   "GCSE 컴퓨터과학으로 알고리즘·데이터를 심화하고, 실세계 AI 이슈 — 직장의 AI, 알고리즘의 편향 같은 문제 — 를 다룹니다.",
+   "'AI가 일자리를 어떻게 바꿀까?', '이 AI는 공정할까, 누가 손해를 볼까?' 같은 사회적 대화로 넓혀요. 진로와 연결해 함께 생각해요."),
+ ],
+ src="출처: NCCE Teach Computing(ncce.io/tcc)·영국 국가 컴퓨팅 커리큘럼(gov.uk)·컴퓨팅 커리큘럼 개정 논의. 학교마다 진도와 도입 시기는 다릅니다.",
+)}
+def roadmap_html(key):
+    r=ROADMAP.get(key)
+    if not r: return ""
+    stages="".join(f"""<div class="card" style="margin-bottom:12px"><div class="lyr-h">{ks}<span>{age}</span></div>
+<p style="margin:6px 0"><b>🏫 학교에서</b> — {school}</p>
+<p style="margin:6px 0"><b style="color:#188038">🏠 집에서 이렇게</b> — {home}</p></div>""" for ks,age,school,home in r["stages"])
+    return f"""<section class="block"><div class="wrap">
+<div class="pill">🗺 학년별 로드맵</div>
+<h2 class="sec-title" style="margin-top:8px">영국 컴퓨팅·AI, 만 5~16세 로드맵</h2>
+<p class="sec-desc">{r['intro']}</p>
+<div class="callout" style="margin:14px 0">{r['ai_note']}</div>
+{stages}
+<p class="sec-desc" style="margin-top:12px;font-size:12.5px">{r['src']}</p>
+</div></section>"""
 def apply_html(key):
     a=APPLY.get(key)
     if not a: return ""
