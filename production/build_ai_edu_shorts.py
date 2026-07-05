@@ -96,6 +96,28 @@ def frame(chip,head,caption,img,role,idx,n,out):
         d.ellipse([sx+i*(dotw+14),1850,sx+i*(dotw+14)+dotw,1872],fill=c)
     im.save(out)
 
+QF=os.path.join(REPO,"youtube","upload_queue.json")
+def register_to_studio(pkg, mp4):
+    """완성 mp4를 8971 영상 스튜디오(아이와 AI교실 채널=upload_queue)에 등록. 자동 공개/업로드 아님(ready_to_upload·public=False)."""
+    try:
+        q=json.load(open(QF,encoding="utf-8"))
+    except Exception:
+        return
+    vid="aiedu-"+pkg["id"]
+    rel=os.path.relpath(mp4,REPO).replace("\\","/")
+    desc=pkg.get("description","")+"\n\n"+" ".join("#"+t for t in pkg.get("hashtags",[]))
+    entry={"video_id":vid,"title":pkg.get("final_title",pkg["id"]),"video_type":"short",
+           "series":pkg.get("series",""),"mp4_path":rel,"thumbnail_path":"",
+           "status":"ready_to_upload","upload_status":"ready_to_upload","public":False,"public_status":"none",
+           "youtube_id":"","youtube_url":"","created_at":"2026-07-06","description":desc,
+           "source":f"content_bank/approved/shorts/{pkg['id']}.json",
+           "note":"쇼츠 빌더 렌더본. 업로드는 사람 승인(자동 공개 금지)."}
+    for i,it in enumerate(q["queue"]):
+        if it.get("video_id")==vid: q["queue"][i]={**it,**entry}; break
+    else: q["queue"].append(entry)
+    json.dump(q,open(QF,"w",encoding="utf-8"),ensure_ascii=False,indent=2)
+    print(f"  → 스튜디오(8971 아이와 AI교실) 등록: {vid}")
+
 def build_one(pkg):
     key=pkg["id"]; style=pkg["image_style"]["style_token"]; beats=pkg["beats"]; n=len(beats); XF=0.25
     segs=[]; auds=[]; beat_d=[]
@@ -124,6 +146,7 @@ def build_one(pkg):
     run([FF,"-hide_banner","-loglevel","error","-y","-i",f"{FR}/_v_{key}.mp4","-i",f"{FR}/_a_{key}.mp3",
          "-filter_complex",f"[1:a]apad=pad_dur={TAIL}[a]","-map","0:v","-map","[a]","-c:v","libx264","-preset","medium","-crf","21","-c:a","aac","-b:a","192k","-shortest",out])
     print(f"쇼츠 {key}: {dur(out):.1f}s -> {out}")
+    register_to_studio(pkg, out)
     return out
 
 if __name__=="__main__":
