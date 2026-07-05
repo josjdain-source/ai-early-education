@@ -1,0 +1,76 @@
+<!doctype html><html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>미국 자료실 | AI 조기교육</title><meta name="description" content="미국 AI교육 자료실 — 1·2·3편과 심화 자료를 한 페이지에서. 부모용.">
+<meta property="og:title" content="미국 자료실 | AI 조기교육"><meta property="og:description" content="미국 AI교육 자료실 — 1·2·3편과 심화 자료를 한 페이지에서. 부모용.">
+<meta property="og:type" content="website"><meta name="theme-color" content="#FBF6EE">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="../styles/main.css">
+</head><body><header class="site"><div class="wrap nav">
+<a class="brand" href="../"><span class="bot">🤖</span> AI 조기교육</a>
+<button class="hamb" aria-label="메뉴" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+<nav class="nav-links" id="nav"><a href="../" class="">홈</a><a href="../why-ai-education.html" class="">왜 필요한가</a><a href="../world-cases.html" class="">세계 사례</a><a href="../start-guide.html" class="">시작 가이드</a><a href="../videos.html" class="">영상</a><a href="../parent-resources.html" class="active">부모용 자료</a>
+<a class="btn btn-primary nav-cta" href="../start-guide.html">무료로 시작하기</a></nav>
+</div></header><main>
+<section class="page-hero" style="padding-bottom:14px"><div class="wrap">
+<div class="pill">🇺🇸 부모 자료실 · 미국</div>
+<h1 style="font-size:30px">미국 자료실</h1>
+<p>왼쪽 미국 카테고리에서 자료를 고르면, 이 페이지 안에서 바로 읽습니다.</p></div></section>
+<section class="block" style="padding-top:14px"><div class="wrap">
+<div class="rs-wrap">
+<aside class="rs-side">
+<a class="rs-top" href="/parent-resources.html" style="color:var(--coral)">← 전체 자료실</a>
+<div class="rs-h">🇺🇸 미국 자료</div>
+<a class="rs-sub" href="/world-cases/usa.html" onclick="return rsLoad(this)" data-href="/world-cases/usa.html">1️⃣ 1편 · 정책과 방침</a><a class="rs-sub" href="/world-cases/usa-2.html" onclick="return rsLoad(this)" data-href="/world-cases/usa-2.html">2️⃣ 2편 · 실제 교실 운영</a><a class="rs-sub" href="/world-cases/usa-3.html" onclick="return rsLoad(this)" data-href="/world-cases/usa-3.html">3️⃣ 3편 · 우리 집 주간 적용</a>
+<div class="rs-h">🌍 다른 나라</div>
+<a class="rs-top" style="font-size:12.5px;padding:6px 12px" href="/parent-resources/china.html">🇨🇳 중국</a><a class="rs-top" style="font-size:12.5px;padding:6px 12px" href="/parent-resources/uk.html">🇬🇧 영국</a><a class="rs-top" style="font-size:12.5px;padding:6px 12px" href="/parent-resources/singapore.html">🇸🇬 싱가포르</a><a class="rs-top" style="font-size:12.5px;padding:6px 12px" href="/parent-resources/korea.html">🇰🇷 한국</a><a class="rs-top" style="font-size:12.5px;padding:6px 12px" href="/parent-resources/germany.html">🇩🇪 독일</a><a class="rs-top" style="font-size:12.5px;padding:6px 12px" href="/parent-resources/japan.html">🇯🇵 일본</a>
+</aside>
+<div class="rs-main" id="rsMain">
+<div class="rs-bar"><span id="rsTitle" style="font-weight:800;color:var(--navy2)"></span><a class="btn btn-ghost" id="rsOrig" href="#" target="_blank" rel="noopener">새 창에서 크게 ↗</a></div>
+<div id="rsBody"><p style="color:var(--muted)">불러오는 중…</p></div>
+</div></div>
+</div></section>
+<style>
+.rs-wrap{display:flex;gap:24px;align-items:flex-start}
+.rs-side{width:230px;flex:none;position:sticky;top:84px;background:#fff;border:1px solid #EADFCE;border-radius:14px;padding:10px 8px;max-height:calc(100vh - 110px);overflow:auto}
+.rs-h{font-size:11.5px;font-weight:800;color:#9b8a6e;padding:10px 12px 5px}
+.rs-top{display:flex;align-items:center;gap:7px;padding:8px 12px;border-radius:9px;text-decoration:none;color:var(--ink);font-weight:700;font-size:13.5px}
+.rs-top:hover{background:#FBF3E4}
+.rs-sub{display:flex;align-items:center;gap:7px;padding:8px 11px;margin:2px 4px;border-radius:8px;text-decoration:none;color:var(--navy2);font-weight:600;font-size:13px;border:1px solid transparent}
+.rs-sub:hover{background:#FBF3E4;border-color:#EADFCE}
+.rs-sub.on{background:#FDECE5;border-color:#E0684A;color:#B44A31}
+.rs-sub .dl{font-size:10.5px;font-weight:800;color:#188038;background:#e6f4ea;border-radius:6px;padding:1px 7px;margin-left:auto}
+.rs-main{flex:1;min-width:0}
+.rs-bar{display:flex;justify-content:space-between;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+#rsBody .page-hero{padding:14px 0}#rsBody .block{padding:20px 0}
+@media(max-width:880px){.rs-wrap{flex-direction:column}.rs-side{position:static;width:100%;max-height:none}}
+</style>
+<script>
+async function rsLoad(el){
+  const href=el.dataset?el.dataset.href:el;
+  try{
+    const r=await fetch(href);const t=await r.text();
+    const doc=new DOMParser().parseFromString(t,'text/html');
+    const m=doc.querySelector('main');if(!m)return true;
+    m.querySelectorAll('header.site,footer.site,script').forEach(x=>x.remove());
+    m.querySelectorAll('a[href^="/world-cases/"]').forEach(a=>{const h=a.getAttribute('href');if(h&&h.endsWith('.html')&&!h.includes('workbook')){a.setAttribute('data-href',h);a.setAttribute('onclick','return rsLoad(this)');}});
+    document.getElementById('rsBody').innerHTML=m.innerHTML;
+    document.getElementById('rsOrig').href=href;
+    document.getElementById('rsTitle').textContent=(doc.querySelector('title')?.textContent||'').split('|')[0].trim();
+    document.querySelectorAll('.rs-sub.on').forEach(e=>e.classList.remove('on'));
+    const side=document.querySelector('.rs-sub[data-href="'+href+'"]');if(side)side.classList.add('on');
+    window.scrollTo({top:document.getElementById('rsMain').offsetTop-80,behavior:'smooth'});
+    return false;
+  }catch(e){return true;}
+}
+rsLoad('/world-cases/usa.html');
+</script>
+</main><footer class="site"><div class="wrap"><div class="foot-grid">
+<div class="foot-brand"><a class="brand" href="../"><span class="bot">🤖</span> AI 조기교육</a>
+<p>아이와 부모가 함께 성장하는<br>미래 교육의 시작</p></div>
+<div class="foot-col"><h5>서비스</h5><a href="../start-guide.html">시작 가이드</a><a href="../videos.html">영상</a><a href="../parent-resources.html">부모용 자료</a><a href="../free-kit.html">무료 자료</a></div>
+<div class="foot-col"><h5>소개</h5><a href="../why-ai-education.html">왜 필요한가</a><a href="../world-cases.html">세계 사례</a><a href="../why-ai-education.html#philosophy">우리의 철학</a></div>
+<div class="foot-col"><h5>고객 지원</h5><a href="../parent-resources.html#faq">자주 묻는 질문</a><a href="../start-guide.html">이용 가이드</a><a href="../privacy/">개인정보처리방침</a></div>
+<div class="foot-col"><h5>문의</h5><a href="mailto:2011kstudentlife@gmail.com">2011kstudentlife@gmail.com</a><a href="../videos.html">영상관</a></div>
+</div><div class="foot-bottom">© 2026 AI조기교육. 아이가 AI와 대화하며 '다시 묻는 힘'을 기르는 교육.</div></div></footer>
+<script src="../scripts/main.js" defer></script></body></html>

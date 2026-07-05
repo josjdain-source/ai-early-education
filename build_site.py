@@ -341,87 +341,114 @@ def parent_resources():
                 ("🖨","12주 워크북 (인쇄·PDF)",f"/free/{slug}-12weeks-workbook.html")]
         return s
     countries=[(c[0],c[1],c[2]) for c in COUNTRIES]
-    def nav_country(slug,name,flag):
-        items="".join(
-            (f'<a class="rs-sub" href="{h}" target="_blank" rel="noopener">{ic} {t} <span class="dl">다운로드</span></a>'
-             if h.startswith("/free/") else
-             f'<a class="rs-sub" href="{h}" onclick="return rsLoad(this)" data-href="{h}">{ic} {t}</a>')
-            for ic,t,h in subs(slug))
-        return f"""<div class="rs-cat"><button class="rs-cbtn" onclick="rsToggle('{slug}')"><span>{flag} {name}</span><span class="ar" id="ar-{slug}">▸</span></button>
-<div class="rs-subs" id="sub-{slug}">{items}</div></div>"""
-    nav_c="".join(nav_country(s,n,f) for s,n,f in countries)
+    nav_c="".join(f'<a class="rs-top" href="/parent-resources/{s}.html">{f} {n} <span style="margin-left:auto;color:#c4b59a">→</span></a>' for s,n,f in countries)
+    cards_c="".join(f"""<a class="card" href="/parent-resources/{s}.html" style="text-decoration:none;display:flex;align-items:center;gap:12px">
+<span style="font-size:30px">{f}</span><div><h4 style="margin:0">{n} 자료실</h4><p style="margin:2px 0 0;color:var(--muted);font-size:12.5px">{'1·2·3편 + 심화 5종' if s=='uk' else '1·2·3편'}</p></div>
+<span style="margin-left:auto;color:var(--coral);font-weight:800">→</span></a>""" for s,n,f in countries)
     body=f"""<main>
 <section class="page-hero"><div class="wrap"><div class="pill">부모용 자료</div>
-<h1>부모 자료실</h1><p>왼쪽에서 나라를 고르면 세부 자료가 펼쳐지고, 내용은 이 페이지 안에서 바로 읽습니다.</p></div></section>
+<h1>부모 자료실</h1><p>나라를 고르면 그 나라 전용 자료실로 이동합니다. 인쇄 자료는 아래에서 바로.</p></div></section>
 <section class="block"><div class="wrap">
 <div class="rs-wrap">
 <aside class="rs-side">
-<div class="rs-h">📥 인쇄 자료</div>
-<a class="rs-top" href="#" onclick="return rsHome()">🖨 바로 인쇄·다운로드</a>
-<div class="rs-h">🌍 국가별 자료</div>
+<div class="rs-h">🌍 국가별 자료실</div>
 {nav_c}
+<div class="rs-h">📥 인쇄 자료</div>
+<a class="rs-top" href="#downloads">🖨 바로 인쇄·다운로드</a>
 <div class="rs-h">❓ 도움말</div>
-<a class="rs-top" href="#" onclick="return rsFaq()">자주 묻는 질문</a>
+<a class="rs-top" href="#faq">자주 묻는 질문</a>
 </aside>
-<div class="rs-main" id="rsMain">
-<div id="rsHome">
-<h3 style="margin:0 0 10px;font-size:18px">🖨 바로 인쇄·다운로드</h3>
+<div class="rs-main">
+<h3 style="margin:0 0 10px;font-size:18px">🌍 국가별 자료실</h3>
+<div class="grid g3" style="margin-bottom:26px">{cards_c}</div>
+<h3 id="downloads" style="scroll-margin-top:90px;margin:0 0 10px;font-size:18px">🖨 바로 인쇄·다운로드</h3>
 <div class="grid g3">{res}</div>
 <div style="margin-top:10px"><a class="rs-sub" style="max-width:460px" href="/free/uk-12weeks-workbook.html" target="_blank" rel="noopener">📘 만 8세 12주 홈 워크북 (표지·삽화·수료장) <span class="dl">다운로드</span></a></div>
-<div class="callout" style="margin-top:22px">🌍 왼쪽에서 나라를 누르면 세부 자료(1·2·3편, 심화)가 펼쳐집니다. 내용은 페이지 이동 없이 여기서 바로 읽어요.</div>
-<h3 id="faq" style="margin:26px 0 10px;font-size:18px">❓ 자주 묻는 질문</h3>{fq}
-</div>
-<div id="rsDoc" style="display:none">
-<div class="rs-bar"><button class="btn btn-ghost" onclick="rsHome()">← 자료실 홈</button><a class="btn btn-ghost" id="rsOrig" href="#" target="_blank" rel="noopener">새 창에서 크게 ↗</a></div>
-<div id="rsBody"></div>
-</div>
+<h3 id="faq" style="scroll-margin-top:90px;margin:26px 0 10px;font-size:18px">❓ 자주 묻는 질문</h3>{fq}
 </div></div>
 </div></section>
-<style>
-.rs-wrap{{display:flex;gap:24px;align-items:flex-start}}
-.rs-side{{width:230px;flex:none;position:sticky;top:84px;background:#fff;border:1px solid #EADFCE;border-radius:14px;padding:10px 8px;max-height:calc(100vh - 110px);overflow:auto}}
-.rs-h{{font-size:11.5px;font-weight:800;color:#9b8a6e;padding:10px 12px 5px}}
-.rs-top{{display:block;padding:8px 12px;border-radius:9px;text-decoration:none;color:var(--ink);font-weight:700;font-size:13.5px}}
-.rs-top:hover,.rs-cbtn:hover{{background:#FBF3E4}}
-.rs-cbtn{{display:flex;justify-content:space-between;align-items:center;width:100%;border:0;background:none;padding:9px 12px;border-radius:9px;font:inherit;font-weight:700;font-size:14px;cursor:pointer;color:var(--ink)}}
-.rs-cbtn .ar{{color:#c4b59a;transition:transform .15s}}
-.rs-cat.open .ar{{transform:rotate(90deg)}}
-.rs-subs{{display:none;padding:2px 0 6px 10px}}
-.rs-cat.open .rs-subs{{display:block}}
-.rs-sub{{display:flex;align-items:center;gap:7px;padding:7px 10px;margin:2px 4px;border-radius:8px;text-decoration:none;color:var(--navy2);font-weight:600;font-size:12.8px;border:1px solid transparent}}
-.rs-sub:hover{{background:#FBF3E4;border-color:#EADFCE}}
-.rs-sub.on{{background:#FDECE5;border-color:#E0684A;color:#B44A31}}
-.rs-sub .dl{{font-size:10.5px;font-weight:800;color:#188038;background:#e6f4ea;border-radius:6px;padding:1px 7px;margin-left:auto}}
-.rs-main{{flex:1;min-width:0}}
-.rs-bar{{display:flex;justify-content:space-between;gap:10px;margin-bottom:14px}}
-#rsBody .page-hero{{padding:18px 0}}#rsBody .block{{padding:22px 0}}
-@media(max-width:880px){{.rs-wrap{{flex-direction:column}}.rs-side{{position:static;width:100%;max-height:none}}}}
-</style>
+{RS_STYLE}
+</main>"""
+    return page("res","","부모 자료실 · 국가별 자료 & 다운로드 | AI 조기교육","국가별 전용 자료실과 인쇄용 워크북·연습지 다운로드, 부모 FAQ까지.",body)
+
+RS_STYLE="""<style>
+.rs-wrap{display:flex;gap:24px;align-items:flex-start}
+.rs-side{width:230px;flex:none;position:sticky;top:84px;background:#fff;border:1px solid #EADFCE;border-radius:14px;padding:10px 8px;max-height:calc(100vh - 110px);overflow:auto}
+.rs-h{font-size:11.5px;font-weight:800;color:#9b8a6e;padding:10px 12px 5px}
+.rs-top{display:flex;align-items:center;gap:7px;padding:8px 12px;border-radius:9px;text-decoration:none;color:var(--ink);font-weight:700;font-size:13.5px}
+.rs-top:hover{background:#FBF3E4}
+.rs-sub{display:flex;align-items:center;gap:7px;padding:8px 11px;margin:2px 4px;border-radius:8px;text-decoration:none;color:var(--navy2);font-weight:600;font-size:13px;border:1px solid transparent}
+.rs-sub:hover{background:#FBF3E4;border-color:#EADFCE}
+.rs-sub.on{background:#FDECE5;border-color:#E0684A;color:#B44A31}
+.rs-sub .dl{font-size:10.5px;font-weight:800;color:#188038;background:#e6f4ea;border-radius:6px;padding:1px 7px;margin-left:auto}
+.rs-main{flex:1;min-width:0}
+.rs-bar{display:flex;justify-content:space-between;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+#rsBody .page-hero{padding:14px 0}#rsBody .block{padding:20px 0}
+@media(max-width:880px){.rs-wrap{flex-direction:column}.rs-side{position:static;width:100%;max-height:none}}
+</style>"""
+
+def parent_resources_country(slug,name,flag):
+    """국가 전용 자료실 — 좌측=그 나라 카테고리만, 우측=인라인 뷰어(기본 1편 자동 로드)."""
+    def subs(s):
+        x=[("1️⃣","1편 · 정책과 방침",f"/world-cases/{s}.html"),
+           ("2️⃣","2편 · 실제 교실 운영",f"/world-cases/{s}-2.html"),
+           ("3️⃣","3편 · 우리 집 주간 적용",f"/world-cases/{s}-3.html")]
+        if s=="uk":
+            x+=[("🗺","학년별 로드맵 (만 5~16세)",f"/world-cases/{s}-roadmap.html"),
+                ("🔬","1년 커리큘럼 (Year 8)",f"/world-cases/{s}-year.html"),
+                ("🏠","집 실전판 (단원별)",f"/world-cases/{s}-home.html"),
+                ("📅","만 8세 12주 프로그램",f"/world-cases/{s}-8yo-12weeks.html"),
+                ("🖨","12주 워크북 (인쇄·PDF)",f"/free/{s}-12weeks-workbook.html")]
+        return x
+    items="".join(
+        (f'<a class="rs-sub" href="{h}" target="_blank" rel="noopener">{ic} {t} <span class="dl">다운로드</span></a>'
+         if h.startswith("/free/") else
+         f'<a class="rs-sub" href="{h}" onclick="return rsLoad(this)" data-href="{h}">{ic} {t}</a>')
+        for ic,t,h in subs(slug))
+    others="".join(f'<a class="rs-top" style="font-size:12.5px;padding:6px 12px" href="/parent-resources/{s}.html">{f} {n}</a>'
+        for s,n,f in [(c[0],c[1],c[2]) for c in COUNTRIES] if s!=slug)
+    body=f"""<main>
+<section class="page-hero" style="padding-bottom:14px"><div class="wrap">
+<div class="pill">{flag} 부모 자료실 · {name}</div>
+<h1 style="font-size:30px">{name} 자료실</h1>
+<p>왼쪽 {name} 카테고리에서 자료를 고르면, 이 페이지 안에서 바로 읽습니다.</p></div></section>
+<section class="block" style="padding-top:14px"><div class="wrap">
+<div class="rs-wrap">
+<aside class="rs-side">
+<a class="rs-top" href="/parent-resources.html" style="color:var(--coral)">← 전체 자료실</a>
+<div class="rs-h">{flag} {name} 자료</div>
+{items}
+<div class="rs-h">🌍 다른 나라</div>
+{others}
+</aside>
+<div class="rs-main" id="rsMain">
+<div class="rs-bar"><span id="rsTitle" style="font-weight:800;color:var(--navy2)"></span><a class="btn btn-ghost" id="rsOrig" href="#" target="_blank" rel="noopener">새 창에서 크게 ↗</a></div>
+<div id="rsBody"><p style="color:var(--muted)">불러오는 중…</p></div>
+</div></div>
+</div></section>
+{RS_STYLE}
 <script>
-function rsToggle(s){{const c=document.getElementById('sub-'+s).parentElement;c.classList.toggle('open');return false;}}
-function rsHome(){{document.getElementById('rsDoc').style.display='none';document.getElementById('rsHome').style.display='block';document.querySelectorAll('.rs-sub.on').forEach(e=>e.classList.remove('on'));window.scrollTo({{top:0,behavior:'smooth'}});return false;}}
-function rsFaq(){{rsHome();setTimeout(()=>document.getElementById('faq').scrollIntoView({{behavior:'smooth'}}),80);return false;}}
 async function rsLoad(el){{
-  const href=el.dataset.href;
+  const href=el.dataset?el.dataset.href:el;
   try{{
     const r=await fetch(href);const t=await r.text();
     const doc=new DOMParser().parseFromString(t,'text/html');
     const m=doc.querySelector('main');if(!m)return true;
     m.querySelectorAll('header.site,footer.site,script').forEach(x=>x.remove());
-    m.querySelectorAll('a[href^="/world-cases/"]').forEach(a=>{{const h=a.getAttribute('href');if(h.endsWith('.html')&&!h.includes('workbook')){{a.setAttribute('data-href',h);a.setAttribute('onclick','return rsLoad(this)');}}}});
+    m.querySelectorAll('a[href^="/world-cases/"]').forEach(a=>{{const h=a.getAttribute('href');if(h&&h.endsWith('.html')&&!h.includes('workbook')){{a.setAttribute('data-href',h);a.setAttribute('onclick','return rsLoad(this)');}}}});
     document.getElementById('rsBody').innerHTML=m.innerHTML;
     document.getElementById('rsOrig').href=href;
-    document.getElementById('rsHome').style.display='none';
-    document.getElementById('rsDoc').style.display='block';
+    document.getElementById('rsTitle').textContent=(doc.querySelector('title')?.textContent||'').split('|')[0].trim();
     document.querySelectorAll('.rs-sub.on').forEach(e=>e.classList.remove('on'));
-    if(el.classList)el.classList.add('on');
-    document.getElementById('rsMain').scrollIntoView({{behavior:'smooth',block:'start'}});
+    const side=document.querySelector('.rs-sub[data-href="'+href+'"]');if(side)side.classList.add('on');
+    window.scrollTo({{top:document.getElementById('rsMain').offsetTop-80,behavior:'smooth'}});
     return false;
   }}catch(e){{return true;}}
 }}
+rsLoad('/world-cases/{slug}.html');
 </script>
 </main>"""
-    return page("res","","부모 자료실 · 국가별 자료 & 다운로드 | AI 조기교육","왼쪽 나라 카테고리에서 세부 자료를 펼쳐 페이지 안에서 바로 읽는 부모 자료실. 인쇄 워크북 다운로드 포함.",body)
+    return page("res","../",f"{name} 자료실 | AI 조기교육",f"{name} AI교육 자료실 — 1·2·3편과 심화 자료를 한 페이지에서. 부모용.",body)
 
 def free_kit():
     kits=[("📝","집에서 하는 AI 대화 연습지","아이와 함께 AI에게 요청하고, 관찰하고, 다시 묻는 과정을 적는 워크시트.","/free/worksheet.html"),
@@ -468,5 +495,7 @@ if __name__=="__main__":
     write("videos/world-ai-education.html",video_detail())
     write("start-guide.html",start_guide())
     write("parent-resources.html",parent_resources())
+    for c in COUNTRIES:
+        write(f"parent-resources/{c[0]}.html",parent_resources_country(c[0],c[1],c[2]))
     write("free-kit.html",free_kit())
     print("완료.")
