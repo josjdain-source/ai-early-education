@@ -415,7 +415,72 @@ def write_all_practice():
             BS.write(f"world-cases/{slug}-roadmap.html",roadmap_page(slug))
         if slug in CR.PROG12:
             BS.write(f"world-cases/{slug}-8yo-12weeks.html",program_page(slug))
-    print("2편·3편(+1년 커리큘럼·집 실전판·학년별 로드맵·12주 프로그램) 생성 완료")
+            BS.write(f"free/{slug}-12weeks-workbook.html",program_workbook(slug))
+    print("2편·3편(+1년 커리큘럼·집 실전판·학년별 로드맵·12주 프로그램·워크북) 생성 완료")
+def program_workbook(slug):
+    p=CR.PROG12[slug]; name,flag=NAMES[slug]
+    def part_of(n): return "3부 · 데이터와 AI 생각" if n>=9 else ("2부 · 직접 만들기" if n>=5 else "1부 · 컴퓨팅적 사고")
+    wk=""
+    for w in p["weeks"]:
+        n=w[0]
+        wk+=f"""<section class="page wk">
+<div class="wkhead"><span class="wknum">{n}주</span><span class="wkpart">{part_of(n)} · 만 8세 홈 워크북</span></div>
+<h2>{w[1]}</h2>
+<div class="act"><b>🎯 이번 주에 할 것</b><br>{w[2]}<div class="prep">🧰 준비물 · {w[3].replace('준비물: ','')}</div></div>
+<div class="say">💬 부모가 이렇게 물어봐요<br><b>"{w[4]}"</b></div>
+<div class="rbox"><div class="rlab">✍️ 우리가 한 것</div><div class="lines"></div></div>
+<div class="rbox"><div class="rlab">💡 아이가 발견한 것 · 다시 물어본 것</div><div class="lines"></div></div>
+<div class="rrow"><div class="stars">이번 주 재미 &nbsp; ☆ ☆ ☆ ☆ ☆</div><div class="draw">그림 · 스티커 칸</div></div>
+<div class="why">🔗 왜 하나요 — {w[5]}</div>
+</section>"""
+    return f"""<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>만 8세 12주 홈 프로그램 워크북 | AI 조기교육</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+*{{box-sizing:border-box}}body{{margin:0;background:#EDE6DA;font-family:"Pretendard","Malgun Gothic",sans-serif;color:#2B2016}}
+@page{{size:A4;margin:14mm}}
+.tbar{{position:sticky;top:0;display:flex;gap:10px;justify-content:space-between;align-items:center;background:#fff;padding:12px 18px;box-shadow:0 2px 8px rgba(0,0,0,.08);flex-wrap:wrap}}
+.tbar a{{color:#E0684A;font-weight:700;text-decoration:none}}
+.btn{{background:#E0684A;color:#fff;border:0;border-radius:10px;padding:10px 18px;font-weight:800;cursor:pointer;font-size:14px}}
+.page{{background:#fff;max-width:800px;margin:16px auto;padding:30px 34px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.06);min-height:960px}}
+.cover{{text-align:center;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#FFF7EA,#FBEBD3)}}
+.cover .em{{font-size:64px}}.cover h1{{font-size:32px;margin:10px 0 6px}}.cover .s{{color:#7c6a4d;font-size:15px}}
+.cover .how{{text-align:left;background:#fff;border:1px solid #E4D8C4;border-radius:14px;padding:18px 22px;margin:22px auto 0;max-width:560px;font-size:14px;line-height:1.7}}
+.wkhead{{display:flex;justify-content:space-between;align-items:baseline;border-bottom:3px solid #E0684A;padding-bottom:8px}}
+.wknum{{font-size:30px;font-weight:900;color:#E0684A}}.wkpart{{font-size:12.5px;color:#9b8a6e;font-weight:700}}
+.wk h2{{font-size:23px;margin:16px 0 14px}}
+.act{{background:#FFF7EA;border:1px solid #EAD9BE;border-radius:12px;padding:14px 16px;font-size:14.5px;line-height:1.6}}
+.prep{{color:#8a6f45;font-size:12.5px;margin-top:8px}}
+.say{{background:#EEF7EF;border:1px solid #cfe6d6;border-radius:12px;padding:12px 16px;margin:12px 0;font-size:14px;line-height:1.6}}
+.rbox{{margin-top:14px}}.rlab{{font-weight:800;font-size:14px;margin-bottom:6px}}
+.lines{{height:96px;background-image:repeating-linear-gradient(#fff,#fff 30px,#D8C9AE 31px,#fff 32px);border:1px solid #E4D8C4;border-radius:8px}}
+.rrow{{display:flex;gap:14px;margin-top:14px}}
+.stars{{flex:1;border:1px solid #E4D8C4;border-radius:8px;padding:14px;font-weight:700;font-size:16px}}
+.draw{{flex:1;border:1px dashed #C9BBA8;border-radius:8px;padding:14px;color:#b9a98c;text-align:center;min-height:90px;display:grid;place-items:center;font-size:13px}}
+.why{{margin-top:14px;font-size:12px;color:#9b8a6e;border-top:1px solid #eee;padding-top:8px}}
+@media print{{.noprint{{display:none!important}}body{{background:#fff}}.page{{box-shadow:none;margin:0;border-radius:0;max-width:none;min-height:auto;padding:0;page-break-after:always}}.page:last-child{{page-break-after:auto}}}}
+</style></head><body>
+<div class="tbar noprint"><a href="/world-cases/{slug}-8yo-12weeks.html">← 12주 프로그램</a>
+<button class="btn" onclick="window.print()">🖨 인쇄 / PDF로 저장</button></div>
+<section class="page cover"><div class="em">📘</div>
+<h1>만 8세 초등<br>12주 홈 프로그램 워크북</h1>
+<p class="s">영국 KS2 방식을 우리 집에서 · 주 1회 15분 · 대부분 무료</p>
+<div class="how"><b>이렇게 쓰세요</b><br>
+· 매주 <b>한 장</b>씩, 그 주의 활동을 아이와 함께 해요.<br>
+· 활동 뒤 <b>'우리가 한 것'</b>과 <b>'다시 물어본 것'</b>을 아이가 직접 적거나 그려요.<br>
+· 결과물이 아니라 <b>함께 해보고 다시 묻는 과정</b>이 목표예요.<br>
+· 12주를 마치면 처음으로 돌아가 조금 더 어렵게 한 바퀴 더!<br>
+<span style="color:#9b8a6e;font-size:12.5px">© 2026 AI조기교육 · ai-early-education.pages.dev</span></div>
+</section>
+{wk}
+<section class="page cover"><div class="em">🎓</div>
+<h1>12주, 정말 잘했어요!</h1>
+<p class="s">이제 우리 아이는 순서대로 생각하고, 스스로 만들고,<br>AI에게 '다시 묻는' 힘의 씨앗을 가졌어요.</p>
+<div class="how" style="text-align:center"><b>수료 축하 · ______________ (이름)</b><br><br>
+가장 재미있었던 주: ____주<br>다음에 또 해보고 싶은 것: ______________________</div>
+</section>
+</body></html>"""
 def program_page(slug):
     name,flag=NAMES[slug]
     body=f"""<main>
@@ -426,8 +491,10 @@ def program_page(slug):
 {episode_nav(slug,"3")}
 </div></section>
 {CR.program_html(slug)}
-<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band">
-<div><h3>바로 쓰는 무료 자료</h3><p>연습지에 매주 기록하고, 질문 카드로 대화를 이어가세요.</p></div>
+<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#EAF3FF,#DCEBFC)">
+<div><h3>🖨 12주 워크북 (인쇄 · PDF로 저장)</h3><p>매주 한 장씩 출력해, 아이가 직접 기록하며 진행하는 워크북. 표지·수료장 포함.</p></div>
+<a class="btn btn-lg" href="/free/{slug}-12weeks-workbook.html" target="_blank" rel="noopener">워크북 열기 →</a></div>
+<div class="cta-band" style="margin-top:12px"><div><h3>바로 쓰는 무료 자료</h3><p>연습지에 매주 기록하고, 질문 카드로 대화를 이어가세요.</p></div>
 <a class="btn btn-lg" href="/free-kit.html">무료 자료 받기 ⬇</a></div>
 <div class="cta-band" style="margin-top:12px"><div><h3>다른 나이는?</h3><p>만 5~16세 학년별 로드맵에서 우리 아이 단계를 찾아요.</p></div>
 <a class="btn btn-lg" href="/world-cases/{slug}-roadmap.html">🗺 학년별 로드맵 →</a></div></div></section>
