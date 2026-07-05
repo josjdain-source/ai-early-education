@@ -34,14 +34,158 @@ def head(title,desc,base):
 <link rel="stylesheet" href="{base}styles/main.css">
 </head><body>"""
 
+# ---------- KOSIS식 메가메뉴 ----------
+YT_CH="https://www.youtube.com/channel/UCzCA_HXDHMVGvWpQv4PSZgw"
+MEGA=[
+ ("why","왜 AI교육인가","/why-ai-education.html",[
+   ("AI 조기교육이 필요한 이유","/why-ai-education.html"),
+   ("알파고 이후, 한국의 10년","/world-cases/korea.html"),
+   ("아이에게 필요한 AI 리터러시","/why-ai-education.html#philosophy"),
+   ("AI를 막을 것인가, 다룰 것인가","/videos/world-ai-education.html"),
+   ("부모가 오해하기 쉬운 것 (FAQ)","/parent-resources.html#faq"),
+  ],("먼저 읽기","결과물이 아니라 과정이 교육이다 — 우리의 철학","/why-ai-education.html","철학 보기")),
+ ("cases","세계 AI교육","/world-cases.html",[
+   ("🌍 전체 연재 보기","/world-cases.html"),
+   ("🇨🇳 중국 · 시간표에 AI를 넣다","/world-cases/china.html"),
+   ("🇺🇸 미국 · 만드는 아이로","/world-cases/usa.html"),
+   ("🇬🇧 영국 · 안전과 책임 먼저","/world-cases/uk.html"),
+   ("🇸🇬 싱가포르 · 가드레일","/world-cases/singapore.html"),
+   ("🇰🇷 한국 · 무엇을 놓쳤나","/world-cases/korea.html"),
+   ("🇩🇪 독일 · 신뢰와 기반","/world-cases/germany.html"),
+   ("🇯🇵 일본 · 기기·논리 먼저","/world-cases/japan.html"),
+  ],("지금 볼 영상","중국은 왜 초등학생에게 AI를 가르치기 시작했나","/videos/china-ai-education.html","영상 보기 ▶")),
+ ("videos","영상관","/videos.html",[
+   ("전체 영상","/videos.html"),
+   ("대표작 · 세계 5개국 편","/videos/world-ai-education.html"),
+   ("중국 AI교육 심층","/videos/china-ai-education.html"),
+   ("미국 AI교육 심층","/videos/us-ai-education.html"),
+   ("영국 AI교육 심층","/videos/uk-ai-education.html"),
+   ("싱가포르 AI교육 심층","/videos/singapore-ai-education.html"),
+   ("한국의 잃어버린 AI 10년","/videos/korea-ai-education.html"),
+  ],("최신 편","한국의 잃어버린 AI 10년 — 그래서 가정이 답이다","/videos/korea-ai-education.html","보러가기 ▶")),
+ ("start","시작 가이드","/start-guide.html",[
+   ("집에서 시작하는 6단계","/start-guide.html"),
+   ("좋은 프롬프트 / 나쁜 프롬프트","/start-guide.html"),
+   ("하루 10분 AI 대화 루틴","/world-cases/korea-3.html"),
+   ("연령별 시작법 (만 5~16세)","/world-cases/uk-roadmap.html"),
+   ("만 8세 · 12주 홈 프로그램","/world-cases/uk-8yo-12weeks.html"),
+  ],("추천 프로그램","만 8세 초등 12주 홈 프로그램 — 주 1회 15분","/world-cases/uk-8yo-12weeks.html","시작하기 →")),
+ ("res","부모 자료실","/parent-resources.html",[
+   ("자료실 홈 (국가별 자료)","/parent-resources.html"),
+   ("부모용 질문 카드 10장","/free/question-cards.html"),
+   ("아이와 해볼 프롬프트 20개","/free/first-prompts.html"),
+   ("가정용 AI 대화 연습지","/free/worksheet.html"),
+   ("AI 안전 사용 · 자주 묻는 질문","/parent-resources.html#faq"),
+  ],("인쇄해서 바로","12주 홈 워크북 — 표지·삽화·수료장 포함","/free/uk-12weeks-workbook.html","워크북 열기 🖨")),
+ ("free","무료 자료","/free-kit.html",[
+   ("무료 자료 한눈에","/free-kit.html"),
+   ("12주 워크북 (PDF)","/free/uk-12weeks-workbook.html"),
+   ("가정 실습지 (연습지)","/free/worksheet.html"),
+   ("질문 카드 10장","/free/question-cards.html"),
+   ("첫 프롬프트 20개","/free/first-prompts.html"),
+  ],("전부 무료","이메일 없이 바로 인쇄·저장하세요","/free-kit.html","무료 자료 받기 ⬇")),
+]
 def header(active,base):
-    links="".join(f'<a href="{base.rstrip("/") or ""}{u}" class="{"active" if k==active else ""}">{n}</a>' for n,u,k in NAV)
-    return f"""<header class="site"><div class="wrap nav">
-<a class="brand" href="{base or "/"}"><span class="bot">🤖</span> AI 조기교육</a>
-<button class="hamb" aria-label="메뉴" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
-<nav class="nav-links" id="nav">{links}
-<a class="btn btn-primary nav-cta" href="{base or "/"}start-guide.html">무료로 시작하기</a></nav>
-</div></header>"""
+    tops="".join(f'<a class="mg-t{" on" if k==active else ""}" data-k="{k}" href="{h}">{t}</a>' for k,t,h,_,_ in MEGA)
+    cols=""
+    for k,t,h,items,card in MEGA:
+        links="".join(f'<a href="{u}">{lb}</a>' for lb,u in items)
+        cols+=f'<div class="mg-col" data-k="{k}"><a class="mg-ch" href="{h}">{t}</a>{links}</div>'
+    cards=""
+    for k,_,_,_,c in MEGA:
+        cards+=f'<div class="mg-card" data-k="{k}"><div class="mg-cl">{c[0]}</div><p>{c[1]}</p><a class="btn btn-primary" href="{c[2]}">{c[3]}</a></div>'
+    sdata=[]
+    for k,t,h,items,_ in MEGA:
+        sdata.append({"t":t,"u":h,"c":t})
+        for lb,u in items: sdata.append({"t":lb,"u":u,"c":t})
+    import json as _j; sjson=_j.dumps(sdata,ensure_ascii=False)
+    mob=""
+    for k,t,h,items,_ in MEGA:
+        mi="".join(f'<a href="{u}">{lb}</a>' for lb,u in items)
+        mob+=f'<details{"" if k!=active else " open"}><summary>{t}</summary>{mi}</details>'
+    return f"""<header class="mgh" id="mgh">
+<div class="mg-bar">
+<a class="mg-brand" href="/"><span class="bot">🤖</span><span><b>AI 조기교육</b><small>결과물이 아니라 과정이 교육이다</small></span></a>
+<nav class="mg-nav">{tops}</nav>
+<div class="mg-right">
+<button class="mg-ic" onclick="mgSearch()" title="검색">🔍</button>
+<a class="mg-ic" href="{YT_CH}" target="_blank" rel="noopener" title="유튜브 채널">▶</a>
+<a class="btn btn-primary mg-cta" href="/start-guide.html">무료로 시작하기</a>
+<button class="mg-ic mg-hamb" onclick="document.body.classList.toggle('mg-open')">☰</button>
+</div></div>
+<div class="mg-panel" id="mgPanel"><div class="mg-in">{cols}<div class="mg-cards">{cards}</div></div></div>
+<div class="mg-srch" id="mgSrch"><div class="mg-in" style="display:block">
+<input id="mgQ" placeholder="찾으실 내용을 입력하세요 — 국가, 영상, 자료, 시작법…" oninput="mgF()">
+<div id="mgR" class="mg-res"></div></div></div>
+<div class="mg-mob">{mob}<a class="btn btn-primary" style="margin:12px" href="/start-guide.html">무료로 시작하기</a></div>
+</header>
+<style>
+.mgh{{position:sticky;top:0;z-index:80;background:#fff;border-bottom:1px solid #EADFCE;box-shadow:0 1px 6px rgba(0,0,0,.04)}}
+.mg-bar{{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:10px 20px}}
+.mg-brand{{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}}
+.mg-brand .bot{{width:34px;height:34px;background:var(--navy);color:#fff;border-radius:10px;display:grid;place-items:center;font-size:17px}}
+.mg-brand b{{font-size:16px;display:block;line-height:1.1}}
+.mg-brand small{{font-size:10.5px;color:#9b8a6e;font-weight:600}}
+.mg-nav{{display:flex;gap:2px;margin:0 auto}}
+.mg-t{{padding:12px 15px;text-decoration:none;color:var(--ink);font-weight:700;font-size:14.5px;border-bottom:3px solid transparent}}
+.mg-t:hover{{color:var(--coral)}}
+.mg-t.on{{color:var(--coral);border-bottom-color:var(--coral)}}
+.mg-right{{display:flex;align-items:center;gap:8px}}
+.mg-ic{{width:36px;height:36px;border:1px solid #EADFCE;background:#fff;border-radius:10px;display:grid;place-items:center;font-size:15px;cursor:pointer;text-decoration:none;color:var(--ink)}}
+.mg-ic:hover{{background:#FBF3E4}}
+.mg-cta{{white-space:nowrap}}
+.mg-hamb{{display:none}}
+.mg-panel{{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid #EADFCE;box-shadow:0 14px 30px rgba(43,32,22,.12)}}
+.mgh.open .mg-panel{{display:block}}
+.mg-in{{max-width:1240px;margin:0 auto;padding:22px 20px 26px;display:flex;gap:26px}}
+.mg-col{{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;padding:4px 6px;border-radius:12px}}
+.mg-col.hl{{background:#FBF3E4}}
+.mg-ch{{font-weight:800;color:var(--navy);text-decoration:none;font-size:14px;padding:5px 8px 8px;border-bottom:2px solid #F0E6D2;margin-bottom:5px}}
+.mg-col a:not(.mg-ch){{padding:5px 8px;border-radius:7px;text-decoration:none;color:#5a4a35;font-size:13px;font-weight:600}}
+.mg-col a:not(.mg-ch):hover{{background:#FDECE5;color:#B44A31}}
+.mg-cards{{width:210px;flex:none}}
+.mg-card{{display:none;background:linear-gradient(160deg,#FFF7EA,#FBEBD3);border:1px solid #EAD9BE;border-radius:14px;padding:15px 16px}}
+.mg-card.sh{{display:block}}
+.mg-cl{{font-size:11px;font-weight:800;color:#B44A31;margin-bottom:6px}}
+.mg-card p{{margin:0 0 12px;font-size:13px;font-weight:700;color:var(--ink);line-height:1.45}}
+.mg-srch{{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid #EADFCE;box-shadow:0 14px 30px rgba(43,32,22,.12)}}
+.mgh.srch .mg-srch{{display:block}}
+#mgQ{{width:100%;border:2px solid var(--coral);border-radius:12px;padding:13px 16px;font:inherit;font-size:15px}}
+.mg-res{{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:6px;margin-top:12px}}
+.mg-res a{{display:block;padding:8px 12px;border:1px solid #F0E6D2;border-radius:9px;text-decoration:none;color:var(--ink);font-size:13px;font-weight:600}}
+.mg-res a small{{color:#9b8a6e;display:block;font-size:11px}}
+.mg-res a:hover{{background:#FBF3E4}}
+.mg-mob{{display:none}}
+@media(max-width:960px){{
+.mg-nav,.mg-cta{{display:none}}.mg-hamb{{display:grid}}
+.mg-brand small{{display:none}}
+.mg-mob{{position:fixed;inset:56px 0 0 0;background:#fff;overflow:auto;padding:8px 6px;transform:translateX(100%);transition:transform .18s;display:block}}
+body.mg-open .mg-mob{{transform:none}}
+.mg-mob details{{border-bottom:1px solid #F0E6D2}}
+.mg-mob summary{{padding:13px 16px;font-weight:800;cursor:pointer;list-style:none}}
+.mg-mob details a{{display:block;padding:9px 26px;text-decoration:none;color:#5a4a35;font-size:14px}}
+}}
+</style>
+<script>
+(function(){{
+var H=document.getElementById('mgh'),P=document.getElementById('mgPanel'),tm;
+function openP(k){{clearTimeout(tm);H.classList.add('open');H.classList.remove('srch');
+ document.querySelectorAll('.mg-col').forEach(function(c){{c.classList.toggle('hl',c.dataset.k===k);}});
+ document.querySelectorAll('.mg-card').forEach(function(c){{c.classList.toggle('sh',c.dataset.k===k);}});}}
+function closeP(){{tm=setTimeout(function(){{H.classList.remove('open');}},160);}}
+document.querySelectorAll('.mg-t').forEach(function(a){{
+ a.addEventListener('mouseenter',function(){{openP(a.dataset.k);}});
+}});
+H.addEventListener('mouseleave',closeP);
+P.addEventListener('mouseenter',function(){{clearTimeout(tm);}});
+window.mgSearch=function(){{H.classList.toggle('srch');H.classList.remove('open');
+ if(H.classList.contains('srch')){{document.getElementById('mgQ').focus();mgF();}}}};
+var D={sjson};
+window.mgF=function(){{var q=(document.getElementById('mgQ').value||'').trim().toLowerCase();
+ var r=D.filter(function(d){{return !q||d.t.toLowerCase().indexOf(q)>=0||d.c.toLowerCase().indexOf(q)>=0;}}).slice(0,18);
+ document.getElementById('mgR').innerHTML=r.map(function(d){{return '<a href="'+d.u+'">'+d.t+'<small>'+d.c+'</small></a>';}}).join('')||'<p style="color:#9b8a6e">결과가 없습니다.</p>';}};
+}})();
+</script>"""
 
 def footer(base):
     b=base or "/"
@@ -493,7 +637,7 @@ def free_kit():
 <p class="center" style="color:var(--muted);margin-top:20px;font-size:14px">※ 세 자료 모두 <b>바로 열람·인쇄</b> 가능합니다. 브라우저의 인쇄에서 'PDF로 저장'을 고르면 파일로도 보관돼요.</p>
 <div class="cta-band" style="margin-top:24px"><div><h3>어떻게 쓰는지 먼저 볼까요?</h3><p>6단계 시작 가이드와 함께 쓰면 더 좋아요.</p></div><a class="btn btn-lg" href="/start-guide.html">시작 가이드 보기 →</a></div>
 </div></section></main>"""
-    return page("res","","무료 자료 | AI 조기교육","집에서 바로 쓰는 무료 AI교육 자료 — 연습지·질문 카드·첫 프롬프트 20개. 이메일 없이 바로 인쇄.",body)
+    return page("free","","무료 자료 | AI 조기교육","집에서 바로 쓰는 무료 AI교육 자료 — 연습지·질문 카드·첫 프롬프트 20개. 이메일 없이 바로 인쇄.",body)
 
 # ---------- 쓰기 ----------
 def write(path,html):
