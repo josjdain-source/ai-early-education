@@ -38,10 +38,10 @@ def head(title,desc,base):
 YT_CH="https://www.youtube.com/channel/UCzCA_HXDHMVGvWpQv4PSZgw"
 MEGA=[
  ("why","왜 AI교육인가","/why-ai-education.html",[
-   ("AI 조기교육이 필요한 이유","/why-ai-education.html"),
-   ("알파고 이후, 놓친 시간","/world-cases/korea.html"),
-   ("정답보다 다시 묻는 힘","/why-ai-education.html#philosophy"),
-   ("부모가 오해하기 쉬운 것","/parent-resources.html#faq"),
+   ("왜 지금 AI교육인가","/why-ai-education.html"),
+   ("알파고 이후, 놓친 시간","/why-ai-education.html#alphago"),
+   ("다시 묻는 힘","/why-ai-education.html#reask"),
+   ("막을 것인가, 다룰 것인가","/why-ai-education.html#handle"),
   ],"전체 보기"),
  ("cases","세계 AI교육","/world-cases.html",[
    ("중국 · 시간표에 AI를 넣다","/world-cases/china.html"),
@@ -50,29 +50,29 @@ MEGA=[
    ("싱가포르 · 생활 속에서 실습","/world-cases/singapore.html"),
   ],"전체 국가 보기"),
  ("videos","영상관","/videos.html",[
-   ("최신 Shorts · 잃어버린 AI 10년","/videos/korea-ai-education.html"),
    ("롱폼 다큐 · 세계 5개국","/videos/world-ai-education.html"),
    ("중국 AI교육 심층","/videos/china-ai-education.html"),
    ("미국 AI교육 심층","/videos/us-ai-education.html"),
+   ("한국의 잃어버린 AI 10년","/videos/korea-ai-education.html"),
   ],"전체 영상 보기"),
  ("start","시작 가이드","/start-guide.html",[
    ("집에서 시작하는 6단계","/start-guide.html"),
-   ("첫 질문 시키기","/free/first-prompts.html"),
-   ("결과를 같이 관찰하기","/free/worksheet.html"),
-   ("다시 묻기 연습","/free/question-cards.html"),
+   ("첫 질문 시키기","/start-guide.html#step2"),
+   ("다시 묻기 연습","/start-guide.html#step5"),
+   ("하루 10분 루틴","/world-cases/korea-3.html"),
   ],"전체 가이드 보기"),
  ("res","부모 자료실","/parent-resources.html",[
-   ("부모용 질문 카드","/free/question-cards.html"),
-   ("AI 대화 연습지","/free/worksheet.html"),
-   ("첫 프롬프트 20개","/free/first-prompts.html"),
-   ("AI 안전 사용 원칙","/parent-resources.html#faq"),
+   ("국가별 자료실 한눈에","/parent-resources.html"),
+   ("중국 부모 자료실","/parent-resources/china.html"),
+   ("영국 부모 자료실","/parent-resources/uk.html"),
+   ("자주 묻는 질문","/parent-resources.html#faq"),
   ],"전체 자료실 보기"),
  ("free","무료 자료","/free-kit.html",[
-   ("무료 자료 한눈에","/free-kit.html"),
    ("12주 워크북 PDF","/free/uk-12weeks-workbook.html"),
-   ("가정 실습지","/free/worksheet.html"),
+   ("AI 대화 연습지","/free/worksheet.html"),
    ("질문 카드 10장","/free/question-cards.html"),
-  ],"전체 다운로드 보기"),
+   ("첫 프롬프트 20개","/free/first-prompts.html"),
+  ],"전체 자료 보기"),
 ]
 def header(active,base):
     tops="".join(f'<a class="mg-t{" on" if k==active else ""}" data-k="{k}" href="{h}">{t}</a>' for k,t,h,_,_ in MEGA)
@@ -251,11 +251,11 @@ if(hp===p){{a.classList.add('on');var c=a.closest('.gs-c');if(c)c.classList.add(
 # 항목: (라벨, href|None=준비중). 실존 페이지만 링크(죽은 링크 금지).
 SECTIONS={
  "why":("왜 AI교육인가",[
-   ("AI 조기교육이 필요한 이유","/why-ai-education.html"),
-   ("알파고 이후, 놓친 시간","/world-cases/korea.html"),
-   ("정답보다 다시 묻는 힘","/why-ai-education.html#philosophy"),
-   ("부모가 오해하기 쉬운 것","/parent-resources.html#faq"),
-   ("AI를 막을 것인가, 다룰 것인가","/videos/world-ai-education.html"),
+   ("왜 지금 AI교육인가","/why-ai-education.html"),
+   ("알파고 이후, 놓친 시간","/why-ai-education.html#alphago"),
+   ("결과물이 아니라 과정이 교육","/why-ai-education.html#philosophy"),
+   ("다시 묻는 힘","/why-ai-education.html#reask"),
+   ("막을 것인가, 다룰 것인가","/why-ai-education.html#handle"),
  ]),
  "world":("세계 AI교육",[
    ("전체 지도 보기","/world-cases.html"),
@@ -266,34 +266,39 @@ SECTIONS={
    ("🇰🇷 한국","/world-cases/korea.html"),
    ("🇩🇪 독일","/world-cases/germany.html"),
    ("🇯🇵 일본","/world-cases/japan.html"),
+   ("─ 영국 심화 ─",None),
+   ("학년별 로드맵 (만5~16세)","/world-cases/uk-roadmap.html"),
+   ("1년 커리큘럼 (Year 8)","/world-cases/uk-year.html"),
+   ("집 실전판","/world-cases/uk-home.html"),
+   ("만 8세 12주 프로그램","/world-cases/uk-8yo-12weeks.html"),
    ("국가별 비교표",None),
-   ("출처 라이브러리",None),
  ]),
  "videos":("영상관",[
    ("전체 영상","/videos.html"),
    ("롱폼 다큐 · 세계 5개국","/videos/world-ai-education.html"),
    ("중국 AI교육 심층","/videos/china-ai-education.html"),
    ("미국 AI교육 심층","/videos/us-ai-education.html"),
+   ("영국 AI교육 심층","/videos/uk-ai-education.html"),
+   ("싱가포르 AI교육 심층","/videos/singapore-ai-education.html"),
    ("한국의 잃어버린 AI 10년","/videos/korea-ai-education.html"),
-   ("아이와 함께 실습","/free/first-prompts.html"),
-   ("Shorts",None),
  ]),
  "guide":("시작 가이드",[
    ("집에서 시작하는 6단계","/start-guide.html"),
-   ("첫 질문 시키기","/free/first-prompts.html"),
-   ("결과 관찰하기","/free/worksheet.html"),
-   ("다시 묻기 연습","/free/question-cards.html"),
+   ("첫 질문 시키기","/start-guide.html#step2"),
+   ("결과 관찰하기","/start-guide.html#step3"),
+   ("다시 묻기 연습","/start-guide.html#step5"),
    ("하루 10분 루틴","/world-cases/korea-3.html"),
-   ("연령별 시작법","/world-cases/uk-roadmap.html"),
  ]),
  "parents":("부모 자료실",[
    ("자료실 홈","/parent-resources.html"),
-   ("부모용 질문 카드","/free/question-cards.html"),
-   ("AI 대화 연습지","/free/worksheet.html"),
-   ("첫 프롬프트 20개","/free/first-prompts.html"),
-   ("AI 안전 사용 원칙","/parent-resources.html#faq"),
+   ("🇨🇳 중국 자료실","/parent-resources/china.html"),
+   ("🇺🇸 미국 자료실","/parent-resources/usa.html"),
+   ("🇬🇧 영국 자료실","/parent-resources/uk.html"),
+   ("🇸🇬 싱가포르 자료실","/parent-resources/singapore.html"),
+   ("🇰🇷 한국 자료실","/parent-resources/korea.html"),
+   ("🇩🇪 독일 자료실","/parent-resources/germany.html"),
+   ("🇯🇵 일본 자료실","/parent-resources/japan.html"),
    ("자주 묻는 질문","/parent-resources.html#faq"),
-   ("AI 결과 관찰 체크리스트",None),
  ]),
  "free":("무료 자료",[
    ("무료 자료 한눈에","/free-kit.html"),
@@ -301,8 +306,6 @@ SECTIONS={
    ("AI 대화 연습지","/free/worksheet.html"),
    ("부모용 질문 카드 10장","/free/question-cards.html"),
    ("첫 프롬프트 20개","/free/first-prompts.html"),
-   ("AI 안전 사용 원칙",None),
-   ("영상 요약본",None),
  ]),
 }
 ACTIVE2SEC={"why":"why","cases":"world","videos":"videos","start":"guide","res":"parents","free":"free"}
@@ -311,6 +314,7 @@ def section_sidebar(section):
     links=""
     for lb,u in items:
         if u: links+=f'<a class="sb-a" href="{u}">{lb}</a>'
+        elif lb.startswith("─"): links+=f'<div style="font-size:11px;font-weight:800;color:#9b8a6e;padding:8px 11px 2px">{lb.strip("─ ")}</div>'
         else: links+=f'<span class="sb-a sb-x">{lb} <small>준비중</small></span>'
     return f"""<aside class="secbar"><div class="sb-t" onclick="this.parentElement.classList.toggle('fold')">{title} <span class="sb-ar">▾</span></div><nav class="sb-nav">{links}</nav></aside>
 <style>
@@ -450,7 +454,14 @@ def why():
 <div class="card phil"><div class="pic">🌱</div><div><h4>교육은 과정</h4><p>말하고, 관찰하고, 다시 묻는 과정이 핵심.</p></div></div>
 <div class="card phil"><div class="pic">👨‍👦</div><div><h4>부모는 동반자</h4><p>감독이 아니라 함께 탐색하는 동반자.</p></div></div>
 <div class="card phil"><div class="pic">💬</div><div><h4>다시 묻는 힘</h4><p>포기하지 않고 더 나은 답을 찾는 힘.</p></div></div></div>
-<div class="cta-band" style="margin-top:34px"><div><h3>세계는 이미 이렇게 가르치고 있어요</h3><p>중국·미국·영국·싱가포르·한국의 사례를 확인해보세요.</p></div><a class="btn btn-lg" href="/world-cases.html">세계 사례 보기 →</a></div>
+<h2 id="alphago" style="margin-top:40px;scroll-margin-top:90px">알파고 이후, 놓친 시간</h2>
+<p>2016년, 알파고가 이세돌을 이긴 곳은 서울이었습니다. AI 시대의 경고음이 우리 한복판에서 울렸지만, 그 후 10년 — 세계가 교실을 바꾸는 동안 우리는 속도 조절에 실패했습니다. 문제는 과거가 아니라, <b>지금 우리 아이의 습관</b>입니다.</p>
+<h2 id="reask" style="margin-top:34px;scroll-margin-top:90px">다시 묻는 힘</h2>
+<p>AI 시대의 핵심 역량은 정답을 빨리 받는 힘이 아니라 <b>받은 답을 의심하고, 더 낫게 다시 묻는 힘</b>입니다. 이 힘은 학교 커리큘럼이 아니라 저녁 식탁의 대화 습관에서 자랍니다.</p>
+<h2 id="handle" style="margin-top:34px;scroll-margin-top:90px">AI를 막을 것인가, 다룰 것인가</h2>
+<p>아이들은 이미 AI를 만나고 있습니다. 막으면 몰래 쓰고, 풀어두면 끌려갑니다. 답은 하나 — <b>안전한 경계 안에서, 다루는 법을 함께 배우는 것</b>입니다. 방식은 나라마다 달라도 방향은 같습니다.</p>
+<div class="cta-band" style="margin-top:38px"><div><h3>관련 링크</h3><p>세계가 실제로 어떻게 가르치는지 · 오늘 집에서 시작하는 법</p></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="/world-cases.html">세계 AI교육 →</a><a class="btn btn-lg btn-primary" href="/start-guide.html">시작 가이드 →</a></div></div>
 </div></section></main>"""
     return page("why","","왜 AI 조기교육인가 | AI 조기교육","AI를 쓰느냐가 아니라 어떻게 쓰느냐. 아이에게 다시 묻는 힘을 길러주는 과정형 교육 철학.",body)
 
@@ -574,7 +585,7 @@ def start_guide():
     def sc(n,t,d,ment,ask,good,bad):
         gp=f'<div class="prompt-ex g">👍 좋은 프롬프트: "{good}"</div>' if good else ''
         bp=f'<div class="prompt-ex b">👎 아쉬운 프롬프트: "{bad}"</div>' if bad else ''
-        return f"""<div class="card" style="margin-bottom:16px"><div class="phil" style="align-items:center;margin-bottom:12px">
+        return f"""<div class="card" id="step{n}" style="margin-bottom:16px;scroll-margin-top:90px"><div class="phil" style="align-items:center;margin-bottom:12px">
 <div class="pic" style="background:var(--coral);color:#fff">{n}</div><h3 style="margin:0">{t}</h3></div>
 <p>{d}</p>
 <div class="callout" style="margin:10px 0"><b>부모 멘트</b><br>{ment}</div>
@@ -614,16 +625,14 @@ def parent_resources():
 <span style="margin-left:auto;color:var(--coral);font-weight:800">→</span></a>""" for s,n,f in countries)
     body=f"""<main>
 <section class="page-hero"><div class="wrap"><div class="pill">부모용 자료</div>
-<h1>부모 자료실</h1><p>나라를 고르면 그 나라 전용 자료실로 이동합니다. 인쇄 자료는 아래에서 바로.</p></div></section>
+<h1>부모 자료실</h1><p>나라별 '읽는' 자료실입니다 — 정책·실제 운영·우리집 적용을 나라 단위로 몰아 읽으세요. (인쇄·실습 자료는 '무료 자료'에)</p></div></section>
 <section class="block"><div class="wrap">
 <div class="rs-wrap" style="display:block">
 <div class="rs-main">
 <h3 style="margin:0 0 10px;font-size:18px">🌍 국가별 자료실</h3>
 <div class="grid g3" style="margin-bottom:26px">{cards_c}</div>
-<h3 id="downloads" style="scroll-margin-top:90px;margin:0 0 10px;font-size:18px">🖨 바로 인쇄·다운로드</h3>
-<div class="grid g3">{res}</div>
-<div style="margin-top:10px"><a class="rs-sub" style="max-width:460px" href="/free/uk-12weeks-workbook.html" target="_blank" rel="noopener">📘 만 8세 12주 홈 워크북 (표지·삽화·수료장) <span class="dl">다운로드</span></a></div>
 <h3 id="faq" style="scroll-margin-top:90px;margin:26px 0 10px;font-size:18px">❓ 자주 묻는 질문</h3>{fq}
+<div class="cta-band" style="margin-top:22px"><div><h3>관련 링크</h3><p>인쇄해서 바로 쓰는 실습 자료는 무료 자료실에.</p></div><a class="btn btn-lg" href="/free-kit.html">무료 자료실 →</a></div>
 </div></div>
 </div></section>
 {RS_STYLE}
@@ -731,9 +740,7 @@ FREE_ITEMS=[("무료 자료 한눈에","/free-kit.html"),
  ("12주 워크북 PDF","/free/uk-12weeks-workbook.html"),
  ("AI 대화 연습지","/free/worksheet.html"),
  ("부모용 질문 카드 10장","/free/question-cards.html"),
- ("첫 프롬프트 20개","/free/first-prompts.html"),
- ("AI 안전 사용 원칙",None),
- ("영상 요약본",None)]
+ ("첫 프롬프트 20개","/free/first-prompts.html")]
 def free_sidebar(cur):
     links=""
     for lb,u in FREE_ITEMS:
