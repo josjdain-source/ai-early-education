@@ -343,7 +343,7 @@ if(window.innerWidth<=960)document.querySelector('.secbar').classList.add('fold'
 
 def page(active,base,title,desc,body):
     sec=ACTIVE2SEC.get(active)
-    if sec and "rsLoad(" not in body:
+    if sec and "rsLoad(" not in body and 'class="frsb' not in body:
         body=f'<div class="ly2">{section_sidebar(sec)}<div class="ly2-main">{body}</div></div>'
     return head(title,desc,base)+header(active,base)+global_sidebar()+body+footer(base)
 
