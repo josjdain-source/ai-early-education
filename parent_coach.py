@@ -159,6 +159,10 @@ def hub_body():
 <div class="pc-cta" style="margin-top:20px">
 <a class="btn btn-lg btn-primary" href="/free/question-cards.html" target="_blank" rel="noopener">🃏 아이와 해볼 질문 카드 열기</a>
 <a class="btn btn-lg" href="/start-guide.html">오늘 집에서 시작하기 →</a></div>
+<div class="callout" style="margin-top:18px;background:#FFF3E9;border-color:#F0DDC8">🖨 <b>질문카드·활동지는 여기서 계속 제공합니다</b> — 
+<a href="/free/ai-first-7days.html" style="color:#B44A31;font-weight:700">7일 질문카드</a> · 
+<a href="/free/daily-sheet.html" style="color:#B44A31;font-weight:700">매일 활동지</a> · 
+<a href="/daily-class/today.html" style="color:#B44A31;font-weight:700">오늘의 10분 수업</a></div>
 <p class="pc-related">국가 정책·제도를 자세히 읽고 싶다면 · <a href="/world-cases.html">세계 AI교육 분석 →</a></p>
 </div>{PC_STYLE}</main>"""
 

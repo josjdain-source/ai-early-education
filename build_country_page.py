@@ -524,7 +524,7 @@ body{{background:#fff}}
 </style></head><body>
 {SITE_HEADER}
 <div class="wbv-top no-print">
-<a href="/free-kit.html">← 무료 자료</a>
+<a href="/parent-resources.html">← 부모 자료실</a>
 <a href="/world-cases/{slug}-8yo-12weeks.html">12주 홈 프로그램</a>
 <span class="wbv-title">📘 만 8세 초등 · 12주 홈 프로그램 워크북</span>
 <button onclick="wbAll()">전체 접기/펼치기</button>

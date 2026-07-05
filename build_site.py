@@ -68,12 +68,12 @@ MEGA=[
    ("영국 부모 자료","/parents/uk.html"),
    ("자주 묻는 질문","/parent-resources.html#faq"),
   ],"전체 자료실 보기"),
- ("free","무료 자료","/free-kit.html",[
-   ("12주 워크북 PDF","/free/uk-12weeks-workbook.html"),
-   ("AI 대화 연습지","/free/worksheet.html"),
-   ("질문 카드 10장","/free/question-cards.html"),
-   ("첫 프롬프트 20개","/free/first-prompts.html"),
-  ],"전체 자료 보기"),
+ ("free","무료 프로그램","/free-programs.html",[
+   ("🎤 음성 만들기 (TTS)","/free-programs.html#voice"),
+   ("🎬 영상 만들기·조립","/free-programs.html#video"),
+   ("💬 자막·오디오 편집","/free-programs.html#subtitle"),
+   ("💻 로컬 AI 실행","/free-programs.html#localai"),
+  ],"전체 프로그램 보기"),
 ]
 def header(active,base):
     tops="".join(f'<a class="mg-t{" on" if k==active else ""}" data-k="{k}" href="{h}">{t}</a>' for k,t,h,_,_ in MEGA)
@@ -189,7 +189,7 @@ def footer(base):
     return f"""<footer class="site"><div class="wrap"><div class="foot-grid">
 <div class="foot-brand"><a class="brand" href="{b}"><span class="bot">🤖</span> AI 조기교육</a>
 <p>아이와 부모가 함께 성장하는<br>미래 교육의 시작</p></div>
-<div class="foot-col"><h5>서비스</h5><a href="{b}start-guide.html">시작 가이드</a><a href="{b}videos.html">영상</a><a href="{b}parent-resources.html">부모용 자료</a><a href="{b}free-kit.html">무료 자료</a></div>
+<div class="foot-col"><h5>서비스</h5><a href="{b}start-guide.html">시작 가이드</a><a href="{b}videos.html">영상</a><a href="{b}parent-resources.html">부모용 자료</a><a href="{b}free-programs.html">무료 프로그램</a></div>
 <div class="foot-col"><h5>소개</h5><a href="{b}why-ai-education.html">왜 필요한가</a><a href="{b}world-cases.html">세계 사례</a><a href="{b}why-ai-education.html#philosophy">우리의 철학</a></div>
 <div class="foot-col"><h5>고객 지원</h5><a href="{b}parent-resources.html#faq">자주 묻는 질문</a><a href="{b}start-guide.html">이용 가이드</a><a href="{b}privacy/">개인정보처리방침</a></div>
 <div class="foot-col"><h5>문의</h5><a href="mailto:2011kstudentlife@gmail.com">2011kstudentlife@gmail.com</a><a href="{b}videos.html">영상관</a></div>
@@ -303,12 +303,14 @@ SECTIONS={
    ("🇯🇵 일본 부모 자료","/parents/japan.html"),
    ("자주 묻는 질문","/parent-resources.html#faq"),
  ]),
- "free":("무료 자료",[
-   ("무료 자료 한눈에","/free-kit.html"),
-   ("12주 워크북 PDF","/free/uk-12weeks-workbook.html"),
-   ("AI 대화 연습지","/free/worksheet.html"),
-   ("부모용 질문 카드 10장","/free/question-cards.html"),
-   ("첫 프롬프트 20개","/free/first-prompts.html"),
+ "free":("무료 프로그램",[
+   ("전체 안내","/free-programs.html"),
+   ("🎤 음성 만들기","/free-programs.html#voice"),
+   ("🎬 영상 만들기","/free-programs.html#video"),
+   ("🖼 이미지 만들기","/free-programs.html#image"),
+   ("💬 자막·오디오 편집","/free-programs.html#subtitle"),
+   ("💻 로컬 AI 실행","/free-programs.html#localai"),
+   ("🛠 개발 도구","/free-programs.html#dev"),
  ]),
 }
 ACTIVE2SEC={"why":"why","cases":"world","videos":"videos","start":"guide","res":"parents","free":"free"}
@@ -600,7 +602,7 @@ def video_detail():
 <h2 style="margin-top:24px">아이와 해볼 질문</h2>
 <div class="callout good">💬 "오늘 AI가 준 답에서, 이상한 부분 하나만 같이 찾아볼까?"</div>
 <h2 style="margin-top:24px">관련 사례</h2><div class="grid g3">{rel}</div>
-<div class="cta-band" style="margin-top:28px"><div><h3>집에서 바로 시작해볼까요?</h3><p>부모 가이드와 무료 자료가 준비돼 있어요.</p></div><a class="btn btn-lg" href="/free-kit.html">무료 자료 받기 ⬇</a></div>
+<div class="cta-band" style="margin-top:28px"><div><h3>집에서 바로 시작해볼까요?</h3><p>부모 가이드와 인쇄 자료가 준비돼 있어요.</p></div><a class="btn btn-lg" href="/parent-resources.html">부모 자료실 →</a></div>
 </div></section></main>"""
     return page("videos","../","세계 5개국 AI교육 영상 | AI 조기교육","세계 5개국이 아이에게 AI를 가르치는 법을 2분 41초에. 섹션 타임라인·부모 질문 포함.",body)
 
@@ -632,7 +634,7 @@ def start_guide():
 <section class="page-hero"><div class="wrap"><div class="pill">시작 가이드</div>
 <h1>집에서 따라 하는 6단계</h1><p>오늘 저녁, 아이와 15분이면 충분해요. 순서대로 따라만 하세요.</p></div></section>
 <section class="block"><div class="wrap" style="max-width:760px">{"".join(sc(*s) for s in steps)}
-<div class="cta-band" style="margin-top:20px"><div><h3>연습지와 질문 카드가 필요하세요?</h3><p>집에서 바로 쓰는 무료 자료를 받아보세요.</p></div><a class="btn btn-lg" href="/free-kit.html">무료 자료 받기 ⬇</a></div>
+<div class="cta-band" style="margin-top:20px"><div><h3>연습지와 질문 카드가 필요하세요?</h3><p>아이와 오늘 쓰는 인쇄 자료는 부모 자료실에서.</p></div><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-lg" href="/free/ai-first-7days.html">🎁 7일 질문카드</a><a class="btn btn-lg" href="/parent-resources.html">부모 자료실 →</a></div></div>
 <div class="cta-band" style="margin-top:12px;background:linear-gradient(135deg,#FFF3E9,#FCE7D6)"><div><h3>🏫 오늘부터 매일 10분 · 매일 AI교실</h3><p>세계 사례를 한국 가정용 1년 커리큘럼으로. 오늘의 수업·연령별 로드맵.</p></div><a class="btn btn-lg" href="/daily-class.html">매일 AI교실 →</a></div>
 <div class="cta-band" style="margin-top:12px;background:linear-gradient(135deg,#EAF2FB,#DCEAF8)"><div><h3>🏆 실력으로 이어질까? · AI 경진대회 문제풀이 교실</h3><p>실제 AI 경진대회 문제를 아이 눈높이로. 학년별 문제·풀이전략·우리집 연습문제.</p></div><a class="btn btn-lg" href="/competitions.html">경진대회 교실 →</a></div>
 </div></section></main>"""
@@ -643,29 +645,28 @@ def parent_resources():
         "국가 정책 분석이 아니라, 세계 사례를 한국 가정의 오늘 행동으로 바꾸는 부모 코칭 자료실.",PC.hub_body())
 
 def free_kit():
-    kits=[("📝","집에서 하는 AI 대화 연습지","아이와 함께 AI에게 요청하고, 관찰하고, 다시 묻는 과정을 적는 워크시트.","/free/worksheet.html"),
-        ("🃏","부모용 질문 카드","'이상한 부분 찾아볼까?' 같은 상황별 질문 카드 10장.","/free/question-cards.html"),
-        ("💡","아이와 함께하는 첫 프롬프트 20개","처음 시작하기 좋은 프롬프트 20가지 + 각 '다시 묻기'까지.","/free/first-prompts.html")]
-    kc="".join(f"""<div class="card center"><div style="font-size:44px;margin-bottom:10px">{ic}</div><h4>{t}</h4><p style="color:var(--muted);font-size:14px">{d}</p>
-<a class="btn btn-primary" href="{href}" target="_blank" rel="noopener">열기 · 인쇄 🖨</a>
-<div style="margin-top:8px"><span class="tag" style="background:#e6f4ea;color:#188038;border-color:#b7dfc2">바로 사용</span></div></div>""" for ic,t,d,href in kits)
-    body=f"""<main>
-<section class="page-hero"><div class="wrap"><div class="pill">무료 자료</div>
-<h1>집에서 바로 쓰는 무료 자료</h1><p>이메일·회원가입 없이, 지금 바로 열어 인쇄하거나 PDF로 저장하세요.</p></div></section>
-<section class="block"><div class="wrap" style="max-width:900px"><div class="grid g3">{kc}</div>
-<p class="center" style="color:var(--muted);margin-top:20px;font-size:14px">※ 세 자료 모두 <b>바로 열람·인쇄</b> 가능합니다. 브라우저의 인쇄에서 'PDF로 저장'을 고르면 파일로도 보관돼요.</p>
-<div class="cta-band" style="margin-top:24px"><div><h3>어떻게 쓰는지 먼저 볼까요?</h3><p>6단계 시작 가이드와 함께 쓰면 더 좋아요.</p></div><a class="btn btn-lg" href="/start-guide.html">시작 가이드 보기 →</a></div>
-<a href="/free/ai-first-7days.html" style="margin-top:14px;display:flex;gap:12px;align-items:center;background:linear-gradient(135deg,#FFF3E9,#FCE7D6);border:1px solid #F0DDC8;border-radius:14px;padding:15px 18px;text-decoration:none;color:#7a3e12">
-<span style="font-size:30px">🎁</span><div><b style="font-size:15px">아이에게 AI를 처음 보여주는 7일 질문카드</b> <span style="font-size:11px;font-weight:800;color:#188038;background:#e6f4ea;border-radius:6px;padding:1px 7px">무료 코스</span><p style="margin:2px 0 0;font-size:13px;color:#9a5b23">하루 한 장, 5분. 의심하고 다시 묻는 힘부터. → <b>4주 질문력 교실</b>로 이어져요.</p></div></a>
-<div style="margin-top:12px;display:flex;gap:12px;align-items:center;background:#F4F7FB;border:1px dashed #CADCF0;border-radius:14px;padding:14px 18px;color:#4a5f7d">
-<span style="font-size:26px">🏆</span><div><b style="color:#22406b">AI 경진대회 문제풀이 활동지</b> <span style="font-size:11px;font-weight:800;color:#8a6f45;background:#F0E6D2;border-radius:6px;padding:1px 7px">준비중</span><p style="margin:2px 0 0;font-size:13px">학년별 대회형 문제를 인쇄 활동지로. 지금은 <a href="/competitions.html" style="color:#3A6FB0;font-weight:700">경진대회 교실</a>에서 온라인으로 풀 수 있어요.</p></div></div>
-</div></section></main>"""
-    return page("free","","무료 자료 | AI 조기교육","집에서 바로 쓰는 무료 AI교육 자료 — 연습지·질문 카드·첫 프롬프트 20개. 이메일 없이 바로 인쇄.",body)
-
+    """(이동 안내) 부모용 인쇄 자료는 부모 자료실로 통합. 외부 유입 보호를 위해 URL 유지, 삭제 금지."""
+    body = f"""<main><div class="wrap" style="max-width:720px;text-align:center">
+<section class="page-hero" style="padding:46px 0 10px">
+<div class="pill">안내</div>
+<h1 style="font-size:26px">아이와 AI교실 무료 자료는<br><span class="coral">부모 자료실</span>로 이동했습니다</h1>
+<p style="margin-top:10px;color:var(--navy2);font-weight:600">질문카드, 7일 카드, 매일 활동지처럼 아이와 함께 쓰는 자료는<br>부모 자료실과 매일 AI교실에서 확인할 수 있습니다.</p></section>
+<section class="block" style="padding:10px 0 40px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:560px;margin:0 auto">
+<a class="btn btn-lg btn-primary" href="/parent-resources.html">부모 자료실 보기 →</a>
+<a class="btn btn-lg" href="/free/ai-first-7days.html">🎁 7일 질문카드 보기</a>
+<a class="btn btn-lg" href="/free/daily-sheet.html">🖨 매일 활동지 보기</a>
+<a class="btn btn-lg" href="/daily-class/today.html">▶ 오늘의 10분 수업 보기</a>
+</div>
+<p style="margin-top:22px;font-size:13px;color:var(--muted)">콘텐츠 제작용 무료·로컬 도구를 찾으셨다면 → <a href="/free-programs.html" style="color:var(--coral);font-weight:700">무료 프로그램</a></p>
+</section></div></main>"""
+    return page("res","","무료 자료 안내 · 부모 자료실로 이동 | 아이와 AI교실",
+        "아이와 함께 쓰는 질문카드·7일 카드·매일 활동지는 부모 자료실과 매일 AI교실에서 제공합니다.",body)
 
 # ---------- 무료 자료 하위 페이지 공통 레이아웃 ----------
-FREE_ITEMS=[("무료 자료 한눈에","/free-kit.html"),
+FREE_ITEMS=[("부모 자료실 홈","/parent-resources.html"),
  ("🎁 7일 질문카드 (무료 코스)","/free/ai-first-7days.html"),
+ ("매일 활동지","/free/daily-sheet.html"),
  ("12주 워크북 PDF","/free/uk-12weeks-workbook.html"),
  ("AI 대화 연습지","/free/worksheet.html"),
  ("부모용 질문 카드 10장","/free/question-cards.html"),
@@ -675,13 +676,13 @@ def free_sidebar(cur):
     for lb,u in FREE_ITEMS:
         if u is None: links+=f'<span class="fs-a fs-x">{lb} <small>준비중</small></span>'
         else: links+=f'<a class="fs-a{" on" if u==cur else ""}" href="{u}">{lb}</a>'
-    return f"""<aside class="frsb no-print"><div class="fs-t" onclick="this.parentElement.classList.toggle('fold')">📥 무료 자료 <span class="fs-ar">▾</span></div><nav class="fs-nav">{links}</nav></aside>"""
+    return f"""<aside class="frsb no-print"><div class="fs-t" onclick="this.parentElement.classList.toggle('fold')">🖨 부모 인쇄 자료 <span class="fs-ar">▾</span></div><nav class="fs-nav">{links}</nav></aside>"""
 def free_resource_layout(cur,title,doc_style,doc_body):
     """무료 자료 하위 페이지 = 사이트 헤더 + 좌측 무료자료 카테고리 + 보조바(←자료실·제목·인쇄) + 본문."""
     body=f"""<div class="fr2">
 {free_sidebar(cur)}
 <main class="fr-main">
-<div class="fr-aux no-print"><a href="/free-kit.html">← 무료 자료실</a><b>{title}</b><button class="btn btn-primary" onclick="window.print()">🖨 인쇄 / PDF 저장</button></div>
+<div class="fr-aux no-print"><a href="/parent-resources.html">← 부모 자료실</a><b>{title}</b><button class="btn btn-primary" onclick="window.print()">🖨 인쇄 / PDF 저장</button></div>
 <div class="fr-doc">{doc_body}</div>
 </main></div>
 <style>
@@ -703,7 +704,158 @@ a.fs-a:hover{{background:#FDECE5;color:#B44A31}}
 @media print{{header.mgh,footer.site,.frsb,.fr-aux,.no-print{{display:none!important}}.fr2{{padding:0;display:block}}.fr-main{{max-width:none}}}}
 </style>
 <script>if(window.innerWidth<=900){{var f=document.querySelector('.frsb');if(f)f.classList.add('fold');}}</script>"""
-    return page("free","../",f"{title} | AI 조기교육",f"{title} — 무료 자료실. 이메일 없이 바로 인쇄·저장.",body)
+    return page("res","../",f"{title} | AI 조기교육",f"{title} — 부모 인쇄 자료. 이메일 없이 바로 인쇄·저장.",body)
+
+
+# ---------- 무료 프로그램 (콘텐츠 제작 도구 창고) ----------
+FREE_PROGRAMS_SECTIONS = [
+ ("voice","🎤","음성 만들기","무료 TTS 도구"),
+ ("video","🎬","영상 만들기","쇼츠 영상 제작 도구"),
+ ("image","🖼","이미지 만들기","로컬 이미지 생성 도구"),
+ ("subtitle","💬","자막·오디오 편집","오디오·자막 편집 도구"),
+ ("localai","💻","로컬 AI 실행","로컬 AI 실행 도구"),
+ ("dev","🛠","개발 도구","기반 개발 도구"),
+]
+FREE_PROGRAMS = [
+ dict(sec="voice", icon="🎤", name="edge-tts", category="무료 TTS",
+   short="글을 자연스러운 음성으로 바꾸는 Python TTS 도구.",
+   use="유튜브 쇼츠 대본 음성(내레이션) 만들기 — 우리 쇼츠 빌더의 목소리 담당.",
+   who="쇼츠 제작자, 부모 안내 음성 제작", diff="중급", run="Python / 온라인 TTS 서비스 활용",
+   official="https://github.com/rany2/edge-tts", download="https://github.com/rany2/edge-tts",
+   caution="Microsoft Edge 온라인 TTS 서비스를 활용하므로 완전 오프라인 도구는 아닙니다. 사용 조건을 확인하세요.",
+   internal=("쇼츠 제작 흐름 보기","/videos.html")),
+ dict(sec="voice", icon="🗣", name="Piper TTS", category="로컬 TTS",
+   short="로컬에서 실행 가능한 신경망 TTS 엔진.",
+   use="인터넷 의존도를 줄인 음성 제작 실험.",
+   who="로컬 실행을 선호하는 제작자", diff="중급", run="로컬 / Python",
+   official="https://github.com/OHF-voice/piper1-gpl", download="https://github.com/OHF-voice/piper1-gpl",
+   caution="음성 모델과 언어(한국어) 지원 범위를 먼저 확인하세요.",
+   internal=("음성이 쓰인 수업 보기","/daily-class/today.html")),
+ dict(sec="video", icon="🎞", name="FFmpeg", category="영상/오디오 조립",
+   short="영상·음성·자막을 합치고 변환하는 필수 도구.",
+   use="쇼츠 mp4 조립, 오디오 합성, 자막 번인 — 우리 영상 조립의 심장.",
+   who="영상 자동화를 하려는 모든 제작자", diff="중급", run="로컬 / 명령줄(Windows·Mac·Linux)",
+   official="https://www.ffmpeg.org/download.html", download="https://www.gyan.dev/ffmpeg/builds/",
+   caution="공식 FFmpeg는 소스 중심입니다. Windows 실행 파일은 별도 빌드 페이지(gyan.dev 등)를 확인하세요.",
+   internal=("조립된 쇼츠 예시","/videos.html")),
+ dict(sec="video", icon="✂️", name="CapCut", category="영상 편집",
+   short="쇼츠/릴스 편집에 널리 쓰이는 영상 편집 도구.",
+   use="최종 컷 편집, 자막 보정, 효과 추가.",
+   who="마우스로 편집하고 싶은 제작자", diff="초급", run="Windows/Mac/모바일 앱",
+   official="https://www.capcut.com/", download="https://www.capcut.com/",
+   caution="무료 기능과 유료 기능 구분이 필요합니다. 계정·약관을 확인하세요.",
+   internal=("영상관 보기","/videos.html")),
+ dict(sec="video", icon="🖥", name="OBS Studio", category="화면 녹화",
+   short="무료 오픈소스 화면 녹화·방송 도구.",
+   use="AI 사용 과정 녹화, 튜토리얼 제작.",
+   who="과정을 영상으로 남기고 싶은 부모·제작자", diff="초급", run="로컬 / Windows·Mac·Linux",
+   official="https://obsproject.com/", download="https://obsproject.com/download",
+   caution="녹화 해상도와 소리(마이크/시스템) 설정을 먼저 확인하세요.",
+   internal=("아이와 실습 아이디어","/free/first-prompts.html")),
+ dict(sec="image", icon="🎨", name="ComfyUI", category="로컬 이미지 생성",
+   short="로컬에서 이미지 생성 워크플로를 구성하는 도구.",
+   use="쇼츠 컷 일러스트, 캐릭터 장면 생성 — 우리 쇼츠 그림 담당.",
+   who="GPU가 있는 고급 사용자", diff="고급", run="로컬 / Python + GPU",
+   official="https://github.com/comfyanonymous/ComfyUI", download="https://github.com/comfyanonymous/ComfyUI",
+   caution="GPU·모델·워크플로 설정이 필요합니다. 초보자에게는 어려울 수 있습니다.",
+   internal=("생성 일러스트가 쓰인 연재","/world-cases.html")),
+ dict(sec="subtitle", icon="🎚", name="Audacity", category="오디오 편집",
+   short="무료 오픈소스 오디오 녹음·편집 프로그램.",
+   use="TTS 음성 확인, 잡음 제거, 볼륨 조정.",
+   who="음성 품질을 다듬고 싶은 제작자", diff="초급", run="로컬 / Windows·Mac·Linux",
+   official="https://www.audacityteam.org/download/", download="https://www.audacityteam.org/download/",
+   caution="설치 파일은 공식 사이트에서 받으세요.",
+   internal=("음성이 들어간 수업","/daily-class/today.html")),
+ dict(sec="subtitle", icon="💬", name="Subtitle Edit", category="자막 편집",
+   short="자막 생성·수정·싱크 조정 도구.",
+   use="쇼츠 자막 정리, 긴 영상 자막 편집.",
+   who="자막을 손보는 제작자", diff="중급", run="로컬 / Windows",
+   official="https://www.nikse.dk/subtitleedit", download="https://github.com/SubtitleEdit/subtitleedit/releases",
+   caution="자동 생성 자막은 반드시 사람이 검수하세요.",
+   internal=("자막이 쓰인 영상","/videos.html")),
+ dict(sec="subtitle", icon="🎙", name="Whisper", category="음성→자막(STT)",
+   short="음성을 글로 바꾸는 오픈소스 음성 인식 모델.",
+   use="영상 속 말소리를 자막 초안으로 변환.",
+   who="자막 초안을 자동으로 만들고 싶은 제작자", diff="고급", run="로컬 / Python + (권장) GPU",
+   official="https://github.com/openai/whisper", download="https://github.com/openai/whisper",
+   caution="자동 변환 결과는 오탈자가 있으므로 반드시 사람이 검수하세요.",
+   internal=("자막 정리 후 영상관으로","/videos.html")),
+ dict(sec="localai", icon="🦙", name="Ollama", category="로컬 LLM 실행",
+   short="로컬 PC에서 대화형 AI 모델을 실행하는 도구.",
+   use="대본 초안·아이디어 생성 실험(외부 전송 없이 로컬에서).",
+   who="로컬에서 AI를 실험하고 싶은 사용자", diff="중급", run="로컬 / Windows·Mac·Linux",
+   official="https://ollama.com/", download="https://ollama.com/download",
+   caution="모델 크기에 따라 메모리(RAM/VRAM)가 많이 필요합니다.",
+   internal=("AI 답 의심 연습(수업)","/daily-class/today.html")),
+ dict(sec="dev", icon="🐍", name="Python", category="기반 도구",
+   short="위 도구들(edge-tts·Whisper 등)을 실행하는 기반 언어.",
+   use="TTS·자막·조립 스크립트 실행 환경.",
+   who="자동화를 시작하려는 제작자", diff="중급", run="로컬 / Windows·Mac·Linux",
+   official="https://www.python.org/downloads/", download="https://www.python.org/downloads/",
+   caution="설치 시 'Add to PATH' 옵션을 확인하세요.",
+   internal=("경진대회 문제로 연습","/competitions.html")),
+]
+
+def free_programs():
+    sec_cards = {}
+    for p in FREE_PROGRAMS:
+        sec_cards.setdefault(p["sec"], []).append(p)
+    def card(p):
+        return f"""<div class="fp-card">
+<div class="fp-ico">{p['icon']}<span>{p['category']}</span></div>
+<div class="fp-body">
+<h3>{p['name']}</h3>
+<p class="fp-short">{p['short']}</p>
+<div class="fp-row"><b>우리가 쓰는 용도</b>{p['use']}</div>
+<div class="fp-row"><b>추천 대상</b>{p['who']}</div>
+<div class="fp-row"><b>난이도</b><span class="fp-diff">{p['diff']}</span> · <b style="margin-left:6px">실행</b>{p['run']}</div>
+<div class="fp-caut">⚠ {p['caution']}</div>
+<div class="fp-links">
+<a class="btn btn-primary" href="{p['official']}" target="_blank" rel="noopener">공식 사이트 ↗</a>
+<a class="btn" href="{p['download']}" target="_blank" rel="noopener">다운로드·GitHub ↗</a>
+<a class="fp-int" href="{p['internal'][1]}">{p['internal'][0]} →</a>
+</div></div></div>"""
+    secs = ""
+    for sid, emo, name, h2 in FREE_PROGRAMS_SECTIONS:
+        cards = "".join(card(p) for p in sec_cards.get(sid, []))
+        secs += f"""<h2 id="{sid}" class="fp-sec" style="scroll-margin-top:90px">{emo} {h2}</h2>{cards}"""
+    body = f"""<main><div class="wrap" style="max-width:880px">
+<section class="page-hero" style="padding:36px 0 14px"><div class="pill">🧰 제작 도구 창고</div>
+<h1>무료 AI 프로그램 모음</h1>
+<p style="color:var(--navy2);font-weight:600">아이와 AI교실이 실제 제작에 쓰는 무료·로컬 AI 도구 모음</p></section>
+<section class="block" style="padding:6px 0"><div class="callout">
+이 페이지는 아이와 AI교실 콘텐츠 제작에 쓰는 <b>무료 또는 로컬 실행 도구</b>를 정리한 곳입니다.
+단순 링크 모음이 아니라, 각 프로그램을 <b>어디에 쓰는지, 어떤 사람이 쓰면 좋은지, 공식 링크는 어디인지</b> 함께 안내합니다.
+설치 전에는 각 프로그램의 공식 안내와 라이선스를 반드시 확인하세요.</div>
+<p style="font-size:12.5px;color:var(--muted);margin-top:8px">👨‍👩‍👧 아이와 함께 쓰는 질문카드·활동지는 <a href="/parent-resources.html" style="color:var(--coral);font-weight:700">부모 자료실</a>에 있습니다. 이 방은 '만드는 사람'용 도구방입니다.</p>
+{secs}
+<div class="callout" style="margin-top:26px;background:#F4F7FB;border-color:#CADCF0;font-size:13px">
+이 페이지의 도구들은 아이와 AI교실이 콘텐츠 제작과 교육 실습을 위해 참고하는 무료 또는 로컬 실행 도구입니다.
+각 도구의 무료 범위, 라이선스, 설치 방법, 사용 조건은 시간이 지나며 바뀔 수 있습니다.
+다운로드 전 반드시 공식 사이트의 최신 안내를 확인하세요.
+<b>아이 개인정보, 얼굴, 음성, 학교 정보 등을 외부 서비스에 입력하지 않도록 주의하세요.</b></div>
+</section></div>
+<style>
+.fp-sec{{font-size:19px;font-weight:900;color:#2B3A55;margin:28px 0 12px}}
+.fp-card{{display:flex;gap:16px;background:#fff;border:1px solid #EADFCE;border-radius:15px;padding:16px 18px;margin-bottom:12px}}
+.fp-ico{{width:86px;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:linear-gradient(160deg,#FFF7EA,#FBEBD3);border:1px solid #EAD9BE;border-radius:13px;font-size:34px;padding:12px 6px}}
+.fp-ico span{{font-size:10.5px;font-weight:800;color:#8a5b1e;text-align:center;line-height:1.3}}
+.fp-body{{flex:1;min-width:0}}
+.fp-body h3{{margin:0 0 4px;font-size:17px;color:#2B3A55}}
+.fp-short{{margin:0 0 8px;font-size:14px;color:#3a3024}}
+.fp-row{{font-size:13px;margin:3px 0;color:#4a3a28}}
+.fp-row b{{color:#8a6f45;font-size:12px;margin-right:7px}}
+.fp-diff{{background:#EAF2FB;color:#2B4a72;border-radius:6px;padding:1px 8px;font-weight:700;font-size:12px}}
+.fp-caut{{font-size:12.5px;color:#8a5b1e;background:#FFF7EA;border:1px solid #EAD9BE;border-radius:8px;padding:7px 11px;margin:8px 0}}
+.fp-links{{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px}}
+.fp-links .btn{{padding:7px 14px;font-size:12.5px}}
+.fp-int{{font-size:12.5px;font-weight:700;color:#5a4a35;text-decoration:none}}
+.fp-int:hover{{color:var(--coral)}}
+@media(max-width:560px){{.fp-card{{flex-direction:column}}.fp-ico{{width:100%;flex-direction:row;justify-content:flex-start;padding:8px 12px;font-size:26px}}}}
+</style></main>"""
+    return page("free","","무료 AI 프로그램 모음 | 아이와 AI교실",
+        "아이와 AI교실이 실제 콘텐츠 제작에 활용하는 무료·로컬 AI 도구를 소개합니다. TTS, 영상 편집, 자막, 오디오 편집, 로컬 이미지 생성 도구를 용도별로 정리했습니다.", body)
+
 
 # ---------- 쓰기 ----------
 def write(path,html):
@@ -740,6 +892,7 @@ if __name__=="__main__":
             f"{c[1]} AI교육 사례로 우리 집에서 오늘 할 부모 행동·연령별 팁·FAQ. 정책 분석 아님.",
             PC.country_body(c[0])))
     write("free-kit.html",free_kit())
+    write("free-programs.html",free_programs())
     import build_kids_show as KIDS
     KIDS.build_all()
     import build_competitions as COMP
