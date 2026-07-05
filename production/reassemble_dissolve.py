@@ -10,18 +10,19 @@ XF=0.6  # 디졸브 길이(초)
 def run(c): subprocess.run(c,check=True)
 def dur(p): return float(subprocess.run([FP,"-v","error","-show_entries","format=duration","-of","default=nk=1:nw=1",p],capture_output=True,text=True).stdout.strip())
 
-def _static_seg(img,ovl,length,out):
+def _static_seg(img,ovl,length,out,size=(1280,720)):
     # 정적: 이미지 꽉차게 스케일+크롭 + 오버레이, 줌 없음 → 흔들림 0
+    w,h=size
     run([FF,"-hide_banner","-loglevel","error","-y","-loop","1","-i",img,"-loop","1","-i",ovl,"-t",f"{length}",
-      "-filter_complex","[0:v]scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720[b];[b][1:v]overlay=0:0,format=yuv420p",
+      "-filter_complex",f"[0:v]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h}[b];[b][1:v]overlay=0:0,format=yuv420p",
       "-c:v","libx264","-preset","veryfast","-crf","20","-r","30",out])
 
-def assemble(beats, audios, out, tmp):
-    """beats=[(img,ovl,dur)], audios=[mp3...] → 디졸브 영상."""
+def assemble(beats, audios, out, tmp, size=(1280,720)):
+    """beats=[(img,ovl,dur)], audios=[mp3...] → 디졸브 영상. size=(w,h) 세로쇼츠=(1080,1920)."""
     os.makedirs(tmp,exist_ok=True)
     segs=[]; durs=[]
     for i,(img,ovl,d) in enumerate(beats):
-        seg=f"{tmp}/dseg_{i:03d}.mp4"; _static_seg(img,ovl,d+XF,seg); segs.append(seg); durs.append(d)
+        seg=f"{tmp}/dseg_{i:03d}.mp4"; _static_seg(img,ovl,d+XF,seg,size); segs.append(seg); durs.append(d)
     al=f"{tmp}/daudio.txt"; open(al,"w",encoding="utf-8").write("\n".join(f"file '{a}'" for a in audios))
     aout=f"{tmp}/dnarration.mp3"; run([FF,"-hide_banner","-loglevel","error","-y","-f","concat","-safe","0","-i",al,"-c","copy",aout])
     args=[FF,"-hide_banner","-loglevel","error","-y"]

@@ -11,12 +11,12 @@ FF="C:/Users/admin/Desktop/ffmpeg-8.1.1-essentials_build/bin/ffmpeg.exe"
 FP="C:/Users/admin/Desktop/ffmpeg-8.1.1-essentials_build/bin/ffprobe.exe"
 EDGE=r"C:/Users/admin/Desktop/tts_lab/edge_tts/venv/Scripts/python.exe"
 BASE="C:/Users/admin/Desktop/ai-craft-kids"; HERE=f"{BASE}/production"; A=f"{BASE}/assets/korea-lost-decade"
-AUD=f"{A}/audio/sections"; ILL=f"{A}/illust/scenes"; OVL=f"{A}/illust/overlays"
+AUD=f"{A}/audio/sections"; ILL=f"{A}/illust/scenes_v"; OVL=f"{A}/illust/overlays_v"
 TMP="C:/Users/admin/AppData/Local/Temp/claude/kladill"
 for p in (AUD,ILL,OVL,TMP,f"{TMP}/aud",f"{TMP}/dtmp"): os.makedirs(p,exist_ok=True)
 KB=r"C:\Windows\Fonts\malgunbd.ttf"; VOICE="ko-KR-InJoonNeural"; SPEED=1.12
 STYLE=("editorial storybook illustration, warm muted color palette, thick clean black outlines, "
- "semi-realistic cartoon style, flat shading, soft warm lighting, detailed cozy background, hand-drawn look, wide cinematic composition")
+ "semi-realistic cartoon style, flat shading, soft warm lighting, detailed cozy background, hand-drawn look, vertical composition, centered subject, full body")
 NEG=("photo, photorealistic, 3d render, text, letters, words, korean text, watermark, signature, logo, "
  "ugly, deformed, extra fingers, bad hands, blurry, low quality, creepy, scary, horror, surveillance, weapon")
 def F(s):
@@ -53,7 +53,7 @@ def tts(text,out):
     run([EDGE,f"{HERE}/_tts_param.py",tf,out,VOICE,"+0%","+0Hz"])
 def sdxl(scene,seed,out):
     g={"4":{"class_type":"CheckpointLoaderSimple","inputs":{"ckpt_name":"RealVisXL_V5.0_fp16.safetensors"}},
-       "5":{"class_type":"EmptyLatentImage","inputs":{"width":1344,"height":768,"batch_size":1}},
+       "5":{"class_type":"EmptyLatentImage","inputs":{"width":768,"height":1344,"batch_size":1}},
        "6":{"class_type":"CLIPTextEncode","inputs":{"text":scene+", "+STYLE,"clip":["4",1]}},
        "7":{"class_type":"CLIPTextEncode","inputs":{"text":NEG,"clip":["4",1]}},
        "3":{"class_type":"KSampler","inputs":{"seed":seed,"steps":30,"cfg":6.5,"sampler_name":"dpmpp_2m","scheduler":"karras","denoise":1.0,"model":["4",0],"positive":["6",0],"negative":["7",0],"latent_image":["5",0]}},
@@ -75,21 +75,32 @@ def sdxl(scene,seed,out):
             print(f"  [재시도 {attempt+1}/3] {out}: {repr(e)[:60]}"); time.sleep(6)
     raise RuntimeError("sdxl 3회 실패: "+out)
 def overlay_png(title,caption,out):
-    W,H=1280,720; im=Image.new("RGBA",(W,H),(0,0,0,0)); d=ImageDraw.Draw(im)
-    b=16
+    W,H=1080,1920; im=Image.new("RGBA",(W,H),(0,0,0,0)); d=ImageDraw.Draw(im)
+    b=14
     for r in [(0,0,W,b),(0,H-b,W,H),(0,0,b,H),(W-b,0,W,H)]: d.rectangle(r,fill=(28,18,12,235))
-    sh=Image.new("RGBA",(W,H),(0,0,0,0)); ImageDraw.Draw(sh).rectangle([b,b,W-b,H-b],outline=(0,0,0,120),width=22)
-    im.alpha_composite(sh.filter(ImageFilter.GaussianBlur(12))); d=ImageDraw.Draw(im)
-    fs=46; f=F(fs)
-    while d.textlength(title,font=f)>W-360 and fs>26: fs-=2; f=F(fs)
-    tw=d.textlength(title,font=f); cx=W//2; y=34; pad=34; hh=fs+28; x0,x1=cx-tw/2-pad,cx+tw/2+pad
-    d.polygon([(x0-24,y+hh/2),(x0,y+6),(x0,y+hh-6)],fill=(150,96,52)); d.polygon([(x1+24,y+hh/2),(x1,y+6),(x1,y+hh-6)],fill=(150,96,52))
-    d.rounded_rectangle([x0,y,x1,y+hh],radius=12,fill=(245,232,205),outline=(150,96,52),width=4); d.text((cx-tw/2,y+13),title,font=f,fill=(60,40,20))
-    cfs=42; cf=F(cfs)
-    while d.textlength(caption,font=cf)>W-80 and cfs>24: cfs-=2; cf=F(cfs)
-    cw=d.textlength(caption,font=cf); cxx=(W-cw)/2; cyy=H-cfs-48
-    for dx,dy in [(-3,-3),(3,-3),(-3,3),(3,3),(0,3),(0,-3),(3,0),(-3,0)]: d.text((cxx+dx,cyy+dy),caption,font=cf,fill=(0,0,0))
-    d.text((cxx,cyy),caption,font=cf,fill=(255,255,255)); im.save(out)
+    sh=Image.new("RGBA",(W,H),(0,0,0,0)); ImageDraw.Draw(sh).rectangle([b,b,W-b,H-b],outline=(0,0,0,120),width=20)
+    im.alpha_composite(sh.filter(ImageFilter.GaussianBlur(10))); d=ImageDraw.Draw(im)
+    # 타이틀 배너(상단)
+    fs=58; f=F(fs)
+    while d.textlength(title,font=f)>W-150 and fs>34: fs-=2; f=F(fs)
+    tw=d.textlength(title,font=f); cx=W//2; y=130; pad=34; hh=fs+30; x0,x1=cx-tw/2-pad,cx+tw/2+pad
+    d.polygon([(x0-26,y+hh/2),(x0,y+6),(x0,y+hh-6)],fill=(150,96,52)); d.polygon([(x1+26,y+hh/2),(x1,y+6),(x1,y+hh-6)],fill=(150,96,52))
+    d.rounded_rectangle([x0,y,x1,y+hh],radius=14,fill=(245,232,205),outline=(150,96,52),width=4); d.text((cx-tw/2,y+15),title,font=f,fill=(60,40,20))
+    # 자막(하단, 줄바꿈)
+    cfs=56; cf=F(cfs); words=caption.split(); lines=[]; ln=""
+    for w in words:
+        s=(ln+" "+w).strip()
+        if d.textlength(s,font=cf)<=W-120: ln=s
+        else:
+            if ln: lines.append(ln)
+            ln=w
+    if ln: lines.append(ln)
+    cyy=H-300-(len(lines)-1)*(cfs+14)
+    for line in lines:
+        cw=d.textlength(line,font=cf); cxx=(W-cw)/2
+        for dx,dy in [(-3,-3),(3,-3),(-3,3),(3,3),(0,3),(0,-3),(3,0),(-3,0)]: d.text((cxx+dx,cyy+dy),line,font=cf,fill=(0,0,0))
+        d.text((cxx,cyy),line,font=cf,fill=(255,255,255)); cyy+=cfs+14
+    im.save(out)
 if __name__=="__main__":
     import sys; sys.path.insert(0,HERE); import reassemble_dissolve as RD
     beats_all=[]; auds=[]
@@ -103,6 +114,6 @@ if __name__=="__main__":
             op=f"{OVL}/{subfile}.png"; overlay_png(title,cap,op)
             beats_all.append((ip,op,per))
         print(" sec",key,round(sd,2),"s ·",len(beats),"컷")
-    out=f"{A}/render/korea-lost-decade-illust.mp4"
-    RD.assemble(beats_all,auds,out,f"{TMP}/dtmp")
-    print("잃어버린10년 illust(연결성):",round(dur(out),1),"s ->",out)
+    out=f"{A}/render/korea-lost-decade-illust-v.mp4"
+    RD.assemble(beats_all,auds,out,f"{TMP}/dtmp",size=(1080,1920))
+    print("잃어버린10년 illust 세로쇼츠:",round(dur(out),1),"s ->",out)
