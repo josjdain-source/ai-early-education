@@ -405,93 +405,166 @@ def write_all_practice():
             BS.write(f"free/{slug}-12weeks-workbook.html",program_workbook(slug))
     print("2편·3편(+1년 커리큘럼·집 실전판·학년별 로드맵·12주 프로그램·워크북) 생성 완료")
 def program_workbook(slug):
+    """12주 워크북 뷰어 — 상단 고정바 + 좌측 주차 목차(sticky·scroll-spy) + 중앙 A4 문서 + 우측 빠른작업.
+    인쇄 시 문서만 출력(@media print). 데이터=CR.PROG12."""
     p=CR.PROG12[slug]; name,flag=NAMES[slug]
-    def part_of(n): return "3부 · 데이터와 AI 생각" if n>=9 else ("2부 · 직접 만들기" if n>=5 else "1부 · 컴퓨팅적 사고")
-    COL={1:("#2E8B96","#E8F4F6"),2:("#E0684A","#FDECE5"),3:("#2E9E63","#E7F5EC")}
-    ICON={1:"🧭",2:"🐞",3:"🔁",4:"🔀",5:"🐱",6:"🔊",7:"🎬",8:"🎮",9:"📊",10:"🗂️",11:"🔎",12:"💬"}
-    pnum=lambda n:3 if n>=9 else(2 if n>=5 else 1)
-    tracker="".join(f'<span class="tc" style="border-color:{COL[pnum(i)][0]};color:{COL[pnum(i)][0]}">{i}</span>' for i in range(1,13))
-    wk=""
-    for w in p["weeks"]:
-        n=w[0]; c,bg=COL[pnum(n)]; ic=ICON.get(n,"✏️")
-        wk+=f"""<section class="page wk" style="--c:{c};--bg:{bg}">
-<div class="ribbon"><div class="badge">{n}</div><div class="ic">{ic}</div>
-<div class="tt"><div class="part">{part_of(n)}</div><h2>{w[1]}</h2></div><div class="wof">주 {n}<small>/12</small></div></div>
-<img class="wkart" src="/assets/program/wk/{n}.png" alt="{w[1]}">
-<div class="act"><div class="lab">🎯 이번 주에 할 것</div>{w[2]}<div class="prep">🧰 준비물 · {w[3].replace('준비물: ','')}</div></div>
-<div class="say"><div class="lab">💬 부모가 이렇게 물어봐요</div><b>"{w[4]}"</b></div>
-<div class="grid2"><div class="rbox"><div class="rlab">✍️ 우리가 한 것</div><div class="lines"></div></div>
-<div class="rbox"><div class="rlab">💡 아이가 발견·다시 물은 것</div><div class="lines"></div></div></div>
-<div class="rrow"><div class="stars"><span>이번 주 재미</span> ☆ ☆ ☆ ☆ ☆</div><div class="draw">🎨 그림 · 스티커 칸</div></div>
-<div class="why">🔗 왜 하나요 — {w[5]}</div>
-<div class="wfoot">📘 세계 AI교육법 · 만 8세 홈 워크북</div></section>"""
+    EXTRA={1:("아이가 순서를 빠뜨리지 않고 말했나요?","한 단계만 더 잘게 쪼개서 다시 말해볼까?"),
+     2:("틀린 곳을 스스로 찾았나요?","어디를 고치면 될지 네 말로 다시 말해줄래?"),
+     3:("반복되는 부분을 묶어서 말했나요?","'3번 반복'처럼 한 번에 말해볼까?"),
+     4:("'만약 ~라면'을 써서 말했나요?","다른 경우라면 어떻게 할지 하나만 더 정해볼까?"),
+     5:("고양이가 아이 명령대로 움직였나요?","걸음 수를 바꾸면 어떻게 될까? 바꿔서 다시 해볼까?"),
+     6:("원하는 말과 소리가 나왔나요?","다른 말로 바꿔서 다시 시켜볼까?"),
+     7:("캐릭터가 계속 움직이나요?","더 빠르게(느리게) 하려면 뭘 고칠까?"),
+     8:("점수가 잘 올라가나요?","더 재밌게 만들 한 가지를 정해 다시 바꿔볼까?"),
+     9:("표와 그래프가 맞게 그려졌나요?","다른 질문으로 한 번 더 조사해볼까?"),
+     10:("나눈 규칙을 말로 설명했나요?","헷갈리는 카드 하나로 규칙을 다시 정해볼까?"),
+     11:("'어떻게 아는지' 추측을 말했나요?","다른 AI를 찾아 같은 질문을 해볼까?"),
+     12:("이상한 부분을 하나 찾았나요?","'이렇게 바꿔줘'라고 정확히 다시 말해볼까?")}
+    part_of=lambda n:"3부 · 데이터와 AI 생각" if n>=9 else("2부 · 직접 만들기" if n>=5 else "1부 · 컴퓨팅적 사고")
+    weeks=p["weeks"]
+    # 좌측 목차
+    toc='<a class="wt-a" href="#intro">시작 안내</a>'
+    toc+="".join(f'<a class="wt-a" href="#wk{w[0]}" data-w="{w[0]}"><span class="wt-n">{w[0]}</span>{w[1]}</a>' for w in weeks)
+    toc+='<a class="wt-a" href="#done">마무리 · 수료</a>'
+    # 모바일 주차 선택
+    opts='<option value="intro">시작 안내</option>'+"".join(f'<option value="wk{w[0]}">{w[0]}주 · {w[1]}</option>' for w in weeks)+'<option value="done">마무리 · 수료</option>'
+    # 주차 카드
+    cards=""
+    for i,w in enumerate(weeks):
+        n=w[0]; chk,reask=EXTRA[n]
+        prv=f'<a class="wn-btn" href="#wk{n-1}">← {n-1}주 {weeks[i-1][1]}</a>' if i>0 else f'<a class="wn-btn" href="#intro">← 시작 안내</a>'
+        nxt=f'<a class="wn-btn nx" href="#wk{n+1}">다음 · {n+1}주 {weeks[i+1][1]} →</a>' if i<len(weeks)-1 else '<a class="wn-btn nx" href="#done">마무리 · 수료 →</a>'
+        prompt_row=('<div class="wb-row"><b>💡 예시 프롬프트</b><span>"우주에서 피아노 치는 고양이를 그려줘" → 결과를 보고 → "배경을 바닷속으로 바꿔줘"</span></div>' if n==12 else '')
+        cards+=f"""<section class="wb-card" id="wk{n}">
+<header class="wb-h no-print" onclick="this.parentElement.classList.toggle('fold')">
+<span class="wb-badge">{n}주</span><div><small>{part_of(n)}</small><h2>{w[1]}</h2></div><span class="wb-fold">▾</span></header>
+<div class="wb-h print-only"><span class="wb-badge">{n}주</span><div><small>{part_of(n)}</small><h2>{w[1]}</h2></div></div>
+<div class="wb-body">
+<div class="wb-row"><b>🎯 이번 주 목표</b><span>{w[2]}</span></div>
+<div class="wb-row"><b>🧰 준비물</b><span>{w[3].replace('준비물: ','')}</span></div>
+<div class="wb-say">💬 <b>부모가 이렇게 물어봐요</b> — "{w[4]}"</div>
+{prompt_row}
+<div class="wb-row"><b>👀 결과를 보고 체크</b><span>{chk}</span></div>
+<div class="wb-row"><b>🔁 다시 묻기 문장</b><span>"{reask}"</span></div>
+<div class="wb-rec"><div class="wb-rl">✍️ 우리가 한 것 · 발견한 것</div><div class="wb-lines"></div></div>
+<div class="wb-why">🔗 왜 하나요 — {w[5]}</div>
+<div class="wb-nav no-print">{prv}{nxt}</div>
+</div></section>"""
     return f"""<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>만 8세 12주 홈 프로그램 워크북 | AI 조기교육</title>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <style>
-*{{box-sizing:border-box}}
-body{{margin:0;background:#E7DECF;font-family:"Pretendard","Malgun Gothic",sans-serif;color:#2B2016;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+*{{box-sizing:border-box}}body{{margin:0;background:#F6EEDF;font-family:"Pretendard","Malgun Gothic",sans-serif;color:#2B2016;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+a{{color:inherit}}
+.wbv-top{{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid #EADFCE;box-shadow:0 2px 8px rgba(0,0,0,.06);display:flex;align-items:center;gap:14px;padding:9px 16px;flex-wrap:wrap}}
+.wbv-top a,.wbv-top button{{text-decoration:none;font-weight:700;font-size:12.8px;color:#5a4a35;background:#fff;border:1px solid #EADFCE;border-radius:9px;padding:7px 11px;cursor:pointer}}
+.wbv-top a:hover,.wbv-top button:hover{{background:#FBF3E4}}
+.wbv-title{{margin:0 auto;font-weight:900;font-size:14.5px;color:#2B3A55}}
+.wbv-top .pri{{background:#E0684A;color:#fff;border-color:#E0684A}}
+.wbv-grid{{max-width:1280px;margin:0 auto;padding:18px 16px;display:flex;gap:20px;align-items:flex-start}}
+.wbv-toc{{width:216px;flex:none;position:sticky;top:64px;background:#FFF9EF;border:1px solid #EAD9BE;border-radius:14px;padding:12px 8px;max-height:calc(100vh - 84px);overflow:auto}}
+.wt-t{{font-weight:800;font-size:13.5px;color:#2B3A55;padding:4px 10px 9px;border-bottom:2px solid #F0E6D2;margin-bottom:6px}}
+.wt-a{{display:flex;align-items:center;gap:7px;padding:6px 9px;margin:1px 0;border-radius:8px;text-decoration:none;color:#5a4a35;font-size:12.4px;font-weight:600}}
+.wt-a:hover{{background:#FDECE5}}
+.wt-a.on{{background:#E0684A;color:#fff}}
+.wt-n{{width:20px;height:20px;border-radius:50%;background:#F0E6D2;color:#8a6f45;display:grid;place-items:center;font-size:10.5px;font-weight:900;flex:none}}
+.wt-a.on .wt-n{{background:#fff;color:#E0684A}}
+.wbv-doc{{flex:1;min-width:0;max-width:820px;margin:0 auto}}
+.wbv-quick{{width:172px;flex:none;position:sticky;top:64px}}
+.wq{{background:#FFF9EF;border:1px solid #EAD9BE;border-radius:14px;padding:12px 10px}}
+.wq-t{{font-weight:800;font-size:12.5px;color:#2B3A55;margin-bottom:8px}}
+.wq a,.wq button{{display:block;width:100%;text-align:left;margin:4px 0;padding:8px 10px;border:1px solid #EADFCE;border-radius:9px;background:#fff;font-size:12px;font-weight:700;color:#5a4a35;text-decoration:none;cursor:pointer}}
+.wq a:hover,.wq button:hover{{background:#FDECE5}}
+.wb-card{{background:#fff;border:1px solid #EADFCE;border-radius:14px;box-shadow:0 3px 10px rgba(43,32,22,.06);margin-bottom:16px;overflow:hidden}}
+.wb-h{{display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid #F5EDE0;cursor:pointer}}
+.wb-h small{{color:#9b8a6e;font-weight:700;font-size:11px}}
+.wb-h h2{{margin:1px 0 0;font-size:18px}}
+.wb-badge{{width:44px;height:44px;border-radius:13px;background:#E0684A;color:#fff;display:grid;place-items:center;font-weight:900;font-size:14px;flex:none}}
+.wb-fold{{margin-left:auto;color:#c4b59a;transition:transform .15s}}
+.wb-card.fold .wb-body{{display:none}}
+.wb-card.fold .wb-fold{{transform:rotate(-90deg)}}
+.wb-body{{padding:16px 22px 18px}}
+.wb-row{{display:flex;gap:10px;padding:6px 0;font-size:13.8px;line-height:1.55}}
+.wb-row b{{flex:none;width:132px;color:#2B3A55;font-size:12.8px}}
+.wb-say{{background:#EEF7EF;border:1px solid #cfe6d6;border-radius:10px;padding:10px 14px;margin:8px 0;font-size:13.8px}}
+.wb-rec{{margin:10px 0 4px}}
+.wb-rl{{font-weight:800;font-size:12.8px;margin-bottom:5px}}
+.wb-lines{{height:74px;background-image:repeating-linear-gradient(#fff,#fff 23px,#D8C9AE 24px,#fff 25px);border:1.5px solid #E4D8C4;border-radius:9px}}
+.wb-why{{font-size:11.5px;color:#9b8a6e;border-top:1px solid #f2ecdf;padding-top:8px;margin-top:8px}}
+.wb-nav{{display:flex;justify-content:space-between;gap:10px;margin-top:12px;flex-wrap:wrap}}
+.wn-btn{{text-decoration:none;font-size:12px;font-weight:700;color:#8a6f45;border:1px solid #EADFCE;border-radius:9px;padding:7px 11px}}
+.wn-btn.nx{{color:#fff;background:#E0684A;border-color:#E0684A}}
+.wb-intro img{{width:100%;height:230px;object-fit:cover;display:block}}
+.wb-intro .in{{padding:18px 22px}}
+.wb-track{{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}}
+.wb-track span{{width:30px;height:30px;border:2px solid #E0684A;color:#E0684A;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:12.5px}}
+.wb-sel{{display:none;margin:0 16px 4px;padding:10px;border:1.5px solid #E0684A;border-radius:10px;font:inherit;width:calc(100% - 32px);background:#fff}}
+#wbTop{{position:fixed;right:18px;bottom:18px;z-index:70;background:#2B3A55;color:#fff;border:0;border-radius:50%;width:44px;height:44px;font-size:17px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25)}}
+.print-only{{display:none}}
+@media(max-width:1060px){{.wbv-quick{{display:none}}}}
+@media(max-width:840px){{.wbv-toc{{display:none}}.wb-sel{{display:block}}.wbv-title{{display:none}}}}
 @page{{size:A4;margin:12mm}}
-.tbar{{position:sticky;top:0;z-index:5;display:flex;gap:10px;justify-content:space-between;align-items:center;background:#fff;padding:12px 18px;box-shadow:0 2px 10px rgba(0,0,0,.1);flex-wrap:wrap}}
-.tbar a{{color:#E0684A;font-weight:700;text-decoration:none}}
-.btn{{background:#E0684A;color:#fff;border:0;border-radius:10px;padding:10px 20px;font-weight:800;cursor:pointer;font-size:14px}}
-.page{{background:#fff;max-width:820px;margin:18px auto;border-radius:16px;box-shadow:0 8px 26px rgba(0,0,0,.12);overflow:hidden;min-height:1010px}}
-.cover{{background:linear-gradient(180deg,#FFF7EA,#FBEBD3);padding-bottom:26px}}
-.coverimg{{width:100%;height:370px;object-fit:cover;display:block}}
-.covertitle{{text-align:center;padding:20px 34px 4px}}
-.kick{{display:inline-block;background:#E0684A;color:#fff;font-weight:800;font-size:12.5px;border-radius:20px;padding:5px 14px}}
-.cover h1{{font-size:31px;margin:12px 0 6px}}.cover .s{{color:#7c6a4d;font-size:14.5px}}
-.how{{text-align:left;background:#fff;border:1.5px solid #EAD9BE;border-radius:16px;padding:18px 22px;margin:20px 34px 0;font-size:14px;line-height:1.8}}
-.tracker{{text-align:center;margin:18px 34px 0}}.tlab{{font-weight:800;color:#8a6f45;margin-bottom:8px}}
-.tc{{display:inline-grid;place-items:center;width:36px;height:36px;border:2.5px solid;border-radius:50%;font-weight:900;margin:3px;font-size:15px}}
-.close{{background:linear-gradient(180deg,#FFF7EA,#FBEBD3);text-align:center;padding:70px 34px;display:flex;flex-direction:column;justify-content:center}}
-.close .em{{font-size:66px}}.close h1{{font-size:30px;margin:8px 0}}.close .s{{color:#7c6a4d;font-size:14.5px}}
-.ribbon{{background:var(--bg);border-bottom:4px solid var(--c);padding:18px 30px;display:flex;align-items:center;gap:14px}}
-.badge{{width:52px;height:52px;background:var(--c);color:#fff;border-radius:15px;display:grid;place-items:center;font-size:26px;font-weight:900;flex:none}}
-.ribbon .ic{{font-size:30px;flex:none}}
-.ribbon .tt{{flex:1}}.ribbon .part{{font-size:12px;font-weight:800;color:var(--c)}}.ribbon h2{{font-size:22px;margin:2px 0 0}}
-.wof{{font-size:14px;color:var(--c);font-weight:800;flex:none}}.wof small{{opacity:.55}}
-.wkart{{display:block;width:calc(100% - 60px);height:150px;object-fit:cover;margin:16px 30px 0;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.08)}}
-.act,.say,.grid2,.rrow,.why{{margin:14px 30px 0}}
-.lab{{font-weight:800;font-size:13px;color:var(--c);margin-bottom:5px}}
-.act{{background:#FFFDF8;border:1.5px solid #EADFCE;border-left:5px solid var(--c);border-radius:11px;padding:13px 15px;font-size:14.5px;line-height:1.6}}
-.prep{{color:#8a6f45;font-size:12.5px;margin-top:8px}}
-.say{{background:var(--bg);border-radius:11px;padding:12px 15px;font-size:14.5px;line-height:1.6}}
-.grid2{{display:grid;grid-template-columns:1fr 1fr;gap:12px}}
-.rlab{{font-weight:800;font-size:13px;margin-bottom:6px}}
-.lines{{height:92px;background-image:repeating-linear-gradient(#fff,#fff 28px,#D8C9AE 29px,#fff 30px);border:1.5px solid #E4D8C4;border-radius:9px}}
-.rrow{{display:flex;gap:12px}}
-.stars{{flex:1;border:1.5px solid #E4D8C4;border-radius:9px;padding:13px;font-weight:800;font-size:18px;display:flex;align-items:center;gap:8px}}
-.stars span{{font-size:13px;color:#8a6f45;font-weight:700}}
-.draw{{flex:1;border:2px dashed var(--c);border-radius:9px;padding:12px;color:#b9a98c;text-align:center;min-height:86px;display:grid;place-items:center;font-size:13px}}
-.why{{font-size:12px;color:#9b8a6e;border-top:1px solid #eee;padding-top:8px}}
-.wfoot{{margin:16px 30px 0;text-align:center;font-size:11px;color:#c4b59a}}
-@media print{{.noprint{{display:none!important}}body{{background:#fff}}.page{{box-shadow:none;margin:0;border-radius:0;max-width:none;min-height:auto;page-break-after:always}}.page:last-child{{page-break-after:auto}}.coverimg{{height:300px}}.close{{padding:90px 34px}}}}
+@media print{{
+.no-print,.wbv-top,.wbv-toc,.wbv-quick,#wbTop,.wb-sel{{display:none!important}}
+.print-only{{display:flex}}
+body{{background:#fff}}
+.wbv-grid{{padding:0;display:block}}
+.wbv-doc{{max-width:none}}
+.wb-card{{box-shadow:none;border:0;border-radius:0;margin:0;break-after:page}}
+.wb-card:last-of-type{{break-after:auto}}
+.wb-card.fold .wb-body{{display:block}}
+}}
 </style></head><body>
-<div class="tbar noprint"><a href="/world-cases/{slug}-8yo-12weeks.html">← 12주 프로그램</a>
-<button class="btn" onclick="window.print()">🖨 인쇄 / PDF로 저장</button></div>
-<section class="page cover">
-<img class="coverimg" src="/assets/program/workbook-cover.png" alt="아이와 부모가 함께 배우는 모습">
-<div class="covertitle"><span class="kick">📘 세계 AI교육법 · 홈 워크북</span>
-<h1>만 8세 초등 · 12주 홈 프로그램</h1>
-<p class="s">영국 KS2 방식을 우리 집에서 · 주 1회 15분 · 대부분 무료</p></div>
-<div class="how"><b>이렇게 쓰세요</b><br>
-· 매주 <b>한 장</b>씩, 그 주의 활동을 아이와 함께 해요.<br>
-· 활동 뒤 <b>'우리가 한 것'</b>과 <b>'다시 물어본 것'</b>을 아이가 직접 적거나 그려요.<br>
-· 결과물이 아니라 <b>함께 해보고 다시 묻는 과정</b>이 목표예요.<br>
-· 한 주를 끝내면 아래 번호를 색칠! 12칸을 다 채워봐요.</div>
-<div class="tracker"><div class="tlab">🏁 우리의 12주</div>{tracker}</div>
-</section>
-{wk}
-<section class="page close"><div class="em">🎓</div>
-<h1>12주, 정말 잘했어요!</h1>
-<p class="s">이제 우리 아이는 순서대로 생각하고, 스스로 만들고,<br>AI에게 '다시 묻는' 힘의 씨앗을 가졌어요.</p>
-<div class="how" style="text-align:center;margin:22px auto 0;max-width:460px"><b>🏅 수료 축하합니다</b><br><br>
-이름 · ________________<br><br>가장 재미있었던 주 · ____주<br>다음에 또 해보고 싶은 것 · ________________<br><br>
-<span style="color:#9b8a6e;font-size:12px">© 2026 AI조기교육 · ai-early-education.pages.dev</span></div>
-</section>
+<div class="wbv-top no-print">
+<a href="/free-kit.html">← 무료 자료</a>
+<a href="/world-cases/{slug}-8yo-12weeks.html">12주 홈 프로그램</a>
+<span class="wbv-title">📘 만 8세 초등 · 12주 홈 프로그램 워크북</span>
+<button onclick="wbAll()">전체 접기/펼치기</button>
+<button class="pri" onclick="window.print()">🖨 인쇄 / PDF 저장</button>
+<a href="/start-guide.html">시작 가이드</a>
+<a href="/parent-resources.html">자료실</a>
+</div>
+<select class="wb-sel no-print" onchange="location.hash=this.value">{opts}</select>
+<div class="wbv-grid">
+<aside class="wbv-toc no-print"><div class="wt-t">📚 12주 목차</div>{toc}</aside>
+<main class="wbv-doc">
+<section class="wb-card wb-intro" id="intro">
+<img src="/assets/program/workbook-cover.png" alt="아이와 부모가 함께 배우는 모습">
+<div class="in"><h1 style="margin:0 0 6px;font-size:23px">만 8세 초등 · 12주 홈 프로그램</h1>
+<p style="margin:0;color:#7c6a4d;font-size:13.5px">영국 KS2 방식을 우리 집에서 · 주 1회 15분 · 대부분 무료</p>
+<div class="wb-say" style="margin-top:12px"><b>이렇게 쓰세요</b> — 매주 한 장씩 아이와 함께 하고, '우리가 한 것'을 적어요. 결과물이 아니라 <b>함께 해보고 다시 묻는 과정</b>이 목표. 한 주를 마치면 아래 번호를 색칠!</div>
+<div class="wb-track">{"".join(f"<span>{i}</span>" for i in range(1,13))}</div>
+</div></section>
+{cards}
+<section class="wb-card" id="done"><div class="wb-body" style="text-align:center;padding:34px 22px">
+<div style="font-size:52px">🎓</div><h2 style="margin:8px 0">12주, 정말 잘했어요!</h2>
+<p style="color:#7c6a4d;font-size:13.5px">순서대로 생각하고, 스스로 만들고, AI에게 '다시 묻는' 힘의 씨앗을 가졌어요.</p>
+<p style="margin-top:14px;font-weight:700">🏅 수료 · 이름 ____________ &nbsp;· 가장 재미있던 주 ___주</p>
+<p style="color:#9b8a6e;font-size:11.5px;margin-top:16px">© 2026 AI조기교육 · ai-early-education.pages.dev</p>
+</div></section>
+</main>
+<aside class="wbv-quick no-print"><div class="wq"><div class="wq-t">⚡ 바로 하기</div>
+<button onclick="window.print()">🖨 인쇄 · PDF 저장</button>
+<a href="/free/question-cards.html" target="_blank" rel="noopener">🃏 질문 카드 보기</a>
+<a href="/free/first-prompts.html" target="_blank" rel="noopener">💡 프롬프트 20개</a>
+<a href="/free/worksheet.html" target="_blank" rel="noopener">📝 대화 연습지</a>
+<a href="/start-guide.html">🚀 시작 가이드</a>
+</div></aside>
+</div>
+<button id="wbTop" class="no-print" onclick="window.scrollTo({{top:0,behavior:'smooth'}})" title="위로">↑</button>
+<script>
+function wbAll(){{var cs=document.querySelectorAll('.wb-card:not(.wb-intro)');var anyOpen=[...cs].some(function(c){{return !c.classList.contains('fold')&&c.id!=='done';}});
+ cs.forEach(function(c){{if(c.id!=='done')c.classList.toggle('fold',anyOpen);}});}}
+(function(){{var secs=[...document.querySelectorAll('.wb-card[id]')];var links=[...document.querySelectorAll('.wt-a')];
+function spy(){{var y=window.scrollY+120,cur=secs[0].id;
+ secs.forEach(function(s){{if(s.offsetTop<=y)cur=s.id;}});
+ links.forEach(function(a){{a.classList.toggle('on',a.getAttribute('href')==='#'+cur);}});}}
+window.addEventListener('scroll',spy);spy();
+}})();
+</script>
 </body></html>"""
+
 def program_page(slug):
     name,flag=NAMES[slug]
     body=f"""<main>

@@ -3,185 +3,280 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#E7DECF;font-family:"Pretendard","Malgun Gothic",sans-serif;color:#2B2016;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+*{box-sizing:border-box}body{margin:0;background:#F6EEDF;font-family:"Pretendard","Malgun Gothic",sans-serif;color:#2B2016;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+a{color:inherit}
+.wbv-top{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid #EADFCE;box-shadow:0 2px 8px rgba(0,0,0,.06);display:flex;align-items:center;gap:14px;padding:9px 16px;flex-wrap:wrap}
+.wbv-top a,.wbv-top button{text-decoration:none;font-weight:700;font-size:12.8px;color:#5a4a35;background:#fff;border:1px solid #EADFCE;border-radius:9px;padding:7px 11px;cursor:pointer}
+.wbv-top a:hover,.wbv-top button:hover{background:#FBF3E4}
+.wbv-title{margin:0 auto;font-weight:900;font-size:14.5px;color:#2B3A55}
+.wbv-top .pri{background:#E0684A;color:#fff;border-color:#E0684A}
+.wbv-grid{max-width:1280px;margin:0 auto;padding:18px 16px;display:flex;gap:20px;align-items:flex-start}
+.wbv-toc{width:216px;flex:none;position:sticky;top:64px;background:#FFF9EF;border:1px solid #EAD9BE;border-radius:14px;padding:12px 8px;max-height:calc(100vh - 84px);overflow:auto}
+.wt-t{font-weight:800;font-size:13.5px;color:#2B3A55;padding:4px 10px 9px;border-bottom:2px solid #F0E6D2;margin-bottom:6px}
+.wt-a{display:flex;align-items:center;gap:7px;padding:6px 9px;margin:1px 0;border-radius:8px;text-decoration:none;color:#5a4a35;font-size:12.4px;font-weight:600}
+.wt-a:hover{background:#FDECE5}
+.wt-a.on{background:#E0684A;color:#fff}
+.wt-n{width:20px;height:20px;border-radius:50%;background:#F0E6D2;color:#8a6f45;display:grid;place-items:center;font-size:10.5px;font-weight:900;flex:none}
+.wt-a.on .wt-n{background:#fff;color:#E0684A}
+.wbv-doc{flex:1;min-width:0;max-width:820px;margin:0 auto}
+.wbv-quick{width:172px;flex:none;position:sticky;top:64px}
+.wq{background:#FFF9EF;border:1px solid #EAD9BE;border-radius:14px;padding:12px 10px}
+.wq-t{font-weight:800;font-size:12.5px;color:#2B3A55;margin-bottom:8px}
+.wq a,.wq button{display:block;width:100%;text-align:left;margin:4px 0;padding:8px 10px;border:1px solid #EADFCE;border-radius:9px;background:#fff;font-size:12px;font-weight:700;color:#5a4a35;text-decoration:none;cursor:pointer}
+.wq a:hover,.wq button:hover{background:#FDECE5}
+.wb-card{background:#fff;border:1px solid #EADFCE;border-radius:14px;box-shadow:0 3px 10px rgba(43,32,22,.06);margin-bottom:16px;overflow:hidden}
+.wb-h{display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid #F5EDE0;cursor:pointer}
+.wb-h small{color:#9b8a6e;font-weight:700;font-size:11px}
+.wb-h h2{margin:1px 0 0;font-size:18px}
+.wb-badge{width:44px;height:44px;border-radius:13px;background:#E0684A;color:#fff;display:grid;place-items:center;font-weight:900;font-size:14px;flex:none}
+.wb-fold{margin-left:auto;color:#c4b59a;transition:transform .15s}
+.wb-card.fold .wb-body{display:none}
+.wb-card.fold .wb-fold{transform:rotate(-90deg)}
+.wb-body{padding:16px 22px 18px}
+.wb-row{display:flex;gap:10px;padding:6px 0;font-size:13.8px;line-height:1.55}
+.wb-row b{flex:none;width:132px;color:#2B3A55;font-size:12.8px}
+.wb-say{background:#EEF7EF;border:1px solid #cfe6d6;border-radius:10px;padding:10px 14px;margin:8px 0;font-size:13.8px}
+.wb-rec{margin:10px 0 4px}
+.wb-rl{font-weight:800;font-size:12.8px;margin-bottom:5px}
+.wb-lines{height:74px;background-image:repeating-linear-gradient(#fff,#fff 23px,#D8C9AE 24px,#fff 25px);border:1.5px solid #E4D8C4;border-radius:9px}
+.wb-why{font-size:11.5px;color:#9b8a6e;border-top:1px solid #f2ecdf;padding-top:8px;margin-top:8px}
+.wb-nav{display:flex;justify-content:space-between;gap:10px;margin-top:12px;flex-wrap:wrap}
+.wn-btn{text-decoration:none;font-size:12px;font-weight:700;color:#8a6f45;border:1px solid #EADFCE;border-radius:9px;padding:7px 11px}
+.wn-btn.nx{color:#fff;background:#E0684A;border-color:#E0684A}
+.wb-intro img{width:100%;height:230px;object-fit:cover;display:block}
+.wb-intro .in{padding:18px 22px}
+.wb-track{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}
+.wb-track span{width:30px;height:30px;border:2px solid #E0684A;color:#E0684A;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:12.5px}
+.wb-sel{display:none;margin:0 16px 4px;padding:10px;border:1.5px solid #E0684A;border-radius:10px;font:inherit;width:calc(100% - 32px);background:#fff}
+#wbTop{position:fixed;right:18px;bottom:18px;z-index:70;background:#2B3A55;color:#fff;border:0;border-radius:50%;width:44px;height:44px;font-size:17px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.print-only{display:none}
+@media(max-width:1060px){.wbv-quick{display:none}}
+@media(max-width:840px){.wbv-toc{display:none}.wb-sel{display:block}.wbv-title{display:none}}
 @page{size:A4;margin:12mm}
-.tbar{position:sticky;top:0;z-index:5;display:flex;gap:10px;justify-content:space-between;align-items:center;background:#fff;padding:12px 18px;box-shadow:0 2px 10px rgba(0,0,0,.1);flex-wrap:wrap}
-.tbar a{color:#E0684A;font-weight:700;text-decoration:none}
-.btn{background:#E0684A;color:#fff;border:0;border-radius:10px;padding:10px 20px;font-weight:800;cursor:pointer;font-size:14px}
-.page{background:#fff;max-width:820px;margin:18px auto;border-radius:16px;box-shadow:0 8px 26px rgba(0,0,0,.12);overflow:hidden;min-height:1010px}
-.cover{background:linear-gradient(180deg,#FFF7EA,#FBEBD3);padding-bottom:26px}
-.coverimg{width:100%;height:370px;object-fit:cover;display:block}
-.covertitle{text-align:center;padding:20px 34px 4px}
-.kick{display:inline-block;background:#E0684A;color:#fff;font-weight:800;font-size:12.5px;border-radius:20px;padding:5px 14px}
-.cover h1{font-size:31px;margin:12px 0 6px}.cover .s{color:#7c6a4d;font-size:14.5px}
-.how{text-align:left;background:#fff;border:1.5px solid #EAD9BE;border-radius:16px;padding:18px 22px;margin:20px 34px 0;font-size:14px;line-height:1.8}
-.tracker{text-align:center;margin:18px 34px 0}.tlab{font-weight:800;color:#8a6f45;margin-bottom:8px}
-.tc{display:inline-grid;place-items:center;width:36px;height:36px;border:2.5px solid;border-radius:50%;font-weight:900;margin:3px;font-size:15px}
-.close{background:linear-gradient(180deg,#FFF7EA,#FBEBD3);text-align:center;padding:70px 34px;display:flex;flex-direction:column;justify-content:center}
-.close .em{font-size:66px}.close h1{font-size:30px;margin:8px 0}.close .s{color:#7c6a4d;font-size:14.5px}
-.ribbon{background:var(--bg);border-bottom:4px solid var(--c);padding:18px 30px;display:flex;align-items:center;gap:14px}
-.badge{width:52px;height:52px;background:var(--c);color:#fff;border-radius:15px;display:grid;place-items:center;font-size:26px;font-weight:900;flex:none}
-.ribbon .ic{font-size:30px;flex:none}
-.ribbon .tt{flex:1}.ribbon .part{font-size:12px;font-weight:800;color:var(--c)}.ribbon h2{font-size:22px;margin:2px 0 0}
-.wof{font-size:14px;color:var(--c);font-weight:800;flex:none}.wof small{opacity:.55}
-.wkart{display:block;width:calc(100% - 60px);height:150px;object-fit:cover;margin:16px 30px 0;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
-.act,.say,.grid2,.rrow,.why{margin:14px 30px 0}
-.lab{font-weight:800;font-size:13px;color:var(--c);margin-bottom:5px}
-.act{background:#FFFDF8;border:1.5px solid #EADFCE;border-left:5px solid var(--c);border-radius:11px;padding:13px 15px;font-size:14.5px;line-height:1.6}
-.prep{color:#8a6f45;font-size:12.5px;margin-top:8px}
-.say{background:var(--bg);border-radius:11px;padding:12px 15px;font-size:14.5px;line-height:1.6}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.rlab{font-weight:800;font-size:13px;margin-bottom:6px}
-.lines{height:92px;background-image:repeating-linear-gradient(#fff,#fff 28px,#D8C9AE 29px,#fff 30px);border:1.5px solid #E4D8C4;border-radius:9px}
-.rrow{display:flex;gap:12px}
-.stars{flex:1;border:1.5px solid #E4D8C4;border-radius:9px;padding:13px;font-weight:800;font-size:18px;display:flex;align-items:center;gap:8px}
-.stars span{font-size:13px;color:#8a6f45;font-weight:700}
-.draw{flex:1;border:2px dashed var(--c);border-radius:9px;padding:12px;color:#b9a98c;text-align:center;min-height:86px;display:grid;place-items:center;font-size:13px}
-.why{font-size:12px;color:#9b8a6e;border-top:1px solid #eee;padding-top:8px}
-.wfoot{margin:16px 30px 0;text-align:center;font-size:11px;color:#c4b59a}
-@media print{.noprint{display:none!important}body{background:#fff}.page{box-shadow:none;margin:0;border-radius:0;max-width:none;min-height:auto;page-break-after:always}.page:last-child{page-break-after:auto}.coverimg{height:300px}.close{padding:90px 34px}}
+@media print{
+.no-print,.wbv-top,.wbv-toc,.wbv-quick,#wbTop,.wb-sel{display:none!important}
+.print-only{display:flex}
+body{background:#fff}
+.wbv-grid{padding:0;display:block}
+.wbv-doc{max-width:none}
+.wb-card{box-shadow:none;border:0;border-radius:0;margin:0;break-after:page}
+.wb-card:last-of-type{break-after:auto}
+.wb-card.fold .wb-body{display:block}
+}
 </style></head><body>
-<div class="tbar noprint"><a href="/world-cases/uk-8yo-12weeks.html">← 12주 프로그램</a>
-<button class="btn" onclick="window.print()">🖨 인쇄 / PDF로 저장</button></div>
-<section class="page cover">
-<img class="coverimg" src="/assets/program/workbook-cover.png" alt="아이와 부모가 함께 배우는 모습">
-<div class="covertitle"><span class="kick">📘 세계 AI교육법 · 홈 워크북</span>
-<h1>만 8세 초등 · 12주 홈 프로그램</h1>
-<p class="s">영국 KS2 방식을 우리 집에서 · 주 1회 15분 · 대부분 무료</p></div>
-<div class="how"><b>이렇게 쓰세요</b><br>
-· 매주 <b>한 장</b>씩, 그 주의 활동을 아이와 함께 해요.<br>
-· 활동 뒤 <b>'우리가 한 것'</b>과 <b>'다시 물어본 것'</b>을 아이가 직접 적거나 그려요.<br>
-· 결과물이 아니라 <b>함께 해보고 다시 묻는 과정</b>이 목표예요.<br>
-· 한 주를 끝내면 아래 번호를 색칠! 12칸을 다 채워봐요.</div>
-<div class="tracker"><div class="tlab">🏁 우리의 12주</div><span class="tc" style="border-color:#2E8B96;color:#2E8B96">1</span><span class="tc" style="border-color:#2E8B96;color:#2E8B96">2</span><span class="tc" style="border-color:#2E8B96;color:#2E8B96">3</span><span class="tc" style="border-color:#2E8B96;color:#2E8B96">4</span><span class="tc" style="border-color:#E0684A;color:#E0684A">5</span><span class="tc" style="border-color:#E0684A;color:#E0684A">6</span><span class="tc" style="border-color:#E0684A;color:#E0684A">7</span><span class="tc" style="border-color:#E0684A;color:#E0684A">8</span><span class="tc" style="border-color:#2E9E63;color:#2E9E63">9</span><span class="tc" style="border-color:#2E9E63;color:#2E9E63">10</span><span class="tc" style="border-color:#2E9E63;color:#2E9E63">11</span><span class="tc" style="border-color:#2E9E63;color:#2E9E63">12</span></div>
-</section>
-<section class="page wk" style="--c:#2E8B96;--bg:#E8F4F6">
-<div class="ribbon"><div class="badge">1</div><div class="ic">🧭</div>
-<div class="tt"><div class="part">1부 · 컴퓨팅적 사고</div><h2>순서대로 말하기 (알고리즘)</h2></div><div class="wof">주 1<small>/12</small></div></div>
-<img class="wkart" src="/assets/program/wk/1.png" alt="순서대로 말하기 (알고리즘)">
-<div class="act"><div class="lab">🎯 이번 주에 할 것</div>'로봇 놀이' — 아이가 부모(로봇)에게 명령해서 물 한 잔을 따르게 해요. 명령이 애매하면 로봇은 멈춥니다.<div class="prep">🧰 준비물 · 컵·물</div></div>
-<div class="say"><div class="lab">💬 부모가 이렇게 물어봐요</div><b>"로봇은 정확한 말만 알아들어. 하나씩 순서대로 말해줄래?"</b></div>
-<div class="grid2"><div class="rbox"><div class="rlab">✍️ 우리가 한 것</div><div class="lines"></div></div>
-<div class="rbox"><div class="rlab">💡 아이가 발견·다시 물은 것</div><div class="lines"></div></div></div>
-<div class="rrow"><div class="stars"><span>이번 주 재미</span> ☆ ☆ ☆ ☆ ☆</div><div class="draw">🎨 그림 · 스티커 칸</div></div>
-<div class="why">🔗 왜 하나요 — 순서대로 생각하기 = 모든 코딩의 첫걸음.</div>
-<div class="wfoot">📘 세계 AI교육법 · 만 8세 홈 워크북</div></section><section class="page wk" style="--c:#2E8B96;--bg:#E8F4F6">
-<div class="ribbon"><div class="badge">2</div><div class="ic">🐞</div>
-<div class="tt"><div class="part">1부 · 컴퓨팅적 사고</div><h2>틀린 곳 찾기 (버그)</h2></div><div class="wof">주 2<small>/12</small></div></div>
-<img class="wkart" src="/assets/program/wk/2.png" alt="틀린 곳 찾기 (버그)">
-<div class="act"><div class="lab">🎯 이번 주에 할 것</div>일부러 순서를 틀리게 명령해요(신발 신고 양말 신기?). 뭐가 잘못됐는지 아이가 찾아 고쳐요.<div class="prep">🧰 준비물 · 없음</div></div>
-<div class="say"><div class="lab">💬 부모가 이렇게 물어봐요</div><b>"어? 로봇이 이상해. 어디가 틀렸을까?"</b></div>
-<div class="grid2"><div class="rbox"><div class="rlab">✍️ 우리가 한 것</div><div class="lines"></div></div>
-<div class="rbox"><div class="rlab">💡 아이가 발견·다시 물은 것</div><div class="lines"></div></div></div>
-<div class="rrow"><div class="stars"><span>이번 주 재미</span> ☆ ☆ ☆ ☆ ☆</div><div class="draw">🎨 그림 · 스티커 칸</div></div>
-<div class="why">🔗 왜 하나요 — 디버깅 — 틀린 걸 찾아 고치는 힘.</div>
-<div class="wfoot">📘 세계 AI교육법 · 만 8세 홈 워크북</div></section><section class="page wk" style="--c:#2E8B96;--bg:#E8F4F6">
-<div class="ribbon"><div class="badge">3</div><div class="ic">🔁</div>
-<div class="tt"><div class="part">1부 · 컴퓨팅적 사고</div><h2>반복 발견하기 (루프)</h2></div><div class="wof">주 3<small>/12</small></div></div>
-<img class="wkart" src="/assets/program/wk/3.png" alt="반복 발견하기 (루프)">
-<div class="act"><div class="lab">🎯 이번 주에 할 것</div>하루 중 반복되는 것(양치·계단 오르기)을 찾아 '반복 3번' 카드로 묶어요.<div class="prep">🧰 준비물 · 종이</div></div>
-<div class="say"><div class="lab">💬 부모가 이렇게 물어봐요</div><b>"이거 몇 번 반복돼? 한 번에 말하는 방법 없을까?"</b></div>
-<div class="grid2"><div class="rbox"><div class="rlab">✍️ 우리가 한 것</div><div class="lines"></div></div>
-<div class="rbox"><div class="rlab">💡 아이가 발견·다시 물은 것</div><div class="lines"></div></div></div>
-<div class="rrow"><div class="stars"><span>이번 주 재미</span> ☆ ☆ ☆ ☆ ☆</div><div class="draw">🎨 그림 · 스티커 칸</div></div>
-<div class="why">🔗 왜 하나요 — 반복(loop) — 똑똑하게 줄이는 법.</div>
-<div class="wfoot">📘 세계 AI교육법 · 만 8세 홈 워크북</div></section><section class="page wk" style="--c:#2E8B96;--bg:#E8F4F6">
-<div class="ribbon"><div class="badge">4</div><div class="ic">🔀</div>
-<div class="tt"><div class="part">1부 · 컴퓨팅적 사고</div><h2>만약 ~라면 (조건)</h2></div><div class="wof">주 4<small>/12</small></div></div>
-<img class="wkart" src="/assets/program/wk/4.png" alt="만약 ~라면 (조건)">
-<div class="act"><div class="lab">🎯 이번 주에 할 것</div>'비 오면 우산, 아니면 모자' 같은 규칙 놀이. 날씨·기분에 따라 행동 카드를 골라요.<div class="prep">🧰 준비물 · 종이</div></div>
-<div class="say"><div class="lab">💬 부모가 이렇게 물어봐요</div><b>"만약 ~라면 어떻게 할까?"</b></div>
-<div class="grid2"><div class="rbox"><div class="rlab">✍️ 우리가 한 것</div><div class="lines"></div></div>
-<div class="rbox"><div class="rlab">💡 아이가 발견·다시 물은 것</div><div class="lines"></div></div></div>
-<div class="rrow"><div class="stars"><span>이번 주 재미</span> ☆ ☆ ☆ ☆ ☆</div><div class="draw">🎨 그림 · 스티커 칸</div></div>
-<div class="why">🔗 왜 하나요 — 조건(if) — 컴퓨터가 판단하는 법.</div>
-<div class="wfoot">📘 세계 AI교육법 · 만 8세 홈 워크북</div></section><section class="page wk" style="--c:#E0684A;--bg:#FDECE5">
-<div class="ribbon"><div class="badge">5</div><div class="ic">🐱</div>
-<div class="tt"><div class="part">2부 · 직접 만들기</div><h2>Scratch 첫 만남</h2></div><div class="wof">주 5<small>/12</small></div></div>
-<img class="wkart" src="/assets/program/wk/5.png" alt="Scratch 첫 만남">
-<div class="act"><div class="lab">🎯 이번 주에 할 것</div>scratch.mit.edu(무료)에서 고양이를 몇 걸음 움직이게 해요. 블록을 끼우기만 하면 돼요.<div class="prep">🧰 준비물 · 무료 Scratch·컴퓨터/태블릿</div></div>
-<div class="say"><div class="lab">💬 부모가 이렇게 물어봐요</div><b>"고양이한테 어떻게 움직이라고 할까?"</b></div>
-<div class="grid2"><div class="rbox"><div class="rlab">✍️ 우리가 한 것</div><div class="lines"></div></div>
-<div class="rbox"><div class="rlab">💡 아이가 발견·다시 물은 것</div><div class="lines"></div></div></div>
-<div class="rrow"><div class="stars"><span>이번 주 재미</span> ☆ ☆ ☆ ☆ ☆</div><div class="draw">🎨 그림 · 스티커 칸</div></div>
-<div class="why">🔗 왜 하나요 — 블록 코딩 입문 — 영국 KS2의 핵심.</div>
-<div class="wfoot">📘 세계 AI교육법 · 만 8세 홈 워크북</div></section><section class="page wk" style="--c:#E0684A;--bg:#FDECE5">
-<div class="ribbon"><div class="badge">6</div><div class="ic">🔊</div>
-<div class="tt"><div class="part">2부 · 직접 만들기</div><h2>말하고 소리내기</h2></div><div class="wof">주 6<small>/12</small></div></div>
-<img class="wkart" src="/assets/program/wk/6.png" alt="말하고 소리내기">
-<div class="act"><div class="lab">🎯 이번 주에 할 것</div>고양이가 이름을 말하고 소리를 내게 만들어요.<div class="prep">🧰 준비물 · Scratch</div></div>
-<div class="say"><div class="lab">💬 부모가 이렇게 물어봐요</div><b>"뭐라고 말하게 할까? 무슨 소리가 좋아?"</b></div>
-<div class="grid2"><div class="rbox"><div class="rlab">✍️ 우리가 한 것</div><div class="lines"></div></div>
-<div class="rbox"><div class="rlab">💡 아이가 발견·다시 물은 것</div><div class="lines"></div></div></div>
-<div class="rrow"><div class="stars"><span>이번 주 재미</span> ☆ ☆ ☆ ☆ ☆</div><div class="draw">🎨 그림 · 스티커 칸</div></div>
-<div class="why">🔗 왜 하나요 — 출력과 이벤트 — 내 명령에 반응하기.</div>
-<div class="wfoot">📘 세계 AI교육법 · 만 8세 홈 워크북</div></section><section class="page wk" style="--c:#E0684A;--bg:#FDECE5">
-<div class="ribbon"><div class="badge">7</div><div class="ic">🎬</div>
-<div class="tt"><div class="part">2부 · 직접 만들기</div><h2>움직이는 장면 (애니메이션)</h2></div><div class="wof">주 7<small>/12</small></div></div>
-<img class="wkart" src="/assets/program/wk/7.png" alt="움직이는 장면 (애니메이션)">
-<div class="act"><div class="lab">🎯 이번 주에 할 것</div>반복 블록으로 캐릭터가 계속 움직이는 짧은 장면을 만들어요.<div class="prep">🧰 준비물 · Scratch</div></div>
-<div class="say"><div class="lab">💬 부모가 이렇게 물어봐요</div><b>"어떻게 하면 계속 움직일까?"</b></div>
-<div class="grid2"><div class="rbox"><div class="rlab">✍️ 우리가 한 것</div><div class="lines"></div></div>
-<div class="rbox"><div class="rlab">💡 아이가 발견·다시 물은 것</div><div class="lines"></div></div></div>
-<div class="rrow"><div class="stars"><span>이번 주 재미</span> ☆ ☆ ☆ ☆ ☆</div><div class="draw">🎨 그림 · 스티커 칸</div></div>
-<div class="why">🔗 왜 하나요 — 반복을 코드로 — 3주차와 연결.</div>
-<div class="wfoot">📘 세계 AI교육법 · 만 8세 홈 워크북</div></section><section class="page wk" style="--c:#E0684A;--bg:#FDECE5">
-<div class="ribbon"><div class="badge">8</div><div class="ic">🎮</div>
-<div class="tt"><div class="part">2부 · 직접 만들기</div><h2>나만의 미니 게임</h2></div><div class="wof">주 8<small>/12</small></div></div>
-<img class="wkart" src="/assets/program/wk/8.png" alt="나만의 미니 게임">
-<div class="act"><div class="lab">🎯 이번 주에 할 것</div>클릭하면 점수가 오르는 아주 간단한 게임을 만들어요. 만든 뒤 '더 재밌게 하려면?'을 물어요.<div class="prep">🧰 준비물 · Scratch</div></div>
-<div class="say"><div class="lab">💬 부모가 이렇게 물어봐요</div><b>"이 게임, 더 재밌게 하려면 뭘 바꿀까?"</b></div>
-<div class="grid2"><div class="rbox"><div class="rlab">✍️ 우리가 한 것</div><div class="lines"></div></div>
-<div class="rbox"><div class="rlab">💡 아이가 발견·다시 물은 것</div><div class="lines"></div></div></div>
-<div class="rrow"><div class="stars"><span>이번 주 재미</span> ☆ ☆ ☆ ☆ ☆</div><div class="draw">🎨 그림 · 스티커 칸</div></div>
-<div class="why">🔗 왜 하나요 — 만들기 + 다시 묻기(개선).</div>
-<div class="wfoot">📘 세계 AI교육법 · 만 8세 홈 워크북</div></section><section class="page wk" style="--c:#2E9E63;--bg:#E7F5EC">
-<div class="ribbon"><div class="badge">9</div><div class="ic">📊</div>
-<div class="tt"><div class="part">3부 · 데이터와 AI 생각</div><h2>데이터 모으기</h2></div><div class="wof">주 9<small>/12</small></div></div>
-<img class="wkart" src="/assets/program/wk/9.png" alt="데이터 모으기">
-<div class="act"><div class="lab">🎯 이번 주에 할 것</div>가족이 좋아하는 과일을 설문해 막대그래프로 그려요.<div class="prep">🧰 준비물 · 종이·연필</div></div>
-<div class="say"><div class="lab">💬 부모가 이렇게 물어봐요</div><b>"제일 인기 있는 건 뭘까? 어떻게 알 수 있어?"</b></div>
-<div class="grid2"><div class="rbox"><div class="rlab">✍️ 우리가 한 것</div><div class="lines"></div></div>
-<div class="rbox"><div class="rlab">💡 아이가 발견·다시 물은 것</div><div class="lines"></div></div></div>
-<div class="rrow"><div class="stars"><span>이번 주 재미</span> ☆ ☆ ☆ ☆ ☆</div><div class="draw">🎨 그림 · 스티커 칸</div></div>
-<div class="why">🔗 왜 하나요 — 데이터로 알아내기 — KS2 데이터.</div>
-<div class="wfoot">📘 세계 AI교육법 · 만 8세 홈 워크북</div></section><section class="page wk" style="--c:#2E9E63;--bg:#E7F5EC">
-<div class="ribbon"><div class="badge">10</div><div class="ic">🗂️</div>
-<div class="tt"><div class="part">3부 · 데이터와 AI 생각</div><h2>기계처럼 분류하기</h2></div><div class="wof">주 10<small>/12</small></div></div>
-<img class="wkart" src="/assets/program/wk/10.png" alt="기계처럼 분류하기">
-<div class="act"><div class="lab">🎯 이번 주에 할 것</div>사진이나 카드를 규칙으로 나눠요(동물/탈것). '많이 보면 더 잘 나눈다'를 이야기해요.<div class="prep">🧰 준비물 · 사진·카드</div></div>
-<div class="say"><div class="lab">💬 부모가 이렇게 물어봐요</div><b>"너는 어떻게 구분했어? 규칙이 뭐야?"</b></div>
-<div class="grid2"><div class="rbox"><div class="rlab">✍️ 우리가 한 것</div><div class="lines"></div></div>
-<div class="rbox"><div class="rlab">💡 아이가 발견·다시 물은 것</div><div class="lines"></div></div></div>
-<div class="rrow"><div class="stars"><span>이번 주 재미</span> ☆ ☆ ☆ ☆ ☆</div><div class="draw">🎨 그림 · 스티커 칸</div></div>
-<div class="why">🔗 왜 하나요 — 분류 = 기계학습의 기초.</div>
-<div class="wfoot">📘 세계 AI교육법 · 만 8세 홈 워크북</div></section><section class="page wk" style="--c:#2E9E63;--bg:#E7F5EC">
-<div class="ribbon"><div class="badge">11</div><div class="ic">🔎</div>
-<div class="tt"><div class="part">3부 · 데이터와 AI 생각</div><h2>우리 집 AI 찾기</h2></div><div class="wof">주 11<small>/12</small></div></div>
-<img class="wkart" src="/assets/program/wk/11.png" alt="우리 집 AI 찾기">
-<div class="act"><div class="lab">🎯 이번 주에 할 것</div>집 안의 AI(음성비서·유튜브 추천·사진 얼굴인식)를 찾아 '얘는 어떻게 아는 걸까?' 추측해요.<div class="prep">🧰 준비물 · 없음</div></div>
-<div class="say"><div class="lab">💬 부모가 이렇게 물어봐요</div><b>"이건 어떻게 아는 걸까? 누가 알려줬을까?"</b></div>
-<div class="grid2"><div class="rbox"><div class="rlab">✍️ 우리가 한 것</div><div class="lines"></div></div>
-<div class="rbox"><div class="rlab">💡 아이가 발견·다시 물은 것</div><div class="lines"></div></div></div>
-<div class="rrow"><div class="stars"><span>이번 주 재미</span> ☆ ☆ ☆ ☆ ☆</div><div class="draw">🎨 그림 · 스티커 칸</div></div>
-<div class="why">🔗 왜 하나요 — 일상 속 AI 인식 — 영국이 KS2에 넣는 것.</div>
-<div class="wfoot">📘 세계 AI교육법 · 만 8세 홈 워크북</div></section><section class="page wk" style="--c:#2E9E63;--bg:#E7F5EC">
-<div class="ribbon"><div class="badge">12</div><div class="ic">💬</div>
-<div class="tt"><div class="part">3부 · 데이터와 AI 생각</div><h2>AI에게 묻고 다시 묻기</h2></div><div class="wof">주 12<small>/12</small></div></div>
-<img class="wkart" src="/assets/program/wk/12.png" alt="AI에게 묻고 다시 묻기">
-<div class="act"><div class="lab">🎯 이번 주에 할 것</div>실제 AI로 그림이나 이야기를 만들고, 이상한 곳을 찾고, '이렇게 바꿔줘'라고 다시 물어요. 12주의 총정리.<div class="prep">🧰 준비물 · 부모 관리 아래 AI 도구</div></div>
-<div class="say"><div class="lab">💬 부모가 이렇게 물어봐요</div><b>"AI 답에서 이상한 거 하나 찾아볼까? 어떻게 바꿔달라고 할까?"</b></div>
-<div class="grid2"><div class="rbox"><div class="rlab">✍️ 우리가 한 것</div><div class="lines"></div></div>
-<div class="rbox"><div class="rlab">💡 아이가 발견·다시 물은 것</div><div class="lines"></div></div></div>
-<div class="rrow"><div class="stars"><span>이번 주 재미</span> ☆ ☆ ☆ ☆ ☆</div><div class="draw">🎨 그림 · 스티커 칸</div></div>
-<div class="why">🔗 왜 하나요 — 다시 묻는 힘 — 우리 교육의 완성.</div>
-<div class="wfoot">📘 세계 AI교육법 · 만 8세 홈 워크북</div></section>
-<section class="page close"><div class="em">🎓</div>
-<h1>12주, 정말 잘했어요!</h1>
-<p class="s">이제 우리 아이는 순서대로 생각하고, 스스로 만들고,<br>AI에게 '다시 묻는' 힘의 씨앗을 가졌어요.</p>
-<div class="how" style="text-align:center;margin:22px auto 0;max-width:460px"><b>🏅 수료 축하합니다</b><br><br>
-이름 · ________________<br><br>가장 재미있었던 주 · ____주<br>다음에 또 해보고 싶은 것 · ________________<br><br>
-<span style="color:#9b8a6e;font-size:12px">© 2026 AI조기교육 · ai-early-education.pages.dev</span></div>
-</section>
+<div class="wbv-top no-print">
+<a href="/free-kit.html">← 무료 자료</a>
+<a href="/world-cases/uk-8yo-12weeks.html">12주 홈 프로그램</a>
+<span class="wbv-title">📘 만 8세 초등 · 12주 홈 프로그램 워크북</span>
+<button onclick="wbAll()">전체 접기/펼치기</button>
+<button class="pri" onclick="window.print()">🖨 인쇄 / PDF 저장</button>
+<a href="/start-guide.html">시작 가이드</a>
+<a href="/parent-resources.html">자료실</a>
+</div>
+<select class="wb-sel no-print" onchange="location.hash=this.value"><option value="intro">시작 안내</option><option value="wk1">1주 · 순서대로 말하기 (알고리즘)</option><option value="wk2">2주 · 틀린 곳 찾기 (버그)</option><option value="wk3">3주 · 반복 발견하기 (루프)</option><option value="wk4">4주 · 만약 ~라면 (조건)</option><option value="wk5">5주 · Scratch 첫 만남</option><option value="wk6">6주 · 말하고 소리내기</option><option value="wk7">7주 · 움직이는 장면 (애니메이션)</option><option value="wk8">8주 · 나만의 미니 게임</option><option value="wk9">9주 · 데이터 모으기</option><option value="wk10">10주 · 기계처럼 분류하기</option><option value="wk11">11주 · 우리 집 AI 찾기</option><option value="wk12">12주 · AI에게 묻고 다시 묻기</option><option value="done">마무리 · 수료</option></select>
+<div class="wbv-grid">
+<aside class="wbv-toc no-print"><div class="wt-t">📚 12주 목차</div><a class="wt-a" href="#intro">시작 안내</a><a class="wt-a" href="#wk1" data-w="1"><span class="wt-n">1</span>순서대로 말하기 (알고리즘)</a><a class="wt-a" href="#wk2" data-w="2"><span class="wt-n">2</span>틀린 곳 찾기 (버그)</a><a class="wt-a" href="#wk3" data-w="3"><span class="wt-n">3</span>반복 발견하기 (루프)</a><a class="wt-a" href="#wk4" data-w="4"><span class="wt-n">4</span>만약 ~라면 (조건)</a><a class="wt-a" href="#wk5" data-w="5"><span class="wt-n">5</span>Scratch 첫 만남</a><a class="wt-a" href="#wk6" data-w="6"><span class="wt-n">6</span>말하고 소리내기</a><a class="wt-a" href="#wk7" data-w="7"><span class="wt-n">7</span>움직이는 장면 (애니메이션)</a><a class="wt-a" href="#wk8" data-w="8"><span class="wt-n">8</span>나만의 미니 게임</a><a class="wt-a" href="#wk9" data-w="9"><span class="wt-n">9</span>데이터 모으기</a><a class="wt-a" href="#wk10" data-w="10"><span class="wt-n">10</span>기계처럼 분류하기</a><a class="wt-a" href="#wk11" data-w="11"><span class="wt-n">11</span>우리 집 AI 찾기</a><a class="wt-a" href="#wk12" data-w="12"><span class="wt-n">12</span>AI에게 묻고 다시 묻기</a><a class="wt-a" href="#done">마무리 · 수료</a></aside>
+<main class="wbv-doc">
+<section class="wb-card wb-intro" id="intro">
+<img src="/assets/program/workbook-cover.png" alt="아이와 부모가 함께 배우는 모습">
+<div class="in"><h1 style="margin:0 0 6px;font-size:23px">만 8세 초등 · 12주 홈 프로그램</h1>
+<p style="margin:0;color:#7c6a4d;font-size:13.5px">영국 KS2 방식을 우리 집에서 · 주 1회 15분 · 대부분 무료</p>
+<div class="wb-say" style="margin-top:12px"><b>이렇게 쓰세요</b> — 매주 한 장씩 아이와 함께 하고, '우리가 한 것'을 적어요. 결과물이 아니라 <b>함께 해보고 다시 묻는 과정</b>이 목표. 한 주를 마치면 아래 번호를 색칠!</div>
+<div class="wb-track"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span></div>
+</div></section>
+<section class="wb-card" id="wk1">
+<header class="wb-h no-print" onclick="this.parentElement.classList.toggle('fold')">
+<span class="wb-badge">1주</span><div><small>1부 · 컴퓨팅적 사고</small><h2>순서대로 말하기 (알고리즘)</h2></div><span class="wb-fold">▾</span></header>
+<div class="wb-h print-only"><span class="wb-badge">1주</span><div><small>1부 · 컴퓨팅적 사고</small><h2>순서대로 말하기 (알고리즘)</h2></div></div>
+<div class="wb-body">
+<div class="wb-row"><b>🎯 이번 주 목표</b><span>'로봇 놀이' — 아이가 부모(로봇)에게 명령해서 물 한 잔을 따르게 해요. 명령이 애매하면 로봇은 멈춥니다.</span></div>
+<div class="wb-row"><b>🧰 준비물</b><span>컵·물</span></div>
+<div class="wb-say">💬 <b>부모가 이렇게 물어봐요</b> — "로봇은 정확한 말만 알아들어. 하나씩 순서대로 말해줄래?"</div>
+
+<div class="wb-row"><b>👀 결과를 보고 체크</b><span>아이가 순서를 빠뜨리지 않고 말했나요?</span></div>
+<div class="wb-row"><b>🔁 다시 묻기 문장</b><span>"한 단계만 더 잘게 쪼개서 다시 말해볼까?"</span></div>
+<div class="wb-rec"><div class="wb-rl">✍️ 우리가 한 것 · 발견한 것</div><div class="wb-lines"></div></div>
+<div class="wb-why">🔗 왜 하나요 — 순서대로 생각하기 = 모든 코딩의 첫걸음.</div>
+<div class="wb-nav no-print"><a class="wn-btn" href="#intro">← 시작 안내</a><a class="wn-btn nx" href="#wk2">다음 · 2주 틀린 곳 찾기 (버그) →</a></div>
+</div></section><section class="wb-card" id="wk2">
+<header class="wb-h no-print" onclick="this.parentElement.classList.toggle('fold')">
+<span class="wb-badge">2주</span><div><small>1부 · 컴퓨팅적 사고</small><h2>틀린 곳 찾기 (버그)</h2></div><span class="wb-fold">▾</span></header>
+<div class="wb-h print-only"><span class="wb-badge">2주</span><div><small>1부 · 컴퓨팅적 사고</small><h2>틀린 곳 찾기 (버그)</h2></div></div>
+<div class="wb-body">
+<div class="wb-row"><b>🎯 이번 주 목표</b><span>일부러 순서를 틀리게 명령해요(신발 신고 양말 신기?). 뭐가 잘못됐는지 아이가 찾아 고쳐요.</span></div>
+<div class="wb-row"><b>🧰 준비물</b><span>없음</span></div>
+<div class="wb-say">💬 <b>부모가 이렇게 물어봐요</b> — "어? 로봇이 이상해. 어디가 틀렸을까?"</div>
+
+<div class="wb-row"><b>👀 결과를 보고 체크</b><span>틀린 곳을 스스로 찾았나요?</span></div>
+<div class="wb-row"><b>🔁 다시 묻기 문장</b><span>"어디를 고치면 될지 네 말로 다시 말해줄래?"</span></div>
+<div class="wb-rec"><div class="wb-rl">✍️ 우리가 한 것 · 발견한 것</div><div class="wb-lines"></div></div>
+<div class="wb-why">🔗 왜 하나요 — 디버깅 — 틀린 걸 찾아 고치는 힘.</div>
+<div class="wb-nav no-print"><a class="wn-btn" href="#wk1">← 1주 순서대로 말하기 (알고리즘)</a><a class="wn-btn nx" href="#wk3">다음 · 3주 반복 발견하기 (루프) →</a></div>
+</div></section><section class="wb-card" id="wk3">
+<header class="wb-h no-print" onclick="this.parentElement.classList.toggle('fold')">
+<span class="wb-badge">3주</span><div><small>1부 · 컴퓨팅적 사고</small><h2>반복 발견하기 (루프)</h2></div><span class="wb-fold">▾</span></header>
+<div class="wb-h print-only"><span class="wb-badge">3주</span><div><small>1부 · 컴퓨팅적 사고</small><h2>반복 발견하기 (루프)</h2></div></div>
+<div class="wb-body">
+<div class="wb-row"><b>🎯 이번 주 목표</b><span>하루 중 반복되는 것(양치·계단 오르기)을 찾아 '반복 3번' 카드로 묶어요.</span></div>
+<div class="wb-row"><b>🧰 준비물</b><span>종이</span></div>
+<div class="wb-say">💬 <b>부모가 이렇게 물어봐요</b> — "이거 몇 번 반복돼? 한 번에 말하는 방법 없을까?"</div>
+
+<div class="wb-row"><b>👀 결과를 보고 체크</b><span>반복되는 부분을 묶어서 말했나요?</span></div>
+<div class="wb-row"><b>🔁 다시 묻기 문장</b><span>"'3번 반복'처럼 한 번에 말해볼까?"</span></div>
+<div class="wb-rec"><div class="wb-rl">✍️ 우리가 한 것 · 발견한 것</div><div class="wb-lines"></div></div>
+<div class="wb-why">🔗 왜 하나요 — 반복(loop) — 똑똑하게 줄이는 법.</div>
+<div class="wb-nav no-print"><a class="wn-btn" href="#wk2">← 2주 틀린 곳 찾기 (버그)</a><a class="wn-btn nx" href="#wk4">다음 · 4주 만약 ~라면 (조건) →</a></div>
+</div></section><section class="wb-card" id="wk4">
+<header class="wb-h no-print" onclick="this.parentElement.classList.toggle('fold')">
+<span class="wb-badge">4주</span><div><small>1부 · 컴퓨팅적 사고</small><h2>만약 ~라면 (조건)</h2></div><span class="wb-fold">▾</span></header>
+<div class="wb-h print-only"><span class="wb-badge">4주</span><div><small>1부 · 컴퓨팅적 사고</small><h2>만약 ~라면 (조건)</h2></div></div>
+<div class="wb-body">
+<div class="wb-row"><b>🎯 이번 주 목표</b><span>'비 오면 우산, 아니면 모자' 같은 규칙 놀이. 날씨·기분에 따라 행동 카드를 골라요.</span></div>
+<div class="wb-row"><b>🧰 준비물</b><span>종이</span></div>
+<div class="wb-say">💬 <b>부모가 이렇게 물어봐요</b> — "만약 ~라면 어떻게 할까?"</div>
+
+<div class="wb-row"><b>👀 결과를 보고 체크</b><span>'만약 ~라면'을 써서 말했나요?</span></div>
+<div class="wb-row"><b>🔁 다시 묻기 문장</b><span>"다른 경우라면 어떻게 할지 하나만 더 정해볼까?"</span></div>
+<div class="wb-rec"><div class="wb-rl">✍️ 우리가 한 것 · 발견한 것</div><div class="wb-lines"></div></div>
+<div class="wb-why">🔗 왜 하나요 — 조건(if) — 컴퓨터가 판단하는 법.</div>
+<div class="wb-nav no-print"><a class="wn-btn" href="#wk3">← 3주 반복 발견하기 (루프)</a><a class="wn-btn nx" href="#wk5">다음 · 5주 Scratch 첫 만남 →</a></div>
+</div></section><section class="wb-card" id="wk5">
+<header class="wb-h no-print" onclick="this.parentElement.classList.toggle('fold')">
+<span class="wb-badge">5주</span><div><small>2부 · 직접 만들기</small><h2>Scratch 첫 만남</h2></div><span class="wb-fold">▾</span></header>
+<div class="wb-h print-only"><span class="wb-badge">5주</span><div><small>2부 · 직접 만들기</small><h2>Scratch 첫 만남</h2></div></div>
+<div class="wb-body">
+<div class="wb-row"><b>🎯 이번 주 목표</b><span>scratch.mit.edu(무료)에서 고양이를 몇 걸음 움직이게 해요. 블록을 끼우기만 하면 돼요.</span></div>
+<div class="wb-row"><b>🧰 준비물</b><span>무료 Scratch·컴퓨터/태블릿</span></div>
+<div class="wb-say">💬 <b>부모가 이렇게 물어봐요</b> — "고양이한테 어떻게 움직이라고 할까?"</div>
+
+<div class="wb-row"><b>👀 결과를 보고 체크</b><span>고양이가 아이 명령대로 움직였나요?</span></div>
+<div class="wb-row"><b>🔁 다시 묻기 문장</b><span>"걸음 수를 바꾸면 어떻게 될까? 바꿔서 다시 해볼까?"</span></div>
+<div class="wb-rec"><div class="wb-rl">✍️ 우리가 한 것 · 발견한 것</div><div class="wb-lines"></div></div>
+<div class="wb-why">🔗 왜 하나요 — 블록 코딩 입문 — 영국 KS2의 핵심.</div>
+<div class="wb-nav no-print"><a class="wn-btn" href="#wk4">← 4주 만약 ~라면 (조건)</a><a class="wn-btn nx" href="#wk6">다음 · 6주 말하고 소리내기 →</a></div>
+</div></section><section class="wb-card" id="wk6">
+<header class="wb-h no-print" onclick="this.parentElement.classList.toggle('fold')">
+<span class="wb-badge">6주</span><div><small>2부 · 직접 만들기</small><h2>말하고 소리내기</h2></div><span class="wb-fold">▾</span></header>
+<div class="wb-h print-only"><span class="wb-badge">6주</span><div><small>2부 · 직접 만들기</small><h2>말하고 소리내기</h2></div></div>
+<div class="wb-body">
+<div class="wb-row"><b>🎯 이번 주 목표</b><span>고양이가 이름을 말하고 소리를 내게 만들어요.</span></div>
+<div class="wb-row"><b>🧰 준비물</b><span>Scratch</span></div>
+<div class="wb-say">💬 <b>부모가 이렇게 물어봐요</b> — "뭐라고 말하게 할까? 무슨 소리가 좋아?"</div>
+
+<div class="wb-row"><b>👀 결과를 보고 체크</b><span>원하는 말과 소리가 나왔나요?</span></div>
+<div class="wb-row"><b>🔁 다시 묻기 문장</b><span>"다른 말로 바꿔서 다시 시켜볼까?"</span></div>
+<div class="wb-rec"><div class="wb-rl">✍️ 우리가 한 것 · 발견한 것</div><div class="wb-lines"></div></div>
+<div class="wb-why">🔗 왜 하나요 — 출력과 이벤트 — 내 명령에 반응하기.</div>
+<div class="wb-nav no-print"><a class="wn-btn" href="#wk5">← 5주 Scratch 첫 만남</a><a class="wn-btn nx" href="#wk7">다음 · 7주 움직이는 장면 (애니메이션) →</a></div>
+</div></section><section class="wb-card" id="wk7">
+<header class="wb-h no-print" onclick="this.parentElement.classList.toggle('fold')">
+<span class="wb-badge">7주</span><div><small>2부 · 직접 만들기</small><h2>움직이는 장면 (애니메이션)</h2></div><span class="wb-fold">▾</span></header>
+<div class="wb-h print-only"><span class="wb-badge">7주</span><div><small>2부 · 직접 만들기</small><h2>움직이는 장면 (애니메이션)</h2></div></div>
+<div class="wb-body">
+<div class="wb-row"><b>🎯 이번 주 목표</b><span>반복 블록으로 캐릭터가 계속 움직이는 짧은 장면을 만들어요.</span></div>
+<div class="wb-row"><b>🧰 준비물</b><span>Scratch</span></div>
+<div class="wb-say">💬 <b>부모가 이렇게 물어봐요</b> — "어떻게 하면 계속 움직일까?"</div>
+
+<div class="wb-row"><b>👀 결과를 보고 체크</b><span>캐릭터가 계속 움직이나요?</span></div>
+<div class="wb-row"><b>🔁 다시 묻기 문장</b><span>"더 빠르게(느리게) 하려면 뭘 고칠까?"</span></div>
+<div class="wb-rec"><div class="wb-rl">✍️ 우리가 한 것 · 발견한 것</div><div class="wb-lines"></div></div>
+<div class="wb-why">🔗 왜 하나요 — 반복을 코드로 — 3주차와 연결.</div>
+<div class="wb-nav no-print"><a class="wn-btn" href="#wk6">← 6주 말하고 소리내기</a><a class="wn-btn nx" href="#wk8">다음 · 8주 나만의 미니 게임 →</a></div>
+</div></section><section class="wb-card" id="wk8">
+<header class="wb-h no-print" onclick="this.parentElement.classList.toggle('fold')">
+<span class="wb-badge">8주</span><div><small>2부 · 직접 만들기</small><h2>나만의 미니 게임</h2></div><span class="wb-fold">▾</span></header>
+<div class="wb-h print-only"><span class="wb-badge">8주</span><div><small>2부 · 직접 만들기</small><h2>나만의 미니 게임</h2></div></div>
+<div class="wb-body">
+<div class="wb-row"><b>🎯 이번 주 목표</b><span>클릭하면 점수가 오르는 아주 간단한 게임을 만들어요. 만든 뒤 '더 재밌게 하려면?'을 물어요.</span></div>
+<div class="wb-row"><b>🧰 준비물</b><span>Scratch</span></div>
+<div class="wb-say">💬 <b>부모가 이렇게 물어봐요</b> — "이 게임, 더 재밌게 하려면 뭘 바꿀까?"</div>
+
+<div class="wb-row"><b>👀 결과를 보고 체크</b><span>점수가 잘 올라가나요?</span></div>
+<div class="wb-row"><b>🔁 다시 묻기 문장</b><span>"더 재밌게 만들 한 가지를 정해 다시 바꿔볼까?"</span></div>
+<div class="wb-rec"><div class="wb-rl">✍️ 우리가 한 것 · 발견한 것</div><div class="wb-lines"></div></div>
+<div class="wb-why">🔗 왜 하나요 — 만들기 + 다시 묻기(개선).</div>
+<div class="wb-nav no-print"><a class="wn-btn" href="#wk7">← 7주 움직이는 장면 (애니메이션)</a><a class="wn-btn nx" href="#wk9">다음 · 9주 데이터 모으기 →</a></div>
+</div></section><section class="wb-card" id="wk9">
+<header class="wb-h no-print" onclick="this.parentElement.classList.toggle('fold')">
+<span class="wb-badge">9주</span><div><small>3부 · 데이터와 AI 생각</small><h2>데이터 모으기</h2></div><span class="wb-fold">▾</span></header>
+<div class="wb-h print-only"><span class="wb-badge">9주</span><div><small>3부 · 데이터와 AI 생각</small><h2>데이터 모으기</h2></div></div>
+<div class="wb-body">
+<div class="wb-row"><b>🎯 이번 주 목표</b><span>가족이 좋아하는 과일을 설문해 막대그래프로 그려요.</span></div>
+<div class="wb-row"><b>🧰 준비물</b><span>종이·연필</span></div>
+<div class="wb-say">💬 <b>부모가 이렇게 물어봐요</b> — "제일 인기 있는 건 뭘까? 어떻게 알 수 있어?"</div>
+
+<div class="wb-row"><b>👀 결과를 보고 체크</b><span>표와 그래프가 맞게 그려졌나요?</span></div>
+<div class="wb-row"><b>🔁 다시 묻기 문장</b><span>"다른 질문으로 한 번 더 조사해볼까?"</span></div>
+<div class="wb-rec"><div class="wb-rl">✍️ 우리가 한 것 · 발견한 것</div><div class="wb-lines"></div></div>
+<div class="wb-why">🔗 왜 하나요 — 데이터로 알아내기 — KS2 데이터.</div>
+<div class="wb-nav no-print"><a class="wn-btn" href="#wk8">← 8주 나만의 미니 게임</a><a class="wn-btn nx" href="#wk10">다음 · 10주 기계처럼 분류하기 →</a></div>
+</div></section><section class="wb-card" id="wk10">
+<header class="wb-h no-print" onclick="this.parentElement.classList.toggle('fold')">
+<span class="wb-badge">10주</span><div><small>3부 · 데이터와 AI 생각</small><h2>기계처럼 분류하기</h2></div><span class="wb-fold">▾</span></header>
+<div class="wb-h print-only"><span class="wb-badge">10주</span><div><small>3부 · 데이터와 AI 생각</small><h2>기계처럼 분류하기</h2></div></div>
+<div class="wb-body">
+<div class="wb-row"><b>🎯 이번 주 목표</b><span>사진이나 카드를 규칙으로 나눠요(동물/탈것). '많이 보면 더 잘 나눈다'를 이야기해요.</span></div>
+<div class="wb-row"><b>🧰 준비물</b><span>사진·카드</span></div>
+<div class="wb-say">💬 <b>부모가 이렇게 물어봐요</b> — "너는 어떻게 구분했어? 규칙이 뭐야?"</div>
+
+<div class="wb-row"><b>👀 결과를 보고 체크</b><span>나눈 규칙을 말로 설명했나요?</span></div>
+<div class="wb-row"><b>🔁 다시 묻기 문장</b><span>"헷갈리는 카드 하나로 규칙을 다시 정해볼까?"</span></div>
+<div class="wb-rec"><div class="wb-rl">✍️ 우리가 한 것 · 발견한 것</div><div class="wb-lines"></div></div>
+<div class="wb-why">🔗 왜 하나요 — 분류 = 기계학습의 기초.</div>
+<div class="wb-nav no-print"><a class="wn-btn" href="#wk9">← 9주 데이터 모으기</a><a class="wn-btn nx" href="#wk11">다음 · 11주 우리 집 AI 찾기 →</a></div>
+</div></section><section class="wb-card" id="wk11">
+<header class="wb-h no-print" onclick="this.parentElement.classList.toggle('fold')">
+<span class="wb-badge">11주</span><div><small>3부 · 데이터와 AI 생각</small><h2>우리 집 AI 찾기</h2></div><span class="wb-fold">▾</span></header>
+<div class="wb-h print-only"><span class="wb-badge">11주</span><div><small>3부 · 데이터와 AI 생각</small><h2>우리 집 AI 찾기</h2></div></div>
+<div class="wb-body">
+<div class="wb-row"><b>🎯 이번 주 목표</b><span>집 안의 AI(음성비서·유튜브 추천·사진 얼굴인식)를 찾아 '얘는 어떻게 아는 걸까?' 추측해요.</span></div>
+<div class="wb-row"><b>🧰 준비물</b><span>없음</span></div>
+<div class="wb-say">💬 <b>부모가 이렇게 물어봐요</b> — "이건 어떻게 아는 걸까? 누가 알려줬을까?"</div>
+
+<div class="wb-row"><b>👀 결과를 보고 체크</b><span>'어떻게 아는지' 추측을 말했나요?</span></div>
+<div class="wb-row"><b>🔁 다시 묻기 문장</b><span>"다른 AI를 찾아 같은 질문을 해볼까?"</span></div>
+<div class="wb-rec"><div class="wb-rl">✍️ 우리가 한 것 · 발견한 것</div><div class="wb-lines"></div></div>
+<div class="wb-why">🔗 왜 하나요 — 일상 속 AI 인식 — 영국이 KS2에 넣는 것.</div>
+<div class="wb-nav no-print"><a class="wn-btn" href="#wk10">← 10주 기계처럼 분류하기</a><a class="wn-btn nx" href="#wk12">다음 · 12주 AI에게 묻고 다시 묻기 →</a></div>
+</div></section><section class="wb-card" id="wk12">
+<header class="wb-h no-print" onclick="this.parentElement.classList.toggle('fold')">
+<span class="wb-badge">12주</span><div><small>3부 · 데이터와 AI 생각</small><h2>AI에게 묻고 다시 묻기</h2></div><span class="wb-fold">▾</span></header>
+<div class="wb-h print-only"><span class="wb-badge">12주</span><div><small>3부 · 데이터와 AI 생각</small><h2>AI에게 묻고 다시 묻기</h2></div></div>
+<div class="wb-body">
+<div class="wb-row"><b>🎯 이번 주 목표</b><span>실제 AI로 그림이나 이야기를 만들고, 이상한 곳을 찾고, '이렇게 바꿔줘'라고 다시 물어요. 12주의 총정리.</span></div>
+<div class="wb-row"><b>🧰 준비물</b><span>부모 관리 아래 AI 도구</span></div>
+<div class="wb-say">💬 <b>부모가 이렇게 물어봐요</b> — "AI 답에서 이상한 거 하나 찾아볼까? 어떻게 바꿔달라고 할까?"</div>
+<div class="wb-row"><b>💡 예시 프롬프트</b><span>"우주에서 피아노 치는 고양이를 그려줘" → 결과를 보고 → "배경을 바닷속으로 바꿔줘"</span></div>
+<div class="wb-row"><b>👀 결과를 보고 체크</b><span>이상한 부분을 하나 찾았나요?</span></div>
+<div class="wb-row"><b>🔁 다시 묻기 문장</b><span>"'이렇게 바꿔줘'라고 정확히 다시 말해볼까?"</span></div>
+<div class="wb-rec"><div class="wb-rl">✍️ 우리가 한 것 · 발견한 것</div><div class="wb-lines"></div></div>
+<div class="wb-why">🔗 왜 하나요 — 다시 묻는 힘 — 우리 교육의 완성.</div>
+<div class="wb-nav no-print"><a class="wn-btn" href="#wk11">← 11주 우리 집 AI 찾기</a><a class="wn-btn nx" href="#done">마무리 · 수료 →</a></div>
+</div></section>
+<section class="wb-card" id="done"><div class="wb-body" style="text-align:center;padding:34px 22px">
+<div style="font-size:52px">🎓</div><h2 style="margin:8px 0">12주, 정말 잘했어요!</h2>
+<p style="color:#7c6a4d;font-size:13.5px">순서대로 생각하고, 스스로 만들고, AI에게 '다시 묻는' 힘의 씨앗을 가졌어요.</p>
+<p style="margin-top:14px;font-weight:700">🏅 수료 · 이름 ____________ &nbsp;· 가장 재미있던 주 ___주</p>
+<p style="color:#9b8a6e;font-size:11.5px;margin-top:16px">© 2026 AI조기교육 · ai-early-education.pages.dev</p>
+</div></section>
+</main>
+<aside class="wbv-quick no-print"><div class="wq"><div class="wq-t">⚡ 바로 하기</div>
+<button onclick="window.print()">🖨 인쇄 · PDF 저장</button>
+<a href="/free/question-cards.html" target="_blank" rel="noopener">🃏 질문 카드 보기</a>
+<a href="/free/first-prompts.html" target="_blank" rel="noopener">💡 프롬프트 20개</a>
+<a href="/free/worksheet.html" target="_blank" rel="noopener">📝 대화 연습지</a>
+<a href="/start-guide.html">🚀 시작 가이드</a>
+</div></aside>
+</div>
+<button id="wbTop" class="no-print" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="위로">↑</button>
+<script>
+function wbAll(){var cs=document.querySelectorAll('.wb-card:not(.wb-intro)');var anyOpen=[...cs].some(function(c){return !c.classList.contains('fold')&&c.id!=='done';});
+ cs.forEach(function(c){if(c.id!=='done')c.classList.toggle('fold',anyOpen);});}
+(function(){var secs=[...document.querySelectorAll('.wb-card[id]')];var links=[...document.querySelectorAll('.wt-a')];
+function spy(){var y=window.scrollY+120,cur=secs[0].id;
+ secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id;});
+ links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur);});}
+window.addEventListener('scroll',spy);spy();
+})();
+</script>
 </body></html>
