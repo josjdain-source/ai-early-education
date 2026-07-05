@@ -109,6 +109,9 @@ def breadcrumb(slug,label):
             f'<b style="color:#B44A31">{label}</b></nav>')
 
 def side_rail(slug,current):
+    """(비활성) 전역 사이드바(build_site.global_sidebar)가 전 페이지를 담당 — 중복 레일 방지."""
+    return ""
+def _side_rail_legacy(slug,current):
     """국가 콘텐츠 페이지 좌측 고정 카테고리 레일. 넓은 화면=항상 고정, 좁은 화면=플로팅 버튼."""
     name,flag=NAMES[slug]
     items="".join(

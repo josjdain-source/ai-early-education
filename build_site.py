@@ -55,8 +55,56 @@ def footer(base):
 </div><div class="foot-bottom">© 2026 AI조기교육. 아이가 AI와 대화하며 '다시 묻는 힘'을 기르는 교육.</div></div></footer>
 <script src="{base}scripts/main.js" defer></script></body></html>"""
 
+def global_sidebar():
+    """모든 페이지 좌측 고정 카테고리(사이트 전체 트리). 넓은화면=고정, 좁은화면=☰ 버튼."""
+    import country_reality as CRX
+    tops=[("🏠","홈","/"),("💡","왜 필요한가","/why-ai-education.html"),("📚","세계 AI교육법 연재","/world-cases.html"),
+          ("🚀","시작 가이드","/start-guide.html"),("🎬","영상관","/videos.html"),
+          ("👨‍👩‍👧","부모 자료실","/parent-resources.html"),("🖨","무료 인쇄 자료","/free-kit.html")]
+    top_html="".join(f'<a class="gs-i" href="{h}">{ic} {t}</a>' for ic,t,h in tops)
+    cty=""
+    for c in COUNTRIES:
+        slug,name,flag=c[0],c[1],c[2]
+        subs=f'<a class="gs-s" href="/parent-resources/{slug}.html">📂 {name} 자료실</a>'
+        subs+="".join(f'<a class="gs-s" href="{h}"{" target=_blank rel=noopener" if h.startswith("/free/") else ""}>{ic} {t}</a>' for ic,t,h in CRX.subs_list(slug))
+        cty+=f'<div class="gs-c" id="gsc-{slug}"><button class="gs-cb" onclick="gsT(\'{slug}\')"><span>{flag} {name}</span><span class="gs-ar">▸</span></button><div class="gs-sub">{subs}</div></div>'
+    return f"""<aside class="gside" id="gside">
+<a class="gs-brand" href="/">🤖 AI 조기교육</a>
+{top_html}
+<div class="gs-h">🌍 국가별 자료</div>
+{cty}
+</aside>
+<button class="gs-fab" onclick="document.body.classList.toggle('gs-open')">☰ 메뉴</button>
+<style>
+.gside{{position:fixed;left:0;top:0;bottom:0;width:236px;background:#fff;border-right:1px solid #EADFCE;padding:14px 10px 34px;overflow:auto;z-index:45}}
+.gs-brand{{display:block;font-weight:900;font-size:15px;color:var(--ink);text-decoration:none;padding:6px 12px 14px}}
+.gs-h{{font-size:11.5px;font-weight:800;color:#9b8a6e;padding:12px 12px 5px}}
+.gs-i{{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:9px;text-decoration:none;color:var(--ink);font-weight:700;font-size:13.5px}}
+.gs-i:hover,.gs-cb:hover{{background:#FBF3E4}}
+.gs-cb{{display:flex;justify-content:space-between;align-items:center;width:100%;border:0;background:none;padding:8px 12px;border-radius:9px;font:inherit;font-weight:700;font-size:13.5px;cursor:pointer;color:var(--ink)}}
+.gs-ar{{color:#c4b59a;transition:transform .15s}}
+.gs-c.open .gs-ar{{transform:rotate(90deg)}}
+.gs-sub{{display:none;padding:1px 0 4px 10px}}
+.gs-c.open .gs-sub{{display:block}}
+.gs-s{{display:flex;align-items:center;gap:6px;padding:6px 10px;margin:1px 4px;border-radius:8px;text-decoration:none;color:var(--navy2);font-weight:600;font-size:12.4px;border:1px solid transparent}}
+.gs-s:hover{{background:#FBF3E4;border-color:#EADFCE}}
+.gs-i.on,.gs-s.on{{background:#FDECE5;border:1px solid #E0684A;color:#B44A31}}
+.gs-fab{{display:none;position:fixed;left:14px;bottom:16px;z-index:46;background:#E0684A;color:#fff;border:0;border-radius:24px;padding:11px 18px;font-weight:800;font-size:13.5px;box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer}}
+@media(min-width:1200px){{body{{padding-left:236px}}}}
+@media(max-width:1199px){{.gside{{transform:translateX(-100%);transition:transform .18s;box-shadow:6px 0 20px rgba(0,0,0,.14)}}
+body.gs-open .gside{{transform:none}}.gs-fab{{display:block}}}}
+</style>
+<script>
+function gsT(s){{document.getElementById('gsc-'+s).classList.toggle('open');}}
+(function(){{var p=(location.pathname.replace(/\\/$/,'')||'/').replace(/\\.html$/,'');
+document.querySelectorAll('.gside a').forEach(function(a){{var h=a.getAttribute('href');if(!h||h.charAt(0)!=='/')return;
+var hp=(h.replace(/\\/$/,'')||'/').replace(/\\.html$/,'');
+if(hp===p){{a.classList.add('on');var c=a.closest('.gs-c');if(c)c.classList.add('open');}}}});
+}})();
+</script>"""
+
 def page(active,base,title,desc,body):
-    return head(title,desc,base)+header(active,base)+body+footer(base)
+    return head(title,desc,base)+header(active,base)+global_sidebar()+body+footer(base)
 
 # ---------- 국가 데이터 ----------
 COUNTRIES=[
