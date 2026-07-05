@@ -328,15 +328,51 @@ def parent_resources():
     fq="".join(f"""<div class="card" style="margin-bottom:12px"><h4>Q. {q}</h4><p style="margin:0;color:var(--navy2)">{a}</p></div>""" for q,a in faqs)
     res="".join(f"""<div class="card"><div style="font-size:34px;margin-bottom:8px">{ic}</div><h4>{t}</h4><p style="color:var(--muted);font-size:14px">{d}</p><a class="btn btn-ghost" href="{href}" target="_blank" rel="noopener" style="margin-top:6px">열기 · 인쇄 →</a></div>"""
         for ic,t,d,href in [("📝","AI 대화 연습지","집에서 하는 첫 AI 대화 워크시트.","/free/worksheet.html"),("🃏","부모용 질문 카드","상황별로 바로 쓰는 질문 10장.","/free/question-cards.html"),("💡","첫 프롬프트 20개","아이와 시작하기 좋은 프롬프트 예시.","/free/first-prompts.html")])
+    # 국가별 자료 목록 (연재 + 심화 + 인쇄물)
+    def item(icon,label,href,tag="",blank=False):
+        tg=f'<span style="font-size:11px;font-weight:800;color:#188038;background:#e6f4ea;border-radius:7px;padding:2px 8px;margin-left:6px">{tag}</span>' if tag else ''
+        tb=' target="_blank" rel="noopener"' if blank else ''
+        return f'<a href="{href}"{tb} style="display:flex;align-items:center;gap:9px;padding:9px 12px;border:1px solid #EADFCE;border-radius:10px;background:#fff;text-decoration:none;color:var(--ink);font-weight:600;font-size:13.5px">{icon} {label}{tg}</a>'
+    def country_sec(slug,name,flag):
+        base=[item("1️⃣","1편 · 정책과 방침",f"/world-cases/{slug}.html"),
+              item("2️⃣","2편 · 실제 교실 운영",f"/world-cases/{slug}-2.html"),
+              item("3️⃣","3편 · 우리 집 주간 적용",f"/world-cases/{slug}-3.html")]
+        if slug=="uk":
+            base+=[item("🗺","학년별 로드맵 (만 5~16세)",f"/world-cases/{slug}-roadmap.html"),
+                   item("🔬","1년 커리큘럼 (Year 8 주차별)",f"/world-cases/{slug}-year.html"),
+                   item("🏠","집 실전판 (단원별 집 활동)",f"/world-cases/{slug}-home.html"),
+                   item("📅","만 8세 12주 홈 프로그램",f"/world-cases/{slug}-8yo-12weeks.html"),
+                   item("🖨","12주 워크북 (인쇄·PDF)",f"/free/{slug}-12weeks-workbook.html","다운로드",True)]
+        return f"""<section id="c-{slug}" style="scroll-margin-top:90px;margin-bottom:26px"><h3 style="margin:0 0 10px;font-size:18px">{flag} {name}</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px">{''.join(base)}</div></section>"""
+    countries=[(c[0],c[1],c[2]) for c in COUNTRIES]
+    secs="".join(country_sec(s,n,f) for s,n,f in countries)
+    nav_c="".join(f'<a href="#c-{s}" style="display:block;padding:8px 12px;border-radius:9px;text-decoration:none;color:var(--ink);font-weight:600;font-size:13.5px">{f} {n}</a>' for s,n,f in countries)
     body=f"""<main>
 <section class="page-hero"><div class="wrap"><div class="pill">부모용 자료</div>
-<h1>부모를 위한 안내와 자료</h1><p>자주 묻는 질문부터 집에서 쓰는 실전 자료까지.</p></div></section>
-<section class="block"><div class="wrap" style="max-width:860px">
-<h2>집에서 쓰는 자료</h2><div class="grid g3" style="margin:14px 0 30px">{res}</div>
-<h2 id="faq">자주 묻는 질문</h2><div style="margin-top:14px">{fq}</div>
-<div class="cta-band" style="margin-top:28px"><div><h3>먼저 영상으로 감을 잡아볼까요?</h3><p>세계 사례 영상을 2분 41초에.</p></div><a class="btn btn-lg" href="/videos.html">영상관 가기 →</a></div>
-</div></section></main>"""
-    return page("res","","부모용 자료 & FAQ | AI 조기교육","AI 조기교육 부모 FAQ와 집에서 쓰는 무료 자료(연습지·질문 카드·첫 프롬프트 20개).",body)
+<h1>부모 자료실</h1><p>국가별 연재·심화 자료와 인쇄용 다운로드를 한곳에서.</p></div></section>
+<section class="block"><div class="wrap">
+<div style="display:flex;gap:26px;align-items:flex-start">
+<aside style="width:210px;flex:none;position:sticky;top:84px;background:#fff;border:1px solid #EADFCE;border-radius:14px;padding:12px 8px" class="res-side">
+<div style="font-size:11.5px;font-weight:800;color:#9b8a6e;padding:4px 12px 6px">📥 인쇄 자료</div>
+<a href="#downloads" style="display:block;padding:8px 12px;border-radius:9px;text-decoration:none;color:var(--ink);font-weight:600;font-size:13.5px">🖨 바로 인쇄·다운로드</a>
+<div style="font-size:11.5px;font-weight:800;color:#9b8a6e;padding:12px 12px 6px">🌍 국가별 자료</div>
+{nav_c}
+<div style="font-size:11.5px;font-weight:800;color:#9b8a6e;padding:12px 12px 6px">❓ 도움말</div>
+<a href="#faq" style="display:block;padding:8px 12px;border-radius:9px;text-decoration:none;color:var(--ink);font-weight:600;font-size:13.5px">자주 묻는 질문</a>
+</aside>
+<div style="flex:1;min-width:0">
+<section id="downloads" style="scroll-margin-top:90px;margin-bottom:26px"><h3 style="margin:0 0 10px;font-size:18px">🖨 바로 인쇄·다운로드</h3>
+<div class="grid g3">{res}</div>
+<div style="margin-top:8px">{item("📘","만 8세 12주 홈 워크북 (표지·삽화·수료장)","/free/uk-12weeks-workbook.html","다운로드",True)}</div></section>
+{secs}
+<section id="faq" style="scroll-margin-top:90px"><h3 style="margin:0 0 10px;font-size:18px">❓ 자주 묻는 질문</h3>{fq}</section>
+<div class="cta-band" style="margin-top:24px"><div><h3>연재를 처음부터 보려면</h3><p>세계 AI교육법 허브에서 나라별 1·2·3편을 한눈에.</p></div><a class="btn btn-lg" href="/world-cases.html">연재 허브 가기 →</a></div>
+</div></div>
+</div></section>
+<style>@media(max-width:860px){{.res-side{{display:none}}}}</style>
+</main>"""
+    return page("res","","부모 자료실 · 국가별 자료 & 다운로드 | AI 조기교육","국가별 AI교육 연재·심화 자료와 인쇄용 워크북·연습지 다운로드, 부모 FAQ까지 한곳에.",body)
 
 def free_kit():
     kits=[("📝","집에서 하는 AI 대화 연습지","아이와 함께 AI에게 요청하고, 관찰하고, 다시 묻는 과정을 적는 워크시트.","/free/worksheet.html"),
