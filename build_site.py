@@ -34,75 +34,63 @@ def head(title,desc,base):
 <link rel="stylesheet" href="{base}styles/main.css">
 </head><body>"""
 
-# ---------- KOSIS식 메가메뉴 ----------
+# ---------- KOSIS식 메가메뉴 (압축판: 메뉴당 4개+전체보기, 낮은 패널) ----------
 YT_CH="https://www.youtube.com/channel/UCzCA_HXDHMVGvWpQv4PSZgw"
 MEGA=[
  ("why","왜 AI교육인가","/why-ai-education.html",[
    ("AI 조기교육이 필요한 이유","/why-ai-education.html"),
-   ("알파고 이후, 한국의 10년","/world-cases/korea.html"),
-   ("아이에게 필요한 AI 리터러시","/why-ai-education.html#philosophy"),
-   ("AI를 막을 것인가, 다룰 것인가","/videos/world-ai-education.html"),
-   ("부모가 오해하기 쉬운 것 (FAQ)","/parent-resources.html#faq"),
-  ],("먼저 읽기","결과물이 아니라 과정이 교육이다 — 우리의 철학","/why-ai-education.html","철학 보기")),
+   ("알파고 이후, 놓친 시간","/world-cases/korea.html"),
+   ("정답보다 다시 묻는 힘","/why-ai-education.html#philosophy"),
+   ("부모가 오해하기 쉬운 것","/parent-resources.html#faq"),
+  ],("먼저 읽기","우리의 교육 철학 한 편","/why-ai-education.html","철학 보기"),"전체 보기"),
  ("cases","세계 AI교육","/world-cases.html",[
-   ("🌍 전체 연재 보기","/world-cases.html"),
-   ("🇨🇳 중국 · 시간표에 AI를 넣다","/world-cases/china.html"),
-   ("🇺🇸 미국 · 만드는 아이로","/world-cases/usa.html"),
-   ("🇬🇧 영국 · 안전과 책임 먼저","/world-cases/uk.html"),
-   ("🇸🇬 싱가포르 · 가드레일","/world-cases/singapore.html"),
-   ("🇰🇷 한국 · 무엇을 놓쳤나","/world-cases/korea.html"),
-   ("🇩🇪 독일 · 신뢰와 기반","/world-cases/germany.html"),
-   ("🇯🇵 일본 · 기기·논리 먼저","/world-cases/japan.html"),
-  ],("지금 볼 영상","중국은 왜 초등학생에게 AI를 가르치기 시작했나","/videos/china-ai-education.html","영상 보기 ▶")),
+   ("중국 · 시간표에 AI를 넣다","/world-cases/china.html"),
+   ("미국 · 만드는 아이를 키우다","/world-cases/usa.html"),
+   ("영국 · 비판적으로 판단하다","/world-cases/uk.html"),
+   ("싱가포르 · 생활 속에서 실습","/world-cases/singapore.html"),
+  ],("지금 볼 영상","중국 편 심층 다큐","/videos/china-ai-education.html","영상 보기 ▶"),"전체 국가 보기"),
  ("videos","영상관","/videos.html",[
-   ("전체 영상","/videos.html"),
    ("대표작 · 세계 5개국 편","/videos/world-ai-education.html"),
    ("중국 AI교육 심층","/videos/china-ai-education.html"),
    ("미국 AI교육 심층","/videos/us-ai-education.html"),
-   ("영국 AI교육 심층","/videos/uk-ai-education.html"),
-   ("싱가포르 AI교육 심층","/videos/singapore-ai-education.html"),
    ("한국의 잃어버린 AI 10년","/videos/korea-ai-education.html"),
-  ],("최신 편","한국의 잃어버린 AI 10년 — 그래서 가정이 답이다","/videos/korea-ai-education.html","보러가기 ▶")),
+  ],("최신 편","한국의 잃어버린 AI 10년","/videos/korea-ai-education.html","보러가기 ▶"),"전체 영상 보기"),
  ("start","시작 가이드","/start-guide.html",[
    ("집에서 시작하는 6단계","/start-guide.html"),
-   ("좋은 프롬프트 / 나쁜 프롬프트","/start-guide.html"),
-   ("하루 10분 AI 대화 루틴","/world-cases/korea-3.html"),
-   ("연령별 시작법 (만 5~16세)","/world-cases/uk-roadmap.html"),
-   ("만 8세 · 12주 홈 프로그램","/world-cases/uk-8yo-12weeks.html"),
-  ],("추천 프로그램","만 8세 초등 12주 홈 프로그램 — 주 1회 15분","/world-cases/uk-8yo-12weeks.html","시작하기 →")),
+   ("아이에게 첫 질문 시키기","/free/first-prompts.html"),
+   ("결과를 같이 관찰하기","/free/worksheet.html"),
+   ("다시 묻기 연습 (주간 루틴)","/world-cases/korea-3.html"),
+  ],("추천","만 8세 12주 홈 프로그램","/world-cases/uk-8yo-12weeks.html","시작하기 →"),"전체 가이드 보기"),
  ("res","부모 자료실","/parent-resources.html",[
-   ("부모용 질문 카드 10장","/free/question-cards.html"),
-   ("아이와 해볼 프롬프트 20개","/free/first-prompts.html"),
+   ("부모용 질문 카드","/free/question-cards.html"),
    ("AI 대화 연습지","/free/worksheet.html"),
-   ("AI 결과 관찰 체크리스트","/start-guide.html"),
+   ("첫 프롬프트 20개","/free/first-prompts.html"),
    ("AI 안전 사용 원칙","/parent-resources.html#faq"),
-   ("자주 묻는 질문","/parent-resources.html#faq"),
-  ],("먼저 써보세요","아이와 첫 AI 대화를 시작하는 부모용 질문 카드","/free/question-cards.html","질문 카드 보기")),
+  ],("먼저 써보세요","첫 대화용 질문 카드 10장","/free/question-cards.html","질문 카드 보기"),"전체 자료실 보기"),
  ("free","무료 자료","/free-kit.html",[
    ("무료 자료 한눈에","/free-kit.html"),
-   ("12주 워크북 (PDF)","/free/uk-12weeks-workbook.html"),
-   ("가정 실습지 (연습지)","/free/worksheet.html"),
+   ("12주 워크북 PDF","/free/uk-12weeks-workbook.html"),
+   ("가정 실습지","/free/worksheet.html"),
    ("질문 카드 10장","/free/question-cards.html"),
-   ("첫 프롬프트 20개","/free/first-prompts.html"),
-  ],("전부 무료","이메일 없이 바로 인쇄·저장하세요","/free-kit.html","무료 자료 받기 ⬇")),
+  ],("인기","12주 워크북 인쇄판","/free/uk-12weeks-workbook.html","워크북 열기 🖨"),"전체 다운로드 보기"),
 ]
 def header(active,base):
-    tops="".join(f'<a class="mg-t{" on" if k==active else ""}" data-k="{k}" href="{h}">{t}</a>' for k,t,h,_,_ in MEGA)
+    tops="".join(f'<a class="mg-t{" on" if k==active else ""}" data-k="{k}" href="{h}">{t}</a>' for k,t,h,_,_,_ in MEGA)
     cols=""
-    for k,t,h,items,card in MEGA:
+    for k,t,h,items,card,more in MEGA:
         links="".join(f'<a href="{u}">{lb}</a>' for lb,u in items)
-        cols+=f'<div class="mg-col" data-k="{k}"><a class="mg-ch" href="{h}">{t}</a>{links}</div>'
+        cols+=f'<div class="mg-col" data-k="{k}"><a class="mg-ch" href="{h}">{t}</a>{links}<a class="mg-more" href="{h}">{more} →</a></div>'
     cards=""
-    for k,_,_,_,c in MEGA:
+    for k,_,_,_,c,_ in MEGA:
         cards+=f'<div class="mg-card" data-k="{k}"><div class="mg-cl">{c[0]}</div><p>{c[1]}</p><a class="btn btn-primary" href="{c[2]}">{c[3]}</a></div>'
     sdata=[]
-    for k,t,h,items,_ in MEGA:
+    for k,t,h,items,_,_ in MEGA:
         sdata.append({"t":t,"u":h,"c":t})
         for lb,u in items: sdata.append({"t":lb,"u":u,"c":t})
     import json as _j; sjson=_j.dumps(sdata,ensure_ascii=False)
     mob=""
-    for k,t,h,items,_ in MEGA:
-        mi="".join(f'<a href="{u}">{lb}</a>' for lb,u in items)
+    for k,t,h,items,_,more in MEGA:
+        mi="".join(f'<a href="{u}">{lb}</a>' for lb,u in items)+f'<a href="{h}" style="color:var(--coral);font-weight:800">{more} →</a>'
         mob+=f'<details{"" if k!=active else " open"}><summary>{t}</summary>{mi}</details>'
     return f"""<header class="mgh" id="mgh">
 <div class="mg-bar">
@@ -133,27 +121,28 @@ def header(active,base):
 .mg-t:hover{{color:var(--coral)}}
 .mg-t.on{{color:var(--coral);border-bottom-color:var(--coral)}}
 .mg-right{{display:flex;align-items:center;gap:8px}}
-.mg-ic{{width:36px;height:36px;border:1px solid #EADFCE;background:#fff;border-radius:10px;display:grid;place-items:center;font-size:15px;cursor:pointer;text-decoration:none;color:var(--ink)}}
+.mg-ic{{height:36px;min-width:36px;border:1px solid #EADFCE;background:#fff;border-radius:10px;display:grid;place-items:center;font-size:15px;cursor:pointer;text-decoration:none;color:var(--ink)}}
 .mg-ic:hover{{background:#FBF3E4}}
+.mg-allbtn{{width:auto;padding:0 10px;display:flex;align-items:center;gap:4px}}
 .mg-cta{{white-space:nowrap}}
 .mg-hamb{{display:none}}
-.mg-allbtn{{width:auto;padding:0 10px;gap:3px}}
-@media(max-width:960px){{.mg-allbtn{{display:none}}}}
 .mg-panel{{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid #EADFCE;box-shadow:0 14px 30px rgba(43,32,22,.12)}}
 .mgh.open .mg-panel{{display:block}}
-.mg-in{{max-width:1240px;margin:0 auto;padding:20px 20px 24px;display:flex;gap:26px;justify-content:center}}
-.mg-col{{display:none;flex-direction:column;gap:2px;padding:4px 6px;border-radius:12px;width:270px;flex:none}}
+.mg-in{{max-width:1240px;margin:0 auto;padding:16px 20px 18px;display:flex;gap:24px;justify-content:center}}
+.mg-col{{display:none;flex-direction:column;gap:1px;padding:4px 6px;border-radius:12px;width:272px;flex:none}}
 .mgh.open .mg-col.hl{{display:flex;background:#FBF3E4}}
 .mgh.all .mg-col{{display:flex;background:none;width:auto;flex:1;min-width:0}}
 .mgh.all .mg-col.hl{{background:#FBF3E4}}
-.mg-ch{{font-weight:800;color:var(--navy);text-decoration:none;font-size:14px;padding:5px 8px 8px;border-bottom:2px solid #F0E6D2;margin-bottom:5px}}
-.mg-col a:not(.mg-ch){{padding:5px 8px;border-radius:7px;text-decoration:none;color:#5a4a35;font-size:13px;font-weight:600}}
-.mg-col a:not(.mg-ch):hover{{background:#FDECE5;color:#B44A31}}
-.mg-cards{{width:210px;flex:none}}
-.mg-card{{display:none;background:linear-gradient(160deg,#FFF7EA,#FBEBD3);border:1px solid #EAD9BE;border-radius:14px;padding:15px 16px}}
+.mg-ch{{font-weight:800;color:var(--navy);text-decoration:none;font-size:14px;padding:4px 8px 7px;border-bottom:2px solid #F0E6D2;margin-bottom:4px}}
+.mg-col a:not(.mg-ch):not(.mg-more){{padding:5px 8px;border-radius:7px;text-decoration:none;color:#5a4a35;font-size:13px;font-weight:600}}
+.mg-col a:not(.mg-ch):not(.mg-more):hover{{background:#FDECE5;color:#B44A31}}
+.mg-more{{margin-top:5px;padding:6px 8px;border-top:1px dashed #EAD9BE;color:var(--coral);font-weight:800;font-size:12.5px;text-decoration:none}}
+.mg-more:hover{{text-decoration:underline}}
+.mg-cards{{width:206px;flex:none;align-self:center}}
+.mg-card{{display:none;background:linear-gradient(160deg,#FFF7EA,#FBEBD3);border:1px solid #EAD9BE;border-radius:14px;padding:13px 15px}}
 .mg-card.sh{{display:block}}
-.mg-cl{{font-size:11px;font-weight:800;color:#B44A31;margin-bottom:6px}}
-.mg-card p{{margin:0 0 12px;font-size:13px;font-weight:700;color:var(--ink);line-height:1.45}}
+.mg-cl{{font-size:11px;font-weight:800;color:#B44A31;margin-bottom:5px}}
+.mg-card p{{margin:0 0 10px;font-size:13px;font-weight:700;color:var(--ink);line-height:1.4}}
 .mg-srch{{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid #EADFCE;box-shadow:0 14px 30px rgba(43,32,22,.12)}}
 .mgh.srch .mg-srch{{display:block}}
 #mgQ{{width:100%;border:2px solid var(--coral);border-radius:12px;padding:13px 16px;font:inherit;font-size:15px}}
@@ -163,7 +152,7 @@ def header(active,base):
 .mg-res a:hover{{background:#FBF3E4}}
 .mg-mob{{display:none}}
 @media(max-width:960px){{
-.mg-nav,.mg-cta{{display:none}}.mg-hamb{{display:grid}}
+.mg-nav,.mg-cta,.mg-allbtn{{display:none}}.mg-hamb{{display:grid}}
 .mg-brand small{{display:none}}
 .mg-mob{{position:fixed;inset:56px 0 0 0;background:#fff;overflow:auto;padding:8px 6px;transform:translateX(100%);transition:transform .18s;display:block}}
 body.mg-open .mg-mob{{transform:none}}
@@ -189,7 +178,7 @@ window.mgAll=function(){{clearTimeout(tm);H.classList.remove('srch');
  H.classList.add('open');H.classList.add('all');
  document.querySelectorAll('.mg-col').forEach(function(c){{c.classList.remove('hl');}});
  document.querySelectorAll('.mg-card').forEach(function(c){{c.classList.toggle('sh',c.dataset.k==='cases');}});}};
-window.mgSearch=function(){{H.classList.toggle('srch');H.classList.remove('open');
+window.mgSearch=function(){{H.classList.toggle('srch');H.classList.remove('open');H.classList.remove('all');
  if(H.classList.contains('srch')){{document.getElementById('mgQ').focus();mgF();}}}};
 var D={sjson};
 window.mgF=function(){{var q=(document.getElementById('mgQ').value||'').trim().toLowerCase();
