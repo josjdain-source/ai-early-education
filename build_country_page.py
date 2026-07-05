@@ -146,7 +146,7 @@ C["korea"]=dict(slug="korea", vslug="korea-ai-education", flag="🇰🇷", pill=
   ("S5","South Korea's AI textbooks fail after rushed rollout","Rest of World","https://restofworld.org/2025/south-korea-ai-textbook/"),
  ],
  srcnote="한국을 비하하지 않고, AI 디지털교과서의 도입과 후퇴라는 사실을 근거로, 학교 정책의 흔들림 속에서 가정이 할 수 있는 일을 정리했습니다.",
- lf=dict(video_id="korea-lost-decade-m3", title="한국의 잃어버린 AI 10년 — 세계는 아이에게 AI를 이렇게", subtitle="AI 디지털교과서의 도입과 후퇴, 그리고 가정의 답",
+ lf=dict(video_id="korea-ai-longform", title="한국은 AI교과서를 넣었다 뺐다, 그래서 가정이 답이다", subtitle="AI 디지털교과서의 도입과 후퇴, 그리고 가정의 답",
    description="한국은 AI 디지털교과서를 학교에 넣었다가, 넉 달 만에 보조교재로 물러섰습니다. 정책은 요동쳤죠.\n하지만 어떤 교과서 논쟁과도 무관하게, 아이의 '다시 묻는 힘'은 가정이 지킬 수 있습니다."),
  shorts=[
   dict(video_id="korea-lost-decade-m3", copy="학교는 흔들려도 가정이", title="AI교과서는 흔들려도, 가정 습관은 남는다"),
