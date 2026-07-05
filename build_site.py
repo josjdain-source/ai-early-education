@@ -182,46 +182,27 @@ def home():
         for q,av,n in [("결과물보다 아이가 질문을 계속하고 스스로 수정하는 모습이 더 좋았어요. AI와 대화하는 경험이 사고력을 키워줘요.","🧑","김o준 님 · 초3 학부모"),
         ("아이가 스스로 프롬프트를 쓰고 결과를 분석해요. 이제는 숙제보다 AI 프로젝트를 더 즐거워해요!","🧑‍🦱","이o우 님 · 초5 학부모"),
         ("부모인 저도 함께 배우니 아이와 대화가 늘고, 새로운 놀이가 생겼어요.","👩","박o연 님 · 초2 학부모")])
+    cc="".join(f"""<a class="card" href="/world-cases/{c[0]}.html" style="text-decoration:none;display:flex;gap:12px;align-items:center;padding:14px 16px">
+<span style="font-size:26px">{c[2]}</span><div><b style="color:var(--ink)">{c[1]}</b><span style="color:var(--muted);font-size:13px"> — {c[5]}</span></div>
+<span style="margin-left:auto;color:var(--coral);font-weight:800">→</span></a>""" for c in COUNTRIES)
     body=f"""<main>
-<section class="hero"><div class="wrap"><div class="hero-grid">
-<div><h1>아이와 함께 배우는<br><span class="coral">생성형 AI</span></h1>
-<p class="sub">정답을 찾는 교육이 아니라, 다시 묻고 더 나은 결과를 만드는 힘을 기르는 과정형 AI 교육.</p>
-<div class="hero-btns"><a class="btn btn-primary btn-lg" href="/start-guide.html">시작 가이드 보기 →</a>
-<a class="btn btn-ghost btn-lg" href="/world-cases.html">🌍 세계 AI교육법 연재</a></div></div>
-<div class="hero-art"><img src="/{SCENE}/parent.png" alt="아이와 부모가 함께 AI로 배우는 모습"></div>
-</div><div class="hero-banner">결과물이 아니라 <span style="color:#FFD98A">과정이</span> 교육이다.</div></div></section>
+<section class="page-hero" style="padding:44px 0 30px"><div class="wrap" style="text-align:center">
+<h1 style="font-size:34px;margin:0 0 8px">아이와 함께 배우는 <span class="coral">생성형 AI</span></h1>
+<p style="color:var(--navy2);font-weight:600;margin:0 0 4px">정답을 빨리 찾는 교육이 아니라, <b>다시 묻는 힘</b>을 기르는 과정형 AI 교육.</p>
+<p style="color:var(--muted);font-size:13.5px;margin:0 0 18px">결과물이 아니라 과정이 교육이다</p>
+<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+<a class="btn btn-primary btn-lg" href="/world-cases.html">📚 세계 AI교육법 연재</a>
+<a class="btn btn-ghost btn-lg" href="/world-cases/uk-8yo-12weeks.html">📅 만 8세 12주 프로그램</a></div>
+</div></section>
 
-<section class="block" style="padding:26px 0 6px"><div class="wrap">
-<h2 class="sec-title" style="font-size:20px;margin-bottom:14px">🔎 자주 찾는 자료</h2>
+<section class="block" style="padding:10px 0 6px"><div class="wrap">
 <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">{quick}</div>
 </div></section>
 
-<section class="block"><div class="wrap">{val}</div></section>
-
-<section class="block"><div class="wrap"><h2 class="sec-title">세계는 아이에게 AI를 어떻게 가르치나</h2>
-<div class="grid g5">{cc}</div></div></section>
-
-<section class="block" id="philosophy"><div class="wrap"><h2 class="sec-title">우리의 핵심 철학</h2>
-<div class="grid g4">{phil}</div></div></section>
-
-<section class="block"><div class="wrap"><h2 class="sec-title">설명형 AI 영상으로 쉽게 배워요</h2>
-<div class="video-feature">
-<a class="vcard" href="/videos/world-ai-education.html"><div class="vthumb"><img src="/{POSTER}/world-ai-education-v2.jpg" alt="세계 AI교육 본편"><div class="play"><span>▶</span></div><span class="len">2:41</span></div>
-<div class="vmeta"><h4>세계 5개국은 아이에게 AI를 어떻게 가르치나</h4><p>부모 눈높이로 정리한 대표 영상</p></div></a>
-<div class="vsmall-list">{sm}</div></div>
-<div class="center" style="margin-top:16px"><a href="/videos.html" style="color:var(--coral);font-weight:700">모든 영상 보러가기 →</a></div>
+<section class="block" style="padding:26px 0 46px"><div class="wrap" style="max-width:760px">
+<h2 class="sec-title" style="font-size:20px;margin-bottom:14px">🌍 세계는 아이에게 AI를 어떻게 가르치나</h2>
+<div style="display:grid;gap:9px">{cc}</div>
 </div></section>
-
-<section class="block"><div class="wrap"><h2 class="sec-title">집에서 이렇게 시작하세요</h2>
-<div class="steps3">{steps}</div>
-<div class="center" style="margin-top:18px"><a class="btn btn-ghost" href="/start-guide.html">전체 6단계 가이드 보기 →</a></div></div></section>
-
-<section class="block"><div class="wrap"><h2 class="sec-title">부모님들의 이야기</h2>
-<div class="grid g3">{quotes}</div></div></section>
-
-<section class="block"><div class="wrap"><div class="cta-band">
-<div><h3>오늘부터 아이와 함께 AI를 연습해보세요</h3><p>무료 자료와 가이드로 쉽고 안전하게 시작할 수 있어요.</p></div>
-<a class="btn btn-lg" href="/free-kit.html">무료 자료 받기 ⬇</a></div></div></section>
 </main>"""
     return page("home","",
       "아이와 함께 배우는 생성형 AI | AI 조기교육",
