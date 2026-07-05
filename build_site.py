@@ -298,8 +298,10 @@ SECTIONS={
  "free":("무료 자료",[
    ("무료 자료 한눈에","/free-kit.html"),
    ("12주 워크북 PDF","/free/uk-12weeks-workbook.html"),
-   ("가정 실습지","/free/worksheet.html"),
-   ("질문 카드 10장","/free/question-cards.html"),
+   ("AI 대화 연습지","/free/worksheet.html"),
+   ("부모용 질문 카드 10장","/free/question-cards.html"),
+   ("첫 프롬프트 20개","/free/first-prompts.html"),
+   ("AI 안전 사용 원칙",None),
    ("영상 요약본",None),
  ]),
 }
@@ -723,6 +725,50 @@ def free_kit():
 </div></section></main>"""
     return page("free","","무료 자료 | AI 조기교육","집에서 바로 쓰는 무료 AI교육 자료 — 연습지·질문 카드·첫 프롬프트 20개. 이메일 없이 바로 인쇄.",body)
 
+
+# ---------- 무료 자료 하위 페이지 공통 레이아웃 ----------
+FREE_ITEMS=[("무료 자료 한눈에","/free-kit.html"),
+ ("12주 워크북 PDF","/free/uk-12weeks-workbook.html"),
+ ("AI 대화 연습지","/free/worksheet.html"),
+ ("부모용 질문 카드 10장","/free/question-cards.html"),
+ ("첫 프롬프트 20개","/free/first-prompts.html"),
+ ("AI 안전 사용 원칙",None),
+ ("영상 요약본",None)]
+def free_sidebar(cur):
+    links=""
+    for lb,u in FREE_ITEMS:
+        if u is None: links+=f'<span class="fs-a fs-x">{lb} <small>준비중</small></span>'
+        else: links+=f'<a class="fs-a{" on" if u==cur else ""}" href="{u}">{lb}</a>'
+    return f"""<aside class="frsb no-print"><div class="fs-t" onclick="this.parentElement.classList.toggle('fold')">📥 무료 자료 <span class="fs-ar">▾</span></div><nav class="fs-nav">{links}</nav></aside>"""
+def free_resource_layout(cur,title,doc_style,doc_body):
+    """무료 자료 하위 페이지 = 사이트 헤더 + 좌측 무료자료 카테고리 + 보조바(←자료실·제목·인쇄) + 본문."""
+    body=f"""<div class="fr2">
+{free_sidebar(cur)}
+<main class="fr-main">
+<div class="fr-aux no-print"><a href="/free-kit.html">← 무료 자료실</a><b>{title}</b><button class="btn btn-primary" onclick="window.print()">🖨 인쇄 / PDF 저장</button></div>
+<div class="fr-doc">{doc_body}</div>
+</main></div>
+<style>
+{doc_style}
+.fr2{{max-width:1200px;margin:0 auto;padding:16px 16px 40px;display:flex;gap:22px;align-items:flex-start}}
+.fr-main{{flex:1;min-width:0;max-width:900px}}
+.frsb{{width:236px;flex:none;background:#FFF9EF;border:1px solid #EAD9BE;border-radius:14px;padding:12px 9px;position:sticky;top:100px}}
+.fs-t{{font-weight:800;font-size:14px;color:#2B3A55;padding:4px 11px 9px;border-bottom:2px solid #F0E6D2;margin-bottom:6px;display:flex;justify-content:space-between}}
+.fs-ar{{display:none;color:#c4b59a}}
+.fs-a{{display:block;padding:7px 11px;margin:1px 0;border-radius:8px;text-decoration:none;color:#5a4a35;font-size:13.2px;font-weight:600}}
+a.fs-a:hover{{background:#FDECE5;color:#B44A31}}
+.fs-a.on{{background:var(--coral,#E0684A);color:#fff}}
+.fs-x{{color:#c4b59a;cursor:default}}.fs-x small{{font-size:10px;background:#F0E6D2;border-radius:6px;padding:1px 6px}}
+.fr-aux{{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #EADFCE;border-radius:12px;padding:10px 14px;margin-bottom:14px}}
+.fr-aux a{{color:var(--coral,#E0684A);font-weight:800;text-decoration:none;font-size:13px}}
+.fr-aux b{{margin:0 auto;font-size:14px;color:#2B3A55}}
+.fr-doc .sheet{{padding:0;max-width:none}}
+@media(max-width:900px){{.fr2{{flex-direction:column}}.frsb{{position:static;width:100%}}.fs-ar{{display:inline}}.frsb.fold .fs-nav{{display:none}}.fs-t{{cursor:pointer}}}}
+@media print{{header.mgh,footer.site,.frsb,.fr-aux,.no-print{{display:none!important}}.fr2{{padding:0;display:block}}.fr-main{{max-width:none}}}}
+</style>
+<script>if(window.innerWidth<=900){{var f=document.querySelector('.frsb');if(f)f.classList.add('fold');}}</script>"""
+    return page("free","../",f"{title} | AI 조기교육",f"{title} — 무료 자료실. 이메일 없이 바로 인쇄·저장.",body)
+
 # ---------- 쓰기 ----------
 def write(path,html):
     full=os.path.join(ROOT,path); os.makedirs(os.path.dirname(full) or ".",exist_ok=True)
@@ -755,4 +801,7 @@ if __name__=="__main__":
     for c in COUNTRIES:
         write(f"parent-resources/{c[0]}.html",parent_resources_country(c[0],c[1],c[2]))
     write("free-kit.html",free_kit())
+    import free_docs as FD
+    for _slug,_d in FD.DOCS.items():
+        write(f"free/{_slug}.html",free_resource_layout(f"/free/{_slug}.html",_d["title"],_d["style"],_d["body"]))
     print("완료.")

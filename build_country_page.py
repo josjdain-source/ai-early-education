@@ -420,6 +420,11 @@ def program_workbook(slug):
      10:("나눈 규칙을 말로 설명했나요?","헷갈리는 카드 하나로 규칙을 다시 정해볼까?"),
      11:("'어떻게 아는지' 추측을 말했나요?","다른 AI를 찾아 같은 질문을 해볼까?"),
      12:("이상한 부분을 하나 찾았나요?","'이렇게 바꿔줘'라고 정확히 다시 말해볼까?")}
+    SITE_HEADER=BS.header("free","../")
+    SITE_FOOTER=BS.footer("../").replace("</body></html>","")
+    FREETOC="".join(
+        (f'<a class="wt-a{" on" if u=="/free/uk-12weeks-workbook.html" else ""}" href="{u}">{lb}</a>' if u else f'<span class="wt-a" style="color:#c4b59a">{lb} <small style="font-size:9.5px">준비중</small></span>')
+        for lb,u in BS.FREE_ITEMS)
     part_of=lambda n:"3부 · 데이터와 AI 생각" if n>=9 else("2부 · 직접 만들기" if n>=5 else "1부 · 컴퓨팅적 사고")
     weeks=p["weeks"]
     # 좌측 목차
@@ -454,16 +459,17 @@ def program_workbook(slug):
 <title>만 8세 12주 홈 프로그램 워크북 | AI 조기교육</title>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="../styles/main.css">
 <style>
 *{{box-sizing:border-box}}body{{margin:0;background:#F6EEDF;font-family:"Pretendard","Malgun Gothic",sans-serif;color:#2B2016;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 a{{color:inherit}}
-.wbv-top{{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid #EADFCE;box-shadow:0 2px 8px rgba(0,0,0,.06);display:flex;align-items:center;gap:14px;padding:9px 16px;flex-wrap:wrap}}
+.wbv-top{{position:sticky;top:57px;z-index:60;background:#fff;border-bottom:1px solid #EADFCE;box-shadow:0 2px 8px rgba(0,0,0,.06);display:flex;align-items:center;gap:14px;padding:9px 16px;flex-wrap:wrap}}
 .wbv-top a,.wbv-top button{{text-decoration:none;font-weight:700;font-size:12.8px;color:#5a4a35;background:#fff;border:1px solid #EADFCE;border-radius:9px;padding:7px 11px;cursor:pointer}}
 .wbv-top a:hover,.wbv-top button:hover{{background:#FBF3E4}}
 .wbv-title{{margin:0 auto;font-weight:900;font-size:14.5px;color:#2B3A55}}
 .wbv-top .pri{{background:#E0684A;color:#fff;border-color:#E0684A}}
 .wbv-grid{{max-width:1280px;margin:0 auto;padding:18px 16px;display:flex;gap:20px;align-items:flex-start}}
-.wbv-toc{{width:216px;flex:none;position:sticky;top:64px;background:#FFF9EF;border:1px solid #EAD9BE;border-radius:14px;padding:12px 8px;max-height:calc(100vh - 84px);overflow:auto}}
+.wbv-toc{{width:216px;flex:none;position:sticky;top:122px;background:#FFF9EF;border:1px solid #EAD9BE;border-radius:14px;padding:12px 8px;max-height:calc(100vh - 142px);overflow:auto}}
 .wt-t{{font-weight:800;font-size:13.5px;color:#2B3A55;padding:4px 10px 9px;border-bottom:2px solid #F0E6D2;margin-bottom:6px}}
 .wt-a{{display:flex;align-items:center;gap:7px;padding:6px 9px;margin:1px 0;border-radius:8px;text-decoration:none;color:#5a4a35;font-size:12.4px;font-weight:600}}
 .wt-a:hover{{background:#FDECE5}}
@@ -471,7 +477,7 @@ a{{color:inherit}}
 .wt-n{{width:20px;height:20px;border-radius:50%;background:#F0E6D2;color:#8a6f45;display:grid;place-items:center;font-size:10.5px;font-weight:900;flex:none}}
 .wt-a.on .wt-n{{background:#fff;color:#E0684A}}
 .wbv-doc{{flex:1;min-width:0;max-width:820px;margin:0 auto}}
-.wbv-quick{{width:172px;flex:none;position:sticky;top:64px}}
+.wbv-quick{{width:172px;flex:none;position:sticky;top:122px}}
 .wq{{background:#FFF9EF;border:1px solid #EAD9BE;border-radius:14px;padding:12px 10px}}
 .wq-t{{font-weight:800;font-size:12.5px;color:#2B3A55;margin-bottom:8px}}
 .wq a,.wq button{{display:block;width:100%;text-align:left;margin:4px 0;padding:8px 10px;border:1px solid #EADFCE;border-radius:9px;background:#fff;font-size:12px;font-weight:700;color:#5a4a35;text-decoration:none;cursor:pointer}}
@@ -506,7 +512,7 @@ a{{color:inherit}}
 @media(max-width:840px){{.wbv-toc{{display:none}}.wb-sel{{display:block}}.wbv-title{{display:none}}}}
 @page{{size:A4;margin:12mm}}
 @media print{{
-.no-print,.wbv-top,.wbv-toc,.wbv-quick,#wbTop,.wb-sel{{display:none!important}}
+.no-print,.wbv-top,.wbv-toc,.wbv-quick,#wbTop,.wb-sel,header.mgh,footer.site,.mg-mob,.mg-dd{{display:none!important}}
 .print-only{{display:flex}}
 body{{background:#fff}}
 .wbv-grid{{padding:0;display:block}}
@@ -516,6 +522,7 @@ body{{background:#fff}}
 .wb-card.fold .wb-body{{display:block}}
 }}
 </style></head><body>
+{SITE_HEADER}
 <div class="wbv-top no-print">
 <a href="/free-kit.html">← 무료 자료</a>
 <a href="/world-cases/{slug}-8yo-12weeks.html">12주 홈 프로그램</a>
@@ -527,7 +534,7 @@ body{{background:#fff}}
 </div>
 <select class="wb-sel no-print" onchange="location.hash=this.value">{opts}</select>
 <div class="wbv-grid">
-<aside class="wbv-toc no-print"><div class="wt-t">📚 12주 목차</div>{toc}</aside>
+<aside class="wbv-toc no-print"><div class="wt-t">📚 12주 목차</div>{toc}<div class="wt-t" style="margin-top:14px">📥 무료 자료</div>{FREETOC}</aside>
 <main class="wbv-doc">
 <section class="wb-card wb-intro" id="intro">
 <img src="/assets/program/workbook-cover.png" alt="아이와 부모가 함께 배우는 모습">
@@ -563,6 +570,7 @@ function spy(){{var y=window.scrollY+120,cur=secs[0].id;
 window.addEventListener('scroll',spy);spy();
 }})();
 </script>
+{SITE_FOOTER}
 </body></html>"""
 
 def program_page(slug):
