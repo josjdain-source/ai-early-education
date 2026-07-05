@@ -448,6 +448,12 @@ def home():
 <a class="btn btn-primary" href="/videos.html">영상관 전체 →</a></div>
 </div></section>
 <section class="block" style="padding:0 0 44px"><div class="wrap" style="max-width:760px">
+<a href="/daily-class.html" style="display:flex;gap:14px;align-items:center;background:linear-gradient(135deg,#FFF3E9,#FCE7D6);border:1px solid #F0DDC8;border-radius:16px;padding:16px 20px;text-decoration:none;color:#7a3e12;margin-bottom:10px">
+<span style="font-size:34px">🏫</span><div><b style="font-size:16px">매일 AI교실 · 매일 10분</b><p style="margin:2px 0 0;color:#9a5b23;font-weight:600;font-size:13.5px">오늘의 질문 → AI에게 말하기 → 이상한 점 찾기 → 다시 묻기. 1년 커리큘럼.</p></div>
+<span style="margin-left:auto;color:#E0684A;font-weight:900">→</span></a>
+<a href="/levels.html" style="display:flex;gap:14px;align-items:center;background:linear-gradient(135deg,#FFF7EA,#FBEBD3);border:1px solid #EAD9BE;border-radius:16px;padding:16px 20px;text-decoration:none;color:#7a3e12;margin-bottom:10px">
+<span style="font-size:34px">🎯</span><div><b style="font-size:16px">연령별 AI교실 · 유치원~고등</b><p style="margin:2px 0 0;color:#9a5b23;font-weight:600;font-size:13.5px">우리 아이 나이엔 뭘? 말하기→고치기→의심→검증→해결.</p></div>
+<span style="margin-left:auto;color:#E0684A;font-weight:900">→</span></a>
 <a href="/competitions.html" style="display:flex;gap:14px;align-items:center;background:linear-gradient(135deg,#EAF2FB,#DCEAF8);border:1px solid #CADCF0;border-radius:16px;padding:16px 20px;text-decoration:none;color:#22406b">
 <span style="font-size:34px">🏆</span><div><b style="font-size:16px">AI 경진대회 문제풀이 교실</b><p style="margin:2px 0 0;color:#4a5f7d;font-weight:600;font-size:13.5px">실제 대회 문제를 아이 눈높이로 — 학년별 문제·풀이전략·우리집 연습문제.</p></div>
 <span style="margin-left:auto;color:#3A6FB0;font-weight:900">→</span></a>
@@ -619,6 +625,7 @@ def start_guide():
 <h1>집에서 따라 하는 6단계</h1><p>오늘 저녁, 아이와 15분이면 충분해요. 순서대로 따라만 하세요.</p></div></section>
 <section class="block"><div class="wrap" style="max-width:760px">{"".join(sc(*s) for s in steps)}
 <div class="cta-band" style="margin-top:20px"><div><h3>연습지와 질문 카드가 필요하세요?</h3><p>집에서 바로 쓰는 무료 자료를 받아보세요.</p></div><a class="btn btn-lg" href="/free-kit.html">무료 자료 받기 ⬇</a></div>
+<div class="cta-band" style="margin-top:12px;background:linear-gradient(135deg,#FFF3E9,#FCE7D6)"><div><h3>🏫 오늘부터 매일 10분 · 매일 AI교실</h3><p>세계 사례를 한국 가정용 1년 커리큘럼으로. 오늘의 수업·연령별 로드맵.</p></div><a class="btn btn-lg" href="/daily-class.html">매일 AI교실 →</a></div>
 <div class="cta-band" style="margin-top:12px;background:linear-gradient(135deg,#EAF2FB,#DCEAF8)"><div><h3>🏆 실력으로 이어질까? · AI 경진대회 문제풀이 교실</h3><p>실제 AI 경진대회 문제를 아이 눈높이로. 학년별 문제·풀이전략·우리집 연습문제.</p></div><a class="btn btn-lg" href="/competitions.html">경진대회 교실 →</a></div>
 </div></section></main>"""
     return page("start","","집에서 시작하는 6단계 가이드 | AI 조기교육","아이와 AI를 시작하는 6단계. 부모 멘트·질문·좋은/나쁜 프롬프트 예시까지.",body)
@@ -640,6 +647,8 @@ def free_kit():
 <section class="block"><div class="wrap" style="max-width:900px"><div class="grid g3">{kc}</div>
 <p class="center" style="color:var(--muted);margin-top:20px;font-size:14px">※ 세 자료 모두 <b>바로 열람·인쇄</b> 가능합니다. 브라우저의 인쇄에서 'PDF로 저장'을 고르면 파일로도 보관돼요.</p>
 <div class="cta-band" style="margin-top:24px"><div><h3>어떻게 쓰는지 먼저 볼까요?</h3><p>6단계 시작 가이드와 함께 쓰면 더 좋아요.</p></div><a class="btn btn-lg" href="/start-guide.html">시작 가이드 보기 →</a></div>
+<a href="/free/ai-first-7days.html" style="margin-top:14px;display:flex;gap:12px;align-items:center;background:linear-gradient(135deg,#FFF3E9,#FCE7D6);border:1px solid #F0DDC8;border-radius:14px;padding:15px 18px;text-decoration:none;color:#7a3e12">
+<span style="font-size:30px">🎁</span><div><b style="font-size:15px">아이에게 AI를 처음 보여주는 7일 질문카드</b> <span style="font-size:11px;font-weight:800;color:#188038;background:#e6f4ea;border-radius:6px;padding:1px 7px">무료 코스</span><p style="margin:2px 0 0;font-size:13px;color:#9a5b23">하루 한 장, 5분. 의심하고 다시 묻는 힘부터. → <b>4주 질문력 교실</b>로 이어져요.</p></div></a>
 <div style="margin-top:12px;display:flex;gap:12px;align-items:center;background:#F4F7FB;border:1px dashed #CADCF0;border-radius:14px;padding:14px 18px;color:#4a5f7d">
 <span style="font-size:26px">🏆</span><div><b style="color:#22406b">AI 경진대회 문제풀이 활동지</b> <span style="font-size:11px;font-weight:800;color:#8a6f45;background:#F0E6D2;border-radius:6px;padding:1px 7px">준비중</span><p style="margin:2px 0 0;font-size:13px">학년별 대회형 문제를 인쇄 활동지로. 지금은 <a href="/competitions.html" style="color:#3A6FB0;font-weight:700">경진대회 교실</a>에서 온라인으로 풀 수 있어요.</p></div></div>
 </div></section></main>"""
@@ -648,6 +657,7 @@ def free_kit():
 
 # ---------- 무료 자료 하위 페이지 공통 레이아웃 ----------
 FREE_ITEMS=[("무료 자료 한눈에","/free-kit.html"),
+ ("🎁 7일 질문카드 (무료 코스)","/free/ai-first-7days.html"),
  ("12주 워크북 PDF","/free/uk-12weeks-workbook.html"),
  ("AI 대화 연습지","/free/worksheet.html"),
  ("부모용 질문 카드 10장","/free/question-cards.html"),
@@ -726,6 +736,12 @@ if __name__=="__main__":
     KIDS.build_all()
     import build_competitions as COMP
     COMP.build_all()
+    import build_academy as ACAD
+    ACAD.build_all()
+    import build_daily_class as DAILY
+    DAILY.build_all()
+    import build_levels as LVL
+    LVL.build_all()
     import free_docs as FD
     for _slug,_d in FD.DOCS.items():
         write(f"free/{_slug}.html",free_resource_layout(f"/free/{_slug}.html",_d["title"],_d["style"],_d["body"]))
