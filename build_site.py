@@ -193,7 +193,7 @@ def footer(base):
 <div class="foot-col"><h5>소개</h5><a href="{b}why-ai-education.html">왜 필요한가</a><a href="{b}world-cases.html">세계 사례</a><a href="{b}why-ai-education.html#philosophy">우리의 철학</a></div>
 <div class="foot-col"><h5>고객 지원</h5><a href="{b}parent-resources.html#faq">자주 묻는 질문</a><a href="{b}start-guide.html">이용 가이드</a><a href="{b}privacy/">개인정보처리방침</a></div>
 <div class="foot-col"><h5>문의</h5><a href="mailto:2011kstudentlife@gmail.com">2011kstudentlife@gmail.com</a><a href="{b}videos.html">영상관</a></div>
-</div><div class="foot-bottom">© 2026 AI조기교육. 아이가 AI와 대화하며 '다시 묻는 힘'을 기르는 교육.</div></div></footer>
+</div><div class="foot-bottom">© 2026 AI조기교육. 아이가 AI와 대화하며 '다시 묻는 힘'을 기르는 교육. <a href="/content-bank.html" style="color:inherit;opacity:.35;text-decoration:none">🧊</a></div></div></footer>
 <script src="{base}scripts/main.js" defer></script></body></html>"""
 
 def global_sidebar():
@@ -750,6 +750,8 @@ if __name__=="__main__":
     DAILY.build_all()
     import build_levels as LVL
     LVL.build_all()
+    import build_content_bank as BANK
+    BANK.build_all()
     import free_docs as FD
     for _slug,_d in FD.DOCS.items():
         write(f"free/{_slug}.html",free_resource_layout(f"/free/{_slug}.html",_d["title"],_d["style"],_d["body"]))
