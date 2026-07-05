@@ -1,0 +1,27 @@
+{
+  "id": "shorts-parent-002",
+  "series": "S04_parent_questions",
+  "final_title": "AI 답이 이상할 때 부모가 하면 안 되는 말",
+  "duration_target_sec": 45,
+  "hook": "\"거봐, AI 못 믿는다니까\" — 이 말이 아이의 기회를 지웁니다.",
+  "script": "AI가 이상한 답을 줬을 때, 부모가 하면 안 되는 말이 있습니다. \"거봐, 믿지 마.\" 이 한마디면 아이는 그냥 안 쓰게 돼요. 배울 기회도 같이 사라집니다. 대신 이렇게 물어보세요. \"어디가 이상한 것 같아?\" 아이가 이상한 곳을 직접 찾으면, 그 순간 검증하는 힘이 자랍니다. 틀린 답은 최고의 교재입니다. 버리지 말고, 함께 뜯어보세요. 오늘의 수업은 프로필 링크에 있습니다.",
+  "cuts": [
+    {"n": 1, "t": "0-7", "scene": "태블릿 화면에 엉뚱한 결과(이상한 그림), 아이 갸우뚱", "subtitle": "AI가 이상한 답을 줬어요. 이때—", "image_prompt": "a tablet showing a funny weird wrong drawing, a Korean child tilting head confused, living room"},
+    {"n": 2, "t": "7-15", "scene": "부모가 손사래 치며 화면을 밀어내는 실루엣 + 금지 표시", "subtitle": "❌ \"거봐, AI 못 믿는다니까\"", "image_prompt": "a parent waving hand dismissively pushing the tablet away, a subtle red prohibition mark motif, slightly dim mood"},
+    {"n": 3, "t": "15-22", "scene": "아이의 어깨가 축 처지고 태블릿이 닫힘(기회 소멸)", "subtitle": "이 말이면… 배울 기회도 같이 사라집니다", "image_prompt": "the child slightly deflated, the tablet closing, a small fading spark above, soft sad but gentle tone"},
+    {"n": 4, "t": "22-30", "scene": "분위기 전환 — 부모가 옆에 앉아 화면을 같이 봄", "subtitle": "대신 — \"어디가 이상한 것 같아?\"", "image_prompt": "warm turn: parent sitting beside the child looking at the screen together, inviting expression, brighter light"},
+    {"n": 5, "t": "30-38", "scene": "아이가 돋보기 들고 이상한 곳에 동그라미(탐정 놀이 느낌)", "subtitle": "아이가 직접 찾는 순간, '검증하는 힘'이 자랍니다", "image_prompt": "the child holding a magnifying glass circling the odd part on the screen like a little detective, proud smile"},
+    {"n": 6, "t": "38-45", "scene": "틀린 그림에 별 스티커 + '최고의 교재' 카드, 엔드카드", "subtitle": "틀린 답 = 최고의 교재. 버리지 말고 함께 뜯어보세요 ↓", "image_prompt": "the funny wrong drawing pinned with a gold star sticker, parent and child smiling, cozy closing scene"}
+  ],
+  "image_style": {
+    "engine": "ComfyUI / RealVisXL_V5.0_fp16",
+    "aspect": "768x1344 → 1080x1920 (9:16)",
+    "style_token": "editorial storybook illustration, warm muted color palette, thick clean black outlines, semi-realistic cartoon style, flat shading, soft warm lighting, detailed cozy background, hand-drawn look, korean family, no text, no letters",
+    "negative": "photo, photorealistic, 3d render, text, letters, words, watermark, ugly, deformed, extra fingers, blurry, scary, western caucasian"
+  },
+  "subtitles_all": "AI가 이상한 답을 줬어요. 이때—\n❌ \"거봐, AI 못 믿는다니까\"\n이 말이면… 배울 기회도 같이 사라집니다\n대신 — \"어디가 이상한 것 같아?\"\n아이가 직접 찾는 순간, '검증하는 힘'이 자랍니다\n틀린 답 = 최고의 교재. 버리지 말고 함께 뜯어보세요 ↓",
+  "description": "AI의 틀린 답은 최고의 교재입니다.\n오늘 집에서 10분이면 됩니다.\n\n▶ 오늘의 10분 수업\nhttps://ai-early-education.pages.dev/daily-class/today\n\n🃏 부모용 질문 카드(무료)\nhttps://ai-early-education.pages.dev/free/question-cards\n\n이 채널은 AI로 아이를 붙잡는 채널이 아니라,\n아이가 AI를 의심하고 다룰 줄 알게 하는 채널입니다.\n\n#AI교육 #부모교육 #초등AI",
+  "hashtags": ["AI교육", "부모교육", "초등AI"],
+  "links": {"site": "/daily-class/today.html", "free": "/free/question-cards.html", "class": "/class.html"},
+  "pinned_comment": "AI가 이상한 답을 줬을 때 🗒\n❌ \"거봐, 믿지 마\"\n⭕ \"어디가 이상한 것 같아?\"\n\n틀린 답은 버리는 게 아니라 함께 뜯어보는 교재예요.\n🃏 오늘 쓸 질문 카드(무료): https://ai-early-education.pages.dev/free/question-cards\n아이가 찾아낸 '이상한 곳'을 댓글로 알려주세요!"
+}

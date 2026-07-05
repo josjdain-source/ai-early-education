@@ -8,6 +8,13 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 CB = os.path.join(ROOT, "content_bank")
 def J(f): return json.load(open(os.path.join(CB, f), encoding="utf-8"))
 SER = J("series_bank.json"); ITEMS = J("content_items.json")["items"]; SRC = J("source_items.json")["sources"]
+PKG_DIR = os.path.join(CB, "approved", "shorts")
+PKGS = {}
+if os.path.isdir(PKG_DIR):
+    for fn in os.listdir(PKG_DIR):
+        if fn.endswith(".json"):
+            p = json.load(open(os.path.join(PKG_DIR, fn), encoding="utf-8"))
+            PKGS[p["id"]] = p
 SMAP = {s["series_id"]: s for s in SER["series"]}
 STATUS_KO = {"idea":"💡 아이디어","source_ready":"📚 자료됨","draft_ready":"📝 초안됨","asset_ready":"🎨 소재됨",
              "approved":"✅ 승인","scheduled":"📌 예약","published":"🚀 발행","measured":"📈 성과기록"}
@@ -30,12 +37,37 @@ def item_card(it, show_copy=True):
 <button onclick='cbCopy({json.dumps(full_desc(it),ensure_ascii=False)},this)'>설명+태그 복사</button>
 <button onclick='cbCopy({json.dumps(it.get("script",""),ensure_ascii=False)},this)'>대본 복사</button></div>"""
     yt = f'<a href="{esc(it["youtube_url"])}" target="_blank" rel="noopener" style="color:#3A6FB0;font-weight:700;font-size:12px">▶ 발행 링크</a>' if it.get("youtube_url") else ""
+    pkg_html = package_block(PKGS[it["id"]]) if show_copy and it["id"] in PKGS else ""
     return f"""<div class="cb-item">
-<div class="cb-meta"><span class="cb-tag">{esc(s)}</span><span class="cb-st">{st}</span>{pr}<span class="cb-ord">#{it.get('publish_order','-')}</span></div>
+<div class="cb-meta"><span class="cb-tag">{esc(s)}</span><span class="cb-st">{st}</span>{pr}{'<span class="cb-pkg">🎬 제작 패키지</span>' if it["id"] in PKGS else ''}<span class="cb-ord">#{it.get('publish_order','-')}</span></div>
 <b>{esc(it['title'])}</b>
 {f'<p class="cb-hook">🪝 {esc(it["hook"])}</p>' if it.get('hook') else ''}
-{btns}{yt}
+{btns}{yt}{pkg_html}
 </div>"""
+
+def package_block(p):
+    cuts_rows = "".join(f"""<tr><td style="white-space:nowrap"><b>컷{c['n']}</b><br><span style="color:#9b8a6e">{c['t']}s</span></td>
+<td>{esc(c['scene'])}</td><td style="font-weight:700">{esc(c['subtitle'])}</td></tr>""" for c in p["cuts"])
+    st = p["image_style"]
+    NL = chr(10)
+    prompts_all = (NL+NL).join(
+        f"[컷{c['n']} {c['t']}s] {c['image_prompt']}, {st['style_token']}{NL}NEG: {st['negative']}"
+        for c in p["cuts"])
+    return f"""<details class="cb-pkgbox"><summary>🎬 제작 패키지 열기 — 대본 {p['duration_target_sec']}초 · 컷 6 · 자막 · 프롬프트 · 고정댓글</summary>
+<div class="cb-pkgin">
+<div style="font-size:12px;color:#8a6f45;margin:8px 0 4px">📜 대본 ({p['duration_target_sec']}초 목표)</div>
+<div class="cb-script">{esc(p['script'])}</div>
+<div style="font-size:12px;color:#8a6f45;margin:10px 0 4px">🎞 화면 컷 6개 + 자막</div>
+<table class="cb-t" style="font-size:12px"><thead><tr><th>컷</th><th>화면</th><th>자막</th></tr></thead><tbody>{cuts_rows}</tbody></table>
+<div style="font-size:11.5px;color:#9b8a6e;margin-top:6px">🎨 {esc(st['engine'])} · {esc(st['aspect'])} · 스타일 토큰은 프롬프트 복사에 포함</div>
+<div style="font-size:12px;color:#8a6f45;margin:10px 0 4px">📌 고정댓글</div>
+<div class="cb-script" style="background:#EEF7EF;border-color:#cfe6d6">{esc(p['pinned_comment'])}</div>
+<div class="cb-btns" style="margin-top:10px">
+<button onclick='cbCopy({json.dumps(p["script"],ensure_ascii=False)},this)'>📜 대본 복사</button>
+<button onclick='cbCopy({json.dumps(p["subtitles_all"],ensure_ascii=False)},this)'>💬 자막 전체 복사</button>
+<button onclick='cbCopy({json.dumps(prompts_all,ensure_ascii=False)},this)'>🎨 이미지 프롬프트 6컷 복사</button>
+<button onclick='cbCopy({json.dumps(p["pinned_comment"],ensure_ascii=False)},this)'>📌 고정댓글 복사</button>
+</div></div></details>"""
 
 def page():
     # 집계
@@ -130,6 +162,11 @@ def page():
 .cb-empty{{color:#9b8a6e;font-size:13px}}
 .cb-cal{{background:#fff;border:1px solid #EADFCE;border-radius:9px;padding:7px 12px;font-size:12.5px}}
 .cb-cal b{{color:#E0684A;margin-right:4px}}
+.cb-pkg{{font-size:10px;font-weight:900;background:#2E9E63;color:#fff;border-radius:5px;padding:1px 7px}}
+.cb-pkgbox{{margin-top:9px;background:#FBF8F1;border:1px dashed #EAD9BE;border-radius:10px;padding:0 12px}}
+.cb-pkgbox summary{{cursor:pointer;font-weight:800;font-size:12.5px;color:#2E9E63;padding:9px 0}}
+.cb-pkgin{{padding:0 0 12px}}
+.cb-script{{background:#fff;border:1px solid #EADFCE;border-radius:9px;padding:10px 13px;font-size:13px;line-height:1.65;white-space:pre-wrap}}
 </style>
 <script>
 function cbCopy(t,btn){{
