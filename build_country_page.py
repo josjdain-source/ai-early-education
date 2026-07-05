@@ -430,6 +430,7 @@ def program_workbook(slug):
         wk+=f"""<section class="page wk" style="--c:{c};--bg:{bg}">
 <div class="ribbon"><div class="badge">{n}</div><div class="ic">{ic}</div>
 <div class="tt"><div class="part">{part_of(n)}</div><h2>{w[1]}</h2></div><div class="wof">주 {n}<small>/12</small></div></div>
+<img class="wkart" src="/assets/program/wk/{n}.png" alt="{w[1]}">
 <div class="act"><div class="lab">🎯 이번 주에 할 것</div>{w[2]}<div class="prep">🧰 준비물 · {w[3].replace('준비물: ','')}</div></div>
 <div class="say"><div class="lab">💬 부모가 이렇게 물어봐요</div><b>"{w[4]}"</b></div>
 <div class="grid2"><div class="rbox"><div class="rlab">✍️ 우리가 한 것</div><div class="lines"></div></div>
@@ -464,6 +465,7 @@ body{{margin:0;background:#E7DECF;font-family:"Pretendard","Malgun Gothic",sans-
 .ribbon .ic{{font-size:30px;flex:none}}
 .ribbon .tt{{flex:1}}.ribbon .part{{font-size:12px;font-weight:800;color:var(--c)}}.ribbon h2{{font-size:22px;margin:2px 0 0}}
 .wof{{font-size:14px;color:var(--c);font-weight:800;flex:none}}.wof small{{opacity:.55}}
+.wkart{{display:block;width:calc(100% - 60px);height:150px;object-fit:cover;margin:16px 30px 0;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.08)}}
 .act,.say,.grid2,.rrow,.why{{margin:14px 30px 0}}
 .lab{{font-weight:800;font-size:13px;color:var(--c);margin-bottom:5px}}
 .act{{background:#FFFDF8;border:1.5px solid #EADFCE;border-left:5px solid var(--c);border-radius:11px;padding:13px 15px;font-size:14.5px;line-height:1.6}}
