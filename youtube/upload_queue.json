@@ -667,7 +667,7 @@
       "video_type": "longform",
       "country": "uk",
       "package_id": "uk-ai-education",
-      "duration": 27.2,
+      "duration": 107.1,
       "local_preview_path": "assets/uk-ai-education/render/uk-ai-longform.mp4",
       "youtube_id": "",
       "studio_url": "",
@@ -679,7 +679,7 @@
       "comments": null,
       "last_checked_at": null,
       "error_message": "",
-      "notes": "정본 스토리북 롱폼(build_country_video, RealVisXL). 그나라→한국가정→아이효과 3단. 유튜브 한도 풀리면 승인 업로드."
+      "notes": "정본 상세 다큐(build_country_video 8섹션, RealVisXL 스토리북). 실제 타임라인·정책 기반. 유튜브 풀리면 승인 업로드."
     },
     {
       "video_id": "sg-ai-longform",
@@ -706,7 +706,7 @@
       "video_type": "longform",
       "country": "singapore",
       "package_id": "singapore-ai-education",
-      "duration": 20.9,
+      "duration": 92.1,
       "local_preview_path": "assets/singapore-ai-education/render/singapore-ai-longform.mp4",
       "youtube_id": "",
       "studio_url": "",
@@ -718,7 +718,7 @@
       "comments": null,
       "last_checked_at": null,
       "error_message": "",
-      "notes": "정본 스토리북 롱폼(build_country_video, RealVisXL). 그나라→한국가정→아이효과 3단. 유튜브 한도 풀리면 승인 업로드."
+      "notes": "정본 상세 다큐(build_country_video 8섹션, RealVisXL 스토리북). 실제 타임라인·정책 기반. 유튜브 풀리면 승인 업로드."
     },
     {
       "video_id": "korea-ai-longform",
@@ -745,7 +745,7 @@
       "video_type": "longform",
       "country": "korea",
       "package_id": "korea-ai-education",
-      "duration": 22.7,
+      "duration": 86.7,
       "local_preview_path": "assets/korea-ai-education/render/korea-ai-longform.mp4",
       "youtube_id": "",
       "studio_url": "",
@@ -757,7 +757,7 @@
       "comments": null,
       "last_checked_at": null,
       "error_message": "",
-      "notes": "정본 스토리북 롱폼(build_country_video, RealVisXL). 그나라→한국가정→아이효과 3단. 유튜브 한도 풀리면 승인 업로드."
+      "notes": "정본 상세 다큐(build_country_video 8섹션, RealVisXL 스토리북). 실제 타임라인·정책 기반. 유튜브 풀리면 승인 업로드."
     }
   ],
   "_schema": "studio-v1"
