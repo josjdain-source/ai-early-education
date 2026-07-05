@@ -149,32 +149,42 @@ YEAR={
   ("여름 3학기 전반","벡터 그래픽","벡터 편집 도구로 로고·아이콘·일러스트를 만듭니다."),
   ("여름 3학기 후반","모바일 앱 개발","Code.org App Lab으로 자기만의 앱을 설계하고 개발합니다."),
  ],
- ai_name="AI·기계학습 단원 '생각하는 기계(Thinking machines)'",
- ai_note="컴퓨팅 시스템·데이터 과학 단원 안에서 AI를 6차시로 집중해 다룹니다. 실제 차시 흐름은 이렇습니다.",
- ai_lessons=[
-  ("1차시","AI란 무엇인가","'인공지능'을 정의하고, 미로 찾기부터 자율주행까지 실생활 속 AI·기계학습의 예를 찾아봅니다."),
-  ("2차시","기계학습 vs 전통 프로그래밍","규칙을 사람이 직접 짜는 프로그래밍과, 데이터로 스스로 배우는 기계학습의 차이를 비교합니다."),
-  ("3차시","기계를 훈련시키기 ① 데이터 모으기","기계를 가르치는 첫 단계 — 좋은 데이터를 모으는 과정을 직접 체험합니다."),
-  ("4차시","기계를 훈련시키기 ② 학습과 테스트","모은 데이터로 훈련하고, 잘 배웠는지 테스트하는 흐름(수집→훈련→테스트)을 이해합니다."),
-  ("5차시","작은 AI 직접 만들기","간단한 이미지 인식이나 감정 분석 같은 작은 AI를 손으로 만들어봅니다."),
-  ("6차시","AI의 윤리적 딜레마","AI를 쓸 때 생기는 도덕적 문제 — 편향·판단·책임을 토론합니다."),
+ ai_core_note="AI는 위 '컴퓨팅 시스템' 단원 안의 <b>'생각하는 기계(Thinking machines)' 단 한 차시</b>에서 집중적으로 처음 만납니다. 이 한 차시에 AI의 핵심이 압축돼 있습니다:",
+ ai_core=[
+  ("AI란?","'인공지능'을 정의하고, 미로 찾기부터 자율주행까지 실생활 속 AI·기계학습의 예를 찾는다."),
+  ("차이 이해","규칙을 사람이 직접 짜는 전통 프로그래밍과, 데이터로 스스로 배우는 기계학습의 차이를 안다."),
+  ("훈련 흐름","기계를 가르치는 과정 — 데이터 수집 → 훈련 → 테스트 — 을 이해한다."),
+  ("윤리 연결","AI 사용에 따르는 도덕적 딜레마(편향·판단·책임)와 연결한다."),
  ],
- srcnote="출처: NCCE Teach Computing(teachcomputing.org) · Oak National Academy · PG Online. 학교마다 단원 순서와 시기는 조금씩 다를 수 있습니다.",
+ ai_deep_note="더 깊이 가려는 학교는 별도의 <b>6차시 AI 단원</b>을 얹습니다(NCCE 필수가 아니라 PG Online 등 선택 자료). 실제 이런 흐름입니다:",
+ ai_deep=[
+  ("1차시","AI는 어디에 쓰이나","미로 풀기 같은 단순 문제부터 자율주행까지, AI가 쓰이는 곳을 살핀다."),
+  ("2차시","기계학습의 원리","기계가 데이터로 스스로 배우는 방식을 이해한다."),
+  ("3차시","이미지 인식 만들기","간단한 이미지 인식 프로그램을 직접 만들어본다."),
+  ("4차시","가상 비서 만들기","간단한 가상 비서(virtual assistant)를 만들어본다."),
+  ("5차시","감정 분석","영화 평점 같은 글로 감정 분석 시스템을 만든다."),
+  ("6차시","AI 윤리","AI의 영향과 윤리를 토론하며 마무리한다."),
+ ],
+ srcnote="출처: NCCE Teach Computing — '생각하는 기계'는 Year 8 '컴퓨팅 시스템' 단원의 1개 차시(teachcomputing.org) · Oak National Academy(Y8 기계학습·AI 수업자료) · PG Online(6차시 AI·기계학습 단원, 선택). 학교마다 채택 자료·순서가 다릅니다.",
 )}
 def year_html(key):
     y=YEAR.get(key)
     if not y: return ""
     terms="".join(f"""<div class="tl-item"><div class="tl-year">{t}</div><div class="tl-body"><h4>{u}</h4><p>{d}</p></div></div>""" for t,u,d in y["terms"])
-    lessons="".join(f"""<div class="tl-item"><div class="tl-year">{n}</div><div class="tl-body"><h4>{t}</h4><p>{d}</p></div></div>""" for n,t,d in y["ai_lessons"])
+    core="".join(f"""<div class="card"><div class="lyr-h">{t}</div><p>{d}</p></div>""" for t,d in y["ai_core"])
+    deep="".join(f"""<div class="tl-item"><div class="tl-year">{n}</div><div class="tl-body"><h4>{t}</h4><p>{d}</p></div></div>""" for n,t,d in y["ai_deep"])
     return f"""<section class="block"><div class="wrap">
 <div class="pill">🔬 심화 · 1년 커리큘럼</div>
 <h2 class="sec-title" style="margin-top:8px">{y['gradeband']}, 1년 동안 매주 이렇게</h2>
 <p class="sec-desc">{y['intro']}</p>
 <h3 style="margin:18px 0 8px;font-size:17px">① 1년 흐름 — 하프텀마다 한 단원</h3>
 <div class="timeline">{terms}</div>
-<h3 style="margin:24px 0 8px;font-size:17px">② {y['ai_name']} — 매주 한 차시</h3>
-<p class="sec-desc">{y['ai_note']}</p>
-<div class="timeline">{lessons}</div>
+<h3 style="margin:24px 0 8px;font-size:17px">② AI는 이렇게 배운다 — 핵심은 단 1차시</h3>
+<p class="sec-desc">{y['ai_core_note']}</p>
+<div class="grid g4">{core}</div>
+<h3 style="margin:24px 0 8px;font-size:17px">③ 더 깊이 — 6차시 AI 단원(선택)</h3>
+<p class="sec-desc">{y['ai_deep_note']}</p>
+<div class="timeline">{deep}</div>
 <p class="sec-desc" style="margin-top:14px;font-size:12.5px">{y['srcnote']}</p>
 </div></section>"""
 def apply_html(key):
