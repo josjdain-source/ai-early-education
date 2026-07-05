@@ -104,7 +104,7 @@ pre{white-space:pre-wrap;background:#f5f5f5;border-radius:8px;padding:12px;font-
 <script>
 let DATA=[], SUM={}, TAB="all", CHANNEL="aiclassroom", CHANNELS=[], SOURCE="queue", RECENT12=false, CANDS={};
 const TABS=[["all","전체"],["longform","롱폼"],["short","Shorts"],["ready","업로드 대기"],["private","비공개 업로드됨"],["published","공개됨"],["hp","홈페이지 연결됨"],["err","오류/한도초과"],["cand","🔍 삭제 후보"],["trash","🗑 휴지통"]];
-const NAV=[["대시보드",[["all","전체 콘텐츠"]]],["형식",[["longform","롱폼"],["short","Shorts"]]],["상태",[["ready","업로드 대기"],["private","공개 승인 대기"],["published","공개됨"],["hp","홈페이지 연결됨"],["err","오류/한도초과"]]];
+const NAV=[["대시보드",[["all","전체 콘텐츠"]]],["형식",[["longform","롱폼"],["short","Shorts"]]],["상태",[["ready","업로드 대기"],["private","공개 승인 대기"],["published","공개됨"],["hp","홈페이지 연결됨"],["err","오류/한도초과"]]]];
 function badge(u){const M={ready_to_upload:["b-ready","업로드 대기"],uploaded_private:["b-priv","비공개 업로드됨"],published:["b-pub","공개됨"],quota_exceeded:["b-quota","한도초과"],failed:["b-fail","오류"],superseded:["b-super","대체됨"]};const x=M[u]||["b-super",u];return `<span class="badge ${x[0]}">${x[1]}</span>`}
 function pubBadge(p){const M={public:["b-pub","공개"],unlisted:["b-priv","일부공개"],private:["b-super","비공개"],none:["b-hp-no","-"]};const x=M[p]||["b-hp-no",p||"-"];return `<span class="badge ${x[0]}">${x[1]}</span>`}
 function hpBadge(h,yid){if(!yid)return '<span class="badge b-hp-no">-</span>';const M={connected:["b-hp-on","연결됨"],pending:["b-hp-wait","연결 필요"]};const x=M[h]||["b-hp-no","-"];return `<span class="badge ${x[0]}">${x[1]}</span>`}
