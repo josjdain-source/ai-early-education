@@ -3,6 +3,7 @@
 """ai-craft-kids 전면 개편 사이트 생성기 — 그림책형 교육 랜딩(시안 반영).
 루트 클린패스 페이지 + world-cases/·videos/ 서브폴더. 국가 일러스트·영상 재사용."""
 import os
+import parent_coach as PC
 ROOT=os.path.dirname(os.path.abspath(__file__))
 SCENE="assets/world-ai-education-5min/illust/scenes"
 RENDER="assets/world-ai-education-5min/render"
@@ -63,8 +64,8 @@ MEGA=[
   ],"전체 가이드 보기"),
  ("res","부모 자료실","/parent-resources.html",[
    ("국가별 자료실 한눈에","/parent-resources.html"),
-   ("중국 부모 자료실","/parent-resources/china.html"),
-   ("영국 부모 자료실","/parent-resources/uk.html"),
+   ("중국 부모 자료","/parents/china.html"),
+   ("영국 부모 자료","/parents/uk.html"),
    ("자주 묻는 질문","/parent-resources.html#faq"),
   ],"전체 자료실 보기"),
  ("free","무료 자료","/free-kit.html",[
@@ -291,13 +292,13 @@ SECTIONS={
  ]),
  "parents":("부모 자료실",[
    ("자료실 홈","/parent-resources.html"),
-   ("🇨🇳 중국 자료실","/parent-resources/china.html"),
-   ("🇺🇸 미국 자료실","/parent-resources/usa.html"),
-   ("🇬🇧 영국 자료실","/parent-resources/uk.html"),
-   ("🇸🇬 싱가포르 자료실","/parent-resources/singapore.html"),
-   ("🇰🇷 한국 자료실","/parent-resources/korea.html"),
-   ("🇩🇪 독일 자료실","/parent-resources/germany.html"),
-   ("🇯🇵 일본 자료실","/parent-resources/japan.html"),
+   ("🇨🇳 중국 부모 자료","/parents/china.html"),
+   ("🇺🇸 미국 부모 자료","/parents/usa.html"),
+   ("🇬🇧 영국 부모 자료","/parents/uk.html"),
+   ("🇸🇬 싱가포르 부모 자료","/parents/singapore.html"),
+   ("🇰🇷 한국 부모 자료","/parents/korea.html"),
+   ("🇩🇪 독일 부모 자료","/parents/germany.html"),
+   ("🇯🇵 일본 부모 자료","/parents/japan.html"),
    ("자주 묻는 질문","/parent-resources.html#faq"),
  ]),
  "free":("무료 자료",[
@@ -599,124 +600,8 @@ def start_guide():
     return page("start","","집에서 시작하는 6단계 가이드 | AI 조기교육","아이와 AI를 시작하는 6단계. 부모 멘트·질문·좋은/나쁜 프롬프트 예시까지.",body)
 
 def parent_resources():
-    faqs=[("AI가 아이에게 위험하지 않나요?","부모와 함께, 정해진 시간·규칙 안에서 쓰면 안전해요. 핵심은 '혼자 두지 않기'입니다. 아이가 AI 답을 그대로 믿지 않고 다시 묻게 돕는 것이 안전 교육이에요."),
-        ("몇 살부터 시작할 수 있나요?","말로 원하는 걸 표현할 수 있으면 시작할 수 있어요(대략 6~7세+). 어릴수록 '결과'보다 '함께 대화하는 과정'에 집중하세요."),
-        ("어떤 AI 도구를 쓰면 되나요?","이미지 생성·챗봇 등 부모가 관리 가능한 도구면 됩니다. 도구보다 '어떻게 대화하는가'가 중요해요."),
-        ("숙제를 AI로 시키면 안 되지 않나요?","'대신 시키기'는 위험하지만, '함께 검증하고 고쳐 쓰기'는 훌륭한 학습이에요. AI 답의 이상한 곳을 찾는 연습이 진짜 공부입니다.")]
-    fq="".join(f"""<div class="card" style="margin-bottom:12px"><h4>Q. {q}</h4><p style="margin:0;color:var(--navy2)">{a}</p></div>""" for q,a in faqs)
-    res="".join(f"""<div class="card"><div style="font-size:34px;margin-bottom:8px">{ic}</div><h4>{t}</h4><p style="color:var(--muted);font-size:14px">{d}</p><a class="btn btn-ghost" href="{href}" target="_blank" rel="noopener" style="margin-top:6px">열기 · 인쇄 →</a></div>"""
-        for ic,t,d,href in [("📝","AI 대화 연습지","집에서 하는 첫 AI 대화 워크시트.","/free/worksheet.html"),("🃏","부모용 질문 카드","상황별로 바로 쓰는 질문 10장.","/free/question-cards.html"),("💡","첫 프롬프트 20개","아이와 시작하기 좋은 프롬프트 예시.","/free/first-prompts.html")])
-    # 국가별 세부 카테고리 (좌측 아코디언 → 우측 인라인 뷰어)
-    def subs(slug):
-        s=[("1️⃣","1편 · 정책과 방침",f"/world-cases/{slug}.html"),
-           ("2️⃣","2편 · 실제 교실 운영",f"/world-cases/{slug}-2.html"),
-           ("3️⃣","3편 · 우리 집 주간 적용",f"/world-cases/{slug}-3.html")]
-        if slug=="uk":
-            s+=[("🗺","학년별 로드맵 (만 5~16세)",f"/world-cases/{slug}-roadmap.html"),
-                ("🔬","1년 커리큘럼 (Year 8)",f"/world-cases/{slug}-year.html"),
-                ("🏠","집 실전판 (단원별)",f"/world-cases/{slug}-home.html"),
-                ("📅","만 8세 12주 프로그램",f"/world-cases/{slug}-8yo-12weeks.html"),
-                ("🖨","12주 워크북 (인쇄·PDF)",f"/free/{slug}-12weeks-workbook.html")]
-        return s
-    countries=[(c[0],c[1],c[2]) for c in COUNTRIES]
-    nav_c="".join(f'<a class="rs-top" href="/parent-resources/{s}.html">{f} {n} <span style="margin-left:auto;color:#c4b59a">→</span></a>' for s,n,f in countries)
-    cards_c="".join(f"""<a class="card" href="/parent-resources/{s}.html" style="text-decoration:none;display:flex;align-items:center;gap:12px">
-<span style="font-size:30px">{f}</span><div><h4 style="margin:0">{n} 자료실</h4><p style="margin:2px 0 0;color:var(--muted);font-size:12.5px">{'1·2·3편 + 심화 5종' if s=='uk' else '1·2·3편'}</p></div>
-<span style="margin-left:auto;color:var(--coral);font-weight:800">→</span></a>""" for s,n,f in countries)
-    body=f"""<main>
-<section class="page-hero"><div class="wrap"><div class="pill">부모용 자료</div>
-<h1>부모 자료실</h1><p>나라별 '읽는' 자료실입니다 — 정책·실제 운영·우리집 적용을 나라 단위로 몰아 읽으세요. (인쇄·실습 자료는 '무료 자료'에)</p></div></section>
-<section class="block"><div class="wrap">
-<div class="rs-wrap" style="display:block">
-<div class="rs-main">
-<h3 style="margin:0 0 10px;font-size:18px">🌍 국가별 자료실</h3>
-<div class="grid g3" style="margin-bottom:26px">{cards_c}</div>
-<h3 id="faq" style="scroll-margin-top:90px;margin:26px 0 10px;font-size:18px">❓ 자주 묻는 질문</h3>{fq}
-<div class="cta-band" style="margin-top:22px"><div><h3>관련 링크</h3><p>인쇄해서 바로 쓰는 실습 자료는 무료 자료실에.</p></div><a class="btn btn-lg" href="/free-kit.html">무료 자료실 →</a></div>
-</div></div>
-</div></section>
-{RS_STYLE}
-</main>"""
-    return page("res","","부모 자료실 · 국가별 자료 & 다운로드 | AI 조기교육","국가별 전용 자료실과 인쇄용 워크북·연습지 다운로드, 부모 FAQ까지.",body)
-
-RS_STYLE="""<style>
-.rs-wrap{display:flex;gap:24px;align-items:flex-start}
-.rs-side{width:230px;flex:none;position:sticky;top:84px;background:#fff;border:1px solid #EADFCE;border-radius:14px;padding:10px 8px;max-height:calc(100vh - 110px);overflow:auto}
-.rs-h{font-size:11.5px;font-weight:800;color:#9b8a6e;padding:10px 12px 5px}
-.rs-top{display:flex;align-items:center;gap:7px;padding:8px 12px;border-radius:9px;text-decoration:none;color:var(--ink);font-weight:700;font-size:13.5px}
-.rs-top:hover{background:#FBF3E4}
-.rs-sub{display:flex;align-items:center;gap:7px;padding:8px 11px;margin:2px 4px;border-radius:8px;text-decoration:none;color:var(--navy2);font-weight:600;font-size:13px;border:1px solid transparent}
-.rs-sub:hover{background:#FBF3E4;border-color:#EADFCE}
-.rs-sub.on{background:#FDECE5;border-color:#E0684A;color:#B44A31}
-.rs-sub .dl{font-size:10.5px;font-weight:800;color:#188038;background:#e6f4ea;border-radius:6px;padding:1px 7px;margin-left:auto}
-.rs-main{flex:1;min-width:0}
-.rs-bar{display:flex;justify-content:space-between;gap:10px;margin-bottom:14px;flex-wrap:wrap}
-#rsBody .page-hero{padding:14px 0}#rsBody .block{padding:20px 0}
-@media(max-width:880px){.rs-wrap{flex-direction:column}.rs-side{position:static;width:100%;max-height:none}}
-</style>"""
-
-def parent_resources_country(slug,name,flag):
-    """국가 전용 자료실 — 좌측=그 나라 카테고리만, 우측=인라인 뷰어(기본 1편 자동 로드)."""
-    def subs(s):
-        x=[("1️⃣","1편 · 정책과 방침",f"/world-cases/{s}.html"),
-           ("2️⃣","2편 · 실제 교실 운영",f"/world-cases/{s}-2.html"),
-           ("3️⃣","3편 · 우리 집 주간 적용",f"/world-cases/{s}-3.html")]
-        if s=="uk":
-            x+=[("🗺","학년별 로드맵 (만 5~16세)",f"/world-cases/{s}-roadmap.html"),
-                ("🔬","1년 커리큘럼 (Year 8)",f"/world-cases/{s}-year.html"),
-                ("🏠","집 실전판 (단원별)",f"/world-cases/{s}-home.html"),
-                ("📅","만 8세 12주 프로그램",f"/world-cases/{s}-8yo-12weeks.html"),
-                ("🖨","12주 워크북 (인쇄·PDF)",f"/free/{s}-12weeks-workbook.html")]
-        return x
-    items="".join(
-        (f'<a class="rs-sub" href="{h}" target="_blank" rel="noopener">{ic} {t} <span class="dl">다운로드</span></a>'
-         if h.startswith("/free/") else
-         f'<a class="rs-sub" href="{h}" onclick="return rsLoad(this)" data-href="{h}">{ic} {t}</a>')
-        for ic,t,h in subs(slug))
-    others="".join(f'<a class="rs-top" style="font-size:12.5px;padding:6px 12px" href="/parent-resources/{s}.html">{f} {n}</a>'
-        for s,n,f in [(c[0],c[1],c[2]) for c in COUNTRIES] if s!=slug)
-    body=f"""<main>
-<section class="page-hero" style="padding-bottom:14px"><div class="wrap">
-<div class="pill">{flag} 부모 자료실 · {name}</div>
-<h1 style="font-size:30px">{name} 자료실</h1>
-<p>왼쪽 {name} 카테고리에서 자료를 고르면, 이 페이지 안에서 바로 읽습니다.</p></div></section>
-<section class="block" style="padding-top:14px"><div class="wrap">
-<div class="rs-wrap">
-<aside class="rs-side">
-<a class="rs-top" href="/parent-resources.html" style="color:var(--coral)">← 전체 자료실</a>
-<div class="rs-h">{flag} {name} 자료</div>
-{items}
-<div class="rs-h">🌍 다른 나라</div>
-{others}
-</aside>
-<div class="rs-main" id="rsMain">
-<div class="rs-bar"><span id="rsTitle" style="font-weight:800;color:var(--navy2)"></span><a class="btn btn-ghost" id="rsOrig" href="#" target="_blank" rel="noopener">새 창에서 크게 ↗</a></div>
-<div id="rsBody"><p style="color:var(--muted)">불러오는 중…</p></div>
-</div></div>
-</div></section>
-{RS_STYLE}
-<script>
-async function rsLoad(el){{
-  const href=el.dataset?el.dataset.href:el;
-  try{{
-    const r=await fetch(href);const t=await r.text();
-    const doc=new DOMParser().parseFromString(t,'text/html');
-    const m=doc.querySelector('main');if(!m)return true;
-    m.querySelectorAll('header.site,footer.site,script').forEach(x=>x.remove());
-    m.querySelectorAll('a[href^="/world-cases/"]').forEach(a=>{{const h=a.getAttribute('href');if(h&&h.endsWith('.html')&&!h.includes('workbook')){{a.setAttribute('data-href',h);a.setAttribute('onclick','return rsLoad(this)');}}}});
-    document.getElementById('rsBody').innerHTML=m.innerHTML;
-    document.getElementById('rsOrig').href=href;
-    document.getElementById('rsTitle').textContent=(doc.querySelector('title')?.textContent||'').split('|')[0].trim();
-    document.querySelectorAll('.rs-sub.on').forEach(e=>e.classList.remove('on'));
-    const side=document.querySelector('.rs-sub[data-href="'+href+'"]');if(side)side.classList.add('on');
-    window.scrollTo({{top:document.getElementById('rsMain').offsetTop-80,behavior:'smooth'}});
-    return false;
-  }}catch(e){{return true;}}
-}}
-rsLoad('/world-cases/{slug}.html');
-</script>
-</main>"""
-    return page("res","../",f"{name} 자료실 | AI 조기교육",f"{name} AI교육 자료실 — 1·2·3편과 심화 자료를 한 페이지에서. 부모용.",body)
+    return page("res","","부모 자료실 · 세계 사례를 부모의 오늘 행동으로 | AI 조기교육",
+        "국가 정책 분석이 아니라, 세계 사례를 한국 가정의 오늘 행동으로 바꾸는 부모 코칭 자료실.",PC.hub_body())
 
 def free_kit():
     kits=[("📝","집에서 하는 AI 대화 연습지","아이와 함께 AI에게 요청하고, 관찰하고, 다시 묻는 과정을 적는 워크시트.","/free/worksheet.html"),
@@ -806,7 +691,10 @@ if __name__=="__main__":
     write("start-guide.html",start_guide())
     write("parent-resources.html",parent_resources())
     for c in COUNTRIES:
-        write(f"parent-resources/{c[0]}.html",parent_resources_country(c[0],c[1],c[2]))
+        write(f"parents/{c[0]}.html",page("res","../",
+            f"{c[1]} 부모 코칭 · 우리 집에서 | AI 조기교육",
+            f"{c[1]} AI교육 사례로 우리 집에서 오늘 할 부모 행동·연령별 팁·FAQ. 정책 분석 아님.",
+            PC.country_body(c[0])))
     write("free-kit.html",free_kit())
     import free_docs as FD
     for _slug,_d in FD.DOCS.items():
