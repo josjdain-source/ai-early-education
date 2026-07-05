@@ -13,8 +13,8 @@ except Exception: QUEUE={"queue":[]}
 def yt_id(vid):
     for it in QUEUE["queue"]:
         if it.get("video_id")==vid:
-            if it.get("youtube_id"): return it["youtube_id"]
-            u=it.get("youtube_url") or ""; return u.rstrip("/").split("/")[-1] if u else ""
+            if it.get("public") and it.get("youtube_id"): return it["youtube_id"]
+            u=it.get("youtube_url") or ""; return (u.rstrip("/").split("/")[-1] if u else "") if it.get("public") else ""
     return ""
 def embed(vid,title):
     i=yt_id(vid)

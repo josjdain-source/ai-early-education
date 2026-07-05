@@ -15,7 +15,7 @@ def _yt_main():
     try:
         q=_j.load(open(os.path.join(ROOT,"youtube","upload_queue.json"),encoding="utf-8"))
         for it in q["queue"]:
-            if it["video_id"]=="wae-illust-v2":
+            if it["video_id"]=="wae-illust-v2" and it.get("public"):
                 ref=it.get("youtube_id") or (it.get("youtube_url") or "").rstrip("/").split("/")[-1]
                 if ref: return ref
     except Exception: pass
@@ -435,6 +435,17 @@ def home():
 <section class="block" style="padding:26px 0 20px"><div class="wrap" style="max-width:760px">
 <h2 class="sec-title" style="font-size:20px;margin-bottom:14px">🌍 세계는 아이에게 AI를 어떻게 가르치나</h2>
 <div style="display:grid;gap:9px">{cc}</div>
+</div></section>
+<section class="block" style="padding:8px 0 20px"><div class="wrap" style="max-width:760px">
+<h2 class="sec-title" style="font-size:20px;margin-bottom:14px">🎬 우리 채널 공개 영상</h2>
+<div class="player"><iframe src="https://www.youtube.com/embed/{YT_MAIN}" title="세계 5개국은 아이에게 AI를 어떻게 가르치나" loading="lazy" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px">
+<a class="btn btn-ghost" href="/videos/china-ai-education.html">🇨🇳 중국 심층</a>
+<a class="btn btn-ghost" href="/videos/us-ai-education.html">🇺🇸 미국 심층</a>
+<a class="btn btn-ghost" href="/videos/uk-ai-education.html">🇬🇧 영국</a>
+<a class="btn btn-ghost" href="/videos/singapore-ai-education.html">🇸🇬 싱가포르</a>
+<a class="btn btn-ghost" href="/videos/korea-ai-education.html">🇰🇷 잃어버린 AI 10년</a>
+<a class="btn btn-primary" href="/videos.html">영상관 전체 →</a></div>
 </div></section>
 <section class="block" style="padding:0 0 44px"><div class="wrap" style="max-width:760px">
 <a href="/competitions.html" style="display:flex;gap:14px;align-items:center;background:linear-gradient(135deg,#EAF2FB,#DCEAF8);border:1px solid #CADCF0;border-radius:16px;padding:16px 20px;text-decoration:none;color:#22406b">

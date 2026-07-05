@@ -26,7 +26,7 @@
       "category": "27",
       "mp4_path": "assets/world-ai-education-5min/render/world-ai-education-illust-v2.mp4",
       "thumbnail_path": "assets/world-ai-education-5min/poster/world-ai-education-v2.jpg",
-      "status": "uploaded_private",
+      "status": "public",
       "visibility_target": "private",
       "youtube_url": "https://youtu.be/lY9B2t1k1Io",
       "detail_page": "/videos/world-ai-education.html",
@@ -50,7 +50,8 @@
       "views": null,
       "comments": null,
       "last_checked_at": null,
-      "error_message": ""
+      "error_message": "",
+      "public": true
     },
     {
       "video_id": "wae-short-v1",
@@ -92,7 +93,8 @@
       "views": null,
       "comments": null,
       "last_checked_at": null,
-      "error_message": ""
+      "error_message": "",
+      "public": false
     },
     {
       "video_id": "wae-short-v2",
@@ -109,7 +111,7 @@
       "category": "27",
       "mp4_path": "assets/world-ai-education-5min/render/world-ai-education-short-v2.mp4",
       "thumbnail_path": "assets/world-ai-education-5min/poster/short-v2.jpg",
-      "status": "uploaded_private",
+      "status": "public",
       "visibility_target": "private",
       "shorts": true,
       "youtube_url": "https://youtu.be/T5iUgrto3LU",
@@ -134,7 +136,8 @@
       "views": null,
       "comments": null,
       "last_checked_at": null,
-      "error_message": ""
+      "error_message": "",
+      "public": true
     },
     {
       "video_id": "china-ai-longform",
@@ -155,7 +158,7 @@
       "category": "27",
       "mp4_path": "assets/china-ai-education/render/china-ai-education-longform.mp4",
       "thumbnail_path": "assets/china-ai-education/poster/longform.jpg",
-      "status": "uploaded_private",
+      "status": "public",
       "visibility_target": "private",
       "shorts": false,
       "youtube_url": "https://youtu.be/L3wfb0G4yDY",
@@ -180,7 +183,8 @@
       "views": null,
       "comments": null,
       "last_checked_at": null,
-      "error_message": ""
+      "error_message": "",
+      "public": true
     },
     {
       "video_id": "china-short-s1",
@@ -196,7 +200,7 @@
       "category": "27",
       "mp4_path": "assets/china-ai-education/render/shorts/china-short-s1.mp4",
       "thumbnail_path": "assets/china-ai-education/poster/short-s1.jpg",
-      "status": "uploaded_private",
+      "status": "public",
       "visibility_target": "private",
       "shorts": true,
       "youtube_url": "https://youtu.be/-8GdfpFm-70",
@@ -221,7 +225,8 @@
       "views": null,
       "comments": null,
       "last_checked_at": null,
-      "error_message": ""
+      "error_message": "",
+      "public": true
     },
     {
       "video_id": "china-short-s2",
@@ -237,7 +242,7 @@
       "category": "27",
       "mp4_path": "assets/china-ai-education/render/shorts/china-short-s2.mp4",
       "thumbnail_path": "assets/china-ai-education/poster/short-s2.jpg",
-      "status": "uploaded_private",
+      "status": "public",
       "visibility_target": "private",
       "shorts": true,
       "youtube_url": "https://youtu.be/0G1i0Bt1L5I",
@@ -262,7 +267,8 @@
       "views": null,
       "comments": null,
       "last_checked_at": null,
-      "error_message": ""
+      "error_message": "",
+      "public": true
     },
     {
       "video_id": "china-short-s3",
@@ -303,7 +309,8 @@
       "views": null,
       "comments": null,
       "last_checked_at": null,
-      "error_message": ""
+      "error_message": "",
+      "public": false
     },
     {
       "video_id": "us-ai-longform",
@@ -324,7 +331,7 @@
       "category": "27",
       "mp4_path": "assets/us-ai-education/render/us-ai-education-longform.mp4",
       "thumbnail_path": "assets/us-ai-education/poster/longform.jpg",
-      "status": "uploaded_private",
+      "status": "public",
       "visibility_target": "private",
       "shorts": false,
       "youtube_url": "https://youtu.be/6enIXdfir8I",
@@ -349,7 +356,8 @@
       "views": null,
       "comments": null,
       "last_checked_at": null,
-      "error_message": ""
+      "error_message": "",
+      "public": true
     },
     {
       "video_id": "us-short-s1",
@@ -365,7 +373,7 @@
       "category": "27",
       "mp4_path": "assets/us-ai-education/render/shorts/us-short-s1.mp4",
       "thumbnail_path": "assets/us-ai-education/poster/short-s1.jpg",
-      "status": "uploaded_private",
+      "status": "public",
       "visibility_target": "private",
       "shorts": true,
       "youtube_url": "https://youtu.be/jgMEeS7uLOs",
@@ -390,7 +398,8 @@
       "views": null,
       "comments": null,
       "last_checked_at": null,
-      "error_message": ""
+      "error_message": "",
+      "public": true
     },
     {
       "video_id": "us-short-s2",
@@ -406,7 +415,7 @@
       "category": "27",
       "mp4_path": "assets/us-ai-education/render/shorts/us-short-s2.mp4",
       "thumbnail_path": "assets/us-ai-education/poster/short-s2.jpg",
-      "status": "uploaded_private",
+      "status": "public",
       "visibility_target": "private",
       "shorts": true,
       "youtube_url": "https://youtu.be/Um-qhmXvgzE",
@@ -431,7 +440,8 @@
       "views": null,
       "comments": null,
       "last_checked_at": null,
-      "error_message": ""
+      "error_message": "",
+      "public": true
     },
     {
       "video_id": "us-short-s3",
@@ -447,7 +457,7 @@
       "category": "27",
       "mp4_path": "assets/us-ai-education/render/shorts/us-short-s3.mp4",
       "thumbnail_path": "assets/us-ai-education/poster/short-s3.jpg",
-      "status": "uploaded_private",
+      "status": "public",
       "visibility_target": "private",
       "shorts": true,
       "youtube_url": "https://youtu.be/ZRFCKTMobIo",
@@ -472,7 +482,8 @@
       "views": null,
       "comments": null,
       "last_checked_at": null,
-      "error_message": ""
+      "error_message": "",
+      "public": true
     },
     {
       "video_id": "korea-lost-decade",
@@ -514,7 +525,8 @@
       "views": null,
       "comments": null,
       "last_checked_at": null,
-      "error_message": ""
+      "error_message": "",
+      "public": false
     },
     {
       "video_id": "korea-lost-decade-v2",
@@ -556,7 +568,8 @@
       "views": null,
       "comments": null,
       "last_checked_at": null,
-      "error_message": ""
+      "error_message": "",
+      "public": false
     },
     {
       "video_id": "korea-lost-decade-v3",
@@ -598,7 +611,8 @@
       "views": null,
       "comments": null,
       "last_checked_at": null,
-      "error_message": ""
+      "error_message": "",
+      "public": false
     },
     {
       "video_id": "korea-lost-decade-m3",
@@ -616,13 +630,13 @@
       "category": "27",
       "mp4_path": "assets/korea-lost-decade/render/korea-lost-decade-illust-v.mp4",
       "thumbnail_path": "assets/korea-lost-decade/poster/illust-v.jpg",
-      "status": "ready_to_upload",
+      "status": "public",
       "visibility_target": "private",
       "shorts": true,
-      "youtube_url": "",
+      "youtube_url": "https://youtu.be/unLYYN_aTPk",
       "on_video_hub": false,
       "created_at": "2026-07-05",
-      "updated_at": "2026-07-05",
+      "updated_at": "auto",
       "notes": "정본 스토리북 세로 쇼츠(build_klad_illust 9:16=1080x1920, RealVisXL+editorial storybook). 문장매칭 그림+타이틀배너+차분한 내레이션+디졸브. 64.5s.",
       "video_type": "short",
       "country": "korea",
@@ -630,17 +644,19 @@
       "duration": 64.5,
       "local_preview_path": "assets/korea-lost-decade/render/korea-lost-decade-illust-v.mp4",
       "poster_path": "assets/korea-lost-decade/poster/illust-v.jpg",
-      "youtube_id": "",
-      "studio_url": "",
+      "youtube_id": "unLYYN_aTPk",
+      "studio_url": "https://studio.youtube.com/video/unLYYN_aTPk/edit",
       "page_url": "",
       "visibility": "private",
-      "upload_status": "ready_to_upload",
-      "public_status": "none",
+      "upload_status": "uploaded_private",
+      "public_status": "private",
       "homepage_status": "unknown",
       "views": null,
       "comments": null,
       "last_checked_at": null,
-      "error_message": ""
+      "error_message": "",
+      "uploaded_at": "2026-07-05 22:43",
+      "public": true
     },
     {
       "video_id": "uk-ai-longform",
@@ -657,29 +673,32 @@
       "mp4_path": "assets/uk-ai-education/render/uk-ai-longform.mp4",
       "poster_path": "assets/uk-ai-education/poster/uk-longform.jpg",
       "thumbnail_path": "assets/uk-ai-education/poster/uk-longform.jpg",
-      "status": "ready_to_upload",
+      "status": "public",
       "visibility_target": "private",
       "shorts": false,
-      "youtube_url": "",
+      "youtube_url": "https://youtu.be/Yw94sp-UoPA",
       "on_video_hub": true,
       "created_at": "2026-07-05",
-      "updated_at": "2026-07-05",
+      "updated_at": "auto",
       "video_type": "longform",
       "country": "uk",
       "package_id": "uk-ai-education",
       "duration": 325.7,
       "local_preview_path": "assets/uk-ai-education/render/uk-ai-longform.mp4",
-      "youtube_id": "",
-      "studio_url": "",
+      "youtube_id": "Yw94sp-UoPA",
+      "studio_url": "https://studio.youtube.com/video/Yw94sp-UoPA/edit",
       "page_url": "/world-cases/uk",
-      "upload_status": "ready_to_upload",
-      "public_status": "none",
+      "upload_status": "uploaded_private",
+      "public_status": "private",
       "homepage_status": "unknown",
       "views": null,
       "comments": null,
       "last_checked_at": null,
       "error_message": "",
-      "notes": "정본 풀버전 다큐(build_country_video 13~14섹션, RealVisXL 스토리북, 5분+). 실제 타임라인·정책 상세. 유튜브 풀리면 승인 업로드."
+      "notes": "정본 풀버전 다큐(build_country_video 13~14섹션, RealVisXL 스토리북, 5분+). 실제 타임라인·정책 상세. 유튜브 풀리면 승인 업로드.",
+      "visibility": "private",
+      "uploaded_at": "2026-07-06 00:35",
+      "public": true
     },
     {
       "video_id": "sg-ai-longform",
@@ -696,29 +715,32 @@
       "mp4_path": "assets/singapore-ai-education/render/singapore-ai-longform.mp4",
       "poster_path": "assets/singapore-ai-education/poster/singapore-longform.jpg",
       "thumbnail_path": "assets/singapore-ai-education/poster/singapore-longform.jpg",
-      "status": "ready_to_upload",
+      "status": "public",
       "visibility_target": "private",
       "shorts": false,
-      "youtube_url": "",
+      "youtube_url": "https://youtu.be/qe68noHi9gI",
       "on_video_hub": true,
       "created_at": "2026-07-05",
-      "updated_at": "2026-07-05",
+      "updated_at": "auto",
       "video_type": "longform",
       "country": "singapore",
       "package_id": "singapore-ai-education",
       "duration": 302.5,
       "local_preview_path": "assets/singapore-ai-education/render/singapore-ai-longform.mp4",
-      "youtube_id": "",
-      "studio_url": "",
+      "youtube_id": "qe68noHi9gI",
+      "studio_url": "https://studio.youtube.com/video/qe68noHi9gI/edit",
       "page_url": "/world-cases/singapore",
-      "upload_status": "ready_to_upload",
-      "public_status": "none",
+      "upload_status": "uploaded_private",
+      "public_status": "private",
       "homepage_status": "unknown",
       "views": null,
       "comments": null,
       "last_checked_at": null,
       "error_message": "",
-      "notes": "정본 풀버전 다큐(build_country_video 13~14섹션, RealVisXL 스토리북, 5분+). 실제 타임라인·정책 상세. 유튜브 풀리면 승인 업로드."
+      "notes": "정본 풀버전 다큐(build_country_video 13~14섹션, RealVisXL 스토리북, 5분+). 실제 타임라인·정책 상세. 유튜브 풀리면 승인 업로드.",
+      "visibility": "private",
+      "uploaded_at": "2026-07-06 00:51",
+      "public": true
     },
     {
       "video_id": "korea-ai-longform",
@@ -757,7 +779,8 @@
       "comments": null,
       "last_checked_at": null,
       "error_message": "",
-      "notes": "정본 풀버전 다큐(build_country_video 13~14섹션, RealVisXL 스토리북, 5분+). 실제 타임라인·정책 상세. 유튜브 풀리면 승인 업로드."
+      "notes": "정본 풀버전 다큐(build_country_video 13~14섹션, RealVisXL 스토리북, 5분+). 실제 타임라인·정책 상세. 유튜브 풀리면 승인 업로드.",
+      "public": false
     }
   ],
   "_schema": "studio-v1"
