@@ -6,22 +6,112 @@
   "hook": "문제는 AI가 아니라, 확인하지 않는 습관입니다.",
   "script": "AI 답을 그대로 믿는 아이, 왜 위험할까요? AI는 그럴듯하게 틀립니다. 자신 있게, 매끄럽게요. 아이가 확인 없이 받아들이는 습관이 들면, AI만이 아니라 어떤 정보든 그대로 믿게 돼요. 그래서 오늘부터 한 문장만 물어보세요. \"이거 진짜인지, 어떻게 확인할 수 있을까?\" 확인하는 아이는, 속지 않는 어른이 됩니다. 7일 질문카드로 시작해 보세요. 링크는 아래에 있습니다.",
   "cuts": [
-    {"n": 1, "t": "0-7", "scene": "아이가 화면의 답을 받아 적기만 함(고개 끄덕끄덕)", "subtitle": "AI 답을 그대로 믿는 아이, 왜 위험할까요?", "image_prompt": "a Korean child copying an answer from a tablet without thinking, nodding automatically, desk at home"},
-    {"n": 2, "t": "7-15", "scene": "매끈한 로봇 얼굴이 자신만만하게 말하는데 뒤로 살짝 어긋난 퍼즐", "subtitle": "AI는 '그럴듯하게' 틀립니다", "image_prompt": "a confident smooth friendly robot face speaking, behind it a subtly misaligned puzzle piece, clever visual metaphor, not scary"},
-    {"n": 3, "t": "15-23", "scene": "믿음 도장이 연달아 찍히는 연출(습관화)", "subtitle": "확인 없이 받아들이면… 그게 습관이 됩니다", "image_prompt": "rubber stamps of check marks being stamped one after another on papers, a child watching passively, habit metaphor"},
-    {"n": 4, "t": "23-31", "scene": "부모가 부드럽게 한 문장 질문", "subtitle": "오늘부터 한 문장 — \"이거 진짜인지 어떻게 확인할까?\"", "image_prompt": "a warm Korean parent kneeling to child's eye level asking gently, cozy living room, caring mood"},
-    {"n": 5, "t": "31-39", "scene": "아이가 책을 펴고 화면과 대조(스스로 확인)", "subtitle": "확인하는 아이는, 속지 않는 어른이 됩니다", "image_prompt": "the child opening a book and comparing it with the tablet screen, focused and confident, small victory feeling"},
-    {"n": 6, "t": "39-45", "scene": "7일 카드가 부채꼴로 펼쳐지는 엔드카드", "subtitle": "시작은 '7일 질문카드'로 (무료) ↓", "image_prompt": "seven cute question cards fanned out on a warm table, inviting closing shot, gift-like feeling"}
+    {
+      "n": 1,
+      "t": "0-7",
+      "scene": "아이가 화면의 답을 받아 적기만 함(고개 끄덕끄덕)",
+      "subtitle": "AI 답을 그대로 믿는 아이, 왜 위험할까요?",
+      "image_prompt": "a Korean child copying an answer from a tablet without thinking, nodding automatically, desk at home"
+    },
+    {
+      "n": 2,
+      "t": "7-15",
+      "scene": "매끈한 로봇 얼굴이 자신만만하게 말하는데 뒤로 살짝 어긋난 퍼즐",
+      "subtitle": "AI는 '그럴듯하게' 틀립니다",
+      "image_prompt": "a confident smooth friendly robot face speaking, behind it a subtly misaligned puzzle piece, clever visual metaphor, not scary"
+    },
+    {
+      "n": 3,
+      "t": "15-23",
+      "scene": "믿음 도장이 연달아 찍히는 연출(습관화)",
+      "subtitle": "확인 없이 받아들이면… 그게 습관이 됩니다",
+      "image_prompt": "rubber stamps of check marks being stamped one after another on papers, a child watching passively, habit metaphor"
+    },
+    {
+      "n": 4,
+      "t": "23-31",
+      "scene": "부모가 부드럽게 한 문장 질문",
+      "subtitle": "오늘부터 한 문장 — \"이거 진짜인지 어떻게 확인할까?\"",
+      "image_prompt": "a warm Korean parent kneeling to child's eye level asking gently, cozy living room, caring mood"
+    },
+    {
+      "n": 5,
+      "t": "31-39",
+      "scene": "아이가 책을 펴고 화면과 대조(스스로 확인)",
+      "subtitle": "확인하는 아이는, 속지 않는 어른이 됩니다",
+      "image_prompt": "the child opening a book and comparing it with the tablet screen, focused and confident, small victory feeling"
+    },
+    {
+      "n": 6,
+      "t": "39-45",
+      "scene": "7일 카드가 부채꼴로 펼쳐지는 엔드카드",
+      "subtitle": "시작은 '7일 질문카드'로 (무료) ↓",
+      "image_prompt": "seven cute question cards fanned out on a warm table, inviting closing shot, gift-like feeling"
+    }
   ],
   "image_style": {
-    "engine": "ComfyUI / RealVisXL_V5.0_fp16",
+    "engine": "로컬 ComfyUI SDXL(RealVisXL_V5.0) — 우리 영상툴=production/build_ai_edu_shorts.py(쇼츠 빌더)가 호출. ComfyUI는 이미지 단계",
     "aspect": "768x1344 → 1080x1920 (9:16)",
     "style_token": "editorial storybook illustration, warm muted color palette, thick clean black outlines, semi-realistic cartoon style, flat shading, soft warm lighting, detailed cozy background, hand-drawn look, korean family, no text, no letters",
     "negative": "photo, photorealistic, 3d render, text, letters, words, watermark, ugly, deformed, extra fingers, blurry, scary, dark, western caucasian"
   },
   "subtitles_all": "AI 답을 그대로 믿는 아이, 왜 위험할까요?\nAI는 '그럴듯하게' 틀립니다\n확인 없이 받아들이면… 그게 습관이 됩니다\n오늘부터 한 문장 — \"이거 진짜인지 어떻게 확인할까?\"\n확인하는 아이는, 속지 않는 어른이 됩니다\n시작은 '7일 질문카드'로 (무료) ↓",
   "description": "확인하는 아이는 속지 않는 어른이 됩니다.\n\n🎁 7일 질문카드(무료) — 하루 한 장, 5분\nhttps://ai-early-education.pages.dev/free/ai-first-7days\n\n▶ 오늘의 10분 수업\nhttps://ai-early-education.pages.dev/daily-class/today\n\n이 채널은 AI로 아이를 붙잡는 채널이 아니라,\n아이가 AI를 의심하고 다룰 줄 알게 하는 채널입니다.\n\n#AI교육 #부모교육 #AI리터러시",
-  "hashtags": ["AI교육", "부모교육", "AI리터러시"],
-  "links": {"site": "/daily-class/today.html", "free": "/free/ai-first-7days.html", "class": "/class.html"},
-  "pinned_comment": "오늘의 한 문장 🗒\n\"이거 진짜인지, 어떻게 확인할 수 있을까?\"\n\nAI는 그럴듯하게 틀립니다. 확인하는 습관이 백신이에요.\n🎁 7일 질문카드(무료): https://ai-early-education.pages.dev/free/ai-first-7days\n1일차만 해보고 아이 반응을 댓글로 남겨주세요!"
+  "hashtags": [
+    "AI교육",
+    "부모교육",
+    "AI리터러시"
+  ],
+  "links": {
+    "site": "/daily-class/today.html",
+    "free": "/free/ai-first-7days.html",
+    "class": "/class.html"
+  },
+  "pinned_comment": "오늘의 한 문장 🗒\n\"이거 진짜인지, 어떻게 확인할 수 있을까?\"\n\nAI는 그럴듯하게 틀립니다. 확인하는 습관이 백신이에요.\n🎁 7일 질문카드(무료): https://ai-early-education.pages.dev/free/ai-first-7days\n1일차만 해보고 아이 반응을 댓글로 남겨주세요!",
+  "render_engine": "production/build_ai_edu_shorts.py (ComfyUI SDXL + edge-tts + ffmpeg, 세로 1080x1920) — china 쇼츠 빌더 계열",
+  "region": "kr",
+  "beats": [
+    {
+      "role": "hook",
+      "head": "왜 위험할까?",
+      "text": "AI 답을 그대로 믿는 아이, 왜 위험할까요?",
+      "prompt": "a Korean child copying an answer from a tablet without thinking, nodding automatically, desk at home",
+      "region": "kr"
+    },
+    {
+      "role": "problem",
+      "head": "그럴듯하게 틀려요",
+      "text": "AI는 그럴듯하게 틀립니다. 자신 있게, 매끄럽게요.",
+      "prompt": "a confident smooth friendly robot face speaking, behind it a subtly misaligned puzzle piece, clever visual metaphor, not scary",
+      "region": "kr"
+    },
+    {
+      "role": "fact",
+      "head": "습관이 됩니다",
+      "text": "확인 없이 받아들이는 습관이 들면, 어떤 정보든 그대로 믿게 돼요.",
+      "prompt": "rubber stamps of check marks being stamped one after another on papers, a child watching passively, habit metaphor",
+      "region": "kr"
+    },
+    {
+      "role": "parent",
+      "head": "오늘의 한 문장",
+      "text": "오늘부터 한 문장만. 이거 진짜인지, 어떻게 확인할 수 있을까?",
+      "prompt": "a warm Korean parent kneeling to child's eye level asking gently, cozy living room, caring mood",
+      "region": "kr"
+    },
+    {
+      "role": "fact",
+      "head": "속지 않는 어른",
+      "text": "확인하는 아이는, 속지 않는 어른이 됩니다.",
+      "prompt": "the child opening a book and comparing it with the tablet screen, focused and confident, small victory feeling",
+      "region": "kr"
+    },
+    {
+      "role": "cta",
+      "head": "7일 질문카드",
+      "text": "7일 질문카드로 시작해 보세요. 링크는 아래에 있습니다.",
+      "prompt": "seven cute question cards fanned out on a warm table, inviting closing shot, gift-like feeling",
+      "region": "kr"
+    }
+  ]
 }

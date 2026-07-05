@@ -6,22 +6,114 @@
   "hook": "유치원과 고등학생이 같은 AI교육을 받으면 안 됩니다.",
   "script": "유치원 아이와 고등학생이 같은 AI교육을 받으면 안 됩니다. 나이마다 길러야 할 힘이 달라요. 유치원은 말하기 — AI에게 말을 걸어보는 것. 초등 저학년은 부탁하기 — 원하는 걸 분명히 말하는 것. 고학년은 고치기 — 답을 보고 조건을 바꾸는 것. 중학생은 검증하기 — 근거와 출처를 따지는 것. 고등학생은 해결하기 — AI를 도구로 문제를 푸는 것. 말하기, 고치기, 의심하기, 검증하기, 해결하기. 우리 아이는 지금 어느 계단인가요? 나이별 로드맵은 프로필 링크에 있습니다.",
   "cuts": [
-    {"n": 1, "t": "0-7", "scene": "유치원생과 고등학생이 같은 책상에 나란히(어색한 대비)", "subtitle": "유치원과 고등학생이 같은 AI교육? 안 됩니다", "image_prompt": "a tiny kindergartner and a tall high school student sitting at the same desk with the same tablet, funny awkward contrast, classroom"},
-    {"n": 2, "t": "7-15", "scene": "5단 계단 등장, 첫 계단에 유치원생(말풍선)", "subtitle": "🧸 유치원 = 말하기 — AI에게 말을 걸어봐요", "image_prompt": "a cute five-step staircase, a kindergartner on the first step talking to a small friendly robot, speech bubble, playful"},
-    {"n": 3, "t": "15-23", "scene": "둘째 계단 초등 저학년(손 들고 부탁), 셋째 계단 고학년(렌치로 답 고치기)", "subtitle": "✏️ 초등 저학년 = 부탁하기 · 🔧 고학년 = 고치기", "image_prompt": "second step: a young elementary child raising hand asking politely; third step: an older child adjusting a picture with a tiny wrench, staircase scene"},
-    {"n": 4, "t": "23-33", "scene": "넷째 계단 중학생(돋보기+저울로 근거 검증)", "subtitle": "🔬 중학생 = 검증하기 — 근거와 출처를 따져요", "image_prompt": "fourth step: a middle school student with a magnifying glass and a small balance scale examining a document, thoughtful"},
-    {"n": 5, "t": "33-42", "scene": "다섯째 계단 고등학생(지도를 펼치고 문제 해결 설계)", "subtitle": "🎓 고등학생 = 해결하기 — AI를 도구로 문제를 풀어요", "image_prompt": "fifth step: a high school student unfolding a project map with route and flags, confident planner pose, robot assisting beside"},
-    {"n": 6, "t": "42-50", "scene": "계단 전체 부감 + 각 계단 위 5개 키워드 아이콘, 엔드카드", "subtitle": "말하기→고치기→의심→검증→해결. 우리 아이는 어느 계단? ↓", "image_prompt": "wide view of the five-step staircase with all five children on their steps, warm sunset light, hopeful closing scene"}
+    {
+      "n": 1,
+      "t": "0-7",
+      "scene": "유치원생과 고등학생이 같은 책상에 나란히(어색한 대비)",
+      "subtitle": "유치원과 고등학생이 같은 AI교육? 안 됩니다",
+      "image_prompt": "a tiny kindergartner and a tall high school student sitting at the same desk with the same tablet, funny awkward contrast, classroom"
+    },
+    {
+      "n": 2,
+      "t": "7-15",
+      "scene": "5단 계단 등장, 첫 계단에 유치원생(말풍선)",
+      "subtitle": "🧸 유치원 = 말하기 — AI에게 말을 걸어봐요",
+      "image_prompt": "a cute five-step staircase, a kindergartner on the first step talking to a small friendly robot, speech bubble, playful"
+    },
+    {
+      "n": 3,
+      "t": "15-23",
+      "scene": "둘째 계단 초등 저학년(손 들고 부탁), 셋째 계단 고학년(렌치로 답 고치기)",
+      "subtitle": "✏️ 초등 저학년 = 부탁하기 · 🔧 고학년 = 고치기",
+      "image_prompt": "second step: a young elementary child raising hand asking politely; third step: an older child adjusting a picture with a tiny wrench, staircase scene"
+    },
+    {
+      "n": 4,
+      "t": "23-33",
+      "scene": "넷째 계단 중학생(돋보기+저울로 근거 검증)",
+      "subtitle": "🔬 중학생 = 검증하기 — 근거와 출처를 따져요",
+      "image_prompt": "fourth step: a middle school student with a magnifying glass and a small balance scale examining a document, thoughtful"
+    },
+    {
+      "n": 5,
+      "t": "33-42",
+      "scene": "다섯째 계단 고등학생(지도를 펼치고 문제 해결 설계)",
+      "subtitle": "🎓 고등학생 = 해결하기 — AI를 도구로 문제를 풀어요",
+      "image_prompt": "fifth step: a high school student unfolding a project map with route and flags, confident planner pose, robot assisting beside"
+    },
+    {
+      "n": 6,
+      "t": "42-50",
+      "scene": "계단 전체 부감 + 각 계단 위 5개 키워드 아이콘, 엔드카드",
+      "subtitle": "말하기→고치기→의심→검증→해결. 우리 아이는 어느 계단? ↓",
+      "image_prompt": "wide view of the five-step staircase with all five children on their steps, warm sunset light, hopeful closing scene"
+    }
   ],
   "image_style": {
-    "engine": "ComfyUI / RealVisXL_V5.0_fp16",
+    "engine": "로컬 ComfyUI SDXL(RealVisXL_V5.0) — 우리 영상툴=production/build_ai_edu_shorts.py(쇼츠 빌더)가 호출. ComfyUI는 이미지 단계",
     "aspect": "768x1344 → 1080x1920 (9:16)",
     "style_token": "editorial storybook illustration, warm muted color palette, thick clean black outlines, semi-realistic cartoon style, flat shading, soft warm lighting, detailed cozy background, hand-drawn look, korean children, no text, no letters",
     "negative": "photo, photorealistic, 3d render, text, letters, words, watermark, ugly, deformed, extra fingers, blurry, scary, western caucasian"
   },
   "subtitles_all": "유치원과 고등학생이 같은 AI교육? 안 됩니다\n🧸 유치원 = 말하기 — AI에게 말을 걸어봐요\n✏️ 초등 저학년 = 부탁하기 · 🔧 고학년 = 고치기\n🔬 중학생 = 검증하기 — 근거와 출처를 따져요\n🎓 고등학생 = 해결하기 — AI를 도구로 문제를 풀어요\n말하기→고치기→의심→검증→해결. 우리 아이는 어느 계단? ↓",
   "description": "아이 나이별 AI교육은 이렇게 달라야 합니다.\n말하기 → 고치기 → 의심하기 → 검증하기 → 해결하기.\n\n🎯 우리 아이 나이에 맞는 AI교육 로드맵\nhttps://ai-early-education.pages.dev/levels\n\n· 유치원 https://ai-early-education.pages.dev/levels/kindergarten\n· 초등 저학년 https://ai-early-education.pages.dev/levels/elementary-lower\n· 초등 고학년 https://ai-early-education.pages.dev/levels/elementary-upper\n· 중등 https://ai-early-education.pages.dev/levels/middle\n· 고등 https://ai-early-education.pages.dev/levels/high\n\n▶ 오늘의 10분 수업\nhttps://ai-early-education.pages.dev/daily-class/today\n\n#AI교육 #연령별 #유치원AI #초등AI #중학생AI",
-  "hashtags": ["AI교육", "연령별", "유치원AI", "초등AI", "중학생AI"],
-  "links": {"site": "/levels.html", "free": "/free/ai-first-7days.html", "class": "/class.html"},
-  "pinned_comment": "우리 아이는 어느 계단인가요? 🪜\n🧸 유치원=말하기 → ✏️ 초저=부탁하기 → 🔧 초고=고치기 → 🔬 중등=검증하기 → 🎓 고등=해결하기\n\n🎯 나이별 로드맵(무료): https://ai-early-education.pages.dev/levels\n댓글로 아이 나이를 남겨주시면, 다음 영상에서 그 계단부터 자세히 다룹니다."
+  "hashtags": [
+    "AI교육",
+    "연령별",
+    "유치원AI",
+    "초등AI",
+    "중학생AI"
+  ],
+  "links": {
+    "site": "/levels.html",
+    "free": "/free/ai-first-7days.html",
+    "class": "/class.html"
+  },
+  "pinned_comment": "우리 아이는 어느 계단인가요? 🪜\n🧸 유치원=말하기 → ✏️ 초저=부탁하기 → 🔧 초고=고치기 → 🔬 중등=검증하기 → 🎓 고등=해결하기\n\n🎯 나이별 로드맵(무료): https://ai-early-education.pages.dev/levels\n댓글로 아이 나이를 남겨주시면, 다음 영상에서 그 계단부터 자세히 다룹니다.",
+  "render_engine": "production/build_ai_edu_shorts.py (ComfyUI SDXL + edge-tts + ffmpeg, 세로 1080x1920) — china 쇼츠 빌더 계열",
+  "region": "kr",
+  "beats": [
+    {
+      "role": "hook",
+      "head": "같으면 안 돼요",
+      "text": "유치원 아이와 고등학생이 같은 AI교육을 받으면 안 됩니다.",
+      "prompt": "a tiny kindergartner and a tall high school student sitting at the same desk with the same tablet, funny awkward contrast, classroom",
+      "region": "kr"
+    },
+    {
+      "role": "fact",
+      "head": "유치원 = 말하기",
+      "text": "유치원은 말하기. AI에게 말을 걸어보는 겁니다.",
+      "prompt": "a cute five-step staircase, a kindergartner on the first step talking to a small friendly robot, speech bubble, playful",
+      "region": "kr"
+    },
+    {
+      "role": "fact",
+      "head": "초등 = 부탁·고치기",
+      "text": "초등 저학년은 부탁하기, 고학년은 답을 고치기.",
+      "prompt": "second step: a young elementary child raising hand asking politely; third step: an older child adjusting a picture with a tiny wrench, staircase scene",
+      "region": "kr"
+    },
+    {
+      "role": "fact",
+      "head": "중학생 = 검증",
+      "text": "중학생은 검증하기. 근거와 출처를 따지는 겁니다.",
+      "prompt": "fourth step: a middle school student with a magnifying glass and a small balance scale examining a document, thoughtful",
+      "region": "kr"
+    },
+    {
+      "role": "fact",
+      "head": "고등 = 해결",
+      "text": "고등학생은 해결하기. AI를 도구로 문제를 푸는 겁니다.",
+      "prompt": "fifth step: a high school student unfolding a project map with route and flags, confident planner pose, robot assisting beside",
+      "region": "kr"
+    },
+    {
+      "role": "cta",
+      "head": "우리 아이는?",
+      "text": "말하기 고치기 의심하기 검증하기 해결하기. 우리 아이는 어느 계단인가요?",
+      "prompt": "wide view of the five-step staircase with all five children on their steps, warm sunset light, hopeful closing scene",
+      "region": "kr"
+    }
+  ]
 }

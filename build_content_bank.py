@@ -67,7 +67,11 @@ def package_block(p):
 <button onclick='cbCopy({json.dumps(p["subtitles_all"],ensure_ascii=False)},this)'>💬 자막 전체 복사</button>
 <button onclick='cbCopy({json.dumps(prompts_all,ensure_ascii=False)},this)'>🎨 이미지 프롬프트 6컷 복사</button>
 <button onclick='cbCopy({json.dumps(p["pinned_comment"],ensure_ascii=False)},this)'>📌 고정댓글 복사</button>
-</div></div></details>"""
+</div>
+<div style="margin-top:10px;font-size:11.5px;color:#8a6f45">🎬 렌더(로컬, Ollama 언로드+ComfyUI 필요):</div>
+<div class="cb-script" style="font-family:monospace;font-size:12px;padding:8px 11px">python production/build_ai_edu_shorts.py {esc(p['id'])}</div>
+<div class="cb-btns" style="margin-top:6px"><button onclick='cbCopy({json.dumps("cd C:/Users/admin/Desktop/ai-craft-kids && python production/build_ai_edu_shorts.py "+p["id"],ensure_ascii=False)},this)'>▶ 렌더 명령 복사</button></div>
+</div></details>"""
 
 def page():
     # 집계
