@@ -250,7 +250,103 @@ if(hp===p){{a.classList.add('on');var c=a.closest('.gs-c');if(c)c.classList.add(
 }})();
 </script>"""
 
+
+# ---------- 섹션별 좌측 사이드바 (2컬럼 레이아웃) ----------
+# 항목: (라벨, href|None=준비중). 실존 페이지만 링크(죽은 링크 금지).
+SECTIONS={
+ "why":("왜 AI교육인가",[
+   ("AI 조기교육이 필요한 이유","/why-ai-education.html"),
+   ("알파고 이후, 놓친 시간","/world-cases/korea.html"),
+   ("정답보다 다시 묻는 힘","/why-ai-education.html#philosophy"),
+   ("부모가 오해하기 쉬운 것","/parent-resources.html#faq"),
+   ("AI를 막을 것인가, 다룰 것인가","/videos/world-ai-education.html"),
+ ]),
+ "world":("세계 AI교육",[
+   ("전체 지도 보기","/world-cases.html"),
+   ("🇨🇳 중국","/world-cases/china.html"),
+   ("🇺🇸 미국","/world-cases/usa.html"),
+   ("🇬🇧 영국","/world-cases/uk.html"),
+   ("🇸🇬 싱가포르","/world-cases/singapore.html"),
+   ("🇰🇷 한국","/world-cases/korea.html"),
+   ("🇩🇪 독일","/world-cases/germany.html"),
+   ("🇯🇵 일본","/world-cases/japan.html"),
+   ("국가별 비교표",None),
+   ("출처 라이브러리",None),
+ ]),
+ "videos":("영상관",[
+   ("전체 영상","/videos.html"),
+   ("롱폼 다큐 · 세계 5개국","/videos/world-ai-education.html"),
+   ("중국 AI교육 심층","/videos/china-ai-education.html"),
+   ("미국 AI교육 심층","/videos/us-ai-education.html"),
+   ("한국의 잃어버린 AI 10년","/videos/korea-ai-education.html"),
+   ("아이와 함께 실습","/free/first-prompts.html"),
+   ("Shorts",None),
+ ]),
+ "guide":("시작 가이드",[
+   ("집에서 시작하는 6단계","/start-guide.html"),
+   ("첫 질문 시키기","/free/first-prompts.html"),
+   ("결과 관찰하기","/free/worksheet.html"),
+   ("다시 묻기 연습","/free/question-cards.html"),
+   ("하루 10분 루틴","/world-cases/korea-3.html"),
+   ("연령별 시작법","/world-cases/uk-roadmap.html"),
+ ]),
+ "parents":("부모 자료실",[
+   ("자료실 홈","/parent-resources.html"),
+   ("부모용 질문 카드","/free/question-cards.html"),
+   ("AI 대화 연습지","/free/worksheet.html"),
+   ("첫 프롬프트 20개","/free/first-prompts.html"),
+   ("AI 안전 사용 원칙","/parent-resources.html#faq"),
+   ("자주 묻는 질문","/parent-resources.html#faq"),
+   ("AI 결과 관찰 체크리스트",None),
+ ]),
+ "free":("무료 자료",[
+   ("무료 자료 한눈에","/free-kit.html"),
+   ("12주 워크북 PDF","/free/uk-12weeks-workbook.html"),
+   ("가정 실습지","/free/worksheet.html"),
+   ("질문 카드 10장","/free/question-cards.html"),
+   ("영상 요약본",None),
+ ]),
+}
+ACTIVE2SEC={"why":"why","cases":"world","videos":"videos","start":"guide","res":"parents","free":"free"}
+def section_sidebar(section):
+    title,items=SECTIONS[section]
+    links=""
+    for lb,u in items:
+        if u: links+=f'<a class="sb-a" href="{u}">{lb}</a>'
+        else: links+=f'<span class="sb-a sb-x">{lb} <small>준비중</small></span>'
+    return f"""<aside class="secbar"><div class="sb-t" onclick="this.parentElement.classList.toggle('fold')">{title} <span class="sb-ar">▾</span></div><nav class="sb-nav">{links}</nav></aside>
+<style>
+.ly2{{max-width:1240px;margin:0 auto;padding:16px 20px 0;display:flex;gap:26px;align-items:flex-start}}
+.ly2-main{{flex:1;min-width:0}}
+.secbar{{width:238px;flex:none;background:#FFF9EF;border:1px solid #EAD9BE;border-radius:14px;padding:12px 9px;position:sticky;top:74px}}
+.sb-t{{font-weight:800;font-size:14.5px;color:var(--navy);padding:5px 11px 10px;border-bottom:2px solid #F0E6D2;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}}
+.sb-ar{{display:none;color:#c4b59a}}
+.sb-a{{display:block;padding:7px 11px;margin:1px 0;border-radius:8px;text-decoration:none;color:#5a4a35;font-size:13.3px;font-weight:600}}
+a.sb-a:hover{{background:#FDECE5;color:#B44A31}}
+.sb-a.on{{background:var(--coral);color:#fff}}
+.sb-x{{color:#c4b59a;cursor:default}}.sb-x small{{font-size:10px;background:#F0E6D2;border-radius:6px;padding:1px 6px;margin-left:4px}}
+@media(max-width:960px){{
+.ly2{{flex-direction:column;gap:12px}}
+.secbar{{position:static;width:100%}}
+.sb-ar{{display:inline}}
+.secbar.fold .sb-nav{{display:none}}
+.sb-t{{cursor:pointer;border-bottom:0;margin-bottom:0}}
+.secbar:not(.fold) .sb-t{{border-bottom:2px solid #F0E6D2;margin-bottom:6px}}
+}}
+</style>
+<script>
+(function(){{var p=(location.pathname.replace(/[/]$/,'')||'/').replace(/[.]html$/,'');
+document.querySelectorAll('.secbar a.sb-a').forEach(function(a){{
+ var h=a.getAttribute('href').split('#')[0];var hp=(h.replace(/[/]$/,'')||'/').replace(/[.]html$/,'');
+ if(hp===p&&!document.querySelector('.sb-a.on'))a.classList.add('on');}});
+if(window.innerWidth<=960)document.querySelector('.secbar').classList.add('fold');
+}})();
+</script>"""
+
 def page(active,base,title,desc,body):
+    sec=ACTIVE2SEC.get(active)
+    if sec and "rsLoad(" not in body:
+        body=f'<div class="ly2">{section_sidebar(sec)}<div class="ly2-main">{body}</div></div>'
     return head(title,desc,base)+header(active,base)+global_sidebar()+body+footer(base)
 
 # ---------- 국가 데이터 ----------
@@ -522,15 +618,7 @@ def parent_resources():
 <section class="page-hero"><div class="wrap"><div class="pill">부모용 자료</div>
 <h1>부모 자료실</h1><p>나라를 고르면 그 나라 전용 자료실로 이동합니다. 인쇄 자료는 아래에서 바로.</p></div></section>
 <section class="block"><div class="wrap">
-<div class="rs-wrap">
-<aside class="rs-side">
-<div class="rs-h">🌍 국가별 자료실</div>
-{nav_c}
-<div class="rs-h">📥 인쇄 자료</div>
-<a class="rs-top" href="#downloads">🖨 바로 인쇄·다운로드</a>
-<div class="rs-h">❓ 도움말</div>
-<a class="rs-top" href="#faq">자주 묻는 질문</a>
-</aside>
+<div class="rs-wrap" style="display:block">
 <div class="rs-main">
 <h3 style="margin:0 0 10px;font-size:18px">🌍 국가별 자료실</h3>
 <div class="grid g3" style="margin-bottom:26px">{cards_c}</div>

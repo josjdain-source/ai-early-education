@@ -99,7 +99,34 @@ window.mgF=function(){var q=(document.getElementById('mgQ').value||'').trim().to
  var r=D.filter(function(d){return !q||d.t.toLowerCase().indexOf(q)>=0||d.c.toLowerCase().indexOf(q)>=0;}).slice(0,18);
  document.getElementById('mgR').innerHTML=r.map(function(d){return '<a href="'+d.u+'">'+d.t+'<small>'+d.c+'</small></a>';}).join('')||'<p style="color:#9b8a6e">결과가 없습니다.</p>';};
 })();
-</script><main>
+</script><div class="ly2"><aside class="secbar"><div class="sb-t" onclick="this.parentElement.classList.toggle('fold')">세계 AI교육 <span class="sb-ar">▾</span></div><nav class="sb-nav"><a class="sb-a" href="/world-cases.html">전체 지도 보기</a><a class="sb-a" href="/world-cases/china.html">🇨🇳 중국</a><a class="sb-a" href="/world-cases/usa.html">🇺🇸 미국</a><a class="sb-a" href="/world-cases/uk.html">🇬🇧 영국</a><a class="sb-a" href="/world-cases/singapore.html">🇸🇬 싱가포르</a><a class="sb-a" href="/world-cases/korea.html">🇰🇷 한국</a><a class="sb-a" href="/world-cases/germany.html">🇩🇪 독일</a><a class="sb-a" href="/world-cases/japan.html">🇯🇵 일본</a><span class="sb-a sb-x">국가별 비교표 <small>준비중</small></span><span class="sb-a sb-x">출처 라이브러리 <small>준비중</small></span></nav></aside>
+<style>
+.ly2{max-width:1240px;margin:0 auto;padding:16px 20px 0;display:flex;gap:26px;align-items:flex-start}
+.ly2-main{flex:1;min-width:0}
+.secbar{width:238px;flex:none;background:#FFF9EF;border:1px solid #EAD9BE;border-radius:14px;padding:12px 9px;position:sticky;top:74px}
+.sb-t{font-weight:800;font-size:14.5px;color:var(--navy);padding:5px 11px 10px;border-bottom:2px solid #F0E6D2;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+.sb-ar{display:none;color:#c4b59a}
+.sb-a{display:block;padding:7px 11px;margin:1px 0;border-radius:8px;text-decoration:none;color:#5a4a35;font-size:13.3px;font-weight:600}
+a.sb-a:hover{background:#FDECE5;color:#B44A31}
+.sb-a.on{background:var(--coral);color:#fff}
+.sb-x{color:#c4b59a;cursor:default}.sb-x small{font-size:10px;background:#F0E6D2;border-radius:6px;padding:1px 6px;margin-left:4px}
+@media(max-width:960px){
+.ly2{flex-direction:column;gap:12px}
+.secbar{position:static;width:100%}
+.sb-ar{display:inline}
+.secbar.fold .sb-nav{display:none}
+.sb-t{cursor:pointer;border-bottom:0;margin-bottom:0}
+.secbar:not(.fold) .sb-t{border-bottom:2px solid #F0E6D2;margin-bottom:6px}
+}
+</style>
+<script>
+(function(){var p=(location.pathname.replace(/[/]$/,'')||'/').replace(/[.]html$/,'');
+document.querySelectorAll('.secbar a.sb-a').forEach(function(a){
+ var h=a.getAttribute('href').split('#')[0];var hp=(h.replace(/[/]$/,'')||'/').replace(/[.]html$/,'');
+ if(hp===p&&!document.querySelector('.sb-a.on'))a.classList.add('on');});
+if(window.innerWidth<=960)document.querySelector('.secbar').classList.add('fold');
+})();
+</script><div class="ly2-main"><main>
 
 <section class="page-hero"><div class="wrap">
 <nav style="font-size:12.5px;margin-bottom:10px;color:#c4b59a"><a href="/" style="color:#9b8a6e;text-decoration:none;font-weight:600">홈</a> › <a href="/parent-resources.html" style="color:#9b8a6e;text-decoration:none;font-weight:600">부모 자료실</a> › <a href="/parent-resources/uk.html" style="color:#9b8a6e;text-decoration:none;font-weight:600">🇬🇧 영국</a> › <b style="color:#B44A31">2편 · 실제 교실 운영</b></nav>
@@ -116,7 +143,7 @@ window.mgF=function(){var q=(document.getElementById('mgQ').value||'').trim().to
 <div class="grid g3"><div class="card"><div class="lyr-h">📚 교과 통합</div><p>영어=AI 생성 텍스트 평가, 시민교육/PSHE=AI 사회영향·윤리</p></div><div class="card"><div class="lyr-h">🍓 무료 수업자료</div><p>Oak National Academy(라즈베리파이 재단 협력)</p></div><div class="card"><div class="lyr-h">🧑‍🏫 교사 도구</div><p>AI 수업 도우미 'Aila'로 수업계획 생성</p></div></div>
 <p class="sec-desc" style="margin-top:14px">⏱ <b>운영 주기</b> — 컴퓨팅 교과 안에서 학교 재량으로 편성 · 강제보다 자율 · 여러 과목에 걸쳐 통합</p>
 </div></section>
-</main><footer class="site"><div class="wrap"><div class="foot-grid">
+</main></div></div><footer class="site"><div class="wrap"><div class="foot-grid">
 <div class="foot-brand"><a class="brand" href="../"><span class="bot">🤖</span> AI 조기교육</a>
 <p>아이와 부모가 함께 성장하는<br>미래 교육의 시작</p></div>
 <div class="foot-col"><h5>서비스</h5><a href="../start-guide.html">시작 가이드</a><a href="../videos.html">영상</a><a href="../parent-resources.html">부모용 자료</a><a href="../free-kit.html">무료 자료</a></div>
