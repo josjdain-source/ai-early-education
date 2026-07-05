@@ -12,25 +12,82 @@
     "title": "미국은 왜 국가가 시간표를 안 짜고도 AI교육에 나섰나",
     "subtitle": "2025 행정명령과 분권형 AI교육, 그리고 한국 가정의 답",
     "description": "중국은 AI를 학교 시간표에 넣었습니다. 미국은 정반대입니다. 국가가 전국 시간표를 짜지 않죠. 대신 연방은 방향만 주고, 주와 학교, 기업이 실제 실행을 채웁니다.\n\n이 영상은 미국 AI교육을 세 층으로 봅니다.\n① 정책 — 2025년 4월 'AI교육 진흥 행정명령', 백악관 AI교육 태스크포스, 대통령 AI 챌린지\n② 운영 — 분권형(주·지역), 캘리포니아 AB2876, 60개+ 기업의 민관 서약, 교사 훈련 격차\n③ 미래세대 — AI를 소비만 하는 아이가 아니라 만들고 비판적으로 검증하는 세대\n\n핵심은 이겁니다. 중국이 '국가가 관리하는 문해력'이라면, 미국은 '연방 방향 + 주·기업 실행'의 분권형입니다. 그리고 미국은 AI를 사람 대신이 아니라 학습 파트너로 가르칩니다. 그렇다면 한국 가정은? 미국처럼, 아이가 AI를 파트너로 쓰되 판단은 스스로 하도록 집에서 기르면 됩니다.\n\n출처(주요): 백악관 행정명령·팩트시트·서약 발표(2025), 미 교육부 AI 사용 가이드, AI for Education(주별 가이드·캘리포니아 AB2876), RAND(교사 훈련). 전체 출처는 홈페이지 심층 페이지에 표기.\n\n▶ 미국 편 심층 페이지: https://ai-early-education.pages.dev/world-cases/usa.html\n▶ 부모용 시작 가이드: https://ai-early-education.pages.dev/start-guide.html\n\n※ 이 영상은 특정 정파·정치인을 지지하거나 비하하지 않으며, 국가 정책과 교육 방식의 관점에서 설명합니다.",
-    "tags": ["미국AI교육", "AI조기교육", "생성형AI교육", "부모교육", "AI리터러시", "세계교육사례", "AI교육정책", "비판적사고", "대통령AI챌린지", "아이와AI"],
+    "tags": [
+      "미국AI교육",
+      "AI조기교육",
+      "생성형AI교육",
+      "부모교육",
+      "AI리터러시",
+      "세계교육사례",
+      "AI교육정책",
+      "비판적사고",
+      "대통령AI챌린지",
+      "아이와AI"
+    ],
     "category": "27",
-    "thumbnail_copy": {"top": "미국은 왜 시간표를", "main": "안 짜고도 AI교육을?", "badge": "분권형 · 2025"}
+    "thumbnail_copy": {
+      "top": "미국은 왜 시간표를",
+      "main": "안 짜고도 AI교육을?",
+      "badge": "분권형 · 2025"
+    }
   },
   "shorts": [
-    {"video_id": "us-short-s1", "key": "s1",
-     "title_candidates": ["미국은 AI 시간표를 안 짠다, 그럼 한국은? #Shorts", "국가가 강제 안 하는데 왜 될까 #Shorts", "미국은 챌린지, 한국 가정은 질문 #Shorts"],
-     "title": "미국은 AI 시간표를 안 짠다, 그럼 한국은? #Shorts",
-     "description": "미국은 중국처럼 AI 시간표를 짜지 않습니다. 연방은 방향만, 주와 기업이 채우고 대통령 AI 챌린지로 끌어당기죠. 그럼 한국 가정은? 국가를 기다리지 말고, 집에서 AI를 파트너로 쓰되 판단은 아이가 하게 하세요.\n\n▶ 미국 편 전체: https://ai-early-education.pages.dev/world-cases/usa.html\n\n#Shorts #미국AI교육 #부모교육 #AI리터러시",
-     "tags": ["Shorts", "미국AI교육", "AI조기교육", "부모교육", "AI리터러시"], "thumbnail_copy": "시간표를 안 짠다"},
-    {"video_id": "us-short-s2", "key": "s2",
-     "title_candidates": ["미국은 AI를 '파트너'로 가르친다 #Shorts", "AI는 대체가 아니라 파트너 #Shorts", "판단은 늘 아이가 하게 #Shorts"],
-     "title": "미국은 AI를 '파트너'로 가르친다, 한국 부모도 #Shorts",
-     "description": "미국은 AI를 사람 대신이 아니라 학습 파트너로 가르칩니다. 비판적 사고와 협업을 강조하죠. 한국 부모도 똑같이 — AI에 맡기지 말고 함께 확인하고, '왜 그렇게 생각해?' 물으며 판단은 아이가 하게 하세요.\n\n▶ 미국 편 전체: https://ai-early-education.pages.dev/world-cases/usa.html\n\n#Shorts #미국AI교육 #비판적사고 #부모교육",
-     "tags": ["Shorts", "미국AI교육", "비판적사고", "부모교육", "AI리터러시"], "thumbnail_copy": "AI는 파트너"},
-    {"video_id": "us-short-s3", "key": "s3",
-     "title_candidates": ["미국은 '쓰는 아이' 아니라 '만드는 아이'를 키운다 #Shorts", "AI를 만드는 아이로 #Shorts", "소비자에서 창작자로 #Shorts"],
-     "title": "미국은 '쓰는 아이' 아니라 '만드는 아이'를 키운다 #Shorts",
-     "description": "미국이 키우려는 건 AI를 쓰는 아이가 아니라 만드는 아이입니다. 조기 노출과 챌린지, 60개+ 기업 지원으로 창작을 장려하죠. 한국 가정도 오늘 — AI와 뭔가 하나 만들어보고, 다시 묻고 고쳐보게 하세요.\n\n▶ 미국 편 전체: https://ai-early-education.pages.dev/world-cases/usa.html\n\n#Shorts #미국AI교육 #부모교육 #AI리터러시",
-     "tags": ["Shorts", "미국AI교육", "부모교육", "AI리터러시", "아이와AI"], "thumbnail_copy": "만드는 아이"}
+    {
+      "video_id": "us-short-s1",
+      "key": "s1",
+      "title_candidates": [
+        "미국은 AI 시간표를 안 짠다, 그럼 한국은? #Shorts",
+        "국가가 강제 안 하는데 왜 될까 #Shorts",
+        "미국은 챌린지, 한국 가정은 질문 #Shorts"
+      ],
+      "title": "미국은 왜 국가가 AI 시간표를 안 짤까? #Shorts",
+      "description": "미국은 중국처럼 AI 시간표를 짜지 않습니다. 연방은 방향만, 주와 기업이 채우고 대통령 AI 챌린지로 끌어당기죠. 그럼 한국 가정은? 국가를 기다리지 말고, 집에서 AI를 파트너로 쓰되 판단은 아이가 하게 하세요.\n\n▶ 미국 편 전체: https://ai-early-education.pages.dev/world-cases/usa.html\n\n#Shorts #미국AI교육 #부모교육 #AI리터러시",
+      "tags": [
+        "Shorts",
+        "미국AI교육",
+        "AI조기교육",
+        "부모교육",
+        "AI리터러시"
+      ],
+      "thumbnail_copy": "시간표를 안 짠다"
+    },
+    {
+      "video_id": "us-short-s2",
+      "key": "s2",
+      "title_candidates": [
+        "미국은 AI를 '파트너'로 가르친다 #Shorts",
+        "AI는 대체가 아니라 파트너 #Shorts",
+        "판단은 늘 아이가 하게 #Shorts"
+      ],
+      "title": "AI교육에서 진짜 중요한 건 '많이 쓰기'가 아니었다 #Shorts",
+      "description": "미국은 AI를 사람 대신이 아니라 학습 파트너로 가르칩니다. 비판적 사고와 협업을 강조하죠. 한국 부모도 똑같이 — AI에 맡기지 말고 함께 확인하고, '왜 그렇게 생각해?' 물으며 판단은 아이가 하게 하세요.\n\n▶ 미국 편 전체: https://ai-early-education.pages.dev/world-cases/usa.html\n\n#Shorts #미국AI교육 #비판적사고 #부모교육",
+      "tags": [
+        "Shorts",
+        "미국AI교육",
+        "비판적사고",
+        "부모교육",
+        "AI리터러시"
+      ],
+      "thumbnail_copy": "AI는 파트너"
+    },
+    {
+      "video_id": "us-short-s3",
+      "key": "s3",
+      "title_candidates": [
+        "미국은 '쓰는 아이' 아니라 '만드는 아이'를 키운다 #Shorts",
+        "AI를 만드는 아이로 #Shorts",
+        "소비자에서 창작자로 #Shorts"
+      ],
+      "title": "미국 아이들은 AI를 '쓰는' 게 아니라 무엇을 할까? #Shorts",
+      "description": "미국이 키우려는 건 AI를 쓰는 아이가 아니라 만드는 아이입니다. 조기 노출과 챌린지, 60개+ 기업 지원으로 창작을 장려하죠. 한국 가정도 오늘 — AI와 뭔가 하나 만들어보고, 다시 묻고 고쳐보게 하세요.\n\n▶ 미국 편 전체: https://ai-early-education.pages.dev/world-cases/usa.html\n\n#Shorts #미국AI교육 #부모교육 #AI리터러시",
+      "tags": [
+        "Shorts",
+        "미국AI교육",
+        "부모교육",
+        "AI리터러시",
+        "아이와AI"
+      ],
+      "thumbnail_copy": "만드는 아이"
+    }
   ]
 }
