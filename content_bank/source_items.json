@@ -1,37 +1,123 @@
 {
   "_readme": "자료 창고 — 외부 자료는 출처·요약·사용처만 저장(본문 복제 금지). usable_for로 다회 재사용.",
   "sources": [
-    {"id": "uk-ai-safety-001", "type": "source", "series": "S01_world_ai", "age": "elementary-upper",
-     "topic": "AI 답 의심하기", "title": "영국 AI교육 안전·책임 원칙",
-     "summary": "영국은 AI를 빨리 쓰는 법보다 AI 답을 의심하고 책임 있게 쓰는 법을 강조한다. 최종 판단·책임은 사람에게.",
-     "usable_for": ["쇼츠", "부모자료실", "매일AI교실 4~6월", "활동지"], "status": "stored",
-     "source_url": "https://www.gov.uk/government/publications/generative-artificial-intelligence-in-education",
-     "notes": "S01 영국 쇼츠·2분기(AI 답 의심하기) 수업에 사용"},
-    {"id": "ncce-thinking-machines-001", "type": "source", "series": "S01_world_ai", "age": "middle",
-     "topic": "AI 커리큘럼", "title": "NCCE Year8 'Thinking machines' 1차시(+PG Online 선택 6차시)",
-     "summary": "영국 공개 커리큘럼에서 AI 핵심은 Year8 컴퓨팅시스템 내 1차시. 심화 6차시는 선택 교재.",
-     "usable_for": ["세계연재 심화", "연령별(중등)", "쇼츠"], "status": "used",
-     "source_url": "https://teachcomputing.org/curriculum/key-stage-3",
-     "notes": "uk-year 페이지에 반영 완료(검증됨)"},
-    {"id": "kitpa-contest-001", "type": "source", "series": "S06_competitions", "age": "all",
-     "topic": "경진대회", "title": "청소년 IT경시대회 인공지능/알고리즘 부문",
-     "summary": "전국 초중고. 알고리즘=코딩 문제해결(초등 3문항), 인공지능=데이터·AI 코드 이해.",
-     "usable_for": ["경진대회 교실", "쇼츠", "연습문제"], "status": "used",
-     "source_url": "https://kitpa.org", "notes": "competitions 데이터에 반영 완료"},
-    {"id": "aitop100-001", "type": "source", "series": "S06_competitions", "age": "high",
-     "topic": "AI 활용 평가", "title": "AI TOP 100 (Campus) — AI 협업 문제해결 평가",
-     "summary": "AI 도구 제한 없음. '무엇을 아느냐'가 아니라 AI와 협업해 문제를 푸는 힘을 본다.",
-     "usable_for": ["경진대회 교실", "고등 레벨", "쇼츠"], "status": "used",
-     "source_url": "https://aitop100.org/", "notes": "ai-top-100 분석 페이지 반영 완료"},
-    {"id": "parent-q-ideas-001", "type": "idea", "series": "S04_parent_questions", "age": "elementary",
-     "topic": "부모 질문 아이디어", "title": "부모 질문 10선(자체)",
-     "summary": "이상한 곳 찾기/근거/네 생각/다시 묻기/AI 없이 너라면 — 기존 Q10 재사용.",
-     "usable_for": ["쇼츠 10개 배치", "질문 카드", "매일 수업"], "status": "stored",
-     "source_url": "", "notes": "next_batch 'AI 답이 이상할 때 부모가 해야 할 말 10개'의 원천"},
-    {"id": "yt-pattern-001", "type": "pattern", "series": "S04_parent_questions", "age": "all",
-     "topic": "제목 패턴", "title": "궁금증형 제목 전략(확정)",
-     "summary": "설명형·연도·결론·국가명+설명문 금지. 왜/무엇을/이것/한 가지/먼저 훅.",
-     "usable_for": ["모든 쇼츠 제목"], "status": "used",
-     "source_url": "", "notes": "production/SHORTS_TITLE_STRATEGY.md 참조"}
+    {
+      "id": "uk-ai-safety-001",
+      "type": "source",
+      "series": "S01_world_ai",
+      "age": "elementary-upper",
+      "topic": "AI 답 의심하기",
+      "title": "영국 AI교육 안전·책임 원칙",
+      "summary": "영국은 AI를 빨리 쓰는 법보다 AI 답을 의심하고 책임 있게 쓰는 법을 강조한다. 최종 판단·책임은 사람에게.",
+      "usable_for": [
+        "쇼츠",
+        "부모자료실",
+        "매일AI교실 4~6월",
+        "활동지"
+      ],
+      "status": "stored",
+      "source_url": "https://www.gov.uk/government/publications/generative-artificial-intelligence-in-education",
+      "notes": "S01 영국 쇼츠·2분기(AI 답 의심하기) 수업에 사용"
+    },
+    {
+      "id": "ncce-thinking-machines-001",
+      "type": "source",
+      "series": "S01_world_ai",
+      "age": "middle",
+      "topic": "AI 커리큘럼",
+      "title": "NCCE Year8 'Thinking machines' 1차시(+PG Online 선택 6차시)",
+      "summary": "영국 공개 커리큘럼에서 AI 핵심은 Year8 컴퓨팅시스템 내 1차시. 심화 6차시는 선택 교재.",
+      "usable_for": [
+        "세계연재 심화",
+        "연령별(중등)",
+        "쇼츠"
+      ],
+      "status": "used",
+      "source_url": "https://teachcomputing.org/curriculum/key-stage-3",
+      "notes": "uk-year 페이지에 반영 완료(검증됨)"
+    },
+    {
+      "id": "kitpa-contest-001",
+      "type": "source",
+      "series": "S06_competitions",
+      "age": "all",
+      "topic": "경진대회",
+      "title": "청소년 IT경시대회 인공지능/알고리즘 부문",
+      "summary": "전국 초중고. 알고리즘=코딩 문제해결(초등 3문항), 인공지능=데이터·AI 코드 이해.",
+      "usable_for": [
+        "경진대회 교실",
+        "쇼츠",
+        "연습문제"
+      ],
+      "status": "used",
+      "source_url": "https://kitpa.org",
+      "notes": "competitions 데이터에 반영 완료"
+    },
+    {
+      "id": "aitop100-001",
+      "type": "source",
+      "series": "S06_competitions",
+      "age": "high",
+      "topic": "AI 활용 평가",
+      "title": "AI TOP 100 (Campus) — AI 협업 문제해결 평가",
+      "summary": "AI 도구 제한 없음. '무엇을 아느냐'가 아니라 AI와 협업해 문제를 푸는 힘을 본다.",
+      "usable_for": [
+        "경진대회 교실",
+        "고등 레벨",
+        "쇼츠"
+      ],
+      "status": "used",
+      "source_url": "https://aitop100.org/",
+      "notes": "ai-top-100 분석 페이지 반영 완료"
+    },
+    {
+      "id": "parent-q-ideas-001",
+      "type": "idea",
+      "series": "S04_parent_questions",
+      "age": "elementary",
+      "topic": "부모 질문 아이디어",
+      "title": "부모 질문 10선(자체)",
+      "summary": "이상한 곳 찾기/근거/네 생각/다시 묻기/AI 없이 너라면 — 기존 Q10 재사용.",
+      "usable_for": [
+        "쇼츠 10개 배치",
+        "질문 카드",
+        "매일 수업"
+      ],
+      "status": "stored",
+      "source_url": "",
+      "notes": "next_batch 'AI 답이 이상할 때 부모가 해야 할 말 10개'의 원천"
+    },
+    {
+      "id": "yt-pattern-001",
+      "type": "pattern",
+      "series": "S04_parent_questions",
+      "age": "all",
+      "topic": "제목 패턴",
+      "title": "궁금증형 제목 전략(확정)",
+      "summary": "설명형·연도·결론·국가명+설명문 금지. 왜/무엇을/이것/한 가지/먼저 훅.",
+      "usable_for": [
+        "모든 쇼츠 제목"
+      ],
+      "status": "used",
+      "source_url": "",
+      "notes": "production/SHORTS_TITLE_STRATEGY.md 참조"
+    },
+    {
+      "id": "mit-cognitive-debt-001",
+      "type": "source",
+      "series": "S04_parent_questions",
+      "age": "all",
+      "topic": "뇌·인지 부채",
+      "title": "MIT — Your Brain on ChatGPT (인지 부채)",
+      "summary": "EEG 3그룹(직접작성/검색/AI). 직접 작성=뇌 연결 가장 강함·결과물 소유감 최고, AI 사용=뇌 연결 가장 약함·자기글 인용도 못함. '인지 부채'=단기 편함, 장기 비판적사고·창의력·독립사고 저하. 성인 예비연구(n=54).",
+      "usable_for": [
+        "부모질문법 쇼츠",
+        "연령별",
+        "매일수업 근거"
+      ],
+      "status": "used",
+      "source_url": "https://arxiv.org/abs/2506.08872",
+      "notes": "shorts-parent-005 보완 근거. '스스로 풀 때 뇌가 더 활발' 원리로만 인용(아이 뇌로 단정X). 결론=책 읽고 AI로 구현=AI시대 창의력·생존법"
+    }
   ]
 }
