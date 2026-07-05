@@ -249,6 +249,7 @@ def render(cfg):
     srcs="".join(f'<li><a href="{u}" target="_blank" rel="noopener">{pub} — {t}</a> <span class="src">[{i}]</span></li>' for i,t,pub,u in cfg["sources"])
     lf=cfg["lf"]
     body=f"""<main>
+{CR.side_rail(cfg['slug'],f"/world-cases/{cfg['slug']}.html")}
 <section class="page-hero"><div class="wrap">
 <div class="pill">{cfg['flag']} 세계 사례 · {cfg['pill']}</div>
 <h1 style="font-size:34px">{cfg['h1']}</h1>
@@ -338,6 +339,7 @@ def episode_nav(slug,current):
 def practice_page(slug):
     name,flag=NAMES[slug]
     body=f"""<main>
+{CR.side_rail(slug,f"/world-cases/{slug}-2.html")}
 <section class="page-hero"><div class="wrap">
 <div class="pill">{flag} 세계 사례 · {name} 2편</div>
 <h1 style="font-size:32px">{name}은 <span class="coral">실제로</span> 어떻게 가르치나</h1>
@@ -359,6 +361,7 @@ def practice_page(slug):
 def apply_page(slug):
     name,flag=NAMES[slug]
     body=f"""<main>
+{CR.side_rail(slug,f"/world-cases/{slug}-3.html")}
 <section class="page-hero"><div class="wrap">
 <div class="pill">{flag} 세계 사례 · {name} 3편</div>
 <h1 style="font-size:32px">{name} 방식, <span class="coral">우리 집</span>에 이렇게</h1>
@@ -374,6 +377,7 @@ def apply_page(slug):
 def year_page(slug):
     name,flag=NAMES[slug]
     body=f"""<main>
+{CR.side_rail(slug,f"/world-cases/{slug}-year.html")}
 <section class="page-hero"><div class="wrap">
 <div class="pill">{flag} 세계 사례 · {name} 심화</div>
 <h1 style="font-size:31px">{name}은 <span class="coral">1년 동안 매주</span> 이렇게 가르친다</h1>
@@ -389,6 +393,7 @@ def year_page(slug):
 def homeyear_page(slug):
     name,flag=NAMES[slug]
     body=f"""<main>
+{CR.side_rail(slug,f"/world-cases/{slug}-home.html")}
 <section class="page-hero"><div class="wrap">
 <div class="pill">{flag} 세계 사례 · {name} 집 실전판</div>
 <h1 style="font-size:31px">{name} 1년 과정, <span class="coral">우리 집</span>에서 이렇게 따라한다</h1>
@@ -508,6 +513,7 @@ body{{margin:0;background:#E7DECF;font-family:"Pretendard","Malgun Gothic",sans-
 def program_page(slug):
     name,flag=NAMES[slug]
     body=f"""<main>
+{CR.side_rail(slug,f"/world-cases/{slug}-8yo-12weeks.html")}
 <section class="page-hero"><div class="wrap">
 <div class="pill">{flag} 세계 사례 · {name} 실전 프로그램</div>
 <h1 style="font-size:30px">만 8세 초등, <span class="coral">12주 홈 프로그램</span></h1>

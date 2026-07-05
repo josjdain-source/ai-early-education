@@ -62,6 +62,7 @@ def usa_page():
     srcs="".join(f'<li><a href="{s["url"]}" target="_blank" rel="noopener">{s["publisher"]} — {s["title"]}</a> <span class="src">[{s["id"]}]</span></li>' for s in SRC["sources"])
     lf=META["longform"]
     body=f"""<main>
+{CR.side_rail("usa","/world-cases/usa.html")}
 <section class="page-hero"><div class="wrap">
 <div class="pill">🇺🇸 세계 사례 · 미국 심층</div>
 <h1 style="font-size:34px">미국은 왜 국가가 시간표를 안 짜고도 AI교육에 나섰나</h1>

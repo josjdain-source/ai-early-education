@@ -64,6 +64,7 @@ def china_page():
     srcs="".join(f'<li><a href="{s["url"]}" target="_blank" rel="noopener">{s["publisher"]} — {s["title"]}</a> <span class="src">[{s["id"]}]</span></li>' for s in SRC["sources"])
     lf=META["longform"]
     body=f"""<main>
+{CR.side_rail("china","/world-cases/china.html")}
 <section class="page-hero"><div class="wrap">
 <div class="pill">🇨🇳 세계 사례 · 중국 심층</div>
 <h1 style="font-size:34px">중국은 왜 초등학생에게 AI를 가르치기 시작했나</h1>

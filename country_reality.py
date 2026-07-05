@@ -86,6 +86,44 @@ def episode_nav(slug,current):
         elif on: out.append(f'<span style="{base} #E0684A;color:#fff;background:#E0684A">{n}편 · {t}</span>')
         else: out.append(f'<span style="{base} #eadfca;color:#b9a98c;background:#faf5ea">{n}편 · {t} · 준비중</span>')
     return '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">'+''.join(out)+'</div>'
+def subs_list(slug):
+    """국가별 자료 카테고리(자료실·사이드레일 공용)."""
+    x=[("1️⃣","1편 · 정책과 방침",f"/world-cases/{slug}.html"),
+       ("2️⃣","2편 · 실제 교실 운영",f"/world-cases/{slug}-2.html"),
+       ("3️⃣","3편 · 우리 집 주간 적용",f"/world-cases/{slug}-3.html")]
+    if slug=="uk":
+        x+=[("🗺","학년별 로드맵 (만 5~16세)",f"/world-cases/{slug}-roadmap.html"),
+            ("🔬","1년 커리큘럼 (Year 8)",f"/world-cases/{slug}-year.html"),
+            ("🏠","집 실전판 (단원별)",f"/world-cases/{slug}-home.html"),
+            ("📅","만 8세 12주 프로그램",f"/world-cases/{slug}-8yo-12weeks.html"),
+            ("🖨","12주 워크북 (인쇄·PDF)",f"/free/{slug}-12weeks-workbook.html")]
+    return x
+
+def side_rail(slug,current):
+    """국가 콘텐츠 페이지 좌측 고정 카테고리 레일. 넓은 화면=항상 고정, 좁은 화면=플로팅 버튼."""
+    name,flag=NAMES[slug]
+    items="".join(
+        f'<a class="cr-i{" on" if h==current else ""}" href="{h}"{" target=_blank rel=noopener" if h.startswith("/free/") else ""}>{ic} {t}</a>'
+        for ic,t,h in subs_list(slug))
+    return f"""<aside class="crail" id="crail">
+<a class="cr-back" href="/parent-resources/{slug}.html">← {name} 자료실</a>
+<div class="cr-h">{flag} {name} 자료</div>
+{items}
+<a class="cr-back" style="margin-top:10px" href="/parent-resources.html">🌍 전체 자료실</a>
+</aside>
+<button class="cr-fab" id="crfab" onclick="document.body.classList.toggle('crail-open')">{flag} {name} 자료</button>
+<style>
+.crail{{position:fixed;left:0;top:0;bottom:0;width:212px;background:#fff;border-right:1px solid #EADFCE;padding:86px 10px 20px;overflow:auto;z-index:40}}
+.cr-h{{font-size:11.5px;font-weight:800;color:#9b8a6e;padding:10px 10px 6px}}
+.cr-i{{display:flex;align-items:center;gap:7px;padding:8px 10px;margin:2px 0;border-radius:8px;text-decoration:none;color:#3D5A80;font-weight:600;font-size:12.6px;border:1px solid transparent}}
+.cr-i:hover{{background:#FBF3E4;border-color:#EADFCE}}
+.cr-i.on{{background:#FDECE5;border-color:#E0684A;color:#B44A31}}
+.cr-back{{display:block;padding:8px 10px;border-radius:8px;text-decoration:none;color:#E0684A;font-weight:800;font-size:12.6px}}
+.cr-fab{{display:none;position:fixed;left:14px;bottom:16px;z-index:41;background:#E0684A;color:#fff;border:0;border-radius:24px;padding:11px 18px;font-weight:800;font-size:13.5px;box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer}}
+@media(min-width:1200px){{body{{padding-left:212px}}}}
+@media(max-width:1199px){{.crail{{transform:translateX(-100%);transition:transform .18s;box-shadow:6px 0 20px rgba(0,0,0,.12)}}
+body.crail-open .crail{{transform:none}}.cr-fab{{display:block}}}}
+</style>"""
 APPLY={
 "china": dict(
  intro="중국이 학년마다 '체험 → 이해 → 제작'으로 한 계단씩 올라간 것처럼, 우리 집도 한 주에 한 계단씩 올리면 됩니다. 학교도 태블릿도 필요 없어요. 저녁 대화 10분이면 충분합니다.",
