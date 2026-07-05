@@ -85,6 +85,16 @@ COUNTRIES=[
   ["AI 디지털교과서로 학교가 AI를 들여오기 시작","맞춤형 학습·데이터 기반 지도","'학교 도입'과 '집에서의 습관'은 별개의 과제"],
   "학교가 AI를 들여와도, '다시 묻는 힘'은 집에서 대화로 길러야 한다.",
   "오늘 AI랑 뭐 했어? 뭘 다시 물어봤어?"),
+ ("germany","독일","🇩🇪",f"{SCENE}/germany.png","AI보다 신뢰와 기반을 먼저 — 프라이버시 우선 분권형.",
+  "신뢰와 기반을 먼저",
+  ["디지털팍트로 인프라·교사부터","GDPR·EU AI법으로 아이 데이터 보호","전국 필수화보다 기반·신뢰 우선"],
+  "기술보다 안전과 신뢰를 먼저 세우고, 결정은 아이에게 남긴다.",
+  "이 답에 개인정보는 안 들어갔지? 안전하게 썼어?"),
+ ("japan","일본","🇯🇵",f"{SCENE}/japan.png","기기·프로그래밍 먼저, 생성형 AI는 비판적으로.",
+  "기기·논리 먼저, AI는 비판적으로",
+  ["GIGA로 1인 1기기 먼저","프로그래밍으로 논리적 사고","생성형 AI는 검증하며 비판적으로"],
+  "순서대로 생각하는 힘을 먼저, AI 답은 검증하는 습관을 집에서.",
+  "그거 어떤 순서로 한 거야? AI 답은 진짜인지 확인해봤어?"),
 ]
 
 # ---------- 홈 ----------
@@ -118,13 +128,13 @@ def home():
 <div><h1>아이와 함께 배우는<br><span class="coral">생성형 AI</span></h1>
 <p class="sub">정답을 찾는 교육이 아니라, 다시 묻고 더 나은 결과를 만드는 힘을 기르는 과정형 AI 교육.</p>
 <div class="hero-btns"><a class="btn btn-primary btn-lg" href="/start-guide.html">시작 가이드 보기 →</a>
-<a class="btn btn-ghost btn-lg" href="/world-cases.html">🌍 세계 5개국 사례</a></div></div>
+<a class="btn btn-ghost btn-lg" href="/world-cases.html">🌍 세계 AI교육법 연재</a></div></div>
 <div class="hero-art"><img src="/{SCENE}/parent.png" alt="아이와 부모가 함께 AI로 배우는 모습"></div>
 </div><div class="hero-banner">결과물이 아니라 <span style="color:#FFD98A">과정이</span> 교육이다.</div></div></section>
 
 <section class="block"><div class="wrap">{val}</div></section>
 
-<section class="block"><div class="wrap"><h2 class="sec-title">세계 5개국은 AI를 어떻게 가르치나</h2>
+<section class="block"><div class="wrap"><h2 class="sec-title">세계는 아이에게 AI를 어떻게 가르치나</h2>
 <div class="grid g5">{cc}</div></div></section>
 
 <section class="block" id="philosophy"><div class="wrap"><h2 class="sec-title">우리의 핵심 철학</h2>
@@ -355,7 +365,7 @@ if __name__=="__main__":
     write("why-ai-education.html",why())
     write("world-cases.html",world_cases())
     for c in COUNTRIES:
-        if c[0] in ("china","usa","uk","singapore","korea"): continue   # 전부 심층 페이지로 대체
+        if c[0] in ("china","usa","uk","singapore","korea","germany","japan"): continue   # 전부 심층 페이지로 대체
         write(f"world-cases/{c[0]}.html",country_page(c))
     import build_china_page as CN
     write("world-cases/china.html",CN.china_page())
@@ -364,11 +374,11 @@ if __name__=="__main__":
     write("world-cases/usa.html",US.usa_page())
     write("videos/us-ai-education.html",US.us_video_detail())
     import build_country_page as CP
-    for k in ("uk","singapore","korea"):
+    for k in ("uk","singapore","korea","germany","japan"):
         cfg=CP.C[k]
         write(f"world-cases/{cfg['slug']}.html",CP.render(cfg))
         write(f"videos/{cfg['vslug']}.html",CP.video_detail(cfg))
-    CP.write_all_practice()   # 2편(실제 교실 운영) 5개국
+    CP.write_all_practice()   # 2·3편(실제 운영·우리집) 7개국
     write("videos.html",videos())
     write("videos/world-ai-education.html",video_detail())
     write("start-guide.html",start_guide())

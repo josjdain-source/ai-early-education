@@ -154,6 +154,88 @@ C["korea"]=dict(slug="korea", vslug="korea-ai-education", flag="🇰🇷", pill=
   dict(video_id="korea-lost-decade", copy="AI 없이 너라면?", title="한국 부모가 오늘 해볼 한마디"),
  ],
 )
+C["germany"]=dict(slug="germany", vslug="germany-ai-education", flag="🇩🇪", pill="독일 심층",
+ h1="독일은 왜 AI보다 '신뢰와 기반'을 먼저 깔았나",
+ subtitle="디지털팍트로 인프라·교사부터, 프라이버시를 앞세운 분권형",
+ angle="미국처럼 연방·주로 나뉜 분권형이지만, 독일은 <span class=\"coral\">프라이버시와 신뢰를 먼저 세우고 인프라·교사부터</span> 다집니다.",
+ lf_caption="독일 편 · 인프라·교사·프라이버시를 먼저",
+ tl_desc="독일은 화려한 AI 커리큘럼보다, 학교의 기반과 교사, 그리고 데이터 신뢰를 먼저 놓았습니다.",
+ timeline=[
+  ("2019","디지털팍트 슐레","연방과 주가 함께 65억 유로를 투입해 학교 디지털 인프라·교사 연수에 착수. 역사상 최대 규모.","S1"),
+  ("2019~2024","최대 규모 디지털 투자","기기·네트워크 등 기반을 전국 학교에 깔며 토대를 마련.","S1"),
+  ("상시","GDPR·EU AI법","아동 데이터 보호와 투명성의 강한 규칙이 AI 도입의 전제.","S2"),
+  ("표준","정보(Informatik) 교육 표준","하위·상위 중등 정보 표준으로 프로그래밍·데이터·기술 이해의 틀 마련.","S3"),
+  ("2025~2030","디지털팍트 2.0","약 59억 달러 규모로 유지·지원·현대적 학습환경까지 포함해 확장.","S4"),
+ ],
+ layers=[
+  ("① 연방 (Bund)","디지털팍트","예산과 인프라, 방향을 지원한다. 다만 교육 내용은 직접 정하지 않는다."),
+  ("② 주 (Länder)","교육 주권","교육은 주의 권한. 정보(Informatik) 교과와 시수, AI 도입 속도는 주마다 다르다."),
+  ("③ 학교·교사","현장","깔린 인프라 위에서 실제로 쓴다. 교사의 AI 역량 연수가 최대 관건이며 도시·농촌 격차가 과제다.","S5"),
+ ],
+ korea5=[
+  ("기술보다 신뢰를 먼저","독일은 데이터 보호·신뢰를 앞세웠다. 집에서도 '무엇을 AI에 알려줘도 되는지'부터 정한다."),
+  ("기반부터 탄탄히","화려함보다 기반. 집에서도 도구보다 '왜 그렇게 되는지' 원리를 먼저."),
+  ("서두르지 않기","독일도 전국 필수화를 서두르지 않았다. 집에서도 '많이'보다 '탄탄하게'."),
+  ("결정은 사람에게","분권형이라도 판단은 사람 몫. 마지막 선택은 아이가 하게 한다."),
+  ("안전을 습관으로","개인정보 안전을 늘 대화의 기본으로 둔다."),
+ ],
+ sources=[
+  ("S1","DigitalPakt Schule — largest joint investment in digital education","Eurydice (EU)","https://eurydice.eacea.ec.europa.eu/news/germany-digital-pact-20-expands-digital-education-infrastructure"),
+  ("S2","Germany — AI in Education","U.S. Commerce (trade.gov)","https://www.trade.gov/market-intelligence/germany-ai-education"),
+  ("S3","New Standards for Lower Secondary Education in Informatics in Germany","Springer","https://link.springer.com/chapter/10.1007/978-3-032-01222-7_1"),
+  ("S4","Digital Pact 2.0 expands digital education infrastructure","Eurydice (EU)","https://eurydice.eacea.ec.europa.eu/news/germany-digital-pact-20-expands-digital-education-infrastructure"),
+  ("S5","What is Germany's digital pact for schools","The Local","https://www.thelocal.de/20240516/what-is-germanys-digital-pact-for-schools-and-how-does-it-affect-pupils"),
+ ],
+ srcnote="독일을 '느린 나라'로 단순화하지 않고, 연방·주 분권 속에서 프라이버시·신뢰·기반을 먼저 세우는 접근으로 정리했습니다.",
+ lf=dict(video_id="germany-ai-longform", title="독일은 왜 AI보다 신뢰와 기반을 먼저 깔았나", subtitle="디지털팍트로 인프라·교사부터, 프라이버시를 앞세운 분권형",
+   description="독일은 화려한 AI 커리큘럼보다 인프라와 교사, 데이터 신뢰를 먼저 놓았습니다. 한국 가정도 기술보다 안전과 기반을 먼저 세울 수 있습니다.\n\n▶ 심층 페이지: https://ai-early-education.pages.dev/world-cases/germany"),
+ shorts=[
+  dict(video_id="germany-ai-short-1", copy="신뢰를 먼저", title="독일은 AI보다 신뢰를 먼저, 한국 가정도"),
+  dict(video_id="germany-ai-short-2", copy="기반부터 탄탄히", title="독일이 서두르지 않은 이유"),
+  dict(video_id="germany-ai-short-3", copy="안전을 습관으로", title="독일이 아이 데이터를 지키는 법"),
+ ],
+)
+C["japan"]=dict(slug="japan", vslug="japan-ai-education", flag="🇯🇵", pill="일본 심층",
+ h1="일본은 왜 기기와 프로그래밍을 먼저 깔았나",
+ subtitle="GIGA 1인 1기기 + 프로그래밍 필수, 생성형 AI는 비판적으로",
+ angle="일본은 <span class=\"coral\">기기와 프로그래밍을 먼저 깔고(GIGA), 생성형 AI는 비판적 사고로</span> 신중하게 다룹니다.",
+ lf_caption="일본 편 · GIGA 1인 1기기와 프로그래밍, 비판적 AI",
+ tl_desc="일본은 AI를 서두르기 전에, 기기와 논리적 사고(프로그래밍)의 토대를 먼저 전국에 깔았습니다.",
+ timeline=[
+  ("2019","GIGA 스쿨","약 2.3조 엔을 투입해 2023년까지 초·중학생 1인 1기기와 고속망을 구축.","S1"),
+  ("2020","프로그래밍 초등 필수","초등 5학년부터 프로그래밍 필수화. 산수·과학 속에서 논리적 사고로 배운다.","S2"),
+  ("2023","생성형 AI 가이드","MEXT가 학교의 생성형 AI 사용 가이드 발표. 비판적 사용이 핵심.","S3"),
+  ("2025","AI 추진법 + 교사 연수","AI 추진법과 'AI교육 액셀러레이터'로 교사 약 5만 명 연수.","S4"),
+  ("2025","가이드 개정","프라이버시(APPI)·공정성·투명성을 강화해 개정.","S3"),
+ ],
+ layers=[
+  ("① 국가 (MEXT)","방향·가이드","GIGA·프로그래밍 필수·생성형 AI 가이드로 큰 방향을 정한다."),
+  ("② 인프라 (GIGA)","1인 1기기","전국 초·중학생에게 기기와 고속망을 먼저 깔아 기반을 만들었다."),
+  ("③ 교실","교과 접목","별도 AI 과목이 아니라 산수·과학·통합학습에 프로그래밍을 녹이고, 생성형 AI는 비판적으로 쓴다.","S5"),
+ ],
+ korea5=[
+  ("논리적 사고를 먼저","일본은 프로그래밍으로 '순서대로 생각하는 힘'을 길렀다. 집에서도 '어떤 순서로?'를 먼저."),
+  ("기기보다 활용","기기를 깔되 중요한 건 활용. 집에서도 도구보다 '무엇을 위해 쓰는지'."),
+  ("비판적으로 검증","일본이 강조한 'AI 출력 검증'을, 집에서 '이거 진짜일까?'로."),
+  ("시행착오를 격려","원하는 결과를 끌어내려 이리저리 해보는 과정을 칭찬한다."),
+  ("윤리도 함께","얼굴인식 같은 사례처럼 '이래도 될까?'를 아이와 이야기한다."),
+ ],
+ sources=[
+  ("S1","Japan's GIGA School Program — ICT in Schools","The Government of Japan","https://www.japan.go.jp/kizuna/2021/04/ict_in_schools.html"),
+  ("S2","Japan Makes Coding Mandatory Starting in Elementary School","Strata-gee","https://www.strata-gee.com/japan-makes-coding-mandatory-for-all-students-starting-in-elementary-school/"),
+  ("S3","Guideline for the Use of Generative AI in Primary and Secondary Schools","MEXT (Japan)","https://www.mext.go.jp/content/20250422-mxt_shuukyo01-000030823_001.pdf"),
+  ("S4","New School Guidelines in Japan emphasize AI education","The AI Track","https://theaitrack.com/school-guidelines-in-japan-ai-education/"),
+  ("S5","ICT in Schools Equips Students with Life Skills","The Government of Japan","https://www.japan.go.jp/kizuna/2021/04/ict_in_schools.html"),
+ ],
+ srcnote="일본을 '기술 강국'으로만 보지 않고, 기기·논리적 사고를 먼저 깔고 생성형 AI는 비판적 사고로 신중히 다루는 접근으로 정리했습니다.",
+ lf=dict(video_id="japan-ai-longform", title="일본은 왜 기기와 프로그래밍을 먼저 깔았나", subtitle="GIGA 1인 1기기 + 프로그래밍 필수, 생성형 AI는 비판적으로",
+   description="일본은 AI를 서두르기 전에 기기와 논리적 사고의 토대를 먼저 깔았습니다. 한국 가정도 '순서대로 생각하기'부터, AI는 그다음 비판적으로.\n\n▶ 심층 페이지: https://ai-early-education.pages.dev/world-cases/japan"),
+ shorts=[
+  dict(video_id="japan-ai-short-1", copy="논리적 사고 먼저", title="일본은 프로그래밍으로 사고력을 먼저"),
+  dict(video_id="japan-ai-short-2", copy="AI 출력 검증", title="일본이 아이에게 가르치는 의심"),
+  dict(video_id="japan-ai-short-3", copy="순서대로 생각하기", title="일본식 논리, 한국 가정도"),
+ ],
+)
 
 def render(cfg):
     tl="".join(f"""<div class="tl-item"><div class="tl-year">{y}</div><div class="tl-body"><h4>{t}</h4><p>{d} <span class="src">[{s}]</span></p></div></div>""" for y,t,d,s in cfg["timeline"])
@@ -241,7 +323,7 @@ def video_detail(cfg):
 </main>"""
     return BS.page("cases","../",f"{lf['title']} | 영상",lf['subtitle'],body)
 
-NAMES={"china":("중국","🇨🇳"),"usa":("미국","🇺🇸"),"uk":("영국","🇬🇧"),"singapore":("싱가포르","🇸🇬"),"korea":("한국","🇰🇷")}
+NAMES={"china":("중국","🇨🇳"),"usa":("미국","🇺🇸"),"uk":("영국","🇬🇧"),"singapore":("싱가포르","🇸🇬"),"korea":("한국","🇰🇷"),"germany":("독일","🇩🇪"),"japan":("일본","🇯🇵")}
 def episode_nav(slug,current):
     name,flag=NAMES[slug]
     eps=[("1","정책·방침",f"/world-cases/{slug}.html"),("2","실제 교실 운영",f"/world-cases/{slug}-2.html"),("3","우리 집 주간 적용",f"/world-cases/{slug}-3.html")]
