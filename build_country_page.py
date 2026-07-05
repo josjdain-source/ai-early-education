@@ -244,7 +244,7 @@ def video_detail(cfg):
 NAMES={"china":("중국","🇨🇳"),"usa":("미국","🇺🇸"),"uk":("영국","🇬🇧"),"singapore":("싱가포르","🇸🇬"),"korea":("한국","🇰🇷")}
 def episode_nav(slug,current):
     name,flag=NAMES[slug]
-    eps=[("1","정책·방침",f"/world-cases/{slug}.html"),("2","실제 교실 운영",f"/world-cases/{slug}-2.html"),("3","우리 집 주간 적용",None)]
+    eps=[("1","정책·방침",f"/world-cases/{slug}.html"),("2","실제 교실 운영",f"/world-cases/{slug}-2.html"),("3","우리 집 주간 적용",f"/world-cases/{slug}-3.html")]
     out=[]
     for n,t,href in eps:
         on = (n==current)
@@ -263,15 +263,31 @@ def practice_page(slug):
 {episode_nav(slug,"2")}
 </div></section>
 {CR.reality_html(slug)}
-<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band">
-<div><h3>다음 편 예고 · 3편 '우리 집 주간 적용'</h3><p>{name}의 실제 방식을, 우리 아이의 한 주 습관으로 옮기는 법. 매주 한 편씩 이어집니다.</p></div>
-<a class="btn" href="/world-cases/{slug}.html">← 1편 정책 다시 보기</a></div></div></section>
+<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#FFF3E0,#FDE9CE)">
+<div><h3>▶ 3편 · 🏠 우리 집 한 주, 이렇게</h3><p>{name}의 실제 방식을 우리 아이의 한 주 습관으로 옮기는 실전편. 바로 쓰는 무료 자료까지.</p></div>
+<a class="btn btn-lg" href="/world-cases/{slug}-3.html">3편 보러가기 →</a></div></div></section>
 </main>"""
     return BS.page("cases","../",f"{name}은 실제로 어떻게 가르치나 · 2편 | AI 조기교육",f"{name}의 실제 교실 운영 — 학년별·주간 수업 방식과 도구. 세계 AI교육법 시리즈 2편.",body)
+def apply_page(slug):
+    name,flag=NAMES[slug]
+    body=f"""<main>
+<section class="page-hero"><div class="wrap">
+<div class="pill">{flag} 세계 사례 · {name} 3편</div>
+<h1 style="font-size:32px">{name} 방식, <span class="coral">우리 집</span>에 이렇게</h1>
+<p class="sub">세계의 방법을 우리 아이의 한 주 습관으로 — 저녁 대화 10분이면 충분합니다</p>
+{episode_nav(slug,"3")}
+</div></section>
+{CR.apply_html(slug)}
+<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band">
+<div><h3>다른 나라 방식도 우리 집에</h3><p>중국·미국·영국·싱가포르·한국, 5개국의 실전편이 매주 이어집니다.</p></div>
+<a class="btn" href="/world-cases.html">세계 사례 전체 보기 →</a></div></div></section>
+</main>"""
+    return BS.page("cases","../",f"{name} 방식, 우리 집에 이렇게 · 3편 | AI 조기교육",f"{name}의 AI교육 방식을 우리 아이 주간 습관으로. 요일별 루틴과 무료 자료. 세계 AI교육법 시리즈 3편.",body)
 def write_all_practice():
     for slug in NAMES:
         BS.write(f"world-cases/{slug}-2.html",practice_page(slug))
-    print("2편(실제 교실 운영) 5개국 생성 완료")
+        BS.write(f"world-cases/{slug}-3.html",apply_page(slug))
+    print("2편·3편 5개국 생성 완료")
 if __name__=="__main__":
     import sys
     which=sys.argv[1:] or ["uk","singapore","korea"]

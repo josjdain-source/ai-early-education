@@ -58,7 +58,7 @@ REALITY={
 
 NAMES={"china":("중국","🇨🇳"),"usa":("미국","🇺🇸"),"uk":("영국","🇬🇧"),"singapore":("싱가포르","🇸🇬"),"korea":("한국","🇰🇷")}
 def episode_nav(slug,current):
-    eps=[("1","정책·방침",f"/world-cases/{slug}.html"),("2","실제 교실 운영",f"/world-cases/{slug}-2.html"),("3","우리 집 주간 적용",None)]
+    eps=[("1","정책·방침",f"/world-cases/{slug}.html"),("2","실제 교실 운영",f"/world-cases/{slug}-2.html"),("3","우리 집 주간 적용",f"/world-cases/{slug}-3.html")]
     out=[]
     for n,t,href in eps:
         on=(n==current); base="display:inline-block;border-radius:20px;padding:7px 15px;font-size:13px;font-weight:700;text-decoration:none;border:1.5px solid"
@@ -66,6 +66,58 @@ def episode_nav(slug,current):
         elif on: out.append(f'<span style="{base} #E0684A;color:#fff;background:#E0684A">{n}편 · {t}</span>')
         else: out.append(f'<span style="{base} #eadfca;color:#b9a98c;background:#faf5ea">{n}편 · {t} · 준비중</span>')
     return '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">'+''.join(out)+'</div>'
+APPLY={
+"china": dict(
+ intro="중국이 학년마다 '체험 → 이해 → 제작'으로 한 계단씩 올라간 것처럼, 우리 집도 한 주에 한 계단씩 올리면 됩니다. 학교도 태블릿도 필요 없어요. 저녁 대화 10분이면 충분합니다.",
+ week=[("월 · 체험","오늘 만난 AI 하나를 같이 관찰해요. '이 앱은 뭘 도와줬어? 뭐가 신기했어?'"),
+  ("수 · 이해","'AI가 그걸 어떻게 알았을까?'를 함께 상상해봐요. 정답이 아니라 상상이 목표예요."),
+  ("금 · 제작","AI로 작은 것 하나를 함께 만들어요(그림·이야기·질문). 결과보다 과정이 중요해요."),
+  ("주말 · 다시 묻기","이번 주 만든 걸 자랑하고 '더 좋게 하려면 뭘 물어볼까?'로 마무리해요.")],
+ tip="저학년은 '체험·관찰'만으로 충분합니다. 고학년은 '만들기'와 '다시 묻기'를 늘리세요 — 중국의 나선형과 같은 원리예요."),
+"usa": dict(
+ intro="미국은 AI의 5대 개념을 학년마다 다시, 더 깊게 배웁니다. 집에서도 한 주에 한 개념씩 질문으로 만나면 됩니다. 개념을 외우는 게 아니라, 대화로 감을 잡는 거예요.",
+ week=[("1주 · 인식","'AI는 어떻게 보고 들을까?' 사진·목소리를 알아보는 AI를 같이 써봐요."),
+  ("2주 · 학습","'AI는 어떻게 배울까?' 많이 보면 똑똑해진다는 걸 예로 이야기해요."),
+  ("3주 · 사회 영향","'AI 때문에 뭐가 좋아지고, 뭐가 걱정될까?'를 함께 생각해요."),
+  ("4주 · 만들기","배운 개념으로 작은 프로젝트 하나를 만들어요.")],
+ tip="한 주에 하나면 충분해요. 다음 달에 같은 개념을 한 단계 더 깊게 — 미국의 나선형처럼 반복하세요."),
+"uk": dict(
+ intro="영국의 핵심은 '안전·책임·비판적 사고'였죠. 집에서는 거창한 수업 대신, 이 세 가지를 짧은 질문 습관으로 만들면 됩니다. 결정과 책임을 아이에게 넘겨주는 한 주예요.",
+ week=[("월 · 책임","AI가 답을 줘도 마지막 결정은 아이가. '그래서 넌 어떻게 할래?'"),
+  ("수 · 근거","'이 답의 근거가 뭘까? 어디서 왔을까?'를 함께 찾아봐요."),
+  ("금 · 구분","'방금 그건 네가 한 거야, AI가 한 거야?'로 무엇이 내 것인지 확인해요."),
+  ("주말 · 안전","이번 주 AI 쓰면서 불편하거나 이상했던 것 없었는지 이야기해요.")],
+ tip="'네 생각은 어때?' 한마디를 매일 붙여보세요. 영국이 제도로 지킨 '판단은 사람'을 집에서 습관으로 만드는 겁니다."),
+"singapore": dict(
+ intro="싱가포르의 두 열쇠는 '균형(가드레일)'과 'AI를 넘어서기'였습니다. 집에서는 쓰는 시간의 균형과, AI 없이 생각하는 시간을 한 주에 함께 넣으면 됩니다.",
+ week=[("월 · 균형","AI를 켜기 전에 시간과 규칙을 아이와 함께 정해요. '몇 분, 무엇에 쓸까?'"),
+  ("수 · 네 생각 먼저","AI에게 묻기 전에 '너라면 어떻게?'를 먼저 말하게 해요."),
+  ("금 · 의심","'이 답이 한쪽으로 치우친 건 아닐까?'를 같이 살펴봐요."),
+  ("주말 · 넘어서기","하루는 AI 없이, 스스로 만들고 생각하는 시간을 가져요.")],
+ tip="'많이'보다 '알맞게'. AI를 쓰는 날과 안 쓰는 날의 균형이, 싱가포르가 나라로 세운 가드레일을 집에서 세우는 법이에요."),
+"korea": dict(
+ intro="학교의 AI교과서는 흔들렸지만, 집의 습관은 흔들리지 않습니다. 한국이 놓친 '다시 묻는 힘'을, 우리 집 한 주 루틴으로 단단히 만들어요. 이게 3편의 결론이자 시작입니다.",
+ week=[("월 · 이상한 곳 찾기","AI가 준 답에서 '이상한 부분' 하나만 같이 찾아봐요."),
+  ("수 · 검증","'이게 진짜인지 어떻게 확인할까?' 근거를 함께 찾아요."),
+  ("금 · AI 없이","'AI 없이 너라면 어떻게 했을까?'를 스스로 해보게 해요."),
+  ("주말 · 돌아보기","이번 주 다시 물어본 것과 배운 것을 짧게 정리해요.")],
+ tip="학교 정책이 어떻든, 이 네 가지 질문이면 충분합니다. 정답을 받는 아이가 아니라, 정답을 검증하는 아이로 자랍니다."),
+}
+def apply_html(key):
+    a=APPLY.get(key)
+    if not a: return ""
+    wk="".join(f"""<div class="tl-item"><div class="tl-year">{w}</div><div class="tl-body"><p>{d}</p></div></div>""" for w,d in a["week"])
+    return f"""<section class="block"><div class="wrap">
+<h2 class="sec-title">🏠 우리 집 한 주, 이렇게</h2>
+<p class="sec-desc">{a['intro']}</p>
+<div class="timeline">{wk}</div>
+<div class="callout" style="margin-top:16px">💡 <b>팁</b> — {a['tip']}</div>
+<h3 style="margin:22px 0 10px;font-size:17px">바로 쓰는 무료 자료</h3>
+<div class="grid g3">
+<a class="card" href="/free/worksheet.html" target="_blank" rel="noopener" style="text-decoration:none"><div style="font-size:32px">📝</div><h4>AI 대화 연습지</h4><p style="color:var(--muted);font-size:13.5px">이번 주 대화를 적어보세요</p></a>
+<a class="card" href="/free/question-cards.html" target="_blank" rel="noopener" style="text-decoration:none"><div style="font-size:32px">🃏</div><h4>질문 카드 10장</h4><p style="color:var(--muted);font-size:13.5px">요일별로 한 장씩</p></a>
+<a class="card" href="/free/first-prompts.html" target="_blank" rel="noopener" style="text-decoration:none"><div style="font-size:32px">💡</div><h4>첫 프롬프트 20개</h4><p style="color:var(--muted);font-size:13.5px">'제작'의 날에</p></a>
+</div></div></section>"""
 def reality_html(key):
     r=REALITY.get(key)
     if not r: return ""
