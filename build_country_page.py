@@ -296,13 +296,7 @@ def render(cfg):
 <p class="sec-desc">{cfg['srcnote']}</p>
 <ul class="srclist">{srcs}</ul></div></section>
 
-<section class="block"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#FFF3E0,#FDE9CE)">
-<div><h3>▶ 2편 · {cfg['flag']} 실제 교실은 이렇게 돌아간다</h3><p>정책은 봤으니, 이제 학년별로 매주 실제로 무엇을 가르치는지 — 실무편으로 이어집니다.</p></div>
-<a class="btn btn-lg" href="/world-cases/{cfg['slug']}-2.html">2편 보러가기 →</a></div></div></section>
 
-<section class="block"><div class="wrap"><div class="cta-band">
-<div><h3>세계 5개국을 한 흐름으로</h3><p>중국·미국·영국·싱가포르·한국 편이 같은 구조의 국가별 콘텐츠 패키지로 이어집니다.</p></div>
-<a class="btn" href="/world-cases.html">세계 사례 전체 보기</a></div></div></section>
 </main>"""
     return BS.page("cases","../",f"{cfg['h1']} | AI 조기교육",f"{cfg['subtitle']} — {cfg['h1']}",body)
 
@@ -349,15 +343,6 @@ def practice_page(slug):
 {episode_nav(slug,"2")}
 </div></section>
 {CR.reality_html(slug)}
-{(f'''<section class="block"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#EAF3FF,#DCEBFC)">
-<div><h3>🗺 우리 아이 나이엔 뭘 배우나? · 학년별 로드맵</h3><p>만 5~16세, 나이별로 학교가 하는 것과 집에서 할 것을 한눈에.</p></div>
-<a class="btn btn-lg" href="/world-cases/{slug}-roadmap.html">학년별 로드맵 →</a></div></div></section>''') if slug in CR.ROADMAP else ''}
-{(f'''<section class="block"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#EAF3FF,#DCEBFC)">
-<div><h3>🔬 심화 · {name}은 1년 동안 매주 이렇게</h3><p>실제 공개 커리큘럼으로 보는 학년 한 해의 주차별 수업(단원·차시). AI 단원은 6차시로.</p></div>
-<a class="btn btn-lg" href="/world-cases/{slug}-year.html">1년 커리큘럼 보기 →</a></div></div></section>''') if slug in CR.YEAR else ''}
-<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#FFF3E0,#FDE9CE)">
-<div><h3>▶ 3편 · 🏠 우리 집 한 주, 이렇게</h3><p>{name}의 실제 방식을 우리 아이의 한 주 습관으로 옮기는 실전편. 바로 쓰는 무료 자료까지.</p></div>
-<a class="btn btn-lg" href="/world-cases/{slug}-3.html">3편 보러가기 →</a></div></div></section>
 </main>"""
     return BS.page("cases","../",f"{name}은 실제로 어떻게 가르치나 · 2편 | AI 조기교육",f"{name}의 실제 교실 운영 — 학년별·주간 수업 방식과 도구. 세계 AI교육법 시리즈 2편.",body)
 def apply_page(slug):
@@ -372,9 +357,6 @@ def apply_page(slug):
 {episode_nav(slug,"3")}
 </div></section>
 {CR.apply_html(slug)}
-<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band">
-<div><h3>다른 나라 방식도 우리 집에</h3><p>중국·미국·영국·싱가포르·한국, 5개국의 실전편이 매주 이어집니다.</p></div>
-<a class="btn" href="/world-cases.html">세계 사례 전체 보기 →</a></div></div></section>
 </main>"""
     return BS.page("cases","../",f"{name} 방식, 우리 집에 이렇게 · 3편 | AI 조기교육",f"{name}의 AI교육 방식을 우리 아이 주간 습관으로. 요일별 루틴과 무료 자료. 세계 AI교육법 시리즈 3편.",body)
 def year_page(slug):
@@ -406,11 +388,6 @@ def homeyear_page(slug):
 {episode_nav(slug,"3")}
 </div></section>
 {CR.homeyear_html(slug)}
-<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band">
-<div><h3>학교는 1년에 어떻게 가르치나 다시 보기</h3><p>이 실전판이 따라가는 영국의 실제 1년 커리큘럼.</p></div>
-<a class="btn btn-lg" href="/world-cases/{slug}-year.html">🔬 1년 커리큘럼 →</a></div>
-<div class="cta-band" style="margin-top:12px"><div><h3>바로 쓰는 무료 자료</h3><p>연습지·질문 카드·프롬프트로 오늘 시작.</p></div>
-<a class="btn btn-lg" href="/free-kit.html">무료 자료 받기 ⬇</a></div></div></section>
 </main>"""
     return BS.page("cases","../",f"{name} 1년 과정, 우리 집에서 이렇게 따라한다 | AI 조기교육",f"{name}의 학년 1년 커리큘럼을 집에서 단원별로 따라하는 구체 활동. 세계 AI교육법 집 실전판.",body)
 def write_all_practice():
@@ -527,13 +504,9 @@ def program_page(slug):
 {episode_nav(slug,"3")}
 </div></section>
 {CR.program_html(slug)}
-<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#EAF3FF,#DCEBFC)">
-<div><h3>🖨 12주 워크북 (인쇄 · PDF로 저장)</h3><p>매주 한 장씩 출력해, 아이가 직접 기록하며 진행하는 워크북. 표지·수료장 포함.</p></div>
-<a class="btn btn-lg" href="/free/{slug}-12weeks-workbook.html" target="_blank" rel="noopener">워크북 열기 →</a></div>
-<div class="cta-band" style="margin-top:12px"><div><h3>바로 쓰는 무료 자료</h3><p>연습지에 매주 기록하고, 질문 카드로 대화를 이어가세요.</p></div>
-<a class="btn btn-lg" href="/free-kit.html">무료 자료 받기 ⬇</a></div>
-<div class="cta-band" style="margin-top:12px"><div><h3>다른 나이는?</h3><p>만 5~16세 학년별 로드맵에서 우리 아이 단계를 찾아요.</p></div>
-<a class="btn btn-lg" href="/world-cases/{slug}-roadmap.html">🗺 학년별 로드맵 →</a></div></div></section>
+<section class="block" style="padding:6px 0 40px"><div class="wrap center">
+<a class="btn btn-primary btn-lg" href="/free/{slug}-12weeks-workbook.html" target="_blank" rel="noopener">🖨 12주 워크북 열기 (인쇄·PDF)</a>
+</div></section>
 </main>"""
     return BS.page("cases","../",f"만 8세 초등 12주 홈 프로그램 | AI 조기교육",f"{name} KS2 방식 기반, 만 8세 아이와 집에서 하는 12주 실전 프로그램. 주 1회 15분, 무료. 순서→만들기→AI 생각.",body)
 def roadmap_page(slug):
@@ -547,14 +520,9 @@ def roadmap_page(slug):
 {episode_nav(slug,"2")}
 </div></section>
 {CR.roadmap_html(slug)}
-<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#E6F4EA,#D3EFDC)">
-<div><h3>▶ 만 8세라면 · 12주 홈 프로그램</h3><p>KS2(초등) 아이와 지금 바로 시작하는, 주 1회 15분 12주 실전 프로그램.</p></div>
-<a class="btn btn-lg" href="/world-cases/{slug}-8yo-12weeks.html">12주 프로그램 →</a></div>
-<div class="cta-band" style="margin-top:12px;background:linear-gradient(135deg,#EAF3FF,#DCEBFC)">
-<div><h3>🔬 만 13세(Year 8)는 1년을 이렇게</h3><p>한 학년을 주차별로, 그리고 집에서 따라하는 실전까지 깊게.</p></div>
-<a class="btn btn-lg" href="/world-cases/{slug}-year.html">1년 커리큘럼 →</a></div>
-<div class="cta-band" style="margin-top:12px"><div><h3>🏠 집에서 따라하기</h3><p>단원마다 집에서 하는 구체 활동.</p></div>
-<a class="btn btn-lg" href="/world-cases/{slug}-home.html">집 실전판 →</a></div></div></section>
+<section class="block" style="padding:6px 0 40px"><div class="wrap center">
+<a class="btn btn-primary btn-lg" href="/world-cases/{slug}-8yo-12weeks.html">만 8세라면 · 12주 홈 프로그램 →</a>
+</div></section>
 </main>"""
     return BS.page("cases","../",f"{name}: 우리 아이 나이엔 뭘 배우나 (학년별 로드맵) | AI 조기교육",f"{name}의 컴퓨팅·AI 교육을 만 5~16세 학년별로. 학교가 하는 것과 집에서 할 것. 세계 AI교육법 심화.",body)
 if __name__=="__main__":

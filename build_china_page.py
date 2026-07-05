@@ -111,13 +111,7 @@ def china_page():
 <p class="sec-desc">이 페이지의 모든 수치·정책은 아래 출처에 근거합니다. 중국을 감시국가로 자극화하지 않고, 국가 주도형 AI 리터러시·교육과정 편입·윤리적 사용 규칙의 관점으로 정리했습니다.</p>
 <ul class="srclist">{srcs}</ul></div></section>
 
-<section class="block"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#FFF3E0,#FDE9CE)">
-<div><h3>▶ 2편 · 🇨🇳 실제 교실은 이렇게 돌아간다</h3><p>정책은 봤으니, 이제 학년별로 매주 실제로 무엇을 가르치는지 — 실무편으로 이어집니다.</p></div>
-<a class="btn btn-lg" href="/world-cases/china-2.html">2편 보러가기 →</a></div></div></section>
 
-<section class="block"><div class="wrap"><div class="cta-band">
-<div><h3>다음 편도 같은 구조로</h3><p>미국·영국·싱가포르·한국 편도 국가별 콘텐츠 패키지로 이어집니다.</p></div>
-<a class="btn" href="/world-cases.html">세계 사례 전체 보기</a></div></div></section>
 </main>"""
     return BS.page("cases","../","중국은 왜 초등학생에게 AI를 가르치기 시작했나 | AI 조기교육",
         "2017 국가 AI 전략에서 2035 교육강국까지 — 중국 AI교육을 역사·운영·미래세대 3층으로 본 심층 다큐와 한국 가정의 답.",body)
