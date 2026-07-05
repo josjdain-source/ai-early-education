@@ -432,9 +432,14 @@ def home():
 <a class="btn btn-ghost btn-lg" href="/world-cases/uk-8yo-12weeks.html">📅 만 8세 12주 프로그램</a></div>
 </div></section>
 
-<section class="block" style="padding:26px 0 46px"><div class="wrap" style="max-width:760px">
+<section class="block" style="padding:26px 0 20px"><div class="wrap" style="max-width:760px">
 <h2 class="sec-title" style="font-size:20px;margin-bottom:14px">🌍 세계는 아이에게 AI를 어떻게 가르치나</h2>
 <div style="display:grid;gap:9px">{cc}</div>
+</div></section>
+<section class="block" style="padding:0 0 44px"><div class="wrap" style="max-width:760px">
+<a href="/competitions.html" style="display:flex;gap:14px;align-items:center;background:linear-gradient(135deg,#EAF2FB,#DCEAF8);border:1px solid #CADCF0;border-radius:16px;padding:16px 20px;text-decoration:none;color:#22406b">
+<span style="font-size:34px">🏆</span><div><b style="font-size:16px">AI 경진대회 문제풀이 교실</b><p style="margin:2px 0 0;color:#4a5f7d;font-weight:600;font-size:13.5px">실제 대회 문제를 아이 눈높이로 — 학년별 문제·풀이전략·우리집 연습문제.</p></div>
+<span style="margin-left:auto;color:#3A6FB0;font-weight:900">→</span></a>
 </div></section>
 </main>"""
     return page("home","",
@@ -624,6 +629,8 @@ def free_kit():
 <section class="block"><div class="wrap" style="max-width:900px"><div class="grid g3">{kc}</div>
 <p class="center" style="color:var(--muted);margin-top:20px;font-size:14px">※ 세 자료 모두 <b>바로 열람·인쇄</b> 가능합니다. 브라우저의 인쇄에서 'PDF로 저장'을 고르면 파일로도 보관돼요.</p>
 <div class="cta-band" style="margin-top:24px"><div><h3>어떻게 쓰는지 먼저 볼까요?</h3><p>6단계 시작 가이드와 함께 쓰면 더 좋아요.</p></div><a class="btn btn-lg" href="/start-guide.html">시작 가이드 보기 →</a></div>
+<div style="margin-top:12px;display:flex;gap:12px;align-items:center;background:#F4F7FB;border:1px dashed #CADCF0;border-radius:14px;padding:14px 18px;color:#4a5f7d">
+<span style="font-size:26px">🏆</span><div><b style="color:#22406b">AI 경진대회 문제풀이 활동지</b> <span style="font-size:11px;font-weight:800;color:#8a6f45;background:#F0E6D2;border-radius:6px;padding:1px 7px">준비중</span><p style="margin:2px 0 0;font-size:13px">학년별 대회형 문제를 인쇄 활동지로. 지금은 <a href="/competitions.html" style="color:#3A6FB0;font-weight:700">경진대회 교실</a>에서 온라인으로 풀 수 있어요.</p></div></div>
 </div></section></main>"""
     return page("free","","무료 자료 | AI 조기교육","집에서 바로 쓰는 무료 AI교육 자료 — 연습지·질문 카드·첫 프롬프트 20개. 이메일 없이 바로 인쇄.",body)
 
