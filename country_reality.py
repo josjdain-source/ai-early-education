@@ -137,6 +137,46 @@ APPLY={
   ("주말 · 윤리","'AI가 이래도 될까?' 간단한 윤리 질문 하나를 이야기해요.")],
  tip="일본이 프로그래밍으로 논리를 먼저 기른 것처럼, 집도 '순서대로 생각하기'부터. AI는 그다음, 비판적으로."),
 }
+YEAR={
+"uk": dict(
+ gradeband="KS3 · Year 8 (만 13~14세) 컴퓨팅",
+ intro="영국은 한 학년을 6개 단원으로 짜고, 하프텀(약 6~7주)마다 한 단원씩, 각 단원을 6차시로 가르칩니다. 즉 대략 매주 한 차시씩 1년에 36차시를 밟습니다. Year 8 한 해를 실제 순서대로 따라가 봅니다.",
+ terms=[
+  ("가을 1학기 전반","컴퓨팅 시스템의 계층","프로그램·운영체제·하드웨어, 그리고 이진법까지 — 컴퓨터가 무엇으로 이뤄졌는지 층층이 이해합니다."),
+  ("가을 1학기 후반","데이터 표현 · 데이터 과학","이미지·소리·숫자가 어떻게 데이터가 되는지, 데이터로 무엇을 알 수 있는지 배웁니다."),
+  ("봄 2학기 전반","파이썬 프로그래밍 입문","입력·출력에서 시작해 연산·무작위·선택·반복까지, 텍스트 코딩의 첫걸음을 뗍니다."),
+  ("봄 2학기 후반","웹 개발","HTML로 웹페이지를 직접 만들며 인터넷의 작동을 이해합니다."),
+  ("여름 3학기 전반","벡터 그래픽","벡터 편집 도구로 로고·아이콘·일러스트를 만듭니다."),
+  ("여름 3학기 후반","모바일 앱 개발","Code.org App Lab으로 자기만의 앱을 설계하고 개발합니다."),
+ ],
+ ai_name="AI·기계학습 단원 '생각하는 기계(Thinking machines)'",
+ ai_note="컴퓨팅 시스템·데이터 과학 단원 안에서 AI를 6차시로 집중해 다룹니다. 실제 차시 흐름은 이렇습니다.",
+ ai_lessons=[
+  ("1차시","AI란 무엇인가","'인공지능'을 정의하고, 미로 찾기부터 자율주행까지 실생활 속 AI·기계학습의 예를 찾아봅니다."),
+  ("2차시","기계학습 vs 전통 프로그래밍","규칙을 사람이 직접 짜는 프로그래밍과, 데이터로 스스로 배우는 기계학습의 차이를 비교합니다."),
+  ("3차시","기계를 훈련시키기 ① 데이터 모으기","기계를 가르치는 첫 단계 — 좋은 데이터를 모으는 과정을 직접 체험합니다."),
+  ("4차시","기계를 훈련시키기 ② 학습과 테스트","모은 데이터로 훈련하고, 잘 배웠는지 테스트하는 흐름(수집→훈련→테스트)을 이해합니다."),
+  ("5차시","작은 AI 직접 만들기","간단한 이미지 인식이나 감정 분석 같은 작은 AI를 손으로 만들어봅니다."),
+  ("6차시","AI의 윤리적 딜레마","AI를 쓸 때 생기는 도덕적 문제 — 편향·판단·책임을 토론합니다."),
+ ],
+ srcnote="출처: NCCE Teach Computing(teachcomputing.org) · Oak National Academy · PG Online. 학교마다 단원 순서와 시기는 조금씩 다를 수 있습니다.",
+)}
+def year_html(key):
+    y=YEAR.get(key)
+    if not y: return ""
+    terms="".join(f"""<div class="tl-item"><div class="tl-year">{t}</div><div class="tl-body"><h4>{u}</h4><p>{d}</p></div></div>""" for t,u,d in y["terms"])
+    lessons="".join(f"""<div class="tl-item"><div class="tl-year">{n}</div><div class="tl-body"><h4>{t}</h4><p>{d}</p></div></div>""" for n,t,d in y["ai_lessons"])
+    return f"""<section class="block"><div class="wrap">
+<div class="pill">🔬 심화 · 1년 커리큘럼</div>
+<h2 class="sec-title" style="margin-top:8px">{y['gradeband']}, 1년 동안 매주 이렇게</h2>
+<p class="sec-desc">{y['intro']}</p>
+<h3 style="margin:18px 0 8px;font-size:17px">① 1년 흐름 — 하프텀마다 한 단원</h3>
+<div class="timeline">{terms}</div>
+<h3 style="margin:24px 0 8px;font-size:17px">② {y['ai_name']} — 매주 한 차시</h3>
+<p class="sec-desc">{y['ai_note']}</p>
+<div class="timeline">{lessons}</div>
+<p class="sec-desc" style="margin-top:14px;font-size:12.5px">{y['srcnote']}</p>
+</div></section>"""
 def apply_html(key):
     a=APPLY.get(key)
     if not a: return ""
