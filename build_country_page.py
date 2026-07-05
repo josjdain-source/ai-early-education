@@ -420,65 +420,87 @@ def write_all_practice():
 def program_workbook(slug):
     p=CR.PROG12[slug]; name,flag=NAMES[slug]
     def part_of(n): return "3부 · 데이터와 AI 생각" if n>=9 else ("2부 · 직접 만들기" if n>=5 else "1부 · 컴퓨팅적 사고")
+    COL={1:("#2E8B96","#E8F4F6"),2:("#E0684A","#FDECE5"),3:("#2E9E63","#E7F5EC")}
+    ICON={1:"🧭",2:"🐞",3:"🔁",4:"🔀",5:"🐱",6:"🔊",7:"🎬",8:"🎮",9:"📊",10:"🗂️",11:"🔎",12:"💬"}
+    pnum=lambda n:3 if n>=9 else(2 if n>=5 else 1)
+    tracker="".join(f'<span class="tc" style="border-color:{COL[pnum(i)][0]};color:{COL[pnum(i)][0]}">{i}</span>' for i in range(1,13))
     wk=""
     for w in p["weeks"]:
-        n=w[0]
-        wk+=f"""<section class="page wk">
-<div class="wkhead"><span class="wknum">{n}주</span><span class="wkpart">{part_of(n)} · 만 8세 홈 워크북</span></div>
-<h2>{w[1]}</h2>
-<div class="act"><b>🎯 이번 주에 할 것</b><br>{w[2]}<div class="prep">🧰 준비물 · {w[3].replace('준비물: ','')}</div></div>
-<div class="say">💬 부모가 이렇게 물어봐요<br><b>"{w[4]}"</b></div>
-<div class="rbox"><div class="rlab">✍️ 우리가 한 것</div><div class="lines"></div></div>
-<div class="rbox"><div class="rlab">💡 아이가 발견한 것 · 다시 물어본 것</div><div class="lines"></div></div>
-<div class="rrow"><div class="stars">이번 주 재미 &nbsp; ☆ ☆ ☆ ☆ ☆</div><div class="draw">그림 · 스티커 칸</div></div>
+        n=w[0]; c,bg=COL[pnum(n)]; ic=ICON.get(n,"✏️")
+        wk+=f"""<section class="page wk" style="--c:{c};--bg:{bg}">
+<div class="ribbon"><div class="badge">{n}</div><div class="ic">{ic}</div>
+<div class="tt"><div class="part">{part_of(n)}</div><h2>{w[1]}</h2></div><div class="wof">주 {n}<small>/12</small></div></div>
+<div class="act"><div class="lab">🎯 이번 주에 할 것</div>{w[2]}<div class="prep">🧰 준비물 · {w[3].replace('준비물: ','')}</div></div>
+<div class="say"><div class="lab">💬 부모가 이렇게 물어봐요</div><b>"{w[4]}"</b></div>
+<div class="grid2"><div class="rbox"><div class="rlab">✍️ 우리가 한 것</div><div class="lines"></div></div>
+<div class="rbox"><div class="rlab">💡 아이가 발견·다시 물은 것</div><div class="lines"></div></div></div>
+<div class="rrow"><div class="stars"><span>이번 주 재미</span> ☆ ☆ ☆ ☆ ☆</div><div class="draw">🎨 그림 · 스티커 칸</div></div>
 <div class="why">🔗 왜 하나요 — {w[5]}</div>
-</section>"""
+<div class="wfoot">📘 세계 AI교육법 · 만 8세 홈 워크북</div></section>"""
     return f"""<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>만 8세 12주 홈 프로그램 워크북 | AI 조기교육</title>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <style>
-*{{box-sizing:border-box}}body{{margin:0;background:#EDE6DA;font-family:"Pretendard","Malgun Gothic",sans-serif;color:#2B2016}}
-@page{{size:A4;margin:14mm}}
-.tbar{{position:sticky;top:0;display:flex;gap:10px;justify-content:space-between;align-items:center;background:#fff;padding:12px 18px;box-shadow:0 2px 8px rgba(0,0,0,.08);flex-wrap:wrap}}
+*{{box-sizing:border-box}}
+body{{margin:0;background:#E7DECF;font-family:"Pretendard","Malgun Gothic",sans-serif;color:#2B2016;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@page{{size:A4;margin:12mm}}
+.tbar{{position:sticky;top:0;z-index:5;display:flex;gap:10px;justify-content:space-between;align-items:center;background:#fff;padding:12px 18px;box-shadow:0 2px 10px rgba(0,0,0,.1);flex-wrap:wrap}}
 .tbar a{{color:#E0684A;font-weight:700;text-decoration:none}}
-.btn{{background:#E0684A;color:#fff;border:0;border-radius:10px;padding:10px 18px;font-weight:800;cursor:pointer;font-size:14px}}
-.page{{background:#fff;max-width:800px;margin:16px auto;padding:30px 34px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.06);min-height:960px}}
-.cover{{text-align:center;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#FFF7EA,#FBEBD3)}}
-.cover .em{{font-size:64px}}.cover h1{{font-size:32px;margin:10px 0 6px}}.cover .s{{color:#7c6a4d;font-size:15px}}
-.cover .how{{text-align:left;background:#fff;border:1px solid #E4D8C4;border-radius:14px;padding:18px 22px;margin:22px auto 0;max-width:560px;font-size:14px;line-height:1.7}}
-.wkhead{{display:flex;justify-content:space-between;align-items:baseline;border-bottom:3px solid #E0684A;padding-bottom:8px}}
-.wknum{{font-size:30px;font-weight:900;color:#E0684A}}.wkpart{{font-size:12.5px;color:#9b8a6e;font-weight:700}}
-.wk h2{{font-size:23px;margin:16px 0 14px}}
-.act{{background:#FFF7EA;border:1px solid #EAD9BE;border-radius:12px;padding:14px 16px;font-size:14.5px;line-height:1.6}}
+.btn{{background:#E0684A;color:#fff;border:0;border-radius:10px;padding:10px 20px;font-weight:800;cursor:pointer;font-size:14px}}
+.page{{background:#fff;max-width:820px;margin:18px auto;border-radius:16px;box-shadow:0 8px 26px rgba(0,0,0,.12);overflow:hidden;min-height:1010px}}
+.cover{{background:linear-gradient(180deg,#FFF7EA,#FBEBD3);padding-bottom:26px}}
+.coverimg{{width:100%;height:370px;object-fit:cover;display:block}}
+.covertitle{{text-align:center;padding:20px 34px 4px}}
+.kick{{display:inline-block;background:#E0684A;color:#fff;font-weight:800;font-size:12.5px;border-radius:20px;padding:5px 14px}}
+.cover h1{{font-size:31px;margin:12px 0 6px}}.cover .s{{color:#7c6a4d;font-size:14.5px}}
+.how{{text-align:left;background:#fff;border:1.5px solid #EAD9BE;border-radius:16px;padding:18px 22px;margin:20px 34px 0;font-size:14px;line-height:1.8}}
+.tracker{{text-align:center;margin:18px 34px 0}}.tlab{{font-weight:800;color:#8a6f45;margin-bottom:8px}}
+.tc{{display:inline-grid;place-items:center;width:36px;height:36px;border:2.5px solid;border-radius:50%;font-weight:900;margin:3px;font-size:15px}}
+.close{{background:linear-gradient(180deg,#FFF7EA,#FBEBD3);text-align:center;padding:70px 34px;display:flex;flex-direction:column;justify-content:center}}
+.close .em{{font-size:66px}}.close h1{{font-size:30px;margin:8px 0}}.close .s{{color:#7c6a4d;font-size:14.5px}}
+.ribbon{{background:var(--bg);border-bottom:4px solid var(--c);padding:18px 30px;display:flex;align-items:center;gap:14px}}
+.badge{{width:52px;height:52px;background:var(--c);color:#fff;border-radius:15px;display:grid;place-items:center;font-size:26px;font-weight:900;flex:none}}
+.ribbon .ic{{font-size:30px;flex:none}}
+.ribbon .tt{{flex:1}}.ribbon .part{{font-size:12px;font-weight:800;color:var(--c)}}.ribbon h2{{font-size:22px;margin:2px 0 0}}
+.wof{{font-size:14px;color:var(--c);font-weight:800;flex:none}}.wof small{{opacity:.55}}
+.act,.say,.grid2,.rrow,.why{{margin:14px 30px 0}}
+.lab{{font-weight:800;font-size:13px;color:var(--c);margin-bottom:5px}}
+.act{{background:#FFFDF8;border:1.5px solid #EADFCE;border-left:5px solid var(--c);border-radius:11px;padding:13px 15px;font-size:14.5px;line-height:1.6}}
 .prep{{color:#8a6f45;font-size:12.5px;margin-top:8px}}
-.say{{background:#EEF7EF;border:1px solid #cfe6d6;border-radius:12px;padding:12px 16px;margin:12px 0;font-size:14px;line-height:1.6}}
-.rbox{{margin-top:14px}}.rlab{{font-weight:800;font-size:14px;margin-bottom:6px}}
-.lines{{height:96px;background-image:repeating-linear-gradient(#fff,#fff 30px,#D8C9AE 31px,#fff 32px);border:1px solid #E4D8C4;border-radius:8px}}
-.rrow{{display:flex;gap:14px;margin-top:14px}}
-.stars{{flex:1;border:1px solid #E4D8C4;border-radius:8px;padding:14px;font-weight:700;font-size:16px}}
-.draw{{flex:1;border:1px dashed #C9BBA8;border-radius:8px;padding:14px;color:#b9a98c;text-align:center;min-height:90px;display:grid;place-items:center;font-size:13px}}
-.why{{margin-top:14px;font-size:12px;color:#9b8a6e;border-top:1px solid #eee;padding-top:8px}}
-@media print{{.noprint{{display:none!important}}body{{background:#fff}}.page{{box-shadow:none;margin:0;border-radius:0;max-width:none;min-height:auto;padding:0;page-break-after:always}}.page:last-child{{page-break-after:auto}}}}
+.say{{background:var(--bg);border-radius:11px;padding:12px 15px;font-size:14.5px;line-height:1.6}}
+.grid2{{display:grid;grid-template-columns:1fr 1fr;gap:12px}}
+.rlab{{font-weight:800;font-size:13px;margin-bottom:6px}}
+.lines{{height:92px;background-image:repeating-linear-gradient(#fff,#fff 28px,#D8C9AE 29px,#fff 30px);border:1.5px solid #E4D8C4;border-radius:9px}}
+.rrow{{display:flex;gap:12px}}
+.stars{{flex:1;border:1.5px solid #E4D8C4;border-radius:9px;padding:13px;font-weight:800;font-size:18px;display:flex;align-items:center;gap:8px}}
+.stars span{{font-size:13px;color:#8a6f45;font-weight:700}}
+.draw{{flex:1;border:2px dashed var(--c);border-radius:9px;padding:12px;color:#b9a98c;text-align:center;min-height:86px;display:grid;place-items:center;font-size:13px}}
+.why{{font-size:12px;color:#9b8a6e;border-top:1px solid #eee;padding-top:8px}}
+.wfoot{{margin:16px 30px 0;text-align:center;font-size:11px;color:#c4b59a}}
+@media print{{.noprint{{display:none!important}}body{{background:#fff}}.page{{box-shadow:none;margin:0;border-radius:0;max-width:none;min-height:auto;page-break-after:always}}.page:last-child{{page-break-after:auto}}.coverimg{{height:300px}}.close{{padding:90px 34px}}}}
 </style></head><body>
 <div class="tbar noprint"><a href="/world-cases/{slug}-8yo-12weeks.html">← 12주 프로그램</a>
 <button class="btn" onclick="window.print()">🖨 인쇄 / PDF로 저장</button></div>
-<section class="page cover"><div class="em">📘</div>
-<h1>만 8세 초등<br>12주 홈 프로그램 워크북</h1>
-<p class="s">영국 KS2 방식을 우리 집에서 · 주 1회 15분 · 대부분 무료</p>
+<section class="page cover">
+<img class="coverimg" src="/assets/program/workbook-cover.png" alt="아이와 부모가 함께 배우는 모습">
+<div class="covertitle"><span class="kick">📘 세계 AI교육법 · 홈 워크북</span>
+<h1>만 8세 초등 · 12주 홈 프로그램</h1>
+<p class="s">영국 KS2 방식을 우리 집에서 · 주 1회 15분 · 대부분 무료</p></div>
 <div class="how"><b>이렇게 쓰세요</b><br>
 · 매주 <b>한 장</b>씩, 그 주의 활동을 아이와 함께 해요.<br>
 · 활동 뒤 <b>'우리가 한 것'</b>과 <b>'다시 물어본 것'</b>을 아이가 직접 적거나 그려요.<br>
 · 결과물이 아니라 <b>함께 해보고 다시 묻는 과정</b>이 목표예요.<br>
-· 12주를 마치면 처음으로 돌아가 조금 더 어렵게 한 바퀴 더!<br>
-<span style="color:#9b8a6e;font-size:12.5px">© 2026 AI조기교육 · ai-early-education.pages.dev</span></div>
+· 한 주를 끝내면 아래 번호를 색칠! 12칸을 다 채워봐요.</div>
+<div class="tracker"><div class="tlab">🏁 우리의 12주</div>{tracker}</div>
 </section>
 {wk}
-<section class="page cover"><div class="em">🎓</div>
+<section class="page close"><div class="em">🎓</div>
 <h1>12주, 정말 잘했어요!</h1>
 <p class="s">이제 우리 아이는 순서대로 생각하고, 스스로 만들고,<br>AI에게 '다시 묻는' 힘의 씨앗을 가졌어요.</p>
-<div class="how" style="text-align:center"><b>수료 축하 · ______________ (이름)</b><br><br>
-가장 재미있었던 주: ____주<br>다음에 또 해보고 싶은 것: ______________________</div>
+<div class="how" style="text-align:center;margin:22px auto 0;max-width:460px"><b>🏅 수료 축하합니다</b><br><br>
+이름 · ________________<br><br>가장 재미있었던 주 · ____주<br>다음에 또 해보고 싶은 것 · ________________<br><br>
+<span style="color:#9b8a6e;font-size:12px">© 2026 AI조기교육 · ai-early-education.pages.dev</span></div>
 </section>
 </body></html>"""
 def program_page(slug):
