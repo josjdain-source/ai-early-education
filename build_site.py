@@ -34,7 +34,7 @@ def head(title,desc,base):
 <link rel="stylesheet" href="{base}styles/main.css">
 </head><body>"""
 
-# ---------- KOSIS식 메가메뉴 (압축판: 메뉴당 4개+전체보기, 낮은 패널) ----------
+# ---------- 상단 드롭다운 메뉴 (nav 항목 바로 아래 · 카드 없음 · 5항목) ----------
 YT_CH="https://www.youtube.com/channel/UCzCA_HXDHMVGvWpQv4PSZgw"
 MEGA=[
  ("why","왜 AI교육인가","/why-ai-education.html",[
@@ -42,54 +42,51 @@ MEGA=[
    ("알파고 이후, 놓친 시간","/world-cases/korea.html"),
    ("정답보다 다시 묻는 힘","/why-ai-education.html#philosophy"),
    ("부모가 오해하기 쉬운 것","/parent-resources.html#faq"),
-  ],("먼저 읽기","우리의 교육 철학 한 편","/why-ai-education.html","철학 보기"),"전체 보기"),
+  ],"전체 보기"),
  ("cases","세계 AI교육","/world-cases.html",[
    ("중국 · 시간표에 AI를 넣다","/world-cases/china.html"),
    ("미국 · 만드는 아이를 키우다","/world-cases/usa.html"),
    ("영국 · 비판적으로 판단하다","/world-cases/uk.html"),
    ("싱가포르 · 생활 속에서 실습","/world-cases/singapore.html"),
-  ],("지금 볼 영상","중국 편 심층 다큐","/videos/china-ai-education.html","영상 보기 ▶"),"전체 국가 보기"),
+  ],"전체 국가 보기"),
  ("videos","영상관","/videos.html",[
-   ("대표작 · 세계 5개국 편","/videos/world-ai-education.html"),
+   ("최신 Shorts · 잃어버린 AI 10년","/videos/korea-ai-education.html"),
+   ("롱폼 다큐 · 세계 5개국","/videos/world-ai-education.html"),
    ("중국 AI교육 심층","/videos/china-ai-education.html"),
    ("미국 AI교육 심층","/videos/us-ai-education.html"),
-   ("한국의 잃어버린 AI 10년","/videos/korea-ai-education.html"),
-  ],("최신 편","한국의 잃어버린 AI 10년","/videos/korea-ai-education.html","보러가기 ▶"),"전체 영상 보기"),
+  ],"전체 영상 보기"),
  ("start","시작 가이드","/start-guide.html",[
    ("집에서 시작하는 6단계","/start-guide.html"),
-   ("아이에게 첫 질문 시키기","/free/first-prompts.html"),
+   ("첫 질문 시키기","/free/first-prompts.html"),
    ("결과를 같이 관찰하기","/free/worksheet.html"),
-   ("다시 묻기 연습 (주간 루틴)","/world-cases/korea-3.html"),
-  ],("추천","만 8세 12주 홈 프로그램","/world-cases/uk-8yo-12weeks.html","시작하기 →"),"전체 가이드 보기"),
+   ("다시 묻기 연습","/free/question-cards.html"),
+  ],"전체 가이드 보기"),
  ("res","부모 자료실","/parent-resources.html",[
    ("부모용 질문 카드","/free/question-cards.html"),
    ("AI 대화 연습지","/free/worksheet.html"),
    ("첫 프롬프트 20개","/free/first-prompts.html"),
    ("AI 안전 사용 원칙","/parent-resources.html#faq"),
-  ],("먼저 써보세요","첫 대화용 질문 카드 10장","/free/question-cards.html","질문 카드 보기"),"전체 자료실 보기"),
+  ],"전체 자료실 보기"),
  ("free","무료 자료","/free-kit.html",[
    ("무료 자료 한눈에","/free-kit.html"),
    ("12주 워크북 PDF","/free/uk-12weeks-workbook.html"),
    ("가정 실습지","/free/worksheet.html"),
    ("질문 카드 10장","/free/question-cards.html"),
-  ],("인기","12주 워크북 인쇄판","/free/uk-12weeks-workbook.html","워크북 열기 🖨"),"전체 다운로드 보기"),
+  ],"전체 다운로드 보기"),
 ]
 def header(active,base):
-    tops="".join(f'<a class="mg-t{" on" if k==active else ""}" data-k="{k}" href="{h}">{t}</a>' for k,t,h,_,_,_ in MEGA)
-    cols=""
-    for k,t,h,items,card,more in MEGA:
+    tops="".join(f'<a class="mg-t{" on" if k==active else ""}" data-k="{k}" href="{h}">{t}</a>' for k,t,h,_,_ in MEGA)
+    dds=""
+    for k,t,h,items,more in MEGA:
         links="".join(f'<a href="{u}">{lb}</a>' for lb,u in items)
-        cols+=f'<div class="mg-col" data-k="{k}"><a class="mg-ch" href="{h}">{t}</a>{links}<a class="mg-more" href="{h}">{more} →</a></div>'
-    cards=""
-    for k,_,_,_,c,_ in MEGA:
-        cards+=f'<div class="mg-card" data-k="{k}"><div class="mg-cl">{c[0]}</div><p>{c[1]}</p><a class="btn btn-primary" href="{c[2]}">{c[3]}</a></div>'
+        dds+=f'<div class="mg-dd-c" data-k="{k}">{links}<a class="mg-more" href="{h}">{more} →</a></div>'
     sdata=[]
-    for k,t,h,items,_,_ in MEGA:
+    for k,t,h,items,_ in MEGA:
         sdata.append({"t":t,"u":h,"c":t})
         for lb,u in items: sdata.append({"t":lb,"u":u,"c":t})
     import json as _j; sjson=_j.dumps(sdata,ensure_ascii=False)
     mob=""
-    for k,t,h,items,_,more in MEGA:
+    for k,t,h,items,more in MEGA:
         mi="".join(f'<a href="{u}">{lb}</a>' for lb,u in items)+f'<a href="{h}" style="color:var(--coral);font-weight:800">{more} →</a>'
         mob+=f'<details{"" if k!=active else " open"}><summary>{t}</summary>{mi}</details>'
     return f"""<header class="mgh" id="mgh">
@@ -97,14 +94,14 @@ def header(active,base):
 <a class="mg-brand" href="/"><span class="bot">🤖</span><span><b>AI 조기교육</b><small>결과물이 아니라 과정이 교육이다</small></span></a>
 <nav class="mg-nav">{tops}</nav>
 <div class="mg-right">
-<button class="mg-ic mg-allbtn" onclick="mgAll()" title="전체메뉴 보기">☰ <small style="font-size:10px;font-weight:800">전체</small></button>
+<button class="mg-ic mg-allbtn" onclick="document.body.classList.toggle('mg-open')" title="전체메뉴">☰ <small style="font-size:10px;font-weight:800">전체</small></button>
 <button class="mg-ic" onclick="mgSearch()" title="검색">🔍</button>
 <a class="mg-ic" href="{YT_CH}" target="_blank" rel="noopener" title="유튜브 채널">▶</a>
 <a class="btn btn-primary mg-cta" href="/start-guide.html">무료로 시작하기</a>
 <button class="mg-ic mg-hamb" onclick="document.body.classList.toggle('mg-open')">☰</button>
 </div></div>
-<div class="mg-panel" id="mgPanel"><div class="mg-in">{cols}<div class="mg-cards">{cards}</div></div></div>
-<div class="mg-srch" id="mgSrch"><div class="mg-in" style="display:block">
+<div class="mg-dd" id="mgDD">{dds}</div>
+<div class="mg-srch" id="mgSrch"><div class="mg-sin">
 <input id="mgQ" placeholder="찾으실 내용을 입력하세요 — 국가, 영상, 자료, 시작법…" oninput="mgF()">
 <div id="mgR" class="mg-res"></div></div></div>
 <div class="mg-mob">{mob}<a class="btn btn-primary" style="margin:12px" href="/start-guide.html">무료로 시작하기</a></div>
@@ -126,59 +123,58 @@ def header(active,base):
 .mg-allbtn{{width:auto;padding:0 10px;display:flex;align-items:center;gap:4px}}
 .mg-cta{{white-space:nowrap}}
 .mg-hamb{{display:none}}
-.mg-panel{{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid #EADFCE;box-shadow:0 14px 30px rgba(43,32,22,.12)}}
-.mgh.open .mg-panel{{display:block}}
-.mg-in{{max-width:1240px;margin:0 auto;padding:16px 20px 18px;display:flex;gap:24px;justify-content:center}}
-.mg-col{{display:none;flex-direction:column;gap:1px;padding:4px 6px;border-radius:12px;width:272px;flex:none}}
-.mgh.open .mg-col.hl{{display:flex;background:#FBF3E4}}
-.mgh.all .mg-col{{display:flex;background:none;width:auto;flex:1;min-width:0}}
-.mgh.all .mg-col.hl{{background:#FBF3E4}}
-.mg-ch{{font-weight:800;color:var(--navy);text-decoration:none;font-size:14px;padding:4px 8px 7px;border-bottom:2px solid #F0E6D2;margin-bottom:4px}}
-.mg-col a:not(.mg-ch):not(.mg-more){{padding:5px 8px;border-radius:7px;text-decoration:none;color:#5a4a35;font-size:13px;font-weight:600}}
-.mg-col a:not(.mg-ch):not(.mg-more):hover{{background:#FDECE5;color:#B44A31}}
-.mg-more{{margin-top:5px;padding:6px 8px;border-top:1px dashed #EAD9BE;color:var(--coral);font-weight:800;font-size:12.5px;text-decoration:none}}
-.mg-more:hover{{text-decoration:underline}}
-.mg-cards{{width:206px;flex:none;align-self:center}}
-.mg-card{{display:none;background:linear-gradient(160deg,#FFF7EA,#FBEBD3);border:1px solid #EAD9BE;border-radius:14px;padding:13px 15px}}
-.mg-card.sh{{display:block}}
-.mg-cl{{font-size:11px;font-weight:800;color:#B44A31;margin-bottom:5px}}
-.mg-card p{{margin:0 0 10px;font-size:13px;font-weight:700;color:var(--ink);line-height:1.4}}
+.mg-dd{{position:fixed;display:none;width:300px;background:#fffaf0;border:1px solid #EAD9BE;border-radius:14px;box-shadow:0 14px 30px rgba(0,0,0,.12);padding:10px 8px;z-index:95}}
+.mg-dd.show{{display:block}}
+.mg-dd-c{{display:none}}
+.mg-dd-c.sh{{display:block}}
+.mg-dd-c a{{display:block;padding:8px 11px;border-radius:8px;text-decoration:none;color:#5a4a35;font-size:13.5px;font-weight:600}}
+.mg-dd-c a:hover{{background:#FDECE5;color:#B44A31}}
+.mg-dd-c .mg-more{{margin-top:5px;border-top:1px dashed #EAD9BE;color:var(--coral);font-weight:800;font-size:12.5px;border-radius:0 0 8px 8px}}
 .mg-srch{{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid #EADFCE;box-shadow:0 14px 30px rgba(43,32,22,.12)}}
 .mgh.srch .mg-srch{{display:block}}
+.mg-sin{{max-width:900px;margin:0 auto;padding:18px 20px 22px}}
 #mgQ{{width:100%;border:2px solid var(--coral);border-radius:12px;padding:13px 16px;font:inherit;font-size:15px}}
 .mg-res{{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:6px;margin-top:12px}}
 .mg-res a{{display:block;padding:8px 12px;border:1px solid #F0E6D2;border-radius:9px;text-decoration:none;color:var(--ink);font-size:13px;font-weight:600}}
 .mg-res a small{{color:#9b8a6e;display:block;font-size:11px}}
 .mg-res a:hover{{background:#FBF3E4}}
-.mg-mob{{display:none}}
-@media(max-width:960px){{
-.mg-nav,.mg-cta,.mg-allbtn{{display:none}}.mg-hamb{{display:grid}}
-.mg-brand small{{display:none}}
-.mg-mob{{position:fixed;inset:56px 0 0 0;background:#fff;overflow:auto;padding:8px 6px;transform:translateX(100%);transition:transform .18s;display:block}}
+.mg-mob{{position:fixed;inset:56px 0 0 0;background:#fff;overflow:auto;padding:8px 6px;transform:translateX(100%);transition:transform .18s;z-index:90}}
 body.mg-open .mg-mob{{transform:none}}
 .mg-mob details{{border-bottom:1px solid #F0E6D2}}
 .mg-mob summary{{padding:13px 16px;font-weight:800;cursor:pointer;list-style:none}}
 .mg-mob details a{{display:block;padding:9px 26px;text-decoration:none;color:#5a4a35;font-size:14px}}
+@media(max-width:960px){{
+.mg-nav,.mg-cta,.mg-allbtn{{display:none}}.mg-hamb{{display:grid}}
+.mg-brand small{{display:none}}
+.mg-dd{{display:none!important}}
 }}
 </style>
 <script>
 (function(){{
-var H=document.getElementById('mgh'),P=document.getElementById('mgPanel'),tm;
-function openP(k){{clearTimeout(tm);H.classList.add('open');H.classList.remove('srch');H.classList.remove('all');
- document.querySelectorAll('.mg-col').forEach(function(c){{c.classList.toggle('hl',c.dataset.k===k);}});
- document.querySelectorAll('.mg-card').forEach(function(c){{c.classList.toggle('sh',c.dataset.k===k);}});}}
-function closeP(){{tm=setTimeout(function(){{H.classList.remove('open');H.classList.remove('all');}},160);}}
+var H=document.getElementById('mgh'),DD=document.getElementById('mgDD'),tm;
+function show(k,el){{
+ if(window.innerWidth<=960)return;
+ clearTimeout(tm);H.classList.remove('srch');
+ DD.querySelectorAll('.mg-dd-c').forEach(function(c){{c.classList.toggle('sh',c.dataset.k===k);}});
+ var r=el.getBoundingClientRect(),hb=H.getBoundingClientRect().bottom;
+ DD.classList.add('show');
+ var w=DD.offsetWidth,left=r.left;
+ if(left+w>window.innerWidth-12)left=window.innerWidth-w-12;
+ DD.style.left=left+'px';DD.style.top=(hb+4)+'px';
+}}
+function hide(){{tm=setTimeout(function(){{DD.classList.remove('show');}},150);}}
 document.querySelectorAll('.mg-t').forEach(function(a){{
- a.addEventListener('mouseenter',function(){{openP(a.dataset.k);}});
+ a.addEventListener('mouseenter',function(){{show(a.dataset.k,a);}});
+ a.addEventListener('mouseleave',hide);
 }});
-H.addEventListener('mouseleave',closeP);
-P.addEventListener('mouseenter',function(){{clearTimeout(tm);}});
-window.mgAll=function(){{clearTimeout(tm);H.classList.remove('srch');
- if(H.classList.contains('all')){{H.classList.remove('all');H.classList.remove('open');return;}}
- H.classList.add('open');H.classList.add('all');
- document.querySelectorAll('.mg-col').forEach(function(c){{c.classList.remove('hl');}});
- document.querySelectorAll('.mg-card').forEach(function(c){{c.classList.toggle('sh',c.dataset.k==='cases');}});}};
-window.mgSearch=function(){{H.classList.toggle('srch');H.classList.remove('open');H.classList.remove('all');
+DD.addEventListener('mouseenter',function(){{clearTimeout(tm);}});
+DD.addEventListener('mouseleave',hide);
+document.addEventListener('click',function(e){{
+ if(!DD.contains(e.target)&&!e.target.closest('.mg-t'))DD.classList.remove('show');}});
+document.addEventListener('keydown',function(e){{
+ if(e.key==='Escape'){{DD.classList.remove('show');H.classList.remove('srch');document.body.classList.remove('mg-open');}}}});
+window.addEventListener('scroll',function(){{DD.classList.remove('show');}});
+window.mgSearch=function(){{DD.classList.remove('show');H.classList.toggle('srch');
  if(H.classList.contains('srch')){{document.getElementById('mgQ').focus();mgF();}}}};
 var D={sjson};
 window.mgF=function(){{var q=(document.getElementById('mgQ').value||'').trim().toLowerCase();
