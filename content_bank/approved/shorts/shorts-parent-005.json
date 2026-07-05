@@ -1,0 +1,37 @@
+{
+  "id": "shorts-parent-005",
+  "series": "S04_parent_questions",
+  "final_title": "AI를 이렇게 쓰면 아이가 큰일납니다",
+  "duration_target_sec": 45,
+  "hook": "AI에게 답을 구하는 게 문제가 아닙니다.",
+  "script": "AI를 이렇게 쓰면, 아이가 큰일납니다. AI에게 답을 구하는 것 자체는 문제가 아니에요. 진짜 문제는, 아이가 생각하기 전에 먼저 AI에게 답을 구하는 습관입니다. AI가 답을 냈다고, 아이가 생각한 건 아니에요. 똑똑해진 건 AI지, 아이가 아닙니다. 그래서 순서만 바꾸면 됩니다. 먼저 아이가 생각하고, AI 답을 보고, 이상한 점을 찾고, 다시 묻는 것. 이 순서 하나가 아이를 지킵니다. 오늘의 10분 수업은 프로필 링크에 있어요.",
+  "cuts": [
+    {"n": 1, "t": "0-8", "scene": "아이가 질문을 받자마자 곧장 AI에게 입력, 머리 위 생각전구가 켜지기도 전에 꺼짐", "subtitle": "생각하기 전에 AI부터 — 이게 문제예요", "image_prompt": "a Korean child immediately typing a question into a tablet the moment homework appears, a small thought lightbulb above the head switching off before it lights, warm home desk"},
+    {"n": 2, "t": "8-16", "scene": "AI 화면엔 매끈한 정답, 아이 머릿속은 텅 빈 말풍선(대비)", "subtitle": "AI가 답을 냈다고, 아이가 생각한 건 아니에요", "image_prompt": "split feeling in one cozy frame: a tablet showing a neat confident answer, and above the child an empty thought bubble, gentle contrast, not scary"},
+    {"n": 3, "t": "16-23", "scene": "로봇(AI)만 반짝이며 레벨업하고 아이는 그대로(똑똑해진 건 AI)", "subtitle": "똑똑해진 건 AI지, 아이가 아닙니다", "image_prompt": "a friendly cute robot glowing and leveling up with sparkles while a Korean child stands beside unchanged, lighthearted metaphor, warm colors, not menacing"},
+    {"n": 4, "t": "23-31", "scene": "부모가 태블릿을 잠깐 내려놓고 아이에게 먼저 생각을 물음(순서 전환)", "subtitle": "순서만 바꿔요 — 먼저 아이가 생각하기", "image_prompt": "a warm Korean parent gently setting the tablet down and asking the child to think first, eye-level, cozy encouraging mood"},
+    {"n": 5, "t": "31-39", "scene": "아이가 AI 답에서 이상한 곳을 돋보기로 찾고 다시 묻는 장면", "subtitle": "AI 답 보고 → 이상한 점 찾고 → 다시 묻기", "image_prompt": "the child with a magnifying glass finding an odd spot in the AI answer and asking again, curious confident detective vibe, bright"},
+    {"n": 6, "t": "39-45", "scene": "따뜻한 식탁, '순서 하나가 아이를 지킨다' 느낌 + 엔드카드", "subtitle": "이 순서 하나가 아이를 지킵니다 — 오늘의 수업 ↓", "image_prompt": "warm Korean family evening scene, child confidently talking while parents smile, a soft shield-like glow of safety, hopeful closing shot"}
+  ],
+  "image_style": {
+    "engine": "로컬 ComfyUI SDXL(RealVisXL_V5.0) — 우리 영상툴=production/build_ai_edu_shorts.py(쇼츠 빌더)가 호출. ComfyUI는 이미지 단계",
+    "aspect": "768x1344 → 1080x1920 (9:16)",
+    "style_token": "editorial storybook illustration, warm muted color palette, thick clean black outlines, semi-realistic cartoon style, flat shading, soft warm lighting, detailed cozy background, hand-drawn look, korean family, no text, no letters",
+    "negative": "photo, photorealistic, 3d render, text, letters, words, watermark, ugly, deformed, extra fingers, blurry, scary, horror, evil robot, dark, western caucasian"
+  },
+  "subtitles_all": "생각하기 전에 AI부터 — 이게 문제예요\nAI가 답을 냈다고, 아이가 생각한 건 아니에요\n똑똑해진 건 AI지, 아이가 아닙니다\n순서만 바꿔요 — 먼저 아이가 생각하기\nAI 답 보고 → 이상한 점 찾고 → 다시 묻기\n이 순서 하나가 아이를 지킵니다 — 오늘의 수업 ↓",
+  "description": "AI에게 답을 구하는 게 문제가 아닙니다. 생각하기 전에 먼저 구하는 습관이 문제예요.\n순서만 바꾸면 됩니다 — 먼저 생각하기 → AI 답 보기 → 이상한 점 찾기 → 다시 묻기.\n\n▶ 오늘의 10분 수업\nhttps://ai-early-education.pages.dev/daily-class/today\n\n🎯 우리 아이 나이별 로드맵\nhttps://ai-early-education.pages.dev/levels\n\n🎁 7일 질문카드(무료)\nhttps://ai-early-education.pages.dev/free/ai-first-7days\n\n이 채널은 AI로 아이를 붙잡는 채널이 아니라,\n아이가 AI를 의심하고 다룰 줄 알게 하는 채널입니다.\n\n#AI교육 #부모교육 #초등AI #질문력",
+  "hashtags": ["AI교육", "부모교육", "초등AI", "질문력"],
+  "links": {"site": "/daily-class/today.html", "levels": "/levels.html", "free": "/free/ai-first-7days.html", "class": "/class.html"},
+  "pinned_comment": "AI에게 바로 묻기 전, 아이에게 먼저 물어보세요 🗒\n\"너는 어떻게 생각해?\"\n\n순서만 바꿔도 아이가 지켜집니다 — 먼저 생각하기 → AI 답 보기 → 이상한 점 찾기 → 다시 묻기.\n▶ 오늘의 10분 수업: https://ai-early-education.pages.dev/daily-class/today\n🎁 7일 질문카드(무료): https://ai-early-education.pages.dev/free/ai-first-7days",
+  "render_engine": "production/build_ai_edu_shorts.py (ComfyUI SDXL + edge-tts + ffmpeg, 세로 1080x1920) — china 쇼츠 빌더 계열",
+  "region": "kr",
+  "beats": [
+    {"role": "hook", "head": "AI부터 찾으면", "text": "AI를 이렇게 쓰면, 아이가 큰일납니다. 답을 구하는 것 자체는 문제가 아니에요.", "prompt": "a Korean child immediately typing a question into a tablet the moment homework appears, a small thought lightbulb above the head switching off before it lights, warm home desk", "region": "kr"},
+    {"role": "problem", "head": "진짜 문제는 순서", "text": "진짜 문제는, 아이가 생각하기 전에 먼저 AI에게 답을 구하는 습관입니다.", "prompt": "split feeling in one cozy frame: a tablet showing a neat confident answer, and above the child an empty thought bubble, gentle contrast, not scary", "region": "kr"},
+    {"role": "fact", "head": "똑똑해진 건 AI", "text": "AI가 답을 냈다고 아이가 생각한 건 아니에요. 똑똑해진 건 AI지, 아이가 아닙니다.", "prompt": "a friendly cute robot glowing and leveling up with sparkles while a Korean child stands beside unchanged, lighthearted metaphor, warm colors, not menacing", "region": "kr"},
+    {"role": "parent", "head": "순서만 바꿔요", "text": "그래서 순서만 바꾸면 됩니다. 먼저 아이가 생각하게 하세요.", "prompt": "a warm Korean parent gently setting the tablet down and asking the child to think first, eye-level, cozy encouraging mood", "region": "kr"},
+    {"role": "fact", "head": "보고·찾고·다시", "text": "AI 답을 보고, 이상한 점을 찾고, 다시 묻는 겁니다.", "prompt": "the child with a magnifying glass finding an odd spot in the AI answer and asking again, curious confident detective vibe, bright", "region": "kr"},
+    {"role": "cta", "head": "순서가 지킨다", "text": "이 순서 하나가 아이를 지킵니다. 오늘의 10분 수업은 프로필 링크에 있어요.", "prompt": "warm Korean family evening scene, child confidently talking while parents smile, a soft shield-like glow of safety, hopeful closing shot", "region": "kr"}
+  ]
+}
