@@ -290,6 +290,7 @@ SECTIONS={
    ("결과 관찰하기","/start-guide.html#step3"),
    ("다시 묻기 연습","/start-guide.html#step5"),
    ("하루 10분 루틴","/world-cases/korea-3.html"),
+   ("🏆 AI 경진대회 교실","/competitions.html"),
  ]),
  "parents":("부모 자료실",[
    ("자료실 홈","/parent-resources.html"),
@@ -602,6 +603,7 @@ def start_guide():
 <h1>집에서 따라 하는 6단계</h1><p>오늘 저녁, 아이와 15분이면 충분해요. 순서대로 따라만 하세요.</p></div></section>
 <section class="block"><div class="wrap" style="max-width:760px">{"".join(sc(*s) for s in steps)}
 <div class="cta-band" style="margin-top:20px"><div><h3>연습지와 질문 카드가 필요하세요?</h3><p>집에서 바로 쓰는 무료 자료를 받아보세요.</p></div><a class="btn btn-lg" href="/free-kit.html">무료 자료 받기 ⬇</a></div>
+<div class="cta-band" style="margin-top:12px;background:linear-gradient(135deg,#EAF2FB,#DCEAF8)"><div><h3>🏆 실력으로 이어질까? · AI 경진대회 문제풀이 교실</h3><p>실제 AI 경진대회 문제를 아이 눈높이로. 학년별 문제·풀이전략·우리집 연습문제.</p></div><a class="btn btn-lg" href="/competitions.html">경진대회 교실 →</a></div>
 </div></section></main>"""
     return page("start","","집에서 시작하는 6단계 가이드 | AI 조기교육","아이와 AI를 시작하는 6단계. 부모 멘트·질문·좋은/나쁜 프롬프트 예시까지.",body)
 
@@ -704,6 +706,8 @@ if __name__=="__main__":
     write("free-kit.html",free_kit())
     import build_kids_show as KIDS
     KIDS.build_all()
+    import build_competitions as COMP
+    COMP.build_all()
     import free_docs as FD
     for _slug,_d in FD.DOCS.items():
         write(f"free/{_slug}.html",free_resource_layout(f"/free/{_slug}.html",_d["title"],_d["style"],_d["body"]))

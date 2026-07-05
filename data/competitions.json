@@ -1,0 +1,86 @@
+{
+  "contests": [
+    {
+      "id": "ai_top_100",
+      "name": "AI TOP 100 (Campus)",
+      "org": "과학기술정보통신부 주최",
+      "levels": [
+        "high",
+        "university_general"
+      ],
+      "url": "https://aitop100.org/",
+      "availability": "public",
+      "desc": "AI 도구를 자유롭게 활용해 주어진 문제를 푸는 개인전. '무엇을 아느냐'보다 'AI와 협업해 얼마나 잘 해결하느냐'를 본다."
+    },
+    {
+      "id": "it_gyeongsi",
+      "name": "청소년 IT경시대회 · 인공지능/알고리즘 부문",
+      "org": "한국정보기술진흥원(KITPA)",
+      "levels": [
+        "elementary",
+        "middle",
+        "high"
+      ],
+      "url": "https://kitpa.org",
+      "availability": "public",
+      "desc": "전국 초·중·고 대상. 알고리즘(코딩 문제 해결)과 인공지능(numpy·pandas 등 데이터·AI 코드 이해) 부문."
+    },
+    {
+      "id": "ai_youth_challenge",
+      "name": "전국 청소년 AI 창의 경진대회 (AI Youth Challenge)",
+      "org": "포스코DX·한국인공지능산업협회",
+      "levels": [
+        "middle",
+        "high"
+      ],
+      "url": "https://aichallenge.poscodx.com",
+      "availability": "public",
+      "desc": "만 12~18세 팀전. AI를 적용해 산업·사회 문제를 개선하는 아이디어를 제안하고 구현한다."
+    },
+    {
+      "id": "dacon",
+      "name": "DACON 데이터·AI 경진대회",
+      "org": "데이콘",
+      "levels": [
+        "high",
+        "university_general"
+      ],
+      "url": "https://dacon.io/competitions",
+      "availability": "public",
+      "desc": "데이터 분석·AI 모델링 경진대회 플랫폼. 공개 대회와 교육용 대회가 상시 열린다."
+    },
+    {
+      "id": "youth_ai_content",
+      "name": "청소년 AI 콘텐츠 경진대회",
+      "org": "주최기관(공개 공모)",
+      "levels": [
+        "elementary",
+        "middle",
+        "high"
+      ],
+      "url": "https://www.contestkorea.com",
+      "availability": "public",
+      "desc": "AI로 만든 콘텐츠(이미지·영상·이야기 등)를 겨루는 공모."
+    },
+    {
+      "id": "ai_for_all",
+      "name": "전국민 AI 경진대회",
+      "org": "주최기관",
+      "levels": [
+        "university_general"
+      ],
+      "url": "https://aichallenge4all.or.kr/",
+      "availability": "public",
+      "desc": "일반인 대상. AI 활용 능력으로 실생활·실무 문제를 해결한다."
+    }
+  ],
+  "difficulty_labels": {
+    "elem_a": "초등 A · 자세히 말하기·결과 비교",
+    "elem_b": "초등 B · 이상한 부분 찾기·다시 묻기",
+    "mid_a": "중등 A · 요약·표 만들기·근거 찾기",
+    "mid_b": "중등 B · 답안 비교·오류 검증·발표자료",
+    "high_a": "고등 A · 데이터 해석·문제 정의·해결안 설계",
+    "high_b": "고등 B · 결과물 평가·윤리/편향 분석·보고서",
+    "univ": "대학·일반 · 복합 문제해결·리서치·도구 조합·프롬프트 전략"
+  }
+}
