@@ -352,6 +352,7 @@ if __name__=="__main__":
         cfg=CP.C[k]
         write(f"world-cases/{cfg['slug']}.html",CP.render(cfg))
         write(f"videos/{cfg['vslug']}.html",CP.video_detail(cfg))
+    CP.write_all_practice()   # 2편(실제 교실 운영) 5개국
     write("videos.html",videos())
     write("videos/world-ai-education.html",video_detail())
     write("start-guide.html",start_guide())

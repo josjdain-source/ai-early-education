@@ -4,7 +4,7 @@
 world-cases/{c}.html + videos/{c}-ai-education.html 생성. build_site 헬퍼 재사용.
 영상 미업로드면 embed가 '업로드 후 재생' 플레이스홀더로 자동 대체(유튜브 24h 차단 대응).
 출처=조사한 실제 URL만. 자극화 금지, 관점=국가별 AI 리터러시·거버넌스."""
-import os, json, build_site as BS
+import os, json, build_site as BS, country_reality as CR
 ROOT=os.path.dirname(os.path.abspath(__file__))
 try: QUEUE=json.load(open(os.path.join(ROOT,"youtube/upload_queue.json"),encoding="utf-8"))
 except Exception: QUEUE={"queue":[]}
@@ -172,6 +172,7 @@ def render(cfg):
 <h1 style="font-size:34px">{cfg['h1']}</h1>
 <p class="sub">{cfg['subtitle']}</p>
 <p style="max-width:780px;color:var(--navy2);font-weight:600">{cfg['angle']}</p>
+{episode_nav(cfg['slug'],"1")}
 </div></section>
 
 <section class="block" style="padding-top:12px"><div class="wrap">
@@ -211,6 +212,10 @@ def render(cfg):
 <p class="sec-desc">{cfg['srcnote']}</p>
 <ul class="srclist">{srcs}</ul></div></section>
 
+<section class="block"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#FFF3E0,#FDE9CE)">
+<div><h3>▶ 2편 · {cfg['flag']} 실제 교실은 이렇게 돌아간다</h3><p>정책은 봤으니, 이제 학년별로 매주 실제로 무엇을 가르치는지 — 실무편으로 이어집니다.</p></div>
+<a class="btn btn-lg" href="/world-cases/{cfg['slug']}-2.html">2편 보러가기 →</a></div></div></section>
+
 <section class="block"><div class="wrap"><div class="cta-band">
 <div><h3>세계 5개국을 한 흐름으로</h3><p>중국·미국·영국·싱가포르·한국 편이 같은 구조의 국가별 콘텐츠 패키지로 이어집니다.</p></div>
 <a class="btn" href="/world-cases.html">세계 사례 전체 보기</a></div></div></section>
@@ -236,6 +241,37 @@ def video_detail(cfg):
 </main>"""
     return BS.page("cases","../",f"{lf['title']} | 영상",lf['subtitle'],body)
 
+NAMES={"china":("중국","🇨🇳"),"usa":("미국","🇺🇸"),"uk":("영국","🇬🇧"),"singapore":("싱가포르","🇸🇬"),"korea":("한국","🇰🇷")}
+def episode_nav(slug,current):
+    name,flag=NAMES[slug]
+    eps=[("1","정책·방침",f"/world-cases/{slug}.html"),("2","실제 교실 운영",f"/world-cases/{slug}-2.html"),("3","우리 집 주간 적용",None)]
+    out=[]
+    for n,t,href in eps:
+        on = (n==current)
+        base="display:inline-block;border-radius:20px;padding:7px 15px;font-size:13px;font-weight:700;text-decoration:none;border:1.5px solid"
+        if href and not on: out.append(f'<a href="{href}" style="{base} #E4D8C4;color:#8a6f45;background:#fff">{n}편 · {t}</a>')
+        elif on: out.append(f'<span style="{base} #E0684A;color:#fff;background:#E0684A">{n}편 · {t}</span>')
+        else: out.append(f'<span style="{base} #eadfca;color:#b9a98c;background:#faf5ea">{n}편 · {t} · 준비중</span>')
+    return '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">'+''.join(out)+'</div>'
+def practice_page(slug):
+    name,flag=NAMES[slug]
+    body=f"""<main>
+<section class="page-hero"><div class="wrap">
+<div class="pill">{flag} 세계 사례 · {name} 2편</div>
+<h1 style="font-size:32px">{name}은 <span class="coral">실제로</span> 어떻게 가르치나</h1>
+<p class="sub">정책을 넘어 — 학년별로, 매주, 교실에서 실제로 돌아가는 방식</p>
+{episode_nav(slug,"2")}
+</div></section>
+{CR.reality_html(slug)}
+<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band">
+<div><h3>다음 편 예고 · 3편 '우리 집 주간 적용'</h3><p>{name}의 실제 방식을, 우리 아이의 한 주 습관으로 옮기는 법. 매주 한 편씩 이어집니다.</p></div>
+<a class="btn" href="/world-cases/{slug}.html">← 1편 정책 다시 보기</a></div></div></section>
+</main>"""
+    return BS.page("cases","../",f"{name}은 실제로 어떻게 가르치나 · 2편 | AI 조기교육",f"{name}의 실제 교실 운영 — 학년별·주간 수업 방식과 도구. 세계 AI교육법 시리즈 2편.",body)
+def write_all_practice():
+    for slug in NAMES:
+        BS.write(f"world-cases/{slug}-2.html",practice_page(slug))
+    print("2편(실제 교실 운영) 5개국 생성 완료")
 if __name__=="__main__":
     import sys
     which=sys.argv[1:] or ["uk","singapore","korea"]
@@ -244,3 +280,4 @@ if __name__=="__main__":
         BS.write(f"world-cases/{cfg['slug']}.html",render(cfg))
         BS.write(f"videos/{cfg['vslug']}.html",video_detail(cfg))
         print(f"{cfg['flag']} {k} 심층 페이지 + 영상 상세 생성 완료")
+    write_all_practice()

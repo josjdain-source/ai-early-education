@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """미국 AI교육 심층 페이지 — /world-cases/usa.html + /videos/us-ai-education.html.
 build_site 헬퍼 재사용. facts/metadata/upload_queue 참조. 임베드 ID는 큐에서(업로드 후 자동반영)."""
-import os, json, build_site as BS
+import os, json, build_site as BS, country_reality as CR
 ROOT=os.path.dirname(os.path.abspath(__file__))
 def J(p): return json.load(open(os.path.join(ROOT,p),encoding="utf-8"))
 FACTS=J("facts/us_ai_education_facts.json"); SRC=J("sources/us_ai_education_sources.json")
@@ -67,6 +67,7 @@ def usa_page():
 <h1 style="font-size:34px">미국은 왜 국가가 시간표를 안 짜고도 AI교육에 나섰나</h1>
 <p class="sub">{lf['subtitle']}</p>
 <p style="max-width:780px;color:var(--navy2);font-weight:600">중국이 '국가가 관리하는 문해력'이라면, 미국은 <span class="coral">연방이 방향만 주고 주·기업이 채우는 분권형</span>입니다.</p>
+{CR.episode_nav("usa","1")}
 </div></section>
 
 <section class="block" style="padding-top:12px"><div class="wrap">
@@ -105,6 +106,10 @@ def usa_page():
 <h2 class="sec-title" style="font-size:22px">출처</h2>
 <p class="sec-desc">모든 수치·정책은 아래 출처에 근거합니다. 특정 정파·정치인을 지지하거나 비하하지 않고, 정책과 교육 방식의 관점으로 정리했습니다.</p>
 <ul class="srclist">{srcs}</ul></div></section>
+
+<section class="block"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#FFF3E0,#FDE9CE)">
+<div><h3>▶ 2편 · 🇺🇸 실제 교실은 이렇게 돌아간다</h3><p>정책은 봤으니, 이제 학년별로 매주 실제로 무엇을 가르치는지 — 실무편으로 이어집니다.</p></div>
+<a class="btn btn-lg" href="/world-cases/usa-2.html">2편 보러가기 →</a></div></div></section>
 
 <section class="block"><div class="wrap"><div class="cta-band">
 <div><h3>다른 나라 편도 보기</h3><p>중국 편(국가주도)과 비교하면 미국(분권형)이 더 선명합니다.</p></div>

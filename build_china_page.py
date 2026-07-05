@@ -3,7 +3,7 @@
 """중국 AI교육 심층 페이지 빌더 — /world-cases/china.html(심층) + /videos/china-ai-education.html.
 build_site 헬퍼(head/header/footer/page/write) 재사용. facts/metadata/upload_queue 참조.
 임베드 유튜브 ID는 upload_queue.json에서 읽어 업로드 후 자동 반영(없으면 '곧 공개' 플레이스홀더)."""
-import os, json, build_site as BS
+import os, json, build_site as BS, country_reality as CR
 ROOT=os.path.dirname(os.path.abspath(__file__))
 def J(p): return json.load(open(os.path.join(ROOT,p),encoding="utf-8"))
 FACTS=J("facts/china_ai_education_facts.json"); SRC=J("sources/china_ai_education_sources.json")
@@ -69,6 +69,7 @@ def china_page():
 <h1 style="font-size:34px">중국은 왜 초등학생에게 AI를 가르치기 시작했나</h1>
 <p class="sub">{lf['subtitle']}</p>
 <p style="max-width:760px;color:var(--navy2);font-weight:600">중국은 AI를 '미래 직업 과목'이 아니라, <span class="coral">국가가 관리하는 기본 문해력</span>으로 만들고 있습니다.</p>
+{CR.episode_nav("china","1")}
 </div></section>
 
 <section class="block" style="padding-top:12px"><div class="wrap">
@@ -107,6 +108,10 @@ def china_page():
 <h2 class="sec-title" style="font-size:22px">출처</h2>
 <p class="sec-desc">이 페이지의 모든 수치·정책은 아래 출처에 근거합니다. 중국을 감시국가로 자극화하지 않고, 국가 주도형 AI 리터러시·교육과정 편입·윤리적 사용 규칙의 관점으로 정리했습니다.</p>
 <ul class="srclist">{srcs}</ul></div></section>
+
+<section class="block"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#FFF3E0,#FDE9CE)">
+<div><h3>▶ 2편 · 🇨🇳 실제 교실은 이렇게 돌아간다</h3><p>정책은 봤으니, 이제 학년별로 매주 실제로 무엇을 가르치는지 — 실무편으로 이어집니다.</p></div>
+<a class="btn btn-lg" href="/world-cases/china-2.html">2편 보러가기 →</a></div></div></section>
 
 <section class="block"><div class="wrap"><div class="cta-band">
 <div><h3>다음 편도 같은 구조로</h3><p>미국·영국·싱가포르·한국 편도 국가별 콘텐츠 패키지로 이어집니다.</p></div>
