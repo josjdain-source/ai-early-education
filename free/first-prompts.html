@@ -1,0 +1,64 @@
+<!doctype html><html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>아이와 함께하는 첫 프롬프트 20개 | AI 조기교육</title>
+<meta name="description" content="처음 시작하기 좋은 프롬프트 20가지 — 각 프롬프트마다 '다시 묻기' 한 줄까지.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>
+.sheet{max-width:860px;margin:0 auto;padding:24px}
+.tbar{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+.grp{margin:20px 0}
+.grp h2{font-size:17px;color:#2B3A55;border-left:4px solid #E0684A;padding-left:10px;margin:0 0 10px}
+.p{border:1px solid #E4D8C4;border-radius:12px;padding:12px 14px;margin-bottom:9px;background:#FFFDF9}
+.p .say{font-weight:700;color:#2B3A55}
+.p .again{margin-top:6px;font-size:13px;color:#9a6b45}
+.p .again b{color:#E0684A}
+.hero-mini{background:linear-gradient(180deg,#FFF7EA,#FBF0DD);border:1px solid #EAD9BE;border-radius:16px;padding:20px 22px;margin-bottom:18px}
+@media print{.noprint{display:none!important}body{background:#fff}.sheet{padding:0}.p{break-inside:avoid}}
+</style></head><body>
+<div class="sheet">
+<div class="tbar noprint">
+<a href="/free-kit.html" style="color:#E0684A;font-weight:700;text-decoration:none">← 무료 자료</a>
+<button class="btn btn-primary" onclick="window.print()">🖨 인쇄 / PDF로 저장</button>
+</div>
+<div class="hero-mini">
+<div style="font-size:40px">💡</div>
+<h1 style="margin:6px 0 4px;font-size:24px">아이와 함께하는 첫 프롬프트 20개</h1>
+<p style="margin:0;color:#6b5a3e">처음 시작하기 좋은 프롬프트예요. 중요한 건 첫 요청이 아니라 <b>그다음 '다시 묻기'</b>입니다. 각 프롬프트 아래 <b style="color:#E0684A">🔁 다시 묻기</b>를 꼭 이어서 해보세요.</p>
+</div>
+<div id="groups"></div>
+<div class="hero-mini" style="margin-top:8px"><b>기억할 것</b> · 프롬프트는 마법 주문이 아니에요. <b>말하고 → 보고 → 다시 묻기</b>를 반복하는 대화가 진짜 실력을 만듭니다.</div>
+<p class="center noprint" style="margin-top:16px"><a href="/free/worksheet.html" style="color:#E0684A;font-weight:700">→ AI 대화 연습지</a> · <a href="/free/question-cards.html" style="color:#E0684A;font-weight:700">부모용 질문 카드</a></p>
+<p class="center" style="color:#9b8a6e;font-size:12px;margin-top:18px">© 2026 AI조기교육 · ai-early-education.pages.dev</p>
+</div>
+<script>
+const G=[
+["🎨 그림 만들기",[
+["우주에서 피아노를 치는 고양이를 밤하늘 배경으로 그려줘","색을 딱 3가지만 써서 다시 그려줘"],
+["웃고 있는 강아지를 만화 스타일로, 파란 배경에 그려줘","강아지가 슬퍼 보이게 표정만 바꿔줘"],
+["우리 가족을 슈퍼히어로로 그려줘 (엄마·아빠·나)","나한테는 어떤 초능력이 어울릴지 이유도 알려줘"],
+["내가 좋아하는 공룡으로 생일 카드를 만들어줘","공룡이 케이크를 들고 있게 바꿔줘"],
+["비 오는 날 창밖 풍경을 따뜻한 느낌으로 그려줘","같은 장면을 밤으로 바꾸면 어떻게 달라질까?"]]],
+["📖 이야기 만들기",[
+["용감한 문어가 주인공인 짧은 동화를 만들어줘","문어가 무서워하는 게 있으면 하나 넣어줘"],
+["내 이름을 넣은 3문장짜리 모험 이야기를 써줘","결말을 완전히 다르게 하나 더 만들어줘"],
+["잠자기 전에 들려줄 다정한 이야기를 만들어줘","너무 길어. 5문장으로 줄여줘"],
+["로봇과 강아지가 친구가 되는 이야기","둘이 처음 만났을 때 무슨 말을 했을지 대사로 써줘"]]],
+["🔎 궁금한 것 물어보기",[
+["왜 하늘은 파란색이야? 초등학생도 알게 쉽게 설명해줘","방금 설명에서 어려운 단어 하나를 더 쉽게 바꿔줘"],
+["공룡은 왜 사라졌어? 3가지 이유를 알려줘","이 중에 확실한 건 뭐고, 아직 모르는 건 뭐야?"],
+["무지개는 어떻게 생겨? 그림으로 상상하게 설명해줘","집에서 무지개를 만들어보려면 뭐가 필요해?"],
+["재활용은 왜 중요할까? 우리 집에서 할 수 있는 것","오늘 당장 하나만 고른다면 뭘 추천해?"]]],
+["🧩 놀이·만들기",[
+["가족이 할 수 있는 끝말잇기 규칙을 재밌게 바꿔줘","5살 동생도 할 수 있게 더 쉽게 바꿔줘"],
+["종이접기로 만들 수 있는 쉬운 동물 하나 알려줘","접다가 어려운 부분은 어디일지 미리 알려줘"],
+["오늘 저녁 우리 가족 미니 퀴즈 5개 만들어줘","정답이 너무 쉬워. 한 문제만 어렵게 바꿔줘"],
+["비 오는 날 집에서 할 놀이 3가지 추천해줘","돈이 안 드는 걸로만 다시 골라줘"]]],
+["🤝 함께 검증하기",[
+["내가 쓴 이 문장을 더 자연스럽게 고쳐줘 (문장 붙여넣기)","어디를 왜 고쳤는지 이유도 알려줘"],
+["이 수학 문제 푸는 방법을 알려줘 (문제 붙여넣기)","정답만 말고, 내가 틀리기 쉬운 곳을 짚어줘"]]]
+];
+document.getElementById('groups').innerHTML=G.map(([t,ps])=>`<div class="grp"><h2>${t}</h2>`+
+ ps.map(p=>`<div class="p"><div class="say">"${p[0]}"</div><div class="again">🔁 <b>다시 묻기:</b> "${p[1]}"</div></div>`).join('')+`</div>`).join('');
+</script></body></html>

@@ -209,18 +209,16 @@ def country_page(c):
     return page("cases","../",f"{name} AI교육 사례 | AI 조기교육",f"{name}이 아이에게 AI를 가르치는 법과 한국 가정에서 배울 점. {short}",body)
 
 def videos():
-    cats=["전체","세계 사례","부모 가이드","아이 실습","프롬프트 훈련"]
+    cats=["전체","세계 사례"]
     fil="".join(f'<button class="{"on" if i==0 else ""}" data-f="{c}">{c}</button>' for i,c in enumerate(cats))
-    vids=[("세계 5개국은 아이에게 AI를 어떻게 가르치나","세계 사례","2:41","입문","부모",f"{POSTER}/world-ai-education-v2.jpg","/videos/world-ai-education.html",True),
-          ("AI에게 똑똑하게 질문하는 방법","프롬프트 훈련","준비중","입문","부모·아이",f"{SCENE}/parent_b2.png","#",False),
-          ("AI 결과가 마음에 안 들 때 대처법","부모 가이드","준비중","입문","부모",f"{SCENE}/usa_b3.png","#",False),
-          ("좋은 프롬프트의 3가지 비밀","프롬프트 훈련","준비중","기초","부모·아이",f"{SCENE}/common_b2.png","#",False),
-          ("아이와 함께하는 AI 프로젝트 예시","아이 실습","준비중","기초","아이",f"{SCENE}/parent.png","#",False)]
-    def vc(t,cat,ln,lv,who,img,href,ready):
-        badge="" if ready else '<span class="len" style="background:var(--muted)">준비중</span>'
-        onclick="" if href!="#" else ' onclick="alert(\'곧 공개됩니다 🙂\');return false;"'
-        return f"""<a class="vcard" href="{href}" data-cat="{cat}"{onclick}><div class="vthumb"><img src="/{img}" alt="{t}" loading="lazy"><div class="play"><span>▶</span></div>{'<span class="len">'+ln+'</span>' if ready else badge}</div>
-<div class="vmeta"><h4>{t}</h4><p><span class="tag">{cat}</span><span class="tag">난이도 {lv}</span><span class="tag">{who}</span></p></div></a>"""
+    vids=[("중국 · 학교 안으로 AI, 그래도 다 맡기진 않는다","세계 사례","롱폼 다큐",f"{SCENE}/china.png","/videos/china-ai-education.html"),
+          ("미국 · 많이보다, 이해하고 의심하고 고쳐 쓰기","세계 사례","롱폼 다큐",f"{SCENE}/usa.png","/videos/us-ai-education.html"),
+          ("영국 · AI는 도구, 판단과 책임은 사람에게","세계 사례","심층 페이지",f"{SCENE}/uk.png","/videos/uk-ai-education.html"),
+          ("싱가포르 · 안전한 틀(가드레일) 안에서","세계 사례","심층 페이지",f"{SCENE}/sg.png","/videos/singapore-ai-education.html"),
+          ("한국 · AI교과서는 흔들려도, 가정 습관은 남는다","세계 사례","심층 페이지",f"{SCENE}/kr.png","/videos/korea-ai-education.html")]
+    def vc(t,cat,badge,img,href):
+        return f"""<a class="vcard" href="{href}" data-cat="{cat}"><div class="vthumb"><img src="/{img}" alt="{t}" loading="lazy"><div class="play"><span>▶</span></div><span class="len">{badge}</span></div>
+<div class="vmeta"><h4>{t}</h4><p><span class="tag">{cat}</span></p></div></a>"""
     cards="".join(vc(*v) for v in vids)
     body=f"""<main>
 <section class="page-hero"><div class="wrap"><div class="pill">📺 아이와 AI교실 영상관</div>
@@ -235,7 +233,7 @@ def videos():
 <section class="block"><div class="wrap">
 <div class="filters" id="filters">{fil}</div>
 <div class="grid g3" id="vgrid">{cards}</div>
-<p class="center" style="color:var(--muted);margin-top:20px;font-size:14px">※ '준비중' 영상은 순차 공개됩니다. 자동재생 없이, 누르셔야 재생됩니다.</p>
+<p class="center" style="color:var(--muted);margin-top:20px;font-size:14px">※ 중국·미국 편은 영상이, 영국·싱가포르·한국 편은 심층 페이지가 준비돼 있어요. 영상은 순차 확장됩니다. 자동재생 없이, 누르셔야 재생됩니다.</p>
 </div></section></main>"""
     return page("videos","","AI교육 영상관 | AI 조기교육","세계 사례·부모 가이드·아이 실습을 짧은 설명 영상으로. 자동재생 없는 내부 영상관.",body)
 
@@ -302,8 +300,8 @@ def parent_resources():
         ("어떤 AI 도구를 쓰면 되나요?","이미지 생성·챗봇 등 부모가 관리 가능한 도구면 됩니다. 도구보다 '어떻게 대화하는가'가 중요해요."),
         ("숙제를 AI로 시키면 안 되지 않나요?","'대신 시키기'는 위험하지만, '함께 검증하고 고쳐 쓰기'는 훌륭한 학습이에요. AI 답의 이상한 곳을 찾는 연습이 진짜 공부입니다.")]
     fq="".join(f"""<div class="card" style="margin-bottom:12px"><h4>Q. {q}</h4><p style="margin:0;color:var(--navy2)">{a}</p></div>""" for q,a in faqs)
-    res="".join(f"""<div class="card"><div style="font-size:34px;margin-bottom:8px">{ic}</div><h4>{t}</h4><p style="color:var(--muted);font-size:14px">{d}</p><a class="btn btn-ghost" href="/free-kit.html" style="margin-top:6px">받으러 가기 →</a></div>"""
-        for ic,t,d in [("📝","AI 대화 연습지","집에서 하는 첫 AI 대화 워크시트."),("🃏","부모용 질문 카드","상황별로 바로 쓰는 질문 모음."),("💡","첫 프롬프트 20개","아이와 시작하기 좋은 프롬프트 예시.")])
+    res="".join(f"""<div class="card"><div style="font-size:34px;margin-bottom:8px">{ic}</div><h4>{t}</h4><p style="color:var(--muted);font-size:14px">{d}</p><a class="btn btn-ghost" href="{href}" target="_blank" rel="noopener" style="margin-top:6px">열기 · 인쇄 →</a></div>"""
+        for ic,t,d,href in [("📝","AI 대화 연습지","집에서 하는 첫 AI 대화 워크시트.","/free/worksheet.html"),("🃏","부모용 질문 카드","상황별로 바로 쓰는 질문 10장.","/free/question-cards.html"),("💡","첫 프롬프트 20개","아이와 시작하기 좋은 프롬프트 예시.","/free/first-prompts.html")])
     body=f"""<main>
 <section class="page-hero"><div class="wrap"><div class="pill">부모용 자료</div>
 <h1>부모를 위한 안내와 자료</h1><p>자주 묻는 질문부터 집에서 쓰는 실전 자료까지.</p></div></section>
@@ -315,20 +313,20 @@ def parent_resources():
     return page("res","","부모용 자료 & FAQ | AI 조기교육","AI 조기교육 부모 FAQ와 집에서 쓰는 무료 자료(연습지·질문 카드·첫 프롬프트 20개).",body)
 
 def free_kit():
-    kits=[("📝","집에서 하는 AI 대화 연습지","아이와 함께 AI에게 요청하고, 관찰하고, 다시 묻는 과정을 적는 워크시트.","준비중"),
-        ("🃏","부모용 질문 카드","'이상한 부분 찾아볼까?' 같은 상황별 질문 카드 모음.","준비중"),
-        ("💡","아이와 함께하는 첫 프롬프트 20개","처음 시작하기 좋은 프롬프트 예시 20가지.","준비중")]
+    kits=[("📝","집에서 하는 AI 대화 연습지","아이와 함께 AI에게 요청하고, 관찰하고, 다시 묻는 과정을 적는 워크시트.","/free/worksheet.html"),
+        ("🃏","부모용 질문 카드","'이상한 부분 찾아볼까?' 같은 상황별 질문 카드 10장.","/free/question-cards.html"),
+        ("💡","아이와 함께하는 첫 프롬프트 20개","처음 시작하기 좋은 프롬프트 20가지 + 각 '다시 묻기'까지.","/free/first-prompts.html")]
     kc="".join(f"""<div class="card center"><div style="font-size:44px;margin-bottom:10px">{ic}</div><h4>{t}</h4><p style="color:var(--muted);font-size:14px">{d}</p>
-<button class="btn btn-primary" onclick="alert('무료 자료를 준비 중입니다. 곧 공개됩니다 🙂')">다운로드 ⬇</button>
-<div style="margin-top:8px"><span class="tag">{st}</span></div></div>""" for ic,t,d,st in kits)
+<a class="btn btn-primary" href="{href}" target="_blank" rel="noopener">열기 · 인쇄 🖨</a>
+<div style="margin-top:8px"><span class="tag" style="background:#e6f4ea;color:#188038;border-color:#b7dfc2">바로 사용</span></div></div>""" for ic,t,d,href in kits)
     body=f"""<main>
 <section class="page-hero"><div class="wrap"><div class="pill">무료 자료</div>
-<h1>집에서 바로 쓰는 무료 자료</h1><p>이메일 없이, 지금 바로 받아 아이와 시작하세요.</p></div></section>
+<h1>집에서 바로 쓰는 무료 자료</h1><p>이메일·회원가입 없이, 지금 바로 열어 인쇄하거나 PDF로 저장하세요.</p></div></section>
 <section class="block"><div class="wrap" style="max-width:900px"><div class="grid g3">{kc}</div>
-<p class="center" style="color:var(--muted);margin-top:20px;font-size:14px">※ 자료는 순차적으로 공개됩니다. 지금은 <a href="/start-guide.html" style="color:var(--coral)">시작 가이드</a>로 바로 시작할 수 있어요.</p>
-<div class="cta-band" style="margin-top:24px"><div><h3>가이드부터 보고 싶다면</h3><p>6단계 시작 가이드가 준비돼 있어요.</p></div><a class="btn btn-lg" href="/start-guide.html">시작 가이드 보기 →</a></div>
+<p class="center" style="color:var(--muted);margin-top:20px;font-size:14px">※ 세 자료 모두 <b>바로 열람·인쇄</b> 가능합니다. 브라우저의 인쇄에서 'PDF로 저장'을 고르면 파일로도 보관돼요.</p>
+<div class="cta-band" style="margin-top:24px"><div><h3>어떻게 쓰는지 먼저 볼까요?</h3><p>6단계 시작 가이드와 함께 쓰면 더 좋아요.</p></div><a class="btn btn-lg" href="/start-guide.html">시작 가이드 보기 →</a></div>
 </div></section></main>"""
-    return page("res","","무료 자료 | AI 조기교육","집에서 바로 쓰는 무료 AI교육 자료 — 연습지·질문 카드·첫 프롬프트 20개.",body)
+    return page("res","","무료 자료 | AI 조기교육","집에서 바로 쓰는 무료 AI교육 자료 — 연습지·질문 카드·첫 프롬프트 20개. 이메일 없이 바로 인쇄.",body)
 
 # ---------- 쓰기 ----------
 def write(path,html):
@@ -341,7 +339,7 @@ if __name__=="__main__":
     write("why-ai-education.html",why())
     write("world-cases.html",world_cases())
     for c in COUNTRIES:
-        if c[0] in ("china","usa"): continue   # 심층 페이지(build_*_page)로 대체
+        if c[0] in ("china","usa","uk","singapore","korea"): continue   # 전부 심층 페이지로 대체
         write(f"world-cases/{c[0]}.html",country_page(c))
     import build_china_page as CN
     write("world-cases/china.html",CN.china_page())
@@ -349,6 +347,11 @@ if __name__=="__main__":
     import build_us_page as US
     write("world-cases/usa.html",US.usa_page())
     write("videos/us-ai-education.html",US.us_video_detail())
+    import build_country_page as CP
+    for k in ("uk","singapore","korea"):
+        cfg=CP.C[k]
+        write(f"world-cases/{cfg['slug']}.html",CP.render(cfg))
+        write(f"videos/{cfg['vslug']}.html",CP.video_detail(cfg))
     write("videos.html",videos())
     write("videos/world-ai-education.html",video_detail())
     write("start-guide.html",start_guide())

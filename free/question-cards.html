@@ -1,0 +1,49 @@
+<!doctype html><html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>부모용 질문 카드 | AI 조기교육</title>
+<meta name="description" content="아이와 AI를 쓸 때 상황별로 바로 쓰는 질문 카드 10장. 오려서 붙여두세요.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="../styles/main.css">
+<style>
+.sheet{max-width:900px;margin:0 auto;padding:24px}
+.tbar{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.qc{border:2px dashed #C9BBA8;border-radius:14px;padding:16px 18px;background:#FFFDF9;position:relative;min-height:120px}
+.qc .tag{position:absolute;top:12px;right:14px;font-size:11px;background:#F3E9D8;color:#8a6f45;border-radius:8px;padding:2px 8px;font-weight:700}
+.qc .n{font-size:13px;color:#B9A98C;font-weight:800}
+.qc h3{margin:6px 0 6px;font-size:18px;line-height:1.35;color:#2B3A55}
+.qc p{margin:0;font-size:13px;color:#7c6a4d}
+.hero-mini{background:linear-gradient(180deg,#FFF7EA,#FBF0DD);border:1px solid #EAD9BE;border-radius:16px;padding:20px 22px;margin-bottom:18px}
+@media print{.noprint{display:none!important}body{background:#fff}.sheet{padding:0}.qc{break-inside:avoid}}
+@media(max-width:620px){.cards{grid-template-columns:1fr}}
+</style></head><body>
+<div class="sheet">
+<div class="tbar noprint">
+<a href="/free-kit.html" style="color:#E0684A;font-weight:700;text-decoration:none">← 무료 자료</a>
+<button class="btn btn-primary" onclick="window.print()">🖨 인쇄 / PDF로 저장</button>
+</div>
+<div class="hero-mini">
+<div style="font-size:40px">🃏</div>
+<h1 style="margin:6px 0 4px;font-size:24px">부모용 질문 카드 10장</h1>
+<p style="margin:0;color:#6b5a3e">아이가 AI를 쓸 때 <b>이 한마디만</b> 건네보세요. 정답을 주는 대신, 아이가 스스로 <b>다시 묻게</b> 됩니다. 오려서 책상·냉장고에 붙여두세요.</p>
+</div>
+<div class="cards" id="cards"></div>
+<div class="hero-mini" style="margin-top:18px"><b>쓰는 법</b> · 한 번에 다 쓰지 마세요. 오늘은 딱 <b>한 장</b>만. 아이가 답하면 "왜 그렇게 생각해?"로 한 번 더 이어가면 충분합니다.</div>
+<p class="center noprint" style="margin-top:16px"><a href="/free/worksheet.html" style="color:#E0684A;font-weight:700">→ AI 대화 연습지</a> · <a href="/free/first-prompts.html" style="color:#E0684A;font-weight:700">첫 프롬프트 20개</a></p>
+<p class="center" style="color:#9b8a6e;font-size:12px;margin-top:18px">© 2026 AI조기교육 · ai-early-education.pages.dev</p>
+</div>
+<script>
+const Q=[
+["검증","🔎 AI가 준 답에서 이상한 부분 하나만 찾아볼까?","AI도 틀린다는 걸 몸으로 배우는 첫 질문."],
+["검증","🔎 이 답이 진짜인지 어떻게 확인할 수 있을까?","근거를 찾는 습관을 만든다."],
+["주체성","🌱 AI 없이 너라면 어떻게 했을까?","아이 생각이 AI 뒤로 숨지 않게."],
+["주체성","🌱 방금 그건 네가 한 거야, AI가 한 거야?","무엇이 내 것인지 구분하게."],
+["다시묻기","🔁 왜 그렇게 답했는지 AI에게 다시 물어볼까?","한 번 더 묻는 힘을 기른다."],
+["다시묻기","🔁 이 답을 더 좋게 하려면 뭘 더 물어봐야 할까?","질문을 발전시키는 연습."],
+["의심","🛡️ AI도 틀릴 수 있을까? 언제 틀릴까?","맹신하지 않는 태도."],
+["의심","🛡️ 이 정보는 어디서 온 걸까?","출처를 묻는 습관."],
+["표현","💬 친구한테 설명한다면 어떻게 말할래?","이해한 걸 자기 말로."],
+["돌아보기","🌙 오늘 AI랑 뭐 했고, 뭘 다시 물어봤어?","하루를 스스로 정리하게."]];
+document.getElementById('cards').innerHTML=Q.map((q,i)=>`<div class="qc"><span class="tag">${q[0]}</span><div class="n">Q${i+1}</div><h3>${q[1]}</h3><p>${q[2]}</p></div>`).join('');
+</script></body></html>
