@@ -99,10 +99,14 @@ def hub():
     ladder = ""
     for i,(n,f) in enumerate(LADDER):
         ladder += f'<span class="s">{n}<br><b style="color:#E0684A">{f}</b></span>' + ('<span class="a">→</span>' if i<len(LADDER)-1 else '')
-    cards = "".join(f"""<a class="lv-card" href="/levels/{L['slug']}.html" style="--lc:{L['color']};border-top:4px solid {L['color']}">
+    cards = "".join(f"""<div class="lv-card" style="--lc:{L['color']};border-top:4px solid {L['color']}">
 <div style="font-size:30px">{L['emoji']}</div><b style="font-size:16px;color:{L['color']}">{L['name']}</b> <span style="font-size:12px;color:var(--muted)">{L['age']}</span>
 <p style="margin:6px 0 8px;font-weight:700;color:#2B3A55;font-size:13.5px">"{L['heart']}"</p>
-<div class="lv-chips">{''.join(f'<span style="font-size:11.5px;padding:3px 9px">{p}</span>' for p in L['powers'][:3])}</div></a>""" for L in LEVELS)
+<div class="lv-chips" style="margin-bottom:10px">{''.join(f'<span style="font-size:11.5px;padding:3px 9px">{p}</span>' for p in L['powers'][:3])}</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap">
+<a href="/levels/{L['slug']}.html" style="flex:1;text-align:center;background:{L['color']};color:#fff;border-radius:9px;padding:8px;text-decoration:none;font-weight:800;font-size:12.5px">이 나이 자세히 →</a>
+<a href="/daily-class/today.html" style="text-align:center;background:#fff;border:1px solid {L['color']};color:{L['color']};border-radius:9px;padding:8px 11px;text-decoration:none;font-weight:800;font-size:12.5px">▶ 오늘 수업</a></div>
+<div style="margin-top:7px"><a href="{L['free'][0][1]}" style="color:#8a6f45;font-size:12px;font-weight:700;text-decoration:none">{L['free'][0][0]} · 무료 자료 →</a></div></div>""" for L in LEVELS)
     inner = f"""<div class="lv-hero"><span class="k" style="background:#E0684A">🎯 연령별 AI교실</span>
 <h1>우리 아이 나이엔, AI를 이렇게</h1>
 <p style="color:#7c6a4d;font-weight:600">같은 철학, 다른 깊이. 나이에 따라 <b>질문의 깊이와 결과물의 복잡도</b>를 바꿉니다.</p>

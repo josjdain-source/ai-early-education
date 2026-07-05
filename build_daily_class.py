@@ -178,7 +178,11 @@ def today():
     inner = f"""<div class="dc-hero"><span class="k">▶ 오늘의 10분 AI수업</span>
 <h1 id="dcTitle">오늘의 AI수업</h1><p id="dcCorner"></p></div>
 <div id="dcBody" style="margin-top:16px"></div>
-<div class="callout" style="margin-top:14px">🖨 <a href="/free/daily-sheet.html">매일 활동지</a>에 오늘 한 줄을 기록하세요. 정답을 대신 주지 말고, 아이가 '다시 말하게' 도와주세요.</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">
+<a class="btn btn-primary" href="/free/daily-sheet.html" target="_blank" rel="noopener">🖨 오늘 활동지 인쇄하기</a>
+<a class="btn btn-ghost" href="/levels.html">🎯 우리 아이 나이별 수업 보기</a>
+<a class="btn btn-ghost" href="/free/ai-first-7days.html" target="_blank" rel="noopener">🎁 7일 질문카드 받기</a></div>
+<div class="callout" style="margin-top:14px">정답을 대신 주지 말고, 아이가 '다시 말하게' 도와주세요. 결과물이 아니라 <b>다시 묻는 과정</b>이 교육입니다.</div>
 <script>
 var L={_j.dumps(data,ensure_ascii=False)};
 var d=new Date().getDay(); var idx=(d===0)?6:d-1; var x=L[idx];
