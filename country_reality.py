@@ -187,6 +187,45 @@ def year_html(key):
 <div class="timeline">{deep}</div>
 <p class="sec-desc" style="margin-top:14px;font-size:12.5px">{y['srcnote']}</p>
 </div></section>"""
+HOMEYEAR={
+"uk": dict(
+ intro="영국이 1년간 6단원으로 가르치는 그 과정을, 학교 자료 없이 집에서 그대로 따라할 수 있습니다. 단원마다 '집에서는 이렇게' 딱 하나씩 — 대부분 돈도, 특별한 도구도 필요 없습니다.",
+ units=[
+  ("① 컴퓨팅 시스템의 계층","프로그램·운영체제·하드웨어·이진법으로 컴퓨터의 층을 이해","안 쓰는 폰이나 컴퓨터를 같이 열어보며 '이 부품은 뭘 할까?' 추측해요. 이진법 놀이 — 전등 켜짐/꺼짐을 1과 0으로 정하고 이름을 써봐요.","🔌 안 쓰는 기기(선택)·종이"),
+  ("② 데이터 표현·데이터 과학","이미지·소리·숫자가 데이터가 되는 원리","가족이 좋아하는 간식을 설문해 표와 그래프로 그려요. 사진을 폰으로 최대한 확대해 '점(픽셀)'이 보이는 걸 관찰해요.","📊 종이·연필·폰 사진"),
+  ("③ 파이썬 프로그래밍 입문","입력·출력·선택·반복으로 텍스트 코딩 시작","'로봇 놀이' — 아이가 부모(로봇)에게 정확한 순서로 명령해 물 한 잔 따르게 해요. 무료 Scratch로 고양이가 이름을 말하게 만들어요.","🐱 무료 Scratch(scratch.mit.edu) 또는 몸으로"),
+  ("④ 웹 개발","HTML로 웹페이지를 만들며 인터넷 이해","메모장에 큰제목 태그로 '내 이름' 한 줄을 쓰고 점html로 저장해 브라우저로 열어요. '내가 만든 첫 웹페이지!'","💻 집 컴퓨터·메모장"),
+  ("⑤ 벡터 그래픽","벡터 도구로 로고·아이콘 제작","무료 그림 도구(구글 그림 등)로 '우리 가족 로고'를 만들어요. 점과 선으로 도형을 그려봐요.","🎨 무료 그림 앱 또는 종이"),
+  ("⑥ 모바일 앱 개발","App Lab으로 앱을 설계·개발","종이에 '내가 만들 앱' 화면을 그려요 — 어떤 버튼, 무슨 기능? '이 앱은 무슨 문제를 풀까?'를 정해요.","📱 종이·색연필"),
+ ],
+ ai_note="그리고 가장 중요한 AI — 학교는 '생각하는 기계' 한 차시로 압축하지만, 집에서는 이 네 가지를 저녁 대화로 천천히 풀면 됩니다:",
+ ai=[
+  ("🔎 AI 찾기","집 안의 AI(음성비서·유튜브 추천·사진 얼굴인식)를 함께 찾아 '얘는 어떻게 아는 걸까?' 추측해요."),
+  ("⚙️ 규칙 vs 학습","요리 레시피처럼 '정해진 순서'로 하는 것과, 사진을 많이 봐서 '배우는' 것의 차이를 예로 이야기해요."),
+  ("🐾 훈련 놀이","고양이·강아지 사진을 여러 장 보여주고 아이가 '분류기'가 되어 맞혀요. '너도 많이 봐서 배운 거야'로 기계학습을 설명해요."),
+  ("⚖️ 책임 대화","'AI가 틀린 답을 주면 누구 책임일까?'를 함께 이야기해요. 판단은 결국 사람 몫."),
+ ],
+ tip="한 주에 한 단원이면 충분해요. 6~8주면 영국 아이가 1년에 배우는 큰 흐름을, 우리 집 버전으로 한 바퀴 돕니다. 결과물이 아니라, 함께 해보는 과정이 목표예요.",
+)}
+def homeyear_html(key):
+    h=HOMEYEAR.get(key)
+    if not h: return ""
+    units="".join(f"""<div class="card" style="margin-bottom:12px"><h4 style="margin:0 0 4px">{u}</h4>
+<div style="font-size:12.5px;color:var(--muted);margin-bottom:8px">🏫 학교에서는 · {s}</div>
+<p style="margin:0"><b style="color:#188038">🏠 집에서는 이렇게</b> — {home}</p>
+<div style="font-size:12px;color:#8a6f45;margin-top:8px">{prep}</div></div>""" for u,s,home,prep in h["units"])
+    ai="".join(f"""<div class="card phil"><div class="pic">{t.split()[0]}</div><div><h4>{t.split(' ',1)[1] if ' ' in t else t}</h4><p>{d}</p></div></div>""" for t,d in h["ai"])
+    return f"""<section class="block"><div class="wrap">
+<div class="pill">🏠 집 실전판</div>
+<h2 class="sec-title" style="margin-top:8px">영국 1년 과정, 우리 집에서 이렇게 따라한다</h2>
+<p class="sec-desc">{h['intro']}</p>
+<h3 style="margin:18px 0 10px;font-size:17px">6단원 → 집에서 하나씩</h3>
+{units}
+<h3 style="margin:24px 0 10px;font-size:17px">가장 중요한 AI, 집에서는 이렇게</h3>
+<p class="sec-desc">{h['ai_note']}</p>
+<div class="grid g4">{ai}</div>
+<div class="callout" style="margin-top:16px">💡 {h['tip']}</div>
+</div></section>"""
 def apply_html(key):
     a=APPLY.get(key)
     if not a: return ""

@@ -378,18 +378,37 @@ def year_page(slug):
 {episode_nav(slug,"2")}
 </div></section>
 {CR.year_html(slug)}
-<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band">
-<div><h3>그럼 우리 집은? · 3편</h3><p>학교의 1년 흐름을, 우리 아이의 한 주 습관으로 옮겨봐요.</p></div>
-<a class="btn btn-lg" href="/world-cases/{slug}-3.html">3편 · 우리 집 적용 →</a></div></div></section>
+<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band" style="background:linear-gradient(135deg,#E6F4EA,#D3EFDC)">
+<div><h3>🏠 그래서, 집에서는 어떻게? · 실전판</h3><p>커리큘럼을 아는 것과, 집에서 실제로 가르치는 건 다릅니다. 이 1년 과정을 단원마다 <b>집에서 따라하는 활동</b>으로 바꿨어요.</p></div>
+<a class="btn btn-lg" href="/world-cases/{slug}-home.html">집 실전판 보기 →</a></div></div></section>
 </main>"""
     return BS.page("cases","../",f"{name}은 1년 동안 매주 이렇게 가르친다 | AI 조기교육",f"{name}의 학년 한 해 주차별 커리큘럼(실제 공개 자료). 세계 AI교육법 심화편.",body)
+def homeyear_page(slug):
+    name,flag=NAMES[slug]
+    body=f"""<main>
+<section class="page-hero"><div class="wrap">
+<div class="pill">{flag} 세계 사례 · {name} 집 실전판</div>
+<h1 style="font-size:31px">{name} 1년 과정, <span class="coral">우리 집</span>에서 이렇게 따라한다</h1>
+<p class="sub">책에 든 커리큘럼을, 우리 아이에게 실제로 가르치는 구체적 방법</p>
+{episode_nav(slug,"3")}
+</div></section>
+{CR.homeyear_html(slug)}
+<section class="block" style="background:var(--cream2)"><div class="wrap"><div class="cta-band">
+<div><h3>학교는 1년에 어떻게 가르치나 다시 보기</h3><p>이 실전판이 따라가는 영국의 실제 1년 커리큘럼.</p></div>
+<a class="btn btn-lg" href="/world-cases/{slug}-year.html">🔬 1년 커리큘럼 →</a></div>
+<div class="cta-band" style="margin-top:12px"><div><h3>바로 쓰는 무료 자료</h3><p>연습지·질문 카드·프롬프트로 오늘 시작.</p></div>
+<a class="btn btn-lg" href="/free-kit.html">무료 자료 받기 ⬇</a></div></div></section>
+</main>"""
+    return BS.page("cases","../",f"{name} 1년 과정, 우리 집에서 이렇게 따라한다 | AI 조기교육",f"{name}의 학년 1년 커리큘럼을 집에서 단원별로 따라하는 구체 활동. 세계 AI교육법 집 실전판.",body)
 def write_all_practice():
     for slug in NAMES:
         BS.write(f"world-cases/{slug}-2.html",practice_page(slug))
         BS.write(f"world-cases/{slug}-3.html",apply_page(slug))
         if slug in CR.YEAR:
             BS.write(f"world-cases/{slug}-year.html",year_page(slug))
-    print("2편·3편(+심화 1년 커리큘럼) 생성 완료")
+        if slug in CR.HOMEYEAR:
+            BS.write(f"world-cases/{slug}-home.html",homeyear_page(slug))
+    print("2편·3편(+심화 1년 커리큘럼·집 실전판) 생성 완료")
 if __name__=="__main__":
     import sys
     which=sys.argv[1:] or ["uk","singapore","korea"]
