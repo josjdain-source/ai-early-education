@@ -106,8 +106,9 @@ def register_to_studio(pkg, mp4):
     vid="aiedu-"+pkg["id"]
     rel=os.path.relpath(mp4,REPO).replace("\\","/")
     desc=pkg.get("description","")+"\n\n"+" ".join("#"+t for t in pkg.get("hashtags",[]))
+    poster=f"assets/ai-edu-shorts/sframe/{pkg['id']}_0.png"  # hook 프레임 = 스튜디오 썸네일
     entry={"video_id":vid,"title":pkg.get("final_title",pkg["id"]),"video_type":"short",
-           "series":pkg.get("series",""),"mp4_path":rel,"thumbnail_path":"",
+           "series":pkg.get("series",""),"mp4_path":rel,"poster_path":poster,"thumbnail_path":poster,
            "tags":pkg.get("hashtags",[]),"shorts":True,"category":"27",
            "status":"ready_to_upload","upload_status":"ready_to_upload","public":False,"public_status":"none",
            "youtube_id":"","youtube_url":"","created_at":"2026-07-06","description":desc,
