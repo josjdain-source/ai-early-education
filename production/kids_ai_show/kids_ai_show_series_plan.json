@@ -1,0 +1,49 @@
+{
+  "series_title": "AI랑 놀자",
+  "tagline": "다시 물어보면, AI가 더 잘 도와줘요!",
+  "philosophy": "AI를 가르치는 영상이 아니라, 아이에게 'AI와 대화하는 법'을 가르치는 영상. 반복해서 보며 자연스럽게 몸에 익힌다.",
+  "reference_note": "'노래+캐릭터+놀이+반복학습' 구조만 참고. 특정 프로그램의 이름·캐릭터·음악·대사·구성은 복제하지 않는다(전부 원작).",
+  "target_age": "만 6~10세 · 초등 저학년 중심 · 부모 동반 시청 가능",
+  "format": {
+    "shorts_sec": [45, 60],
+    "longform_sec": [180, 300],
+    "fixed_structure": [
+      "1. 오프닝 징글",
+      "2. 오늘의 AI 놀이 소개",
+      "3. 아이 캐릭터가 AI에게 첫 질문",
+      "4. AI가 애매하거나 이상한 결과를 줌",
+      "5. 선생님 캐릭터가 '왜 이렇게 나왔을까?' 질문",
+      "6. 아이가 조건을 바꿔 다시 말함",
+      "7. 더 좋아진 결과가 나옴",
+      "8. 오늘의 AI 약속 한 줄",
+      "9. 엔딩 노래(반복 문장)"
+    ]
+  },
+  "characters": [
+    {"name": "하루", "role": "아이", "trait": "호기심 많고 실수도 많이 함", "voice": "밝은 아이 목소리"},
+    {"name": "아이봇", "role": "AI", "trait": "귀엽지만 가끔 엉뚱하게 답함 · 말버릇 '삐빅'", "voice": "통통 튀는 로봇 톤"},
+    {"name": "생각쌤", "role": "선생님", "trait": "정답을 말해주지 않고 '왜 그럴까?'로 다시 묻게 함", "voice": "따뜻하고 차분"},
+    {"name": "퐁퐁", "role": "말풍선 요정", "trait": "좋은 질문(부탁 말) 문장을 말풍선으로 보여줌 · 힌트만", "voice": "반짝이는 짧은 톤"}
+  ],
+  "recurring_elements": {
+    "opening_jingle": "AI랑 놀자! 아이봇이랑! …(원작)",
+    "ending_repeat_pattern": "짧게 말하지 말고, ○○ 다시 말해요! (매화 교훈에 맞춰 변주)",
+    "today_promise_frame": "오늘의 AI 약속: ○○"
+  },
+  "tone_rules": ["밝고 리듬감", "설명보다 놀이", "어려운 단어 금지", "어른 강의 금지", "정책 설명 금지", "부모 설득 문장 금지", "사이트 홍보 금지"],
+  "word_easing_policy": "AI/프롬프트 같은 단어는 쓰되 즉시 쉬운 말로 풀어준다. 예) 프롬프트 → 'AI에게 하는 부탁 말'.",
+  "episode_plan": [
+    {"ep": 1, "theme": "AI에게 그냥 말하면 이상하게 나와요", "skill": "자세히 말하기(구체적인 부탁)", "promise": "AI는 자세히 말할수록 더 잘 도와줘요", "status": "대본·플랜 완료 / 렌더 대기"},
+    {"ep": 2, "theme": "AI가 틀리면 어떻게 해요?", "skill": "다시 물어보기(수정)", "promise": "AI도 틀려요. 다시 물어보면 돼요", "status": "예정"},
+    {"ep": 3, "theme": "이거 진짜야? 어떻게 알아요?", "skill": "확인하기(검증)", "promise": "AI 말도 한 번 확인해요", "status": "예정"},
+    {"ep": 4, "theme": "내가 만든 거야, AI가 만든 거야?", "skill": "내 몫 알기(주체성)", "promise": "AI는 도와주고, 만드는 건 나예요", "status": "예정"}
+  ],
+  "deliverables_per_episode": ["60초 Shorts", "3~5분 롱폼", "에피소드 페이지", "부모 활동지 1장", "아이 따라 말하기 카드 3장"],
+  "site": {
+    "series_page": "/videos/kids-ai-show.html",
+    "episode_page_pattern": "/videos/kids-ai-show/episode-00N.html",
+    "activity_sheet_pattern": "/free/kids-ai-show-00N.html",
+    "videos_section_label": "🎈 AI랑 놀자"
+  },
+  "safety": ["실사·공포 금지(밝은 그림책 톤)", "실존 인물/브랜드 금지", "업로드는 사람이 승인(자동 공개 금지)", "출처 없는 사실 주장 금지(1화는 놀이 픽션)"]
+}

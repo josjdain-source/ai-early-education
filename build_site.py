@@ -276,6 +276,7 @@ SECTIONS={
  ]),
  "videos":("영상관",[
    ("전체 영상","/videos.html"),
+   ("🎈 AI랑 놀자 (아이 전용)","/videos/kids-ai-show.html"),
    ("롱폼 다큐 · 세계 5개국","/videos/world-ai-education.html"),
    ("중국 AI교육 심층","/videos/china-ai-education.html"),
    ("미국 AI교육 심층","/videos/us-ai-education.html"),
@@ -535,6 +536,11 @@ def videos():
 <section class="block" style="padding-top:24px"><div class="wrap">
 <div class="player"><iframe src="https://www.youtube.com/embed/{YT_MAIN}" title="세계 5개국 AI교육" loading="lazy" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 <p class="center" style="margin-top:12px;color:var(--muted)">대표 영상 · 세계 5개국은 아이에게 AI를 어떻게 가르치나</p></div></section>
+<section class="block" style="padding-bottom:0"><div class="wrap">
+<a href="/videos/kids-ai-show.html" style="display:flex;gap:16px;align-items:center;background:linear-gradient(150deg,#FFF3C4,#FFD9A0);border:2px solid #F6C77a;border-radius:18px;padding:18px 22px;text-decoration:none;color:#7a3e12">
+<span style="font-size:44px">🎈</span><div><div style="font-size:12px;font-weight:800;color:#b06a1e">아이 전용 · 만 6~10세</div>
+<h3 style="margin:2px 0;font-size:22px">AI랑 놀자</h3><p style="margin:0;font-weight:700;color:#9a5b23">하루·아이봇과 반복해서 보며 'AI와 대화하는 법'을 배워요.</p></div>
+<span style="margin-left:auto;font-weight:900;font-size:18px">→</span></a></div></section>
 <section class="block"><div class="wrap">
 <div class="filters" id="filters">{fil}</div>
 <div class="grid g3" id="vgrid">{cards}</div>
@@ -696,6 +702,8 @@ if __name__=="__main__":
             f"{c[1]} AI교육 사례로 우리 집에서 오늘 할 부모 행동·연령별 팁·FAQ. 정책 분석 아님.",
             PC.country_body(c[0])))
     write("free-kit.html",free_kit())
+    import build_kids_show as KIDS
+    KIDS.build_all()
     import free_docs as FD
     for _slug,_d in FD.DOCS.items():
         write(f"free/{_slug}.html",free_resource_layout(f"/free/{_slug}.html",_d["title"],_d["style"],_d["body"]))

@@ -1,0 +1,25 @@
+{
+  "episode": 1,
+  "engine": "ComfyUI / RealVisXL_V5.0_fp16 (또는 애니풍 kids 체크포인트 검토)",
+  "aspect": {"longform": "1344x768 → 1280x720", "shorts": "768x1344 → 1080x1920"},
+  "style_token": "bright cheerful children's picture book illustration, kids TV cartoon style, soft rounded shapes, thick clean black outlines, flat vivid pastel colors, simple friendly playground background, warm soft lighting, wholesome, hand-drawn look, no text, no letters",
+  "negative": "photo, photorealistic, 3d render, realistic, scary, horror, creepy, dark, text, letters, words, watermark, ugly, deformed, extra limbs, blurry, adult content",
+  "character_sheet": {
+    "하루": "HARU: a cheerful 8-year-old Korean child, round face, short black hair with a small front tuft, big curious sparkling eyes, wearing a bright yellow t-shirt and blue denim overalls, energetic expressive pose",
+    "아이봇": "AIBOT: a cute small round white robot, rounded screen face with two big glowing sky-blue dot eyes, tiny antenna with a round tip, short stubby arms, pastel blue accents, floaty friendly, sometimes a confused '?' expression",
+    "생각쌤": "SAENGGAK-SSAEM: a warm friendly Korean teacher, round glasses, soft green cardigan, gentle smile, kneeling to child's eye level, calm caring pose",
+    "퐁퐁": "PONGPONG: a tiny cute fairy shaped like a soft pink speech bubble, small translucent wings, holding a glowing speech bubble, sparkly, palm-sized"
+  },
+  "consistency_note": "각 컷 프롬프트 앞에 등장 캐릭터의 character_sheet 문장을 그대로 붙여 외형을 고정한다. 완전 일관성은 IP-Adapter/캐릭터 시트 참조가 필요(미해결 과제) → 렌더 후 사람이 컷 선별.",
+  "scenes": [
+    {"n": 1, "chars": ["하루","아이봇","생각쌤","퐁퐁"], "prompt": "all four characters together jumping happily on a colorful bright AI playground, confetti, joyful opening scene, wide composition"},
+    {"n": 2, "chars": ["생각쌤","하루","퐁퐁"], "prompt": "the teacher waving hello while the child hops excitedly, the little fairy floating with a glowing speech bubble, sunny playground center"},
+    {"n": 3, "chars": ["하루","아이봇"], "prompt": "the child standing in front of the round white robot, cheerfully asking, robot starting to draw with effort, cute"},
+    {"n": 4, "chars": ["하루","아이봇","퐁퐁"], "prompt": "a funny WRONG cat drawing on a floating canvas — odd colors and a silly weird expression, space background; the child surprised, the robot embarrassed with a sweat drop, fairy tilting"},
+    {"n": 5, "chars": ["생각쌤","하루"], "prompt": "the teacher kneeling to the child's eye level asking a gentle question, the child thinking hard with a finger on chin, thoughtful warm mood"},
+    {"n": 6, "chars": ["하루","아이봇","퐁퐁"], "prompt": "the fairy showing a glowing speech bubble hint, the child speaking clearly and carefully, the robot listening attentively, determined cheerful"},
+    {"n": 7, "chars": ["하루","아이봇","생각쌤"], "prompt": "a lovely cute WHITE cat sitting on a YELLOW cushion on the canvas, the child cheering with arms up, the robot proud, the teacher smiling warmly"},
+    {"n": 8, "chars": ["하루","아이봇","생각쌤","퐁퐁"], "prompt": "the four characters in a row putting hands together making a promise, warm glow, heartwarming"},
+    {"n": 9, "chars": ["하루","아이봇","생각쌤","퐁퐁"], "prompt": "all four waving goodbye and singing, musical notes floating, bright confetti ending scene, wide composition"}
+  ]
+}
