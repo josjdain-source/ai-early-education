@@ -1,0 +1,29 @@
+{
+  "_comment": "청년정책 vs AI 인력시장 쇼츠 — 울분 대변·사이다(캐논 1순위 Catharsis). 알바→소비→알바 쳇바퀴 울분을 대신 터뜨리고, '집에서 AI로 버는 법이 없다'는 공백을 짚고, 해결(AI=1인 생산수단)로 상승 마무리. 음성=InJoon(캐논). 수치=출처 있는 것만(evidence 참조). 정책 비하 아닌 구조 비판.",
+  "id": "youth-policy-short",
+  "final_title": "청년정책 다 받아봤자, 알바로 돌아가는 이유",
+  "brand": "AI 시대 리포트",
+  "speed": 1.2,
+  "region": "kr",
+  "duration_target_sec": 52,
+  "style_token": "semi-realistic editorial documentary illustration, warm muted urban palette, thick clean outlines, korean city and young people daily life scenes, soft cinematic lighting, detailed, no text, no letters, no numbers, no logo",
+  "negative": "photo, photorealistic, 3d render, text, letters, words, numbers, watermark, logo, western caucasian, scary, dark, ugly, deformed, blurry",
+  "evidence": {
+    "jobs_decline": "20대 이하 일자리 13.5만개 감소·10분기 연속 감소, 청년 고용률 44.6% 18개월 연속 하락 (뉴데일리/이로운넷 2025.11)",
+    "resting": "20대 '쉬었음' 44.2만 명(2026.1, 2021년 이후 최고), 청년층 '그냥 쉬었다' 63만 (리포테라 2026)",
+    "ai_replace": "한국은행: AI로 대체 가능 일자리 341만 개(전체 12%) (한국경제/시사저널 2024.7)",
+    "entry_jobs": "생성형 AI가 초급 업무 자동화 → IT 채용 신입→경력직 재편, 신입 수요 감소 (리포테라 2026)",
+    "policy": "청년미래적금(3년 최대 2,200만 목돈), 국민취업지원 구직촉진수당 월 60만×6개월, 청년월세지원 월 20만×최대24개월=480만 (고용부/국토부/토스뱅크 2026 정리)"
+  },
+  "beats": [
+    {"role": "hook", "head": "알바 → 소비 → 알바", "text": "알바로 벌고, 월세 내고, 또 알바. 청년의 시간은 이 쳇바퀴에 갇혀 있습니다.", "prompt": "a young korean part-time worker cycling between a convenience store counter, paying rent, and back to work, a circular treadmill-like visual metaphor of repeating daily grind, weary but relatable, muted evening tones", "region": "kr"},
+    {"role": "fact", "head": "10분기 연속 감소", "text": "20대 일자리, 10분기 연속으로 줄었습니다. 그냥 쉬는 청년 63만.", "prompt": "empty office desks and a shrinking job board in a korean city, young people waiting outside, quiet heavy atmosphere, editorial", "region": "kr"},
+    {"role": "fact", "head": "AI가 341만 개", "text": "한국은행 분석, AI로 대체될 일자리 341만 개. 신입 자리부터 지워집니다.", "prompt": "a giant AI machine quietly taking over office workstations one by one while young applicants stand outside the glass door, symbolic but not scary, cinematic", "region": "kr"},
+    {"role": "fact", "head": "정책은 있다", "text": "정책은 있습니다. 적금 목돈 2천2백만, 수당 월 60만, 월세 20만.", "prompt": "government support documents and small coin stacks neatly arranged on a desk, official and tidy, warm neutral tone", "region": "kr"},
+    {"role": "hook", "head": "전부 '취업 전제'", "text": "그런데 셋 다 취업을 전제로 설계됐습니다. 취업문이 닫히는데, 취업 지원만 있는 겁니다.", "prompt": "a young korean person holding neat policy papers in front of a giant closed company gate, the mismatch between paperwork and reality, dramatic contrast, editorial", "region": "kr"},
+    {"role": "fact", "head": "수당 6개월, 그 뒤엔?", "text": "수당은 6개월이면 끝. 월세지원도 끝나면, 다시 알바로 돌아갑니다.", "prompt": "a calendar page flipping to its end while a young person returns to a part-time uniform, the loop closing again, quiet resignation, muted", "region": "kr"},
+    {"role": "hook", "head": "빠진 건 하나", "text": "빠진 건 하나입니다. 집에서 AI로 돈을 버는 법은, 아무도 가르치지 않습니다.", "prompt": "an empty desk at home with a laptop glowing full of potential, a young person looking at it not knowing where to start, a door of opportunity slightly open, hopeful tension", "region": "kr"},
+    {"role": "fact", "head": "AI = 1인 생산수단", "text": "AI는 일자리를 지우지만, 동시에 혼자서도 만들 수 있는 생산수단입니다. 영상, 디자인, 글, 서비스.", "prompt": "the same young korean person now creating at home with AI tools, producing videos designs and writing that flow out to the world as glowing streams, empowered creator at one desk, bright turn", "region": "kr"},
+    {"role": "cta", "head": "수당은 6개월, 능력은 평생", "text": "수당은 6개월이지만, 버는 능력은 평생 갑니다. 집에서 AI로 만드는 법, 이 채널에서 하나씩 보여드립니다.", "prompt": "a confident young korean creator at a home desk at golden hour, screens showing finished work, a city skyline of opportunity outside the window, triumphant hopeful finale", "region": "kr"}
+  ]
+}

@@ -1079,6 +1079,34 @@
       "visibility": "private",
       "uploaded_at": "2026-07-06 23:44",
       "error_message": ""
+    },
+    {
+      "video_id": "youth-policy-short",
+      "title": "청년정책 다 받아봤자, 알바로 돌아가는 이유",
+      "video_type": "short",
+      "series": "S09_youth_ai",
+      "mp4_path": "assets/youth-policy/render/youth-policy-short.mp4",
+      "poster_path": "assets/youth-policy/render/youth-policy-short-poster.jpg",
+      "thumbnail_path": "assets/youth-policy/render/youth-policy-short-poster.jpg",
+      "tags": [
+        "청년정책",
+        "AI",
+        "일자리",
+        "청년",
+        "알바"
+      ],
+      "shorts": true,
+      "category": "25",
+      "status": "ready_to_upload",
+      "upload_status": "ready_to_upload",
+      "public": false,
+      "public_status": "none",
+      "youtube_id": "",
+      "youtube_url": "",
+      "created_at": "2026-07-07",
+      "description": "평택은 반도체로 지역총생산이 2배가 됐습니다. 광주 군공항 반도체 클러스터가 성공하면? 숫자로 본 긍정 시나리오. ★공식 예측 아님. 수치는 보도·통계+가정.\\n\\n#광주 #반도체 #평택 #군공항 #지역경제 #Shorts",
+      "source": "production/youth_policy_short_plan.json",
+      "note": "울분 대변·사이다 톤(캐논). 구조 비판+해결 제시. 업로드는 사람 승인."
     }
   ],
   "_schema": "studio-v1"
