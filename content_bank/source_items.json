@@ -152,6 +152,23 @@
       "status": "stored",
       "source_url": "https://www.youtube.com/@future_chajiho",
       "notes": "자막 요약만 저장(본문 복제 금지). 발언 기반 주장·추정치는 '~라는 주장/발언' 으로 인용, 확정 사실처럼 쓰지 말 것. 인물·정당 언급 금지 유지 — 담론·개념·구조만 차용."
+    },
+    {
+      "id": "ai-jobs-pathway-001",
+      "type": "source",
+      "series": "S10_edu_to_jobs",
+      "age": "high",
+      "topic": "AI 취업 경로 3개국 검증",
+      "title": "기업이 뽑는 AI 인재 — 싱가포르·미국·영국 실측",
+      "summary": "①싱가포르 AIAP: 학위 대신 6~9개월 실전 프로젝트 도제(월 SGD4,000 받으며)→90% 이상 6개월 내 AI직 취업, 수료 전 오퍼 다수, 비전공 가능 ②미국: 채용담당 49%=포트폴리오·학위 동급, 6%만 학위 우선. '만드는 사람'이 아니라 '일에 쓸 줄 아는 사람' 채용. AI스킬 임금 프리미엄 56%. 학습법 순위=현장(67%)>자격증(61%)>대학수업(58%). GitHub·Kaggle·오픈소스 ③영국: 학위-도제(기업이 등록금+월급, Accenture AI엔지니어 £32k 시작, BBC·바클리즈 Level7 표준 참여). 공통식=포트폴리오>학위 · 활용>제작 · 현장>강의 · 도메인(의료·금융·교육)×AI.",
+      "usable_for": [
+        "S10 4편(3개국 검증 쇼츠)",
+        "고등·대학 levels 페이지",
+        "경진대회 교실 연결"
+      ],
+      "status": "stored",
+      "source_url": "https://aiap.sg/apprenticeship/",
+      "notes": "수치 출처: AIAP 공식 FAQ(90%+), nucamp/study.com(49%·6%·67%), PwC계열 보도(56% 프리미엄), NowSkills/Skills England(영국). 시리즈 캐논대로 교육→직업 연결 소재."
     }
   ]
 }
