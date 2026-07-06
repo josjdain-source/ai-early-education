@@ -1,0 +1,250 @@
+{
+  "_comment": "교육↔현실직업 연결 3부작 — 글로벌 AI 허브 정찰자료(global-ai-hub-001) 활용. 캐논(Catharsis·InJoon·풀블리드·느린줌인·상승엔딩). 인물·정당 언급 금지, 추정치는 '브리핑에서 나온 추정' 등 발언 인용으로. 각 편=현실(시장·직업) 훅 → 근거 → ★교육 연결(다시 묻는 힘) → 상승. 잃어버린10년 성공 공식=교육을 현실에 붙이기.",
+  "series": "S10_edu_to_jobs",
+  "brand": "AI 시대 리포트",
+  "speed": 1.4,
+  "region": "kr",
+  "style_token": "semi-realistic editorial documentary illustration, warm muted urban palette, thick clean outlines, korean city work and learning scenes, soft cinematic lighting, detailed, no text, no letters, no numbers, no logo",
+  "negative": "photo, photorealistic, 3d render, text, letters, words, numbers, watermark, logo, western caucasian, scary, dark, ugly, deformed, blurry",
+  "shorts": [
+    {
+      "id": "jobs-10x-market",
+      "final_title": "반도체만 보다간 놓칩니다 — AI '10배 시장'이 열린다",
+      "beats": [
+        {
+          "role": "hook",
+          "head": "반도체만 보면 놓친다",
+          "text": "다들 반도체만 봅니다. 그런데 그보다 훨씬 큰 시장이 열리고 있습니다.",
+          "prompt": "everyone staring at a single glowing semiconductor chip while behind them a vastly larger glowing landscape of hospitals schools and banks opens up unnoticed, dramatic reveal composition"
+        },
+        {
+          "role": "fact",
+          "head": "진짜 시장은 전환",
+          "text": "AI의 진짜 시장은 칩이 아니라, 의료와 금융과 교육을 AI로 바꾸는 일입니다.",
+          "prompt": "a hospital a bank and a school being rewired with glowing AI circuits flowing through them, transformation of everyday institutions, warm editorial"
+        },
+        {
+          "role": "fact",
+          "head": "2경이라는 추정",
+          "text": "국회 브리핑에선, 개발도상국 미충족 의료 시장만 2경이라는 추정까지 나왔습니다.",
+          "prompt": "a globe with vast underserved regions lighting up as medical AI services reach them, enormous scale of opportunity, hopeful aerial"
+        },
+        {
+          "role": "fact",
+          "head": "UN 기구 6곳 서명",
+          "text": "실제로 UN 기구 여섯 곳이 한국과 협력 의향서에 서명했습니다. 판이 한국으로 옵니다.",
+          "prompt": "six international organization documents being signed and stacked as a path of light leads toward the korean peninsula, momentum and legitimacy, cinematic"
+        },
+        {
+          "role": "hook",
+          "head": "직업이 바뀐다",
+          "text": "그럼 아이들의 직업은요? 칩 만드는 사람보다, AI로 병원과 학교를 바꾸는 사람이 필요해집니다.",
+          "prompt": "a young korean professional redesigning a hospital workflow on a large screen with AI tools, a new kind of job in action, confident modern"
+        },
+        {
+          "role": "fact",
+          "head": "필요한 건 질문力",
+          "text": "그 일의 자격은 코딩보다 먼저, 문제를 찾고 AI에게 다시 묻는 힘입니다.",
+          "prompt": "a korean child and a young adult side by side asking sharp questions to an AI interface, thought bubbles turning into solutions, learning that leads to work"
+        },
+        {
+          "role": "cta",
+          "head": "10배 시장의 인재",
+          "text": "10배 시장에서 일할 아이, 오늘부터 준비할 수 있습니다. 방법은 프로필 링크에.",
+          "prompt": "a confident korean student stepping onto a glowing path that leads from a desk at home toward a skyline of future industries, triumphant golden hour"
+        }
+      ],
+      "desc_lines": [
+        "다들 반도체만 볼 때, 의료·금융·교육의 AI 전환이라는 더 큰 시장이 열리고 있습니다. 국회 브리핑에서 나온 '개도국 의료 2경' 추정, UN 기구 6곳 협력 의향서 서명 — 판이 한국으로 옵니다. 아이의 직업은 여기서 나옵니다.",
+        "▶ 오늘의 10분 수업 https://ai-early-education.pages.dev/daily-class/today",
+        "#AI시장 #미래직업 #AI교육 #반도체 #Shorts"
+      ],
+      "tags": [
+        "AI시장",
+        "미래직업",
+        "AI교육",
+        "반도체"
+      ]
+    },
+    {
+      "id": "jobs-public-ai",
+      "final_title": "인공지능 말고 '공공지능'? 아이 직업이 여기서 나옵니다",
+      "beats": [
+        {
+          "role": "hook",
+          "head": "공공지능?",
+          "text": "인공지능 말고, 공공지능이라는 말 들어보셨습니까?",
+          "prompt": "the concept of AI splitting into two paths: one locked inside corporate towers, one flowing openly into streets schools and clinics for everyone, intriguing contrast"
+        },
+        {
+          "role": "fact",
+          "head": "그게 뭔데",
+          "text": "교육, 의료, 금융, 복지를 AI로 돌려서, 누구나 기본적인 삶을 누리게 하자는 구상입니다.",
+          "prompt": "a korean town where AI gently powers the school the clinic the bank and the welfare center, public services glowing warmly for ordinary people"
+        },
+        {
+          "role": "hook",
+          "head": "왜 나왔나",
+          "text": "AI가 만든 부가 소수에게만 가면, 나머지는 일자리만 잃기 때문입니다.",
+          "prompt": "wealth flowing into a few tall towers while many people below lose their workplaces, stark but not scary inequality metaphor, editorial"
+        },
+        {
+          "role": "fact",
+          "head": "세계가 움직인다",
+          "text": "그래서 유엔과 함께, 개발도상국의 AI 전환을 이끄는 허브를 한국에 만들자는 판이 깔렸습니다.",
+          "prompt": "a global cooperation scene where nations connect through a hub on the korean peninsula, lines of partnership spanning continents, hopeful diplomatic scale"
+        },
+        {
+          "role": "hook",
+          "head": "여기서 직업이 나온다",
+          "text": "공공지능이 깔리면, 그걸 설계하고, 운영하고, 가르칠 사람이 필요합니다. 전부 새 직업입니다.",
+          "prompt": "new kinds of korean professionals at work: one designing a public AI system, one operating it in a clinic, one teaching it in a classroom, three new careers in one frame"
+        },
+        {
+          "role": "fact",
+          "head": "공통 자격은 하나",
+          "text": "그 직업들의 공통 자격은 하나. AI를 의심하고, 다룰 줄 아는 힘입니다.",
+          "prompt": "a korean student examining an AI answer with a magnifying glass then confidently correcting it, the core skill of the next era, bright focused"
+        },
+        {
+          "role": "cta",
+          "head": "새 직업의 문",
+          "text": "공공지능 시대의 직업 지도, 이 채널에서 하나씩 그려드립니다.",
+          "prompt": "a large unfolding map of future public-AI careers glowing before a young korean family, doors of opportunity opening, warm triumphant finale"
+        }
+      ],
+      "desc_lines": [
+        "교육·의료·금융·복지를 AI로 돌려 누구나 기본적 삶을 누리게 하자는 '공공지능' 구상. UN과 함께 개도국 AI 전환을 이끄는 허브를 한국에 — 그 판에서 설계·운영·교육이라는 새 직업이 나옵니다. 공통 자격은 AI를 의심하고 다루는 힘.",
+        "🎯 나이별 AI교육 로드맵 https://ai-early-education.pages.dev/levels",
+        "#공공지능 #AI기본사회 #미래직업 #AI교육 #Shorts"
+      ],
+      "tags": [
+        "공공지능",
+        "AI기본사회",
+        "미래직업",
+        "AI교육"
+      ]
+    },
+    {
+      "id": "jobs-collab-work",
+      "final_title": "AI에게 안 뺏기는 직업의 조건",
+      "beats": [
+        {
+          "role": "hook",
+          "head": "안 뺏기는 직업",
+          "text": "AI에게 안 뺏기는 직업에는, 조건이 하나 있습니다.",
+          "prompt": "a row of jobs fading away as AI advances, but one worker standing firm in the light unaffected, the question of what makes the difference, cinematic"
+        },
+        {
+          "role": "fact",
+          "head": "대체 vs 협력",
+          "text": "AI 혼자 일하게 두는 회사가 있고, 사람이 AI와 같이 일하는 회사가 있습니다.",
+          "prompt": "split scene: an empty automated office on one side versus a lively office where humans and AI screens work together on the other, clear contrast"
+        },
+        {
+          "role": "fact",
+          "head": "AI 협력형 일자리",
+          "text": "이걸 AI 협력형 일자리라고 부릅니다. 사람이 AI를 다룰 줄 알 때만 생기는 자리입니다.",
+          "prompt": "a korean worker conducting multiple AI tools like an orchestra conductor, human direction over machine execution, empowered professional"
+        },
+        {
+          "role": "hook",
+          "head": "쳇바퀴의 출구",
+          "text": "알바 쳇바퀴의 출구도 여기 있습니다. AI에게 시키는 사람이 되는 것.",
+          "prompt": "a young korean part-timer stepping off a treadmill loop onto a new path where they direct AI tools producing work, escape and upgrade, hopeful turn"
+        },
+        {
+          "role": "fact",
+          "head": "학원이 아니라 연습",
+          "text": "그 능력은 학원이 아니라, 매일 AI에게 다시 묻는 연습에서 자랍니다.",
+          "prompt": "a korean home desk where daily short practice sessions with AI stack up like growing building blocks into skill, consistent practice metaphor, warm"
+        },
+        {
+          "role": "fact",
+          "head": "아이도 청년도 같다",
+          "text": "아이도, 청년도 같습니다. AI를 쓰는 사람이 아니라, 부리는 사람.",
+          "prompt": "a korean child and a young adult both confidently directing AI screens, generations sharing one survival skill, side by side, bright"
+        },
+        {
+          "role": "cta",
+          "head": "오늘 10분이면 시작",
+          "text": "AI를 부리는 연습, 오늘 10분이면 시작합니다. 프로필 링크에 있습니다.",
+          "prompt": "a warm korean home in the evening where a family starts a ten minute AI practice together, small start big future, golden hopeful finale"
+        }
+      ],
+      "desc_lines": [
+        "AI에게 안 뺏기는 직업의 조건 = AI와 '같이' 일하는 자리(AI 협력형 일자리). 사람이 AI를 다룰 줄 알 때만 생깁니다. 알바 쳇바퀴의 출구도 여기 — AI에게 시키는 사람 되기. 그 능력은 학원이 아니라 매일 다시 묻는 연습에서.",
+        "▶ 오늘의 10분 수업 https://ai-early-education.pages.dev/daily-class/today",
+        "🎁 7일 질문카드(무료) https://ai-early-education.pages.dev/free/ai-first-7days",
+        "#AI일자리 #협력형인재 #청년 #AI교육 #Shorts"
+      ],
+      "tags": [
+        "AI일자리",
+        "협력형인재",
+        "청년",
+        "AI교육"
+      ]
+    },
+    {
+      "id": "jobs-3countries",
+      "final_title": "스펙 쌓아도 떨어지는 이유 — 3개국이 답을 알려줬다",
+      "beats": [
+        {
+          "role": "hook",
+          "head": "스펙인데 왜 탈락?",
+          "text": "학점, 토익, 자격증. 다 했는데 떨어집니다. 방향이 낡은 겁니다.",
+          "prompt": "a korean student buried under certificates and test books receiving rejection letters despite effort, weary frustration, muted editorial"
+        },
+        {
+          "role": "fact",
+          "head": "싱가포르 90%",
+          "text": "싱가포르 AI 도제 프로그램. 학위 대신 실전 6개월, 월급 받으며. 90% 이상이 취업했습니다.",
+          "prompt": "apprentices doing real AI projects then receiving job offers before graduation, bright success, modern workspace"
+        },
+        {
+          "role": "fact",
+          "head": "미국 49% vs 6%",
+          "text": "미국 채용담당자, 포트폴리오와 학위가 동급이라는 답 49%. 학위 우선은 단 6%.",
+          "prompt": "a hiring manager's scale where a portfolio of built projects outweighs a diploma, decisive contrast"
+        },
+        {
+          "role": "fact",
+          "head": "영국은 월급 주며",
+          "text": "영국은 기업이 등록금에 월급까지 주며 AI 인력을 직접 키웁니다. 시작 연봉 3만 2천 파운드.",
+          "prompt": "a company paying tuition and salary for a young apprentice studying and working simultaneously, employer investment, professional warm"
+        },
+        {
+          "role": "hook",
+          "head": "공식은 하나",
+          "text": "세 나라의 결론은 하나. 만든 것이 학위를 이깁니다. AI를 부릴 줄 아는 사람.",
+          "prompt": "four principles glowing as one doctrine: portfolio, directing AI, hands-on work, domain expertise combined, iconic pillars"
+        },
+        {
+          "role": "fact",
+          "head": "오늘 할 일",
+          "text": "관심 분야 하나에 AI를 곱해 결과물을 만들고, 공개하세요. 그게 시작입니다.",
+          "prompt": "a korean student publishing their first small AI-made project online, first step going public, hopeful bright"
+        },
+        {
+          "role": "cta",
+          "head": "만든 것이 이력서다",
+          "text": "스펙의 시대는 끝나갑니다. 만든 것이 이력서입니다. 만드는 법은 이 채널에서.",
+          "prompt": "a young korean walking into the future holding a glowing portfolio of creations, evidence over paper, golden triumphant finale"
+        }
+      ],
+      "desc_lines": [
+        "학점·토익·자격증 다 했는데 떨어지는 이유 — 기준이 바뀌었기 때문입니다. 싱가포르 AIAP(실전 도제, 90%+ 취업)·미국(포트폴리오=학위 49%, 학위우선 6%뿐, AI스킬 임금 +56%)·영국(기업이 등록금+월급, £32k 시작). 공통 공식: 포트폴리오>학위 · 활용>제작 · 현장>강의 · 도메인×AI.",
+        "🏆 공개 대회로 포트폴리오 시작 https://ai-early-education.pages.dev/competitions",
+        "🎯 나이별 로드맵 https://ai-early-education.pages.dev/levels",
+        "#AI취업 #포트폴리오 #고등학생 #대학생 #미래직업 #Shorts"
+      ],
+      "tags": [
+        "AI취업",
+        "포트폴리오",
+        "고등학생",
+        "대학생",
+        "미래직업"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "_comment": "AI 취업 3개국 검증 롱폼 — ai-jobs-pathway-001 자료 기반. 캐논(울분 대변→사이다→상승, InJoon). 수치=출처 있는 것만(AIAP 공식 90%·미국 49%/6%/56%/67%·영국 £32k). 인물·정당 없음. 교육↔직업 S10 시리즈의 본편.",
+  "topic": "기업이 뽑는 AI 인재 — 3개국에서 확인했다",
+  "subtitle": "스펙이 아니라 증거다: 싱가포르·미국·영국 실측",
+  "speed": 1.2,
+  "brand": "AI 시대 리포트",
+  "style": "semi-realistic editorial documentary illustration, warm muted urban palette, thick clean outlines, korean and international study and work scenes, soft cinematic lighting, detailed, no text, no letters, no numbers, no logo",
+  "sections": [
+    {
+      "key": "opening",
+      "title": "스펙인데, 왜 떨어질까",
+      "narration": "학점을 채우고, 토익을 만들고, 자격증을 쌓았습니다. 그런데도 서류에서 떨어집니다. 열심히 안 한 게 아닙니다. 방향이 낡은 겁니다. AI 시대에 기업이 사람을 뽑는 기준이 바뀌었는데, 우리만 옛날 기준으로 준비하고 있는 건 아닐까요. 그래서 확인했습니다. 싱가포르, 미국, 영국. 세 나라에서 기업이 실제로 누구를 뽑는지, 숫자로 보겠습니다.",
+      "beats": [
+        {"prompt": "a korean student at a desk buried under certificates test books and application papers, rejection letters piling up despite hard work, weary frustration, muted tones", "caption": "열심히 했는데, 왜 떨어질까"},
+        {"prompt": "an old paper resume crumbling while a new glowing portfolio of real projects rises beside it, the standard changing, symbolic transition", "caption": "기준이 바뀌었다 — 3개국에서 확인"}
+      ]
+    },
+    {
+      "key": "korea",
+      "title": "한국의 스펙 쳇바퀴",
+      "narration": "한국의 준비는 아직 스펙 중심입니다. 학점, 어학 점수, 자격증. 그런데 정작 AI 시대의 기업이 물어보는 건 다릅니다. 무엇을 만들어 봤습니까. 어떤 문제를 AI로 풀어 봤습니까. 이 질문에 답이 없으면, 스펙이 아무리 높아도 비어 보입니다.",
+      "beats": [
+        {"prompt": "students running on a circular treadmill of exams scores and certificates, going fast but staying in place, the spec treadmill, editorial metaphor", "caption": "학점·토익·자격증… 그런데 서류 탈락"},
+        {"prompt": "an interviewer asking a single question while a nervous applicant's stack of certificates gives no answer, the question 'what have you built', tense quiet moment", "caption": "기업의 질문: \"무엇을 만들어 봤나요?\""}
+      ]
+    },
+    {
+      "key": "singapore",
+      "title": "싱가포르 — 90%의 비밀",
+      "narration": "싱가포르의 국가 프로그램, AI 도제 프로그램을 보세요. 학위를 보지 않습니다. 6개월에서 9개월, 실전 프로젝트에 투입합니다. 심지어 월 4천 싱가포르 달러를 받으면서 배웁니다. 결과는 놀랍습니다. 수료자의 90퍼센트 이상이 6개월 안에 AI 직무로 취업했고, 상당수는 수료하기도 전에 오퍼를 받았습니다. 비전공자도, 문과생도 들어갑니다. 보는 건 학벌이 아니라, 문제를 푸는 힘이니까요.",
+      "beats": [
+        {"prompt": "apprentices working on real AI projects in a modern singapore tech workspace, hands-on production work not lectures, focused energy", "caption": "싱가포르 AIAP: 강의실이 아니라 실전 6~9개월"},
+        {"prompt": "graduates receiving multiple job offer envelopes even before finishing their program, employers waiting in line, bright success", "caption": "90% 이상 취업 · 수료 전 오퍼 다수 (공식)"}
+      ]
+    },
+    {
+      "key": "usa",
+      "title": "미국 — 49% 대 6%",
+      "narration": "미국 채용 담당자 조사는 더 직설적입니다. 신입 AI 직무에서 포트폴리오와 학위가 똑같이 중요하다는 답이 49퍼센트. 학위가 더 중요하다는 답은, 단 6퍼센트였습니다. 그리고 결정적인 한 문장. 기업은 AI를 만들 사람을 찾는 게 아니라, AI를 일에 쓸 줄 아는 사람을 찾는다. 실제로 AI 스킬을 가진 사람의 임금은 56퍼센트 더 높았습니다. 배우는 방법의 순위도 뒤집혔습니다. 현장 경험이 1위, 자격증이 2위, 대학 수업은 3위.",
+      "beats": [
+        {"prompt": "a hiring manager weighing a diploma against a portfolio of real built projects on a scale, the portfolio side clearly winning, decisive editorial", "caption": "포트폴리오=학위 49% · 학위 우선은 6%뿐"},
+        {"prompt": "a young professional skillfully directing AI tools to finish real work while others only study theory books, the doer earning more, contrast", "caption": "'만들 사람'이 아니라 '쓸 줄 아는 사람' · 임금 +56%"}
+      ]
+    },
+    {
+      "key": "uk",
+      "title": "영국 — 월급 주며 키운다",
+      "narration": "영국은 아예 구조를 바꿨습니다. 학위 도제. 기업이 등록금을 전부 내고, 월급까지 주면서 AI 인력을 직접 키웁니다. 한 글로벌 컨설팅사의 AI 엔지니어 도제는 시작 연봉이 3만 2천 파운드. BBC와 대형 은행들이 석사급 AI 도제 표준에 함께 참여합니다. 대학이냐 취업이냐가 아니라, 대학과 취업을 동시에 하는 겁니다.",
+      "beats": [
+        {"prompt": "a company paying tuition and salary for a young apprentice who studies and works at the same time, employer investing in talent directly, warm professional", "caption": "기업이 등록금+월급 — 학위 도제"},
+        {"prompt": "major british institutions joining hands around an apprenticeship standard, established organizations backing a new path, credible and solid", "caption": "시작 연봉 £32,028 · BBC·대형은행 참여"}
+      ]
+    },
+    {
+      "key": "formula",
+      "title": "3개국 공통 공식",
+      "narration": "세 나라의 결론은 한 줄로 모입니다. 첫째, 포트폴리오가 학위를 이깁니다. 만든 것을 보여줄 수 있어야 합니다. 둘째, 만드는 사람보다 쓸 줄 아는 사람. AI를 일에 부리는 능력입니다. 셋째, 강의보다 현장. 실전 프로젝트가 최고의 스승입니다. 넷째, 도메인 곱하기 AI. 의료든 금융이든 교육이든, 내 분야에 AI를 결합한 사람이 이깁니다.",
+      "beats": [
+        {"prompt": "four glowing principles arranged as pillars: a portfolio, a person directing AI, hands-on work, and a domain combined with AI, unified doctrine, iconic composition", "caption": "①포트폴리오>학위 ②활용>제작 ③현장>강의 ④도메인×AI"},
+        {"prompt": "three national flags' paths converging into one single road forward, different countries same conclusion, convergence, clean symbolic", "caption": "세 나라, 같은 결론"}
+      ]
+    },
+    {
+      "key": "action",
+      "title": "그래서, 오늘 할 일",
+      "narration": "그래서 고등학생이라면. 관심 분야를 하나 잡으세요. 게임이든 환경이든 요리든 좋습니다. 그리고 AI로 실제 결과물을 만들어 공개하세요. 영상이든 분석이든 작은 앱이든. 공개 대회에 나가면 더 좋습니다. 대학생이라면. 전공에 AI를 곱한 프로젝트를 두세 개 만들고, 깃허브에 쌓으세요. 대학원 고민은 그다음입니다. 스펙 한 줄보다, 만든 것 하나가 면접을 엽니다.",
+      "beats": [
+        {"prompt": "a korean high school student turning their hobby interest into a real AI-made project and publishing it online, small creation going public, proud moment", "caption": "고등학생: 관심분야 × AI 결과물 → 공개"},
+        {"prompt": "a korean university student stacking two three real projects on a public code repository, a growing body of evidence, steady building", "caption": "대학생: 전공 × AI 프로젝트 2~3개 → 깃허브"}
+      ]
+    },
+    {
+      "key": "closing",
+      "title": "만든 것이 이력서다",
+      "narration": "스펙의 시대가 끝나가고, 증거의 시대가 오고 있습니다. 세 나라가 숫자로 보여줬습니다. 학위가 아니라 포트폴리오. 이론이 아니라 실전. 오늘 만든 작은 결과물 하나가, 내일의 이력서가 됩니다. AI로 만드는 법은 이 채널에서 하나씩 보여드립니다.",
+      "beats": [
+        {"prompt": "a young korean person walking into an interview holding not papers but a glowing tablet of things they built, confidence from evidence, golden hour", "caption": "스펙의 시대 → 증거의 시대"},
+        {"prompt": "a bright path from a home desk with small daily creations leading to a future career skyline, hopeful triumphant finale", "caption": "오늘 만든 것 하나가 내일의 이력서"}
+      ]
+    }
+  ]
+}

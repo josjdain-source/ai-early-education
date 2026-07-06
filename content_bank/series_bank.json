@@ -1,14 +1,118 @@
 {
   "_readme": "시리즈 금고 — 각 시리즈의 재고 상태. items_* 숫자는 content_items.json에서 자동 집계되므로 여기선 계획/다음배치만 관리.",
   "series": [
-    {"series_id": "S01_world_ai", "title": "세계 AI교육", "purpose": "국가별 사례를 근거·신뢰 콘텐츠로. 쇼츠+사이트 연재 연결.", "target": "학부모 전체", "items_planned": 30, "next_batch": "독일·일본 쇼츠 6개 (왜 조심스럽게 가나)", "priority": "normal", "links": ["/world-cases.html"]},
-    {"series_id": "S02_daily_class", "title": "매일 AI교실", "purpose": "매일 10분 수업으로 유입. 오늘의 질문→다시 묻기.", "target": "초등 부모", "items_planned": 60, "next_batch": "1월 4주차 요일별 쇼츠 7개", "priority": "normal", "links": ["/daily-class/today.html"]},
-    {"series_id": "S03_levels", "title": "연령별 AI교실", "purpose": "유치원~고등 나이별 처방. /levels 유입 엔진.", "target": "전 연령 부모", "items_planned": 25, "next_batch": "연령별 쇼츠 5개 (나이별로 이렇게 달라야)", "priority": "high", "links": ["/levels.html"]},
-    {"series_id": "S04_parent_questions", "title": "부모 질문법", "purpose": "부모가 아이에게 던질 질문을 쇼츠·활동지로. 조회수 1순위.", "target": "초등 부모", "items_planned": 30, "next_batch": "AI 답이 이상할 때 부모가 해야 할 말 10개", "priority": "high", "links": ["/free/question-cards.html"]},
-    {"series_id": "S05_ai_play", "title": "AI랑 놀자", "purpose": "아이 시청용 캐릭터 시리즈(하루·아이봇·생각쌤·퐁퐁). 브랜드 담당.", "target": "만 6~10세 아이+부모", "items_planned": 12, "next_batch": "1화 렌더(캐릭터 승인 후) → 2화 대본", "priority": "normal", "links": ["/videos/kids-ai-show.html"]},
-    {"series_id": "S06_competitions", "title": "AI 경진대회 문제풀이", "purpose": "대회 문제를 아이 눈높이 훈련으로. 실력 증거실.", "target": "초~고 부모", "items_planned": 20, "next_batch": "초등 연습문제 쇼츠 5개", "priority": "normal", "links": ["/competitions.html"]},
-    {"series_id": "S07_free_materials", "title": "무료 활동지", "purpose": "인쇄 자료로 신뢰+재방문. 쇼츠 설명 링크의 종착지.", "target": "전 연령 부모", "items_planned": 15, "next_batch": "유치원 말놀이 카드 3종", "priority": "normal", "links": ["/free-kit.html"]},
-    {"series_id": "S08_four_week_class", "title": "4주 질문력 교실", "purpose": "유료화 입구. 체험감 중심(Before/After).", "target": "초등 부모", "items_planned": 10, "next_batch": "Before/After 쇼츠 3개", "priority": "normal", "links": ["/class.html"]}
+    {
+      "series_id": "S01_world_ai",
+      "title": "세계 AI교육",
+      "purpose": "국가별 사례를 근거·신뢰 콘텐츠로. 쇼츠+사이트 연재 연결.",
+      "target": "학부모 전체",
+      "items_planned": 30,
+      "next_batch": "독일·일본 쇼츠 6개 (왜 조심스럽게 가나)",
+      "priority": "normal",
+      "links": [
+        "/world-cases.html"
+      ]
+    },
+    {
+      "series_id": "S02_daily_class",
+      "title": "매일 AI교실",
+      "purpose": "매일 10분 수업으로 유입. 오늘의 질문→다시 묻기.",
+      "target": "초등 부모",
+      "items_planned": 60,
+      "next_batch": "1월 4주차 요일별 쇼츠 7개",
+      "priority": "normal",
+      "links": [
+        "/daily-class/today.html"
+      ]
+    },
+    {
+      "series_id": "S03_levels",
+      "title": "연령별 AI교실",
+      "purpose": "유치원~고등 나이별 처방. /levels 유입 엔진.",
+      "target": "전 연령 부모",
+      "items_planned": 25,
+      "next_batch": "연령별 쇼츠 5개 (나이별로 이렇게 달라야)",
+      "priority": "high",
+      "links": [
+        "/levels.html"
+      ]
+    },
+    {
+      "series_id": "S04_parent_questions",
+      "title": "부모 질문법",
+      "purpose": "부모가 아이에게 던질 질문을 쇼츠·활동지로. 조회수 1순위.",
+      "target": "초등 부모",
+      "items_planned": 30,
+      "next_batch": "AI 답이 이상할 때 부모가 해야 할 말 10개",
+      "priority": "high",
+      "links": [
+        "/free/question-cards.html"
+      ]
+    },
+    {
+      "series_id": "S05_ai_play",
+      "title": "AI랑 놀자",
+      "purpose": "아이 시청용 캐릭터 시리즈(하루·아이봇·생각쌤·퐁퐁). 브랜드 담당.",
+      "target": "만 6~10세 아이+부모",
+      "items_planned": 12,
+      "next_batch": "1화 렌더(캐릭터 승인 후) → 2화 대본",
+      "priority": "normal",
+      "links": [
+        "/videos/kids-ai-show.html"
+      ]
+    },
+    {
+      "series_id": "S06_competitions",
+      "title": "AI 경진대회 문제풀이",
+      "purpose": "대회 문제를 아이 눈높이 훈련으로. 실력 증거실.",
+      "target": "초~고 부모",
+      "items_planned": 20,
+      "next_batch": "초등 연습문제 쇼츠 5개",
+      "priority": "normal",
+      "links": [
+        "/competitions.html"
+      ]
+    },
+    {
+      "series_id": "S07_free_materials",
+      "title": "무료 활동지",
+      "purpose": "인쇄 자료로 신뢰+재방문. 쇼츠 설명 링크의 종착지.",
+      "target": "전 연령 부모",
+      "items_planned": 15,
+      "next_batch": "유치원 말놀이 카드 3종",
+      "priority": "normal",
+      "links": [
+        "/free-kit.html"
+      ]
+    },
+    {
+      "series_id": "S08_four_week_class",
+      "title": "4주 질문력 교실",
+      "purpose": "유료화 입구. 체험감 중심(Before/After).",
+      "target": "초등 부모",
+      "items_planned": 10,
+      "next_batch": "Before/After 쇼츠 3개",
+      "priority": "normal",
+      "links": [
+        "/class.html"
+      ]
+    },
+    {
+      "series_id": "S10_edu_to_jobs",
+      "title": "교육↔현실직업 (AI 시대 리포트)",
+      "priority": "high",
+      "concept": "교육을 현실 직업·시장에 연결(잃어버린10년 성공 공식). 울분 대변→근거→교육 연결→상승. 인물·정당 언급 금지.",
+      "items_planned": 8,
+      "next_batch": "3개국 검증 후속 — 국내 도제형 프로그램·전공별 도메인×AI 사례"
+    }
   ],
-  "publish_calendar": {"월": "S04_parent_questions", "화": "S02_daily_class", "수": "S03_levels", "목": "S01_world_ai", "금": "S05_ai_play", "토": "S07_free_materials", "일": "S08_four_week_class"}
+  "publish_calendar": {
+    "월": "S04_parent_questions",
+    "화": "S02_daily_class",
+    "수": "S03_levels",
+    "목": "S01_world_ai",
+    "금": "S05_ai_play",
+    "토": "S07_free_materials",
+    "일": "S08_four_week_class"
+  }
 }
