@@ -1013,6 +1013,62 @@
         "abstract_talk": 0
       },
       "title_optimized": true
+    },
+    {
+      "video_id": "gwangju-semi-longform",
+      "title": "광주 군공항에 반도체가 들어오면? 평택처럼 경제가 2배 커질까 (시나리오)",
+      "video_type": "longform",
+      "series": "S08_region_scenario",
+      "mp4_path": "assets/gwangju-semi/render/gwangju-semi-longform.mp4",
+      "poster_path": "assets/gwangju-semi/render/gwangju-semi-poster.jpg",
+      "thumbnail_path": "assets/gwangju-semi/render/gwangju-semi-poster.jpg",
+      "tags": [
+        "광주",
+        "반도체",
+        "평택",
+        "지역경제",
+        "군공항"
+      ],
+      "shorts": false,
+      "category": "25",
+      "status": "ready_to_upload",
+      "upload_status": "ready_to_upload",
+      "public": false,
+      "public_status": "none",
+      "youtube_id": "",
+      "youtube_url": "",
+      "created_at": "2026-07-06",
+      "description": "광주 군공항 반도체 클러스터가 들어오면 지역경제·세수·주거가 어떻게 바뀔지, 평택 사례를 기준으로 본 긍정 시나리오입니다. ★공식 확정 예측이 아니며 투자 권유가 아닙니다. 수치는 보도·통계 기준과 가정 시나리오입니다.\\n\\n#광주 #반도체 #평택 #지역경제 #군공항",
+      "source": "production/gwangju_semi_longform_plan.json",
+      "note": "긍정 시나리오·공식예측 아님·투자권유 아님. 업로드는 사람 승인."
+    },
+    {
+      "video_id": "gwangju-semi-short",
+      "title": "평택은 반도체로 2배 커졌다, 광주 군공항은?",
+      "video_type": "short",
+      "series": "S08_region_scenario",
+      "mp4_path": "assets/gwangju-semi/render/gwangju-semi-short.mp4",
+      "poster_path": "assets/gwangju-semi/render/gwangju-semi-short-poster.jpg",
+      "thumbnail_path": "assets/gwangju-semi/render/gwangju-semi-short-poster.jpg",
+      "tags": [
+        "광주",
+        "반도체",
+        "평택",
+        "군공항",
+        "지역경제"
+      ],
+      "shorts": true,
+      "category": "25",
+      "status": "ready_to_upload",
+      "upload_status": "ready_to_upload",
+      "public": false,
+      "public_status": "none",
+      "youtube_id": "",
+      "youtube_url": "",
+      "created_at": "2026-07-06",
+      "description": "평택은 반도체로 지역총생산이 2배가 됐습니다. 광주 군공항 반도체 클러스터가 성공하면? 숫자로 본 긍정 시나리오. ★공식 예측 아님·투자 권유 아님. 수치는 보도·통계+가정.\\n\\n#광주 #반도체 #평택 #군공항 #지역경제 #Shorts",
+      "source": "production/gwangju_semi_short_plan.json",
+      "note": "긍정 시나리오·공식예측/투자권유 아님. 업로드는 사람 승인."
     }
   ],
   "_schema": "studio-v1"

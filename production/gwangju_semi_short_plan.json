@@ -1,0 +1,21 @@
+{
+  "_comment": "광주 반도체 55초 쇼츠 — 숫자 중심, 평택 대비 '앞으로 이렇게 바뀐다'. ★공식 예측 아님·투자권유 아님(마지막 컷 고지). 속도 1.2. 세로 1080x1920.",
+  "id": "gwangju-semi-short",
+  "final_title": "평택은 반도체로 2배 커졌다, 광주 군공항은?",
+  "brand": "광주 반도체 시나리오",
+  "speed": 1.2,
+  "region": "kr",
+  "duration_target_sec": 55,
+  "style_token": "semi-realistic editorial documentary illustration, warm muted urban palette, thick clean outlines, korean city and industrial scenes, soft cinematic lighting, detailed, no text, no letters, no numbers, no logo",
+  "negative": "photo, photorealistic, 3d render, text, letters, words, numbers, watermark, logo, western caucasian, scary, dark, ugly, deformed, blurry",
+  "beats": [
+    {"role": "hook", "head": "평택은 2배, 광주는?", "text": "평택은 반도체로 도시가 2배 커졌습니다. 광주 군공항은 어떨까요?", "prompt": "a wide split scene: a giant semiconductor plant on one side, a fast-growing korean city skyline on the other, dramatic contrast, question mood", "region": "kr"},
+    {"role": "fact", "head": "20조 → 41.8조", "text": "평택 지역총생산은 20조에서 41조 8천억. 5년 만에 거의 2배가 됐습니다.", "prompt": "a booming korean industrial new town with apartment towers and cranes rising rapidly beside a huge fab, vitality, aerial", "region": "kr"},
+    {"role": "fact", "head": "광주는 54.8조", "text": "광주는 지금 54조 8천억 원짜리 도시입니다.", "prompt": "a panoramic view of the current korean metropolitan city of Gwangju, established but calm, before transformation, daytime", "region": "kr"},
+    {"role": "fact", "head": "250만평·800조·팹4기", "text": "군공항 250만 평에 800조 투자, 반도체 팹 네 기 구상.", "prompt": "an enormous semiconductor mega-cluster masterplan on a vast former airfield, multiple huge fab buildings at grand scale, wide", "region": "kr"},
+    {"role": "fact", "head": "→ 100조 (약 2배)", "text": "성공 시나리오면 광주 경제는 100조 안팎. 지금의 약 2배입니다.", "prompt": "a korean city skyline visibly doubling in size, expanding upward and outward into an advanced-manufacturing metropolis, dusk glow", "region": "kr"},
+    {"role": "fact", "head": "세수 2.2조 → 3조", "text": "지방세는 2조 2천억에서 3조 원대로 늘 수 있습니다.", "prompt": "a well-funded korean city building new schools hospitals and infrastructure, prosperity funding public life, warm symbolic", "region": "kr"},
+    {"role": "fact", "head": "10만 유입", "text": "광산구, 송정, 수완, 나주까지, 10만 명이 새로 유입됩니다.", "prompt": "families and engineers moving into new korean apartment districts near a KTX station, moving trucks, lively residential growth, aerial", "region": "kr"},
+    {"role": "cta", "head": "단, 조건이 있다", "text": "단 공장만으론 안 됩니다. 협력사, 교통, 대학, 용수까지 붙어야 하는 긍정 시나리오입니다.", "prompt": "a well-designed korean city where a semiconductor cluster connects with homes transit universities and infrastructure, balanced hopeful growth", "region": "kr"}
+  ]
+}
