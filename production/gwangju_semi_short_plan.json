@@ -1,5 +1,5 @@
 {
-  "_comment": "광주 반도체 쇼츠 v3 — 'AI(GPT·클로드)가 분석한 메가프로젝트' 프레임 + 숫자/경제 비교 + 클라이막스(→100조) + 호남권 파급효과. 숫자 헤드·짧은 문장·켄번즈 모션. ★공식 예측 아님·투자권유 아님(마지막 컷). 속도 1.2. 세로 1080x1920.",
+  "_comment": "광주 반도체 쇼츠 v3 — 'AI(GPT·클로드)가 분석한 메가프로젝트' 프레임 + 숫자/경제 비교 + 클라이막스(→100조) + 호남권 파급효과. 숫자 헤드·짧은 문장·켄번즈 모션. ★공식 예측 아님. 속도 1.2. 세로 1080x1920.",
   "id": "gwangju-semi-short",
   "final_title": "GPT·클로드가 분석했다 — 광주, 평택처럼 2배? (54.8조→100조 시나리오)",
   "brand": "광주 반도체 시나리오",
@@ -17,6 +17,6 @@
     {"role": "fact", "head": "세수 2.2조 → 3조", "text": "지방세는 2조 2천억에서 3조 원대로.", "prompt": "a well-funded korean city building new schools hospitals and infrastructure, prosperity funding public life, warm symbolic", "region": "kr"},
     {"role": "fact", "head": "호남권까지 확장", "text": "광주를 넘어 나주·장성·목포까지, 호남 첨단제조권으로.", "prompt": "a wide aerial map-like view of the southwest Honam region of korea lighting up as an industrial belt, a central city spreading prosperity to satellite cities connected by rail and highways, regional scale, hopeful", "region": "kr"},
     {"role": "fact", "head": "+10만 명 유입", "text": "광산구·송정·수완·나주에 10만 명이 새로.", "prompt": "families and engineers moving into new korean apartment districts near a KTX station, moving trucks, lively residential growth, aerial", "region": "kr"},
-    {"role": "cta", "head": "단, 조건이 있다", "text": "공장만으론 안 됩니다. 협력사·교통·대학·용수까지 — 긍정 시나리오(투자권유 아님).", "prompt": "a well-designed korean city where a semiconductor cluster connects with homes transit universities and infrastructure, balanced hopeful growth", "region": "kr"}
+    {"role": "cta", "head": "단, 조건이 있다", "text": "공장만으론 안 됩니다. 협력사·교통·대학·용수까지 붙어야 하는 긍정 시나리오입니다.", "prompt": "a well-designed korean city where a semiconductor cluster connects with homes transit universities and infrastructure, balanced hopeful growth", "region": "kr"}
   ]
 }

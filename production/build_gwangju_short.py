@@ -94,13 +94,13 @@ def register_to_studio(mp4, poster):
     vid="gwangju-semi-short"
     rel=os.path.relpath(mp4,REPO).replace("\\","/"); prel=os.path.relpath(poster,REPO).replace("\\","/") if poster else ""
     desc=("평택은 반도체로 지역총생산이 2배가 됐습니다. 광주 군공항 반도체 클러스터가 성공하면? 숫자로 본 긍정 시나리오. "
-          "★공식 예측 아님·투자 권유 아님. 수치는 보도·통계+가정.\\n\\n#광주 #반도체 #평택 #군공항 #지역경제 #Shorts")
+          "★공식 예측 아님. 수치는 보도·통계+가정.\\n\\n#광주 #반도체 #평택 #군공항 #지역경제 #Shorts")
     entry={"video_id":vid,"title":PLAN.get("final_title","평택은 반도체로 2배 커졌다, 광주 군공항은?"),"video_type":"short",
            "series":"S08_region_scenario","mp4_path":rel,"poster_path":prel,"thumbnail_path":prel,
            "tags":["광주","반도체","평택","군공항","지역경제"],"shorts":True,"category":"25",
            "status":"ready_to_upload","upload_status":"ready_to_upload","public":False,"public_status":"none",
            "youtube_id":"","youtube_url":"","created_at":"2026-07-06","description":desc,
-           "source":"production/gwangju_semi_short_plan.json","note":"긍정 시나리오·공식예측/투자권유 아님. 업로드는 사람 승인."}
+           "source":"production/gwangju_semi_short_plan.json","note":"긍정 시나리오·공식예측 아님. 업로드는 사람 승인."}
     for i,it in enumerate(q["queue"]):
         if it.get("video_id")==vid: q["queue"][i]={**it,**entry}; break
     else: q["queue"].append(entry)
@@ -119,7 +119,10 @@ if __name__=="__main__":
         if not os.path.exists(ip): sdxl(bt["prompt"],7700+bi,ip)
         fp=f"{FR}/{KEY}_{bi}.png"; frame(BRAND,bt["head"],bt["text"],ip,bt["role"],bi,n,fp)
         seg=f"{FR}/v_{KEY}_{bi}.mp4"
-        run([FF,"-hide_banner","-loglevel","error","-y","-loop","1","-i",fp,"-t",f"{bd+XF}","-vf","format=yuv420p","-c:v","libx264","-preset","veryfast","-crf","20","-r","30","-s","1080x1920",seg])
+        D=int((bd+XF)*30)+2
+        z=("min(1.0+0.0007*on,1.10)" if bi%2==0 else "max(1.10-0.0007*on,1.0)")
+        kb=f"scale=2160:3840,zoompan=z='{z}':d={D}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1080x1920:fps=30,format=yuv420p"
+        run([FF,"-hide_banner","-loglevel","error","-y","-i",fp,"-vf",kb,"-frames:v",str(D),"-c:v","libx264","-preset","veryfast","-crf","20","-r","30",seg])
         segs.append(seg)
     args=[FF,"-hide_banner","-loglevel","error","-y"]
     for s in segs: args+=["-i",s]

@@ -1,5 +1,5 @@
 {
-  "_comment": "광주 군공항 반도체 클러스터 — 평택 모델 대입 긍정 시나리오. ★공식 확정 예측 아님·투자권유 아님. 수치=보도/통계 기준+가정 시나리오. 오프닝·클로징 고지 필수, 투기 경계.",
+  "_comment": "광주 군공항 반도체 클러스터 — 평택 모델 대입 긍정 시나리오. ★공식 확정 예측 아님. 수치=보도/통계 기준+가정 시나리오. 오프닝·클로징 고지 필수, 투기 경계.",
   "topic": "광주 군공항에 반도체가 들어오면, 도시는 어떻게 바뀔까 (평택 대비 시나리오)",
   "subtitle": "평택의 실제 변화를 기준으로 본 긍정 시나리오 — 공식 예측 아님",
   "speed": 1.2,
@@ -73,10 +73,10 @@
     {
       "key": "closing",
       "title": "단, 조건이 있다",
-      "narration": "하지만 핵심은 공장이 생긴다가 아닙니다. 공장에 협력사, 주거, 교통, 대학, 인력 양성, 그리고 전력과 용수까지 함께 붙어야 평택 같은 변화가 나옵니다. 그리고 가장 조심할 것. 착공 전 기대만으로 부동산이 과열되면, 도시가 아니라 거품이 커집니다. 이건 확정된 미래가 아니라, 잘 설계했을 때 가능한 긍정 시나리오이고, 투자 권유가 아닙니다. 잘 되면 광주는 호남의 첨단제조 수도가 됩니다.",
+      "narration": "하지만 핵심은 공장이 생긴다가 아닙니다. 공장에 협력사, 주거, 교통, 대학, 인력 양성, 그리고 전력과 용수까지 함께 붙어야 평택 같은 변화가 나옵니다. 그리고 가장 조심할 것. 착공 전 기대만으로 부동산이 과열되면, 도시가 아니라 거품이 커집니다. 이건 확정된 미래가 아니라, 잘 설계했을 때 가능한 긍정 시나리오입니다. 잘 되면 광주는 호남의 첨단제조 수도가 됩니다.",
       "beats": [
         {"prompt": "a well-designed korean city where a semiconductor cluster connects smoothly with homes, transit, universities and power and water infrastructure, balanced integrated growth, hopeful", "caption": "조건: 공장+협력사+주거+교통+대학+용수·전력"},
-        {"prompt": "a balanced korean city skyline at golden hour, ambitious yet grounded, a caution about overheating balanced with real growth, thoughtful hopeful", "caption": "경계: 착공 전 과열=거품 · 확정 아닌 긍정 시나리오(투자권유 아님)"}
+        {"prompt": "a balanced korean city skyline at golden hour, ambitious yet grounded, a caution about overheating balanced with real growth, thoughtful hopeful", "caption": "경계: 착공 전 과열=거품 · 확정 아닌 긍정 시나리오"}
       ]
     }
   ]
