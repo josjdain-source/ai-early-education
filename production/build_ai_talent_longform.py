@@ -71,7 +71,7 @@ def register_to_studio(mp4, poster):
     except Exception: return
     vid="ai-talent-longform"
     rel=os.path.relpath(mp4,REPO).replace("\\","/"); prel=os.path.relpath(poster,REPO).replace("\\","/") if poster else ""
-    desc=("스펙 쌓아도 떨어지는 이유 — 기업이 사람을 뽑는 기준이 바뀌었습니다. 싱가포르 AIAP(실전 도제·90%+ 취업)·미국(포트폴리오=학위 49%·학위우선 6%·AI스킬 임금 +56%)·영국(기업이 등록금+월급·£32k). 공통 공식: 포트폴리오>학위, 활용>제작, 현장>강의, 도메인×AI. 고등학생·대학생이 오늘 할 일까지."
+    desc=("스펙 쌓아도 떨어지는 이유 — 기업이 사람을 뽑는 기준이 바뀌었습니다. 싱가포르 AIAP(실전 도제·90%+ 취업)·미국(포트폴리오=학위 49%·학위우선 6%·AI스킬 임금 +56%)·영국(기업이 등록금+월급·£32k). 공통 공식: 포트폴리오→학위 이김, 활용→제작, 현장→강의, 도메인×AI. 고등학생·대학생이 오늘 할 일까지."
           +chr(10)+chr(10)+"🏆 공개 대회로 시작 https://ai-early-education.pages.dev/competitions"
           +chr(10)+chr(10)+"#AI취업 #포트폴리오 #미래직업 #AI교육")
     entry={"video_id":vid,"title":"기업이 뽑는 AI 인재 — 3개국에서 확인했다 (스펙이 아니라 증거다)","video_type":"longform",
