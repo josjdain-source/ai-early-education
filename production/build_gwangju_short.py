@@ -62,7 +62,7 @@ def frame(chip,head,caption,img,role,idx,n,out):
     cf=F(KB,34); cw=d.textlength(chip,font=cf); px=28
     d.rounded_rectangle([(W-cw)/2-px,70,(W+cw)/2+px,70+58],radius=29,fill=BLUE)
     d.text(((W-cw)/2,82),chip,font=cf,fill=(255,255,255))
-    hs=78 if role=="hook" else 68; hf=F(KB,hs)
+    hs=88 if role in ("hook","cta") else 78; hf=F(KB,hs)
     lines=wrap(d,head,hf,W-150)
     while len(lines)>2 and hs>44: hs-=4; hf=F(KB,hs); lines=wrap(d,head,hf,W-150)
     y=180
