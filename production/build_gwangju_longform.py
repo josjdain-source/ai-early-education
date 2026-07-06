@@ -25,7 +25,7 @@ def run(c): subprocess.run(c,check=True)
 def dur(p): return float(subprocess.run([FP,"-v","error","-show_entries","format=duration","-of","default=nk=1:nw=1",p],capture_output=True,text=True).stdout.strip())
 def tts(text,out):
     tf=out+".txt"; open(tf,"w",encoding="utf-8").write(text)
-    run([VENV,os.path.join(HERE,"_tts_synth.py"),tf,out])
+    run([VENV,os.path.join(HERE,"_tts_param.py"),tf,out,"ko-KR-InJoonNeural","+0%","+0Hz"])  # 울분/임팩트 확정 음성
 def sdxl(scene,seed,out):
     g={"4":{"class_type":"CheckpointLoaderSimple","inputs":{"ckpt_name":CKPT}},
        "5":{"class_type":"EmptyLatentImage","inputs":{"width":1344,"height":768,"batch_size":1}},

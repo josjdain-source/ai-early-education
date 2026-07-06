@@ -86,23 +86,34 @@ def pattern_lab_section():
     for v in PL["videos"]:
         sc=v["viral_test_score"]; tl,col=tier(sc["total"])
         bars=(f'<b>Stop</b> {sc["stop_power"]} · <b>Pain</b> {sc["personal_pain"]} · '
+              f'<b style="color:#B44A31">울분</b> <b style="color:#B44A31">{sc.get("catharsis",0)}</b> · '
               f'<b>Curio</b> {sc["curiosity_gap"]} · <b>Watch</b> {sc["watch_completion"]} · <b>Take</b> {sc["clear_takeaway"]}')
         mods=[]
         if sc["boring_policy"]: mods.append(f'−Policy {sc["boring_policy"]}')
         if sc["abstract_talk"]: mods.append(f'−Abstract {sc["abstract_talk"]}')
         if sc["clickbait_mismatch"]: mods.append(f'−Mismatch {sc["clickbait_mismatch"]}')
         mtxt=(" · <span style='color:#C0473A'>"+" · ".join(mods)+"</span>") if mods else ""
+        badge='<span class="pl-real">★실측</span>' if v.get("data_confirmed") else ''
         vids+=f"""<div class="pl-vid" style="border-left:5px solid {col}">
-<div class="pl-vhead"><span class="pl-tier" style="background:{col}">{tl} · {sc['total']}</span> <b>{esc(v['title'])}</b> <span class="pl-type">{esc(v['pattern_type'])}</span></div>
+<div class="pl-vhead"><span class="pl-tier" style="background:{col}">{tl} · {sc['total']}</span> {badge} <b>{esc(v['title'])}</b> <span class="pl-type">{esc(v['pattern_type'])}</span></div>
 <div class="pl-bars">{bars}{mtxt}</div>
 <div class="pl-guess">🔎 {esc(v['algorithm_guess']['likely_reason'])}</div></div>"""
     priors="".join(f'<span class="pl-prior pl-t{p["tier"]}"><b>{p["tier"]}</b> {esc(p["pattern"])} — {esc(p["verdict"])}</span>' for p in PL["priors"])
     levers="".join(f'<span class="pl-lever pl-key">{esc(x)}</span>' for x in PL["next_title_levers"])
     q="".join(f"<li>{esc(x)}</li>" for x in PL["core_questions"])
+    insight=f'<div class="pl-insight">💡 <b>핵심:</b> {esc(PL["core_insight"])}</div>' if PL.get("core_insight") else ''
+    finds=""
+    for fd in PL.get("real_data_findings",[]):
+        finds+=f"""<div class="pl-finding"><div class="pl-fh">🎯 실측 정정 · <a href="{esc(fd['youtube'])}" target="_blank" rel="noopener">{esc(fd['title'])}</a></div>
+<div class="pl-fb"><b>예측</b> {esc(fd['predicted'])} → <b>실제</b> <span style="color:#2E9E63;font-weight:800">{esc(fd['actual'])}</span></div>
+<div class="pl-fb">📌 {esc(fd['lesson'])}</div>
+<div class="pl-fb" style="color:#B44A31">▶ {esc(fd['action'])}</div></div>"""
     return f"""<h2 class="cb-sec">🔬 YouTube Pattern Lab <span class="cb-hint">우리 채널 데이터 역추적 · 공식 알고리즘 주장 아님</span></h2>
 <div class="pl-manifesto">{esc(PL['_manifesto'])}</div>
 <div class="pl-stance">공식 원칙 <b>= 참고자료</b> &nbsp;·&nbsp; 우리 데이터 <b>= 판단 기준</b> &nbsp;·&nbsp; 반복 실험 <b>= 알고리즘 추정</b></div>
 <div class="pl-note">⚠ {esc(PL['data_status'])}</div>
+{insight}
+{finds}
 <h3 class="pl-h3">Viral Test Score <span class="cb-hint">{esc(PL['viral_test_score_formula']['formula'])}</span></h3>
 <div class="pl-levers">{plus}{minus}</div>
 <div style="margin:10px 0">{vids}</div>
@@ -232,6 +243,12 @@ def page():
 .pl-prior b{{margin-right:4px}}
 .pl-tS b{{color:#2E9E63}}.pl-tA b{{color:#3A6FB0}}.pl-tB b{{color:#C98A2E}}.pl-tD b{{color:#C0473A}}
 .pl-q li{{font-size:13px;margin:4px 0;color:#3a3024}}
+.pl-real{{background:#B44A31;color:#fff;font-weight:900;font-size:10px;border-radius:5px;padding:2px 7px}}
+.pl-insight{{background:#FDF0E8;border:1px solid #F0C9BB;border-left:5px solid #B44A31;border-radius:10px;padding:12px 16px;margin:10px 0;font-size:14px;color:#5a3020;line-height:1.6}}
+.pl-finding{{background:#fff;border:1px solid #EADFCE;border-radius:11px;padding:13px 16px;margin:10px 0}}
+.pl-fh{{font-weight:800;color:#2B3A55;font-size:14px;margin-bottom:6px}}
+.pl-fh a{{color:#3A6FB0}}
+.pl-fb{{font-size:12.5px;color:#4a3a28;margin:3px 0;line-height:1.55}}
 </style>
 <script>
 function cbCopy(t,btn){{
