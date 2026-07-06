@@ -8,6 +8,8 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 CB = os.path.join(ROOT, "content_bank")
 def J(f): return json.load(open(os.path.join(CB, f), encoding="utf-8"))
 SER = J("series_bank.json"); ITEMS = J("content_items.json")["items"]; SRC = J("source_items.json")["sources"]
+try: PL = J("pattern_lab.json")
+except Exception: PL = None
 PKG_DIR = os.path.join(CB, "approved", "shorts")
 PKGS = {}
 if os.path.isdir(PKG_DIR):
@@ -72,6 +74,45 @@ def package_block(p):
 <div class="cb-script" style="font-family:monospace;font-size:12px;padding:8px 11px">python production/build_ai_edu_shorts.py {esc(p['id'])}</div>
 <div class="cb-btns" style="margin-top:6px"><button onclick='cbCopy({json.dumps("cd C:/Users/admin/Desktop/ai-craft-kids && python production/build_ai_edu_shorts.py "+p["id"],ensure_ascii=False)},this)'>▶ 렌더 명령 복사</button></div>
 </div></details>"""
+
+def pattern_lab_section():
+    if not PL: return ""
+    S = PL["viral_test_score_formula"]
+    plus = "".join(f'<span class="pl-lever pl-plus">+ {k}</span>' for k in S["plus"])
+    minus = "".join(f'<span class="pl-lever pl-minus">− {k}</span>' for k in S["minus"])
+    # 영상 역추적 카드(Viral Test Score 순)
+    def tier(t): return ("S","#2E9E63") if t>=9 else (("B","#C98A2E") if t>=6 else ("D","#C0473A"))
+    vids=""
+    for v in PL["videos"]:
+        sc=v["viral_test_score"]; tl,col=tier(sc["total"])
+        bars=(f'<b>Stop</b> {sc["stop_power"]} · <b>Pain</b> {sc["personal_pain"]} · '
+              f'<b>Curio</b> {sc["curiosity_gap"]} · <b>Watch</b> {sc["watch_completion"]} · <b>Take</b> {sc["clear_takeaway"]}')
+        mods=[]
+        if sc["boring_policy"]: mods.append(f'−Policy {sc["boring_policy"]}')
+        if sc["abstract_talk"]: mods.append(f'−Abstract {sc["abstract_talk"]}')
+        if sc["clickbait_mismatch"]: mods.append(f'−Mismatch {sc["clickbait_mismatch"]}')
+        mtxt=(" · <span style='color:#C0473A'>"+" · ".join(mods)+"</span>") if mods else ""
+        vids+=f"""<div class="pl-vid" style="border-left:5px solid {col}">
+<div class="pl-vhead"><span class="pl-tier" style="background:{col}">{tl} · {sc['total']}</span> <b>{esc(v['title'])}</b> <span class="pl-type">{esc(v['pattern_type'])}</span></div>
+<div class="pl-bars">{bars}{mtxt}</div>
+<div class="pl-guess">🔎 {esc(v['algorithm_guess']['likely_reason'])}</div></div>"""
+    priors="".join(f'<span class="pl-prior pl-t{p["tier"]}"><b>{p["tier"]}</b> {esc(p["pattern"])} — {esc(p["verdict"])}</span>' for p in PL["priors"])
+    levers="".join(f'<span class="pl-lever pl-key">{esc(x)}</span>' for x in PL["next_title_levers"])
+    q="".join(f"<li>{esc(x)}</li>" for x in PL["core_questions"])
+    return f"""<h2 class="cb-sec">🔬 YouTube Pattern Lab <span class="cb-hint">우리 채널 데이터 역추적 · 공식 알고리즘 주장 아님</span></h2>
+<div class="pl-manifesto">{esc(PL['_manifesto'])}</div>
+<div class="pl-stance">공식 원칙 <b>= 참고자료</b> &nbsp;·&nbsp; 우리 데이터 <b>= 판단 기준</b> &nbsp;·&nbsp; 반복 실험 <b>= 알고리즘 추정</b></div>
+<div class="pl-note">⚠ {esc(PL['data_status'])}</div>
+<h3 class="pl-h3">Viral Test Score <span class="cb-hint">{esc(PL['viral_test_score_formula']['formula'])}</span></h3>
+<div class="pl-levers">{plus}{minus}</div>
+<div style="margin:10px 0">{vids}</div>
+<h3 class="pl-h3">초기 결론 (Priors) <span class="cb-hint">데이터로 검증·갱신</span></h3>
+<div class="pl-priors">{priors}</div>
+<h3 class="pl-h3">다음 제목 3레버 <span class="cb-hint">Stop Power · Personal Pain · Clear Takeaway</span></h3>
+<div class="pl-levers">{levers}</div>
+<details style="margin-top:10px"><summary style="cursor:pointer;font-weight:700;color:#5a4a35">🧭 Pattern Lab 6대 질문 펼치기</summary>
+<ol class="pl-q">{q}</ol></details>
+"""
 
 def page():
     # 집계
@@ -140,6 +181,8 @@ def page():
 <h2 class="cb-sec">⑤ 발행 기록</h2>
 {pub}
 
+{pattern_lab_section()}
+
 <h2 class="cb-sec">⑥ 자료 창고 <span class="cb-hint">출처·요약·사용처만(본문 복제 금지)</span></h2>
 {srcs}
 
@@ -171,6 +214,24 @@ def page():
 .cb-pkgbox summary{{cursor:pointer;font-weight:800;font-size:12.5px;color:#2E9E63;padding:9px 0}}
 .cb-pkgin{{padding:0 0 12px}}
 .cb-script{{background:#fff;border:1px solid #EADFCE;border-radius:9px;padding:10px 13px;font-size:13px;line-height:1.65;white-space:pre-wrap}}
+.pl-manifesto{{background:#20304A;color:#F4ECDD;border-radius:11px;padding:14px 18px;font-weight:700;font-size:14px;line-height:1.6}}
+.pl-stance{{margin:8px 0;font-size:13px;color:#2B3A55}}.pl-stance b{{color:#E0684A}}
+.pl-note{{font-size:12px;color:#8a5b1e;background:#FFF7EA;border:1px solid #EAD9BE;border-radius:8px;padding:8px 12px;margin:8px 0}}
+.pl-h3{{font-size:15px;font-weight:900;color:#2B3A55;margin:20px 0 8px}}
+.pl-levers{{display:flex;gap:6px;flex-wrap:wrap}}
+.pl-lever{{font-size:11.5px;font-weight:800;border-radius:7px;padding:3px 9px}}
+.pl-plus{{background:#EAF6EE;color:#2E7D4E}}.pl-minus{{background:#FBECEA;color:#C0473A}}.pl-key{{background:#FDECE5;color:#B44A31;border:1px solid #F0C9BB}}
+.pl-vid{{background:#fff;border:1px solid #EADFCE;border-radius:10px;padding:11px 14px;margin-bottom:8px}}
+.pl-vhead{{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:14px}}
+.pl-tier{{color:#fff;font-weight:900;font-size:11px;border-radius:6px;padding:2px 9px;flex:none}}
+.pl-type{{font-size:11px;font-weight:800;background:#EAF2FB;color:#2B4a72;border-radius:6px;padding:1px 8px}}
+.pl-bars{{font-size:12.5px;color:#4a3a28;margin-top:5px}}.pl-bars b{{color:#8a6f45}}
+.pl-guess{{font-size:12px;color:#5a4a35;margin-top:5px;background:#FBF8F1;border-radius:7px;padding:6px 10px}}
+.pl-priors{{display:flex;gap:6px;flex-wrap:wrap}}
+.pl-prior{{font-size:12px;border-radius:8px;padding:4px 10px;border:1px solid #EADFCE;background:#fff}}
+.pl-prior b{{margin-right:4px}}
+.pl-tS b{{color:#2E9E63}}.pl-tA b{{color:#3A6FB0}}.pl-tB b{{color:#C98A2E}}.pl-tD b{{color:#C0473A}}
+.pl-q li{{font-size:13px;margin:4px 0;color:#3a3024}}
 </style>
 <script>
 function cbCopy(t,btn){{
