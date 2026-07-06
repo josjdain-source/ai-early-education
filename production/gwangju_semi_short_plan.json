@@ -1,22 +1,22 @@
 {
-  "_comment": "광주 반도체 쇼츠 v3 — 'AI(GPT·클로드)가 분석한 메가프로젝트' 프레임 + 숫자/경제 비교 + 클라이막스(→100조) + 호남권 파급효과. 숫자 헤드·짧은 문장·켄번즈 모션. ★공식 예측 아님. 속도 1.2. 세로 1080x1920.",
+  "_comment": "광주 반도체 쇼츠 v4 — 임팩트 강화. 훅→평택증거→광주현재→규모→클라이막스(100조)→돈+사람(인구반전)→'이렇게 바뀐다' 시각payoff→호남확장→강한엔딩(100조 도시). caveat로 끝내지 않음. 숫자 헤드·짧은문장·느린 줌인. ★공식예측 아님. 속도 1.2. 세로 1080x1920.",
   "id": "gwangju-semi-short",
-  "final_title": "GPT·클로드가 분석했다 — 광주, 평택처럼 2배? (54.8조→100조 시나리오)",
+  "final_title": "GPT·클로드가 분석했다 — 광주, 평택처럼 2배? 54.8조→100조 (시나리오)",
   "brand": "광주 반도체 시나리오",
   "speed": 1.2,
   "region": "kr",
-  "duration_target_sec": 52,
+  "duration_target_sec": 48,
   "style_token": "semi-realistic editorial documentary illustration, warm muted urban palette, thick clean outlines, korean city and industrial scenes, soft cinematic lighting, detailed, no text, no letters, no numbers, no logo",
   "negative": "photo, photorealistic, 3d render, text, letters, words, numbers, watermark, logo, western caucasian, scary, dark, ugly, deformed, blurry",
   "beats": [
-    {"role": "hook", "head": "AI가 분석했다", "text": "GPT와 클로드가 분석한 메가프로젝트. 광주, 이렇게 바뀝니다.", "prompt": "a wide dramatic split scene: a giant semiconductor plant on one side, a fast-growing korean metropolitan skyline on the other, powerful contrast, epic opener mood", "region": "kr"},
-    {"role": "fact", "head": "평택 20조 → 41.8조", "text": "평택은 반도체로 5년 만에 2배가 됐습니다.", "prompt": "a booming korean industrial new town with apartment towers and cranes rising rapidly beside a huge fab, vitality, aerial", "region": "kr"},
+    {"role": "hook", "head": "5년 만에 2배", "text": "GPT와 클로드가 분석했습니다. 평택은 반도체로 5년 만에 2배. 광주 차례입니다.", "prompt": "a wide dramatic split scene: a giant semiconductor plant on one side, a fast-growing korean metropolitan skyline on the other, powerful contrast, epic opener mood", "region": "kr"},
+    {"role": "fact", "head": "평택 20조 → 41.8조", "text": "평택 지역총생산, 20조에서 41조 8천억.", "prompt": "a booming korean industrial new town with apartment towers and cranes rising rapidly beside a huge fab, vitality, aerial", "region": "kr"},
     {"role": "fact", "head": "광주 = 54.8조", "text": "광주는 지금 54조 8천억 도시.", "prompt": "a panoramic view of the current korean metropolitan city of Gwangju, established but calm, before transformation, daytime", "region": "kr"},
     {"role": "fact", "head": "800조 · 팹 4기", "text": "군공항 250만 평, 800조 투자, 팹 네 기.", "prompt": "an enormous semiconductor mega-cluster masterplan on a vast former airfield, multiple huge fab buildings at grand scale, wide", "region": "kr"},
-    {"role": "hook", "head": "54.8조 → 100조", "text": "성공하면 광주 경제 100조. 지금의 약 2배!", "prompt": "a korean city skyline visibly doubling in size, expanding upward and outward into an advanced-manufacturing metropolis, dramatic dusk glow, climactic", "region": "kr"},
-    {"role": "fact", "head": "세수 2.2조 → 3조", "text": "지방세는 2조 2천억에서 3조 원대로.", "prompt": "a well-funded korean city building new schools hospitals and infrastructure, prosperity funding public life, warm symbolic", "region": "kr"},
-    {"role": "fact", "head": "호남권까지 확장", "text": "광주를 넘어 나주·장성·목포까지, 호남 첨단제조권으로.", "prompt": "a wide aerial map-like view of the southwest Honam region of korea lighting up as an industrial belt, a central city spreading prosperity to satellite cities connected by rail and highways, regional scale, hopeful", "region": "kr"},
-    {"role": "fact", "head": "+10만 명 유입", "text": "광산구·송정·수완·나주에 10만 명이 새로.", "prompt": "families and engineers moving into new korean apartment districts near a KTX station, moving trucks, lively residential growth, aerial", "region": "kr"},
-    {"role": "cta", "head": "단, 조건이 있다", "text": "공장만으론 안 됩니다. 협력사·교통·대학·용수까지 붙어야 하는 긍정 시나리오입니다.", "prompt": "a well-designed korean city where a semiconductor cluster connects with homes transit universities and infrastructure, balanced hopeful growth", "region": "kr"}
+    {"role": "hook", "head": "54.8조 → 100조", "text": "성공하면 광주 경제 100조. 지금의 2배!", "prompt": "a korean city skyline visibly doubling in size, expanding upward and outward into an advanced-manufacturing metropolis, dramatic dusk glow, climactic", "region": "kr"},
+    {"role": "fact", "head": "돈도, 사람도", "text": "세수는 2.2조에서 3조로. 떠나던 청년이 돌아옵니다.", "prompt": "a prosperous korean city with new schools and hospitals, and young workers and families arriving with moving trucks, money and people flowing in together, warm hopeful", "region": "kr"},
+    {"role": "fact", "head": "이렇게 바뀐다", "text": "군공항 소음이 사라지고, 공장·아파트·상가가 들어섭니다.", "prompt": "a former korean military airfield runway transforming into a semiconductor district with fabs, apartment towers and busy shopping streets, old military and new city overlapping, aerial", "region": "kr"},
+    {"role": "fact", "head": "호남권까지", "text": "광주를 넘어 나주·목포까지, 호남 첨단제조권으로.", "prompt": "a wide aerial map-like view of the southwest Honam region of korea lighting up as an industrial belt, a central city spreading prosperity to satellite cities connected by rail and highways, regional scale, hopeful", "region": "kr"},
+    {"role": "cta", "head": "광주가 다시 커진다", "text": "공장만으론 안 됩니다. 하지만 잘 되면, 광주는 100조 도시가 됩니다.", "prompt": "a proud transformed korean metropolitan skyline at golden hour, a semiconductor city full of life and people, triumphant hopeful finale", "region": "kr"}
   ]
 }

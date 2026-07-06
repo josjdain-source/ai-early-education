@@ -11,8 +11,14 @@
       "title": "광주 군공항, 반도체가 들어오면?",
       "narration": "광주 군공항 부지에 반도체 공장이 들어옵니다. 그러면 광주는 어떻게 바뀔까요? 답을 찾는 방법은 하나. 이미 반도체로 도시가 바뀐 평택을 보는 겁니다. 다만 미리 분명히 하겠습니다. 이건 공식 확정 예측이 아니라, 평택의 실제 변화를 기준으로 광주에 대입해 본 긍정 시나리오입니다. 지금부터 숫자로 보겠습니다.",
       "beats": [
-        {"prompt": "a wide split scene: on one side a large modern semiconductor factory complex, on the other a growing korean city skyline with cranes, a sense of question and possibility, dawn light", "caption": "평택을 모델로, 광주를 예측"},
-        {"prompt": "an aerial view of a huge flat former airfield site on the edge of a korean city, empty runway and vast land ready for transformation, hopeful morning", "caption": "공식 예측 아님 · 평택 기준 긍정 시나리오"}
+        {
+          "prompt": "a wide split scene: on one side a large modern semiconductor factory complex, on the other a growing korean city skyline with cranes, a sense of question and possibility, dawn light",
+          "caption": "평택을 모델로, 광주를 예측"
+        },
+        {
+          "prompt": "an aerial view of a huge flat former airfield site on the edge of a korean city, empty runway and vast land ready for transformation, hopeful morning",
+          "caption": "공식 예측 아님 · 평택 기준 긍정 시나리오"
+        }
       ]
     },
     {
@@ -20,8 +26,14 @@
       "title": "평택은 2배가 됐다",
       "narration": "평택은 삼성 반도체 공장이 들어오기 전, 지역내총생산이 20조 원대였습니다. 공장이 가동된 뒤인 2023년엔 약 41조 8천억 원. 5년 만에 거의 2배가 됐습니다. 세수도 달라졌습니다. 삼성이 내는 지방세는 초기 수백억 원에서, 성숙기엔 1조 원대까지 거론됩니다. 인구도 52만에서 66만으로 늘었습니다.",
       "beats": [
-        {"prompt": "a booming korean industrial new town beside a giant semiconductor plant, new apartment towers and cranes rising, growth and vitality, aerial", "caption": "평택 GRDP 20조 → 41.8조 (약 2배)"},
-        {"prompt": "a prosperous korean city hall and public services — schools, hospitals, roads being built, symbolizing rising tax revenue funding a city, warm", "caption": "삼성 지방세 수백억 → 1조원대 · 인구 52만→66만"}
+        {
+          "prompt": "a booming korean industrial new town beside a giant semiconductor plant, new apartment towers and cranes rising, growth and vitality, aerial",
+          "caption": "평택 GRDP 20조 → 41.8조 (약 2배)"
+        },
+        {
+          "prompt": "a prosperous korean city hall and public services — schools, hospitals, roads being built, symbolizing rising tax revenue funding a city, warm",
+          "caption": "삼성 지방세 수백억 → 1조원대 · 인구 52만→66만"
+        }
       ]
     },
     {
@@ -29,8 +41,14 @@
       "title": "광주에 들어오는 규모",
       "narration": "광주 군공항 부지는 약 250만 평. 보도에 따르면 삼성전자와 에스케이 하이닉스가 합쳐 약 800조 원을 투자해, 반도체 공장 팹 네 기를 짓는 구상입니다. 평택 첫 라인이 30조 투자에 생산유발 163조를 예상했으니, 이 규모가 실제로 붙으면 파급효과는 도시 하나를 넘어섭니다.",
       "beats": [
-        {"prompt": "an enormous semiconductor mega-cluster masterplan on a vast korean site, multiple huge fab buildings, scale that dwarfs the surrounding city, wide cinematic", "caption": "부지 250만 평 · 투자 800조 · 팹 4기"},
-        {"prompt": "two giant industrial partners building side by side on a massive site, cranes and construction at grand scale, korean industrial ambition, aerial", "caption": "삼성 + SK 참여 구상"}
+        {
+          "prompt": "an enormous semiconductor mega-cluster masterplan on a vast korean site, multiple huge fab buildings, scale that dwarfs the surrounding city, wide cinematic",
+          "caption": "부지 250만 평 · 투자 800조 · 팹 4기"
+        },
+        {
+          "prompt": "two giant industrial partners building side by side on a massive site, cranes and construction at grand scale, korean industrial ambition, aerial",
+          "caption": "삼성 + SK 참여 구상"
+        }
       ]
     },
     {
@@ -38,9 +56,18 @@
       "title": "3단계로 바뀐다",
       "narration": "변화는 세 단계로 옵니다. 1단계, 발표 직후엔 기대와 땅값이 먼저 움직입니다. 2단계, 착공기엔 건설 인력과 협력사가 몰려 숙박, 식당, 자재, 설비가 먼저 폭발합니다. 3단계, 가동기엔 엔지니어가 상주하고 협력사 생태계가 도시에 자리 잡습니다. 광산구의 송정, 평동, 하남산단이 가장 먼저 반응할 가능성이 큽니다.",
       "beats": [
-        {"prompt": "land near a korean city stirring with early anticipation, surveyors and for-sale interest, quiet before a boom, soft morning", "caption": "1단계 발표 — 기대·땅값 먼저"},
-        {"prompt": "a massive construction site swarming with workers, trucks, scaffolding, nearby motels and diners and hardware shops busy, construction economy booming", "caption": "2단계 착공 — 건설경제 폭발"},
-        {"prompt": "engineers and supplier company offices settling around a running fab, a mature industrial district taking root in the city, established and lively", "caption": "3단계 가동 — 협력사·정주경제"}
+        {
+          "prompt": "land near a korean city stirring with early anticipation, surveyors and for-sale interest, quiet before a boom, soft morning",
+          "caption": "1단계 발표 — 기대·땅값 먼저"
+        },
+        {
+          "prompt": "a massive construction site swarming with workers, trucks, scaffolding, nearby motels and diners and hardware shops busy, construction economy booming",
+          "caption": "2단계 착공 — 건설경제 폭발"
+        },
+        {
+          "prompt": "engineers and supplier company offices settling around a running fab, a mature industrial district taking root in the city, established and lively",
+          "caption": "3단계 가동 — 협력사·정주경제"
+        }
       ]
     },
     {
@@ -48,8 +75,14 @@
       "title": "세수는 얼마나 늘까",
       "narration": "광주의 지방세 수입은 지금 약 2조 2천억 원. 보수적으로 팹 한두 기만 붙어도 연 3천억에서 5천억이 더해질 수 있습니다. 팹 네 기와 협력사까지 붙는 기준 시나리오면 연 7천억에서 1조. 반도체 호황까지 겹치는 공격 시나리오면 1조 2천억에서 1조 8천억. 광주 지방세가 최대 1.8배까지 커지는 그림입니다.",
       "beats": [
-        {"prompt": "a korean city treasury growing, coins flowing into building new schools libraries hospitals and parks, prosperity funding public life, warm symbolic", "caption": "광주 지방세 현재 2.2조"},
-        {"prompt": "a thriving well-funded korean city with new civic buildings and infrastructure rising together, abundance and public investment, bright", "caption": "기준 +7천억~1조 → 3조원대 · 공격 최대 4조(약 1.8배)"}
+        {
+          "prompt": "a korean city treasury growing, coins flowing into building new schools libraries hospitals and parks, prosperity funding public life, warm symbolic",
+          "caption": "광주 지방세 현재 2.2조"
+        },
+        {
+          "prompt": "a thriving well-funded korean city with new civic buildings and infrastructure rising together, abundance and public investment, bright",
+          "caption": "기준 +7천억~1조 → 3조원대 · 공격 최대 4조(약 1.8배)"
+        }
       ]
     },
     {
@@ -57,17 +90,48 @@
       "title": "경제 규모는 몇 배?",
       "narration": "지역내총생산은 어떨까요. 광주는 지금 약 54조 8천억 원짜리 도시입니다. 보수 시나리오면 70조에서 80조. 광주형 평택이라 부를 기준 시나리오면 90조에서 110조. 팹 네 기가 완전히 돌고 배후권까지 확장되는 공격 시나리오면 125조에서 155조. 성공하면 광주는 100조 경제권을 바라봅니다.",
       "beats": [
-        {"prompt": "a korean city visibly growing larger, its skyline expanding upward and outward with new districts, a sense of doubling in size, panoramic dusk", "caption": "광주 GRDP 현재 54.8조"},
-        {"prompt": "a transformed metropolitan korean city at its economic peak, dense vibrant advanced-manufacturing skyline glowing at night, prosperity", "caption": "기준 90~110조(약 2배) · 공격 125~155조(2.3~2.8배)"}
+        {
+          "prompt": "a korean city visibly growing larger, its skyline expanding upward and outward with new districts, a sense of doubling in size, panoramic dusk",
+          "caption": "광주 GRDP 현재 54.8조"
+        },
+        {
+          "prompt": "a transformed metropolitan korean city at its economic peak, dense vibrant advanced-manufacturing skyline glowing at night, prosperity",
+          "caption": "기준 90~110조(약 2배) · 공격 125~155조(2.3~2.8배)"
+        }
       ]
     },
     {
       "key": "housing",
-      "title": "사람과 집이 바뀐다",
-      "narration": "경제만이 아닙니다. 사람이 들어옵니다. 기준 시나리오에서 상주하거나 유입되는 인구는 8만에서 15만. 소득 높은 엔지니어와 협력사 직원, 연구 인력이 층층이 옵니다. 주거 축은 광산구와 광주송정역, 수완과 첨단지구, 그리고 주거비가 낮은 나주 혁신도시로 퍼집니다. 광산구는 공항 주변에서 반도체 배후도시로 정체성이 바뀝니다.",
+      "title": "줄던 인구가 늘어난다",
+      "narration": "가장 큰 변화는 사람입니다. 광주는 지금 약 140만 인구인데, 조금씩 줄고 있습니다. 젊은 사람들이 일자리를 찾아 수도권으로 떠나기 때문입니다. 그런데 평택을 보세요. 반도체가 들어온 뒤, 인구가 52만에서 66만으로 늘었습니다. 광주도 클러스터가 자리 잡으면, 떠나던 청년이 남고, 8만에서 15만 명이 새로 들어옵니다. 줄던 도시가 다시 커지는 겁니다. 주거 축은 광산구와 광주송정역, 수완과 첨단, 그리고 나주 혁신도시로 퍼집니다.",
       "beats": [
-        {"prompt": "young engineers and families moving into new korean apartment districts near a high-speed train station, moving trucks, cafes and academies opening, lively residential growth", "caption": "유입 인구 8만~15만 (기준)"},
-        {"prompt": "a network of korean residential districts connected by KTX rail and roads, spreading from an industrial core to satellite new towns, cohesive urban expansion, aerial", "caption": "광산구·송정역·수완·첨단·나주 재편"}
+        {
+          "prompt": "young engineers and families moving into new korean apartment districts near a high-speed train station, moving trucks, cafes and academies opening, lively residential growth",
+          "caption": "평택 인구 52만 → 66만 (반도체 효과)"
+        },
+        {
+          "prompt": "a network of korean residential districts connected by KTX rail and roads, spreading from an industrial core to satellite new towns, cohesive urban expansion, aerial",
+          "caption": "광주도 8만~15만 유입 → 줄던 인구가 반전"
+        }
+      ]
+    },
+    {
+      "key": "transform",
+      "title": "그래서, 광주는 이렇게 바뀐다",
+      "narration": "그래서 광주는 실제로 어떻게 바뀔까요. 지금 군공항 자리엔 활주로와 군사시설, 그리고 소음이 있습니다. 여기에 반도체 공장이 들어서면, 그 옆으로 협력사 사무실이, 그 뒤로 젊은 직원들의 아파트가, 다시 그 앞으로 식당과 카페와 학원이 들어섭니다. 광산구는 공항 주변이라는 이름을 벗고, 반도체 배후도시가 됩니다. 낮엔 엔지니어가 출근하고, 저녁엔 상권이 살아나고, 주말엔 가족이 모이는, 사람이 도는 도시로 바뀌는 겁니다.",
+      "beats": [
+        {
+          "prompt": "a former korean military airfield with a runway and fences being transformed into a semiconductor industrial district, old military and new industry overlapping, aerial, dawn",
+          "caption": "군공항 소음·군사시설 → 반도체 도시로"
+        },
+        {
+          "prompt": "a layered korean urban scene in one frame: a semiconductor fab, then supplier office buildings, then young workers apartment towers, then a street with restaurants cafes and academies, lively integrated district, warm",
+          "caption": "공장→협력사→아파트→상가·학원 차례로"
+        },
+        {
+          "prompt": "a lively korean neighborhood in the warm evening, workers commuting home, busy shopping streets glowing, families gathering, a city full of people and life, hopeful",
+          "caption": "광산구, '공항 주변'→'반도체 배후도시'"
+        }
       ]
     },
     {
@@ -75,8 +139,14 @@
       "title": "단, 조건이 있다",
       "narration": "하지만 핵심은 공장이 생긴다가 아닙니다. 공장에 협력사, 주거, 교통, 대학, 인력 양성, 그리고 전력과 용수까지 함께 붙어야 평택 같은 변화가 나옵니다. 그리고 가장 조심할 것. 착공 전 기대만으로 부동산이 과열되면, 도시가 아니라 거품이 커집니다. 이건 확정된 미래가 아니라, 잘 설계했을 때 가능한 긍정 시나리오입니다. 잘 되면 광주는 호남의 첨단제조 수도가 됩니다.",
       "beats": [
-        {"prompt": "a well-designed korean city where a semiconductor cluster connects smoothly with homes, transit, universities and power and water infrastructure, balanced integrated growth, hopeful", "caption": "조건: 공장+협력사+주거+교통+대학+용수·전력"},
-        {"prompt": "a balanced korean city skyline at golden hour, ambitious yet grounded, a caution about overheating balanced with real growth, thoughtful hopeful", "caption": "경계: 착공 전 과열=거품 · 확정 아닌 긍정 시나리오"}
+        {
+          "prompt": "a well-designed korean city where a semiconductor cluster connects smoothly with homes, transit, universities and power and water infrastructure, balanced integrated growth, hopeful",
+          "caption": "조건: 공장+협력사+주거+교통+대학+용수·전력"
+        },
+        {
+          "prompt": "a balanced korean city skyline at golden hour, ambitious yet grounded, a caution about overheating balanced with real growth, thoughtful hopeful",
+          "caption": "경계: 착공 전 과열=거품 · 확정 아닌 긍정 시나리오"
+        }
       ]
     }
   ]
