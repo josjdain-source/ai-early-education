@@ -233,6 +233,40 @@
       }
     },
     {
+      "video_id": "aiedu-free-programs-longform",
+      "title": "우리가 쓰는 무료 영상 제작 프로그램, 이것만 있으면 됩니다",
+      "pattern_type": "제작도구/롱폼",
+      "viral_test_score": {
+        "stop_power": 2,
+        "personal_pain": 1,
+        "curiosity_gap": 2,
+        "watch_completion": 1,
+        "clear_takeaway": 2,
+        "boring_policy": 0,
+        "abstract_talk": 0,
+        "clickbait_mismatch": 0,
+        "total": 8
+      },
+      "impressions": null,
+      "initial_test_views": null,
+      "swipe_away_rate": null,
+      "avg_view_duration": null,
+      "retention_percent": null,
+      "rewatch_rate": null,
+      "comments": null,
+      "shares": null,
+      "link_clicks": null,
+      "subscriber_gain": null,
+      "algorithm_guess": {
+        "exposure_problem": false,
+        "hook_problem": false,
+        "retention_problem": false,
+        "topic_problem": false,
+        "conversion_problem": false,
+        "likely_reason": "제목 역추적상 강한 패턴(훅·개인화·궁금증·행동 모두 확보). 실제 지표로 확인 필요."
+      }
+    },
+    {
       "video_id": "china-short-s1",
       "title": "중국은 왜 초등학생에게까지 AI를 가르칠까?",
       "pattern_type": "국가비교",

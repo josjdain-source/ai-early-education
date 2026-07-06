@@ -68,6 +68,7 @@ VIDEOS = [
  ("shorts-parent-002", "AI 답이 이상할 때 부모가 하면 안 되는 말", True, 45, True, False, "부모행동/반전"),
  ("shorts-parent-003", "AI 답을 그대로 믿는 아이가 위험한 이유", True, 45, True, False, "위험/궁금증"),
  ("shorts-levels-001", "아이 나이별 AI교육은 이렇게 달라야 합니다", True, 50, True, False, "연령별/정보"),
+ ("aiedu-free-programs-longform", "우리가 쓰는 무료 영상 제작 프로그램, 이것만 있으면 됩니다", True, 262, True, False, "제작도구/롱폼"),
  ("china-short-s1", "중국은 왜 초등학생에게까지 AI를 가르칠까?", False, 55, True, True, "국가비교"),
  ("us-short-s1", "미국 아이들은 AI를 '쓰는' 게 아니라 무엇을 할까?", False, 55, True, True, "국가비교"),
  ("korea-lost-decade", "한국의 잃어버린 AI 10년, 청년의 취업난", False, 55, True, True, "정책/거대담론"),

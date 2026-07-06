@@ -771,30 +771,32 @@
       "mp4_path": "assets/korea-ai-education/render/korea-ai-longform.mp4",
       "poster_path": "assets/korea-ai-education/poster/korea-longform.jpg",
       "thumbnail_path": "assets/korea-ai-education/poster/korea-longform.jpg",
-      "status": "ready_to_upload",
+      "status": "uploaded_private",
       "visibility_target": "private",
       "shorts": false,
-      "youtube_url": "",
+      "youtube_url": "https://youtu.be/ZVwJGh4S9Ls",
       "on_video_hub": true,
       "created_at": "2026-07-05",
-      "updated_at": "2026-07-05",
+      "updated_at": "auto",
       "video_type": "longform",
       "country": "korea",
       "package_id": "korea-ai-education",
       "duration": 318.9,
       "local_preview_path": "assets/korea-ai-education/render/korea-ai-longform.mp4",
-      "youtube_id": "",
-      "studio_url": "",
+      "youtube_id": "ZVwJGh4S9Ls",
+      "studio_url": "https://studio.youtube.com/video/ZVwJGh4S9Ls/edit",
       "page_url": "/world-cases/korea",
-      "upload_status": "ready_to_upload",
-      "public_status": "none",
+      "upload_status": "uploaded_private",
+      "public_status": "private",
       "homepage_status": "unknown",
       "views": null,
       "comments": null,
       "last_checked_at": null,
       "error_message": "",
       "notes": "정본 풀버전 다큐(build_country_video 13~14섹션, RealVisXL 스토리북, 5분+). 실제 타임라인·정책 상세. 유튜브 풀리면 승인 업로드.",
-      "public": false
+      "public": false,
+      "visibility": "private",
+      "uploaded_at": "2026-07-06 21:02"
     },
     {
       "video_id": "aiedu-shorts-parent-001",
@@ -852,7 +854,18 @@
       "description": "AI의 틀린 답은 최고의 교재입니다.\n오늘 집에서 10분이면 됩니다.\n\n▶ 오늘의 10분 수업\nhttps://ai-early-education.pages.dev/daily-class/today\n\n🃏 부모용 질문 카드(무료)\nhttps://ai-early-education.pages.dev/free/question-cards\n\n이 채널은 AI로 아이를 붙잡는 채널이 아니라,\n아이가 AI를 의심하고 다룰 줄 알게 하는 채널입니다.\n\n#AI교육 #부모교육 #초등AI\n\n#AI교육 #부모교육 #초등AI",
       "source": "content_bank/approved/shorts/shorts-parent-002.json",
       "note": "쇼츠 빌더 렌더본. 업로드는 사람 승인(자동 공개 금지).",
-      "poster_path": "assets/ai-edu-shorts/sframe/shorts-parent-002_0.png"
+      "poster_path": "assets/ai-edu-shorts/sframe/shorts-parent-002_0.png",
+      "viral_test": {
+        "total": 10,
+        "stop_power": 3,
+        "personal_pain": 2,
+        "curiosity_gap": 1,
+        "watch_completion": 2,
+        "clear_takeaway": 2,
+        "boring_policy": 0,
+        "abstract_talk": 0
+      },
+      "title_optimized": false
     },
     {
       "video_id": "aiedu-shorts-parent-003",
@@ -878,7 +891,18 @@
       "description": "확인하는 아이는 속지 않는 어른이 됩니다.\n\n🎁 7일 질문카드(무료) — 하루 한 장, 5분\nhttps://ai-early-education.pages.dev/free/ai-first-7days\n\n▶ 오늘의 10분 수업\nhttps://ai-early-education.pages.dev/daily-class/today\n\n이 채널은 AI로 아이를 붙잡는 채널이 아니라,\n아이가 AI를 의심하고 다룰 줄 알게 하는 채널입니다.\n\n#AI교육 #부모교육 #AI리터러시\n\n#AI교육 #부모교육 #AI리터러시",
       "source": "content_bank/approved/shorts/shorts-parent-003.json",
       "note": "쇼츠 빌더 렌더본. 업로드는 사람 승인(자동 공개 금지).",
-      "poster_path": "assets/ai-edu-shorts/sframe/shorts-parent-003_0.png"
+      "poster_path": "assets/ai-edu-shorts/sframe/shorts-parent-003_0.png",
+      "viral_test": {
+        "total": 10,
+        "stop_power": 3,
+        "personal_pain": 2,
+        "curiosity_gap": 1,
+        "watch_completion": 2,
+        "clear_takeaway": 2,
+        "boring_policy": 0,
+        "abstract_talk": 0
+      },
+      "title_optimized": false
     },
     {
       "video_id": "aiedu-shorts-levels-001",
@@ -948,7 +972,7 @@
     },
     {
       "video_id": "aiedu-free-programs-longform",
-      "title": "아이와 AI교실이 쓰는 무료 프로그램 (제작 도구 총정리)",
+      "title": "우리가 쓰는 무료 영상 제작 프로그램, 이것만 있으면 됩니다",
       "video_type": "longform",
       "series": "S07_free_programs",
       "mp4_path": "assets/free-programs-longform/render/free-programs-longform.mp4",
@@ -970,9 +994,25 @@
       "youtube_id": "",
       "youtube_url": "",
       "created_at": "2026-07-06",
-      "description": "아이와 AI교실이 콘텐츠 제작에 쓰는 무료·로컬 프로그램을 용도별로 소개합니다. TTS·영상 조립·이미지 생성·자막/오디오 편집·로컬 AI·개발 도구. 각 도구의 무료 범위·라이선스는 바뀔 수 있으니 공식 사이트를 확인하세요.\\n\\n전체 목록·링크 ▶ https://ai-early-education.pages.dev/free-programs\\n\\n#AI교육 #무료프로그램 #영상제작 #TTS",
+      "description": "영상 제작, 유료 프로그램 없이 이만큼 됩니다.\n아이와 AI교실이 콘텐츠 제작에 쓰는 무료·로컬 프로그램을 용도별로 소개합니다. TTS·영상 조립·이미지 생성·자막/오디오 편집·로컬 AI·개발 도구. 각 도구의 무료 범위·라이선스는 바뀔 수 있으니 공식 사이트를 확인하세요.\\n\\n전체 목록·링크 ▶ https://ai-early-education.pages.dev/free-programs\\n\\n#AI교육 #무료프로그램 #영상제작 #TTS",
       "source": "production/free_programs_longform_plan.json",
-      "note": "무료 프로그램 소개 롱폼. 업로드는 사람 승인(자동 공개 금지)."
+      "note": "무료 프로그램 소개 롱폼. 업로드는 사람 승인(자동 공개 금지).",
+      "title_before": "아이와 AI교실이 쓰는 무료 프로그램 (제작 도구 총정리)",
+      "title_candidates": [
+        "우리가 쓰는 무료 영상 제작 프로그램, 이것만 있으면 됩니다",
+        "AI 영상, 0원으로 이렇게 만듭니다 (무료 프로그램 13개)"
+      ],
+      "viral_test": {
+        "total": 8,
+        "stop_power": 2,
+        "personal_pain": 1,
+        "curiosity_gap": 2,
+        "watch_completion": 1,
+        "clear_takeaway": 2,
+        "boring_policy": 0,
+        "abstract_talk": 0
+      },
+      "title_optimized": true
     }
   ],
   "_schema": "studio-v1"
