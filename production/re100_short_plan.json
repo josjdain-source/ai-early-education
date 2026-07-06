@@ -1,0 +1,22 @@
+{
+  "_comment": "호남 RE100 산업벨트 쇼츠 — 광주(칩)+솔라시도(AI연산)+전남(전기) 3점 세트. 캐논(Catharsis·InJoon·풀블리드·느린줌인·강한엔딩). 컷4=실제 지도 이미지(원본 그대로 contain, 생성X). 솔라시도=구상 단계 정직 표기(본계약 진통 보도 반영). 수치 출처: AI타임스/뉴스더AI(3GW·15조·북버지니아 2.5GW 비교), 이투데이.",
+  "id": "re100-belt-short",
+  "final_title": "광주 반도체, 공장만 지으면 끝이 아닙니다 (숨은 두 번째 그림)",
+  "brand": "광주 반도체 시나리오",
+  "speed": 1.35,
+  "region": "kr",
+  "duration_target_sec": 58,
+  "style_token": "semi-realistic editorial documentary illustration, warm muted urban palette, thick clean outlines, korean industrial and energy landscape scenes, soft cinematic lighting, detailed, no text, no letters, no numbers, no logo",
+  "negative": "photo, photorealistic, 3d render, text, letters, words, numbers, watermark, logo, western caucasian, scary, dark, ugly, deformed, blurry",
+  "beats": [
+    {"role": "hook", "head": "공장만 지으면 끝?", "text": "반도체도 AI도, 결국 전기 싸움입니다. 광주 반도체 옆에, 숨은 두 번째 그림이 있습니다.", "prompt": "a giant semiconductor fab silhouette with an enormous electric plug and power lines looming behind it, the hidden question of energy, dramatic cinematic contrast", "region": "kr"},
+    {"role": "fact", "head": "칩 공장 = 전기 괴물", "text": "군공항 250만 평, 팹 4기 구상. 그런데 칩 공장은 밤낮없이 전기를 먹는 괴물입니다.", "prompt": "a massive semiconductor plant glowing at night consuming rivers of electricity flowing in as bright energy streams, industrial scale power hunger, cinematic", "region": "kr"},
+    {"role": "fact", "head": "고객이 묻는다", "text": "글로벌 고객은 이제 묻습니다. 그 칩, 깨끗한 전기로 만들었습니까. 이게 RE100입니다.", "prompt": "global buyers examining a tiny chip under a magnifying glass while wind turbines and solar panels reflect in the glass, supply chain scrutiny, editorial", "region": "kr"},
+    {"role": "hook", "head": "세 점이 한 세트", "text": "그래서 이 그림입니다. 광주는 칩, 솔라시도는 AI 연산, 전남은 전기.", "image_file": "C:/Users/admin/Desktop/유튜브쇼츠/동영상제작/영상완료/수아도현논쟁/지피티이미지/20e9e2f1-9399-492c-9544-074a0cf66427.png", "fit": "contain", "prompt": "(unused - real map image)", "region": "kr"},
+    {"role": "fact", "head": "3GW · 15조 구상", "text": "해남 솔라시도엔 세계 최대 3기가와트 AI 데이터센터, 15조 구상. 미국 북버지니아보다 큽니다.", "prompt": "a vast AI data center campus rising beside coastal solar farms and giant battery storage units on reclaimed land, world-largest scale, aerial dawn", "region": "kr"},
+    {"role": "fact", "head": "수도권은 꽉 찼다", "text": "수도권은 전력망도 부지도 한계입니다. 호남엔 바람과 태양, 그리고 땅이 있습니다.", "prompt": "a congested overloaded metropolitan power grid on one side versus open southwestern korean coast with offshore wind turbines and wide land on the other, clear contrast, editorial", "region": "kr"},
+    {"role": "hook", "head": "호남 = 산업 심장", "text": "수도권이 시장의 중심이라면, 호남은 AI 시대의 전기와 연산을 공급하는 심장이 될 수 있습니다.", "prompt": "the southwestern Honam region of korea glowing like a beating heart on the peninsula, energy veins of light flowing outward to power the country, powerful symbolic aerial, hopeful", "region": "kr"},
+    {"role": "fact", "head": "단, 아직 구상이다", "text": "물론 아직 구상 단계입니다. 송전망, ESS, 전력 계약이 뚫려야 진짜가 됩니다.", "prompt": "engineers studying a large blueprint of power transmission lines and battery systems, serious but determined, work in progress mood", "region": "kr"},
+    {"role": "cta", "head": "전기 + 칩 + 연산", "text": "전기, 칩, 연산. 이 세 점이 이어지는 날, 호남은 RE100 산업벨트가 됩니다.", "prompt": "three glowing nodes on the korean southwest connected by bright energy lines forming one triangle belt, a completed industrial constellation at golden hour, triumphant finale", "region": "kr"}
+  ]
+}

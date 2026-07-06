@@ -670,7 +670,8 @@
       "last_checked_at": null,
       "error_message": "",
       "uploaded_at": "2026-07-05 22:43",
-      "public": true
+      "public": true,
+      "local_deleted": true
     },
     {
       "video_id": "uk-ai-longform",
@@ -712,7 +713,8 @@
       "notes": "정본 풀버전 다큐(build_country_video 13~14섹션, RealVisXL 스토리북, 5분+). 실제 타임라인·정책 상세. 유튜브 풀리면 승인 업로드.",
       "visibility": "private",
       "uploaded_at": "2026-07-06 00:35",
-      "public": true
+      "public": true,
+      "local_deleted": true
     },
     {
       "video_id": "sg-ai-longform",
@@ -754,7 +756,8 @@
       "notes": "정본 풀버전 다큐(build_country_video 13~14섹션, RealVisXL 스토리북, 5분+). 실제 타임라인·정책 상세. 유튜브 풀리면 승인 업로드.",
       "visibility": "private",
       "uploaded_at": "2026-07-06 00:51",
-      "public": true
+      "public": true,
+      "local_deleted": true
     },
     {
       "video_id": "korea-ai-longform",
@@ -796,7 +799,8 @@
       "notes": "정본 풀버전 다큐(build_country_video 13~14섹션, RealVisXL 스토리북, 5분+). 실제 타임라인·정책 상세. 유튜브 풀리면 승인 업로드.",
       "public": false,
       "visibility": "private",
-      "uploaded_at": "2026-07-06 21:02"
+      "uploaded_at": "2026-07-06 21:02",
+      "local_deleted": true
     },
     {
       "video_id": "aiedu-shorts-parent-001",
@@ -1112,6 +1116,35 @@
       "visibility": "private",
       "uploaded_at": "2026-07-07 01:05",
       "error_message": ""
+    },
+    {
+      "video_id": "re100-belt-short",
+      "title": "광주 반도체, 공장만 지으면 끝이 아닙니다 (숨은 두 번째 그림)",
+      "video_type": "short",
+      "series": "S08_region_scenario",
+      "mp4_path": "assets/re100-belt/render/re100-belt-short.mp4",
+      "poster_path": "assets/re100-belt/render/re100-belt-short-poster.jpg",
+      "thumbnail_path": "assets/re100-belt/render/re100-belt-short-poster.jpg",
+      "tags": [
+        "광주",
+        "반도체",
+        "RE100",
+        "솔라시도",
+        "AI데이터센터",
+        "전남"
+      ],
+      "shorts": true,
+      "category": "25",
+      "status": "ready_to_upload",
+      "upload_status": "ready_to_upload",
+      "public": false,
+      "public_status": "none",
+      "youtube_id": "",
+      "youtube_url": "",
+      "created_at": "2026-07-07",
+      "description": "반도체도 AI도 결국 전기 싸움. 광주(칩)+솔라시도(AI 연산)+전남 재생에너지(전기) — 호남 RE100 산업벨트가 한 세트인 이유. ★솔라시도는 구상 단계(3GW·15조 보도 기준)이며 공식 확정이 아닙니다.\n\n수치 출처: 전남도·언론 보도(세계 최대 3GW·2030년까지 15조 구상, 북버지니아 2.5GW 비교)\n\n#광주 #반도체 #RE100 #솔라시도 #AI데이터센터 #전남 #Shorts",
+      "source": "production/re100_short_plan.json",
+      "note": "RE100 3점 세트. 솔라시도=구상 단계 정직 표기. 업로드는 사람 승인."
     }
   ],
   "_schema": "studio-v1"
