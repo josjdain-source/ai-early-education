@@ -107,8 +107,7 @@ def register_to_studio(mp4, poster):
     except Exception: return
     vid="gwangju-semi-short"
     rel=os.path.relpath(mp4,REPO).replace("\\","/"); prel=os.path.relpath(poster,REPO).replace("\\","/") if poster else ""
-    desc=("평택은 반도체로 지역총생산이 2배가 됐습니다. 광주 군공항 반도체 클러스터가 성공하면? 숫자로 본 긍정 시나리오. "
-          "★공식 예측 아님. 수치는 보도·통계+가정.\\n\\n#광주 #반도체 #평택 #군공항 #지역경제 #Shorts")
+    desc=("평택은 반도체로 지역총생산이 2배가 됐습니다. 광주 군공항 반도체 클러스터가 성공하면? 숫자로 본 긍정 시나리오. ★공식 예측 아님. 수치는 보도·통계+가정."+chr(10)+chr(10)+"#광주 #반도체 #평택 #군공항 #지역경제 #Shorts")
     entry={"video_id":vid,"title":PLAN.get("final_title","평택은 반도체로 2배 커졌다, 광주 군공항은?"),"video_type":"short",
            "series":"S08_region_scenario","mp4_path":rel,"poster_path":prel,"thumbnail_path":prel,
            "tags":["광주","반도체","평택","군공항","지역경제"],"shorts":True,"category":"25",
@@ -147,7 +146,7 @@ if __name__=="__main__":
     if chain: args+=["-filter_complex",";".join(chain),"-map",prev]
     else: args+=["-map","0:v"]
     args+=["-c:v","libx264","-preset","veryfast","-crf","20","-r","30",f"{FR}/_v_{KEY}.mp4"]; run(args)
-    al=f"{FR}/_a_{KEY}.txt"; open(al,"w",encoding="utf-8").write("\n".join(f"file '{a}'" for a in auds))
+    al=f"{FR}/_a_{KEY}.txt"; open(al,"w",encoding="utf-8").write(chr(10).join(f"file '{a}'" for a in auds))
     run([FF,"-hide_banner","-loglevel","error","-y","-f","concat","-safe","0","-i",al,"-c","copy",f"{FR}/_a_{KEY}.mp3"])
     out=f"{RENDER}/{KEY}.mp4"
     run([FF,"-hide_banner","-loglevel","error","-y","-i",f"{FR}/_v_{KEY}.mp4","-i",f"{FR}/_a_{KEY}.mp3",

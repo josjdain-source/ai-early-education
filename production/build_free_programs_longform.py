@@ -72,9 +72,7 @@ def register_to_studio(mp4, poster):
     except Exception: return
     vid="aiedu-free-programs-longform"
     rel=os.path.relpath(mp4,REPO).replace("\\","/"); prel=os.path.relpath(poster,REPO).replace("\\","/") if poster else ""
-    desc=("아이와 AI교실이 콘텐츠 제작에 쓰는 무료·로컬 프로그램을 용도별로 소개합니다. "
-          "TTS·영상 조립·이미지 생성·자막/오디오 편집·로컬 AI·개발 도구. 각 도구의 무료 범위·라이선스는 바뀔 수 있으니 공식 사이트를 확인하세요.\\n\\n"
-          "전체 목록·링크 ▶ https://ai-early-education.pages.dev/free-programs\\n\\n#AI교육 #무료프로그램 #영상제작 #TTS")
+    desc=("아이와 AI교실이 콘텐츠 제작에 쓰는 무료·로컬 프로그램을 용도별로 소개합니다. TTS·영상 조립·이미지 생성·자막/오디오 편집·로컬 AI·개발 도구. 각 도구의 무료 범위·라이선스는 바뀔 수 있으니 공식 사이트를 확인하세요."+chr(10)+chr(10)+"전체 목록·링크 ▶ https://ai-early-education.pages.dev/free-programs"+chr(10)+chr(10)+"#AI교육 #무료프로그램 #영상제작 #TTS")
     entry={"video_id":vid,"title":"아이와 AI교실이 쓰는 무료 프로그램 (제작 도구 총정리)","video_type":"longform",
            "series":"S07_free_programs","mp4_path":rel,"poster_path":prel,"thumbnail_path":prel,
            "tags":["AI교육","무료프로그램","영상제작","TTS","콘텐츠제작"],"shorts":False,"category":"27",

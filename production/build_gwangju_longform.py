@@ -71,8 +71,7 @@ def register_to_studio(mp4, poster):
     except Exception: return
     vid="gwangju-semi-longform"
     rel=os.path.relpath(mp4,REPO).replace("\\","/"); prel=os.path.relpath(poster,REPO).replace("\\","/") if poster else ""
-    desc=("광주 군공항 반도체 클러스터가 들어오면 지역경제·세수·주거가 어떻게 바뀔지, 평택 사례를 기준으로 본 긍정 시나리오입니다. "
-          "★공식 확정 예측이 아닙니다. 수치는 보도·통계 기준과 가정 시나리오입니다.\\n\\n#광주 #반도체 #평택 #지역경제 #군공항")
+    desc=("광주 군공항 반도체 클러스터가 들어오면 지역경제·세수·주거가 어떻게 바뀔지, 평택 사례를 기준으로 본 긍정 시나리오입니다. ★공식 확정 예측이 아닙니다. 수치는 보도·통계 기준과 가정 시나리오입니다."+chr(10)+chr(10)+"#광주 #반도체 #평택 #지역경제 #군공항")
     entry={"video_id":vid,"title":"광주 군공항에 반도체가 들어오면? 평택처럼 경제가 2배 커질까 (시나리오)","video_type":"longform",
            "series":"S08_region_scenario","mp4_path":rel,"poster_path":prel,"thumbnail_path":prel,
            "tags":["광주","반도체","평택","지역경제","군공항"],"shorts":False,"category":"25",
