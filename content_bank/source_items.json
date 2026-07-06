@@ -118,6 +118,23 @@
       "status": "used",
       "source_url": "https://arxiv.org/abs/2506.08872",
       "notes": "shorts-parent-005 보완 근거. '스스로 풀 때 뇌가 더 활발' 원리로만 인용(아이 뇌로 단정X). 결론=책 읽고 AI로 구현=AI시대 창의력·생존법"
+    },
+    {
+      "id": "chajiho-channel-scout-001",
+      "type": "pattern",
+      "series": "S08_region_scenario",
+      "age": "all",
+      "topic": "AI 담론 채널 정찰",
+      "title": "@future_chajiho 채널 전수 정찰(244편, yt-dlp)",
+      "summary": "미래학자 출신 정치인 채널. 비인물 쇼츠 성과: ①'ASI What is that?' 22K=개념설명형 최강 ②'AI 실업? 해결책 많다' 11K=불안+해결 구조(우리 캐논과 동일) ③블랙록 1경7천조 투자 8.2K=숫자임팩트. 소재: 글로벌 AI허브(UN)·AI 기본사회·AI 초과이익 재투자·AI저작권·기후+AI.",
+      "usable_for": [
+        "AI 시대 리포트 쇼츠 주제",
+        "개념설명형(그게 뭔데) 포맷",
+        "Pattern Lab 외부 검증"
+      ],
+      "status": "stored",
+      "source_url": "https://www.youtube.com/@future_chajiho",
+      "notes": "★주의: 정치인 채널 — 소재·담론만 취하고 인물·정당 인용 금지(우리 채널 정치색 리스크). 목록: 일반102·쇼츠142편 yt-dlp 수집."
     }
   ]
 }
