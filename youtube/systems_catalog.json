@@ -1,34 +1,97 @@
 {
   "_comment": "우리가 만든 프로그램/시스템 최종본 카탈로그. 8972에서 설명과 함께 보여줌. open=url(링크) 또는 bat(런처 실행).",
   "groups": [
-    {"name": "🎬 영상 제작 시스템", "items": [
-      {"name": "영상 자동 생성기 (주제→영상)", "status": "운영중",
-       "desc": "주제 한 줄을 넣으면 → 로컬 LLM(Ollama)이 대본·이미지프롬프트·자막 생성 → SDXL(ComfyUI) 일러스트 → edge-tts 내레이션 → 디졸브 조립까지 사람 손 0. 약 45~55초 일러스트 쇼츠.",
-       "tech": "Ollama · ComfyUI(SDXL) · edge-tts · ffmpeg", "bat": "production\\run_video_maker.bat"},
-      {"name": "국가별 AI교육 콘텐츠 패키지", "status": "중국·미국 완성",
-       "desc": "한 국가 주제 하나 → 조사(출처)→롱폼 다큐(6~8분)+쇼츠 3편+심층 페이지+아이와AI교실 비공개 업로드까지 한 번에. ★각 영상=그 나라→한국→아이 효과로 완결.",
-       "tech": "WebSearch·facts·SDXL·build_site·Cloudflare", "url": "https://ai-early-education.pages.dev/world-cases/china"},
-      {"name": "격정 연설 보이스 시스템", "status": "운영중",
-       "desc": "문장별 감정(분노·침묵·고조) DSP로 '격정 연설형' 보이스를 자동 생성. edge-tts + Supertonic3(로컬 M1~M5) + 피치·속도·새츄레이션. speech_pacing.json으로 문장마다 pause·볼륨·SFX 지정. ★실존 인물 목소리 복제 금지.",
-       "tech": "Supertonic3 · edge-tts · ffmpeg DSP"},
-      {"name": "비평/고발형 쇼츠 (다크 시네마틱)", "status": "완성(잃어버린 AI 10년)",
-       "desc": "단어 슬램·화면 흔들림·붐/타격 SFX·침묵 설계로 만드는 격정 고발 쇼츠. 4막 구조. build_klad_v3(엔진·보이스·rage 프로파일).",
-       "tech": "Supertonic · Pillow · ffmpeg"},
-      {"name": "만화 영상 (comic_video)", "status": "운영중",
-       "desc": "만화 1장 + 대사 → 컷 배경 영상. 스튜디오 8777 /comic-studio.",
-       "tech": "Pillow · ffmpeg", "url": "http://127.0.0.1:8777/comic-studio"}
-    ]},
-    {"name": "📊 관리·검수 도구", "items": [
-      {"name": "영상 스튜디오 + 파일 관리", "status": "운영중 (8971)",
-       "desc": "채널별 영상 관리 · 승인 업로드 · 삭제/휴지통/삭제 후보 자동탐지 · 12시간 내 작업 필터. YouTube Studio 스타일. ★자동 업로드/공개 금지, 사람 승인만.",
-       "tech": "stdlib http · YouTube API", "url": "http://127.0.0.1:8971/"},
-      {"name": "업로드 검수대", "status": "운영중",
-       "desc": "ready_to_upload 영상을 사람이 '승인' 누른 것만 비공개 업로드. 유튜브 일일 한도 보호.",
-       "tech": "youtube_upload OAuth", "url": "http://127.0.0.1:8971/"}
-    ]},
-    {"name": "🌐 관리 사이트 (라이브)", "items": [
-      {"name": "AI 조기교육 (아이와 AI교실)", "status": "라이브", "desc": "국가별 AI교육 심층 페이지 + 영상관. 유튜브 임베드.", "tech": "Cloudflare Pages", "url": "https://ai-early-education.pages.dev/"},
-      {"name": "홈페이지 통합 조종판", "status": "운영중", "desc": "모든 프로젝트/도구 관제. 오늘의 제작실·검수실.", "tech": "stdlib http", "url": "http://127.0.0.1:8900/"}
-    ]}
+    {
+      "name": "🎬 영상 제작 시스템",
+      "items": [
+        {
+          "name": "영상 자동 생성기 (주제→영상)",
+          "status": "운영중",
+          "desc": "주제 한 줄을 넣으면 → 로컬 LLM(Ollama)이 대본·이미지프롬프트·자막 생성 → SDXL(ComfyUI) 일러스트 → edge-tts 내레이션 → 디졸브 조립까지 사람 손 0. 약 45~55초 일러스트 쇼츠.",
+          "tech": "Ollama · ComfyUI(SDXL) · edge-tts · ffmpeg",
+          "bat": "production\\run_video_maker.bat"
+        },
+        {
+          "name": "국가별 AI교육 콘텐츠 패키지",
+          "status": "중국·미국 완성",
+          "desc": "한 국가 주제 하나 → 조사(출처)→롱폼 다큐(6~8분)+쇼츠 3편+심층 페이지+아이와AI교실 비공개 업로드까지 한 번에. ★각 영상=그 나라→한국→아이 효과로 완결.",
+          "tech": "WebSearch·facts·SDXL·build_site·Cloudflare",
+          "url": "https://ai-early-education.pages.dev/world-cases/china"
+        },
+        {
+          "name": "격정 연설 보이스 시스템",
+          "status": "운영중",
+          "desc": "문장별 감정(분노·침묵·고조) DSP로 '격정 연설형' 보이스를 자동 생성. edge-tts + Supertonic3(로컬 M1~M5) + 피치·속도·새츄레이션. speech_pacing.json으로 문장마다 pause·볼륨·SFX 지정. ★실존 인물 목소리 복제 금지.",
+          "tech": "Supertonic3 · edge-tts · ffmpeg DSP"
+        },
+        {
+          "name": "비평/고발형 쇼츠 (다크 시네마틱)",
+          "status": "완성(잃어버린 AI 10년)",
+          "desc": "단어 슬램·화면 흔들림·붐/타격 SFX·침묵 설계로 만드는 격정 고발 쇼츠. 4막 구조. build_klad_v3(엔진·보이스·rage 프로파일).",
+          "tech": "Supertonic · Pillow · ffmpeg"
+        },
+        {
+          "name": "만화 영상 (comic_video)",
+          "status": "운영중",
+          "desc": "만화 1장 + 대사 → 컷 배경 영상. 스튜디오 8777 /comic-studio.",
+          "tech": "Pillow · ffmpeg",
+          "url": "http://127.0.0.1:8777/comic-studio"
+        },
+        {
+          "name": "쇼츠 빌더 (콘텐츠 금고 → 세로 쇼츠)",
+          "status": "운영중 (5편 제작)",
+          "desc": "콘텐츠 금고의 승인 패키지(대본·6~8컷·자막·이미지프롬프트·고정댓글)를 세로 1080x1920 쇼츠로. 인물=한국인, 2초 tail. 완성 시 8971 스튜디오 자동 등록(hook 프레임 썸네일·private, 자동 공개 없음).",
+          "tech": "ComfyUI(SDXL RealVisXL)·edge-tts·ffmpeg 디졸브",
+          "prereq": "ComfyUI(8188) 실행 + Ollama 언로드(keep_alive:0)로 VRAM 확보",
+          "bat": "production\build_ai_edu_shorts.py <패키지id>"
+        },
+        {
+          "name": "무료 프로그램 소개 롱폼",
+          "status": "플랜 완성·렌더 대기",
+          "desc": "무료 프로그램 페이지(/free-programs) 13개 도구를 용도별로 소개하는 가로 1280x720 롱폼(8섹션 17컷). 각 도구=기능 한 줄+다운로드처+우리 활용법. 로고 없음(NEG), 설치강요 없음, 공식확인·아이 개인정보 경고. 완성 시 8971 자동 등록.",
+          "tech": "ComfyUI(SDXL)·edge-tts·ffmpeg·디졸브(reassemble_dissolve)",
+          "prereq": "ComfyUI(8188) 실행 + Ollama 언로드",
+          "bat": "production\build_free_programs_longform.py"
+        }
+      ]
+    },
+    {
+      "name": "📊 관리·검수 도구",
+      "items": [
+        {
+          "name": "영상 스튜디오 + 파일 관리",
+          "status": "운영중 (8971)",
+          "desc": "채널별 영상 관리 · 승인 업로드 · 삭제/휴지통/삭제 후보 자동탐지 · 12시간 내 작업 필터. YouTube Studio 스타일. ★자동 업로드/공개 금지, 사람 승인만.",
+          "tech": "stdlib http · YouTube API",
+          "url": "http://127.0.0.1:8971/"
+        },
+        {
+          "name": "업로드 검수대",
+          "status": "운영중",
+          "desc": "ready_to_upload 영상을 사람이 '승인' 누른 것만 비공개 업로드. 유튜브 일일 한도 보호.",
+          "tech": "youtube_upload OAuth",
+          "url": "http://127.0.0.1:8971/"
+        }
+      ]
+    },
+    {
+      "name": "🌐 관리 사이트 (라이브)",
+      "items": [
+        {
+          "name": "AI 조기교육 (아이와 AI교실)",
+          "status": "라이브",
+          "desc": "국가별 AI교육 심층 페이지 + 영상관. 유튜브 임베드.",
+          "tech": "Cloudflare Pages",
+          "url": "https://ai-early-education.pages.dev/"
+        },
+        {
+          "name": "홈페이지 통합 조종판",
+          "status": "운영중",
+          "desc": "모든 프로젝트/도구 관제. 오늘의 제작실·검수실.",
+          "tech": "stdlib http",
+          "url": "http://127.0.0.1:8900/"
+        }
+      ]
+    }
   ]
 }
