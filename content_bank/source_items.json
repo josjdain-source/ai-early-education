@@ -135,6 +135,23 @@
       "status": "stored",
       "source_url": "https://www.youtube.com/@future_chajiho",
       "notes": "★주의: 정치인 채널 — 소재·담론만 취하고 인물·정당 인용 금지(우리 채널 정치색 리스크). 목록: 일반102·쇼츠142편 yt-dlp 수집."
+    },
+    {
+      "id": "global-ai-hub-001",
+      "type": "source",
+      "series": "S08_region_scenario",
+      "age": "all",
+      "topic": "글로벌 AI 허브·공공지능",
+      "title": "글로벌 AI 허브 유치 담론(차지호, 자막 5편 확인)",
+      "summary": "①UN 글로벌 AI 허브=UN 기구를 한국에 유치해 개도국 AI 전환(의료·교육·금융·복지)을 한국이 선도하는 전략 ②ILO·WHO·WFP·UNDP 등 6개 국제기구 협력의향서 서명(대국민 브리핑) ③자본=블랙록 협약(국가AI비서관과 공동) ④핵심 프레임='인공지능→공공지능(Public Intelligence)'·AI 기본사회 ⑤시장 논리: 반도체보다 3차산업(의료·금융) AI 전환 시장이 훨씬 큼, 개도국 미충족 의료 시장만 ~2경 추정 발언 ⑥'AI 협력형 일자리'(커넥티드 인텔리전스)=AI 실업 해결 담론.",
+      "usable_for": [
+        "AI 시대 리포트 쇼츠(10배 시장·공공지능·협력형 일자리)",
+        "RE100 벨트 후속(국가 큰그림)",
+        "아이와 AI교실(AI 기본사회 속 교육)"
+      ],
+      "status": "stored",
+      "source_url": "https://www.youtube.com/@future_chajiho",
+      "notes": "자막 요약만 저장(본문 복제 금지). 발언 기반 주장·추정치는 '~라는 주장/발언' 으로 인용, 확정 사실처럼 쓰지 말 것. 인물·정당 언급 금지 유지 — 담론·개념·구조만 차용."
     }
   ]
 }
