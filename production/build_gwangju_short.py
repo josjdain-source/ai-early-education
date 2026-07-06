@@ -120,7 +120,8 @@ if __name__=="__main__":
         fp=f"{FR}/{KEY}_{bi}.png"; frame(BRAND,bt["head"],bt["text"],ip,bt["role"],bi,n,fp)
         seg=f"{FR}/v_{KEY}_{bi}.mp4"
         D=int((bd+XF)*30)+2
-        z=("min(1.0+0.0007*on,1.10)" if bi%2==0 else "max(1.10-0.0007*on,1.0)")
+        # 전 컷 동일 방향: 느린 클로즈업(줌인만). 배율 1.0→최대 1.06, 부드럽게(어지럼 방지)
+        z="min(1.0+0.00033*on,1.06)"
         kb=f"scale=2160:3840,zoompan=z='{z}':d={D}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1080x1920:fps=30,format=yuv420p"
         run([FF,"-hide_banner","-loglevel","error","-y","-i",fp,"-vf",kb,"-frames:v",str(D),"-c:v","libx264","-preset","veryfast","-crf","20","-r","30",seg])
         segs.append(seg)
