@@ -26,8 +26,8 @@
         {
           "role": "fact",
           "head": "왜 2경인가",
-          "text": "개발도상국은 의사도 병원도 부족합니다. 이 미충족 의료 시장만 2경이라는 추정이, 국회 브리핑에서 나왔습니다.",
-          "prompt": "vast regions of the developing world with long queues outside a single small clinic, enormous unmet medical need stretching to the horizon, poignant but hopeful scale"
+          "text": "개발도상국은 의료도, 교육도, 금융도 시스템이 부족합니다. 이들이 필요로 하는 AI 시스템 시장이 2경이라는 추정이, 국회 브리핑에서 나왔습니다.",
+          "prompt": "vast developing regions where clinics schools and banks are missing or rudimentary, countless communities waiting for basic systems to arrive, enormous unmet need stretching to the horizon, poignant hopeful scale"
         },
         {
           "role": "fact",
@@ -61,7 +61,7 @@
         }
       ],
       "desc_lines": [
-        "다들 반도체만 볼 때 — 개발도상국은 의사도 병원도 부족합니다. 이 미충족 의료 시장만 2경이라는 추정(국회 브리핑). 한국의 의료 인프라·인력·AI로 이 전환을 맡으면, 2경 시장이 한국 기업의 무대가 되고 그 일은 국내 일자리로 돌아옵니다. 유엔 기구 6곳 협력 의향서 서명. 이래서 '100년 만에 온 기회'라고 부릅니다.",
+        "다들 반도체만 볼 때 — 개발도상국은 의료·교육·금융 시스템 자체가 부족합니다. 이들이 필요로 하는 AI 시스템 시장이 2경이라는 추정(국회 브리핑). 한국의 인프라·인력·AI로 이 전환을 맡으면 2경 시장이 한국 기업의 무대가 되고, 그 일은 국내 일자리로 돌아옵니다. 유엔 기구 6곳 협력 의향서 서명. 이래서 '100년 만에 온 기회'라고 부릅니다.",
         "▶ AI를 부리는 법 https://ai-early-education.pages.dev/daily-class/today",
         "#AI시장 #일자리 #의료AI #반도체 #Shorts"
       ],
