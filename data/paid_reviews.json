@@ -1,0 +1,17 @@
+{
+  "_schema": {
+    "user_type": "초등 부모|영상 제작자|운영자",
+    "purpose": "사용 목적",
+    "good": "좋았던 점",
+    "bad": "아쉬운 점",
+    "one_line": "한 줄 후기",
+    "rating": "1~5"
+  },
+  "_rule": "실제 후기만 등록. 가짜 후기 금지. 베타 테스트 후 추가.",
+  "shorts-builder": [],
+  "video-maker": [],
+  "capcut-agent": [],
+  "blog-radar": [],
+  "meme-cartoon": [],
+  "workbook-guide": []
+}

@@ -79,7 +79,7 @@ MEGA=[
    ("📽 영상 자동 생성기","/paid-programs.html#video-maker"),
    ("✂️ 캡컷 에이전트","/paid-programs.html#capcut-agent"),
    ("📝 블로그 레이더","/paid-programs.html#blog-radar"),
-  ],"전체 보기 (모두 ₩9,900)"),
+  ],"전체 보기 (출시 준비중)"),
 ]
 def header(active,base):
     tops="".join(f'<a class="mg-t{" on" if k==active else ""}" data-k="{k}" href="{h}">{t}</a>' for k,t,h,_,_ in MEGA)
@@ -320,7 +320,7 @@ SECTIONS={
    ("🇯🇵 일본 부모 자료","/parents/japan.html"),
    ("자주 묻는 질문","/parent-resources.html#faq"),
  ]),
- "paid":("유료 프로그램 · 모두 ₩9,900",[
+ "paid":("유료 프로그램 · 출시 준비중",[
    ("전체 안내","/paid-programs.html"),
    ("🎬 쇼츠 자동 빌더","/paid-programs.html#shorts-builder"),
    ("📽 영상 자동 생성기","/paid-programs.html#video-maker"),
@@ -867,7 +867,7 @@ def free_programs():
 이 페이지는 아이와 AI교실 콘텐츠 제작에 쓰는 <b>무료 또는 로컬 실행 도구</b>를 정리한 곳입니다.
 단순 링크 모음이 아니라, 각 프로그램을 <b>어디에 쓰는지, 어떤 사람이 쓰면 좋은지, 공식 링크는 어디인지</b> 함께 안내합니다.
 설치 전에는 각 프로그램의 공식 안내와 라이선스를 반드시 확인하세요.</div>
-<p style="font-size:12.5px;color:var(--muted);margin-top:8px">👨‍👩‍👧 아이와 함께 쓰는 질문카드·활동지는 <a href="/parent-resources.html" style="color:var(--coral);font-weight:700">부모 자료실</a>에 있습니다. 이 방은 '만드는 사람'용 도구방입니다. &nbsp;💾 우리가 직접 개발한 도구는 <a href="/paid-programs.html" style="color:var(--coral);font-weight:700">유료 프로그램(모두 9,900원)</a>에.</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:8px">👨‍👩‍👧 아이와 함께 쓰는 질문카드·활동지는 <a href="/parent-resources.html" style="color:var(--coral);font-weight:700">부모 자료실</a>에 있습니다. 이 방은 '만드는 사람'용 도구방입니다. &nbsp;💾 우리가 직접 개발한 도구는 <a href="/paid-programs.html" style="color:var(--coral);font-weight:700">유료 프로그램(출시 준비중)</a>에.</p>
 {secs}
 <div class="callout" style="margin-top:26px;background:#F4F7FB;border-color:#CADCF0;font-size:13px">
 이 페이지의 도구들은 아이와 AI교실이 콘텐츠 제작과 교육 실습을 위해 참고하는 무료 또는 로컬 실행 도구입니다.

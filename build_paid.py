@@ -207,109 +207,188 @@ def _gal(pid, spec):
     thumbs="".join(f'<img src="{u}" class="pp-th{" on" if i==0 else ""}" onclick="ppSwap(this,\'{pid}\')" loading="lazy" alt="">' for i,u in enumerate(imgs))
     return f'<div class="pp-gal"><img id="ppMain-{pid}" class="pp-main" src="{main}" alt="{spec["name"]}"><div class="pp-ths">{thumbs}</div></div>'
 
+def _reviews(pid):
+    import json as _j
+    try:
+        R=_j.load(open(os.path.join(ROOT,"data","paid_reviews.json"),encoding="utf-8"))
+        rows=R.get(pid,[]) if isinstance(R,dict) else []
+    except Exception:
+        rows=[]
+    if not rows:
+        inner="""<div class="pp-rv-empty">아직 등록된 사용후기가 없습니다.<br>
+<small>베타 테스트 후 실제 사용후기를 이곳에 추가할 예정입니다. (가짜 후기는 싣지 않습니다)</small></div>"""
+    else:
+        cards=""
+        for r in rows:
+            stars="★"*int(r.get("rating",0))+"☆"*(5-int(r.get("rating",0)))
+            cards+=f"""<div class="pp-rv-card">
+<div class="pp-rv-head"><span class="pp-rv-type">{r.get('user_type','')}</span><span class="pp-rv-star">{stars}</span></div>
+<p class="pp-rv-one">"{r.get('one_line','')}"</p>
+<div class="pp-rv-body"><b>목적</b> {r.get('purpose','')}<br><b>좋았던 점</b> {r.get('good','')}<br><b>아쉬운 점</b> {r.get('bad','')}</div></div>"""
+        inner=f'<div class="pp-rv-list">{cards}</div>'
+    return f'<h3 class="pp-h">💬 사용후기</h3>{inner}'
+
 def _sec(pid, spec):
     s=spec
-    mailto=f"mailto:{MAIL}?subject=[구매] {s['name']} (9,900원)&body=주문 상품: {s['name']} / 9,900원%0A입금 안내 부탁드립니다.%0A(파일 받을 이메일: )"
+    ask=f"mailto:{MAIL}?subject=[문의] {s['name']}"
     inc="".join(f"<li>{x}</li>" for x in s["inc"])
     det="".join(f'<h4>{t}</h4><p>{b}</p>' for t,b in s["detail"])
     ins="".join(f"<li>{x}</li>" for x in s["install"])
     use="".join(f"<li>{x}</li>" for x in s["usage"])
-    core_badge='<span class="pp-core">인기</span>' if s.get("core") else ''
-    return f"""<section class="pp-item" id="{pid}">
+    core_badge='<span class="pp-core">추천</span>' if s.get("core") else ''
+    return f"""<section class="pp-item pp-panel" id="{pid}">
 <div class="pp-topgrid">
 {_gal(pid,s)}
 <div class="pp-buy">
-<div class="pp-cat">{s['icon']} 직접 개발 · 디지털 상품 {core_badge}</div>
+<div class="pp-cat">{s['icon']} 직접 개발 · 디지털 상품 {core_badge} <span class="pp-soon">출시 준비중</span></div>
 <h2>{s['name']}</h2>
 <p class="pp-one">{s['one']}</p>
-<div class="pp-price-row"><span class="pp-pr">₩{s['price']}</span><span class="pp-prnote">부담 없는 단일가</span></div>
+<div class="pp-price-row"><span class="pp-prlabel">예정가</span><span class="pp-pr">₩{s['price']}</span><span class="pp-soon">출시 준비중</span></div>
 <table class="pp-meta">
 <tr><th>이런 분께</th><td>{s['who']}</td></tr>
 <tr><th>포함 구성</th><td><ul class="pp-inc">{inc}</ul></td></tr>
 <tr><th>필요 환경</th><td>{s['env']}</td></tr>
-<tr><th>전달 방식</th><td>이메일로 zip 파일 + 한글 설치·사용 가이드(PDF)</td></tr>
+<tr><th>전달 방식</th><td>출시 후: 이메일로 zip 파일 + 한글 설치·사용 가이드(PDF)</td></tr>
 </table>
 <div class="pp-btns">
-<a class="btn btn-primary pp-buybtn" href="{mailto}">📩 이메일 주문하기 · ₩{s['price']}</a>
-<a class="btn" href="#{pid}-install">설치 방법 보기</a>
+<button class="btn pp-disbtn" disabled>🔒 결제 준비중</button>
+<a class="btn" href="#" onclick="ppGoto('{pid}-install');return false">설치 방법 보기</a>
 </div>
-<p class="pp-mailnote">주문 흐름: 이메일 → 입금 안내 회신 → 파일 전달 (영업일 기준 24시간 내)</p>
+<p class="pp-mailnote">현재 결제 페이지를 준비 중입니다. 정식 출시 전까지는 구매가 진행되지 않습니다.<br>
+궁금한 점은 <a href="{ask}">{MAIL}</a> 로 문의해 주세요.</p>
 </div></div>
 
 <div class="pp-boxes">
 <div class="pp-box"><b>🎯 무엇을 해결하나</b><p>{s['solve']}</p></div>
-<div class="pp-box"><b>📦 받으면 오는 것</b><p>zip 1개 — 프로그램 파일 + GUIDE.pdf + LICENSE. 압축을 풀고 가이드 1장부터 따라가면 됩니다.</p></div>
+<div class="pp-box"><b>📦 출시 후 받게 되는 것</b><p>zip 1개 — 프로그램 파일 + GUIDE.pdf + LICENSE. 압축을 풀고 가이드 1장부터 따라가는 구성입니다.</p></div>
 </div>
 
 <div class="pp-detail">{det}</div>
 
-<h3 class="pp-h" id="{pid}-install">🔧 설치 방법 (Windows)</h3>
+<h3 class="pp-h" id="{pid}-install">🔧 설치 방법 (Windows · 출시 시 가이드 동봉)</h3>
 <ol class="pp-steps">{ins}</ol>
-<p class="pp-tip">설치가 막히면 그 화면을 캡처해 이메일로 보내주세요 — 함께 해결해 드립니다.</p>
+<p class="pp-tip">설치가 막히면 화면 캡처와 함께 이메일 주시면 같이 해결합니다.</p>
 
 <h3 class="pp-h">▶ 기본 사용 방법</h3>
 <ol class="pp-steps">{use}</ol>
 
-<div class="pp-warn">⚠ <b>주의</b> · {s['caution']}</div>
+<div class="pp-warn">⚠ <b>주의</b> · {s['caution']} 모든 PC에서 동일 동작을 보장하지 않으며, 필요 환경을 먼저 확인해 주세요. <b>현재는 결제 준비중입니다.</b></div>
+
+{_reviews(pid)}
 </section>"""
+
+# 기획 중(실물 없음 — 정직하게 '기획 단계'로만 표기)
+PLANNED=[("question-card-builder","🃏 질문카드 구성기","교육용"),
+         ("content-bank-tool","🧊 콘텐츠 금고 관리 도구","운영용"),
+         ("pattern-lab-tool","🔬 패턴 연구소 보조도구","운영용")]
 
 def page_html(BS):
     ensure_images()
-    # 좌측 카테고리 사이드바 (frsb 마커 = 공통 섹션랩 생략)
-    nav=""
+    # ── 좌측 메뉴 ──
+    nav='<button class="pp-nava on" data-pid="intro">🏠 전체 안내</button>'
     for cid,label,pids in CATS:
         nav+=f'<div class="pp-navh">{label}</div>'
         for pid in pids:
             s=P[pid]
-            nav+=f'<a class="pp-nava" href="#{pid}" data-p="{pid}">{s["icon"]} {s["name"]}<span class="pp-navpr">9,900</span></a>'
-    nav+='<div class="pp-navh">ℹ️ 안내</div><a class="pp-nava" href="#order">주문·전달 안내</a><a class="pp-nava" href="#faq">자주 묻는 질문</a>'
-    secs="".join(_sec(pid,P[pid]) for _,__,pids in CATS for pid in pids)
-    faq=[("Mac에서도 되나요?","Windows 기준으로 만들고 검증했습니다. 파이썬 기반이라 Mac에서 도는 도구도 있지만 공식 지원은 Windows입니다."),
-     ("GPU(그래픽카드)가 꼭 필요한가요?","영상 자동 생성기는 필요합니다. 쇼츠 자동 빌더는 '그림 수동 투입' 방식이면 GPU 없이 사용 가능합니다. 나머지 도구는 GPU가 필요 없습니다."),
-     ("인터넷이 필요한가요?","음성 생성(edge-tts)에는 필요합니다. 블로그 레이더·밈 카툰 변환기는 오프라인으로 동작합니다."),
-     ("설치가 어려우면 어떻게 하나요?","막힌 화면 캡처와 함께 이메일 주시면 순서대로 같이 해결합니다. 가이드는 처음 쓰는 분 기준으로 썼습니다."),
-     ("파일은 어떻게 받나요?","입금 확인 후 주문하신 이메일로 zip 파일을 보내드립니다(영업일 24시간 내)."),
-     ("사용 범위는 어디까지인가요?","구매자 개인 사용입니다. 프로그램으로 만든 결과물(영상·이미지·글)은 자유롭게 업로드·수익화할 수 있습니다. 프로그램 파일 자체의 재배포·재판매는 안 됩니다.")]
+            nav+=f'<button class="pp-nava" data-pid="{pid}">{s["icon"]} {s["name"]}<span class="pp-navsoon">준비중</span></button>'
+    nav+='<div class="pp-navh">🗓 기획 중</div>'
+    for pid,nm,cat in PLANNED:
+        nav+=f'<button class="pp-nava" data-pid="planned">{nm}<span class="pp-navsoon">기획</span></button>'
+    nav+='<div class="pp-navh">ℹ️ 안내</div>'
+    nav+='<button class="pp-nava" data-pid="precheck">🔧 설치 전 확인</button>'
+    nav+='<button class="pp-nava" data-pid="faq">❓ 자주 묻는 질문</button>'
+    nav+='<button class="pp-nava" data-pid="contact">✉️ 문의</button>'
+
+    # ── 인트로 패널 ──
+    cat_cards=""
+    CAT_DESC={"video":"쇼츠·롱폼·편집 자동화 — 이 채널을 실제로 만드는 도구","edu":"아이와 부모가 함께 쓰는 교육 자료","ops":"글·콘텐츠 운영을 돕는 보조 도구"}
+    for cid,label,pids in CATS:
+        first=pids[0]
+        cat_cards+=f"""<button class="pp-catcard" onclick="ppShow('{first}')">
+<b>{label}</b><p>{CAT_DESC[cid]}</p><span>{len(pids)}개 도구 →</span></button>"""
+    reco="".join(f'<button class="btn" onclick="ppShow(\'{pid}\')">{P[pid]["icon"]} {P[pid]["name"]}</button>' for pid in ["shorts-builder","video-maker","capcut-agent"])
+    intro=f"""<section class="pp-item pp-panel on" id="intro">
+<div class="pp-cat">💾 직접 개발 · 디지털 상품 <span class="pp-soon">결제 준비중</span></div>
+<h2 style="margin:6px 0 8px;color:#2B3A55">유료 프로그램</h2>
+<p style="font-size:14px;color:#3a3024;line-height:1.7;max-width:620px">아이와 AI교실이 실제 제작에 사용 중인 도구를 정리하고 있습니다.
+현재는 상품 상세와 설치 안내를 준비하는 단계이며, <b>결제 기능은 아직 열려 있지 않습니다.</b>
+정식 출시 전까지는 구매가 진행되지 않습니다.</p>
+<div class="pp-catgrid">{cat_cards}</div>
+<h3 class="pp-h">먼저 보기 (추천)</h3>
+<div class="pp-btns">{reco}</div>
+<div class="pp-warn" style="margin-top:18px">왼쪽 메뉴에서 프로그램을 선택하면 그 프로그램의 상세만 표시됩니다. 출시 소식이 궁금하시면 <a href="mailto:{MAIL}">{MAIL}</a> 로 알려주세요.</div>
+</section>"""
+
+    planned=f"""<section class="pp-item pp-panel" id="planned">
+<div class="pp-cat">🗓 기획 단계</div>
+<h2 style="margin:6px 0 8px;color:#2B3A55">기획 중인 도구</h2>
+<p style="font-size:14px;color:#3a3024;line-height:1.7">아래 도구들은 아직 기획·정리 단계라 판매 페이지가 없습니다. 구성이 확정되면 이곳에 상세가 추가됩니다.</p>
+<ul class="pp-steps">{''.join(f'<li>{nm} <small style="color:#9b8a6e">({cat})</small></li>' for _,nm,cat in PLANNED)}</ul>
+<p class="pp-mailnote">먼저 필요하신 도구가 있다면 <a href="mailto:{MAIL}">{MAIL}</a> 로 알려주세요 — 우선순위에 반영합니다.</p>
+</section>"""
+
+    precheck=f"""<section class="pp-item pp-panel" id="precheck">
+<h3 class="pp-h" style="margin-top:0">🔧 설치 전 확인 (공통)</h3>
+<ol class="pp-steps">
+<li><b>Windows</b> 기준으로 제작·검증되었습니다</li>
+<li>대부분의 도구는 <b>Python 3.10+</b> 설치가 필요합니다 ('Add to PATH' 체크)</li>
+<li>영상 도구는 <b>ffmpeg</b> 설치·Path 등록이 필요합니다 (가이드에 그림 순서 수록)</li>
+<li><b>GPU/ComfyUI</b>는 '영상 자동 생성기'만 필수 — 쇼츠 빌더는 그림 수동 투입 시 불필요</li>
+<li><b>인터넷</b>: 음성 생성에 필요 · 블로그 레이더/밈 카툰은 오프라인 동작</li>
+<li>각 상품 상세의 '필요 환경'을 먼저 확인해 주세요</li>
+</ol>
+<div class="pp-warn">모든 PC에서 동일하게 동작한다고 보장하지 않습니다. 환경 차이(특히 GPU)가 큰 도구는 상세에 표기했습니다.</div>
+</section>"""
+
+    faq=[("지금 구매 가능한가요?","아니요. 현재 결제 준비중입니다. 정식 출시 전까지 구매가 진행되지 않습니다."),
+     ("Mac에서도 되나요?","상품별로 다릅니다. Windows 기준으로 검증했으며, 파이썬 기반 도구 일부는 Mac에서 동작할 수 있으나 공식 지원은 Windows입니다."),
+     ("GPU(그래픽카드)가 꼭 필요한가요?","영상 자동 생성기는 필수입니다. 쇼츠 자동 빌더는 그림 수동 투입 방식이면 불필요, 나머지 도구는 필요 없습니다."),
+     ("설치가 어려우면 어떻게 하나요?","한글 설치 가이드(PDF)와 FAQ를 제공하며, 막히면 이메일로 함께 해결합니다."),
+     ("프로그램 제작법도 포함되나요?","아닙니다. 설치와 사용 설명 중심이며, 내부 제작 노하우·알고리즘은 포함되지 않습니다."),
+     ("파일은 어떻게 받게 되나요?","출시 후에는 이메일로 zip 파일을 전달하는 방식을 예정하고 있습니다.")]
     faqh="".join(f'<details class="pp-faq"><summary>{q}</summary><p>{a}</p></details>' for q,a in faq)
+    faqsec=f'<section class="pp-item pp-panel" id="faq"><h3 class="pp-h" style="margin-top:0">❓ 자주 묻는 질문</h3>{faqh}</section>'
+
+    contact=f"""<section class="pp-item pp-panel" id="contact">
+<h3 class="pp-h" style="margin-top:0">✉️ 문의</h3>
+<p style="font-size:14px;color:#3a3024;line-height:1.7">출시 일정, 도구 관련 질문, 우선 제작 요청 모두 이메일로 받습니다.</p>
+<p style="font-size:16px;font-weight:800"><a href="mailto:{MAIL}">{MAIL}</a></p>
+<div class="pp-warn">현재 결제 페이지를 준비 중입니다. 정식 출시 전까지는 구매가 진행되지 않습니다.</div>
+</section>"""
+
+    secs="".join(_sec(pid,P[pid]) for _,__,pids in CATS for pid in pids)
+
     body=f"""<main><div class="pp-wrap">
 <aside class="frsb pp-side"><div class="pp-sticky">
-<div class="pp-sidetitle">💾 유료 프로그램<br><small>모두 ₩9,900</small></div>
+<div class="pp-sidetitle">💾 유료 프로그램<br><small>출시 준비중</small></div>
 {nav}
 <div class="pp-sidemail">문의<br><a href="mailto:{MAIL}">{MAIL}</a></div>
 </div></aside>
-<div class="pp-maincol">
-<section class="page-hero" style="padding:26px 0 8px"><div class="pill">💾 직접 개발 · 디지털 상품</div>
-<h1>유료 프로그램</h1>
-<p style="color:var(--navy2);font-weight:600;max-width:640px">아이와 AI교실이 실제 제작에 사용 중인 프로그램을 정리했습니다.
-모든 상품은 디지털 파일로 제공되며, 구매 후 설치 가이드와 기본 사용 설명서를 함께 보내드립니다.
-처음 쓰는 분도 설치부터 실행까지 따라갈 수 있도록 구성했습니다.</p></section>
+<div class="pp-maincol" id="ppMainCol">
+{intro}
 {secs}
-<section class="pp-item" id="order">
-<h3 class="pp-h">🧾 주문·전달 안내</h3>
-<ol class="pp-steps">
-<li>상품 카드의 <b>이메일 주문하기</b> 버튼을 누르면 주문 메일이 자동으로 작성됩니다</li>
-<li>회신으로 입금 계좌를 안내드립니다</li>
-<li>입금 확인 후 <b>영업일 24시간 내</b> zip 파일을 이메일로 전달합니다</li>
-</ol>
-<div class="pp-warn">아직 카드 결제 페이지가 없어 이메일 주문 방식으로 운영합니다. 디지털 상품 특성상 <b>파일 전달 후 환불은 어렵습니다</b> — 구매 전 각 상품의 '필요 환경'을 꼭 확인해 주세요. 문의: <a href="mailto:{MAIL}">{MAIL}</a></div>
-</section>
-<section class="pp-item" id="faq"><h3 class="pp-h">❓ 자주 묻는 질문</h3>{faqh}</section>
+{planned}
+{precheck}
+{faqsec}
+{contact}
 </div></div>
 <style>
-.pp-wrap{{display:flex;gap:26px;max-width:1180px;margin:0 auto;padding:0 18px;align-items:flex-start}}
-.pp-side{{width:230px;flex:none}}
+.pp-wrap{{display:flex;gap:26px;max-width:1180px;margin:18px auto 30px;padding:0 18px;align-items:flex-start}}
+.pp-side{{width:236px;flex:none}}
 .pp-sticky{{position:sticky;top:78px;max-height:calc(100vh - 95px);overflow:auto;background:#fff;border:1px solid #EADFCE;border-radius:14px;padding:12px 10px}}
 .pp-sidetitle{{font-weight:900;color:#2B3A55;font-size:15px;padding:6px 8px 10px;border-bottom:2px solid #E0684A;margin-bottom:6px}}
 .pp-sidetitle small{{color:#B44A31;font-weight:800}}
 .pp-navh{{font-size:11px;font-weight:900;color:#9b8a6e;padding:10px 8px 4px}}
-.pp-nava{{display:flex;align-items:center;gap:5px;padding:7px 8px;border-radius:8px;text-decoration:none;color:#3a3024;font-size:12.8px;font-weight:700}}
+.pp-nava{{display:flex;width:100%;text-align:left;align-items:center;gap:5px;padding:8px 8px;border:0;background:none;border-radius:8px;cursor:pointer;color:#3a3024;font-size:12.8px;font-weight:700;font-family:inherit}}
 .pp-nava:hover{{background:#FBF3E4}}
 .pp-nava.on{{background:#FDECE5;color:#B44A31}}
-.pp-navpr{{margin-left:auto;font-size:10.5px;color:#c4b59a;font-weight:800}}
+.pp-navsoon{{margin-left:auto;font-size:9.5px;color:#fff;background:#c4b59a;border-radius:5px;padding:1px 6px;font-weight:800}}
 .pp-sidemail{{margin-top:12px;border-top:1px dashed #EAD9BE;padding:10px 8px 4px;font-size:11px;color:#9b8a6e}}
 .pp-sidemail a{{color:#3A6FB0;font-weight:700;font-size:11.5px}}
 .pp-maincol{{flex:1;min-width:0}}
-.pp-item{{background:#fff;border:1px solid #EADFCE;border-radius:18px;padding:22px 24px;margin:18px 0;scroll-margin-top:80px}}
+.pp-panel{{display:none}}
+.pp-panel.on{{display:block}}
+.pp-item{{background:#fff;border:1px solid #EADFCE;border-radius:18px;padding:22px 24px;scroll-margin-top:80px}}
 .pp-topgrid{{display:grid;grid-template-columns:1.05fr 1fr;gap:22px}}
 .pp-gal .pp-main{{width:100%;border-radius:12px;border:1px solid #F0E6D2;aspect-ratio:12/7;object-fit:cover;background:#FBF6EE}}
 .pp-ths{{display:flex;gap:8px;margin-top:8px}}
@@ -317,19 +396,21 @@ def page_html(BS):
 .pp-th.on{{border-color:#E0684A;opacity:1}}
 .pp-cat{{font-size:11.5px;font-weight:800;color:#9b8a6e}}
 .pp-core{{background:#E0684A;color:#fff;border-radius:5px;padding:1px 7px;font-size:10px;font-weight:900;margin-left:4px}}
+.pp-soon{{background:#8a6f45;color:#fff;border-radius:5px;padding:2px 8px;font-size:10px;font-weight:900;margin-left:6px;vertical-align:middle}}
 .pp-buy h2{{margin:4px 0 6px;font-size:23px;color:#2B3A55}}
 .pp-one{{margin:0 0 10px;font-size:14px;color:#3a3024;line-height:1.55}}
-.pp-price-row{{display:flex;align-items:baseline;gap:10px;border-top:1px solid #F0E6D2;border-bottom:1px solid #F0E6D2;padding:10px 0;margin-bottom:10px}}
-.pp-pr{{font-size:26px;font-weight:900;color:#B44A31}}
-.pp-prnote{{font-size:12px;color:#9b8a6e;font-weight:700}}
+.pp-price-row{{display:flex;align-items:center;gap:10px;border-top:1px solid #F0E6D2;border-bottom:1px solid #F0E6D2;padding:10px 0;margin-bottom:10px}}
+.pp-prlabel{{font-size:12px;color:#9b8a6e;font-weight:700}}
+.pp-pr{{font-size:24px;font-weight:900;color:#2B3A55}}
 .pp-meta{{width:100%;border-collapse:collapse;font-size:13px}}
 .pp-meta th{{width:74px;text-align:left;vertical-align:top;color:#8a6f45;font-size:12px;padding:5px 8px 5px 0}}
 .pp-meta td{{padding:5px 0;color:#3a3024;line-height:1.5}}
 .pp-inc{{margin:0;padding-left:16px}}
 .pp-inc li{{margin:1px 0}}
 .pp-btns{{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}}
-.pp-buybtn{{font-size:14.5px;padding:11px 18px}}
-.pp-mailnote{{font-size:11.5px;color:#9b8a6e;margin-top:8px}}
+.pp-disbtn{{background:#e8e2d6!important;color:#9b8a6e!important;border-color:#ddd4c2!important;cursor:not-allowed;font-weight:800}}
+.pp-mailnote{{font-size:11.5px;color:#9b8a6e;margin-top:8px;line-height:1.6}}
+.pp-mailnote a{{color:#3A6FB0;font-weight:700}}
 .pp-boxes{{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}}
 .pp-box{{background:#FBF8F1;border:1px solid #EAD9BE;border-radius:12px;padding:12px 14px;font-size:13px}}
 .pp-box b{{display:block;margin-bottom:4px;color:#2B3A55}}
@@ -345,29 +426,61 @@ def page_html(BS):
 .pp-faq{{border:1px solid #F0E6D2;border-radius:10px;padding:0 14px;margin:8px 0;background:#FFFDF8}}
 .pp-faq summary{{cursor:pointer;font-weight:800;font-size:13.5px;color:#2B3A55;padding:11px 0}}
 .pp-faq p{{margin:0 0 12px;font-size:13px;color:#4a3a28;line-height:1.6}}
+.pp-catgrid{{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 6px}}
+.pp-catcard{{text-align:left;background:#FBF8F1;border:1px solid #EAD9BE;border-radius:13px;padding:14px;cursor:pointer;font-family:inherit}}
+.pp-catcard:hover{{border-color:#E0684A;background:#FDF3EC}}
+.pp-catcard b{{font-size:14px;color:#2B3A55}}
+.pp-catcard p{{margin:5px 0;font-size:12px;color:#5a4a35;line-height:1.5}}
+.pp-catcard span{{font-size:12px;font-weight:800;color:#B44A31}}
+.pp-rv-empty{{background:#FBF8F1;border:1px dashed #EAD9BE;border-radius:12px;padding:22px;text-align:center;font-size:13.5px;color:#5a4a35;font-weight:700}}
+.pp-rv-empty small{{font-weight:600;color:#9b8a6e}}
+.pp-rv-list{{display:grid;gap:10px}}
+.pp-rv-card{{background:#FFFDF8;border:1px solid #F0E6D2;border-radius:12px;padding:13px 15px}}
+.pp-rv-head{{display:flex;justify-content:space-between;align-items:center}}
+.pp-rv-type{{font-size:11px;font-weight:800;background:#EAF2FB;color:#2B4a72;border-radius:6px;padding:2px 8px}}
+.pp-rv-star{{color:#E0A54A;font-size:13px}}
+.pp-rv-one{{margin:7px 0;font-size:14px;font-weight:800;color:#2B3A55}}
+.pp-rv-body{{font-size:12.5px;color:#4a3a28;line-height:1.6}}
 @media(max-width:900px){{
 .pp-wrap{{flex-direction:column}}
 .pp-side{{width:100%}}
 .pp-sticky{{position:static;max-height:none;display:flex;flex-wrap:wrap;gap:2px;align-items:center}}
 .pp-sidetitle{{width:100%}}
 .pp-navh{{width:100%}}
+.pp-nava{{width:auto}}
 .pp-topgrid{{grid-template-columns:1fr}}
 .pp-boxes{{grid-template-columns:1fr}}
+.pp-catgrid{{grid-template-columns:1fr}}
 }}
 </style>
 <script>
 function ppSwap(el,pid){{document.getElementById('ppMain-'+pid).src=el.src;
  el.parentElement.querySelectorAll('.pp-th').forEach(function(t){{t.classList.toggle('on',t===el);}});}}
-(function(){{var links=document.querySelectorAll('.pp-nava[data-p]');
- var obs=new IntersectionObserver(function(es){{es.forEach(function(e){{
-  if(e.isIntersecting){{links.forEach(function(l){{l.classList.toggle('on',l.dataset.p===e.target.id);}});}}
- }});}},{{rootMargin:'-30% 0px -60% 0px'}});
- document.querySelectorAll('.pp-item[id]').forEach(function(s){{if(s.id&&document.querySelector('.pp-nava[data-p=\"'+s.id+'\"]'))obs.observe(s);}});}})();
+function ppShow(pid){{
+ var found=document.getElementById(pid); if(!found) pid='intro';
+ document.querySelectorAll('.pp-panel').forEach(function(p){{p.classList.toggle('on',p.id===pid);}});
+ document.querySelectorAll('.pp-nava[data-pid]').forEach(function(b){{b.classList.toggle('on',b.dataset.pid===pid);}});
+ if(history.replaceState) history.replaceState(null,'','#'+pid);
+ var col=document.getElementById('ppMainCol');
+ var y=col.getBoundingClientRect().top+window.pageYOffset-72;
+ if(Math.abs(window.pageYOffset-y)>40) window.scrollTo({{top:y,behavior:'smooth'}});
+}}
+function ppGoto(anchor){{var el=document.getElementById(anchor);
+ if(el) window.scrollTo({{top:el.getBoundingClientRect().top+window.pageYOffset-72,behavior:'smooth'}});}}
+(function(){{
+ document.querySelectorAll('.pp-nava[data-pid]').forEach(function(b){{
+  b.addEventListener('click',function(){{ppShow(b.dataset.pid);}});}});
+ var h=(location.hash||'').replace('#','');
+ if(h&&document.getElementById(h)&&document.getElementById(h).classList.contains('pp-panel')) ppShow(h);
+ window.addEventListener('hashchange',function(){{
+  var h=(location.hash||'').replace('#','');
+  if(h&&document.getElementById(h)) ppShow(h);}});
+}})();
 </script></main>"""
-    return BS.page("paid","","유료 프로그램 · 모두 9,900원 | 아이와 AI교실",
-        "아이와 AI교실이 실제 제작에 사용하는 프로그램 — 쇼츠 자동 빌더, 영상 자동 생성기, 캡컷 에이전트 등. 설치 가이드 포함, 전부 9,900원.", body)
+    return BS.page("paid","","유료 프로그램 (출시 준비중) | 아이와 AI교실",
+        "아이와 AI교실이 실제 제작에 사용하는 프로그램을 정리 중입니다. 결제 기능은 아직 열려 있지 않으며, 정식 출시 전까지 구매가 진행되지 않습니다.", body)
 
 def build():
     import build_site as BS
     BS.write("paid-programs.html", page_html(BS))
-    print(f"유료 프로그램 상세페이지 생성 · 상품 {len(P)} · 카테고리 {len(CATS)} · 이미지 {len(os.listdir(IMGD))}")
+    print(f"유료 프로그램 SPA 상세페이지 생성 · 상품 {len(P)} · 결제 준비중 모드 · 리뷰 구조 준비")
