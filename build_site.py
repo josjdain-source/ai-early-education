@@ -115,16 +115,18 @@ def header(active,base):
 </header>
 <style>
 .mgh{{position:sticky;top:0;z-index:80;background:#fff;border-bottom:1px solid #EADFCE;box-shadow:0 1px 6px rgba(0,0,0,.04)}}
-.mg-bar{{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:10px 20px}}
-.mg-brand{{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}}
+.mg-bar{{width:100%;max-width:none;margin:0;display:flex;align-items:center;gap:14px;padding:10px 24px;box-sizing:border-box}}
+.mg-brand{{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);flex:0 0 auto}}
 .mg-brand .bot{{width:34px;height:34px;background:var(--navy);color:#fff;border-radius:10px;display:grid;place-items:center;font-size:17px}}
-.mg-brand b{{font-size:16px;display:block;line-height:1.1}}
-.mg-brand small{{font-size:10.5px;color:#9b8a6e;font-weight:600}}
-.mg-nav{{display:flex;gap:2px;margin:0 auto}}
-.mg-t{{padding:12px 15px;text-decoration:none;color:var(--ink);font-weight:700;font-size:14.5px;border-bottom:3px solid transparent}}
+.mg-brand b{{font-size:16px;display:block;line-height:1.1;white-space:nowrap}}
+.mg-brand small{{font-size:10.5px;color:#9b8a6e;font-weight:600;white-space:nowrap}}
+.mg-nav{{display:flex;flex-wrap:nowrap;flex:1 1 auto;min-width:0;gap:2px;overflow-x:auto;overflow-y:hidden;white-space:nowrap;scrollbar-width:none;-ms-overflow-style:none}}
+.mg-nav::-webkit-scrollbar{{display:none}}
+.mg-t:first-child{{margin-left:auto}}.mg-t:last-child{{margin-right:auto}}
+.mg-t{{flex:0 0 auto;white-space:nowrap;line-height:1;padding:12px clamp(7px,0.9vw,15px);text-decoration:none;color:var(--ink);font-weight:700;font-size:clamp(12.5px,0.95vw,14.5px);border-bottom:3px solid transparent}}
 .mg-t:hover{{color:var(--coral)}}
 .mg-t.on{{color:var(--coral);border-bottom-color:var(--coral)}}
-.mg-right{{display:flex;align-items:center;gap:8px}}
+.mg-right{{display:flex;align-items:center;gap:8px;flex:0 0 auto}}
 .mg-ic{{height:36px;min-width:36px;border:1px solid #EADFCE;background:#fff;border-radius:10px;display:grid;place-items:center;font-size:15px;cursor:pointer;text-decoration:none;color:var(--ink)}}
 .mg-ic:hover{{background:#FBF3E4}}
 .mg-allbtn{{width:auto;padding:0 10px;display:flex;align-items:center;gap:4px}}
@@ -150,6 +152,7 @@ body.mg-open .mg-mob{{transform:none}}
 .mg-mob details{{border-bottom:1px solid #F0E6D2}}
 .mg-mob summary{{padding:13px 16px;font-weight:800;cursor:pointer;list-style:none}}
 .mg-mob details a{{display:block;padding:9px 26px;text-decoration:none;color:#5a4a35;font-size:14px}}
+@media(max-width:1450px){{.mg-brand small{{display:none}}}}
 @media(max-width:960px){{
 .mg-nav,.mg-cta,.mg-allbtn{{display:none}}.mg-hamb{{display:grid}}
 .mg-brand small{{display:none}}
