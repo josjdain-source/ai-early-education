@@ -62,3 +62,4 @@ data/production_assets.json
 data/trash_manifest.json
 logs/asset_delete.log
 logs/video_cleanup.log
+products/
