@@ -9,7 +9,7 @@
   "shorts": [
     {
       "id": "jobs-10x-market",
-      "final_title": "반도체만 보다간 놓칩니다 — AI '10배 시장'이 열린다",
+      "final_title": "반도체 다음, '100년 만의 기회'가 열립니다 (AI 10배 시장)",
       "beats": [
         {
           "role": "hook",
@@ -25,39 +25,45 @@
         },
         {
           "role": "fact",
-          "head": "2경이라는 추정",
-          "text": "국회 브리핑에선, 개발도상국 미충족 의료 시장만 2경이라는 추정까지 나왔습니다.",
-          "prompt": "a globe with vast underserved regions lighting up as medical AI services reach them, enormous scale of opportunity, hopeful aerial"
+          "head": "왜 2경인가",
+          "text": "개발도상국은 의사도 병원도 부족합니다. 이 미충족 의료 시장만 2경이라는 추정이, 국회 브리핑에서 나왔습니다.",
+          "prompt": "vast regions of the developing world with long queues outside a single small clinic, enormous unmet medical need stretching to the horizon, poignant but hopeful scale"
         },
         {
           "role": "fact",
-          "head": "UN 기구 6곳 서명",
-          "text": "실제로 UN 기구 여섯 곳이 한국과 협력 의향서에 서명했습니다. 판이 한국으로 옵니다.",
-          "prompt": "six international organization documents being signed and stacked as a path of light leads toward the korean peninsula, momentum and legitimacy, cinematic"
+          "head": "한국이 유리한 이유",
+          "text": "한국엔 뛰어난 의료 인프라와 인력, 그리고 AI가 있습니다. 유엔 기구 여섯 곳도 한국과 협력 의향서에 서명했습니다.",
+          "prompt": "korea's advanced hospital system and skilled medical staff combined with AI technology, six international cooperation documents being signed, credibility and momentum, cinematic"
         },
         {
           "role": "hook",
-          "head": "직업이 바뀐다",
-          "text": "그럼 아이들의 직업은요? 칩 만드는 사람보다, AI로 병원과 학교를 바꾸는 사람이 필요해집니다.",
-          "prompt": "a young korean professional redesigning a hospital workflow on a large screen with AI tools, a new kind of job in action, confident modern"
+          "head": "협력 = 시장이 열린다",
+          "text": "개발도상국과 협력해 이 전환을 한국이 맡으면, 2경 시장이 한국 기업의 무대가 됩니다.",
+          "prompt": "korean AI medical systems being deployed across developing nations, bridges of light connecting korea to the world, a vast new stage opening for korean companies, epic hopeful"
+        },
+        {
+          "role": "hook",
+          "head": "100년 만의 기회",
+          "text": "이래서 이걸, 100년 만에 온 기회라고 부릅니다.",
+          "prompt": "a once-in-a-century door of opportunity opening over the korean peninsula, brilliant light pouring through, historic moment, epic monumental scale, hopeful"
         },
         {
           "role": "fact",
-          "head": "필요한 건 질문力",
-          "text": "그 일의 자격은 코딩보다 먼저, 문제를 찾고 AI에게 다시 묻는 힘입니다.",
-          "prompt": "a korean child and a young adult side by side asking sharp questions to an AI interface, thought bubbles turning into solutions, learning that leads to work"
+          "head": "국내 일자리로 돌아온다",
+          "text": "그 일은 국내 일자리로 돌아옵니다. AI 의료 시스템을 만들고, 운영하고, 수출하는 사람들.",
+          "prompt": "busy korean offices and labs hiring young professionals who build operate and export AI healthcare systems, jobs multiplying at home, energetic bright workplace"
         },
         {
           "role": "cta",
-          "head": "10배 시장의 인재",
-          "text": "10배 시장에서 일할 아이, 오늘부터 준비할 수 있습니다. 방법은 프로필 링크에.",
-          "prompt": "a confident korean student stepping onto a glowing path that leads from a desk at home toward a skyline of future industries, triumphant golden hour"
+          "head": "준비된 사람의 몫",
+          "text": "100년 만의 기회, 그 일자리는 준비된 사람의 몫입니다. AI를 부리는 법, 이 채널에서.",
+          "prompt": "a confident young korean professional stepping toward a skyline of new industries with AI tools in hand, opportunity claimed by the prepared, triumphant golden hour"
         }
       ],
       "desc_lines": [
-        "다들 반도체만 볼 때, 의료·금융·교육의 AI 전환이라는 더 큰 시장이 열리고 있습니다. 국회 브리핑에서 나온 '개도국 의료 2경' 추정, UN 기구 6곳 협력 의향서 서명 — 판이 한국으로 옵니다. 아이의 직업은 여기서 나옵니다.",
-        "▶ 오늘의 10분 수업 https://ai-early-education.pages.dev/daily-class/today",
-        "#AI시장 #미래직업 #AI교육 #반도체 #Shorts"
+        "다들 반도체만 볼 때 — 개발도상국은 의사도 병원도 부족합니다. 이 미충족 의료 시장만 2경이라는 추정(국회 브리핑). 한국의 의료 인프라·인력·AI로 이 전환을 맡으면, 2경 시장이 한국 기업의 무대가 되고 그 일은 국내 일자리로 돌아옵니다. 유엔 기구 6곳 협력 의향서 서명. 이래서 '100년 만에 온 기회'라고 부릅니다.",
+        "▶ AI를 부리는 법 https://ai-early-education.pages.dev/daily-class/today",
+        "#AI시장 #일자리 #의료AI #반도체 #Shorts"
       ],
       "tags": [
         "AI시장",
