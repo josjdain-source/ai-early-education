@@ -88,6 +88,8 @@ pre{white-space:pre-wrap;background:#f5f5f5;border-radius:8px;padding:12px;font-
     <select id="fType"><option value="">형식: 전체</option><option value="longform">롱폼</option><option value="short">쇼츠</option></select>
     <select id="fSort"><option value="date">날짜순</option><option value="views">조회수순</option></select>
     <input class="search" id="fSearch" placeholder="제목 검색…">
+    <input type="date" id="fDate" title="날짜별 보기">
+    <button class="btn" onclick="fDate.value='';render()" title="날짜 지우기">✕날짜</button>
     <div class="spacer"></div>
     <button class="btn" onclick="act('/api/verify',{},'공개상태 검증 중…')">🔒 공개상태 검증</button>
     <button class="btn" onclick="act('/api/stats',{},'통계 불러오는 중…')">📊 조회수 새로고침</button>
@@ -112,9 +114,11 @@ function esc(s){return (s||"").replace(/[<>&]/g,c=>({"<":"&lt;",">":"&gt;","&":"
 function inTab(v){switch(TAB){case"all":return true;case"longform":return v.video_type=="longform";case"short":return v.video_type=="short";case"ready":return v.upload_status=="ready_to_upload";case"private":return v.upload_status=="uploaded_private";case"published":return v.upload_status=="published"||v.public_status=="public";case"hp":return v.homepage_status=="connected";case"err":return v.upload_status=="quota_exceeded"||v.upload_status=="failed";case"cand":return !!CANDS[v.video_id];}return true}
 function render(){
   if(TAB=="trash") return renderTrash();
-  const co=fCountry.value,ty=fType.value,q=fSearch.value.trim();
-  let rows=DATA.filter(v=>inTab(v)&&(!RECENT12||(v.age_h!=null&&v.age_h<=12))&&(!co||v.country==co)&&(!ty||v.video_type==ty)&&(!q||(v.title||"").includes(q)));
-  rows.sort((a,b)=> fSort.value=="views" ? (b.views||0)-(a.views||0) : (b.created||"").localeCompare(a.created||""));
+  const co=fCountry.value,ty=fType.value,q=fSearch.value.trim(),dt=fDate.value;
+  let rows=DATA.filter(v=>inTab(v)&&(!RECENT12||(v.age_h!=null&&v.age_h<=12))&&(!co||v.country==co)&&(!ty||v.video_type==ty)&&(!q||(v.title||"").includes(q))&&(!dt||(v.created||"").startsWith(dt)));
+  rows.sort((a,b)=>{const P=u=>(u=="ready_to_upload"||u=="local")?0:(u=="uploaded_private"?1:2);
+    const pa=P(a.upload_status),pb=P(b.upload_status); if(pa!=pb) return pa-pb;
+    return fSort.value=="views" ? (b.views||0)-(a.views||0) : (b.created||"").localeCompare(a.created||"");});
   document.getElementById("empty").style.display=rows.length?"none":"block";
   document.getElementById("rows").innerHTML=rows.map(v=>{
     const vert=v.video_type=="short";
@@ -187,6 +191,6 @@ async function meta(id){const r=await fetch('/api/meta?id='+id);const v=await r.
 function openM(h){document.getElementById('mbody').innerHTML=h;document.getElementById('modal').classList.add('show')}
 function closeM(){document.getElementById('modal').classList.remove('show');document.getElementById('mbody').innerHTML=''}
 document.getElementById('modal').onclick=e=>{if(e.target.id=='modal')closeM()};
-["fCountry","fType","fSort","fSearch"].forEach(id=>document.getElementById(id).addEventListener('input',render));
+["fCountry","fType","fSort","fSearch","fDate"].forEach(id=>document.getElementById(id).addEventListener('input',render));
 loadChannels();load();
 </script></body></html>
