@@ -354,6 +354,153 @@
         "지역일자리",
         "AI교육"
       ]
+    },
+    {
+      "id": "electric-nation-korea",
+      "final_title": "석탄은 영국, 석유는 미국, 전기는 한국일 수 있는 이유",
+      "speed": 1.5,
+      "beats": [
+        {
+          "role": "hook",
+          "head": "석탄→석유→전기",
+          "text": "석탄의 시대는 영국이, 석유의 시대는 미국이 표준을 만들었습니다. 지금은 전기의 시대가 시작되고 있습니다.",
+          "prompt": "a symbolic timeline of industrial eras — coal smoke, then oil rigs, then glowing electric energy over a korean city skyline, epic editorial documentary, wide"
+        },
+        {
+          "role": "fact",
+          "head": "전기는 데이터다",
+          "text": "전기차, 드론, 로봇, 스마트팜. 전기가 흐르는 곳에선 신호를 읽고 예측하고 제어할 수 있습니다. 석유는 하지 못하는 일입니다.",
+          "prompt": "a network of electric-powered devices — car, drone, robot, smart farm — connected by glowing data lines over a korean landscape, futuristic clean editorial"
+        },
+        {
+          "role": "fact",
+          "head": "가격이 거꾸로 간다",
+          "text": "원유는 캘수록 비싸지지만, 태양광과 배터리는 생산량이 두 배가 될 때마다 값이 계속 떨어집니다. 수십 년간 깨지지 않은 흐름입니다.",
+          "prompt": "an abstract data visualization: a rising oil extraction cost curve versus a steadily falling solar panel and battery price curve, clean symbolic infographic style, no real numbers"
+        },
+        {
+          "role": "hook",
+          "head": "그래서 나온 초대형 베팅",
+          "text": "국내 반도체 기업들이 앞으로 10년간 AI 인프라에 쏟기로 한 투자, 보도에 따르면 수천조 원 규모입니다.",
+          "prompt": "massive semiconductor fabs and AI data centers under construction in korea, epic scale investment, wide aerial documentary"
+        },
+        {
+          "role": "fact",
+          "head": "그 돈이 어디로 가나",
+          "text": "이 투자로 걷힐 법인세만으로도, 전에 없던 세수가 생깁니다. 그 돈을 AI 시대의 사회 실험에 쓸 수 있다는 이야기가 나옵니다.",
+          "prompt": "tax revenue flowing from a giant factory into public social safety net symbols — school, hospital, welfare icons, hopeful civic wide scene"
+        },
+        {
+          "role": "fact",
+          "head": "AI가 일자리를 대신하면",
+          "text": "생산은 늘어도 사람이 일자리를 잃으면, 물건을 살 사람이 사라집니다. 그래서 여러 나라가 AI 기본사회 같은 실험을 준비합니다.",
+          "prompt": "an automated dark factory with no lights on contrasted with idle workers outside, thoughtful economic concern, balanced symbolic wide, not alarmist"
+        },
+        {
+          "role": "hook",
+          "head": "한국이 실험대가 된다",
+          "text": "다른 나라가 지켜보는 동안, 한국은 AI 시대의 사회 시스템을 먼저 실험해볼 자원을 갖게 됐습니다.",
+          "prompt": "korea highlighted on a glowing globe as a testbed laboratory for a new social model, other countries watching, hopeful symbolic wide"
+        },
+        {
+          "role": "fact",
+          "head": "그리고 20억 명",
+          "text": "한국 인구는 오천만. 하지만 AI 시대 주도권을 잡으려면 전 세계가 함께 쓰는 플랫폼이 필요합니다. 그래서 교육과 의료가 부족한 나라들과 손잡는 전략이 나옵니다.",
+          "prompt": "korea connected by glowing digital lines to african and southeast asian regions, education and medical AI icons, collaborative warm tone, not colonial, wide"
+        },
+        {
+          "role": "hook",
+          "head": "그런데 3~4년 뒤가 문제",
+          "text": "청년 실업이 AI로 더 커질 거라는 경고가 나옵니다. 지금 대비하지 않으면, 이 모든 기회도 소용없습니다.",
+          "prompt": "a young korean facing an uncertain job market, the shadow of AI automation over an office, serious but hopeful tone, back view no face closeup, wide"
+        },
+        {
+          "role": "cta",
+          "head": "그래서 교육이 먼저다",
+          "text": "국가의 전략도 중요하지만, 결국 그 안에서 살아갈 우리 아이가 AI를 이해하고 다룰 수 있어야 합니다. 지금부터 준비해야 합니다.",
+          "prompt": "a child confidently using an AI tool with a parent nearby, warm golden hour light, hopeful future in a korean home, uplifting finale"
+        }
+      ],
+      "desc_lines": [
+        "석탄의 시대는 영국, 석유의 시대는 미국이 표준을 만들었습니다. 지금은 전기의 시대 — 전기는 에너지이자 데이터라서, 태양광·배터리는 원유와 반대로 생산량이 늘수록 값이 떨어집니다. 대규모 AI 인프라 투자와 그로 인한 세수를 사회 실험에 쓰자는 논의, 개발도상국과 손잡는 '글로벌 AI 허브' 전략까지 — 하지만 3~4년 뒤 청년 실업 위기 경고도 함께 나옵니다. 결국 우리 아이가 AI를 이해하고 다루는 힘이 먼저입니다.",
+        "🎯 나이별 AI교육 로드맵 https://ai-early-education.pages.dev/levels",
+        "#AI시대 #전기국가 #글로벌AI허브 #청년일자리 #AI교육 #Shorts"
+      ],
+      "tags": [
+        "AI시대",
+        "전기국가",
+        "글로벌AI허브",
+        "청년일자리",
+        "AI교육"
+      ]
+    },
+    {
+      "id": "ai-sovereignty-mega-project",
+      "final_title": "4천조 AI 메가프로젝트, 진짜 이유는 AI 자주국가입니다",
+      "speed": 1.45,
+      "beats": [
+        {
+          "role": "hook",
+          "head": "4천조라는 숫자",
+          "text": "한국에서 4천조 원대 AI 메가프로젝트가 이야기됩니다. 너무 큰 숫자라 현실감이 없을 수 있습니다.",
+          "prompt": "an overwhelming scale semiconductor fab and AI data center construction site in korea, epic aerial documentary illustration, wide"
+        },
+        {
+          "role": "fact",
+          "head": "공장 몇 개의 문제가 아니다",
+          "text": "그런데 이건 반도체 공장 몇 개 더 짓자는 이야기가 아닙니다. 질문은 이것입니다. AI 시대에 한국은 누구의 AI를 쓰게 될까요?",
+          "prompt": "a korean peninsula map at a crossroads with multiple glowing AI signal paths branching outward, editorial symbolic wide"
+        },
+        {
+          "role": "fact",
+          "head": "미국 AI는 강하다, 그러나",
+          "text": "미국 AI는 강합니다. 하지만 국가안보, 수출통제, 기업 정책이 바뀌면 어느 날 막힐 수 있습니다.",
+          "prompt": "a bright powerful glowing AI network suddenly blocked by a symbolic gate, balanced non-hostile editorial tone, clean wide"
+        },
+        {
+          "role": "fact",
+          "head": "중국 AI도 빠르다, 그러나",
+          "text": "중국 AI도 빠르게 성장합니다. 하지만 의료, 교육, 금융, 행정 같은 국가 핵심 시스템을 중국 AI에 맡기는 건 불안합니다.",
+          "prompt": "a rapidly growing AI network with a half-open trust lock symbol above it, balanced symbolic tone not disparaging, clean editorial wide"
+        },
+        {
+          "role": "hook",
+          "head": "그럼 빌려만 쓸까",
+          "text": "그렇다면 한국은 남의 AI만 빌려 쓰는 나라로 남아야 할까요? 아닙니다.",
+          "prompt": "korea rising as a third pillar between two towering AI pillars, standing on its own, strong contrast symbolic wide"
+        },
+        {
+          "role": "fact",
+          "head": "AI 자주국가란",
+          "text": "한국은 AI 자주국가가 되어야 합니다. 남의 AI가 막혀도, 교육과 의료와 행정과 산업이 멈추지 않는 나라입니다.",
+          "prompt": "a self-reliant infrastructure network connecting semiconductors, power grid, data centers, companies, workforce and public services into one sturdy korean structure, editorial wide"
+        },
+        {
+          "role": "hook",
+          "head": "5200만 명이 아니다",
+          "text": "그리고 5200만 명만 보면 안 됩니다.",
+          "prompt": "a small korea population icon expanding outward into a vast global digital network covering the whole earth, symbolic wide"
+        },
+        {
+          "role": "cta",
+          "head": "제3의 AI 플랫폼",
+          "text": "미국도 중국도 불안한 나라들이 믿고 쓸 수 있는 제3의 AI 플랫폼. 그게 한국 글로벌 AI 허브의 진짜 의미입니다.",
+          "prompt": "countries from the global south, southeast asia, africa and the middle east connecting to korea through trusted glowing light on a globe, golden hour uplifting finale"
+        }
+      ],
+      "desc_lines": [
+        "보도·대화록 기준 4천조 원대로 거론되는 국내 AI 메가프로젝트, 진짜 이유는 반도체 공장 증설이 아니라 'AI 자주국가' 확보입니다. 미국 AI는 강하지만 수출통제·정책 변경으로 막힐 수 있고, 중국 AI는 빠르지만 의료·교육·금융 같은 핵심 시스템에 쓰기엔 신뢰 문제가 있습니다. 그 사이에서 한국이 제3의 신뢰 가능한 AI 파트너가 되자는 것 — 글로벌 AI 허브는 건물이 아니라, 한국 내수 5200만 명이 아닌 10억~20억 디지털 인구가 믿고 접속할 공공 인프라입니다.",
+        "※미국·중국 AI를 공격·폄하하는 내용이 아니라 균형 있게 리스크를 짚는 콘텐츠이며, 특정 정치인·정당과 무관합니다. 투자 규모는 보도·대화록 기준(확정 수치 아님).",
+        "🎯 나이별 AI교육 로드맵 https://ai-early-education.pages.dev/levels",
+        "#AI자주국가 #글로벌AI허브 #AI메가프로젝트 #반도체 #AI시대 #Shorts"
+      ],
+      "tags": [
+        "AI자주국가",
+        "글로벌AI허브",
+        "AI메가프로젝트",
+        "반도체",
+        "AI시대"
+      ]
     }
   ]
 }

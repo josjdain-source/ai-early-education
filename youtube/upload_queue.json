@@ -832,7 +832,8 @@
       "studio_url": "https://studio.youtube.com/video/Q6bJIywdWwQ/edit",
       "visibility": "private",
       "uploaded_at": "2026-07-06 04:57",
-      "poster_path": "assets/ai-edu-shorts/sframe/shorts-parent-001_0.png"
+      "poster_path": "assets/ai-edu-shorts/sframe/shorts-parent-001_0.png",
+      "local_deleted": true
     },
     {
       "video_id": "aiedu-shorts-parent-002",
@@ -939,7 +940,8 @@
       "studio_url": "https://studio.youtube.com/video/ZEX-WnpagPw/edit",
       "visibility": "private",
       "uploaded_at": "2026-07-06 20:19",
-      "error_message": ""
+      "error_message": "",
+      "local_deleted": true
     },
     {
       "video_id": "aiedu-shorts-parent-005",
@@ -972,7 +974,8 @@
       "studio_url": "https://studio.youtube.com/video/PNY1loHISLQ/edit",
       "visibility": "private",
       "uploaded_at": "2026-07-06 07:06",
-      "error_message": ""
+      "error_message": "",
+      "local_deleted": true
     },
     {
       "video_id": "aiedu-free-programs-longform",
@@ -1115,7 +1118,8 @@
       "studio_url": "https://studio.youtube.com/video/mbhAKfIt_w0/edit",
       "visibility": "private",
       "uploaded_at": "2026-07-07 01:05",
-      "error_message": ""
+      "error_message": "",
+      "local_deleted": true
     },
     {
       "video_id": "re100-belt-short",
@@ -1362,6 +1366,34 @@
       "description": "울산에 약 5000억 원 규모 오페라하우스형 공연장이 추진된다고 보도됩니다. 문화시설도 필요합니다. 다만 이 규모라면 대안 비용을 따져야 합니다. 가정해서 기업당 100억이면 코스닥 후보 기업 50개, 200억이면 25개를 육성할 수 있는 돈입니다(단순 나눗셈 가정). 그 기업들이 청년을 뽑고 중년을 재교육하면 일자리·세수·지역경제가 매년 바뀝니다. 건물에 묶을 것인가, 사람과 기업에 심을 것인가.\n\n특히 청년에게 저 예산은 이 지역에서 일할 수 있었던 일자리, 그 기회와 맞바꾼 돈입니다. ※특정 지자체 비판이 아니라 대안 비용을 함께 보자는 시민의 질문. 수치는 가정 기준.\n\n가정/출처: 사업비 약 5000억(보도) · 코스닥은 요건 충족 필요 → '후보 기업 육성' 표현\n\n#지역경제 #울산 #오페라하우스 #지역기업 #청년일자리 #AI #Shorts",
       "source": "production/ulsan_short_plan.json",
       "note": "5000억 대안비용 비교. 문화 인정·가정 표기·코스닥 후보 표현·정치/특정지자체 비하 0. 청년 기회비용 엔딩. 업로드는 사람 승인."
+    },
+    {
+      "video_id": "ai-sovereignty-mega-project",
+      "title": "4천조 AI 메가프로젝트, 진짜 이유는 AI 자주국가입니다",
+      "video_type": "short",
+      "series": "S10_edu_to_jobs",
+      "mp4_path": "assets/ai-jobs-series/render/ai-sovereignty-mega-project.mp4",
+      "poster_path": "assets/ai-jobs-series/render/ai-sovereignty-mega-project-poster.jpg",
+      "thumbnail_path": "assets/ai-jobs-series/render/ai-sovereignty-mega-project-poster.jpg",
+      "tags": [
+        "AI자주국가",
+        "글로벌AI허브",
+        "AI메가프로젝트",
+        "반도체",
+        "AI시대"
+      ],
+      "shorts": true,
+      "category": "27",
+      "status": "ready_to_upload",
+      "upload_status": "ready_to_upload",
+      "public": false,
+      "public_status": "none",
+      "youtube_id": "",
+      "youtube_url": "",
+      "created_at": "2026-07-07",
+      "description": "보도·대화록 기준 4천조 원대로 거론되는 국내 AI 메가프로젝트, 진짜 이유는 반도체 공장 증설이 아니라 'AI 자주국가' 확보입니다. 미국 AI는 강하지만 수출통제·정책 변경으로 막힐 수 있고, 중국 AI는 빠르지만 의료·교육·금융 같은 핵심 시스템에 쓰기엔 신뢰 문제가 있습니다. 그 사이에서 한국이 제3의 신뢰 가능한 AI 파트너가 되자는 것 — 글로벌 AI 허브는 건물이 아니라, 한국 내수 5200만 명이 아닌 10억~20억 디지털 인구가 믿고 접속할 공공 인프라입니다.\n\n※미국·중국 AI를 공격·폄하하는 내용이 아니라 균형 있게 리스크를 짚는 콘텐츠이며, 특정 정치인·정당과 무관합니다. 투자 규모는 보도·대화록 기준(확정 수치 아님).\n\n🎯 나이별 AI교육 로드맵 https://ai-early-education.pages.dev/levels\n\n#AI자주국가 #글로벌AI허브 #AI메가프로젝트 #반도체 #AI시대 #Shorts",
+      "source": "production/ai_jobs_series_plan.json",
+      "note": "교육↔직업 연결 3부작. 발언 인용 원칙·인물 언급 없음. 업로드는 사람 승인."
     }
   ],
   "_schema": "studio-v1"
