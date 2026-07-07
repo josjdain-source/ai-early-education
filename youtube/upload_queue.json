@@ -1199,16 +1199,21 @@
       ],
       "shorts": true,
       "category": "27",
-      "status": "ready_to_upload",
-      "upload_status": "ready_to_upload",
+      "status": "uploaded_private",
+      "upload_status": "uploaded_private",
       "public": false,
-      "public_status": "none",
-      "youtube_id": "",
-      "youtube_url": "",
+      "public_status": "private",
+      "youtube_id": "6tBQQF03y3U",
+      "youtube_url": "https://youtu.be/6tBQQF03y3U",
       "created_at": "2026-07-07",
       "description": "매년 멀쩡한 도로를 또 갈아엎는 예산, 청년은 일자리 없어 떠나고 어르신껜 단기 공공일자리만 돌아오는 악순환. 그 돈을 지역 AI 기업·공공 일자리에 투자하면? 지역에서 가르치고 지역에서 뽑아 청년이 돌아오고, 사람이 몰려 경제가 살아나면, 그 도시를 돌보는 어르신 일자리도 단기에서 안정된 일자리로 바뀝니다. 청년도 어르신도 온 세대가 함께 버는 선순환 — 낭비를 미래로 돌리자는 제안입니다.\n\n🎯 나이별 AI교육 로드맵 https://ai-early-education.pages.dev/levels\n\n#지역일자리 #세대상생 #청년일자리 #노인일자리 #AI교육 #Shorts",
       "source": "production/ai_jobs_series_plan.json",
-      "note": "교육↔직업 연결 3부작. 발언 인용 원칙·인물 언급 없음. 업로드는 사람 승인."
+      "note": "교육↔직업 연결 3부작. 발언 인용 원칙·인물 언급 없음. 업로드는 사람 승인.",
+      "updated_at": "auto",
+      "studio_url": "https://studio.youtube.com/video/6tBQQF03y3U/edit",
+      "visibility": "private",
+      "uploaded_at": "2026-07-07 23:21",
+      "error_message": ""
     },
     {
       "video_id": "jobs-collab-work",
@@ -1328,6 +1333,35 @@
       "source": "production/ai_jobs_series_plan.json",
       "note": "교육↔직업 연결 3부작. 발언 인용 원칙·인물 언급 없음. 업로드는 사람 승인.",
       "updated_at": "auto"
+    },
+    {
+      "video_id": "ulsan-500b-short",
+      "title": "울산 5000억, 오페라하우스일까 청년이 일할 기업 50개일까?",
+      "video_type": "short",
+      "series": "S10_edu_to_jobs",
+      "mp4_path": "assets/ulsan-short/render/ulsan-500b-short.mp4",
+      "poster_path": "assets/ulsan-short/render/ulsan-500b-short-poster.jpg",
+      "thumbnail_path": "assets/ulsan-short/render/ulsan-500b-short-poster.jpg",
+      "tags": [
+        "지역경제",
+        "울산",
+        "오페라하우스",
+        "지역기업",
+        "청년일자리",
+        "AI"
+      ],
+      "shorts": true,
+      "category": "27",
+      "status": "ready_to_upload",
+      "upload_status": "ready_to_upload",
+      "public": false,
+      "public_status": "none",
+      "youtube_id": "",
+      "youtube_url": "",
+      "created_at": "2026-07-08",
+      "description": "울산에 약 5000억 원 규모 오페라하우스형 공연장이 추진된다고 보도됩니다. 문화시설도 필요합니다. 다만 이 규모라면 대안 비용을 따져야 합니다. 가정해서 기업당 100억이면 코스닥 후보 기업 50개, 200억이면 25개를 육성할 수 있는 돈입니다(단순 나눗셈 가정). 그 기업들이 청년을 뽑고 중년을 재교육하면 일자리·세수·지역경제가 매년 바뀝니다. 건물에 묶을 것인가, 사람과 기업에 심을 것인가.\n\n특히 청년에게 저 예산은 이 지역에서 일할 수 있었던 일자리, 그 기회와 맞바꾼 돈입니다. ※특정 지자체 비판이 아니라 대안 비용을 함께 보자는 시민의 질문. 수치는 가정 기준.\n\n가정/출처: 사업비 약 5000억(보도) · 코스닥은 요건 충족 필요 → '후보 기업 육성' 표현\n\n#지역경제 #울산 #오페라하우스 #지역기업 #청년일자리 #AI #Shorts",
+      "source": "production/ulsan_short_plan.json",
+      "note": "5000억 대안비용 비교. 문화 인정·가정 표기·코스닥 후보 표현·정치/특정지자체 비하 0. 청년 기회비용 엔딩. 업로드는 사람 승인."
     }
   ],
   "_schema": "studio-v1"
