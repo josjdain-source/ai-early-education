@@ -74,6 +74,12 @@ MEGA=[
    ("💬 자막·오디오 편집","/free-programs.html#subtitle"),
    ("💻 로컬 AI 실행","/free-programs.html#localai"),
   ],"전체 프로그램 보기"),
+ ("paid","유료 프로그램","/paid-programs.html",[
+   ("🎬 쇼츠 자동 빌더","/paid-programs.html#shorts-builder"),
+   ("📽 영상 자동 생성기","/paid-programs.html#video-maker"),
+   ("✂️ 캡컷 에이전트","/paid-programs.html#capcut-agent"),
+   ("📝 블로그 레이더","/paid-programs.html#blog-radar"),
+  ],"전체 보기 (모두 ₩9,900)"),
 ]
 def header(active,base):
     tops="".join(f'<a class="mg-t{" on" if k==active else ""}" data-k="{k}" href="{h}">{t}</a>' for k,t,h,_,_ in MEGA)
@@ -310,6 +316,15 @@ SECTIONS={
    ("🇩🇪 독일 부모 자료","/parents/germany.html"),
    ("🇯🇵 일본 부모 자료","/parents/japan.html"),
    ("자주 묻는 질문","/parent-resources.html#faq"),
+ ]),
+ "paid":("유료 프로그램 · 모두 ₩9,900",[
+   ("전체 안내","/paid-programs.html"),
+   ("🎬 쇼츠 자동 빌더","/paid-programs.html#shorts-builder"),
+   ("📽 영상 자동 생성기","/paid-programs.html#video-maker"),
+   ("✂️ 캡컷 에이전트","/paid-programs.html#capcut-agent"),
+   ("📝 네이버 블로그 레이더","/paid-programs.html#blog-radar"),
+   ("🎨 밈 카툰 변환기","/paid-programs.html#meme-cartoon"),
+   ("🃏 12주 워크북 부모 해설판","/paid-programs.html#workbook-guide"),
  ]),
  "free":("무료 프로그램",[
    ("전체 안내","/free-programs.html"),
@@ -849,7 +864,7 @@ def free_programs():
 이 페이지는 아이와 AI교실 콘텐츠 제작에 쓰는 <b>무료 또는 로컬 실행 도구</b>를 정리한 곳입니다.
 단순 링크 모음이 아니라, 각 프로그램을 <b>어디에 쓰는지, 어떤 사람이 쓰면 좋은지, 공식 링크는 어디인지</b> 함께 안내합니다.
 설치 전에는 각 프로그램의 공식 안내와 라이선스를 반드시 확인하세요.</div>
-<p style="font-size:12.5px;color:var(--muted);margin-top:8px">👨‍👩‍👧 아이와 함께 쓰는 질문카드·활동지는 <a href="/parent-resources.html" style="color:var(--coral);font-weight:700">부모 자료실</a>에 있습니다. 이 방은 '만드는 사람'용 도구방입니다.</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:8px">👨‍👩‍👧 아이와 함께 쓰는 질문카드·활동지는 <a href="/parent-resources.html" style="color:var(--coral);font-weight:700">부모 자료실</a>에 있습니다. 이 방은 '만드는 사람'용 도구방입니다. &nbsp;💾 우리가 직접 개발한 도구는 <a href="/paid-programs.html" style="color:var(--coral);font-weight:700">유료 프로그램(모두 9,900원)</a>에.</p>
 {secs}
 <div class="callout" style="margin-top:26px;background:#F4F7FB;border-color:#CADCF0;font-size:13px">
 이 페이지의 도구들은 아이와 AI교실이 콘텐츠 제작과 교육 실습을 위해 참고하는 무료 또는 로컬 실행 도구입니다.
@@ -877,6 +892,79 @@ def free_programs():
 </style></main>"""
     return page("free","","무료 AI 프로그램 모음 | 아이와 AI교실",
         "아이와 AI교실이 실제 콘텐츠 제작에 활용하는 무료·로컬 AI 도구를 소개합니다. TTS, 영상 편집, 자막, 오디오 편집, 로컬 이미지 생성 도구를 용도별로 정리했습니다.", body)
+
+
+
+# ---------- 유료 프로그램 (우리가 개발한 도구 판매 · 모두 ₩9,900) ----------
+PAID_PROGRAMS = [
+ dict(pid="shorts-builder", icon="🎬", name="쇼츠 자동 빌더", category="영상 자동화",
+   short="대본 JSON 한 장을 넣으면 세로 1080×1920 쇼츠 mp4가 자동 조립됩니다.",
+   what="파이썬 스크립트 + 대본 템플릿 + 설치·사용 가이드(PDF) + 예제 프로젝트 1편",
+   use="이 채널의 쇼츠가 실제로 이 도구로 만들어집니다 — 이미지·TTS·자막·디졸브·줌 자동.",
+   need="Windows · Python · ffmpeg · (이미지 생성 시) ComfyUI+GPU 또는 준비된 이미지"),
+ dict(pid="video-maker", icon="📽", name="영상 자동 생성기", category="영상 자동화",
+   short="주제 한 줄을 넣으면 대본→일러스트→내레이션→조립까지 롱폼 영상이 나옵니다.",
+   what="파이썬 파이프라인 + 실행 배치 + 가이드(PDF)",
+   use="'세계 AI교육' 롱폼들이 이 파이프라인 산출물입니다. 사람 손 0으로 45~55초 영상.",
+   need="Windows · Python · ffmpeg · Ollama(로컬 LLM) · ComfyUI+GPU"),
+ dict(pid="capcut-agent", icon="✂️", name="캡컷 에이전트", category="편집 자동화",
+   short="한국어 토킹 영상에서 무음 구간 컷·자막·잔말 후보·점프컷 초안을 자동으로.",
+   what="로컬 서버 프로그램 + 실행 배치 + 가이드(PDF)",
+   use="말하는 영상 편집 시간을 크게 줄여줍니다. 미리보기 mp4와 캡컷 초안 생성.",
+   need="Windows · Python · ffmpeg · CapCut(선택)"),
+ dict(pid="blog-radar", icon="📝", name="네이버 블로그 레이더", category="글쓰기 도구",
+   short="붙여넣은 글을 5초 이해 점수로 진단하고 제목·이미지 위치·10단 재구성을 제안.",
+   what="로컬 CLI 도구 + 가이드(PDF)",
+   use="크롤링 없이 텍스트만으로 글 구조를 진단 — 블로그·브런치 글 다듬기에.",
+   need="Windows · Python"),
+ dict(pid="meme-cartoon", icon="🎨", name="밈 카툰 변환기", category="이미지 도구",
+   short="사진을 두꺼운 선의 밈 카툰 패널(말풍선 포함) PNG로 변환합니다.",
+   what="파이썬 도구 + 프리셋 + 가이드(PDF)",
+   use="썸네일·SNS 짤 제작에. 화자 자동 인식 말풍선 꼬리.",
+   need="Windows · Python (기본 변환은 GPU 불필요)"),
+ dict(pid="workbook-guide", icon="🃏", name="12주 워크북 부모 해설판", category="교육 자료",
+   short="무료 12주 워크북의 주차별 부모 해설·대화 예시·체크시트를 담은 확장판 PDF.",
+   what="부모 해설판 PDF(주차별 해설+대화 스크립트+체크시트)",
+   use="무료판으로 시작하고, 아이 반응이 좋으면 해설판으로 깊게.",
+   need="PDF 뷰어 (인쇄 권장)"),
+]
+
+def paid_programs():
+    MAIL = "2011kstudentlife@gmail.com"
+    def card(p):
+        subject = f"[구매] {p['name']} (9,900원)"
+        body = f"주문 상품: {p['name']} / 9,900원%0A입금 안내 부탁드립니다.%0A(전달받을 이메일: )"
+        mailto = f"mailto:{MAIL}?subject={subject}&body={body}"
+        return f"""<div class="fp-card" id="{p['pid']}" style="scroll-margin-top:90px">
+<div class="fp-ico">{p['icon']}<span>{p['category']}</span></div>
+<div class="fp-body">
+<h3>{p['name']} <span class="pp-price">₩9,900</span></h3>
+<p class="fp-short">{p['short']}</p>
+<div class="fp-row"><b>구성</b>{p['what']}</div>
+<div class="fp-row"><b>이런 데 씁니다</b>{p['use']}</div>
+<div class="fp-row"><b>필요 환경</b>{p['need']}</div>
+<div class="fp-links">
+<a class="btn btn-primary" href="{mailto}">📩 이메일로 주문 (₩9,900)</a>
+</div></div></div>"""
+    cards = "".join(card(p) for p in PAID_PROGRAMS)
+    body = f"""<main><div class="wrap" style="max-width:880px">
+<section class="page-hero" style="padding:36px 0 14px"><div class="pill">💾 직접 개발 · 디지털 상품</div>
+<h1>유료 프로그램</h1>
+<p style="color:var(--navy2);font-weight:600">이 채널의 콘텐츠를 실제로 만드는 도구들 — 부담 없이, <b>모두 9,900원</b></p></section>
+<section class="block" style="padding:6px 0">
+<div class="callout">여기 있는 도구는 전부 <b>아이와 AI교실이 직접 개발해 실제 제작에 쓰는 프로그램</b>입니다.
+구매하면 프로그램(스크립트/실행 파일)과 설치·사용 가이드를 <b>이메일로</b> 보내드립니다.
+아직 카드 결제 페이지가 없어 <b>이메일 주문 → 입금 안내 → 파일 전달</b> 방식으로 진행합니다.</div>
+{cards}
+<div class="callout" style="margin-top:26px;background:#F4F7FB;border-color:#CADCF0;font-size:13px">
+· 개인 개발 디지털 상품입니다. 필요 환경(파이썬·ffmpeg 등)은 각 카드에 표기했으며, 설치가 어려우면 이메일로 도와드립니다.<br>
+· 디지털 상품 특성상 <b>파일 전달 후 환불은 어렵습니다</b> — 구매 전 필요 환경을 꼭 확인해 주세요.<br>
+· 무료로 시작하고 싶다면 → <a href="/free-programs.html" style="color:var(--coral);font-weight:700">무료 프로그램</a> · 만드는 과정 영상은 <a href="/videos.html" style="color:var(--coral);font-weight:700">영상관</a>에.</div>
+</section></div>
+<style>.pp-price{{background:#E0684A;color:#fff;font-size:13px;font-weight:900;border-radius:8px;padding:2px 10px;margin-left:8px;vertical-align:middle}}</style>
+</main>"""
+    return page("paid","","유료 프로그램 · 모두 9,900원 | 아이와 AI교실",
+        "아이와 AI교실이 직접 개발해 실제 제작에 쓰는 프로그램을 부담 없는 가격(전부 9,900원)에 판매합니다. 쇼츠 자동 빌더, 영상 자동 생성기, 캡컷 에이전트, 블로그 레이더.", body)
 
 
 # ---------- 쓰기 ----------
@@ -915,6 +1003,7 @@ if __name__=="__main__":
             PC.country_body(c[0])))
     write("free-kit.html",free_kit())
     write("free-programs.html",free_programs())
+    write("paid-programs.html",paid_programs())
     import build_kids_show as KIDS
     KIDS.build_all()
     import build_competitions as COMP
