@@ -9,14 +9,67 @@
   "style_token": "semi-realistic editorial documentary illustration, warm muted urban palette, thick clean outlines, korean city and civic scenes, soft cinematic lighting, detailed, no text, no letters, no numbers, no logo",
   "negative": "photo, photorealistic, 3d render, text, letters, words, numbers, watermark, logo, western caucasian, scary, dark, ugly, deformed, blurry, deformed eyes, asymmetric eyes, closeup face, uncanny face",
   "beats": [
-    {"role":"hook","head":"5000억짜리 건물","text":"울산에 5000억짜리, 세계적인 오페라하우스형 공연장이 추진된다고 합니다.","prompt":"a grand monumental opera-house-like performing arts landmark building in a korean city, impressive scale, editorial documentary illustration, wide aerial, no people closeup"},
-    {"role":"fact","head":"문화는 필요하다","text":"물론 문화시설이 필요 없다는 말은 아닙니다. 도시엔 문화도 필요합니다.","prompt":"korean citizens warmly enjoying a concert in a performance hall, the genuine value of culture acknowledged, warm inclusive scene, mid-distance"},
-    {"role":"hook","head":"그런데, 그 돈이면","text":"하지만 질문은 해야 합니다. 5000억이면, 대신 무엇을 할 수 있을까요?","prompt":"a huge pile of public money at a fork of two roads, one leading to a single building, the other to many small company sprouts, decision metaphor, editorial wide"},
-    {"role":"fact","head":"100억씩 → 50개","text":"가정해 봅시다. 기업 하나에 백억씩 넣으면, 코스닥 후보 기업 오십 개를 키울 수 있는 돈입니다.","image_file":"C:/Users/admin/Desktop/ai-craft-kids/assets/ulsan-short/calc-50.png","fit":"contain","prompt":"(unused)","region":"kr"},
-    {"role":"fact","head":"200억씩 → 25개","text":"더 집중해서 기업당 이백억이어도, 스물다섯 개 기업을 만들 수 있습니다.","image_file":"C:/Users/admin/Desktop/ai-craft-kids/assets/ulsan-short/calc-25.png","fit":"contain","prompt":"(unused)","region":"kr"},
-    {"role":"fact","head":"그 기업이 하는 일","text":"그 기업들이 지역 청년을 뽑고, 중년을 재교육하고, AI와 제조 소프트웨어, 데이터 산업을 만들면 어떨까요?","prompt":"young and middle-aged korean workers busy at regional AI and manufacturing-software and data companies, a lively local industry ecosystem, wide bright, no face closeup"},
-    {"role":"hook","head":"건물 vs 기업","text":"오페라하우스는 도시의 이미지를 바꿀 수 있습니다. 하지만 기업은, 일자리와 세수와 지역경제를 매년 바꿉니다.","prompt":"split contrast: on one side a beautiful but static landmark building, on the other a dynamic cycle of jobs and tax and local economy turning every year, editorial symbolic"},
-    {"role":"hook","head":"이 돈은 내 일자리였다","text":"그리고 청년에게, 저 돈은 그냥 건물이 아닙니다. 내가 이 지역에서 일할 수 있었던 일자리, 그 기회와 맞바꾼 돈입니다.","prompt":"a young korean standing before an empty office desk in their hometown, the long shadow of a giant building falling over the desk as if taking the seat, poignant strong contrast, back view no face"},
-    {"role":"cta","head":"건물이냐 내 일자리냐","text":"묻습니다. 이 5000억은 도시의 랜드마크입니까, 아니면 떠나야 했던 청년의 일자리입니까? 건물에 묶을 것인가, 청년에게 심을 것인가.","prompt":"two futures side by side: a glamorous empty building versus young people working and staying in a thriving hometown paid for by the same money, the traded-off choice, golden hour powerful finale"}
+    {
+      "role": "hook",
+      "head": "5000억짜리 건물",
+      "text": "울산에 5000억짜리, 세계적인 오페라하우스형 공연장이 추진된다고 합니다.",
+      "prompt": "a grand monumental opera-house-like performing arts landmark building in a korean city, impressive scale, editorial documentary illustration, wide aerial, no people closeup",
+      "image_file": "C:/Users/admin/Desktop/ai-craft-kids/assets/ulsan-short/opera-house.jpg",
+      "fit": "contain"
+    },
+    {
+      "role": "fact",
+      "head": "문화는 필요하다",
+      "text": "물론 문화시설이 필요 없다는 말은 아닙니다. 도시엔 문화도 필요합니다.",
+      "prompt": "korean citizens warmly enjoying a concert in a performance hall, the genuine value of culture acknowledged, warm inclusive scene, mid-distance"
+    },
+    {
+      "role": "hook",
+      "head": "그런데, 그 돈이면",
+      "text": "하지만 질문은 해야 합니다. 5000억이면, 대신 무엇을 할 수 있을까요?",
+      "prompt": "a huge pile of public money at a fork of two roads, one leading to a single building, the other to many small company sprouts, decision metaphor, editorial wide"
+    },
+    {
+      "role": "fact",
+      "head": "100억씩 → 50개",
+      "text": "가정해 봅시다. 기업 하나에 백억씩 넣으면, 코스닥 후보 기업 오십 개를 키울 수 있는 돈입니다.",
+      "image_file": "C:/Users/admin/Desktop/ai-craft-kids/assets/ulsan-short/calc-50.png",
+      "fit": "contain",
+      "prompt": "(unused)",
+      "region": "kr"
+    },
+    {
+      "role": "fact",
+      "head": "200억씩 → 25개",
+      "text": "더 집중해서 기업당 이백억이어도, 스물다섯 개 기업을 만들 수 있습니다.",
+      "image_file": "C:/Users/admin/Desktop/ai-craft-kids/assets/ulsan-short/calc-25.png",
+      "fit": "contain",
+      "prompt": "(unused)",
+      "region": "kr"
+    },
+    {
+      "role": "fact",
+      "head": "그 기업이 하는 일",
+      "text": "그 기업들이 지역 청년을 뽑고, 중년을 재교육하고, AI와 제조 소프트웨어, 데이터 산업을 만들면 어떨까요?",
+      "prompt": "young and middle-aged korean workers busy at regional AI and manufacturing-software and data companies, a lively local industry ecosystem, wide bright, no face closeup"
+    },
+    {
+      "role": "hook",
+      "head": "건물 vs 기업",
+      "text": "오페라하우스는 도시의 이미지를 바꿀 수 있습니다. 하지만 기업은, 일자리와 세수와 지역경제를 매년 바꿉니다.",
+      "prompt": "split contrast: on one side a beautiful but static landmark building, on the other a dynamic cycle of jobs and tax and local economy turning every year, editorial symbolic"
+    },
+    {
+      "role": "hook",
+      "head": "이 돈은 내 일자리였다",
+      "text": "그리고 청년에게, 저 돈은 그냥 건물이 아닙니다. 내가 이 지역에서 일할 수 있었던 일자리, 그 기회와 맞바꾼 돈입니다.",
+      "prompt": "a young korean standing before an empty office desk in their hometown, the long shadow of a giant building falling over the desk as if taking the seat, poignant strong contrast, back view no face"
+    },
+    {
+      "role": "cta",
+      "head": "건물이냐 내 일자리냐",
+      "text": "묻습니다. 이 5000억은 도시의 랜드마크입니까, 아니면 떠나야 했던 청년의 일자리입니까? 건물에 묶을 것인가, 청년에게 심을 것인가.",
+      "prompt": "two futures side by side: a glamorous empty building versus young people working and staying in a thriving hometown paid for by the same money, the traded-off choice, golden hour powerful finale"
+    }
   ]
 }
