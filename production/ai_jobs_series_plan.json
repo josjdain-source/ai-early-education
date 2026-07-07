@@ -74,62 +74,99 @@
     },
     {
       "id": "jobs-public-ai",
-      "final_title": "멀쩡한 도로 또 파는 그 돈, 청년 일자리로 바꿀 수 있습니다",
+      "final_title": "멀쩡한 도로 또 파는 그 돈, 청년도 어르신도 살릴 수 있습니다",
       "beats": [
         {
           "role": "hook",
           "head": "멀쩡한 길 또 판다",
-          "text": "매년 연말이면, 멀쩡한 도로를 또 갈아엎습니다. 예산을 남기면 안 된다는 이유로.",
-          "prompt": "a perfectly fine korean city road being dug up and repaved again at year end, wasteful repetition, editorial documentary illustration, wide street view, no people closeup"
+          "text": "매년 연말이면, 멀쩡한 도로를 또 갈아엎습니다. 예산을 남기면 안 된다는 이유로 말입니다.",
+          "prompt": "a perfectly fine korean city road being dug up and repaved again at year end, wasteful repetition of public spending, editorial documentary illustration, wide street, no face closeup"
+        },
+        {
+          "role": "fact",
+          "head": "돈 없다더니",
+          "text": "평소엔 돈이 없다던 지방정부가, 연말엔 남은 예산을 급히 써버립니다.",
+          "prompt": "a korean city hall that pleads budget shortage all year suddenly rushing to spend leftover budget at december, contrast, documentary wide"
         },
         {
           "role": "fact",
           "head": "청년은 떠난다",
-          "text": "그 사이 청년은 일자리를 찾아 도시로 떠나고, 어르신껜 쓰레기 줍는 공공일자리만 돌아옵니다.",
-          "prompt": "young people leaving a shrinking regional korean town with luggage while elderly people do public street-cleaning work, poignant regional decline, wide documentary scene, distant figures"
-        },
-        {
-          "role": "hook",
-          "head": "그 돈으로 AI 기업",
-          "text": "이 돈을, 지역에 AI 기업 하나 세우는 데 쓰면 어떨까요?",
-          "prompt": "wasteful budget coins transforming into a bright new AI technology company building rising in a regional korean city, reallocation metaphor, hopeful wide aerial"
+          "text": "그 사이 청년은 일자리가 없어 도시로 떠나고, 지역은 조금씩 비어 갑니다.",
+          "prompt": "young people leaving a slowly emptying regional korean town with luggage toward the big city, quiet decline, wide documentary, distant figures"
         },
         {
           "role": "fact",
-          "head": "교육→취업 한 지역서",
-          "text": "지방정부가 AI 회사를 만들어, 지역 학교에서 가르치고, 그 학생들을 그 회사가 뽑습니다.",
-          "prompt": "a local korean AI company connected to a nearby school by a glowing path, students learning then walking into local jobs, a closed regional loop of education and employment, warm wide"
-        },
-        {
-          "role": "fact",
-          "head": "떠날 이유가 없다",
-          "text": "교육부터 취업까지 지역 안에서 이어지면, 청년이 고향을 떠날 이유가 없습니다.",
-          "prompt": "young korean professionals working at good AI jobs in their own hometown, staying and thriving locally, lively small-city office and street, hopeful, mid-distance"
+          "head": "어르신껜 단기 일자리",
+          "text": "어르신껜 쓰레기 줍는 단기 공공일자리 몇 달치가 돌아올 뿐입니다.",
+          "prompt": "elderly korean workers doing short-term public street-cleaning jobs, dignified but limited seasonal work, respectful mid-distance documentary"
         },
         {
           "role": "hook",
-          "head": "이게 공공지능",
-          "text": "노인 단순 청소가 아니라, 청년과 중년의 고부가 일자리. 이게 진짜 공공지능입니다.",
-          "prompt": "a regional korean city where high-value AI jobs replace low-value make-work, a dignified productive community across generations, bright uplifting wide scene"
+          "head": "이게 악순환",
+          "text": "청년은 떠나고, 어르신은 단기 일자리를 맴돌고, 예산은 도로에 묻힙니다. 악순환입니다.",
+          "prompt": "a vicious cycle visualized: youth leaving, elderly stuck in temporary work, budget buried under asphalt, a gloomy downward loop, symbolic editorial"
+        },
+        {
+          "role": "hook",
+          "head": "그 돈을 미래로",
+          "text": "만약 그 낭비되는 예산을, 지역의 미래에 투자하면 어떻게 될까요?",
+          "prompt": "wasteful budget coins being redirected toward a bright future of a regional korean city, a hopeful what-if reallocation, warm aerial dawn"
+        },
+        {
+          "role": "fact",
+          "head": "지역이 일자리를 만든다",
+          "text": "지방정부가 AI 기업과 공공 일자리를 만들어, 지역에서 가르치고 지역에서 뽑습니다.",
+          "prompt": "a local government-founded AI company and training center in a regional korean city, teaching and hiring locally, warm wide scene"
+        },
+        {
+          "role": "fact",
+          "head": "교육이 취업으로",
+          "text": "지역 학교에서 배운 청년이, 그 지역 회사에 바로 취업합니다. 이제 떠날 이유가 없습니다.",
+          "prompt": "a young korean who learned at a local school walking straight into a local AI company job, a closed education-to-employment loop within the region, hopeful"
+        },
+        {
+          "role": "fact",
+          "head": "사람이 몰린다",
+          "text": "좋은 일자리가 생기면, 떠났던 청년이 돌아오고 사람이 모입니다.",
+          "prompt": "young people returning to a reviving korean town, moving trucks arriving, streets filling again, population inflow, lively hopeful wide"
+        },
+        {
+          "role": "hook",
+          "head": "경제가 산다",
+          "text": "사람이 모이면 가게가 늘고, 세금이 늘고, 지역 경제가 다시 돌기 시작합니다.",
+          "prompt": "a reviving korean town with new shops opening, busy markets, a local economy circulating again, warm bustling wide street"
+        },
+        {
+          "role": "hook",
+          "head": "어르신 일자리도 산다",
+          "text": "커진 도시를 돌보는 일도 늘어납니다. 어르신의 일자리도, 단기가 아니라 안정된 일자리로 바뀝니다.",
+          "prompt": "as a korean town grows livelier, dignified stable year-round jobs for elderly caring for the busy community increase, generations both working, warm bright wide"
+        },
+        {
+          "role": "fact",
+          "head": "모두가 번다",
+          "text": "청년은 고부가 일자리로, 어르신은 안정된 일자리로. 온 세대가 함께 버는 사회가 됩니다.",
+          "prompt": "young middle-aged and elderly koreans all earning in one thriving inclusive regional community, everyone participating with dignity, uplifting bright"
         },
         {
           "role": "cta",
-          "head": "낭비→일자리 선순환",
-          "text": "낭비를 일자리로 바꾸는 선순환. 우리 아이의 직업도, 여기서 시작됩니다.",
-          "prompt": "a glowing virtuous cycle: budget flowing into an AI company, into jobs, into a thriving region, a korean child looking toward a hopeful future skyline, golden hour triumphant"
+          "head": "낭비를 선순환으로",
+          "text": "낭비되던 예산 하나가, 지역 전체를 살리는 선순환이 됩니다. 새는 돈을, 미래로 돌립시다.",
+          "prompt": "a glowing virtuous cycle looping through a korean region: budget into jobs into people into economy into a thriving future for all generations, golden hour triumphant finale"
         }
       ],
       "desc_lines": [
-        "매년 멀쩡한 도로를 또 갈아엎는 예산, 청년은 일자리 없어 떠나고 어르신껜 쓰레기 줍는 공공일자리만 돌아옵니다. 그 돈으로 지방정부가 AI 기업을 세워 지역에서 교육→취업을 연결하면? 노인 단순노동이 아니라 청년·중년 고부가 일자리로 바꾸는 선순환 — 이것이 진짜 공공지능입니다.",
+        "매년 멀쩡한 도로를 또 갈아엎는 예산, 청년은 일자리 없어 떠나고 어르신껜 단기 공공일자리만 돌아오는 악순환. 그 돈을 지역 AI 기업·공공 일자리에 투자하면? 지역에서 가르치고 지역에서 뽑아 청년이 돌아오고, 사람이 몰려 경제가 살아나면, 그 도시를 돌보는 어르신 일자리도 단기에서 안정된 일자리로 바뀝니다. 청년도 어르신도 온 세대가 함께 버는 선순환 — 낭비를 미래로 돌리자는 제안입니다.",
         "🎯 나이별 AI교육 로드맵 https://ai-early-education.pages.dev/levels",
-        "#공공지능 #지역일자리 #청년일자리 #AI교육 #Shorts"
+        "#지역일자리 #세대상생 #청년일자리 #노인일자리 #AI교육 #Shorts"
       ],
       "tags": [
         "공공지능",
         "AI기본사회",
         "미래직업",
         "AI교육"
-      ]
+      ],
+      "speed": 1.4
     },
     {
       "id": "jobs-collab-work",
@@ -250,6 +287,72 @@
         "고등학생",
         "대학생",
         "미래직업"
+      ]
+    },
+    {
+      "id": "road-budget-year-end",
+      "final_title": "지방은 돈이 없다면서, 왜 연말엔 필요 없는 공사를 합니까?",
+      "beats": [
+        {
+          "role": "hook",
+          "head": "돈 없다더니",
+          "text": "지방자치단체는 늘 말합니다. 예산이 부족하다, 국가가 더 지원해야 한다, 청년 일자리 만들 돈도 없다고.",
+          "prompt": "a korean city hall building with officials pleading budget shortage, an almost empty public wallet symbol, editorial documentary illustration, wide view, no face closeup"
+        },
+        {
+          "role": "fact",
+          "head": "그런데 연말엔",
+          "text": "그런데 시민은 매년 이상한 장면을 봅니다. 연말만 되면 멀쩡해 보이는 도로가 다시 파이고, 보도블록이 바뀝니다.",
+          "prompt": "a perfectly fine korean road being dug up and repaved and sidewalk blocks being replaced at year end, wasteful-looking repetition, wide street documentary, distant workers"
+        },
+        {
+          "role": "fact",
+          "head": "필요하면 해야죠",
+          "text": "정말 필요한 안전 공사라면 해야 합니다. 하지만 질문은 남습니다.",
+          "prompt": "a genuinely needed winter road safety repair scene, balanced fair tone, workers fixing a real pothole before winter, documentary wide"
+        },
+        {
+          "role": "hook",
+          "head": "왜 12월에?",
+          "text": "돈이 없다면서, 왜 12월에는 남은 예산을 털어 쓰는 것처럼 보일까요?",
+          "prompt": "a december calendar with construction contracts piling up densely at year end while other months are sparse, budget rush metaphor, dramatic contrast, no numbers"
+        },
+        {
+          "role": "fact",
+          "head": "감이 아니라 데이터",
+          "text": "그래서 감이 아니라 데이터로 확인해야 합니다. 도로 계약을 1월부터 12월까지, 어느 달에 몰리는지.",
+          "prompt": "an abstract monthly bar chart shape rising sharply toward the last three columns of the year, data visualization silhouette, clean editorial, no text no numbers"
+        },
+        {
+          "role": "fact",
+          "head": "반복되면 문제",
+          "text": "만약 매년 연말에 반복된다면, 이건 도로 문제가 아니라 예산을 어디에 쓰느냐의 문제입니다.",
+          "prompt": "the same year-end spending pattern repeating across multiple years shown as identical repeating shapes, a troubling recurring cycle, symbolic clean"
+        },
+        {
+          "role": "hook",
+          "head": "청소 말고 일자리",
+          "text": "노인에게 쓰레기 줍기 일자리만 반복할 게 아니라, 청년과 중년이 지역에서 AI로 일하는 구조를 만들어야 합니다.",
+          "prompt": "low-value street cleaning make-work transforming into high-value regional AI jobs where young and middle-aged and elderly all participate, dignified virtuous transition, bright uplifting wide"
+        },
+        {
+          "role": "cta",
+          "head": "새는 돈부터",
+          "text": "예산이 부족하다면, 새 돈을 달라기 전에 먼저 새는 돈부터 공개하고 확인해야 합니다.",
+          "prompt": "a leaking budget being sealed and redirected toward a region's future — schools, AI companies, jobs — a hopeful reallocation, korean city at golden hour, triumphant"
+        }
+      ],
+      "desc_lines": [
+        "지방자치단체는 예산이 부족하다며 국가 지원을 요청합니다. 그런데 연말이면 도로포장·보도블록·정비 계약이 몰리는 것처럼 보입니다. 특정 지자체를 지목하는 게 아니라, 도로 계약의 월별 집행을 공개하고 데이터로 확인하자는 문제 제기입니다. 반복 확인되면 그 재원을 지역 AI 교육·AI 기업·고부가 일자리로 돌리자는 제안. ※낭비 확정이 아니라 공개·검증 요구입니다.",
+        "데이터로 확인하는 방법: 나라장터·지방재정365·공공데이터포털의 도로 계약을 월별로 집계(연말쏠림지수).",
+        "#지방예산 #연말예산 #도로공사 #지역일자리 #AI교육 #Shorts"
+      ],
+      "tags": [
+        "지방예산",
+        "연말예산",
+        "도로공사",
+        "지역일자리",
+        "AI교육"
       ]
     }
   ]

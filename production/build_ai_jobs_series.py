@@ -118,11 +118,12 @@ def register_to_studio(sh, mp4, poster):
 
 def build_one(sh, base_seed):
     key=sh["id"]; beats=sh["beats"]; n=len(beats); XF=0.25
+    spd=sh.get("speed", SPEED)  # 쇼츠별 속도 오버라이드
     segs=[]; auds=[]; beat_d=[]
     for bi,bt in enumerate(beats):
         raw=f"{AUD}/{key}_{bi}_raw.mp3"; tts(bt["text"],raw)
         ap=f"{AUD}/{key}_{bi}.mp3"
-        run([FF,"-hide_banner","-loglevel","error","-y","-i",raw,"-filter:a",f"atempo={SPEED}",ap])
+        run([FF,"-hide_banner","-loglevel","error","-y","-i",raw,"-filter:a",f"atempo={spd}",ap])
         auds.append(ap); bd=dur(ap); beat_d.append(bd)
         ip=f"{IMG}/{key}_{bi}.png"
         if not os.path.exists(ip): sdxl(bt["prompt"],base_seed+bi,ip)

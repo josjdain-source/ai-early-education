@@ -1185,7 +1185,7 @@
     },
     {
       "video_id": "jobs-public-ai",
-      "title": "멀쩡한 도로 또 파는 그 돈, 청년 일자리로 바꿀 수 있습니다",
+      "title": "멀쩡한 도로 또 파는 그 돈, 청년도 어르신도 살릴 수 있습니다",
       "video_type": "short",
       "series": "S10_edu_to_jobs",
       "mp4_path": "assets/ai-jobs-series/render/jobs-public-ai.mp4",
@@ -1206,7 +1206,7 @@
       "youtube_id": "",
       "youtube_url": "",
       "created_at": "2026-07-07",
-      "description": "매년 멀쩡한 도로를 또 갈아엎는 예산, 청년은 일자리 없어 떠나고 어르신껜 쓰레기 줍는 공공일자리만 돌아옵니다. 그 돈으로 지방정부가 AI 기업을 세워 지역에서 교육→취업을 연결하면? 노인 단순노동이 아니라 청년·중년 고부가 일자리로 바꾸는 선순환 — 이것이 진짜 공공지능입니다.\n\n🎯 나이별 AI교육 로드맵 https://ai-early-education.pages.dev/levels\n\n#공공지능 #지역일자리 #청년일자리 #AI교육 #Shorts",
+      "description": "매년 멀쩡한 도로를 또 갈아엎는 예산, 청년은 일자리 없어 떠나고 어르신껜 단기 공공일자리만 돌아오는 악순환. 그 돈을 지역 AI 기업·공공 일자리에 투자하면? 지역에서 가르치고 지역에서 뽑아 청년이 돌아오고, 사람이 몰려 경제가 살아나면, 그 도시를 돌보는 어르신 일자리도 단기에서 안정된 일자리로 바뀝니다. 청년도 어르신도 온 세대가 함께 버는 선순환 — 낭비를 미래로 돌리자는 제안입니다.\n\n🎯 나이별 AI교육 로드맵 https://ai-early-education.pages.dev/levels\n\n#지역일자리 #세대상생 #청년일자리 #노인일자리 #AI교육 #Shorts",
       "source": "production/ai_jobs_series_plan.json",
       "note": "교육↔직업 연결 3부작. 발언 인용 원칙·인물 언급 없음. 업로드는 사람 승인."
     },
@@ -1298,6 +1298,35 @@
       "source": "production/ai_jobs_series_plan.json",
       "note": "교육↔직업 연결 3부작. 발언 인용 원칙·인물 언급 없음. 업로드는 사람 승인.",
       "error_message": "message': 'The request metadata specifies an invalid video description.', 'domain': 'youtube.video', 'reason': 'invalidDescription', 'location': 'body.snippet.description', 'locationType': 'other'}]\">",
+      "updated_at": "auto"
+    },
+    {
+      "video_id": "road-budget-year-end",
+      "title": "지방은 돈이 없다면서, 왜 연말엔 필요 없는 공사를 합니까?",
+      "video_type": "short",
+      "series": "S10_edu_to_jobs",
+      "mp4_path": "assets/ai-jobs-series/render/road-budget-year-end.mp4",
+      "poster_path": "assets/ai-jobs-series/render/road-budget-year-end-poster.jpg",
+      "thumbnail_path": "assets/ai-jobs-series/render/road-budget-year-end-poster.jpg",
+      "tags": [
+        "지방예산",
+        "연말예산",
+        "도로공사",
+        "지역일자리",
+        "AI교육"
+      ],
+      "shorts": true,
+      "category": "27",
+      "status": "uploaded_private",
+      "upload_status": "ready_to_upload",
+      "public": false,
+      "public_status": "none",
+      "youtube_id": "",
+      "youtube_url": "https://youtu.be/FYWDW4hrvEc",
+      "created_at": "2026-07-07",
+      "description": "지방자치단체는 예산이 부족하다며 국가 지원을 요청합니다. 그런데 연말이면 도로포장·보도블록·정비 계약이 몰리는 것처럼 보입니다. 특정 지자체를 지목하는 게 아니라, 도로 계약의 월별 집행을 공개하고 데이터로 확인하자는 문제 제기입니다. 반복 확인되면 그 재원을 지역 AI 교육·AI 기업·고부가 일자리로 돌리자는 제안. ※낭비 확정이 아니라 공개·검증 요구입니다.\n\n데이터로 확인하는 방법: 나라장터·지방재정365·공공데이터포털의 도로 계약을 월별로 집계(연말쏠림지수).\n\n#지방예산 #연말예산 #도로공사 #지역일자리 #AI교육 #Shorts",
+      "source": "production/ai_jobs_series_plan.json",
+      "note": "교육↔직업 연결 3부작. 발언 인용 원칙·인물 언급 없음. 업로드는 사람 승인.",
       "updated_at": "auto"
     }
   ],
