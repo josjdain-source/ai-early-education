@@ -205,7 +205,7 @@ def _gal(pid, spec):
         if os.path.exists(local): imgs.append(f)
     main=imgs[0]
     thumbs="".join(f'<img src="{u}" class="pp-th{" on" if i==0 else ""}" onclick="ppSwap(this,\'{pid}\')" loading="lazy" alt="">' for i,u in enumerate(imgs))
-    return f'<div class="pp-gal"><img id="ppMain-{pid}" class="pp-main" src="{main}" alt="{spec["name"]}"><div class="pp-ths">{thumbs}</div></div>'
+    return f'<div class="pp-gal"><div class="pp-main"><img id="ppMain-{pid}" src="{main}" alt="{spec["name"]}"></div><div class="pp-ths">{thumbs}</div></div>'
 
 def _reviews(pid):
     import json as _j
@@ -240,10 +240,10 @@ def _sec(pid, spec):
 <div class="pp-topgrid">
 {_gal(pid,s)}
 <div class="pp-buy">
-<div class="pp-cat">{s['icon']} 직접 개발 · 디지털 상품 {core_badge} <span class="pp-soon">출시 준비중</span></div>
+<div class="pp-cat">{s['icon']} 직접 개발 · 디지털 상품 {core_badge} <span class="pp-soon">상담 접수중</span></div>
 <h2>{s['name']}</h2>
 <p class="pp-one">{s['one']}</p>
-<div class="pp-price-row"><span class="pp-prlabel">예정가</span><span class="pp-pr">₩{s['price']}</span><span class="pp-soon">출시 준비중</span></div>
+<div class="pp-price-row"><span class="pp-prlabel">예정가</span><span class="pp-pr">₩{s['price']}</span><span class="pp-soon">출시 전 안내</span></div>
 <table class="pp-meta">
 <tr><th>이런 분께</th><td>{s['who']}</td></tr>
 <tr><th>포함 구성</th><td><ul class="pp-inc">{inc}</ul></td></tr>
@@ -251,11 +251,11 @@ def _sec(pid, spec):
 <tr><th>전달 방식</th><td>출시 후: 이메일로 zip 파일 + 한글 설치·사용 가이드(PDF)</td></tr>
 </table>
 <div class="pp-btns">
-<button class="btn pp-disbtn" disabled>🔒 결제 준비중</button>
+<a class="btn btn-primary" href="{ask}">출시 알림·상담 신청</a>
 <a class="btn" href="#" onclick="ppGoto('{pid}-install');return false">설치 방법 보기</a>
 </div>
-<p class="pp-mailnote">현재 결제 페이지를 준비 중입니다. 정식 출시 전까지는 구매가 진행되지 않습니다.<br>
-궁금한 점은 <a href="{ask}">{MAIL}</a> 로 문의해 주세요.</p>
+<p class="pp-mailnote">지금은 자동 결제 대신 이메일로 출시 알림과 사전 상담을 받습니다. 필요 환경을 확인한 뒤 순차 안내합니다.<br>
+문의: <a href="{ask}">{MAIL}</a></p>
 </div></div>
 
 <div class="pp-boxes">
@@ -272,7 +272,7 @@ def _sec(pid, spec):
 <h3 class="pp-h">▶ 기본 사용 방법</h3>
 <ol class="pp-steps">{use}</ol>
 
-<div class="pp-warn">⚠ <b>주의</b> · {s['caution']} 모든 PC에서 동일 동작을 보장하지 않으며, 필요 환경을 먼저 확인해 주세요. <b>현재는 결제 준비중입니다.</b></div>
+<div class="pp-warn">⚠ <b>주의</b> · {s['caution']} 모든 PC에서 동일 동작을 보장하지 않으며, 필요 환경을 먼저 확인해 주세요.</div>
 
 {_reviews(pid)}
 </section>"""
@@ -290,7 +290,7 @@ def page_html(BS):
         nav+=f'<div class="pp-navh">{label}</div>'
         for pid in pids:
             s=P[pid]
-            nav+=f'<button class="pp-nava" data-pid="{pid}">{s["icon"]} {s["name"]}<span class="pp-navsoon">준비중</span></button>'
+            nav+=f'<button class="pp-nava" data-pid="{pid}">{s["icon"]} {s["name"]}<span class="pp-navsoon">상담</span></button>'
     nav+='<div class="pp-navh">🗓 기획 중</div>'
     for pid,nm,cat in PLANNED:
         nav+=f'<button class="pp-nava" data-pid="planned">{nm}<span class="pp-navsoon">기획</span></button>'
@@ -308,15 +308,25 @@ def page_html(BS):
 <b>{label}</b><p>{CAT_DESC[cid]}</p><span>{len(pids)}개 도구 →</span></button>"""
     reco="".join(f'<button class="btn" onclick="ppShow(\'{pid}\')">{P[pid]["icon"]} {P[pid]["name"]}</button>' for pid in ["shorts-builder","video-maker","capcut-agent"])
     intro=f"""<section class="pp-item pp-panel on" id="intro">
-<div class="pp-cat">💾 직접 개발 · 디지털 상품 <span class="pp-soon">결제 준비중</span></div>
+<div class="pp-cat">💾 직접 개발 · 디지털 상품 <span class="pp-soon">출시 전 상담</span></div>
 <h2 style="margin:6px 0 8px;color:#2B3A55">유료 프로그램</h2>
 <p style="font-size:14px;color:#3a3024;line-height:1.7;max-width:620px">아이와 AI교실이 실제 제작에 사용 중인 도구를 정리하고 있습니다.
-현재는 상품 상세와 설치 안내를 준비하는 단계이며, <b>결제 기능은 아직 열려 있지 않습니다.</b>
-정식 출시 전까지는 구매가 진행되지 않습니다.</p>
+현재는 자동 결제 전 단계라 <b>출시 알림·사전 상담</b>을 이메일로 받습니다.
+각 도구의 필요 환경, 포함 파일, 설치 순서를 먼저 공개해 구매 전 판단할 수 있게 했습니다.</p>
 <div class="pp-catgrid">{cat_cards}</div>
 <h3 class="pp-h">먼저 보기 (추천)</h3>
 <div class="pp-btns">{reco}</div>
-<div class="pp-warn" style="margin-top:18px">왼쪽 메뉴에서 프로그램을 선택하면 그 프로그램의 상세만 표시됩니다. 출시 소식이 궁금하시면 <a href="mailto:{MAIL}">{MAIL}</a> 로 알려주세요.</div>
+<div class="pp-warn" style="margin-top:18px">왼쪽 메뉴에서 프로그램을 선택하면 상세만 표시됩니다. 필요한 도구가 있으면 <a href="mailto:{MAIL}?subject=[출시알림] 유료 프로그램">출시 알림을 신청</a>해 주세요.</div>
+<div class="pp-roadmap" style="margin-top:18px">
+<div class="pp-cat">🗓 공개 로드맵</div>
+<h3 class="pp-h" style="margin-top:6px">출시 전 채워지는 순서</h3>
+<div class="pp-boxes">
+<div class="pp-box"><b>1. 상세 공개</b><p>상품별 사용 장면, 포함 파일, 설치 조건, 주의사항을 먼저 공개합니다.</p></div>
+<div class="pp-box"><b>2. 사전 상담</b><p>이메일로 PC 환경과 사용 목적을 확인해 맞는 도구인지 안내합니다.</p></div>
+<div class="pp-box"><b>3. 파일 검증</b><p>zip 구성, GUIDE.pdf, 예제 파일, 라이선스 문구를 최종 점검합니다.</p></div>
+<div class="pp-box"><b>4. 결제 오픈</b><p>결제 페이지가 준비되면 이 페이지의 버튼을 구매 버튼으로 교체합니다.</p></div>
+</div>
+</div>
 </section>"""
 
     planned=f"""<section class="pp-item pp-panel" id="planned">
@@ -340,7 +350,7 @@ def page_html(BS):
 <div class="pp-warn">모든 PC에서 동일하게 동작한다고 보장하지 않습니다. 환경 차이(특히 GPU)가 큰 도구는 상세에 표기했습니다.</div>
 </section>"""
 
-    faq=[("지금 구매 가능한가요?","아니요. 현재 결제 준비중입니다. 정식 출시 전까지 구매가 진행되지 않습니다."),
+    faq=[("지금 구매 가능한가요?","자동 결제는 아직 열려 있지 않습니다. 대신 출시 알림과 사전 상담을 이메일로 받고, 환경 확인 후 안내합니다."),
      ("Mac에서도 되나요?","상품별로 다릅니다. Windows 기준으로 검증했으며, 파이썬 기반 도구 일부는 Mac에서 동작할 수 있으나 공식 지원은 Windows입니다."),
      ("GPU(그래픽카드)가 꼭 필요한가요?","영상 자동 생성기는 필수입니다. 쇼츠 자동 빌더는 그림 수동 투입 방식이면 불필요, 나머지 도구는 필요 없습니다."),
      ("설치가 어려우면 어떻게 하나요?","한글 설치 가이드(PDF)와 FAQ를 제공하며, 막히면 이메일로 함께 해결합니다."),
@@ -353,14 +363,14 @@ def page_html(BS):
 <h3 class="pp-h" style="margin-top:0">✉️ 문의</h3>
 <p style="font-size:14px;color:#3a3024;line-height:1.7">출시 일정, 도구 관련 질문, 우선 제작 요청 모두 이메일로 받습니다.</p>
 <p style="font-size:16px;font-weight:800"><a href="mailto:{MAIL}">{MAIL}</a></p>
-<div class="pp-warn">현재 결제 페이지를 준비 중입니다. 정식 출시 전까지는 구매가 진행되지 않습니다.</div>
+<div class="pp-warn">현재는 자동 결제 전 단계입니다. 도구가 필요한 상황과 PC 환경을 보내주시면 출시 알림과 사전 안내를 드립니다.</div>
 </section>"""
 
     secs="".join(_sec(pid,P[pid]) for _,__,pids in CATS for pid in pids)
 
     body=f"""<main><div class="pp-wrap">
 <aside class="frsb pp-side"><div class="pp-sticky">
-<div class="pp-sidetitle">💾 유료 프로그램<br><small>출시 준비중</small></div>
+<div class="pp-sidetitle">💾 유료 프로그램<br><small>출시 전 상담</small></div>
 {nav}
 <div class="pp-sidemail">문의<br><a href="mailto:{MAIL}">{MAIL}</a></div>
 </div></aside>
@@ -390,7 +400,10 @@ def page_html(BS):
 .pp-panel.on{{display:block}}
 .pp-item{{background:#fff;border:1px solid #EADFCE;border-radius:18px;padding:22px 24px;scroll-margin-top:80px}}
 .pp-topgrid{{display:grid;grid-template-columns:1.05fr 1fr;gap:22px}}
-.pp-gal .pp-main{{width:100%;border-radius:12px;border:1px solid #F0E6D2;aspect-ratio:12/7;object-fit:cover;background:#FBF6EE}}
+.pp-gal{{width:100%;max-width:100%}}
+.pp-main{{width:100%;max-width:100%;height:260px;min-height:260px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fffdf8;border:1px solid #eadcc8;border-radius:14px}}
+.pp-main img,.pp-main picture,.pp-main video{{width:auto!important;height:auto!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;object-position:center center!important;display:block!important;flex:0 0 auto!important}}
+.pp-main [style*="background-image"]{{background-size:contain!important;background-repeat:no-repeat!important;background-position:center center!important}}
 .pp-ths{{display:flex;gap:8px;margin-top:8px}}
 .pp-th{{width:72px;height:48px;object-fit:cover;border-radius:8px;border:2px solid #F0E6D2;cursor:pointer;opacity:.75}}
 .pp-th.on{{border-color:#E0684A;opacity:1}}
@@ -477,10 +490,13 @@ function ppGoto(anchor){{var el=document.getElementById(anchor);
   if(h&&document.getElementById(h)) ppShow(h);}});
 }})();
 </script></main>"""
-    return BS.page("paid","","유료 프로그램 (출시 준비중) | 아이와 AI교실",
-        "아이와 AI교실이 실제 제작에 사용하는 프로그램을 정리 중입니다. 결제 기능은 아직 열려 있지 않으며, 정식 출시 전까지 구매가 진행되지 않습니다.", body)
+    return BS.page("paid","","유료 프로그램 · 출시 전 상담 | 아이와 AI교실",
+        "아이와 AI교실이 실제 제작에 사용하는 프로그램 안내. 상품별 필요 환경, 포함 파일, 설치 순서와 출시 알림 상담을 제공합니다.", body)
 
 def build():
     import build_site as BS
     BS.write("paid-programs.html", page_html(BS))
-    print(f"유료 프로그램 SPA 상세페이지 생성 · 상품 {len(P)} · 결제 준비중 모드 · 리뷰 구조 준비")
+    print(f"유료 프로그램 SPA 상세페이지 생성 · 상품 {len(P)} · 출시 전 상담 모드 · 리뷰 구조 준비")
+
+if __name__ == "__main__":
+    build()
