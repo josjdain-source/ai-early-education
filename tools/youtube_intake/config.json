@@ -1,0 +1,15 @@
+{
+  "ollama_base_url": "http://127.0.0.1:11435",
+  "model_preference": [
+    "qwen3.5:9b",
+    "qwen3:4b"
+  ],
+  "coding_model": "qwen2.5-coder:7b",
+  "deferred_model": "qwen3.6:latest",
+  "qwen_role": "chunk_index_only",
+  "claude_entrypoint": "claude_brief.md",
+  "never_default_read": [
+    "transcript.txt",
+    "transcript_raw.json"
+  ]
+}

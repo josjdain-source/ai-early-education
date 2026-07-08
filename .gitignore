@@ -51,6 +51,7 @@ assets/us-ai-education/ovl/
 assets/us-ai-education/audio/
 assets/us-ai-education/saud/
 assets/us-ai-education/_dtmp/
+assets/gwangju-semi/render/
 assets/korea-lost-decade/render/
 assets/korea-lost-decade/simg/
 assets/korea-lost-decade/sframe/
@@ -63,3 +64,5 @@ data/trash_manifest.json
 logs/asset_delete.log
 logs/video_cleanup.log
 products/
+tools/youtube_intake/output/
+!tools/youtube_intake/output/.gitkeep
